@@ -1,0 +1,44 @@
+title: Digital Transformation Advisory
+description: >-
+  Technology strategy, Apple platform engineering, AI-native architecture,
+  and the people shaping our digital future.
+url: "https://saileshpanchal.github.io"
+baseurl: "/digital-transformation-advisory"
+author: Sailesh Panchal
+
+permalink: /:year/:month/:day/:title/
+timezone: America/New_York
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+
+paginate: 10
+paginate_path: "/page/:num/"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - LICENSE
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
