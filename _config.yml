@@ -2,12 +2,12 @@ title: Digital Transformation Advisory
 description: >-
   Technology strategy, Apple platform engineering, AI-native architecture,
   and the people shaping our digital future.
-url: "https://saileshpanchal.github.io"
-baseurl: "/digital-transformation-advisory"
+url: "https://dta-advisory.netlify.app"  # Update to custom domain when ready
+baseurl: ""
 author: Sailesh Panchal
 
 permalink: /:year/:month/:day/:title/
-timezone: America/New_York
+timezone: Europe/London
 
 markdown: kramdown
 highlighter: rouge
@@ -31,6 +31,10 @@ exclude:
   - vendor
   - README.md
   - LICENSE
+  - tools
+  - .claude
+  - CLAUDE.md
+  - netlify.toml
 
 defaults:
   - scope:

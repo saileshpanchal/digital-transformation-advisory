@@ -8,3 +8,14 @@ Gemfile.lock
 .DS_Store
 *.swp
 *~
+
+# Local Netlify folder
+.netlify
+
+# Rebrand tool — client decks are confidential
+tools/rebrand/input/
+tools/rebrand/output/
+tools/rebrand/assets/*.pptx
+tools/rebrand/assets/*.png
+tools/rebrand/brand-mapping.json
+__pycache__/
