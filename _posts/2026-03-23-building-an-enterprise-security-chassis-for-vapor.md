@@ -150,7 +150,7 @@ We ran this loop — Claude proposes, Perplexity validates, Claude revises — f
 
 ### gstack for QA and Development Workflow
 
-We use gstack — a headless browser toolkit integrated with Claude Code — throughout development. Not just for final QA, but as part of the development loop.
+We use [gstack](https://github.com/garrytan/gstack) — Garry Tan's open-source skill collection that turns Claude Code into a virtual engineering team — throughout development. gstack provides 28 specialised slash commands that cover the entire sprint lifecycle: planning (`/office-hours`, `/plan-ceo-review`, `/plan-eng-review`), building, reviewing (`/review`), QA testing (`/qa`, `/browse`), security auditing (`/cso`), and shipping (`/ship`, `/land-and-deploy`). It's the setup the YC CEO uses to ship 10,000+ lines of production code per day. Not just for final QA, but as part of the development loop.
 
 The pattern: write a feature, deploy locally, use `/qa` to systematically test the feature against a checklist, get a structured bug report with screenshots, fix the bugs with before/after evidence. Each fix is an atomic commit. The QA cycle catches things that unit tests miss — rendering issues, middleware ordering effects on actual HTTP responses, CSRF token flow through real form submissions.
 
