@@ -1,0 +1,89 @@
+# DTA Brand: #0096FF, #1A1A1A, #AAAAAA, #FFFFFF
+# Decision framework: when to use AI vs pipeline
+
+direction: down
+
+title: {
+  label: "AI or Pipeline? The Decision Framework"
+  near: top-center
+  shape: text
+  style.font-size: 20
+  style.bold: true
+  style.font-color: "#0096FF"
+}
+
+problem: "Your transformation problem" {
+  shape: oval
+  style.fill: "#F5F5F7"
+  style.stroke: "#AAAAAA"
+  style.font-color: "#1A1A1A"
+}
+
+q1: {
+  label: "Can you enumerate\nevery transformation\nin a spreadsheet?"
+  shape: hexagon
+  style.fill: "#F5F5F7"
+  style.stroke: "#0096FF"
+  style.font-color: "#1A1A1A"
+}
+
+q2: {
+  label: "Does it require\nunderstanding\nlanguage context?"
+  shape: hexagon
+  style.fill: "#F5F5F7"
+  style.stroke: "#0096FF"
+  style.font-color: "#1A1A1A"
+}
+
+pipeline-path: {
+  label: |md
+    **Use a Pipeline**
+    Deterministic, auditable,
+    < 2s per unit, exact output
+  |
+  style.fill: "#E8F4FF"
+  style.stroke: "#0096FF"
+  style.font-color: "#1A1A1A"
+}
+
+ai-path: {
+  label: |md
+    **Use AI (in-context)**
+    Few-shot examples,
+    no training needed
+  |
+  style.fill: "#CCE9FF"
+  style.stroke: "#0078CC"
+  style.font-color: "#1A1A1A"
+}
+
+both-path: {
+  label: |md
+    **Split: Pipeline + AI**
+    Deterministic for structure,
+    AI for language
+  |
+  style.fill: "#0096FF"
+  style.stroke: "#0078CC"
+  style.font-color: "#FFFFFF"
+}
+
+training: {
+  label: |md
+    **Train a model**
+    Only when: bounded domain,
+    measurable output, privacy
+    requires on-device
+  |
+  style.fill: "#F5F5F7"
+  style.stroke: "#AAAAAA"
+  style.font-color: "#1A1A1A"
+}
+
+problem -> q1
+q1 -> pipeline-path: "Yes" {style.font-color: "#AAAAAA"}
+q1 -> q2: "Mostly, but not all" {style.font-color: "#AAAAAA"}
+q1 -> ai-path: "No" {style.font-color: "#AAAAAA"}
+q2 -> both-path: "Yes" {style.font-color: "#AAAAAA"}
+q2 -> pipeline-path: "No" {style.font-color: "#AAAAAA"}
+ai-path -> training: "Privacy requires on-device" {style.stroke-dash: 5; style.font-color: "#AAAAAA"; style.font-size: 10}

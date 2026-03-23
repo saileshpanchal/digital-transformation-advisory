@@ -1,0 +1,61 @@
+@startuml toolchain-workflow
+' DTA Brand: #0096FF (primary), #1A1A1A (text), #AAAAAA (muted), #FFFFFF (bg)
+
+skinparam backgroundColor #FFFFFF
+skinparam roundcorner 8
+skinparam ArrowColor #1A1A1A
+skinparam defaultFontColor #1A1A1A
+skinparam noteBorderColor #0096FF
+skinparam noteBackgroundColor #E8F4FF
+skinparam rectangleBorderColor #0096FF
+
+title <color:#0096FF>Development Toolchain: Claude + Perplexity + gstack</color>
+
+rectangle "**Plan Refinement Loop**" as plan #E8F4FF {
+  rectangle "Architectural\nQuestion" as question #F5F5F7
+  rectangle "**Claude**\nGenerate coherent\ndesign proposal" as claude #CCE9FF
+  rectangle "**Perplexity**\nValidate against papers,\nOWASP, CVEs, incidents" as perplexity #F5F5F7
+  hexagon "Evidence\nsupports\ndesign?" as check #F5F5F7
+  rectangle "Validated\nArchitecture" as validated #0096FF
+
+  question -right-> claude
+  claude -right-> perplexity
+  perplexity -down-> check
+  check -left-> claude : No, revise
+  check -down-> validated : Yes
+}
+
+rectangle "**Implementation**" as impl #F5F5F7 {
+  rectangle "swift build\n+ swift test" as build #E8F4FF
+  rectangle "**gstack /qa**\nBrowser-level\nintegration testing" as qa #E8F4FF
+  hexagon "Bugs\nfound?" as bugs #F5F5F7
+  rectangle "Atomic fix\n+ commit" as fix #CCE9FF
+  rectangle "**gstack /review**\nDiff analysis for\nsecurity violations" as review #CCE9FF
+
+  validated -down-> build
+  build -right-> qa
+  qa -down-> bugs
+  bugs -left-> fix : Yes
+  fix -up-> qa : Re-verify
+  bugs -right-> review : No
+}
+
+rectangle "Ship" as ship #0096FF
+
+review -right-> ship
+
+note bottom of claude
+  Excellent at generating
+  coherent designs.
+  Blind spot: edge cases
+  it hasn't seen.
+end note
+
+note bottom of perplexity
+  Surfaces real-world evidence.
+  Papers, CVEs, production
+  incident reports.
+  Doesn't synthesise into design.
+end note
+
+@enduml

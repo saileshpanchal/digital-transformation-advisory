@@ -1,0 +1,92 @@
+@startuml oidc-flow
+' DTA Brand: #0096FF (primary), #1A1A1A (text), #AAAAAA (muted), #FFFFFF (bg)
+
+skinparam backgroundColor #FFFFFF
+skinparam sequenceArrowThickness 1.5
+skinparam roundcorner 8
+skinparam defaultFontColor #1A1A1A
+skinparam sequenceParticipantBorderColor #0096FF
+skinparam sequenceParticipantBackgroundColor #E8F4FF
+skinparam sequenceLifeLineBorderColor #AAAAAA
+skinparam sequenceGroupBackgroundColor #F5F5F7
+skinparam sequenceGroupBorderColor #0096FF
+skinparam noteBorderColor #0096FF
+skinparam noteBackgroundColor #E8F4FF
+skinparam sequenceDividerBackgroundColor #E8F4FF
+skinparam sequenceDividerBorderColor #0096FF
+skinparam sequenceArrowColor #1A1A1A
+skinparam sequenceMessageAlignment center
+
+title <color:#0096FF>OIDC Authentication Flow with PKCE S256</color>
+
+actor "User" as user #E8F4FF
+participant "Browser" as browser #F5F5F7
+participant "Vapor App\n(VaporSecurityKit)" as app #E8F4FF
+participant "OIDC Provider\n(Auth0 / Entra)" as idp #CCE9FF
+database "Session\nStore" as session #F5F5F7
+
+== Login Flow (PKCE S256) ==
+
+user -> browser: Click "Sign In"
+browser -> app: GET /auth/login
+
+app -> app: Generate code_verifier\n(cryptographic random)
+app -> app: code_challenge =\nSHA256(code_verifier)
+app -> session: Store code_verifier\n+ state nonce
+
+app -> browser: 302 Redirect to IdP
+browser -> idp: GET /authorize?\n  response_type=code&\n  code_challenge=<hash>&\n  code_challenge_method=S256&\n  state=<nonce>
+
+note right of idp
+  User authenticates
+  (password, MFA, SSO)
+end note
+
+idp -> browser: 302 Redirect with\n  ?code=<auth_code>&state=<nonce>
+browser -> app: GET /auth/callback?\n  code=<auth_code>&state=<nonce>
+
+== Token Exchange ==
+
+app -> session: Retrieve code_verifier\n+ validate state nonce
+app -> idp: POST /oauth/token\n  code=<auth_code>&\n  code_verifier=<verifier>
+
+note left of app
+  PKCE: IdP verifies
+  SHA256(verifier) matches
+  the original challenge.
+  No client secret needed
+  for public clients.
+end note
+
+idp -> app: { access_token, id_token }
+
+app -> app: Validate JWT signature\nvia JWKS endpoint
+app -> app: Map claims to Principal\n(roles, tenant, email)
+
+== Session Creation ==
+
+app -> app: Create SessionData\n(HMAC-SHA256 signed\nwith current key)
+app -> session: Store session token\nin signed cookie
+
+app -> browser: 302 Redirect to /dashboard\nSet-Cookie: vsk_session=<token>
+browser -> user: Dashboard (authenticated)
+
+== Subsequent Requests ==
+
+user -> browser: Navigate
+browser -> app: GET /dashboard\nCookie: vsk_session=<token>
+
+app -> app: PrincipalResolution:\nvalidate HMAC signature\n(try current key,\nfallback to previous key)
+app -> app: Constant-time\nHMAC verification\n(timing-safe)
+
+note right of app
+  Dual-key rotation:
+  SESSION_SECRET (current)
+  SESSION_SECRET_PREVIOUS (old)
+  Old sessions stay valid
+  during key rotation.
+end note
+
+app -> browser: 200 OK (authorised content)
+
+@enduml

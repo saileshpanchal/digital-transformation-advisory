@@ -1,0 +1,129 @@
+# DTA Brand: #0096FF, #1A1A1A, #AAAAAA, #FFFFFF
+# PowerPoint rebrand post: 95% pipeline / 5% AI split
+
+direction: right
+
+title: {
+  label: PowerPoint Rebrand Pipeline
+  near: top-center
+  shape: text
+  style.font-size: 20
+  style.bold: true
+  style.font-color: "#0096FF"
+}
+
+designer: {
+  label: |md
+    **Designer**
+    Creates one pair:
+    source + target exemplar
+  |
+  shape: oval
+  style.fill: "#F5F5F7"
+  style.stroke: "#AAAAAA"
+  style.font-color: "#1A1A1A"
+}
+
+extract: {
+  label: |md
+    **Extract Rules**
+    Diff exemplar pair
+    font/colour/layout/tone
+  |
+  style.fill: "#E8F4FF"
+  style.stroke: "#0096FF"
+  style.font-color: "#1A1A1A"
+}
+
+mapping: {
+  label: |md
+    **brand-mapping.json**
+    Fonts, colours, logos,
+    footers, tone examples
+  |
+  shape: page
+  style.fill: "#FFFFFF"
+  style.stroke: "#0096FF"
+  style.font-color: "#1A1A1A"
+}
+
+pipeline: "95% Deterministic (python-pptx)" {
+  style.fill: "#E8F4FF"
+  style.stroke: "#0096FF"
+  style.border-radius: 8
+  style.font-color: "#0096FF"
+
+  fonts: {
+    label: "Font swap"
+    style.fill: "#FFFFFF"
+    style.stroke: "#0096FF"
+    style.font-color: "#1A1A1A"
+  }
+  colours: {
+    label: "Colour swap"
+    style.fill: "#FFFFFF"
+    style.stroke: "#0096FF"
+    style.font-color: "#1A1A1A"
+  }
+  logos: {
+    label: "Logo swap"
+    style.fill: "#FFFFFF"
+    style.stroke: "#0096FF"
+    style.font-color: "#1A1A1A"
+  }
+  footers: {
+    label: "Footer text"
+    style.fill: "#FFFFFF"
+    style.stroke: "#0096FF"
+    style.font-color: "#1A1A1A"
+  }
+}
+
+ai: "5% Intelligent (Claude)" {
+  style.fill: "#CCE9FF"
+  style.stroke: "#0078CC"
+  style.border-radius: 8
+  style.font-color: "#0078CC"
+
+  tone: {
+    label: |md
+      **Tone adjustment**
+      Formal -> conversational
+      Passive -> active
+      Corporate -> plain English
+    |
+    style.fill: "#FFFFFF"
+    style.stroke: "#0078CC"
+    style.font-color: "#1A1A1A"
+  }
+}
+
+output: {
+  label: "50 converted decks"
+  shape: oval
+  style.fill: "#0096FF"
+  style.stroke: "#0078CC"
+  style.font-color: "#FFFFFF"
+}
+
+note: {
+  label: |md
+    **< 2 seconds per deck**
+    105 font changes
+    52 colour changes
+    6 footer updates
+  |
+  shape: callout
+  style.fill: "#E8F4FF"
+  style.stroke: "#0096FF"
+  style.font-size: 12
+  style.font-color: "#1A1A1A"
+}
+
+designer -> extract
+extract -> mapping
+mapping -> pipeline
+mapping -> ai
+pipeline -> output
+ai -> output
+note -> pipeline: {style.stroke-dash: 5; style.stroke: "#0096FF"}

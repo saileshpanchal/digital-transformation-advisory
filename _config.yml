@@ -35,6 +35,8 @@ exclude:
   - .claude
   - CLAUDE.md
   - netlify.toml
+  - assets/diagrams/src
+  - assets/diagrams/render.sh
 
 defaults:
   - scope:

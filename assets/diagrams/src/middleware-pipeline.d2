@@ -1,0 +1,142 @@
+# DTA Brand: #0096FF (primary), #1A1A1A (text), #AAAAAA (muted), #FFFFFF (bg)
+# Accent tints derived from brand blue
+
+direction: right
+
+title: {
+  label: VaporSecurityKit Middleware Pipeline
+  near: top-center
+  shape: text
+  style.font-size: 20
+  style.bold: true
+  style.font-color: "#0096FF"
+}
+
+request: {
+  label: HTTP Request
+  shape: oval
+  style.fill: "#F5F5F7"
+  style.stroke: "#AAAAAA"
+  style.font-color: "#1A1A1A"
+}
+
+rate-limit: {
+  label: "1. RateLimit"
+  style.fill: "#E8F4FF"
+  style.stroke: "#0096FF"
+  style.font-size: 14
+  style.font-color: "#1A1A1A"
+
+  detail: |md
+    reads IP
+    may return 429
+  |
+  detail.style.font-size: 10
+  detail.style.font-color: "#AAAAAA"
+}
+
+csrf: {
+  label: "2. CSRF"
+  style.fill: "#E8F4FF"
+  style.stroke: "#0096FF"
+  style.font-size: 14
+  style.font-color: "#1A1A1A"
+
+  detail: |md
+    validates token
+    POST/PUT/PATCH/DELETE
+  |
+  detail.style.font-size: 10
+  detail.style.font-color: "#AAAAAA"
+}
+
+audit: {
+  label: "3. Audit"
+  style.fill: "#E8F4FF"
+  style.stroke: "#0096FF"
+  style.font-size: 14
+  style.font-color: "#1A1A1A"
+
+  detail: |md
+    stamps correlationId
+    logs denied/error
+  |
+  detail.style.font-size: 10
+  detail.style.font-color: "#AAAAAA"
+}
+
+principal: {
+  label: "4. PrincipalResolution"
+  style.fill: "#CCE9FF"
+  style.stroke: "#0078CC"
+  style.font-size: 14
+  style.font-color: "#1A1A1A"
+
+  detail: |md
+    reads JWT/session
+    writes req.principal
+  |
+  detail.style.font-size: 10
+  detail.style.font-color: "#AAAAAA"
+}
+
+tenant: {
+  label: "5. TenantResolution"
+  style.fill: "#CCE9FF"
+  style.stroke: "#0078CC"
+  style.font-size: 14
+  style.font-color: "#1A1A1A"
+
+  detail: |md
+    reads principal + header
+    cross-validates tenant
+  |
+  detail.style.font-size: 10
+  detail.style.font-color: "#AAAAAA"
+}
+
+authz: {
+  label: "6. Authorization"
+  style.fill: "#0096FF"
+  style.stroke: "#0078CC"
+  style.font-size: 14
+  style.font-color: "#FFFFFF"
+
+  detail: |md
+    per-route policy eval
+    may return 403
+  |
+  detail.style.font-size: 10
+  detail.style.font-color: "#E8F4FF"
+}
+
+controller: {
+  label: Controller
+  shape: oval
+  style.fill: "#F5F5F7"
+  style.stroke: "#AAAAAA"
+  style.font-color: "#1A1A1A"
+}
+
+request -> rate-limit: {style.stroke: "#AAAAAA"}
+rate-limit -> csrf: {style.stroke: "#AAAAAA"}
+csrf -> audit: {style.stroke: "#AAAAAA"}
+audit -> principal: {
+  label: "writes correlationId"
+  style.stroke: "#0096FF"
+  style.font-size: 10
+  style.font-color: "#AAAAAA"
+}
+principal -> tenant: {
+  label: "writes req.principal"
+  style.stroke: "#0096FF"
+  style.font-size: 10
+  style.font-color: "#AAAAAA"
+}
+tenant -> authz: {
+  label: "writes req.tenantContext"
+  style.stroke: "#0096FF"
+  style.font-size: 10
+  style.font-color: "#AAAAAA"
+}
+authz -> controller: {style.stroke: "#AAAAAA"}

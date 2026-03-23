@@ -1,0 +1,48 @@
+@startuml mlx-thinking-mode
+' DTA Brand: #0096FF, #1A1A1A, #AAAAAA, #FFFFFF
+
+skinparam backgroundColor #FFFFFF
+skinparam sequenceArrowThickness 1.5
+skinparam roundcorner 8
+skinparam defaultFontColor #1A1A1A
+skinparam sequenceParticipantBorderColor #0096FF
+skinparam sequenceParticipantBackgroundColor #E8F4FF
+skinparam sequenceLifeLineBorderColor #AAAAAA
+skinparam noteBorderColor #0096FF
+skinparam noteBackgroundColor #E8F4FF
+skinparam sequenceDividerBackgroundColor #E8F4FF
+skinparam sequenceDividerBorderColor #0096FF
+skinparam sequenceArrowColor #1A1A1A
+
+title <color:#0096FF>The Thinking Mode Trap: Raw Prompt vs Chat Template</color>
+
+participant "Your Code" as code #E8F4FF
+participant "Tokenizer" as tok #CCE9FF
+participant "Qwen 3.5\nModel" as model #E8F4FF
+
+== Wrong: Raw Prompt String ==
+
+code -> model: <font color="#AAAAAA">prompt = "Describe a tavern..."</font>
+model -> model: Thinking mode\ntriggers unpredictably
+model -> code: <font color="#AAAAAA"><think>1. Analyze... 2. Brainstorm...</think></font>\n(reasoning dump, not prose)
+
+note right of model
+  Raw strings bypass the
+  model's expected format.
+  Output is unpredictable.
+end note
+
+== Correct: Chat Template ==
+
+code -> tok: apply_chat_template(\n  messages=[...],\n  enable_thinking=**False**)
+tok -> tok: Format with special\ntokens + system prompt
+tok -> model: Properly formatted\nprompt with thinking disabled
+model -> code: <font color="#0096FF">"The heavy oak doors of</font>\n<font color="#0096FF">The Gilded Tankard groan open..."</font>\n(structured prose)
+
+note right of tok
+  Always use the tokenizer.
+  It knows the model's
+  expected input format.
+end note
+
+@enduml

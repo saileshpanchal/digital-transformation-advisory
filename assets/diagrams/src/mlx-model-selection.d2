@@ -1,0 +1,89 @@
+# DTA Brand: #0096FF, #1A1A1A, #AAAAAA, #FFFFFF
+
+direction: down
+
+title: {
+  label: Choosing the Right Model for Apple Silicon
+  near: top-center
+  shape: text
+  style.font-size: 20
+  style.bold: true
+  style.font-color: "#0096FF"
+}
+
+models: Models {
+  style.fill: "#E8F4FF"
+  style.stroke: "#0096FF"
+  style.border-radius: 8
+  style.font-color: "#0096FF"
+  direction: right
+
+  qwen2b: "Qwen 3.5 2B\n196 tok/s | 1.1 GB\nFast, lightweight" {
+    style.fill: "#FFFFFF"
+    style.stroke: "#0096FF"
+    style.font-color: "#1A1A1A"
+  }
+
+  llama3b: "Llama 3.2 3B\n127 tok/s | 2.0 GB\nRobust instructions" {
+    style.fill: "#FFFFFF"
+    style.stroke: "#AAAAAA"
+    style.font-color: "#1A1A1A"
+  }
+
+  qwen4b: "Qwen 3.5 4B\n96 tok/s | 2.5 GB\nBest quality" {
+    style.fill: "#FFFFFF"
+    style.stroke: "#0096FF"
+    style.font-color: "#1A1A1A"
+  }
+}
+
+decision: "What matters most?" {
+  shape: hexagon
+  style.fill: "#F5F5F7"
+  style.stroke: "#0096FF"
+  style.font-color: "#1A1A1A"
+}
+
+speed: "Speed / throughput\nSummaries, boilerplate,\nlocal API server" {
+  style.fill: "#E8F4FF"
+  style.stroke: "#0096FF"
+  style.font-color: "#1A1A1A"
+}
+
+quality: "Output quality\nCreative, multi-step,\nuser-facing" {
+  style.fill: "#CCE9FF"
+  style.stroke: "#0078CC"
+  style.font-color: "#1A1A1A"
+}
+
+compat: "Ecosystem / robustness\nRaw prompts, fine-tune\ncommunity" {
+  style.fill: "#F5F5F7"
+  style.stroke: "#AAAAAA"
+  style.font-color: "#1A1A1A"
+}
+
+pick2b: "Qwen 3.5 2B" {
+  style.fill: "#0096FF"
+  style.stroke: "#0078CC"
+  style.font-color: "#FFFFFF"
+}
+
+pick4b: "Qwen 3.5 4B" {
+  style.fill: "#0096FF"
+  style.stroke: "#0078CC"
+  style.font-color: "#FFFFFF"
+}
+
+pickllama: "Llama 3.2 3B" {
+  style.fill: "#F5F5F7"
+  style.stroke: "#AAAAAA"
+  style.font-color: "#1A1A1A"
+}
+
+models -> decision
+decision -> speed
+decision -> quality
+decision -> compat
+speed -> pick2b
+quality -> pick4b
+compat -> pickllama

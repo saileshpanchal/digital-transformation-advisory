@@ -16,5 +16,17 @@
   </main>
 
   {% include footer.html %}
+
+  <!-- Mermaid.js for interactive diagrams -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'neutral',
+      flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' },
+      sequence: { useMaxWidth: true },
+      securityLevel: 'loose'
+    });
+  </script>
 </body>
 </html>

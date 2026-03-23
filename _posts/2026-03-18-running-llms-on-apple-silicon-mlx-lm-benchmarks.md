@@ -111,6 +111,11 @@ response = mlx_lm.generate(
 
 **Lesson:** Always use `apply_chat_template()` with these models. Raw prompt strings bypass the model's expected input format and produce unpredictable behavior. This applies to all instruction-tuned models, not just Qwen.
 
+<figure>
+  <img src="{{ '/assets/diagrams/rendered/mlx-thinking-mode.svg' | relative_url }}" alt="Sequence diagram showing raw prompt vs chat template: raw prompt triggers thinking mode dump, chat template produces clean prose" style="width: 100%; max-width: 700px;">
+  <figcaption>The difference between a raw prompt string and a properly formatted chat template. The tokenizer knows what the model expects. <em>Rendered with <a href="https://plantuml.com">PlantUML</a>.</em></figcaption>
+</figure>
+
 ## Official Sampling Parameters
 
 Qwen3.5 publishes recommended sampling parameters for different modes. For non-thinking (instruct) mode:
@@ -170,6 +175,11 @@ Competent, readable prose. Safe and expected imagery. Gets the job done without 
 | Consistency | Minor repeats | Solid | Excellent |
 
 The 4B is clearly the better writer when properly configured. The 2B punches above its weight. Llama 3.2 3B is reliable but outclassed by both Qwen models in this creative task.
+
+<figure>
+  <img src="{{ '/assets/diagrams/rendered/mlx-model-selection.svg' | relative_url }}" alt="Model selection decision flow: speed picks Qwen 2B, quality picks Qwen 4B, ecosystem picks Llama 3.2 3B" style="width: 100%; max-width: 650px;">
+  <figcaption>Choosing the right model depends on what matters most for your use case. <em>Rendered with <a href="https://d2lang.com">D2</a>.</em></figcaption>
+</figure>
 
 ## Practical Recommendations
 

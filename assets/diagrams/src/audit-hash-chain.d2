@@ -1,0 +1,120 @@
+# DTA Brand: #0096FF (primary), #1A1A1A (text), #AAAAAA (muted), #FFFFFF (bg)
+
+direction: down
+
+title: {
+  label: Per-Tenant SHA-256 Audit Hash Chains
+  near: top-center
+  shape: text
+  style.font-size: 20
+  style.bold: true
+  style.font-color: "#0096FF"
+}
+
+tenant-a: Tenant A (Organisation Alpha) {
+  style.fill: "#E8F4FF"
+  style.stroke: "#0096FF"
+  style.border-radius: 8
+  style.font-color: "#1A1A1A"
+
+  direction: right
+
+  e1: {
+    label: |md
+      **Event 1**
+      login_success
+      H(ts + type + pid + "genesis")
+    |
+    style.fill: "#FFFFFF"
+    style.stroke: "#0096FF"
+    style.font-color: "#1A1A1A"
+  }
+
+  e2: {
+    label: |md
+      **Event 2**
+      access_granted
+      H(ts + type + pid + H1)
+    |
+    style.fill: "#FFFFFF"
+    style.stroke: "#0096FF"
+    style.font-color: "#1A1A1A"
+  }
+
+  e3: {
+    label: |md
+      **Event 3**
+      access_denied
+      H(ts + type + pid + H2)
+    |
+    style.fill: "#FFFFFF"
+    style.stroke: "#0096FF"
+    style.font-color: "#1A1A1A"
+  }
+
+  e4: {
+    label: "..."
+    style.fill: "#FFFFFF"
+    style.stroke: "#AAAAAA"
+  }
+
+  e1 -> e2: "H1 feeds H2" {style.stroke: "#0096FF"; style.font-size: 10; style.font-color: "#AAAAAA"}
+  e2 -> e3: "H2 feeds H3" {style.stroke: "#0096FF"; style.font-size: 10; style.font-color: "#AAAAAA"}
+  e3 -> e4: {style.stroke: "#AAAAAA"}
+}
+
+tenant-b: Tenant B (Organisation Beta) {
+  style.fill: "#F5F5F7"
+  style.stroke: "#AAAAAA"
+  style.border-radius: 8
+  style.font-color: "#1A1A1A"
+
+  direction: right
+
+  e1: {
+    label: |md
+      **Event 1**
+      login_success
+      H(ts + type + pid + "genesis")
+    |
+    style.fill: "#FFFFFF"
+    style.stroke: "#AAAAAA"
+    style.font-color: "#1A1A1A"
+  }
+
+  e2: {
+    label: |md
+      **Event 2**
+      data_export
+      H(ts + type + pid + H1)
+    |
+    style.fill: "#FFFFFF"
+    style.stroke: "#AAAAAA"
+    style.font-color: "#1A1A1A"
+  }
+
+  e3: {
+    label: "..."
+    style.fill: "#FFFFFF"
+    style.stroke: "#AAAAAA"
+  }
+
+  e1 -> e2: "H1 feeds H2" {style.stroke: "#AAAAAA"; style.font-size: 10; style.font-color: "#AAAAAA"}
+  e2 -> e3: {style.stroke: "#AAAAAA"}
+}
+
+tamper: {
+  label: |md
+    **Tamper Detection**
+    verifyChain(orgId) replays
+    all hashes from genesis.
+    Any mismatch = tampered.
+  |
+  shape: callout
+  style.fill: "#E8F4FF"
+  style.stroke: "#0096FF"
+  style.font-size: 12
+  style.font-color: "#1A1A1A"
+}
+
+tamper -> tenant-a: {style.stroke-dash: 5; style.stroke: "#0096FF"}

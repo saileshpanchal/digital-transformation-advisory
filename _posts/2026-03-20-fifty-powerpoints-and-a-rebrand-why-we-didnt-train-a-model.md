@@ -45,6 +45,11 @@ We split the problem in two:
 
 The beauty of this split is that each half plays to its strengths. The pipeline is fast and exact where you need exactness (your brand colour had better be #007C7A, not #007C79). Claude is flexible and contextual where you need intelligence (knowing that "we are pleased to present" and "we would like to share" are the same pattern, even though the words are different).
 
+<figure>
+  <img src="{{ '/assets/diagrams/rendered/rebrand-pipeline.svg' | relative_url }}" alt="Rebrand pipeline: designer creates exemplar pair, rules extracted to JSON, 95% deterministic transforms via python-pptx, 5% tone adjustment via Claude" style="width: 100%; max-width: 850px;">
+  <figcaption>The full pipeline. One designer pair produces the rules. python-pptx handles the 95% that's mechanical. Claude handles the 5% that requires understanding. <em>Rendered with <a href="https://d2lang.com">D2</a>.</em></figcaption>
+</figure>
+
 ## How the Pipeline Works
 
 ### Step 1: The Designer Creates One Pair
@@ -139,6 +144,11 @@ Here's the framework we used:
 | Debugging | "Why did the model say this?" | "This key maps to this value" |
 
 The PowerPoint rebrand sits firmly on the pipeline side for 95% of the work. The tone adjustment is the 5% where a model earns its keep — not by learning from training data, but by understanding language in context.
+
+<figure>
+  <img src="{{ '/assets/diagrams/rendered/rebrand-decision.svg' | relative_url }}" alt="Decision framework: enumerable transformations use a pipeline, language understanding uses AI, both together use the split approach" style="width: 100%; max-width: 600px;">
+  <figcaption>The decision framework. Can you enumerate it? Pipeline. Does it need language understanding? AI. Both? Split the problem. <em>Rendered with <a href="https://d2lang.com">D2</a>.</em></figcaption>
+</figure>
 
 ## What We'd Tell the Sommelier
 

@@ -1,0 +1,71 @@
+@startuml policy-evaluation
+' DTA Brand: #0096FF (primary), #1A1A1A (text), #AAAAAA (muted), #FFFFFF (bg)
+
+skinparam backgroundColor #FFFFFF
+skinparam ActivityBackgroundColor #E8F4FF
+skinparam ActivityBorderColor #0096FF
+skinparam ActivityDiamondBackgroundColor #F5F5F7
+skinparam ActivityDiamondBorderColor #0096FF
+skinparam ArrowColor #1A1A1A
+skinparam roundcorner 8
+skinparam defaultFontColor #1A1A1A
+skinparam ActivityFontColor #1A1A1A
+skinparam PartitionBorderColor #0096FF
+skinparam PartitionBackgroundColor #E8F4FF
+
+title <color:#0096FF>CompositePolicy: Deny-Precedence Evaluation</color>
+
+start
+
+:Receive access request
+(principal + tenant + resource + action);
+
+partition "**Evaluate ALL Policies** (order-independent)" #E8F4FF {
+  fork
+    :SensitivityPolicy
+    //(hard gate)//;
+  fork again
+    :SharingScopePolicy
+    //(hard gate)//;
+  fork again
+    :RoleBasedPolicy
+    //(allow refiner)//;
+  fork again
+    :OwnershipPolicy
+    //(allow refiner)//;
+  fork again
+    :WorkspaceScopePolicy
+    //(allow refiner)//;
+  fork again
+    :GroupScopePolicy
+    //(allow refiner)//;
+  end fork
+}
+
+if (Any policy\nreturned **.deny**?) then (yes)
+  #F5F5F7:ACCESS DENIED
+  Deny is final, regardless
+  of other policy results;
+  stop
+else (no)
+  if (Any returned\n**.elevationRequired**?) then (yes)
+    #CCE9FF:ELEVATION REQUIRED
+    Privilege escalation needed
+    before access can proceed;
+    stop
+  else (no)
+    if (At least one\nreturned **.allow**?) then (yes)
+      #E8F4FF:ACCESS GRANTED
+      At least one policy
+      positively authorised;
+      stop
+    else (no)
+      #F5F5F7:DENIED BY DEFAULT
+      No policy authorised
+      this action;
+      stop
+    endif
+  endif
+endif
+
+@enduml
