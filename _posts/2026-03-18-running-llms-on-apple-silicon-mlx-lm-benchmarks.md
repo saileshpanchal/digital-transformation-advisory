@@ -111,6 +111,29 @@ response = mlx_lm.generate(
 
 **Lesson:** Always use `apply_chat_template()` with these models. Raw prompt strings bypass the model's expected input format and produce unpredictable behavior. This applies to all instruction-tuned models, not just Qwen.
 
+### The Deeper Gotcha: Template Divergence Between Model Sizes
+
+There's a subtler issue we discovered later while building [ForgeML](https://github.com/saileshpanchal/ForgeML) training pipelines. The Qwen3.5 2B and 4B variants ship with **different default chat templates** — and the difference is invisible during training.
+
+- **Qwen3.5-2B** includes a pre-closed `<think></think>` block in its chat template. No reasoning by default.
+- **Qwen3.5-4B** opens `<think>` and expects the model to fill it with reasoning content before responding.
+
+During training, both templates produce the same format for complete conversations, so you won't notice anything. The divergence only appears at inference time when `add_generation_prompt=True` appends different suffixes depending on the model size. The 2B appends a clean assistant turn. The 4B appends an open thinking block that the model is expected to complete.
+
+**This means the same inference code produces different behavior when you swap model sizes.** If you're deploying Qwen3.5 models for structured output (JSON, function calling, classification), you must explicitly set `enable_thinking=False` regardless of model size. This is not prominently documented in the model card.
+
+```python
+# Always be explicit about thinking mode — don't rely on defaults
+prompt = tokenizer.apply_chat_template(
+    messages,
+    add_generation_prompt=True,
+    tokenize=False,
+    enable_thinking=False  # Required for consistent behavior across model sizes
+)
+```
+
+If you're building a pipeline that supports multiple Qwen3.5 variants (for example, using the 2B for fast inference and the 4B for quality-critical tasks), test with both models at inference time. Training-time validation alone won't catch this.
+
 <figure>
   <img src="{{ '/assets/diagrams/rendered/mlx-thinking-mode.svg' | relative_url }}" alt="Sequence diagram showing raw prompt vs chat template: raw prompt triggers thinking mode dump, chat template produces clean prose" style="width: 100%; max-width: 700px;">
   <figcaption>The difference between a raw prompt string and a properly formatted chat template. The tokenizer knows what the model expects. <em>Rendered with <a href="https://plantuml.com">PlantUML</a>.</em></figcaption>
@@ -214,7 +237,7 @@ This gives you a local endpoint at `http://localhost:8080` that accepts the same
 
 1. **Apple Silicon is a legitimate LLM inference platform.** Sub-100ms time-to-first-token and 96-196 tok/s generation with 1-3 GB of memory is practical for real applications.
 
-2. **Model configuration matters more than model size.** A misconfigured 4B model produced worse output than a 2B model. The chat template, thinking mode flag, and sampling parameters are not optional details.
+2. **Model configuration matters more than model size.** A misconfigured 4B model produced worse output than a 2B model. The chat template, thinking mode flag, and sampling parameters are not optional details. Watch for template divergence between model sizes in the same family — Qwen3.5's 2B and 4B have different thinking-mode defaults that only surface at inference.
 
 3. **The MLX ecosystem is production-ready.** Install with pip, download from Hugging Face, generate in three lines of Python. No CUDA, no Docker, no cloud API keys.
 
