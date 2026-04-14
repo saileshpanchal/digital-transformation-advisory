@@ -1,0 +1,37 @@
+---
+layout: corporate
+---
+<article class="post-article">
+  <div class="container">
+    <header class="post-article-header">
+      <h1>{{ page.title }}</h1>
+      <p class="post-article-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+        {% if page.categories.size > 0 %} &middot; {{ page.categories | join: ", " }}{% endif %}
+      </p>
+      {% if page.tags.size > 0 %}
+      <div class="post-article-tags">
+        {% for tag in page.tags %}
+        <span class="post-card-tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </header>
+
+    <div class="post-article-content">
+      {{ content }}
+    </div>
+  </div>
+</article>
+
+<!-- Mermaid.js for interactive diagrams -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'neutral',
+    flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' },
+    sequence: { useMaxWidth: true },
+    securityLevel: 'loose'
+  });
+</script>

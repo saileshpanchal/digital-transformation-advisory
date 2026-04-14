@@ -1,0 +1,30 @@
+---
+layout: corporate
+title: Connect
+permalink: /connect/
+---
+
+<section class="connect-section">
+  <div class="container">
+    <div class="connect-content">
+      <h1>Connect</h1>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Please enter your name here">
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="Please enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Your message" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary">Send</button>
+      </form>
+    </div>
+  </div>
+</section>

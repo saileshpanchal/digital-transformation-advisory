@@ -1,8 +1,8 @@
 title: Digital Transformation Advisory
 description: >-
-  Technology strategy, Apple platform engineering, AI-native architecture,
-  and the people shaping our digital future.
-url: "https://dta-advisory.netlify.app"  # Update to custom domain when ready
+  Transforming Organisations to work for you. Specialising in Agile/SaFE,
+  Strategic Architecture and ISO 20022 Payments.
+url: "https://digital-transformation-advisory.com"
 baseurl: ""
 author: Sailesh Panchal
 
@@ -37,15 +37,22 @@ exclude:
   - netlify.toml
   - assets/diagrams/src
   - assets/diagrams/render.sh
+  - docs
+  - podcast
+  - about.md
+  - categories.md
+  - tags.md
+  - search.md
+  - search.json
 
 defaults:
   - scope:
       path: ""
       type: "posts"
     values:
-      layout: "post"
+      layout: "corporate-post"
   - scope:
       path: ""
     values:
-      layout: "default"
+      layout: "corporate"
 

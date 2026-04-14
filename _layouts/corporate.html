@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/corporate.css' | relative_url }}">
+  {% feed_meta %}
+  {% seo %}
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="{{ '/' | relative_url }}">
+        <img src="{{ '/assets/images/corporate/dta-icon.png' | relative_url }}" alt="{{ site.title }}" class="navbar-logo">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <a href="{{ '/' | relative_url }}">Home</a>
+          <div class="nav-dropdown-content">
+            <a href="{{ '/' | relative_url }}#mission">Our Mission</a>
+            <a href="{{ '/' | relative_url }}#method">Our Method</a>
+            <a href="{{ '/' | relative_url }}#phases">Phases</a>
+            <a href="{{ '/' | relative_url }}#services">Services</a>
+            <a href="{{ '/' | relative_url }}#about">About Us</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="{{ '/policy-documentation/' | relative_url }}">Policy Documentation</a>
+          <div class="nav-dropdown-content">
+            <a href="{{ '/policy-documentation/' | relative_url }}#modern-slavery">Modern Slavery Policy</a>
+            <a href="{{ '/policy-documentation/' | relative_url }}#privacy">Privacy Policy</a>
+          </div>
+        </div>
+        <a href="{{ '/insights/' | relative_url }}">Insights</a>
+        <a href="{{ '/connect/' | relative_url }}">Connect</a>
+      </div>
+    </div>
+  </nav>
+
+  {{ content }}
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="{{ '/' | relative_url }}">
+          <img src="{{ '/assets/images/corporate/dta-logo.png' | relative_url }}" alt="{{ site.title }}" class="footer-logo">
+        </a>
+        <div class="footer-links">
+          <a href="{{ '/policy-documentation/' | relative_url }}">Policy Documents</a>
+          <a href="{{ '/insights/' | relative_url }}">Insights</a>
+          <a href="{{ '/connect/' | relative_url }}">Connect</a>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-bottom">&copy; {{ 'now' | date: "%Y" }} Digital Transformation Advisory Ltd</p>
+    </div>
+  </footer>
+
+</body>
+</html>
