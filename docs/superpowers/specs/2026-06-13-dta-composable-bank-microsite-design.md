@@ -469,6 +469,41 @@ The protected deployment will include:
 - technical due-diligence notes; and
 - production-readiness considerations.
 
+### Architecture Room implementation status
+
+The protected Architecture Room may show a dated implementation-status view for technical due diligence. This view must remain separate from the public proposition narrative.
+
+#### Proven in the TypeScript reference prototype as of 2026-06-13
+
+| Architecture lane | Proven reference capability |
+|---|---|
+| Canonical contracts | `Party`, `Relationship`, `Entitlement`, `Money`, `Posting`, `Wallet`, `Command`, `DomainEvent`, and `EvidenceStep` |
+| Party and onboarding | `party-store`, relationship handling, individual and corporate onboarding |
+| Identity adapters | Identity ports with deterministic government-ID, biometric, and bank-data adapters |
+| Orchestration | Domain Building Blocks executed through the shared `dsl-engine` |
+| Money and ledger | Balanced postings, wallets, 1:1 backing invariants, and the `tokenised-deposit` DBB |
+| Money rails | Faster Payments and ISO 20022 flows through `dbb-faster-payment` |
+| Execution and evidence | Commands, domain events, DSL execution, event-spine publication, and per-step evidence |
+| Controls | Identity referral and `needs-action` states, scoped entitlements, rejection of unbalanced postings, token-backing checks, issuance controls, and idempotency |
+| Agentic and proposition layers | Human-gated agentic gateway, Family Wealth DBBs, and public and protected showcase applications |
+| Verification | Automated tests prove the stated control and ledger invariants |
+
+This table describes a reference prototype, not a production platform or a claim that the complete bank proposition has been built.
+
+#### Next prototype experiences
+
+1. **Back-office banker view**
+   - Project event-spine, ledger, decision, approval, and evidence records into a coherent banker experience.
+
+2. **Full onboarding demonstration**
+   - Deepen the current onboarding interface into the complete seven-stage stepped flow.
+
+3. **Joined-up customer money journey**
+   - Connect Faster Payments and tokenised deposits to a small customer surface.
+   - Demonstrate deposit → tokenise → move → pay end to end in the browser.
+
+Marketing and other parallel workstreams remain outside this Architecture Room implementation lane.
+
 ### Security and indexing
 
 - Cloudflare Access email OTP protects every protected route.
