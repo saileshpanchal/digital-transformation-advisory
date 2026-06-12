@@ -34,6 +34,7 @@ exclude:
   - tools
   - .claude
   - CLAUDE.md
+  - AGENTS.md
   - netlify.toml
   - assets/diagrams/src
   - assets/diagrams/render.sh
@@ -55,4 +56,3 @@ defaults:
       path: ""
     values:
       layout: "corporate"
-
