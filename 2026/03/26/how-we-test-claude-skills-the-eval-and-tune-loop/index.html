@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How We Test Claude Skills: The Eval-and-Tune Loop | Digital Transformation Advisory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/corporate.css">
+  <link type="application/atom+xml" rel="alternate" href="https://digital-transformation-advisory.com/feed.xml" title="Digital Transformation Advisory" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How We Test Claude Skills: The Eval-and-Tune Loop | Digital Transformation Advisory</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="How We Test Claude Skills: The Eval-and-Tune Loop" />
+<meta name="author" content="Sailesh Panchal" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Writing a Claude Code skill is easy. Knowing whether it actually works is harder. We built an eval-and-tune loop that benchmarks skills against a no-skill baseline, and the first thing we learned is that your initial assertions will be wrong." />
+<meta property="og:description" content="Writing a Claude Code skill is easy. Knowing whether it actually works is harder. We built an eval-and-tune loop that benchmarks skills against a no-skill baseline, and the first thing we learned is that your initial assertions will be wrong." />
+<link rel="canonical" href="https://digital-transformation-advisory.com/2026/03/26/how-we-test-claude-skills-the-eval-and-tune-loop/" />
+<meta property="og:url" content="https://digital-transformation-advisory.com/2026/03/26/how-we-test-claude-skills-the-eval-and-tune-loop/" />
+<meta property="og:site_name" content="Digital Transformation Advisory" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-03-26T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How We Test Claude Skills: The Eval-and-Tune Loop" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Sailesh Panchal"},"dateModified":"2026-03-26T00:00:00+00:00","datePublished":"2026-03-26T00:00:00+00:00","description":"Writing a Claude Code skill is easy. Knowing whether it actually works is harder. We built an eval-and-tune loop that benchmarks skills against a no-skill baseline, and the first thing we learned is that your initial assertions will be wrong.","headline":"How We Test Claude Skills: The Eval-and-Tune Loop","mainEntityOfPage":{"@type":"WebPage","@id":"https://digital-transformation-advisory.com/2026/03/26/how-we-test-claude-skills-the-eval-and-tune-loop/"},"url":"https://digital-transformation-advisory.com/2026/03/26/how-we-test-claude-skills-the-eval-and-tune-loop/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="/">
+        <img src="/assets/images/corporate/dta-icon.png" alt="Digital Transformation Advisory" class="navbar-logo">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <a href="/">Home</a>
+          <div class="nav-dropdown-content">
+            <a href="/#mission">Our Mission</a>
+            <a href="/#method">Our Method</a>
+            <a href="/#phases">Phases</a>
+            <a href="/#services">Services</a>
+            <a href="/#about">About Us</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="/policy-documentation/">Policy Documentation</a>
+          <div class="nav-dropdown-content">
+            <a href="/policy-documentation/#modern-slavery">Modern Slavery Policy</a>
+            <a href="/policy-documentation/#privacy">Privacy Policy</a>
+          </div>
+        </div>
+        <a href="/insights/">Insights</a>
+        <a href="/connect/">Connect</a>
+      </div>
+    </div>
+  </nav>
+
+  <article class="post-article">
+  <div class="container">
+    <header class="post-article-header">
+      <h1>How We Test Claude Skills: The Eval-and-Tune Loop</h1>
+      <p class="post-article-meta">
+        <time datetime="2026-03-26T00:00:00+00:00">March 26, 2026</time>
+         &middot; Engineering, AI
+      </p>
+      
+      <div class="post-article-tags">
+        
+        <span class="post-card-tag">claude</span>
+        
+        <span class="post-card-tag">skills</span>
+        
+        <span class="post-card-tag">testing</span>
+        
+        <span class="post-card-tag">evaluation</span>
+        
+        <span class="post-card-tag">cli</span>
+        
+        <span class="post-card-tag">developer-tools</span>
+        
+        <span class="post-card-tag">open-source</span>
+        
+        <span class="post-card-tag">gstack</span>
+        
+        <span class="post-card-tag">quality-assurance</span>
+        
+      </div>
+      
+    </header>
+
+    <div class="post-article-content">
+      <p>Writing a Claude Code skill is easy. You write some markdown, drop it in <code class="language-plaintext highlighter-rouge">~/.claude/skills/</code>, and it activates automatically. The hard part is knowing whether it actually makes a difference.</p>
+
+<p>We learned this building the <a href="https://github.com/saileshpanchal/agent-friendly-cli">agent-friendly-cli skill</a> — a guide for building CLIs that AI agents can use effectively. The skill covers 16 principles: structured output, stderr separation, exit codes, TTY detection, and so on. But principles on paper mean nothing without evidence that they change outcomes.</p>
+
+<p>So we built a testing loop. Here’s what we learned.</p>
+
+<h2 id="the-process">The Process</h2>
+
+<h3 id="1-draft-the-skill-then-write-test-prompts">1. Draft the Skill, Then Write Test Prompts</h3>
+
+<p>Start with the skill content, then immediately write 2-3 realistic test prompts. Not “test the skill” prompts — real tasks someone would actually bring to Claude:</p>
+
+<ul>
+  <li>“Build a deploy CLI in Python with Click”</li>
+  <li>“Review this CLI code and tell me what’s not agent-friendly”</li>
+  <li>“Write a config import command that accepts file or stdin input”</li>
+</ul>
+
+<p>These cover different modes: code generation, code review, and feature implementation. Each exercises the skill differently.</p>
+
+<h3 id="2-run-with-skill-and-without-skill-in-parallel">2. Run With-Skill and Without-Skill in Parallel</h3>
+
+<p>This is the key insight. Don’t just test the skill — test the delta. Spawn six subagents: three with the skill loaded, three without. Same prompts, same model, different guidance.</p>
+
+<p>The without-skill runs are your baseline. They show what Claude does naturally, without the skill’s patterns. The comparison reveals what the skill actually teaches.</p>
+
+<h3 id="3-draft-assertions-while-runs-execute">3. Draft Assertions While Runs Execute</h3>
+
+<p>Don’t wait for results. While the agents run, write the grading criteria. For the CLI skill, our first assertions were:</p>
+
+<ul>
+  <li>Does the code include <code class="language-plaintext highlighter-rouge">--output json</code>?</li>
+  <li>Is there a <code class="language-plaintext highlighter-rouge">--dry-run</code> flag?</li>
+  <li>Does it use flags instead of positional arguments?</li>
+  <li>Are there distinct exit codes?</li>
+</ul>
+
+<p>These felt reasonable. They were also mostly wrong — not wrong in what they checked, but wrong in what they revealed.</p>
+
+<h3 id="4-the-first-round-wont-discriminate">4. The First Round Won’t Discriminate</h3>
+
+<p>Here’s what happened when we graded:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Eval</th>
+      <th>With Skill</th>
+      <th>Without Skill</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Deploy CLI</td>
+      <td>100%</td>
+      <td>33%</td>
+    </tr>
+    <tr>
+      <td>Code Review</td>
+      <td><strong>100%</strong></td>
+      <td><strong>100%</strong></td>
+    </tr>
+    <tr>
+      <td>Config Import</td>
+      <td>80%</td>
+      <td>40%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The deploy CLI and config import showed clear deltas. But the code review scored 100% for both versions. The skill found 11 issues; the baseline found 6. The skill categorized by severity; the baseline didn’t. The skill caught stderr/stdout separation; the baseline missed it. Yet the assertions said they were equal.</p>
+
+<p>The problem: our assertions tested for the obvious. “Does it mention interactive prompts?” Yes — both versions catch that. “Does it note missing JSON output?” Yes — both versions catch that too. The assertions were too easy.</p>
+
+<h3 id="5-find-what-discriminates">5. Find What Discriminates</h3>
+
+<p>This is where the real work happens. Read both outputs side by side and ask: what does the with-skill version do that the baseline doesn’t? For us, it was:</p>
+
+<ul>
+  <li><strong>Severity categorization</strong> — the skill version tiered issues as blocking/moderate/low</li>
+  <li><strong>Stderr/stdout separation</strong> — the baseline never mentioned it</li>
+  <li><strong>Emoji fragility</strong> — the skill flagged <code class="language-plaintext highlighter-rouge">print('Done!')</code> with emoji as parsing-fragile</li>
+  <li><strong>Issue depth</strong> — the skill found 8+ issues vs the baseline’s 6</li>
+</ul>
+
+<p>We added these as assertions and re-graded:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Eval</th>
+      <th>With Skill</th>
+      <th>Without Skill</th>
+      <th>Delta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Code Review</td>
+      <td><strong>100%</strong></td>
+      <td><strong>83%</strong></td>
+      <td><strong>+17%</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Now the eval discriminated. The two failing assertions for the baseline — stderr/stdout separation and emoji fragility — were exactly the patterns the skill teaches that Claude doesn’t know on its own.</p>
+
+<h3 id="6-iterate-until-stable">6. Iterate Until Stable</h3>
+
+<p>The loop is: draft assertions, grade, find non-discriminating assertions, replace them with harder ones, re-grade. Stop when the assertions capture the real delta.</p>
+
+<p>For code generation evals (the deploy CLI), the first round already discriminated well (+67%). Code generation is where skills have the most leverage — the model produces fundamentally different code with the right guidance.</p>
+
+<p>For code review evals, it took two rounds. The model is already decent at spotting problems; the skill’s value is in the subtler, deeper patterns.</p>
+
+<h2 id="the-audit-that-proved-it">The Audit That Proved It</h2>
+
+<p>The same day we shipped the skill, we ran it against our own project — a transcription-to-blog pipeline with a CLI called <code class="language-plaintext highlighter-rouge">ttb</code>. The audit against the agent-friendly checklist was immediate and damning:</p>
+
+<ol>
+  <li>No <code class="language-plaintext highlighter-rouge">--output json</code> on any command — agents can’t parse the Rich tables</li>
+  <li>No graph query commands — can’t explore the knowledge graph programmatically</li>
+  <li><code class="language-plaintext highlighter-rouge">audit-transcript</code> outputs Rich markup, not structured data</li>
+  <li><code class="language-plaintext highlighter-rouge">enrich</code> outputs JSON (the only one that does)</li>
+  <li>No <code class="language-plaintext highlighter-rouge">--quiet</code> mode</li>
+  <li>Stats use Rich tables — not parseable</li>
+  <li>No graph-level query tools for listing concepts, finding themes, or exploring connections</li>
+</ol>
+
+<p>The biggest win wasn’t fixing existing commands — it was realising we needed <code class="language-plaintext highlighter-rouge">ttb query</code> subcommands that let agents explore the knowledge graph with <code class="language-plaintext highlighter-rouge">--output json</code>. The skill didn’t just review our CLI; it revealed a missing capability.</p>
+
+<p>That’s the difference between a checklist you read once and a skill that’s loaded into context every time you touch CLI code.</p>
+
+<h2 id="what-wed-do-differently">What We’d Do Differently</h2>
+
+<p><strong>Start with discriminating assertions.</strong> Don’t test for the obvious. If baseline Claude already catches interactive prompts and missing JSON output, those assertions won’t tell you if your skill adds value. Test for the patterns that require specific domain knowledge.</p>
+
+<p><strong>Run more than 3 test cases.</strong> Three is enough to validate the approach, but the signal gets noisy with small samples. For a production skill, we’d run 8-10 before shipping.</p>
+
+<p><strong>Grade programmatically from the start.</strong> We wrote a grading script that checks outputs against regex patterns. It’s stringly-typed and a bit hacky, but it runs in seconds and produces consistent results. Manual review is important for qualitative assessment, but programmatic grading catches regressions.</p>
+
+<h2 id="get-the-skill">Get the Skill</h2>
+
+<p>The agent-friendly-cli skill is open source:</p>
+
+<p><strong><a href="https://github.com/saileshpanchal/agent-friendly-cli">github.com/saileshpanchal/agent-friendly-cli</a></strong></p>
+
+<p>The eval workspace with all test cases, grading scripts, and benchmark data is in the repo. Fork it, run the evals against your own CLIs, and see what falls out.</p>
+
+<p>The process itself — draft, test with/without, find discriminating assertions, iterate — works for any Claude Code skill. The specific assertions will be different, but the loop is the same.</p>
+
+    </div>
+  </div>
+</article>
+
+<!-- Mermaid.js for interactive diagrams -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'neutral',
+    flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' },
+    sequence: { useMaxWidth: true },
+    securityLevel: 'loose'
+  });
+</script>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/">
+          <img src="/assets/images/corporate/dta-logo.png" alt="Digital Transformation Advisory" class="footer-logo">
+        </a>
+        <div class="footer-links">
+          <a href="/policy-documentation/">Policy Documents</a>
+          <a href="/insights/">Insights</a>
+          <a href="/connect/">Connect</a>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-bottom">&copy; 2026 Digital Transformation Advisory Ltd</p>
+    </div>
+  </footer>
+
+</body>
+</html>

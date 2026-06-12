@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Silent Is Not Stuck: What Two Hangs Taught Me About Observable Pipelines | Digital Transformation Advisory</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link type="application/atom+xml" rel="alternate" href="https://digital-transformation-advisory.com/feed.xml" title="Digital Transformation Advisory" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Silent Is Not Stuck: What Two Hangs Taught Me About Observable Pipelines | Digital Transformation Advisory</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Silent Is Not Stuck: What Two Hangs Taught Me About Observable Pipelines" />
+<meta name="author" content="Sailesh Panchal" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A six-hour hang and a fake embed bug, both caused by the same thing: a loop that had no way to prove it was still working. Two fixes, one rule." />
+<meta property="og:description" content="A six-hour hang and a fake embed bug, both caused by the same thing: a loop that had no way to prove it was still working. Two fixes, one rule." />
+<link rel="canonical" href="https://digital-transformation-advisory.com/2026/04/11/silent-is-not-stuck-building-observable-pipelines/" />
+<meta property="og:url" content="https://digital-transformation-advisory.com/2026/04/11/silent-is-not-stuck-building-observable-pipelines/" />
+<meta property="og:site_name" content="Digital Transformation Advisory" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-04-11T00:00:00+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Silent Is Not Stuck: What Two Hangs Taught Me About Observable Pipelines" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Sailesh Panchal"},"dateModified":"2026-04-11T00:00:00+01:00","datePublished":"2026-04-11T00:00:00+01:00","description":"A six-hour hang and a fake embed bug, both caused by the same thing: a loop that had no way to prove it was still working. Two fixes, one rule.","headline":"Silent Is Not Stuck: What Two Hangs Taught Me About Observable Pipelines","mainEntityOfPage":{"@type":"WebPage","@id":"https://digital-transformation-advisory.com/2026/04/11/silent-is-not-stuck-building-observable-pipelines/"},"url":"https://digital-transformation-advisory.com/2026/04/11/silent-is-not-stuck-building-observable-pipelines/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+  <header class="site-header">
+  <nav class="container">
+    <a href="/" class="site-title">Digital Transformation Advisory</a>
+    <ul class="nav-links">
+      <li><a href="/">Posts</a></li>
+      <li><a href="/categories/">Categories</a></li>
+      <li><a href="/tags/">Tags</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/search/">Search</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <main class="container">
+    <article class="post">
+  <header class="post-header">
+    <h1>Silent Is Not Stuck: What Two Hangs Taught Me About Observable Pipelines</h1>
+    <time datetime="2026-04-11T00:00:00+01:00">April 11, 2026</time>
+    
+    <div class="post-tags">
+      
+      <span class="tag">observability</span>
+      
+      <span class="tag">pipelines</span>
+      
+      <span class="tag">llm-tools</span>
+      
+      <span class="tag">kuzuctl</span>
+      
+      <span class="tag">ollama</span>
+      
+      <span class="tag">debugging</span>
+      
+    </div>
+    
+  </header>
+
+  <div class="post-content">
+    <table>
+  <tbody>
+    <tr>
+      <td>Two days ago, my nightly knowledge pipeline hung silently for six and a half hours on a single [[M4 Pro MacBook Pro</td>
+      <td>Ollama]] call. Yesterday, I thought I’d found a silent logic bug in the same pipeline’s refine step — all 754 insights had zero embeddings and the manifest was all zeros. I spent an hour instrumenting and diagnosing before I realised the “bug” was the same class of problem as the hang, one layer down.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Both of them came from the same missing thing: <strong>a loop that had no way to prove it was still working.</strong></p>
+
+<h2 id="the-first-incident-the-65-hour-populate-hang">The First Incident: The 6.5-Hour Populate Hang</h2>
+
+<p>The pipeline runs at 02:00 every night via launchd. <code class="language-plaintext highlighter-rouge">populate</code> is the step where a local LLM reads each new source file and extracts structured insights. It hits Ollama over HTTP, one source at a time, and writes the results to SQLite.</p>
+
+<p>On the night of April 10th, populate started at 02:00 and was still running at 08:30. No output. No errors. No progress. Just a process sitting at 0% CPU, waiting on a socket.</p>
+
+<p>When I finally killed it and looked at <code class="language-plaintext highlighter-rouge">ps</code> + <code class="language-plaintext highlighter-rouge">lsof</code>, the process was stuck mid-HTTP-call to Ollama, which had apparently died or stalled but not closed the connection. <code class="language-plaintext highlighter-rouge">URLSession</code> had no resource timeout set, so the call would wait forever. Six and a half hours of night-cron time, burned on nothing.</p>
+
+<p>The fix was three lines of code plus a structural habit:</p>
+
+<ol>
+  <li><strong>Hard wall-clock timeout on every external call.</strong> A dedicated <code class="language-plaintext highlighter-rouge">URLSession</code> with <code class="language-plaintext highlighter-rouge">timeoutIntervalForResource = 300s</code>. Bound the worst case.</li>
+  <li><strong>One retry on transient failures.</strong> The second attempt often succeeds because the upstream has recovered.</li>
+  <li><strong>Per-item heartbeat to stderr.</strong> <code class="language-plaintext highlighter-rouge">[populate] 47/162 source-name.md</code> every single iteration. Now if the pipeline is stuck, I can tell in two seconds.</li>
+</ol>
+
+<table>
+  <tbody>
+    <tr>
+      <td>That became Milestone A.5 — “[[Cloud-native architecture</td>
+      <td>observability]] and resume, before anything new ships.” I sat on building any new pipeline features until the pipeline itself could tell me what it was doing.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="the-second-incident-the-fake-embed-bug">The Second Incident: The Fake Embed Bug</h2>
+
+<p>Yesterday I ran the pipeline again, this time with decision-capture features layered on top. Refine completed. I checked the manifest: zero embeddings, zero enrichments, zero tensions detected. I queried the live database directly — 754 insights, every single one with <code class="language-plaintext highlighter-rouge">NULL</code> embeddings.</p>
+
+<p>My first reading: refine has a logic bug. It’s silently no-oping on the embed pass. Maybe <code class="language-plaintext highlighter-rouge">supportsEmbedding</code> is returning false. Maybe the batch loop is skipping rows. Maybe the Ollama embed endpoint is broken.</p>
+
+<p>I started instrumenting. I added stderr logging around the embed pass. I checked that <code class="language-plaintext highlighter-rouge">nomic-embed-text</code> was loaded in Ollama. I ran a manual <code class="language-plaintext highlighter-rouge">curl</code> against <code class="language-plaintext highlighter-rouge">/api/embed</code>. Everything worked. The model was there. The endpoint responded. So why was refine producing nothing?</p>
+
+<p>The answer, once I stopped staring at embed and actually read the refine flow end-to-end: <strong>refine wasn’t broken. It had never finished.</strong> The enrich pass runs before embed, processes each sparse insight sequentially, and takes about four seconds per call against gemma4. With 754 sparse insights, that’s about fifty minutes of work before embed even starts. Fifty minutes during which refine produces exactly zero bytes of output. Indistinguishable from a hang. On the previous night’s run, the populate hang had blocked refine from ever starting on the current dataset. On tonight’s, the enrich pass had been honestly chewing through the work and I’d killed it before it got to embed.</p>
+
+<h2 id="the-same-root-cause-two-layers-apart">The Same Root Cause, Two Layers Apart</h2>
+
+<p>This is where I realised the two incidents were actually the same incident. A.5 made the <em>pipeline</em> observable — you can see which phase is running, how far it’s got, whether the lockfile is held, when the last heartbeat fired. But the individual <em>passes inside refine</em> were still blind boxes. Each pass logged “starting” and then went quiet for anywhere from 30 seconds to an hour. If any one of them got slow, or stuck, or hit one bad row, you couldn’t tell which without killing the process and looking at the database state after the fact.</p>
+
+<p>So the fix mirrored A.5, one layer down:</p>
+
+<ol>
+  <li><strong>Start and end markers on every refine pass.</strong> <code class="language-plaintext highlighter-rouge">[refine:enrich] start — 754 sparse insights</code> at entry, <code class="language-plaintext highlighter-rouge">[refine:enrich] done (0 failed)</code> at exit. No ambiguity about which pass is running.</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>Per-item progress every 5 items.</strong> Slow enough to not drown the log, [[Agile methodology</td>
+          <td>fast]] enough that you can watch progress in real time and calculate ETA.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><strong>Try/catch around every external call, per row.</strong> If one insight’s LLM call fails, log it, increment a counter, continue. One bad row can never kill the whole pass again.</li>
+</ol>
+
+<p>The last point turned out to matter more than the logging. Before the fix, enrich was already ~fifty minutes of sequential external work. If any one of those 754 calls had thrown (Ollama indigestion, a badly-formed title, a transient network blip), the entire pass would have died and we’d have wasted the preceding work. With per-row tolerance, one flaky response just bumps a skip counter and the other 753 calls complete.</p>
+
+<h2 id="the-rule-i-wrote-down">The Rule I Wrote Down</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>After the second fix, I wrote a new line in my permanent project [[LLM-based agents</td>
+      <td>memory]]:</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><strong>External calls in long-running passes need a stderr heartbeat every N items and a try/catch around every single call. Silent “stuck” is almost never actually stuck. It’s missing instrumentation.</strong></p>
+</blockquote>
+
+<p>That’s the entire rule. It sounds obvious written down. It wasn’t obvious while I was staring at a query that returned zero embeddings, convinced there was a logic bug.</p>
+
+<p>There are two reasons engineers skip this, and I skipped it for both:</p>
+
+<ul>
+  <li><strong>You write the code while the dataset is small.</strong> My unit tests had 3 insights, not 754. At 3 insights, enrich finishes in 12 seconds, so “silence for a minute” never happens. The pathology doesn’t show up until production load.</li>
+  <li><strong>You think logging is a polish task.</strong> Heartbeat lines look like chrome you can add later. They’re not. They are the only way a human can tell a working loop from a dead one, and if you don’t have them, every unexpected behaviour looks like a bug.</li>
+</ul>
+
+<h2 id="what-id-tell-someone-building-a-similar-system">What I’d Tell Someone Building A Similar System</h2>
+
+<p>If you’re building a pipeline that calls external services in a loop — an LLM, an HTTP API, a database-on-another-box, anything where latency is not under your control — build the observability <em>first</em>. Not first in priority, first in literal code-writing order. Before the happy path works, make sure the unhappy path is legible:</p>
+
+<ul>
+  <li>Heartbeat every N items, where N is small enough that a human watching the log can see it move</li>
+  <li>Hard wall-clock timeout on every external call, not just the session default</li>
+  <li>Per-item try/catch so one bad row can never kill a long-running batch</li>
+  <li>A progress sidecar written to disk so a killed process leaves behind evidence of how far it got</li>
+  <li>Postmortem dump on SIGTERM so the nightly cron’s failures are diagnosable in the morning</li>
+</ul>
+
+<p>None of these are hard to build. All of them are hard to <em>remember to build before you need them</em>. The rule I’m trying to hold myself to: any loop over external work gets instrumented the same day it’s written. Not the day it breaks in production.</p>
+
+<p>The knowledge pipeline is running as I write this. The enrich pass is at 405 of 754, ten minutes from embed, and I can see every step of it in my terminal. Which is the entire point.</p>
+
+  </div>
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2026 Sailesh Panchal. Built with Jekyll.</p>
+  </div>
+</footer>
+
+
+  <!-- Mermaid.js for interactive diagrams -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'neutral',
+      flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' },
+      sequence: { useMaxWidth: true },
+      securityLevel: 'loose'
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Running LLMs on Apple Silicon: MLX-LM Benchmarks for Qwen 3.5 and Llama 3.2 | Digital Transformation Advisory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/corporate.css">
+  <link type="application/atom+xml" rel="alternate" href="https://digital-transformation-advisory.com/feed.xml" title="Digital Transformation Advisory" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Running LLMs on Apple Silicon: MLX-LM Benchmarks for Qwen 3.5 and Llama 3.2 | Digital Transformation Advisory</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Running LLMs on Apple Silicon: MLX-LM Benchmarks for Qwen 3.5 and Llama 3.2" />
+<meta name="author" content="Sailesh Panchal" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hands-on benchmarks comparing Qwen3.5 2B, Qwen3.5 4B, and Llama 3.2 3B running locally on Apple Silicon via MLX-LM. Practical findings on speed, memory, output quality, and the sampling parameters that actually matter." />
+<meta property="og:description" content="Hands-on benchmarks comparing Qwen3.5 2B, Qwen3.5 4B, and Llama 3.2 3B running locally on Apple Silicon via MLX-LM. Practical findings on speed, memory, output quality, and the sampling parameters that actually matter." />
+<link rel="canonical" href="https://digital-transformation-advisory.com/2026/03/18/running-llms-on-apple-silicon-mlx-lm-benchmarks/" />
+<meta property="og:url" content="https://digital-transformation-advisory.com/2026/03/18/running-llms-on-apple-silicon-mlx-lm-benchmarks/" />
+<meta property="og:site_name" content="Digital Transformation Advisory" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-03-18T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Running LLMs on Apple Silicon: MLX-LM Benchmarks for Qwen 3.5 and Llama 3.2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Sailesh Panchal"},"dateModified":"2026-03-18T00:00:00+00:00","datePublished":"2026-03-18T00:00:00+00:00","description":"Hands-on benchmarks comparing Qwen3.5 2B, Qwen3.5 4B, and Llama 3.2 3B running locally on Apple Silicon via MLX-LM. Practical findings on speed, memory, output quality, and the sampling parameters that actually matter.","headline":"Running LLMs on Apple Silicon: MLX-LM Benchmarks for Qwen 3.5 and Llama 3.2","mainEntityOfPage":{"@type":"WebPage","@id":"https://digital-transformation-advisory.com/2026/03/18/running-llms-on-apple-silicon-mlx-lm-benchmarks/"},"url":"https://digital-transformation-advisory.com/2026/03/18/running-llms-on-apple-silicon-mlx-lm-benchmarks/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="/">
+        <img src="/assets/images/corporate/dta-icon.png" alt="Digital Transformation Advisory" class="navbar-logo">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <a href="/">Home</a>
+          <div class="nav-dropdown-content">
+            <a href="/#mission">Our Mission</a>
+            <a href="/#method">Our Method</a>
+            <a href="/#phases">Phases</a>
+            <a href="/#services">Services</a>
+            <a href="/#about">About Us</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="/policy-documentation/">Policy Documentation</a>
+          <div class="nav-dropdown-content">
+            <a href="/policy-documentation/#modern-slavery">Modern Slavery Policy</a>
+            <a href="/policy-documentation/#privacy">Privacy Policy</a>
+          </div>
+        </div>
+        <a href="/insights/">Insights</a>
+        <a href="/connect/">Connect</a>
+      </div>
+    </div>
+  </nav>
+
+  <article class="post-article">
+  <div class="container">
+    <header class="post-article-header">
+      <h1>Running LLMs on Apple Silicon: MLX-LM Benchmarks for Qwen 3.5 and Llama 3.2</h1>
+      <p class="post-article-meta">
+        <time datetime="2026-03-18T00:00:00+00:00">March 18, 2026</time>
+         &middot; AI, Apple
+      </p>
+      
+      <div class="post-article-tags">
+        
+        <span class="post-card-tag">mlx</span>
+        
+        <span class="post-card-tag">apple-silicon</span>
+        
+        <span class="post-card-tag">llm</span>
+        
+        <span class="post-card-tag">qwen</span>
+        
+        <span class="post-card-tag">llama</span>
+        
+        <span class="post-card-tag">benchmarks</span>
+        
+        <span class="post-card-tag">on-device-ai</span>
+        
+      </div>
+      
+    </header>
+
+    <div class="post-article-content">
+      <p>Apple Silicon changed the game for on-device machine learning. With unified memory and the Metal GPU sitting on the same die as the CPU, your MacBook can run billion-parameter language models without a discrete GPU. The missing piece was software. Apple’s <a href="https://github.com/ml-explore/mlx">MLX framework</a> and its companion library <code class="language-plaintext highlighter-rouge">mlx-lm</code> fill that gap.</p>
+
+<p>This post documents a hands-on benchmarking session comparing three small language models locally on an Apple Silicon Mac, with real numbers, real output, and the pitfalls we hit along the way.</p>
+
+<h2 id="the-setup">The Setup</h2>
+
+<p><strong>Hardware:</strong> Apple Silicon Mac (M-series, unified memory)</p>
+
+<p><strong>Software stack:</strong></p>
+<ul>
+  <li>Python 3.12 via <a href="https://mise.jdx.dev/">mise</a></li>
+  <li><code class="language-plaintext highlighter-rouge">mlx-lm</code> 0.31.1</li>
+  <li><code class="language-plaintext highlighter-rouge">mlx</code> 0.31.1 + <code class="language-plaintext highlighter-rouge">mlx-metal</code> 0.31.1</li>
+</ul>
+
+<p><strong>Models tested:</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">mlx-community/Qwen3.5-2B-4bit</code> (Alibaba, 2 billion parameters, 4-bit quantized)</li>
+  <li><code class="language-plaintext highlighter-rouge">mlx-community/Qwen3.5-4B-4bit</code> (Alibaba, 4 billion parameters, 4-bit quantized)</li>
+  <li><code class="language-plaintext highlighter-rouge">mlx-community/Llama-3.2-3B-Instruct-4bit</code> (Meta, 3 billion parameters, 4-bit quantized)</li>
+</ul>
+
+<p>All models are pre-quantized MLX format from the <code class="language-plaintext highlighter-rouge">mlx-community</code> collection on Hugging Face. No conversion step needed.</p>
+
+<p><strong>Installation</strong> is one command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>mlx-lm
+</code></pre></div></div>
+
+<p>If you use mise for version management:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mise <span class="nb">install </span>python@3.12
+mise use <span class="nt">--global</span> python@3.12
+pip <span class="nb">install </span>mlx-lm
+</code></pre></div></div>
+
+<h2 id="the-benchmark">The Benchmark</h2>
+
+<p>We used a creative writing prompt to test both generation speed and output quality:</p>
+
+<blockquote>
+  <p>Describe a medieval tavern at night. Include sensory details about the atmosphere, the patrons, and the food.</p>
+</blockquote>
+
+<p>Each model was run with 256-300 max tokens. We tested twice: once with default sampling (greedy), and once with the official recommended sampling parameters.</p>
+
+<h3 id="raw-speed-numbers">Raw Speed Numbers</h3>
+
+<p>All measurements taken on cached model runs (no download overhead):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>Qwen3.5-2B</th>
+      <th>Llama-3.2-3B</th>
+      <th>Qwen3.5-4B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Prompt eval</strong></td>
+      <td>705 tok/s</td>
+      <td>920 tok/s</td>
+      <td>390 tok/s</td>
+    </tr>
+    <tr>
+      <td><strong>Generation</strong></td>
+      <td><strong>196 tok/s</strong></td>
+      <td>127 tok/s</td>
+      <td>96 tok/s</td>
+    </tr>
+    <tr>
+      <td><strong>Peak memory</strong></td>
+      <td><strong>1.1 GB</strong></td>
+      <td>2.0 GB</td>
+      <td>2.5 GB</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The 2B model is roughly 2x faster than the 4B at generation, and uses less than half the memory. Llama 3.2 3B lands in the middle on both metrics.</p>
+
+<p>For context, 96 tokens per second is still faster than you can read. All three models feel instant in interactive use.</p>
+
+<h2 id="the-thinking-mode-trap">The Thinking Mode Trap</h2>
+
+<p>Here is where our initial benchmarks went wrong, and it contains an important lesson for anyone using Qwen3.5 models.</p>
+
+<p>When we first ran the 4B model with a raw prompt via <code class="language-plaintext highlighter-rouge">mlx_lm.generate</code>, it produced this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Here's a thinking process that leads to the description:
+1. Analyze the Request:
+   * Topic: A medieval tavern at night.
+   * Key Elements: Sensory details...
+2. Brainstorming &amp; Imagery:
+   * Setting: Stone walls, wooden beams...
+</code></pre></div></div>
+
+<p>Instead of writing prose, it dumped its internal reasoning chain. The 2B model, tested the same way, produced beautiful prose. Our initial conclusion was that the 2B was better. <strong>That was wrong.</strong></p>
+
+<h3 id="what-happened">What happened</h3>
+
+<p>Qwen3.5 models have a <strong>thinking mode</strong> enabled by default. When thinking mode is active, the model emits a <code class="language-plaintext highlighter-rouge">&lt;think&gt;...&lt;/think&gt;</code> block containing its reasoning before the actual response. The 4B model faithfully entered thinking mode. The 2B model happened not to, likely because the raw prompt format didn’t trigger it as strongly.</p>
+
+<p>The fix: use the tokenizer’s chat template with thinking explicitly disabled.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">mlx_lm</span>
+<span class="kn">from</span> <span class="n">mlx_lm.sample_utils</span> <span class="kn">import</span> <span class="n">make_sampler</span>
+
+<span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">mlx_lm</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="sh">"</span><span class="s">mlx-community/Qwen3.5-4B-4bit</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">messages</span> <span class="o">=</span> <span class="p">[{</span><span class="sh">"</span><span class="s">role</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">user</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Your prompt here</span><span class="sh">"</span><span class="p">}]</span>
+<span class="n">prompt</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="nf">apply_chat_template</span><span class="p">(</span>
+    <span class="n">messages</span><span class="p">,</span>
+    <span class="n">add_generation_prompt</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">tokenize</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+    <span class="n">enable_thinking</span><span class="o">=</span><span class="bp">False</span>  <span class="c1"># This is the key parameter
+</span><span class="p">)</span>
+
+<span class="n">sampler</span> <span class="o">=</span> <span class="nf">make_sampler</span><span class="p">(</span><span class="n">temp</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">top_p</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">top_k</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">min_p</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">mlx_lm</span><span class="p">.</span><span class="nf">generate</span><span class="p">(</span>
+    <span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">,</span>
+    <span class="n">prompt</span><span class="o">=</span><span class="n">prompt</span><span class="p">,</span>
+    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
+    <span class="n">sampler</span><span class="o">=</span><span class="n">sampler</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Lesson:</strong> Always use <code class="language-plaintext highlighter-rouge">apply_chat_template()</code> with these models. Raw prompt strings bypass the model’s expected input format and produce unpredictable behavior. This applies to all instruction-tuned models, not just Qwen.</p>
+
+<h3 id="the-deeper-gotcha-template-divergence-between-model-sizes">The Deeper Gotcha: Template Divergence Between Model Sizes</h3>
+
+<p>There’s a subtler issue we discovered later while building <a href="https://github.com/saileshpanchal/ForgeML">ForgeML</a> training pipelines. The Qwen3.5 2B and 4B variants ship with <strong>different default chat templates</strong> — and the difference is invisible during training.</p>
+
+<ul>
+  <li><strong>Qwen3.5-2B</strong> includes a pre-closed <code class="language-plaintext highlighter-rouge">&lt;think&gt;&lt;/think&gt;</code> block in its chat template. No reasoning by default.</li>
+  <li><strong>Qwen3.5-4B</strong> opens <code class="language-plaintext highlighter-rouge">&lt;think&gt;</code> and expects the model to fill it with reasoning content before responding.</li>
+</ul>
+
+<p>During training, both templates produce the same format for complete conversations, so you won’t notice anything. The divergence only appears at inference time when <code class="language-plaintext highlighter-rouge">add_generation_prompt=True</code> appends different suffixes depending on the model size. The 2B appends a clean assistant turn. The 4B appends an open thinking block that the model is expected to complete.</p>
+
+<p><strong>This means the same inference code produces different behavior when you swap model sizes.</strong> If you’re deploying Qwen3.5 models for structured output (JSON, function calling, classification), you must explicitly set <code class="language-plaintext highlighter-rouge">enable_thinking=False</code> regardless of model size. This is not prominently documented in the model card.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Always be explicit about thinking mode — don't rely on defaults
+</span><span class="n">prompt</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="nf">apply_chat_template</span><span class="p">(</span>
+    <span class="n">messages</span><span class="p">,</span>
+    <span class="n">add_generation_prompt</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">tokenize</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+    <span class="n">enable_thinking</span><span class="o">=</span><span class="bp">False</span>  <span class="c1"># Required for consistent behavior across model sizes
+</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>If you’re building a pipeline that supports multiple Qwen3.5 variants (for example, using the 2B for fast inference and the 4B for quality-critical tasks), test with both models at inference time. Training-time validation alone won’t catch this.</p>
+
+<figure>
+  <img src="/assets/diagrams/rendered/mlx-thinking-mode.svg" alt="Sequence diagram showing raw prompt vs chat template: raw prompt triggers thinking mode dump, chat template produces clean prose" style="width: 100%; max-width: 700px;" />
+  <figcaption>The difference between a raw prompt string and a properly formatted chat template. The tokenizer knows what the model expects. <em>Rendered with <a href="https://plantuml.com">PlantUML</a>.</em></figcaption>
+</figure>
+
+<h2 id="official-sampling-parameters">Official Sampling Parameters</h2>
+
+<p>Qwen3.5 publishes recommended sampling parameters for different modes. For non-thinking (instruct) mode:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Use Case</th>
+      <th>temp</th>
+      <th>top_p</th>
+      <th>top_k</th>
+      <th>min_p</th>
+      <th>presence_penalty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>General tasks</strong></td>
+      <td>0.7</td>
+      <td>0.8</td>
+      <td>20</td>
+      <td>0.0</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <td><strong>Reasoning tasks</strong></td>
+      <td>1.0</td>
+      <td>0.95</td>
+      <td>20</td>
+      <td>0.0</td>
+      <td>1.5</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For thinking mode (if you want the chain-of-thought reasoning):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Use Case</th>
+      <th>temp</th>
+      <th>top_p</th>
+      <th>top_k</th>
+      <th>min_p</th>
+      <th>presence_penalty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>General tasks</strong></td>
+      <td>1.0</td>
+      <td>0.95</td>
+      <td>20</td>
+      <td>0.0</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <td><strong>Precise coding</strong></td>
+      <td>0.6</td>
+      <td>0.95</td>
+      <td>20</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In <code class="language-plaintext highlighter-rouge">mlx-lm</code> 0.31.1, you apply these through the <code class="language-plaintext highlighter-rouge">make_sampler</code> function:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">mlx_lm.sample_utils</span> <span class="kn">import</span> <span class="n">make_sampler</span>
+
+<span class="c1"># Non-thinking, general tasks
+</span><span class="n">sampler</span> <span class="o">=</span> <span class="nf">make_sampler</span><span class="p">(</span><span class="n">temp</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">top_p</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">top_k</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">min_p</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Note: <code class="language-plaintext highlighter-rouge">mlx-lm</code>’s <code class="language-plaintext highlighter-rouge">make_sampler</code> does not expose <code class="language-plaintext highlighter-rouge">presence_penalty</code> directly as of v0.31.1. The <code class="language-plaintext highlighter-rouge">repetition_penalty</code> parameter in the generate function is the closest equivalent.</p>
+
+<h2 id="quality-comparison-fair-test">Quality Comparison (Fair Test)</h2>
+
+<p>With thinking disabled and official sampling parameters applied to all models:</p>
+
+<h3 id="qwen35-4b">Qwen3.5 4B</h3>
+
+<blockquote>
+  <p>The heavy oak doors of <strong>The Gilded Tankard</strong> groan open, admitting a rush of damp, starless night air that carries the scent of rain and wet cobblestones. Inside, the air is thick and warm, a palpable weight held back by the flickering glow of tallow candles… A floor-to-ceiling tapestry depicting knights in armor lines the far wall… In the corner, a lute player strums a mournful tune…</p>
+</blockquote>
+
+<p>Structured, literary-quality prose. Named specific patron archetypes: a bearded merchant, roughnecks in leather, an elderly woman, a young scribe. Strong world-building details.</p>
+
+<h3 id="qwen35-2b">Qwen3.5 2B</h3>
+
+<blockquote>
+  <p>The air inside <strong>Blackwood’s Oak</strong> did not smell of wine or wood; it smelled of wet wool, damp stone, and the sharp, tangy scent of fresh rye bread… A low, rumbling murmur vibrates through the floorboards, not from the patrons, but from the wood itself…</p>
+</blockquote>
+
+<p>Atmospheric and moody with a second-person perspective. Good sensory detail, though it occasionally repeats ideas and shifts tense.</p>
+
+<h3 id="llama-32-3b">Llama 3.2 3B</h3>
+
+<blockquote>
+  <p>The medieval tavern was a warm and inviting haven, its wooden beams and stone walls glowing with a soft, golden light… At the bar, a jovial bartender polished a mug with a dirty rag…</p>
+</blockquote>
+
+<p>Competent, readable prose. Safe and expected imagery. Gets the job done without surprises.</p>
+
+<h3 id="quality-verdict">Quality Verdict</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>2B</th>
+      <th>Llama 3B</th>
+      <th>4B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Prose coherence</td>
+      <td>Good</td>
+      <td>Good</td>
+      <td>Excellent</td>
+    </tr>
+    <tr>
+      <td>Character diversity</td>
+      <td>Adequate</td>
+      <td>Adequate</td>
+      <td>Rich</td>
+    </tr>
+    <tr>
+      <td>Sensory depth</td>
+      <td>Strong</td>
+      <td>Adequate</td>
+      <td>Richest</td>
+    </tr>
+    <tr>
+      <td>Consistency</td>
+      <td>Minor repeats</td>
+      <td>Solid</td>
+      <td>Excellent</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The 4B is clearly the better writer when properly configured. The 2B punches above its weight. Llama 3.2 3B is reliable but outclassed by both Qwen models in this creative task.</p>
+
+<figure>
+  <img src="/assets/diagrams/rendered/mlx-model-selection.svg" alt="Model selection decision flow: speed picks Qwen 2B, quality picks Qwen 4B, ecosystem picks Llama 3.2 3B" style="width: 100%; max-width: 650px;" />
+  <figcaption>Choosing the right model depends on what matters most for your use case. <em>Rendered with <a href="https://d2lang.com">D2</a>.</em></figcaption>
+</figure>
+
+<h2 id="practical-recommendations">Practical Recommendations</h2>
+
+<p><strong>Choose the 2B when:</strong></p>
+<ul>
+  <li>You want the fastest possible generation (196 tok/s)</li>
+  <li>Memory is constrained</li>
+  <li>The task is straightforward: summaries, simple Q&amp;A, boilerplate generation</li>
+  <li>You’re running a local API server and need throughput</li>
+</ul>
+
+<p><strong>Choose the 4B when:</strong></p>
+<ul>
+  <li>Output quality matters more than speed</li>
+  <li>Multi-step reasoning, creative writing, or nuanced tasks</li>
+  <li>You have 3+ GB of memory to spare (you do on any modern Mac)</li>
+  <li>You’re building something user-facing</li>
+</ul>
+
+<p><strong>Choose Llama 3.2 3B when:</strong></p>
+<ul>
+  <li>You need robust instruction-following without template fussing</li>
+  <li>You want the largest community ecosystem and fine-tune availability</li>
+  <li>The task is instruction-heavy rather than creative</li>
+</ul>
+
+<h2 id="running-as-a-local-api-server">Running as a Local API Server</h2>
+
+<p>For development workflows, <code class="language-plaintext highlighter-rouge">mlx-lm</code> can serve an OpenAI-compatible API:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mlx_lm.server <span class="nt">--model</span> mlx-community/Qwen3.5-4B-4bit
+</code></pre></div></div>
+
+<p>This gives you a local endpoint at <code class="language-plaintext highlighter-rouge">http://localhost:8080</code> that accepts the same request format as the OpenAI API. You can point any OpenAI-compatible client at it for local inference.</p>
+
+<h2 id="key-takeaways">Key Takeaways</h2>
+
+<ol>
+  <li>
+    <p><strong>Apple Silicon is a legitimate LLM inference platform.</strong> Sub-100ms time-to-first-token and 96-196 tok/s generation with 1-3 GB of memory is practical for real applications.</p>
+  </li>
+  <li>
+    <p><strong>Model configuration matters more than model size.</strong> A misconfigured 4B model produced worse output than a 2B model. The chat template, thinking mode flag, and sampling parameters are not optional details. Watch for template divergence between model sizes in the same family — Qwen3.5’s 2B and 4B have different thinking-mode defaults that only surface at inference.</p>
+  </li>
+  <li>
+    <p><strong>The MLX ecosystem is production-ready.</strong> Install with pip, download from Hugging Face, generate in three lines of Python. No CUDA, no Docker, no cloud API keys.</p>
+  </li>
+  <li>
+    <p><strong>Qwen3.5 is the new default for small local models.</strong> Both the 2B and 4B outperform Llama 3.2 3B in quality at comparable or better speed. The only advantage Llama retains is its instruction-following robustness with raw prompts.</p>
+  </li>
+</ol>
+
+    </div>
+  </div>
+</article>
+
+<!-- Mermaid.js for interactive diagrams -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'neutral',
+    flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' },
+    sequence: { useMaxWidth: true },
+    securityLevel: 'loose'
+  });
+</script>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/">
+          <img src="/assets/images/corporate/dta-logo.png" alt="Digital Transformation Advisory" class="footer-logo">
+        </a>
+        <div class="footer-links">
+          <a href="/policy-documentation/">Policy Documents</a>
+          <a href="/insights/">Insights</a>
+          <a href="/connect/">Connect</a>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-bottom">&copy; 2026 Digital Transformation Advisory Ltd</p>
+    </div>
+  </footer>
+
+</body>
+</html>

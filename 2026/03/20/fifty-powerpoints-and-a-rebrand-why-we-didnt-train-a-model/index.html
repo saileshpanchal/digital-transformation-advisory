@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fifty PowerPoints and a Rebrand: Why We Didn't Train a Model | Digital Transformation Advisory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/corporate.css">
+  <link type="application/atom+xml" rel="alternate" href="https://digital-transformation-advisory.com/feed.xml" title="Digital Transformation Advisory" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Fifty PowerPoints and a Rebrand: Why We Didn’t Train a Model | Digital Transformation Advisory</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Fifty PowerPoints and a Rebrand: Why We Didn’t Train a Model" />
+<meta name="author" content="Sailesh Panchal" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A client needed 50 PowerPoint decks converted to a new brand identity. Our first instinct was to train a model. We were wrong. Here’s the pipeline we built instead, and the decision framework that stopped us from over-engineering." />
+<meta property="og:description" content="A client needed 50 PowerPoint decks converted to a new brand identity. Our first instinct was to train a model. We were wrong. Here’s the pipeline we built instead, and the decision framework that stopped us from over-engineering." />
+<link rel="canonical" href="https://digital-transformation-advisory.com/2026/03/20/fifty-powerpoints-and-a-rebrand-why-we-didnt-train-a-model/" />
+<meta property="og:url" content="https://digital-transformation-advisory.com/2026/03/20/fifty-powerpoints-and-a-rebrand-why-we-didnt-train-a-model/" />
+<meta property="og:site_name" content="Digital Transformation Advisory" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-03-20T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Fifty PowerPoints and a Rebrand: Why We Didn’t Train a Model" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Sailesh Panchal"},"dateModified":"2026-03-20T00:00:00+00:00","datePublished":"2026-03-20T00:00:00+00:00","description":"A client needed 50 PowerPoint decks converted to a new brand identity. Our first instinct was to train a model. We were wrong. Here’s the pipeline we built instead, and the decision framework that stopped us from over-engineering.","headline":"Fifty PowerPoints and a Rebrand: Why We Didn’t Train a Model","mainEntityOfPage":{"@type":"WebPage","@id":"https://digital-transformation-advisory.com/2026/03/20/fifty-powerpoints-and-a-rebrand-why-we-didnt-train-a-model/"},"url":"https://digital-transformation-advisory.com/2026/03/20/fifty-powerpoints-and-a-rebrand-why-we-didnt-train-a-model/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="/">
+        <img src="/assets/images/corporate/dta-icon.png" alt="Digital Transformation Advisory" class="navbar-logo">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <a href="/">Home</a>
+          <div class="nav-dropdown-content">
+            <a href="/#mission">Our Mission</a>
+            <a href="/#method">Our Method</a>
+            <a href="/#phases">Phases</a>
+            <a href="/#services">Services</a>
+            <a href="/#about">About Us</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="/policy-documentation/">Policy Documentation</a>
+          <div class="nav-dropdown-content">
+            <a href="/policy-documentation/#modern-slavery">Modern Slavery Policy</a>
+            <a href="/policy-documentation/#privacy">Privacy Policy</a>
+          </div>
+        </div>
+        <a href="/insights/">Insights</a>
+        <a href="/connect/">Connect</a>
+      </div>
+    </div>
+  </nav>
+
+  <article class="post-article">
+  <div class="container">
+    <header class="post-article-header">
+      <h1>Fifty PowerPoints and a Rebrand: Why We Didn't Train a Model</h1>
+      <p class="post-article-meta">
+        <time datetime="2026-03-20T00:00:00+00:00">March 20, 2026</time>
+         &middot; AI, Strategy
+      </p>
+      
+      <div class="post-article-tags">
+        
+        <span class="post-card-tag">digital-transformation</span>
+        
+        <span class="post-card-tag">brand-conversion</span>
+        
+        <span class="post-card-tag">powerpoint</span>
+        
+        <span class="post-card-tag">python-pptx</span>
+        
+        <span class="post-card-tag">enterprise-ai</span>
+        
+        <span class="post-card-tag">automation</span>
+        
+      </div>
+      
+    </header>
+
+    <div class="post-article-content">
+      <p>The brief was simple enough. A client had been through a rebrand — new name, new visual identity, new tone of voice. The old brand lived on in 50 PowerPoint decks: board packs, strategy documents, client proposals, quarterly reviews. Every one needed converting.</p>
+
+<p>A designer quoted 2-4 hours per deck. At the midpoint, that’s 150 hours of someone carefully changing Georgia to Calibri, swapping navy for teal, and rewriting “We are pleased to present our findings” as “Here’s what we found.” Important work. Also, the kind of work that makes a talented designer question their career choices by deck number twelve.</p>
+
+<p>We were asked: can AI do this?</p>
+
+<h2 id="the-training-reflex">The Training Reflex</h2>
+
+<p>Our first thought — and I suspect yours too — was to train a model. Feed it examples of old-brand and new-brand decks, let it learn the transformation, and apply it at scale. We’re building <a href="/2026/03/20/when-your-data-cant-leave-the-building/">fine-tuned small language models</a> for other projects. We have the pipeline. The hammer was in our hand, and this looked like a nail.</p>
+
+<p>Then we opened a deck and started listing what actually changes in a rebrand.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>What Changes</th>
+      <th>Example</th>
+      <th>How Many Variants?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Font families</td>
+      <td>Georgia → Calibri</td>
+      <td>4-6 unique mappings</td>
+    </tr>
+    <tr>
+      <td>Font sizes</td>
+      <td>32pt heading → 36pt</td>
+      <td>Tied to the font mappings</td>
+    </tr>
+    <tr>
+      <td>Colour palette</td>
+      <td>#003366 → #007C7A</td>
+      <td>6-8 hex values</td>
+    </tr>
+    <tr>
+      <td>Logo</td>
+      <td>Old logo.png → New logo.png</td>
+      <td>1 swap</td>
+    </tr>
+    <tr>
+      <td>Footer text</td>
+      <td>“Old Corp. All rights reserved.” → “New Brand. Confidential.”</td>
+      <td>1 find-replace</td>
+    </tr>
+    <tr>
+      <td><strong>Tone of voice</strong></td>
+      <td><strong>Formal prose → Punchy, conversational</strong></td>
+      <td><strong>Unbounded</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Five of those six are lookup tables. Fixed inputs, fixed outputs, zero ambiguity. Georgia is <em>always</em> Calibri. #003366 is <em>always</em> #007C7A. The footer string is literally the same on every slide of every deck.</p>
+
+<p>Training a neural network to learn a lookup table is like hiring a sommelier to check if milk has expired. Technically possible. Wildly inefficient. Harder to debug when it gets the answer wrong.</p>
+
+<p>The sixth item — tone — is different. Rewriting “Our methodology is evidence-based, outcome-driven, and designed for sustainable change” as “Evidence-based. Outcome-driven. Built to last” requires understanding language, context, and intent. That’s what language models are good at.</p>
+
+<p>So we drew a line.</p>
+
+<h2 id="the-line-95-pipeline-5-intelligence">The Line: 95% Pipeline, 5% Intelligence</h2>
+
+<p>We split the problem in two:</p>
+
+<p><strong>Deterministic engine</strong> (python-pptx): Handles every visual transformation — fonts, colours, logos, footers, borders, shape fills. Runs in under 2 seconds per deck. Produces identical results every time. Easy to audit, easy to fix, easy to explain to a client.</p>
+
+<p><strong>AI tone adjustment</strong> (Claude, in-context): Handles the language rewriting. Reads the text from each converted slide, applies the brand’s tone rules, and rewrites while preserving all factual content. Uses the designer’s own rewrites as few-shot examples — no training data required.</p>
+
+<p>The beauty of this split is that each half plays to its strengths. The pipeline is fast and exact where you need exactness (your brand colour had better be #007C7A, not #007C79). Claude is flexible and contextual where you need intelligence (knowing that “we are pleased to present” and “we would like to share” are the same pattern, even though the words are different).</p>
+
+<figure>
+  <img src="/assets/diagrams/rendered/rebrand-pipeline.svg" alt="Rebrand pipeline: designer creates exemplar pair, rules extracted to JSON, 95% deterministic transforms via python-pptx, 5% tone adjustment via Claude" style="width: 100%; max-width: 850px;" />
+  <figcaption>The full pipeline. One designer pair produces the rules. python-pptx handles the 95% that's mechanical. Claude handles the 5% that requires understanding. <em>Rendered with <a href="https://d2lang.com">D2</a>.</em></figcaption>
+</figure>
+
+<h2 id="how-the-pipeline-works">How the Pipeline Works</h2>
+
+<h3 id="step-1-the-designer-creates-one-pair">Step 1: The Designer Creates One Pair</h3>
+
+<p>This is the clever part, and it’s the designer’s one contribution to the entire process.</p>
+
+<p>They take a single real deck and recreate it in the new brand. Same slides, same text, same structure — different visual treatment. Where they also change the <em>wording</em> (not just the formatting), that signals a tone shift.</p>
+
+<p>We end up with two files: <code class="language-plaintext highlighter-rouge">source-exemplar.pptx</code> and <code class="language-plaintext highlighter-rouge">target-exemplar.pptx</code>.</p>
+
+<h3 id="step-2-the-script-diffs-them">Step 2: The Script Diffs Them</h3>
+
+<p>A Python script walks both files slide-by-slide, shape-by-shape, text-run-by-text-run. For each matching text string, it compares the formatting and builds a mapping:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"fonts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"Georgia|32.0|bold"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calibri"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"size_pt"</span><span class="p">:</span><span class="w"> </span><span class="mf">36.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bold"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Cambria|14.0|normal"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calibri"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"size_pt"</span><span class="p">:</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"italic"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"colours"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"#003366"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#007C7A"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"#CC9900"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#2ECC71"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"#F5F0E8"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FAFAFA"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"footer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"find"</span><span class="p">:</span><span class="w"> </span><span class="s2">"© 2024 Meridian Consulting Group. All rights reserved."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"replace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apex Partners Ltd. Private &amp; Confidential."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The script also captures every text change — places where the designer rewrote the words. These become the tone examples:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Before: "Our team brings deep expertise in cloud migration,
+         platform modernisation, and AI-native architecture."
+After:  "Our people bring hands-on expertise in cloud,
+         platforms, and AI — not just slide decks."
+</code></pre></div></div>
+
+<p>From these examples, we derive tone rules: formal → conversational, passive → active, long sentences → punchy fragments, corporate jargon → plain English.</p>
+
+<h3 id="step-3-apply-to-50-decks">Step 3: Apply to 50 Decks</h3>
+
+<p>The conversion engine opens each deck and applies the mapping mechanically. Every text run gets its font checked and swapped. Every colour value gets looked up and replaced. Every footer gets rewritten. Every logo gets swapped.</p>
+
+<p>On our test deck — a 6-slide cloud migration assessment — the pipeline made 105 font changes, 52 colour changes, and 6 footer updates in under 2 seconds.</p>
+
+<h3 id="step-4-claude-adjusts-the-tone">Step 4: Claude Adjusts the Tone</h3>
+
+<p>After the visual conversion, Claude reads each slide’s text and applies the tone rules. The prompt pattern is straightforward:</p>
+
+<p><em>“Given these tone rules and examples, rewrite this text to match the target brand voice. Preserve all facts, technical terms, and proper nouns. Only change the language style.”</em></p>
+
+<p>Claude sees the designer’s own before/after examples, so it’s learning the brand voice from the person who defined it — not from a training set we curated.</p>
+
+<h2 id="what-this-looks-like-in-practice">What This Looks Like in Practice</h2>
+
+<p>Here’s a slide from the test deck, before and after:</p>
+
+<p><strong>Before (old brand):</strong></p>
+<blockquote>
+  <p>The organisation currently operates 147 on-premises applications across three data centres. Our assessment identifies 82 applications suitable for cloud migration within the next 18 months. We recommend a phased approach beginning with non-critical workloads to establish patterns and confidence.</p>
+</blockquote>
+
+<p><strong>After (new brand, visual conversion + tone adjustment):</strong></p>
+<blockquote>
+  <p>147 apps running on-prem across three data centres. We’ve identified 82 that are ready for cloud migration in the next 18 months. Start with non-critical workloads — build the pattern, build confidence, then scale.</p>
+</blockquote>
+
+<p>Same facts. Same numbers. Same recommendation. Different voice. The fonts, colours, and footer changed too — but those are invisible in a text excerpt.</p>
+
+<h2 id="the-decision-that-mattered">The Decision That Mattered</h2>
+
+<p>The most important moment in this project wasn’t writing the code. It was the conversation where we decided <em>not</em> to train a model.</p>
+
+<p>We’ve seen too many organisations reach for AI when a well-structured pipeline would be faster, cheaper, and easier to maintain. The reverse is equally true — we’ve seen teams build increasingly brittle rule systems when a model would handle the variation naturally. The art is drawing the line in the right place.</p>
+
+<p>Here’s the framework we used:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Signal</th>
+      <th>Reach for a Model</th>
+      <th>Reach for a Pipeline</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Input variation</td>
+      <td>High — natural language, many phrasings</td>
+      <td>Low — structured, enumerable</td>
+    </tr>
+    <tr>
+      <td>Rules expressible?</td>
+      <td>No — too many edge cases</td>
+      <td>Yes — fits in a JSON file</td>
+    </tr>
+    <tr>
+      <td>Output must be exact?</td>
+      <td>Approximate is fine</td>
+      <td>Must be pixel-perfect</td>
+    </tr>
+    <tr>
+      <td>Error consequences</td>
+      <td>Graceful degradation</td>
+      <td>Hard failure</td>
+    </tr>
+    <tr>
+      <td>Debugging</td>
+      <td>“Why did the model say this?”</td>
+      <td>“This key maps to this value”</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The PowerPoint rebrand sits firmly on the pipeline side for 95% of the work. The tone adjustment is the 5% where a model earns its keep — not by learning from training data, but by understanding language in context.</p>
+
+<figure>
+  <img src="/assets/diagrams/rendered/rebrand-decision.svg" alt="Decision framework: enumerable transformations use a pipeline, language understanding uses AI, both together use the split approach" style="width: 100%; max-width: 600px;" />
+  <figcaption>The decision framework. Can you enumerate it? Pipeline. Does it need language understanding? AI. Both? Split the problem. <em>Rendered with <a href="https://d2lang.com">D2</a>.</em></figcaption>
+</figure>
+
+<h2 id="what-wed-tell-the-sommelier">What We’d Tell the Sommelier</h2>
+
+<p>If you’re staring at a problem and wondering whether it’s an AI problem:</p>
+
+<p><strong>Start by listing what changes.</strong> If you can enumerate every transformation in a spreadsheet, you don’t need a model. You need a script.</p>
+
+<p><strong>Find the boundary.</strong> There’s usually a seam between the mechanical and the intelligent. Make the mechanical part deterministic, and only invite the AI to the part that actually requires understanding.</p>
+
+<p><strong>Use the designer’s work as your spec.</strong> They’ve already done the hard thinking about what the transformation should look like. Your job is to scale it, not to reinvent it.</p>
+
+<p>The 50 decks are converting. The designer is back to doing design work. And we didn’t train a model.</p>
+
+<hr />
+
+<p><em>Sailesh Panchal is Director at Digital Transformation Advisory (DTA), specialising in technology strategy and AI-native architecture for enterprise clients.</em></p>
+
+    </div>
+  </div>
+</article>
+
+<!-- Mermaid.js for interactive diagrams -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'neutral',
+    flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' },
+    sequence: { useMaxWidth: true },
+    securityLevel: 'loose'
+  });
+</script>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/">
+          <img src="/assets/images/corporate/dta-logo.png" alt="Digital Transformation Advisory" class="footer-logo">
+        </a>
+        <div class="footer-links">
+          <a href="/policy-documentation/">Policy Documents</a>
+          <a href="/insights/">Insights</a>
+          <a href="/connect/">Connect</a>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-bottom">&copy; 2026 Digital Transformation Advisory Ltd</p>
+    </div>
+  </footer>
+
+</body>
+</html>
