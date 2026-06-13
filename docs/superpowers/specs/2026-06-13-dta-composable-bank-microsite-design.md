@@ -364,6 +364,78 @@ The page will distinguish:
 
 A Domain Building Block packages a meaningful banking capability. An Architecture Building Block supplies reusable technical and control capability. Public copy will explain roles and reuse, not detailed contracts or implementation status.
 
+### Research-backed callout layer
+
+The platform and proposition pages will use accessible popovers to reveal advisory depth without turning the main journey into a technical paper.
+
+Each callout will contain:
+
+1. a plain-English definition;
+2. why the distinction matters to a bank;
+3. a boundary statement explaining what the concept is not;
+4. a proposition example; and
+5. an optional primary-source link or jurisdiction note.
+
+DTA research notes will guide topic selection and explanation. Public legal, regulatory, payment-standard, and policy claims will be checked against current primary sources before publication. Internal notes, AI-generated research, and the TypeScript reference prototype are not themselves presented as independent evidence.
+
+#### Core callout inventory
+
+| Callout | Public explanation |
+|---|---|
+| Programmable payment | Rules govern whether, when, how, or to whom a payment is initiated or executed. The underlying money can remain an ordinary bank deposit. |
+| Programmable money | Conditions are attached to, or enforced as part of, the monetary instrument itself. This is distinct from applying controls in the payment or account layer and may affect where or how the value can be used. |
+| Agentic orchestration | A task-focused agent can observe, prepare, check, recommend, and execute within defined authority. It is not merely a chatbot, and it does not acquire legal authority by making a recommendation. |
+| Tokenised bank deposit | A bank deposit liability represented on programmable infrastructure. It remains a claim on the issuing bank and is not automatically a stablecoin. |
+| Stablecoin | A token designed to maintain a stable value. The holder's legal claim, backing, redemption rights, and protections depend on the issuer, structure, and regulatory regime. |
+| Payment rail | The mechanism used to move or settle value. It is distinct from the monetary asset, the payment instruction, and the business message. |
+| ISO 20022 | A financial-message standard and business vocabulary. It is not a payment rail, currency, ledger, or settlement asset. |
+| On-ramp and off-ramp | Services that connect conventional accounts and payment rails with tokenised forms of value, including conversion, compliance, movement, and reconciliation. |
+| Shadow ledger | A controlled projection of balances, transactions, or operational events from an authoritative external system. It supports visibility and reconciliation but does not silently replace the source ledger. |
+| Distributed ledger | A shared-state and evidence mechanism that may support transfer or settlement. Recording a token on it does not, by itself, establish legal title to an off-chain asset. |
+| Domain Building Block | A reusable banking capability combining journey, policy, controls, evidence, and execution. |
+| Architecture Building Block | Shared technical and control infrastructure used by several Domain Building Blocks and propositions. |
+
+#### Proposition callout inventory
+
+- Family graph versus entitlement
+- Joint ownership versus delegated access
+- Power of Attorney versus multi-signature approval
+- Pooled saving versus merged ownership
+- Yacht operating company versus vessel asset
+- Fractional vessel ownership versus tokenisation
+- Asset-backed lending versus sale of an ownership interest
+- Open Banking consent scope
+- Authoritative ledger versus franchise shadow ledger
+- Student contributor permission
+- Source-of-funds evidence
+
+#### Yacht fractional-ownership callout
+
+**Can a yacht be fractionally owned?**
+
+Yes. UK ship-registration rules recognise ownership of a share in a ship and the transfer or transmission of that share. A real proposition may use direct co-ownership, a company, partnership, trust, or another legal vehicle, subject to the vessel's flag, operating jurisdiction, tax position, finance, and contractual arrangements.
+
+**Can those fractions be represented by tokens?**
+
+Potentially, but the token is not the legal right merely because it exists on a distributed ledger. The legal documents, ship registry where relevant, company or shareholder records, custody model, transfer restrictions, and enforcement arrangements must connect the token to an enforceable interest.
+
+If fractional interests are marketed or managed as investments, the arrangement may engage securities, collective-investment, financial-promotion, custody, tax, anti-money-laundering, and consumer-protection rules. Classification is specific to the rights, structure, offer, investor type, and jurisdiction.
+
+The public site will therefore describe a yacht as a **high-value asset capable of fractional legal ownership or investment structuring**, not as a universally recognised "fractional asset class."
+
+The callout must also state:
+
+> Control of a private key can prove control of a token. It does not necessarily prove legal ownership of the underlying vessel, company, or investment right.
+
+#### Initial primary sources
+
+- [UK Merchant Shipping (Registration of Ships) Regulations 1993](https://www.legislation.gov.uk/uksi/1993/3138/contents)
+- [FCA PS19/22: Guidance on Cryptoassets](https://www.fca.org.uk/publication/policy/ps19-22.pdf)
+- [Bank of England: Central Bank Digital Currency opportunities, challenges and design](https://www.bankofengland.co.uk/paper/2020/central-bank-digital-currency-opportunities-challenges-and-design-discussion-paper)
+- [ISO 20022 official site](https://www.iso20022.org/)
+
+These links support definitions and perimeter awareness; they do not replace proposition-specific legal advice.
+
 ## 9. Content Model and Components
 
 The public application will keep proposition content separate from rendering.
@@ -380,6 +452,7 @@ Each proposition definition will contain:
 - transformation lenses;
 - DBBs and ABBs;
 - legal and economic clarifications;
+- research-backed callouts and source links;
 - pilot defaults; and
 - related platform capabilities.
 
@@ -593,6 +666,8 @@ The public build must not contain:
 - External franchisee ledgers remain authoritative.
 - Yacht staff actions obey company, role, budget, and mandate controls.
 - Asset tokens, stablecoins, and tokenised deposits remain distinct.
+- Private-key control is never presented as sufficient proof of legal title to an underlying asset.
+- Yacht fractional ownership is described as a structure-dependent legal interest, not a settled universal asset class.
 
 ### Money, ledger, and agent controls
 
@@ -609,6 +684,8 @@ The public build must not contain:
 - Sequential demonstrations support step and autoplay.
 - Autoplay can pause and cannot overrun the final step.
 - Popovers work with mouse, keyboard, and touch.
+- Essential callout definitions remain available without hover.
+- Legal and regulatory callouts display their jurisdiction and publication or review date.
 - The pilot brief downloads and produces the correct prefilled email.
 
 ### Accessibility and presentation
