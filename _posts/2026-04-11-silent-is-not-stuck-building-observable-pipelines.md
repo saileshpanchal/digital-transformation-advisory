@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Silent Is Not Stuck: What Two Hangs Taught Me About Observable Pipelines"
 date: 2026-04-11
 categories: [Engineering, Operations]

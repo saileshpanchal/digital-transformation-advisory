@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Turning Your Knowledge Base Into a Graph You Can Argue With"
 date: 2026-04-08
 categories: [Engineering, AI]

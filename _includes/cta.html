@@ -1,0 +1,25 @@
+<!-- Closing call-to-action band: book a call + newsletter capture -->
+<section class="cta-band section--dark">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="cta-book">
+        <h2>Let's build something that ships.</h2>
+        <p>Tell us what you're trying to do with AI. We'll tell you, honestly, whether and how we can help.</p>
+        <a href="/connect/" class="btn btn--primary">Book a call</a>
+      </div>
+      <div class="cta-subscribe">
+        <h3>Get the insights by email</h3>
+        <p>Field notes on agentic engineering, on-device AI and transformation. No spam, unsubscribe anytime.</p>
+        <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form">
+          <input type="hidden" name="form-name" value="newsletter">
+          <p class="hidden-field"><label>Don't fill this out: <input name="bot-field"></label></p>
+          <div class="newsletter-input">
+            <label class="visually-hidden" for="newsletter-email">Email address</label>
+            <input type="email" id="newsletter-email" name="email" placeholder="you@company.com" required>
+            <button type="submit" class="btn btn--primary">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

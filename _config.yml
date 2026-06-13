@@ -1,10 +1,15 @@
 title: Digital Transformation Advisory
 description: >-
-  Transforming Organisations to work for you. Specialising in Agile/SaFE,
-  Strategic Architecture and ISO 20022 Payments.
+  We help organisations build agentic product squads and production AI
+  platforms — grounded in 30 years of transformation, enterprise architecture
+  and payments.
 url: "https://digital-transformation-advisory.com"
 baseurl: ""
 author: Sailesh Panchal
+
+# Social links — used in the post author bio and footer. Leave blank to hide.
+linkedin: ""
+medium: ""
 
 permalink: /:year/:month/:day/:title/
 timezone: Europe/London
@@ -39,6 +44,9 @@ exclude:
   - assets/diagrams/src
   - assets/diagrams/render.sh
   - docs
+  - .superpowers
+  - .gstack
+  - scripts
   - podcast
   - about.md
   - categories.md

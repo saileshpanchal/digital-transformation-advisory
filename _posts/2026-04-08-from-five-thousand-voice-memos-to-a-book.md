@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "From 5,000 Voice Memos to a Book: The Pipeline That Runs While You Sleep"
 date: 2026-04-08
 categories: [Engineering, AI]
