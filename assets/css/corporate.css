@@ -264,6 +264,18 @@ p { margin-bottom: 1rem; }
   color: #29ABE2;
 }
 
+/* Ghost button on dark backgrounds */
+.btn--ghost-dark {
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  background: transparent;
+}
+
+.btn--ghost-dark:hover {
+  border-color: #29ABE2;
+  color: #29ABE2;
+}
+
 /* Compact button for the nav bar */
 .btn--nav {
   padding: 0.55rem 1.4rem;
@@ -1301,6 +1313,60 @@ p { margin-bottom: 1rem; }
 .showcase-list a:hover {
   color: #29ABE2;
   padding-left: 0.25rem;
+}
+
+/* ---------- Approach: architecture pills ---------- */
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.pill {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 999px;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #161616;
+}
+
+/* ---------- Approach: squad roster ---------- */
+.squad-roster {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 760px;
+  margin: 2rem auto 0;
+}
+
+.squad-role {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.squad-role .role-count {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #29ABE2;
+  line-height: 1;
+}
+
+.squad-role .role-name {
+  display: block;
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .squad-roster { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ---------- Connect intro ---------- */
