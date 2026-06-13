@@ -1265,6 +1265,44 @@ p { margin-bottom: 1rem; }
   border-color: #29ABE2;
 }
 
+/* ---------- Showcase band ---------- */
+.section--dark .section-label { color: rgba(255, 255, 255, 0.5); }
+
+.showcase {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.showcase-text h2 { color: #fff; margin-bottom: 1rem; }
+.showcase-text p { color: rgba(255, 255, 255, 0.75); }
+.showcase-text .btn { margin-top: 0.5rem; }
+
+.showcase-list {
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  padding-left: 2rem;
+}
+
+.showcase-list li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.showcase-list li:last-child { border-bottom: none; }
+
+.showcase-list a {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s, padding-left 0.2s;
+}
+
+.showcase-list a:hover {
+  color: #29ABE2;
+  padding-left: 0.25rem;
+}
+
 /* ---------- Connect intro ---------- */
 .connect-intro {
   color: rgba(255, 255, 255, 0.85);
@@ -1378,6 +1416,15 @@ p { margin-bottom: 1rem; }
 /* ---------- Responsive: refresh components ---------- */
 @media (max-width: 768px) {
   .offerings-grid { grid-template-columns: 1fr; }
+
+  .showcase { grid-template-columns: 1fr; gap: 2rem; }
+
+  .showcase-list {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-left: 0;
+    padding-top: 1.5rem;
+  }
 
   .cta-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 

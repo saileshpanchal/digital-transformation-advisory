@@ -44,6 +44,9 @@ exclude:
   - assets/diagrams/src
   - assets/diagrams/render.sh
   - docs
+  - .superpowers
+  - .gstack
+  - scripts
   - podcast
   - about.md
   - categories.md
