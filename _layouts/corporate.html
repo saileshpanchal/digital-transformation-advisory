@@ -26,22 +26,21 @@
         <div class="nav-dropdown">
           <a href="{{ '/' | relative_url }}">Home</a>
           <div class="nav-dropdown-content">
-            <a href="{{ '/' | relative_url }}#mission">Our Mission</a>
-            <a href="{{ '/' | relative_url }}#method">Our Method</a>
-            <a href="{{ '/' | relative_url }}#phases">Phases</a>
-            <a href="{{ '/' | relative_url }}#services">Services</a>
-            <a href="{{ '/' | relative_url }}#about">About Us</a>
+            <a href="{{ '/' | relative_url }}#mission">Why we exist</a>
+            <a href="{{ '/' | relative_url }}#services">What we do</a>
+            <a href="{{ '/' | relative_url }}#how">How we work</a>
+            <a href="{{ '/' | relative_url }}#about">Leadership</a>
           </div>
         </div>
+        <a href="{{ '/insights/' | relative_url }}">Insights</a>
         <div class="nav-dropdown">
-          <a href="{{ '/policy-documentation/' | relative_url }}">Policy Documentation</a>
+          <a href="{{ '/policy-documentation/' | relative_url }}">Policies</a>
           <div class="nav-dropdown-content">
             <a href="{{ '/policy-documentation/' | relative_url }}#modern-slavery">Modern Slavery Policy</a>
             <a href="{{ '/policy-documentation/' | relative_url }}#privacy">Privacy Policy</a>
           </div>
         </div>
-        <a href="{{ '/insights/' | relative_url }}">Insights</a>
-        <a href="{{ '/connect/' | relative_url }}">Connect</a>
+        <a href="{{ '/connect/' | relative_url }}" class="btn btn--primary btn--nav">Book a call</a>
       </div>
     </div>
   </nav>
@@ -56,9 +55,11 @@
           <img src="{{ '/assets/images/corporate/dta-logo.png' | relative_url }}" alt="{{ site.title }}" class="footer-logo">
         </a>
         <div class="footer-links">
-          <a href="{{ '/policy-documentation/' | relative_url }}">Policy Documents</a>
           <a href="{{ '/insights/' | relative_url }}">Insights</a>
-          <a href="{{ '/connect/' | relative_url }}">Connect</a>
+          <a href="{{ '/connect/' | relative_url }}">Book a call</a>
+          <a href="{{ '/policy-documentation/' | relative_url }}">Policies</a>
+          {% if site.linkedin %}<a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+          {% if site.medium %}<a href="{{ site.medium }}" target="_blank" rel="noopener">Medium</a>{% endif %}
         </div>
       </div>
       <hr class="footer-divider">

@@ -253,6 +253,30 @@ p { margin-bottom: 1rem; }
   color: #fff;
 }
 
+.btn--ghost {
+  border: 2px solid rgba(22, 22, 22, 0.15);
+  color: #161616;
+  background: transparent;
+}
+
+.btn--ghost:hover {
+  border-color: #29ABE2;
+  color: #29ABE2;
+}
+
+/* Compact button for the nav bar */
+.btn--nav {
+  padding: 0.55rem 1.4rem;
+  font-size: 0.85rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 /* ---------- Mission Section ---------- */
 .mission {
   text-align: center;
@@ -1049,4 +1073,330 @@ p { margin-bottom: 1rem; }
   .hero h1 { font-size: 1.6rem; }
   .partners-grid { gap: 1.5rem; }
   .partners-grid img { height: 35px; }
+}
+
+/* ==========================================================================
+   Refresh 2026 — offerings, featured insight, CTA band, newsletter, post footer
+   ========================================================================== */
+
+/* Utility */
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.hidden-field { display: none; }
+
+/* ---------- Offerings (simplified services) ---------- */
+.offerings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.offering-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.offering-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.offering-card img {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 1.25rem;
+}
+
+.offering-card h3 {
+  color: #29ABE2;
+  margin-bottom: 0.75rem;
+}
+
+.offering-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.offering-card ul {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.offering-card ul li {
+  padding: 0.25rem 0 0.25rem 1rem;
+  position: relative;
+}
+
+.offering-card ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #29ABE2;
+}
+
+.offering-card .btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* ---------- Featured insight ---------- */
+.featured-post {
+  display: block;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-left: 4px solid #29ABE2;
+  border-radius: 8px;
+  padding: 2.5rem;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.featured-post:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.featured-flag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #29ABE2;
+  margin-bottom: 0.75rem;
+}
+
+.featured-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.featured-meta {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.featured-excerpt {
+  font-size: 1.05rem;
+  color: #555;
+  max-width: 760px;
+}
+
+.featured-readmore {
+  display: inline-block;
+  font-weight: 600;
+  color: #29ABE2;
+}
+
+/* ---------- CTA band ---------- */
+.cta-band {
+  background: #161616;
+  color: #fff;
+  padding: 4.5rem 0;
+}
+
+.cta-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.cta-band h2,
+.cta-band h3 { color: #fff; }
+
+.cta-band p { color: rgba(255, 255, 255, 0.7); }
+
+.cta-book h2 { margin-bottom: 1rem; }
+.cta-book .btn { margin-top: 0.5rem; }
+
+.cta-subscribe {
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  padding-left: 3rem;
+}
+
+.cta-subscribe h3 { margin-bottom: 0.75rem; }
+
+/* ---------- Newsletter form ---------- */
+.newsletter-form { margin-top: 1rem; }
+
+.newsletter-input {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.newsletter-input input[type="email"] {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+.newsletter-input input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.newsletter-input input[type="email"]:focus {
+  outline: none;
+  border-color: #29ABE2;
+}
+
+/* ---------- Connect intro ---------- */
+.connect-intro {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+
+/* ---------- Post footer (bio + CTA + subscribe) ---------- */
+.post-footer {
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+
+.author-bio {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 2rem 0;
+  border-top: 1px solid #e5e5e5;
+}
+
+.author-bio-photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #29ABE2;
+}
+
+.author-bio-name {
+  font-weight: 700;
+  color: #161616;
+  margin-bottom: 0.35rem;
+}
+
+.author-bio-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.author-bio-links {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.author-bio-links a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #29ABE2;
+}
+
+.post-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  background: #F5F7FA;
+  border-radius: 8px;
+  padding: 1.75rem 2rem;
+  margin: 1.5rem 0;
+}
+
+.post-cta h3 { margin-bottom: 0.35rem; }
+
+.post-cta p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0;
+}
+
+.post-cta .btn { white-space: nowrap; }
+
+.post-subscribe {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+}
+
+.post-subscribe p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+/* Light-background newsletter input (post footer) */
+.post-subscribe .newsletter-input input[type="email"] {
+  border: 1px solid #d5d9e0;
+  background: #fff;
+  color: #333;
+}
+
+.post-subscribe .newsletter-input input[type="email"]::placeholder {
+  color: #aaa;
+}
+
+.post-back {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.post-back a {
+  color: #29ABE2;
+  font-weight: 600;
+}
+
+/* ---------- Responsive: refresh components ---------- */
+@media (max-width: 768px) {
+  .offerings-grid { grid-template-columns: 1fr; }
+
+  .cta-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  .cta-subscribe {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-left: 0;
+    padding-top: 2.5rem;
+  }
+
+  .featured-title { font-size: 1.4rem; }
+
+  .post-cta { flex-direction: column; align-items: flex-start; }
+
+  .author-bio {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .author-bio-links { justify-content: center; }
 }
