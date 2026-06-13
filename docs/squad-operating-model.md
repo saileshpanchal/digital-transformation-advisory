@@ -14,39 +14,92 @@ Composable Bank showcase).
 
 Two reader types must recognise themselves in everything below:
 
-- **Audience A — the incumbent.** An established bank or larger FinTech that
-  already runs real operations and now wants to *adopt the model* and migrate
-  towards it without breaking what works.
-- **Audience B — the founder.** A FinTech or challenger *creating a new bank
-  for the first time*, who needs to avoid both under-building (no real bank
-  underneath) and over-building (a cost base they can't carry).
+- **Audience A — the incumbent (PRIMARY).** An established organisation — bank or
+  larger FinTech — that already runs real operations and now needs a whole-
+  organisation transformation: adopt the model and migrate towards it without
+  breaking what works. This is our lead audience (the large-scale transformation
+  client a Deloitte would pursue).
+- **Audience B — the founder (SECONDARY, signposted).** A FinTech or challenger
+  *creating a new bank for the first time*, who needs to avoid both under-building
+  (no real bank underneath) and over-building (a cost base they can't carry).
+  We address them through clear signposts woven into the incumbent narrative,
+  not a separate site path.
 
 Wherever the advice diverges, the document calls it out explicitly:
 > **Incumbent:** … **Founder:** …
 
-Sections marked **🗨️ To discuss** are open questions for us to work through.
+Sections marked **🗨️ To discuss** are open questions; **RESOLVED** markers
+record decisions taken.
 
 ---
 
-## 1. The thesis
+## Decisions log (2026-06-13)
 
-Modern banking propositions are not won or lost on technology. They are won on
-whether a differentiated proposition can make money, earn trust, and *operate*
-through the institution that has to deliver it.
+1. **Thesis.** Strategy-led *construction* of the organisation of the future:
+   a whole-org transformation with a high-level vision + roadmap, ~2 years out,
+   changing people, process and technology together. (§1)
+2. **Site structure.** One narrative, **incumbent-led** (primary target), with
+   **founder signposts** woven in — not two pages or competing CTAs. (§7, §11)
+3. **Frameworks.** Present as proven industry models — **BIAN, SAFe, TOGAF
+   (ABBs)** — assembled into DTA's opinionated, customised view. **DBB is our
+   own coined term**, mirroring TOGAF's ABB. (§1, §4, §5)
+4. **Squad boundaries.** No single right shape; we have run it both ways. The
+   answer depends on the client's existing people and talent, and **AI is
+   blurring the role boundaries** significantly. DTA advises the choice rather
+   than prescribing one. (§3)
+5. **Named first offer.** *Still open* — whether the six-week blueprint becomes a
+   headline offer here. (§8)
+6. **Tone.** Credible to a bank CRO, never intimidating to a founder. Agreed. (§6)
 
-So the model starts with architecture and strategy, expresses delivery as small
-accountable squads, organises those squads around reusable banking capabilities,
-groups them into value streams, and then reshapes the wider business to support
-them. Technology is the enabler, not the entry point.
+---
 
-The pay-off is **composability**: one coherent platform and operating model can
-carry many propositions, countries, currencies and brands — because business
-variation lives in configuration and reusable building blocks, not in duplicated
-stacks or duplicated org charts.
+## 1. The thesis — RESOLVED
 
-> 🗨️ **To discuss:** Is "composable banking" the right umbrella term for the
-> site, or do we lead with "agentic, value-stream-aligned banking"? What single
-> sentence is the thesis?
+**The bank — and the organisation — of the future has to be *constructed*, not
+assembled.** It needs a strategic approach to construction: a whole-organisation
+transformation, expressed as a high-level vision and a roadmap pitched roughly
+two years out, that changes **people, process and technology** together.
+
+One-sentence form (candidate for the site):
+
+> The organisation of the future is built on purpose — a two-year vision and
+> roadmap that transforms people, process and technology together, not a
+> technology project bolted onto today's org.
+
+Supporting points:
+
+- It is **strategy-led construction**, not a set of disconnected initiatives.
+- It is a **whole-organisation transformation**, not an engineering re-org.
+- It is governed by a **high-level vision and a roadmap**, with a realistic
+  **~2-year** horizon.
+- It moves **people, process and technology** in step; change one alone and the
+  transformation stalls.
+- The pay-off is **composability** — one coherent platform and operating model
+  carrying many propositions, countries, currencies and brands, because
+  variation lives in configuration and reusable building blocks, not duplicated
+  stacks or duplicated org charts.
+
+### Frameworks we build on — and what's ours
+
+This is an **opinionated model built on industry-proven foundations**, which our
+advisory then customises to each client. We are explicit about what is
+established and what is DTA's own view:
+
+- **BIAN** — the banking industry's reference architecture for capabilities and
+  service domains. Established standard.
+- **SAFe** — the Scaled Agile Framework for value streams and coordinated
+  delivery. Established standard.
+- **TOGAF** — the enterprise-architecture method; gives us **Architecture
+  Building Blocks (ABBs)**. Established standard.
+- **Domain Building Blocks (DBBs)** — *our term.* DTA coined it, deliberately
+  mirroring TOGAF's ABBs: where an ABB is a reusable *technical/architecture*
+  capability, a **DBB is a reusable *banking* capability** (journey + policy +
+  controls + evidence + execution). It is our opinionated contribution, not an
+  industry standard.
+
+Honest framing for the site: **proven frameworks, assembled into an opinionated
+model, customised per client** — with DBB as our named idea sitting alongside
+TOGAF's ABB.
 
 ---
 
@@ -80,9 +133,10 @@ away.
 > **Founder:** the risk is the opposite — discovering the weight in production,
 > after a licence condition or an incident forces the issue.
 
-> 🗨️ **To discuss:** Do we want a crisp "what a real bank actually requires"
-> checklist on the site? It's a strong reality-check for founders and a
-> credibility signal for incumbents — but it must not read as fear-selling.
+> **Open (amount only):** Tone agreed — credible, not fear-selling. Still to
+> decide: how much of a crisp "what a real bank actually requires" checklist to
+> show. A short version is a credibility signal for incumbents and a useful
+> reality-check for founders. (Tracked as remaining open #2 in §10.)
 
 ---
 
@@ -108,10 +162,16 @@ Principles:
 - Seniority over headcount: agentic tooling lets a small senior squad do what
   used to take a much larger team.
 
-> 🗨️ **To discuss:** Where do design, QA, risk/compliance and SRE sit — inside
-> the squad, as a shared "platform/enabling" team, or as a chapter/guild across
-> squads? Does a data engineer belong in every squad or in a shared data value
-> stream? This is the question clients will probe hardest.
+> **RESOLVED — DTA's position:** There is no single right answer, and we have
+> run it both ways successfully. Whether design, QA, risk/compliance, SRE and
+> even data sit *inside* each squad, in a shared enabling team, or as
+> cross-cutting chapters/guilds depends on the client's **existing people and
+> talent**. **AI is now moving the needle and significantly blurring these role
+> boundaries** — a smaller, more senior, AI-augmented squad can absorb work that
+> used to need dedicated roles. Navigating this choice deliberately is part of
+> what DTA advises on: we bring a sensible default and adapt it, rather than
+> prescribing one shape for everyone. (The 5-person squad above is that
+> default, not a mandate.)
 
 ---
 
@@ -134,10 +194,11 @@ Why DBBs matter:
 - They keep **business variation** in composition and configuration, not in
   forked technology.
 
-> 🗨️ **To discuss:** How prescriptive do we get publicly about the DBB
-> catalogue? A named, visible catalogue is compelling proof but risks looking
-> like a product spec. Where's the line for the public site vs the protected
-> Architecture Room?
+> **RESOLVED (with default):** DBB is **our coined term** (mirroring TOGAF's
+> ABB) — we name the *concept* and a representative set of DBBs publicly, because
+> it's a genuine differentiator. The full catalogue, contracts and
+> implementation status stay in the protected Architecture Room. Default for the
+> public site: concept + ~6–8 illustrative DBBs, no contracts.
 
 ---
 
@@ -157,9 +218,11 @@ re-centralising delivery into a programme office.
 > **Founder:** value streams are how your first 2–3 squads stay coherent as you
 > grow past the "everyone in one room" stage.
 
-> 🗨️ **To discuss:** How much explicit SAFe vocabulary (ART, PI planning, etc.)
-> do we use? It reassures incumbents and can alienate founders. Option: use the
-> concepts, brand the labels as DTA's, footnote the SAFe lineage.
+> **RESOLVED:** Name **SAFe explicitly** as the proven foundation (incumbents
+> expect it), use its core concepts, and present our application as an
+> opinionated, customised view. We don't hide the lineage — we add our own
+> framing (e.g. DBBs) on top. Keep heavy SAFe jargon (ART, PI planning) light in
+> founder-facing passages.
 
 ---
 
@@ -180,15 +243,18 @@ the value streams:
 If these functions don't move, the squads become a fast engine bolted to a slow
 chassis, and the transformation stalls.
 
-> 🗨️ **To discuss:** Do we show a simple "before/after" org picture
-> (silos → value streams)? And do we name the cultural shift explicitly —
-> accountable autonomy, evidence over status reporting?
+> **RESOLVED (default):** Yes — one simple before/after (silos → value streams),
+> and name the cultural shift explicitly: **accountable autonomy**, and
+> **evidence over status reporting**. One diagram, not a treatise.
 
 ---
 
 ## 7. The two journeys
 
-The model is one destination with two very different starting points.
+The model is one destination with two very different starting points. **The site
+leads with the incumbent journey (7A)** as the spine of the narrative; the
+founder journey (7B) is woven in as signposts and a lighter entry point, not a
+separate path.
 
 ### 7A. The incumbent — adopt and migrate
 
@@ -227,8 +293,10 @@ carry.
 | Hardest part | Migration sequencing | Knowing what's genuinely required |
 | DTA's biggest lever | Whole-bank transformation | Architecture, strategy & first squads |
 
-> 🗨️ **To discuss:** Should the site present these as two explicit paths (two
-> CTAs, "I run a bank" / "I'm building one"), or one narrative with contrasts?
+> **RESOLVED:** One narrative, **incumbent-led** (our primary large-transformation
+> target), with clear **founder signposts** woven in. Not two pages or competing
+> CTAs — the incumbent story is the spine, founder guidance sits alongside as
+> asides and a lighter entry point.
 
 ---
 
@@ -275,14 +343,15 @@ governed platform, every journey demonstrable in the browser.
 
 ---
 
-## 10. Open questions to resolve before site copy
+## 10. Open questions still to resolve
 
-1. The one-sentence thesis (see §1).
-2. Two explicit audience paths vs one narrative (see §7).
-3. How prescriptive to be publicly about DBBs and SAFe (see §4, §5).
-4. Whether to add a named, low-commitment first offer (see §8).
-5. Tone balance: credible to a bank CRO, not intimidating to a founder.
-6. How much of the "real bank is big" reality-check to show without fear-selling.
+Most decisions are now captured in the **Decisions log** at the top. Remaining:
+
+1. **Named first offer** — does the six-week blueprint become a headline,
+   low-commitment entry point on the site? (see §8)
+2. **Reality-check dosage** — how much of the "a real bank is big" message to
+   show without tipping into fear-selling (tone agreed; amount TBD). (see §2)
+3. **Final wording of the public one-sentence thesis** (see §1 candidate).
 
 ---
 
@@ -295,9 +364,10 @@ governed platform, every journey demonstrable in the browser.
 | §3 Squad | `/approach/` squad roster; homepage operating-model teaser |
 | §4 DBBs / §5 Value streams | `/approach/` "how delivery is organised" |
 | §6 Whole-business reorg | `/approach/` reorganise section |
-| §7 Two journeys | New: explicit audience paths (TBD) |
+| §7 Two journeys | `/approach/`: incumbent-led narrative with founder signposts |
+| §1 Frameworks (BIAN/SAFe/TOGAF/DBB) | `/approach/` "how delivery is organised"; a credibility note |
 | §8 Where DTA helps | `/approach/` "where DTA helps"; homepage offerings |
 | §9 Proposition → spike | `/approach/` closing band; Composable Bank showcase |
 
-> 🗨️ **To discuss:** Do the two audiences (§7) warrant their own pages
-> (`/for-banks/`, `/for-founders/`), or sections within `/approach/`?
+> **RESOLVED:** No separate `/for-banks/` or `/for-founders/` pages. One
+> incumbent-led narrative on `/approach/`, with founder signposts woven in.
