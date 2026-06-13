@@ -19,8 +19,9 @@ Two reader types must recognise themselves in everything below:
   organisation transformation: adopt the model and migrate towards it without
   breaking what works. This is our lead audience (the large-scale transformation
   client a Deloitte would pursue).
-- **Audience B — the founder (SECONDARY, signposted).** A FinTech or challenger
-  *creating a new bank for the first time*, who needs to avoid both under-building
+- **Audience B — the new-venture builder (SECONDARY, signposted).** Someone
+  standing up a **new sub-division inside a bank**, or a **startup founder**
+  creating a new bank for the first time — who needs to avoid both under-building
   (no real bank underneath) and over-building (a cost base they can't carry).
   We address them through clear signposts woven into the incumbent narrative,
   not a separate site path.
@@ -35,9 +36,10 @@ record decisions taken.
 
 ## Decisions log (2026-06-13)
 
-1. **Thesis.** Strategy-led *construction* of the organisation of the future:
-   a whole-org transformation with a high-level vision + roadmap, ~2 years out,
-   changing people, process and technology together. (§1)
+1. **Thesis — LOCKED.** Strategy-led *construction* of the organisation of the
+   future: a whole-org transformation with a high-level vision + roadmap, ~2
+   years out, changing people, process and technology together. Public wording
+   approved. (§1)
 2. **Site structure.** One narrative, **incumbent-led** (primary target), with
    **founder signposts** woven in — not two pages or competing CTAs. (§7, §11)
 3. **Frameworks.** Present as proven industry models — **BIAN, SAFe, TOGAF
@@ -47,9 +49,23 @@ record decisions taken.
    answer depends on the client's existing people and talent, and **AI is
    blurring the role boundaries** significantly. DTA advises the choice rather
    than prescribing one. (§3)
-5. **Named first offer.** *Still open* — whether the six-week blueprint becomes a
-   headline offer here. (§8)
+5. **Engagement model — RESOLVED.** DTA is an **advisory**. The client creates
+   *their own* blueprint; **DTA's opinionated model, method and reference
+   architecture are our IP** and are not handed over. The reference prototype
+   backs the technology; Sailesh's experience backs the rest. A focused blueprint
+   engagement is advisory and decision-oriented (a go/reshape/stop
+   recommendation), not a productised deliverable that transfers the IP. (§8)
+   *Internal (not for the site):* the model is the asset — it could scale via
+   trusted associates joining, or be licensed/sold to a larger consultancy as
+   an advisory capability.
 6. **Tone.** Credible to a bank CRO, never intimidating to a founder. Agreed. (§6)
+7. **Reality-check framing — RESOLVED.** In a climate where banks are cutting
+   costs everywhere, we show **what is really important** — what to protect and
+   invest in, not just what to cut. Positive framing, not fear-selling. (§2)
+8. **Audiences — EXTENDED.** Three contexts share the model: an **existing bank**
+   (transform / optimise under cost pressure), someone standing up a **new
+   sub-division inside a bank**, and a **startup founder** building new. The
+   site leads incumbent, signposts the new-venture cases. (§7)
 
 ---
 
@@ -133,10 +149,10 @@ away.
 > **Founder:** the risk is the opposite — discovering the weight in production,
 > after a licence condition or an incident forces the issue.
 
-> **Open (amount only):** Tone agreed — credible, not fear-selling. Still to
-> decide: how much of a crisp "what a real bank actually requires" checklist to
-> show. A short version is a credibility signal for incumbents and a useful
-> reality-check for founders. (Tracked as remaining open #2 in §10.)
+> **RESOLVED:** Reframe positively as **"what's really important."** Banks are
+> cutting costs everywhere; our value is showing what to *protect and invest in*,
+> not just what to cut — for an existing bank, a new sub-division, or a startup
+> founder. Credibility signal, not fear-selling.
 
 ---
 
@@ -316,10 +332,11 @@ Three engagement shapes, which often run in sequence:
 It always starts with architecture (business, domain, technology, enterprise)
 and the strategy of the proposition and value creation.
 
-> 🗨️ **To discuss:** Are these three the right "ways to engage" for the site, or
-> do we also need a low-commitment entry point (e.g. a paid discovery / blueprint
-> sprint) as the first step? We already reference a six-week blueprint in the
-> showcase — should it be a named offer here too?
+> **RESOLVED:** DTA is an **advisory**. The client builds *their own* blueprint;
+> our opinionated model, method and reference architecture are **our IP**, not a
+> handover. A focused blueprint engagement is the low-commitment first step —
+> advisory and decision-oriented (a go/reshape/stop recommendation) — backed by
+> the reference prototype and Sailesh's experience, not productised IP transfer.
 
 ---
 
@@ -343,15 +360,16 @@ governed platform, every journey demonstrable in the browser.
 
 ---
 
-## 10. Open questions still to resolve
+## 10. Open questions — all resolved
 
-Most decisions are now captured in the **Decisions log** at the top. Remaining:
+All open items are now decided (see the **Decisions log** at the top). The doc is
+ready to drive site copy:
 
-1. **Named first offer** — does the six-week blueprint become a headline,
-   low-commitment entry point on the site? (see §8)
-2. **Reality-check dosage** — how much of the "a real bank is big" message to
-   show without tipping into fear-selling (tone agreed; amount TBD). (see §2)
-3. **Final wording of the public one-sentence thesis** (see §1 candidate).
+1. **Named first offer** → advisory blueprint engagement; client builds their own
+   blueprint; DTA model is IP. (Decisions log #5, §8)
+2. **Reality-check** → reframed as "what's really important" in a cost-cutting
+   climate; positive, not fear-selling. (Decisions log #7, §2)
+3. **Thesis wording** → locked. (Decisions log #1, §1)
 
 ---
 
