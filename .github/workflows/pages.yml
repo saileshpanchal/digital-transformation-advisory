@@ -27,6 +27,8 @@ jobs:
         with:
           source: ./
           destination: ./_site
+      - name: Verify public showcase boundary
+        run: ./scripts/check-public-showcase.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 

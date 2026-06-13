@@ -45,6 +45,9 @@ exclude:
   - tags.md
   - search.md
   - search.json
+  - .superpowers
+  - .gstack
+  - scripts
 
 defaults:
   - scope:
