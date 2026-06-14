@@ -1,0 +1,29 @@
+{%- comment -%}
+Analytics include — single drop-in point.
+Pick ONE tool and uncomment its snippet (no consent banner needed for Plausible/PostHog cookieless).
+  - Plausible (recommended, cookieless): set the domain.
+  - PostHog (heatmaps + session replay): set the key.
+  - GA4: needs a cookie-consent banner to be lawful in the UK/EU.
+The event listener below is inert until a tool global (plausible / posthog / gtag) exists,
+then it forwards clicks on any [data-cta] element as a "cta_click" event with its data-loc.
+{%- endcomment -%}
+
+{%- comment -%} <!-- Plausible -->
+<script defer data-domain="digital-transformation-advisory.com" src="https://plausible.io/js/script.tagged-events.outbound-links.js"></script>
+{%- endcomment -%}
+
+{%- comment -%} <!-- PostHog -->
+<script>/* posthog snippet here */</script>
+{%- endcomment -%}
+
+<script>
+  // Forward CTA clicks to whichever analytics tool is loaded (inert otherwise).
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-cta]');
+    if (!el) return;
+    var props = { cta: el.getAttribute('data-cta'), location: el.getAttribute('data-loc') || '' };
+    if (window.plausible) window.plausible('cta_click', { props: props });
+    if (window.posthog) window.posthog.capture('cta_click', props);
+    if (window.gtag) window.gtag('event', 'cta_click', props);
+  });
+</script>
