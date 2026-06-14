@@ -102,7 +102,9 @@ If your capabilities are DBBs, three things become true that are not true of a c
 2. **You can prove governance, not assert it.** Because controls and evidence are part of each block, "show me how this decision was authorised and recorded" has an answer by construction.
 3. **You can let agents operate safely.** Authority, gates, and evidence are where the work happens, so automation extends reach without surrendering control.
 
-A short honesty note, because it is the point of how we work: we have proven this end-to-end on **one** proposition (a multi-generational *Family Wealth* journey) in a working prototype with tests behind it. The other propositions we discuss publicly are **blueprints** — designed against the same DBB/ABB model, not yet engine-backed. We would rather tell you exactly which is which than imply a finished platform.
+This is why the DBB is the **Capability plane** of our reference architecture, **C3 — Capability · Context · Consent**: governed capabilities (the DBBs), a shared Context plane of meaning, and a Consent plane where every agent action is authorised, evidenced and revocable. Together they are what let a bank *own* its agentic capability — accountable and sovereign — rather than rent it. That is what we mean by **Owned Autonomy**, and it is the foundation of **accountable banking**.
+
+A short honesty note, because it is the point of how we work: several of these propositions now run end-to-end on our live engine, with tests behind them, while others are explicitly labelled **blueprints**. Our Clean-Room Demonstration shows exactly which is which — built to production-grade controls on synthetic data, a demonstration rather than production. We would rather be precise about that than imply a finished platform.
 
 ## Where to start
 

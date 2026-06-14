@@ -1561,3 +1561,11 @@ p { margin-bottom: 1rem; }
 
   .author-bio-links { justify-content: center; }
 }
+
+/* Offer-ladder engagement note */
+.engagement-note {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #667;
+  font-style: italic;
+}
