@@ -7,6 +7,16 @@
   JEKYLL_ENV = "production"
 
 [[redirects]]
+  from = "/sfia"
+  to = "/capability-intelligence/"
+  status = 301
+
+[[redirects]]
+  from = "/sfia/"
+  to = "/capability-intelligence/"
+  status = 301
+
+[[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404

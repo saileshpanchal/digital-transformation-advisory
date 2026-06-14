@@ -11,10 +11,13 @@ The single vocabulary the website, posts and book all draw from. Authority comes
 | Layer | Term | Job |
 |---|---|---|
 | Thesis | **Owned Autonomy** | Why — accountable + sovereign |
-| Commercial offer | **Blueprint → Proof** | Six-week Proposition Blueprint → optional 90-day Proof |
+| Commercial offer | **Proposition Blueprint → Proof** | Six-week Proposition Blueprint → optional 90-day Proof (the engagement) |
+| People work-product | **Capability Blueprint** | The human + AI capability a proposition/brief needs — a squad work-product *within* the Proposition Blueprint, also available standalone |
 | Proving method | **Glass Tube** | The single-domain vertical slice that proves the model and its economics before scaling |
 | Architecture | **C3 (Capability · Context · Consent)** | How it fits; DBB = the Capability plane |
-| Delivery mechanism | **SFIA-defined, FPE-led squad** | Who builds it — a forward-deployed unit; humans at the edges, agents in the middle |
+| Delivery mechanism | **Capability-Intelligence-informed, SFIA-grounded, FPE-led squads** | Who builds it — a forward-deployed unit; humans at the edges, agents in the middle |
+
+**Two Blueprints, never blurred:** *Proposition Blueprint* = the commercial offer/engagement. *Capability Blueprint* = the people/capability work-product inside it (or standalone). Copy must distinguish them.
 
 ## A. Coin and own (DTA-original)
 

@@ -18,13 +18,17 @@ Each material claim is tracked by: **source** (repo + commit/file, or external U
 |---|---|---|---|---|---|---|
 | 3 propositions on the live engine (Family Wealth, Int'l Student, Premium Yacht); Franchise = blueprint | prototype `marketing-claim-audit.md` (feat/live-marketing-demos) | demo/marketing stream | Approved | on audit change | index, approach, /composable-bank/ | Substantiated (live engine) |
 | Cross-border demonstrated with labelled mocks | prototype `marketing-claim-audit.md` #7/#8/#10 | demo stream | Approved | on audit change | (showcase, when wired) | Substantiated (labelled mocks) |
-| "Clean-Room Demonstration" — technical capability; production-quality in design; platform not yet product-ready | this repo `index.html`, `approach.html` (claude/v5-conversion) | DTA | Approved | 2026-09-14 | index, approach, sfia | Substantiated (wording) |
+| "Clean-Room Demonstration" — technical capability; production-quality in design; platform not yet product-ready | this repo `index.html`, `approach.html` | DTA | Approved | 2026-09-14 | index, approach | Substantiated (wording) |
 | Agents prepare; humans approve material actions; evidence per step | prototype `agentic-gateway` tests | demo stream | Approved | on audit change | index, approach | Substantiated |
 | Owned Autonomy / C3 / Accountability–Sovereignty / Clean-Room Standard / Glass Tube / DBB | `docs/lexicon.md` | DTA | Approved (DTA-original) | 2026-09-14 | index, approach, operating-model, posts | Coin & own |
 | SFIA-defined, FPE-led squad (skill *names*, no levels) | `docs/squad-operating-model.md` (sanitised) | DTA | Approved | 2026-09-14 | index, approach | Substantiated (sanitised) |
-| SFIA 10 contributor; SFIA use properly licensed; SFIA® trademark | SFIA Foundation relationship | Sailesh | Approved | 2026-12-31 | approach, sfia | External — sourced |
-| SFIA capability tool — "none built on SFIA" wedge | market scan | Sailesh | Approved (validation framing) | 2026-09-14 | sfia | Validation-stage; no tool links |
+| SFIA 10 contributor; SFIA use properly licensed; SFIA® trademark | SFIA Foundation relationship | Sailesh | Approved | 2026-12-31 | approach, capability-intelligence | External — sourced |
+| Capability Intelligence — outcome positioning ("high-performance squads"; brief→evidence→squad→growth); SFIA codes invisible | spec 2026-06-14; SFiA-AI engine | DTA | Approved | 2026-09-14 | capability-intelligence | Substantiated (capability + wording) |
+| Capability Intelligence worked example | synthetic; SFiA-AI engine (extraction/evidence/gaps/collaborators Generated/Derived; collaboration-optimised composition + Managed Cycle = Illustrative future) | DTA | Approved (labelled synthetic + provenance) | 2026-09-14 | capability-intelligence | Substantiated with provenance labels |
+| WEF Future of Jobs 2025 (63% skill gaps / 85% upskilling) | weforum.org | Sailesh | Attribute only | 2026-09-14 | capability-intelligence | External — sourced |
+| Two Blueprints distinct (Proposition Blueprint = offer; Capability Blueprint = work-product) | `docs/lexicon.md` | DTA | Approved | 2026-09-14 | approach, capability-intelligence, index | Coin & own |
 | SFIA tools (SFiA-AI / jobfinder / recruitment) status | repos; jobfinder app "coming soon", recruitment pitch-stage | Sailesh | **No public product links yet** | 2026-09-14 | (none) | Not linked |
+| ~~"none are built on SFIA" market claim~~ | — | — | **Removed** (unsubstantiable) | — | (none) | Deleted v6 |
 | Track record (Metro, Lloyds, JPM, Travelex, Orwell) | existing leader bio | Sailesh | Approved (existing bio) | 2026-12-31 | index | Approved |
 | Prior licensed-banking platform (ipagoo) | — | Sailesh | **Needs-sign-off** | — | (none until signed off) | Needs-sign-off |
 | "The Accountable Bank" as a brand | — | Sailesh | **Needs-trademark-check** | — | (none; use "Clean-Room Demonstration") | Needs-TM |
