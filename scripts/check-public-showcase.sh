@@ -48,11 +48,12 @@ if ! scan "the generated public site" _site/composable-bank; then
   fail=1
 fi
 
-# 3. Scan tracked repo files, excluding paths Jekyll never publishes
-#    (a private spec workspace, build tooling, and this script itself).
+# 3. Scan tracked repo files, excluding only build tooling and this script
+#    itself (which necessarily lists the forbidden terms). docs/ IS scanned —
+#    this is a public repo, so internal codenames must not live there either.
 echo "Checking tracked repo files…"
 tracked=$(git ls-files \
-  | grep -vE '^(docs/|\.superpowers/|\.gstack/|scripts/check-public-showcase\.sh)' || true)
+  | grep -vE '^(\.superpowers/|\.gstack/|scripts/check-public-showcase\.sh)' || true)
 if [ -n "$tracked" ]; then
   # shellcheck disable=SC2086
   if ! scan "tracked repo files" $tracked; then
