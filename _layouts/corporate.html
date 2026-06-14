@@ -58,8 +58,8 @@
           <a href="{{ '/insights/' | relative_url }}">Insights</a>
           <a href="{{ '/connect/' | relative_url }}">Contact</a>
           <a href="{{ '/policy-documentation/' | relative_url }}">Policies</a>
-          {% if site.linkedin != blank %}<a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
-          {% if site.medium != blank %}<a href="{{ site.medium }}" target="_blank" rel="noopener">Medium</a>{% endif %}
+          {% if site.linkedin and site.linkedin != "" %}<a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+          {% if site.medium and site.medium != "" %}<a href="{{ site.medium }}" target="_blank" rel="noopener">Medium</a>{% endif %}
         </div>
       </div>
       <hr class="footer-divider">

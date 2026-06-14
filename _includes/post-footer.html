@@ -6,8 +6,8 @@
       <p class="author-bio-name">{{ site.author }}</p>
       <p class="author-bio-text">Founder &amp; CEO of Digital Transformation Advisory. 30+ years in banking and FinTech — now building agentic product squads and production AI platforms for regulated organisations. Writing a book on digital transformation in UK banking.</p>
       <div class="author-bio-links">
-        {% if site.linkedin %}<a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
-        {% if site.medium %}<a href="{{ site.medium }}" target="_blank" rel="noopener">Medium</a>{% endif %}
+        {% if site.linkedin and site.linkedin != "" %}<a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+        {% if site.medium and site.medium != "" %}<a href="{{ site.medium }}" target="_blank" rel="noopener">Medium</a>{% endif %}
         <a href="{{ '/insights/' | relative_url }}">More insights</a>
       </div>
     </div>
