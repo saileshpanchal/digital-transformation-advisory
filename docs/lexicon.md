@@ -6,6 +6,16 @@ The single vocabulary the website, posts and book all draw from. Authority comes
 
 > **You cannot be accountable for what you do not control.** Accountability is the obligation; sovereignty is the precondition. The proposition is **Owned Autonomy** — agentic capability a bank *owns* rather than rents, accountable and sovereign by construction.
 
+## Concept hierarchy — each coined term has exactly one job
+
+| Layer | Term | Job |
+|---|---|---|
+| Thesis | **Owned Autonomy** | Why — accountable + sovereign |
+| Commercial offer | **Blueprint → Proof** | Six-week Proposition Blueprint → optional 90-day Proof |
+| Proving method | **Glass Tube** | The single-domain vertical slice that proves the model and its economics before scaling |
+| Architecture | **C3 (Capability · Context · Consent)** | How it fits; DBB = the Capability plane |
+| Delivery mechanism | **SFIA-defined, FPE-led squad** | Who builds it — a forward-deployed unit; humans at the edges, agents in the middle |
+
 ## A. Coin and own (DTA-original)
 
 | Term | Names | Published definition |
@@ -14,7 +24,9 @@ The single vocabulary the website, posts and book all draw from. Authority comes
 | **Capability · Context · Consent (C3)** | the reference architecture | The three planes of an agentic-ready bank: **Capability** (governed banking capabilities — the DBB), **Context** (a shared semantic layer of meaning), **Consent** (the authority layer — every agent action authorised, evidenced, revocable). |
 | **The Accountability–Sovereignty Principle** | the governing law | *You cannot be accountable for what you do not control.* A named principle others cite back to you. |
 | **Clean-Room Demonstration Standard** | the proof method | A demonstration that is isolated, runs on synthetic data, is engineered to production-grade controls, and is explicitly non-production. The honesty discipline, named and ownable. |
+| **Glass Tube** | the proving method | The single-domain vertical slice run end-to-end so a bank can watch and measure the real organisational change (and economics) before scaling. Its one job: tangible method. |
 | **Domain Building Block (DBB)** | existing IP | Composable capability unit = the **Capability plane of C3**. Keep; now positioned inside the architecture. |
+| **Forward Platform Engineer (FPE)** | the squad's technical lead | The forward-deployed role that leads technical delivery and integrates into the client estate. Not an in-house tech lead. |
 
 ## B. Descriptors only — already owned, never claim as ours
 
@@ -37,6 +49,10 @@ Each rung is buyable alone; together they're land-and-expand. **Lead with talent
 2. **Build & Run Propositions** *(the project)* — a fixed, shippable agentic product/journey to the same control standards as the demonstration; on-device models where data must not leave. Engagement: fixed-scope build (SOW). The **six-week Proposition Blueprint → optional 90-day Proof** lives here / at the rung 2→3 boundary.
 3. **Owned Autonomy Transformation** *(the expand; strategic)* — making the bank agentic-ready on C3, with the agent wired to regulated settlement (ISO 20022, tokenised deposits, agentic payments), led from inside the bank. Engagement: transformation programme.
 
+## F. Frameworks — established vs ours
+
+Public framing: **proven frameworks — BIAN, SAFe, TOGAF, SFIA — assembled into an opinionated model, customised per client.** **SFIA** (Skills Framework for the Information Age) is the *people-capability* standard, defining every role as a skills profile — the people-layer twin of DBB (the banking-capability unit beside TOGAF's ABB). DTA's SFIA use is properly licensed; **Sailesh is a SFIA 10 contributor** — a credential, not a constraint. Public role copy shows concept + role names + skill *names* only; **levels of responsibility and the DBB catalogue are DTA IP**.
+
 ## Through-line in every artefact
 
-**Owned Autonomy** (accountable + sovereign) · the **C3** architecture · the **Accountability–Sovereignty Principle** · a **clean-room demonstration** we are always honest is a demonstration.
+**Owned Autonomy** (accountable + sovereign) · the **C3** architecture · the **Accountability–Sovereignty Principle** · the **Glass Tube** proving method · the **SFIA-defined, FPE-led** squad · a **clean-room demonstration** whose platform is not yet product-ready.

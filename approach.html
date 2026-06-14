@@ -45,9 +45,44 @@ description: >-
       <span class="pill">BIAN</span>
       <span class="pill">SAFe</span>
       <span class="pill">TOGAF — ABBs</span>
+      <span class="pill">SFIA — people layer</span>
       <span class="pill">DBBs — our term</span>
     </div>
-    <p style="max-width:780px;margin:1.75rem auto 0;color:#555;">BIAN, SAFe and TOGAF are established standards. <strong>Domain Building Blocks (DBBs) are our own term</strong> — coined to sit alongside TOGAF's Architecture Building Blocks: where an ABB is a reusable <em>technical</em> capability, a DBB is a reusable <em>banking</em> capability. It's our opinionated view, and our advisory tailors it to you.</p>
+    <p style="max-width:800px;margin:1.75rem auto 0;color:#555;">BIAN, SAFe, TOGAF and <strong>SFIA</strong> are established standards. SFIA — the Skills Framework for the Information Age — grounds the <em>people</em> layer: every role is a SFIA skills profile, so capability is explicit and portable. <strong>Domain Building Blocks (DBBs) are our own term</strong> — coined to sit alongside TOGAF's Architecture Building Blocks: where an ABB is a reusable <em>technical</em> capability, a DBB is a reusable <em>banking</em> capability. It's our opinionated view, tailored to you.</p>
+  </div>
+</section>
+
+<!-- 2b. The operating model at a glance -->
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">At a glance</p>
+      <h2>How it all fits together</h2>
+      <p class="section-subtitle">One spine. The squad lives Owned Autonomy on a Capability·Context·Consent architecture, draws on a shared foundation, and pulls the wider bank in a thin slice at a time.</p>
+    </div>
+    <pre class="mermaid">
+flowchart TB
+  OA["OWNED AUTONOMY — accountable and sovereign by construction"]
+  subgraph C3["C3 architecture spine"]
+    CAP["Capability: Domain Building Blocks"]
+    CTX["Context: shared semantic layer and measurement"]
+    CON["Consent: authority, policy, evidence, agentic gateway"]
+  end
+  subgraph VS["Value stream — proposition and P and L"]
+    SQ["The squad: Product Owner, Forward Platform Engineer, 2 Engineers, Data Engineer"]
+  end
+  BANK["The bank — engaged by thin slice via the Product Owner: Risk, Finance, Operations, Compliance"]
+  FND["Foundation (shared): substrate, agentic harness, paved-road controls"]
+  BACK["Backbone and leadership: accountable sponsor (SMCR), enterprise architect, coaches"]
+  CON --> CAP
+  C3 --> OA
+  SQ --> CAP
+  VS --> C3
+  BANK --> VS
+  FND --> SQ
+  BACK --> VS
+</pre>
+    <p style="max-width:760px;margin:1.5rem auto 0;color:#555;text-align:center;">The deeper operating-model detail — coaching, the leadership shift, the transformation backbone, and landing in a not-yet-ready environment — is on the <a href="{{ '/operating-model/' | relative_url }}">operating model</a> page.</p>
   </div>
 </section>
 
@@ -83,11 +118,12 @@ description: >-
     </div>
     <div class="squad-roster">
       <div class="squad-role"><span class="role-count">1</span><span class="role-name">Product Owner</span></div>
-      <div class="squad-role"><span class="role-count">1</span><span class="role-name">Tech Lead / Architect</span></div>
+      <div class="squad-role"><span class="role-count">1</span><span class="role-name">Forward Platform Engineer</span></div>
       <div class="squad-role"><span class="role-count">2</span><span class="role-name">Engineers</span></div>
       <div class="squad-role"><span class="role-count">1</span><span class="role-name">Data Engineer</span></div>
     </div>
-    <p style="max-width:760px;margin:1.75rem auto 0;color:#555;text-align:center;">This is our <strong>default, not a mandate</strong>. Where design, QA, risk, SRE and data sit — inside the squad, in a shared enabling team, or as cross-cutting chapters — depends on your people and talent, and AI is now blurring those role boundaries fast. We've run it both ways and advise the right shape for you.</p>
+    <p style="max-width:820px;margin:1.75rem auto 0;color:#555;text-align:center;">Every role is defined against <strong>SFIA</strong>, the global skills standard — so capability is explicit and assessable, not personality-dependent. The <strong>Product Owner</strong> owns product management, requirements and stakeholder relationships and is the single engagement point to the business. The <strong>Forward Platform Engineer (FPE)</strong> owns solution architecture, systems integration and consultancy — a forward-deployed role that integrates into your estate, not an in-house tech lead. <strong>Engineers</strong> own programming, testing and deployment; the <strong>Data Engineer</strong> owns data, evidence and measurement. (Skill names shown; the full SFIA profiles with levels of responsibility are part of our IP. Built by a SFIA 10 contributor.)</p>
+    <p style="max-width:820px;margin:1rem auto 0;color:#555;text-align:center;">It's a <strong>default, not a mandate</strong> — AI is blurring role boundaries fast, and SFIA lets us name <em>which</em> skill AI has absorbed rather than argue about job titles. The squad lands as a <strong>forward-deployed unit</strong> — humans at the edges, agents in the middle, under human direction — bringing its own paved-road controls and integrating outward through the FPE. It runs on <strong>fixed-capacity funding</strong>: cost is the constant, scope flexes, and the squad owns its cloud and AI run-rate — the brake a CRO asks for.</p>
   </div>
 </section>
 
@@ -172,6 +208,16 @@ description: >-
   </div>
 </section>
 
+<!-- 6b. The Glass Tube -->
+<section class="section">
+  <div class="container text-center">
+    <p class="section-label">Our proving method</p>
+    <h2>The Glass Tube</h2>
+    <p class="section-subtitle">Rather than a big-bang programme, we run a single <strong>domain</strong> end-to-end as a transparent vertical slice — so you can watch, and measure, the real levels of organisational change it demands (and the true cost and revenue delta) before you scale.</p>
+    <p style="max-width:780px;margin:1.5rem auto 0;color:#555;">The glass tube de-risks the economics: it proves reuse, controls and value on one beachhead so the rest of the estate is priced from <strong>evidence, not optimism</strong>. It's where the offer lives — the six-week Proposition Blueprint scopes the tube; the optional 90-day Proof runs it.</p>
+  </div>
+</section>
+
 <!-- 7. From proposition to spike -->
 <section class="section section--dark">
   <div class="container">
@@ -180,10 +226,10 @@ description: >-
         <p class="section-label">From proposition to working spike</p>
         <h2>Decide a proposition. We help you prove it.</h2>
         <p>Choose a proposition — say the <a href="/composable-bank/family-wealth/">Family Wealth Hub</a> — and we help you build a spike for it: either standalone, or shadow-integrated alongside your existing bank so you can prove value without re-platforming.</p>
-        <p>Our <a href="/composable-bank/">Clean-Room Demonstration</a> shows the technology is genuinely possible, and that it connects directly to business value in an agentic way — agents that observe, prepare, check and execute within explicit authority and human approval. Three propositions run on the live engine today; Franchise Network is honestly a blueprint. Built to production-grade controls on synthetic data — a demonstration, not production.</p>
+        <p>Our <a href="{{ '/composable-bank/' | relative_url }}">Clean-Room Demonstration</a> shows the technology is genuinely possible, and that it connects directly to business value in an agentic way — agents that observe, prepare, check and execute within explicit authority and human approval. Three propositions run on the live engine today; Franchise Network is honestly a blueprint. It demonstrates the technical capability on synthetic data: the model is production-quality in design, though the platform is not yet product-ready.</p>
         <div class="hero-actions" style="justify-content:flex-start;">
-          <a href="/composable-bank/" class="btn btn--primary">Explore the showcase</a>
-          <a href="/connect/" class="btn btn--ghost btn--ghost-dark">Book a call</a>
+          <a href="{{ '/composable-bank/' | relative_url }}" class="btn btn--primary" data-cta="demo" data-loc="approach-spike">Explore the demonstration</a>
+          <a href="https://calendly.com/sailesh-panchal/30min?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=strategy-call&amp;utm_content=approach" class="btn btn--ghost btn--ghost-dark" data-cta="strategy-call" data-loc="approach" target="_blank" rel="noopener">Book a strategy call</a>
         </div>
       </div>
       <ul class="showcase-list">
@@ -198,3 +244,9 @@ description: >-
 </section>
 
 {% include cta.html %}
+
+<!-- Mermaid (the corporate layout does not load it) -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'neutral', flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }, securityLevel: 'loose' });
+</script>

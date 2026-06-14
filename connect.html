@@ -1,30 +1,42 @@
 ---
 layout: corporate
-title: Connect
+title: Book a strategy call
 permalink: /connect/
 ---
 
 <section class="connect-section">
   <div class="container">
     <div class="connect-content">
-      <h1>Book a call</h1>
-      <p class="connect-intro">Tell us what you're trying to do with AI or transformation. We'll reply within two working days — and we'll be honest about whether and how we can help.</p>
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <h1>Book a strategy call</h1>
+      <p class="connect-intro">A 30-minute call with Sailesh Panchal. Tell us what you're trying to do with agentic AI or transformation, and we'll be honest about whether and how we can help.</p>
+      <p>
+        <a class="btn btn--primary" href="https://calendly.com/sailesh-panchal/30min?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=strategy-call&amp;utm_content=connect" data-cta="strategy-call" data-loc="connect" target="_blank" rel="noopener">Book a 30-minute strategy call</a>
+      </p>
+
+      <hr style="margin:2.5rem 0; border:none; border-top:1px solid #e2e6ea;">
+
+      <h2>Prefer to send a message?</h2>
+      <p class="connect-intro">We'll reply within two working days.</p>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success/">
         <input type="hidden" name="form-name" value="contact">
         <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Please enter your name here">
+          <input type="text" id="name" name="name" placeholder="Your name">
         </div>
         <div class="form-group">
           <label for="email">Email *</label>
-          <input type="email" id="email" name="email" placeholder="Please enter your email" required>
+          <input type="email" id="email" name="email" placeholder="you@company.com" required>
+        </div>
+        <div class="form-group">
+          <label for="company">Organisation</label>
+          <input type="text" id="company" name="company" placeholder="Your organisation">
         </div>
         <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Your message" rows="3"></textarea>
+          <textarea id="message" name="message" placeholder="What are you trying to do?" rows="3"></textarea>
         </div>
-        <button type="submit" class="btn btn--primary">Send</button>
+        <button type="submit" class="btn btn--outline" data-cta="contact-form" data-loc="connect">Send message</button>
       </form>
     </div>
   </div>
