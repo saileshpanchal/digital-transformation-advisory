@@ -26,9 +26,15 @@ cleared movement.
   where one leg sits outside the SEPA zone.
 - **Tokenised deposits and stablecoins** make pre-funding, liquidity and
   settlement easier still.
-- Real-world signal: *[to verify]* Lloyds Bank's "**Gem**" solution is cited as
-  an example along these lines; few others appear to be following. **Spelling,
-  product name and specifics to confirm before any public use.**
+- Real-world signal — **corrected by research:** Lloyds Bank's "**Gem**" exists
+  but is a **cloud/API corporate cash-management & payments platform** (39
+  currencies, direct UK/Euro clearing membership, FX) — **not** a SWIFT
+  replacement or tokenised real-time-settlement product. And real-time /
+  tokenised cross-border is a **crowded tier-1 field** (JPMorgan Kinexys, Citi
+  Token Services, HSBC Tokenised Deposit Service, Visa B2B Connect, SWIFT's own
+  shared ledger). So we will **not** claim Gem pioneered this or that "few
+  follow." Our edge is the **composable + agentic + deposit-economics** model,
+  not being first. (See Research findings §A.)
 - The **flow value is high** — see market context below — and this should
   **compose into our model**, not sit as a separate stack.
 
@@ -131,6 +137,33 @@ accountable authority and screening decisions remain explicit.
 
 ---
 
+## 7a. The revenue stack — more than a service fee
+
+The sharpest part of this proposition (Sailesh's angle): pre-funded local
+accounts don't just enable a *chargeable* real-time service — **the pre-funding
+itself is a deposit**, and deposits are exactly what banks are fighting for.
+Three revenue layers stack:
+
+1. **Service + FX margin.** A chargeable real-time cross-border service, plus FX
+   margin earned on loading/converting the pre-fund. *(Indicative magnitudes:
+   wholesale ~10–30 bps, SME/retail ~100–400 bps — directional ranges from
+   vendor sources, not a quote; see §B.)*
+2. **Net interest income on the balances.** Pre-funded balances are deposits the
+   bank funds assets against — earning a spread even on overnight/short-dated
+   money. Stable deposits are prized funding under Basel **NSFR** (95%/90% ASF
+   for stable/less-stable retail & SME vs 50%/0% for corporate/financial
+   wholesale). UK sight-deposit spreads have run ~**2–2.5pp**; reported UK bank
+   NIMs ~**2.3–3.1%**. *(NSFR factors and BoE rates are citable; see §D.)*
+3. **Agentic yield optimisation.** Automated, **policy-bounded** sweeps and
+   allocation — including tokenised money-market funds and tokenised-deposit
+   settlement — to maximise return on otherwise-idle balances, within
+   human-gated limits. *(What's real vs hype: see §E.)*
+
+The agentic layer turns idle pre-funding from a **cost** (trapped nostro
+liquidity — a BIS-recognised drag) into a **managed, revenue-generating asset**.
+That reframes the pitch from "a cheaper payment" to "win the deposit, earn the
+float, and monetise the liquidity — safely."
+
 ## 8. Required clarifications (money / movement / message / decision)
 
 - **Correspondent vs real-time:** pre-funded local accounts + domestic instant
@@ -187,15 +220,22 @@ integration, prove it on a corridor, then shift volume.
 
 ---
 
-## 11. Claims to verify before any public use
+## 11. Claims status (after deep research, 2026-06-14)
 
-1. **Lloyds "Gem"** (name/spelling/scope) and the "few others following" claim.
-2. **SEPA Inst one-leg-out** current availability and constraints (EPC scheme).
-3. **FXC Intelligence figures** — attribution/licence to reproduce on the site.
-4. Any specific corridor/FX/settlement-time claims used in the demo.
-
-> Suggested next step: run a deep-research pass on items 1–2 against primary
-> sources (EPC, Pay.UK, bank disclosures) before this proposition is published.
+| Claim | Status | Action |
+|---|---|---|
+| Lloyds "Gem" pioneered real-time SWIFT replacement | **FALSE** | Drop. Gem is a cash-mgmt/API platform. |
+| "Few banks are following" | **FALSE** | Drop. Reposition vs a crowded tier-1 field. |
+| SEPA OCT Inst (one-leg-out) is live | **TRUE** (euro leg only) | Safe with the euro-leg caveat. |
+| Pre-funded local-account model is real | **TRUE** | Safe; cite providers + BIS on liquidity cost. |
+| Deposits prized (NSFR ASF factors) | **TRUE** | Safe; cite Basel. |
+| UK sight-deposit spread ~2–2.5pp; NIM ~2.3–3.1% | **TRUE** | Safe; cite BoE / bank reports. |
+| FX margin bps ranges | **INDICATIVE** | Use as ranges, not quotes. |
+| "$27tn idle in nostro accounts" | **UNVERIFIED** | Do **not** attribute to BIS; drop or soften. |
+| Stablecoin limits (£20k/£10m), 40/60 backing | **PROPOSED, not law** | Do **not** state as settled. |
+| FXC figures ($208tn / $625bn) | **TRUE (published)** | Needs **FXC licence** to reproduce publicly. |
+| $164tn wholesale split | **PARTIAL** | Behind FXC paywall; soften / attribute. |
+| JPM $3bn/day, MMF AUMs | **PARTIAL** | Secondary sources; verify before quoting. |
 
 ---
 
@@ -214,3 +254,124 @@ integration, prove it on a corridor, then shift volume.
 > "Real-Time Correspondent", or "Borderless Settlement"? And do we target the
 > **wholesale/large-enterprise** buyer (huge flows, thin margin) or the **B2B
 > SME** segment (smaller flows, far richer 1.3% take rate) as the lead use case?
+
+---
+
+# Research findings (deep research, 2026-06-14)
+
+Method note: a six-angle fan-out (EPC, ECB, Pay.UK, BoE, FCA, BIS, FSB, bank
+disclosures, FXC). Several primary sites (BoE, EPC, FCA, Citi, JPM, FXC) block
+automated fetch (HTTP 403); figures flagged PARTIAL rest on search extracts /
+reputable secondary summaries and should be confirmed against the primary PDFs
+before client-facing use.
+
+## A. Bank real-time / tokenised cross-border products
+
+- **Lloyds "Gem"** exists — a cloud/API corporate cash-management & payments
+  platform (39 currencies; direct UK/Euro clearing membership; FX). **Not** a
+  SWIFT-replacement or tokenised real-time-settlement product. *(WELL-EVIDENCED
+  it exists; feature wording PARTIAL — official page 403.)*
+- The field is **crowded among tier-1s:** JPMorgan **Kinexys** (JPM Coin / JPMD
+  deposit token, ~$3bn/day reported — PARTIAL); **Citi Token Services** + 24/7
+  USD clearing (live, UK/US/SG/HK); **HSBC Tokenised Deposit Service** (live,
+  multi-market); **Visa B2B Connect** (multilateral, correspondent alternative);
+  **SWIFT** building a shared ledger for tokenised 24/7 settlement.
+- "Few banks following" is **not fair**. Defensible narrower line: *few have
+  live, at-scale, composable + agentic deposit-economics models.*
+- Sources: Lloyds Gem page; jpmorgan.com/kinexys; Citi 24/7 USD clearing release
+  (2025); about.hsbc.com.sg tokenised deposit; visa B2B Connect; swift.com
+  payment-innovation.
+
+## B. SEPA One-Leg-Out Instant (OCT Inst) + UK FPS
+
+- **OCT Inst:** EPC scheme, live **28 Nov 2023**; 2025 rulebook in force **5 Oct
+  2025**. Governs **only the euro leg** (settles via TIPS); the non-euro leg is
+  out of EPC scope, so **end-to-end instant is not guaranteed**. Adherence
+  voluntary. *(WELL-EVIDENCED.)*
+- **UK FPS** uses a Bank-of-England **pre-funded settlement model** (a
+  settlement-risk mechanism, not an open "park GBP and pay" facility). Access:
+  directly-connected settling / non-settling participant, or agency. A non-UK
+  entity needs **FCA authorisation** in practice; Wise was first non-bank direct
+  participant (2018). **Open Banking PIS initiates from a payer's account — not
+  the same as holding a pre-funded balance.** *(FPS model WELL-EVIDENCED;
+  foreign-entity eligibility PARTIAL.)*
+- Sources: EPC OCT Inst pages + 2025 rulebook PDF; ECB TIPS OLO doc; Pay.UK FPS
+  participation; BoE non-bank PSP access; Open Banking Ltd PIS standards.
+
+## C. Pre-funded local-account model & providers
+
+- Recognised pattern: hold local-currency balances per market, pay out over
+  domestic instant rails (FPS, SEPA, PIX, UPI, SPEI), reconcile internally — no
+  money crosses the border per transaction. **Trade-off = trapped liquidity**
+  (same economics as nostro). BIS/CPMI confirms prefunding's opportunity +
+  regulatory-capital cost. *(WELL-EVIDENCED; some provider detail PARTIAL.)*
+- Providers: **Banking Circle, Wise Platform, Nium, Thunes, Airwallex,
+  Currencycloud (Visa), Citi** (90-market local clearing). Stablecoin pre-funding
+  (USDC; Nium-Circle, Thunes) is emerging to cut trapped capital.
+- **Do NOT publish** the "$27tn idle in nostro" figure as a BIS stat — untraceable;
+  older estimates ~$5tn. Use BIS qualitative framing instead.
+- Sources: bis.org CPMI d194/d205; wise.com/platform; bankingcircle.com; nium.com;
+  thunes.com; airwallex docs; currencycloud; citigroup TTS.
+
+## D. Deposit economics (the revenue case)
+
+- Deposits are prized funding: Basel **NSFR ASF** 95% (stable retail/SME), 90%
+  (less-stable), 50% (corporate <1yr), 0% (financial wholesale). *(WELL-EVIDENCED.)*
+- BoE: higher Bank Rate incentivises competing for deposits; UK deposit **beta
+  ~0.22** on 2022 hikes (PARTIAL — finance-press). Dec-2024 effective rates:
+  sight ~2.17%, time ~3.74% vs Bank Rate ~4.75% → **~2–2.5pp** spread on sight
+  balances. *(WELL-EVIDENCED — BoE.)*
+- UK NIMs 2024–25: Lloyds ~2.95→3.06%, NatWest ~2.34% → **~2.3–3.1%**. NIB/float
+  is effectively free funding (Curinos $32m illustration — PARTIAL).
+- **FX margin:** wholesale ~10–30 bps; SME/retail ~100–400 bps (**indicative**;
+  vendor sources). FCA (2025) confirms FX-markup **opacity** (Consumer Duty).
+- Sources: bankingengland.co.uk transmission + effective-rates Dec-2024; BIS
+  BCBS d295/d271 (NSFR); Lloyds/NatWest FY results; FCA Consumer Duty FX practice.
+
+## E. Tokenised deposits / stablecoins / agentic yield
+
+- **Tokenised deposit** = bank liability on a programmable ledger; stays in
+  prudential perimeter, FSCS-eligible; depositor bears bank credit risk (rails
+  change, not the claim). **Stablecoin** = issuer/reserve risk, no deposit
+  protection; BIS says they can break "singleness of money." **E-money** =
+  separate regime. *(WELL-EVIDENCED.)*
+- UK 2025 regime is **consultation, not law:** FCA **CP25/14** (par redemption,
+  statutory trust over backing); BoE systemic-stablecoin consult (proposed
+  **£20k individual / £10m business** holding limits; ~40% unremunerated BoE
+  deposits / ~60% gilts; no interest to holders). **Do not present proposed
+  numbers as settled.** ECB building **Pontes/Appia** (central-bank-money DLT
+  settlement, targeted Q3 2026).
+- In production: **tokenised MMFs** (BlackRock BUIDL, Franklin BENJI), Citi/JPM
+  tokenised-deposit rails, **Partior** atomic settlement. Specific AUM/volume
+  figures PARTIAL.
+- **Agentic automation** realistically adds continuous monitoring + rules-based
+  sweeps/rebalancing **within policy limits, human-gated** — incremental, not new
+  financial capability. **Private-key control ≠ legal title.**
+- Sources: BoE systemic-stablecoin consult (Nov 2025); FCA CP25/14; BIS Bulletin
+  73 + unified-ledger; FSB tokenisation (Oct 2024); EBA tokenised-deposit report;
+  ECB papers; Partior; NY Fed tokenised funds; IMF agentic-AI-in-payments (2026).
+
+## F. Market sizing (FXC + cross-checks)
+
+- FXC: **$208tn flows / $625bn revenue (2025)** confirmed from FXC's own release;
+  B2B SME largest retail revenue pool ($191bn); take rates tightened 2022–25.
+  **$164tn wholesale split PARTIAL** (paywalled). Order of magnitude corroborated
+  by McKinsey (~$150tn flows; ~$240bn revenue — narrower scope), Juniper (B2B
+  ~$186tn), BIS (wholesale ~$145tn). FSB sets a ≤1% **retail** cost target and
+  **no** wholesale target.
+- **FXC licence required** to reproduce figures/chart publicly (their Terms allow
+  internal use with attribution only). Paraphrase-with-attribution is safer; clear
+  public republication with FXC.
+- Sources: fxcintel.com press release + market-sizing pages + Terms; McKinsey
+  Global Payments 2024; Juniper B2B; BIS CPMI brief10; FSB G20 targets + 2025
+  progress report.
+
+## Publish-safety summary
+
+- **Safe (with attribution):** OCT Inst euro-leg; pre-funded model + BIS liquidity
+  cost; NSFR factors; BoE deposit spreads & NIMs; the crowded-field competitor
+  list; tokenised-deposit vs stablecoin distinctions.
+- **Indicative only (label as ranges):** FX bps; deposit beta; NIB illustrations.
+- **Do NOT publish without licence/verification:** FXC figures/chart (licence);
+  "$27tn nostro"; proposed UK stablecoin limits/backing as if final; specific
+  bank volumes (JPM $3bn/day) and MMF AUMs.
