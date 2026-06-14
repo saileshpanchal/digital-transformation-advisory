@@ -10,6 +10,28 @@
 
 ---
 
+## Material-claims tracking (v5 schema)
+
+Each material claim is tracked by: **source** (repo + commit/file, or external URL) · **owner** · **approval status** · **expiry** (re-verify by) · **pages using it** · **status**. Default expiry is quarterly; demo-capability rows expire whenever the prototype `marketing-claim-audit.md` changes.
+
+| Claim | Source (repo + commit / file) | Owner | Approval | Expiry | Pages using | Status |
+|---|---|---|---|---|---|---|
+| 3 propositions on the live engine (Family Wealth, Int'l Student, Premium Yacht); Franchise = blueprint | prototype `marketing-claim-audit.md` (feat/live-marketing-demos) | demo/marketing stream | Approved | on audit change | index, approach, /composable-bank/ | Substantiated (live engine) |
+| Cross-border demonstrated with labelled mocks | prototype `marketing-claim-audit.md` #7/#8/#10 | demo stream | Approved | on audit change | (showcase, when wired) | Substantiated (labelled mocks) |
+| "Clean-Room Demonstration" — technical capability; production-quality in design; platform not yet product-ready | this repo `index.html`, `approach.html` (claude/v5-conversion) | DTA | Approved | 2026-09-14 | index, approach, sfia | Substantiated (wording) |
+| Agents prepare; humans approve material actions; evidence per step | prototype `agentic-gateway` tests | demo stream | Approved | on audit change | index, approach | Substantiated |
+| Owned Autonomy / C3 / Accountability–Sovereignty / Clean-Room Standard / Glass Tube / DBB | `docs/lexicon.md` | DTA | Approved (DTA-original) | 2026-09-14 | index, approach, operating-model, posts | Coin & own |
+| SFIA-defined, FPE-led squad (skill *names*, no levels) | `docs/squad-operating-model.md` (sanitised) | DTA | Approved | 2026-09-14 | index, approach | Substantiated (sanitised) |
+| SFIA 10 contributor; SFIA use properly licensed; SFIA® trademark | SFIA Foundation relationship | Sailesh | Approved | 2026-12-31 | approach, sfia | External — sourced |
+| SFIA capability tool — "none built on SFIA" wedge | market scan | Sailesh | Approved (validation framing) | 2026-09-14 | sfia | Validation-stage; no tool links |
+| SFIA tools (SFiA-AI / jobfinder / recruitment) status | repos; jobfinder app "coming soon", recruitment pitch-stage | Sailesh | **No public product links yet** | 2026-09-14 | (none) | Not linked |
+| Track record (Metro, Lloyds, JPM, Travelex, Orwell) | existing leader bio | Sailesh | Approved (existing bio) | 2026-12-31 | index | Approved |
+| Prior licensed-banking platform (ipagoo) | — | Sailesh | **Needs-sign-off** | — | (none until signed off) | Needs-sign-off |
+| "The Accountable Bank" as a brand | — | Sailesh | **Needs-trademark-check** | — | (none; use "Clean-Room Demonstration") | Needs-TM |
+| Market/macro facts (2028 repricing, FXC sizing, FCA/BoE) | external + prototype thesis (marked external) | Sailesh | Attribute only; FXC needs licence | 2026-09-14 | (posts, attributed) | External |
+
+---
+
 ## A. Demonstrator capability — DEFER to `marketing-claim-audit.md`
 
 As of 2026-06-14 the live demo backs more than it used to. **Do not restate demo capability from memory** — pull current status from the prototype audit and the on-page badges. Summary the website may rely on:
