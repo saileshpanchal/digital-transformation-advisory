@@ -647,28 +647,48 @@ p { margin-bottom: 1rem; }
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
   width: 100%;
-  padding: 0.8rem 0;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 4px;
   color: #fff;
   font-family: 'Montserrat', Arial, sans-serif;
   font-size: 0.95rem;
   outline: none;
-  transition: border-color 0.3s;
+  transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.7);
 }
 
+.form-group select option { color: #1a1a1a; }
+
 .form-group input:focus,
-.form-group textarea:focus {
-  border-bottom-color: #29ABE2;
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #29ABE2;
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 0 0 3px rgba(41, 171, 226, 0.25);
 }
+
+/* Provenance badges (Capability Intelligence worked example) */
+.prov {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+.prov-gen { background: #e6f6ec; color: #1a7f43; border: 1px solid #b6e2c6; }
+.prov-der { background: #e9f2fc; color: #1857a6; border: 1px solid #bcd6f5; }
+.prov-fut { background: #f3f0fa; color: #6b4fb0; border: 1px solid #d9cef0; }
 
 .form-group textarea {
   resize: vertical;

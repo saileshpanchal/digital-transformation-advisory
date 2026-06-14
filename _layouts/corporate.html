@@ -35,7 +35,7 @@
         </div>
         <a href="{{ '/approach/' | relative_url }}">Approach</a>
         <a href="{{ '/composable-bank/' | relative_url }}">Demonstration</a>
-        <a href="{{ '/sfia/' | relative_url }}">SFIA</a>
+        <a href="{{ '/capability-intelligence/' | relative_url }}">Capability Intelligence</a>
         <a href="{{ '/insights/' | relative_url }}">Insights</a>
         <a href="https://calendly.com/sailesh-panchal/30min?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=strategy-call&amp;utm_content=nav" class="btn btn--primary btn--nav" data-cta="strategy-call" data-loc="nav" target="_blank" rel="noopener">Book a strategy call</a>
       </div>
@@ -53,12 +53,13 @@
         </a>
         <div class="footer-links">
           <a href="{{ '/approach/' | relative_url }}">Approach</a>
-          <a href="{{ '/composable-bank/' | relative_url }}">Showcase</a>
+          <a href="{{ '/composable-bank/' | relative_url }}">Demonstration</a>
+          <a href="{{ '/capability-intelligence/' | relative_url }}">Capability Intelligence</a>
           <a href="{{ '/insights/' | relative_url }}">Insights</a>
-          <a href="{{ '/connect/' | relative_url }}">Book a call</a>
+          <a href="{{ '/connect/' | relative_url }}">Contact</a>
           <a href="{{ '/policy-documentation/' | relative_url }}">Policies</a>
-          {% if site.linkedin %}<a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
-          {% if site.medium %}<a href="{{ site.medium }}" target="_blank" rel="noopener">Medium</a>{% endif %}
+          {% if site.linkedin != blank %}<a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+          {% if site.medium != blank %}<a href="{{ site.medium }}" target="_blank" rel="noopener">Medium</a>{% endif %}
         </div>
       </div>
       <hr class="footer-divider">
