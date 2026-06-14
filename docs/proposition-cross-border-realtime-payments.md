@@ -67,9 +67,12 @@ and lets a bank win share of enormous flows even as unit economics compress.
 
 ## 3. Proposition hero
 
-**Audience:** transaction-banking, payments and treasury leaders at banks and
-multinationals moving high-value cross-border flows; PSPs and platforms that
-currently depend on correspondent banking.
+**Audience (lead):** **B2B SMEs** making and receiving cross-border payments —
+the richest cross-border take rate. **Variation:** multinationals (e.g. franchise
+merchant networks, multi-entity groups) running the same flows at scale on the
+**same platform** — composes with the Franchise Network proposition. Buyers:
+transaction-banking, payments and treasury leaders, and the banks/PSPs serving
+them.
 
 **Commercial promise:** move money across borders in real time, with end-state
 certainty, by replacing correspondent relays with **pre-funded local accounts,
@@ -250,10 +253,66 @@ integration, prove it on a corridor, then shift volume.
 - [ ] Run `scripts/check-public-showcase.sh` (no codenames; FXC attribution ok).
 - [ ] Verify claims (§11) before publish.
 
-> 🗨️ **To discuss:** Proposition name — "Cross-Border Real-Time Payments",
-> "Real-Time Correspondent", or "Borderless Settlement"? And do we target the
-> **wholesale/large-enterprise** buyer (huge flows, thin margin) or the **B2B
-> SME** segment (smaller flows, far richer 1.3% take rate) as the lead use case?
+> **RESOLVED:** Name = **Cross-Border Real-Time Payments**. Lead segment = **B2B
+> SME** (richest cross-border take rate; largest retail revenue pool). The same
+> platform also serves **multinationals — e.g. a franchise merchant network — as
+> a variation**, not a separate build (ties to the Franchise Network
+> proposition). This is the composability proof: one platform, SME as the lead,
+> multinational as configuration.
+
+---
+
+# Public-safe copy draft (v1)
+
+Build-ready copy with **no flagged claims** (no FXC figures, no "$27tn", no "few
+banks", no proposed-as-final stablecoin numbers). Lead B2B SME; multinational as
+variation.
+
+## Hero
+
+**Cross-Border Real-Time Payments**
+Move money across borders in real time — without the correspondent-banking relay.
+
+For B2B SMEs paying and getting paid internationally — and the multinationals
+(franchise networks, multi-entity groups) that run the same flows at scale.
+Pre-fund a local-currency account, initiate by API or Open Banking, and settle
+over domestic instant rails. Faster money, transparent cost — and, for the bank,
+a deposit worth winning.
+
+## Four outcomes
+
+- Real-time, final settlement instead of multi-day correspondent uncertainty.
+- Transparent, predictable FX and fees.
+- A deposit relationship — pre-funding earns net interest, even overnight.
+- Liquidity that works — agentic, policy-bounded optimisation of idle balances.
+
+## How it works (deterministic demo)
+
+1. Open and pre-fund a local-currency account (e.g. GBP in the UK).
+2. Initiate from abroad by API / Open Banking, within mandate.
+3. Route over the right instant rail (Faster Payments; SEPA Instant one-leg-out
+   for euro), with a live FX quote.
+4. An agent checks consent, liquidity, screening and rail status, and recommends
+   route, timing and funding.
+5. Policy and an accountable human approve; the payment executes, reconciles and
+   produces ISO 20022 evidence — with tokenised-deposit settlement shown as an
+   alternative.
+
+## The variation: multinational / franchise
+
+The same building blocks serve a multinational running many entities and
+currencies — e.g. a franchise merchant network. More accounts, more rails, more
+approvals; the **same platform, identity, consent, ledger and evidence**.
+(Composes directly with the Franchise Network proposition.)
+
+## Say-it-carefully (boundaries)
+
+- Pre-funded local accounts + domestic instant rails **reduce** correspondent
+  hops; the bank still owns liquidity, screening and accountability.
+- Programmable *payment* (policy on an ordinary deposit) ≠ programmable *money*.
+- Tokenised deposit (a claim on the bank) ≠ stablecoin (issuer/reserve risk).
+- ISO 20022 is the message, not the money or the rail.
+- One-leg-out standardises the euro leg; the other leg isn't guaranteed instant.
 
 ---
 
