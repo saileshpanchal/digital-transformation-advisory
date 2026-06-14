@@ -5,8 +5,8 @@
 
 > A fifth proposition for the showcase. This document is written in the same
 > shape as the existing four (hero → graph → journey → agent loop → outcomes →
-> clarifications → platform composition) so it can be built into the
-> `ultim8-prototype` showcase and then wired into the public site. It is **not**
+> clarifications → platform composition) so it can be built into the private
+> prototype workspace's showcase and then wired into the public site. It is **not**
 > live yet — no `/composable-bank/cross-border-payments/` route exists until the
 > prototype build adds it.
 
@@ -244,8 +244,8 @@ integration, prove it on a corridor, then shift volume.
 
 ## 12. Build & wiring checklist (later)
 
-- [ ] Add the proposition content object + page to the `ultim8-prototype`
-      showcase (`/composable-bank/cross-border-payments/`).
+- [ ] Add the proposition content object + page to the private prototype
+      workspace's showcase (`/composable-bank/cross-border-payments/`).
 - [ ] Per-route title/description/canonical + OG tags (as for the other routes).
 - [ ] Add to the showcase index and the platform page.
 - [ ] Add to the main-site links: homepage "See it in action" list, `/approach/`
