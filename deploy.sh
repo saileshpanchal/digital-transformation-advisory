@@ -49,6 +49,11 @@ git worktree add --quiet --force -B gh-pages "$WORKTREE" origin/gh-pages
 # --exclude .git keeps the worktree's git metadata intact. CNAME rides along.
 rsync -a --delete --exclude='.git' _site/ "$WORKTREE"/
 
+# Serve the pre-built output as-is: .nojekyll stops GitHub Pages running its own
+# Jekyll build on the branch (which can stall/fail and silently block publishing).
+# Added after rsync because --delete would otherwise strip it.
+touch "$WORKTREE/.nojekyll"
+
 cd "$WORKTREE"
 git add -A
 if git diff --cached --quiet; then
