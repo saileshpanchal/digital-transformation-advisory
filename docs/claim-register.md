@@ -30,8 +30,8 @@ Each material claim is tracked by: **source** (repo + commit/file, or external U
 | Two Blueprints distinct (Proposition Blueprint = offer; Capability Blueprint = work-product) | `docs/lexicon.md` | DTA | Approved | 2026-09-14 | approach, capability-intelligence, index | Coin & own |
 | SFIA tools (SFiA-AI / jobfinder / recruitment) status | repos; jobfinder app "coming soon", recruitment pitch-stage | Sailesh | **No public product links yet** | 2026-09-14 | (none) | Not linked |
 | ~~"none are built on SFIA" market claim~~ | — | — | **Removed** (unsubstantiable) | — | (none) | Deleted v6 |
-| Track record (Metro, Lloyds, JPM, Travelex, Orwell) | existing leader bio | Sailesh | Approved (existing bio) | 2026-12-31 | index | Approved |
-| Prior licensed-banking platform (ipagoo) | — | Sailesh | **Needs-sign-off** | — | (none until signed off) | Needs-sign-off |
+| Track record + **TSB role** (CTO & Payments/Economic Crime Director; MRT 5 IBS; Evolve: £20m+ savings, ~25% IT-change-cost cut, quarterly→monthly, £6.8m fraud reduction, +30% intl-payments revenue) + Metro/Lloyds/JPM/Travelex/Orwell | **CV + NED cover letter (2026-06-15)** | Sailesh | **Approved (from CV/cover letter)** | 2026-12-31 | index | Approved |
+| ipagoo (Orwell) — first cloud-first FCA/ACPR-regulated EMI on AWS/Azure; 2018 FIA Award | CV (2026-06-15) | Sailesh | **Approved (from CV)** — public-safe wording; no failure history | 2026-12-31 | index | Approved |
 | "The Accountable Bank" as a brand | — | Sailesh | **Needs-trademark-check** | — | (none; use "Clean-Room Demonstration") | Needs-TM |
 | Market/macro facts (2028 repricing, FXC sizing, FCA/BoE) | external + prototype thesis (marked external) | Sailesh | Attribute only; FXC needs licence | 2026-09-14 | (posts, attributed) | External |
 
@@ -115,8 +115,8 @@ Rule: external feeds are **simulated** (FX, settlement, valuation, card) — say
 
 | Claim | Status | Permitted wording | Review |
 |---|---|---|---|
-| Team architected the prior licensed-banking platform (ipagoo) | **Needs-sign-off** | Only with Sailesh's confirmed wording; sensitive history. | 2026-06-14 |
-| Senior roles at Metro, Lloyds, JPM, Travelex | **Approved (existing bio)** | Use the leader-bio wording already on the site. | 2026-06-14 |
+| ipagoo (Orwell) — first cloud-first FCA/ACPR EMI on AWS/Azure; 2018 FIA Award | **Approved (from CV, 2026-06-15)** | Public-safe wording on the homepage bio; do not reference the company's wind-down/funding history. | 2026-12-15 |
+| TSB role + senior roles (Metro, Lloyds, JPM, Travelex) | **Approved (from CV + NED cover letter, 2026-06-15)** | Homepage bio wording; figures (£20m+, £6.8m, +30%, ~25%) are from Sailesh's own CV. | 2026-12-15 |
 
 ---
 
