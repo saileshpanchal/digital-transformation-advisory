@@ -138,6 +138,22 @@ decisions taken.
 20. **SFIA licence — RESOLVED (non-issue).** DTA's SFIA use is properly licensed;
     Sailesh contributes to **SFIA 10** development. The framework grounding is a
     credential, not a constraint. (§15)
+21. **Delivery sequence — RESOLVED.** Discovery is founder-led senior advisory work,
+    not squad delivery. The **pilot is the Glass Tube**, sized to the decision: a light
+    version lands a Product Owner and FPE, with selected enterprise-service specialists
+    where the proof crosses their boundaries, to build a controlled sandbox prototype;
+    a full-depth version adds the first squad, coaches, controls and the Finance, HR,
+    Procurement, Risk and Audit specialists needed to run one domain end to end.
+    Scale repeats and expands what the Glass Tube has proved.
+22. **Squads as a standalone offer — RESOLVED.** A client can consume an engineer,
+    managed squad or fractional lead for a bounded outcome without buying a Glass Tube
+    or transformation programme. This is the simplest buying motion and a core revenue
+    offer, not merely a stage in the transformation lifecycle.
+23. **AI changes squad economics — RESOLVED.** The original two-pizza principle aimed
+    for small autonomous teams, but industrial delivery often expanded into large,
+    layered groups organised around offshore rate cards and hand-offs. DTA's agentic
+    squad returns to a genuinely small unit: senior, AI-amplified, outcome-owned and
+    measured by evidence rather than headcount.
 
 ---
 
@@ -310,6 +326,17 @@ Principles:
   not a temporary project team.
 - **Seniority over headcount.** Agentic tooling lets a small senior squad do what
   used to take a much larger team — but only once the foundation (§6) exists.
+- **Simple to consume.** A client can buy a bounded squad outcome without first
+  committing to a wider operating-model transformation.
+
+### From two-pizza theory to agentic squad
+
+The two-pizza idea was meant to protect small, autonomous teams. In many large
+delivery models, the label survived while the team expanded into layers of
+coordination, hand-offs and offshore rate-card capacity. AI changes that economics.
+The DTA squad is small in fact, not only in name: senior people use agents to absorb
+routine analysis, coding, testing and documentation while retaining human ownership
+of scope, architecture, controls and outcomes.
 
 ### What "living The Accountable Bank" means for a squad
 
@@ -728,13 +755,15 @@ The hard work is sequencing change while keeping the lights on.
 
 1. Start with architecture & strategy: which propositions justify the change, and what
    is the target operating model?
-2. **Stand up the foundation** (§6) and the first value stream + squad around the
+2. Run a **Glass Tube pilot** at the depth the decision requires: from a Product Owner
+   and FPE building a sandbox prototype to a full organisational slice.
+3. **Stand up the foundation** (§6) and durable squads around the
    beachhead proposition's DBBs.
-3. Use **shadow integration** — project consented data and events into a shadow
+4. Use **shadow integration** — project consented data and events into a shadow
    ledger/view to prove value alongside the existing estate without re-platforming.
-4. Expand DBB by DBB, value stream by value stream; migrate the business functions in
+5. Expand DBB by DBB, value stream by value stream; migrate the business functions in
    step by thin slice (§8).
-5. Decommission the old path only once the new one is proven.
+6. Decommission the old path only once the new one is proven.
 
 ### 12B. The founder — build it right the first time
 
@@ -742,13 +771,14 @@ The hard work is building *enough* bank without a cost base you can't carry.
 
 1. Start with architecture & strategy: the proposition, the P&L, the licence and
    jurisdiction perimeter.
-2. Stand up the first squad around the smallest set of DBBs that makes the proposition
+2. Run a **Glass Tube pilot**, light or full-depth according to what must be proved.
+3. Stand up the first squad around the smallest set of DBBs that makes the proposition
    real (onboarding, accounts, payments, consent) — on top of a deliberately thin
    foundation (§6).
-3. Build the **minimum credible bank** underneath — the accountable functions a
+4. Build the **minimum credible bank** underneath — the accountable functions a
    regulator and a customer actually require — designed on purpose.
-4. Compose the next proposition from the same building blocks instead of forking.
-5. Scale squads into value streams as the business grows.
+5. Compose the next proposition from the same building blocks instead of forking.
+6. Scale squads into value streams as the business grows.
 
 | | Incumbent | Founder |
 |---|---|---|
@@ -761,17 +791,14 @@ The hard work is building *enough* bank without a cost base you can't carry.
 
 ## 13. Where DTA helps
 
-Three engagement shapes, often in sequence:
+Three engagement shapes. They can be bought separately or used in sequence:
 
-1. **Whole-bank transformation, from the CEO down** — proposition & P&L, customer
-   experience, operating model, people & culture (SFIA job architecture), risk &
-   controls, and the production architecture that ties it together.
-2. **Stand up the foundation and specific squads** — build the substrate, harness and
-   paved-road controls (§6), then build and embed individual squads around their DBBs
-   with the SFIA profiles, agentic tooling, custom skills and evals that let them ship
-   safely from day one.
-3. **Plan the migration** — the sequencing, shadow integration and change path that
-   moves an existing bank or FinTech onto the new model.
+1. **Deploy an agentic squad** — an engineer, managed squad or fractional lead for a
+   bounded outcome, without requiring a transformation programme.
+2. **Run a Glass Tube** — choose a light PO/FPE-led sandbox proof, with selected
+   enterprise services, or a full-depth organisational slice.
+3. **Transform and scale** — establish the foundation and durable DBB squads, then
+   change the funding, people, sourcing, control and production models around them.
 
 It always starts with architecture (business, domain, technology, enterprise) and the
 strategy of the proposition and value creation.

@@ -12,20 +12,20 @@
 - **Nav / footer** [web] `_layouts/corporate.html` — items: Home · Approach · Propositions · Capability Intelligence · Insights · [Book a strategy call]. Footer adds Policies + (LinkedIn/Medium when configured).
 
 ## Home — `index.html` [web]
-- **Hero H1:** "Deploy agentic talent now. Own the autonomy that follows." · **sub:** accountable + sovereign = Owned Autonomy; deploy squads now or transform the bank. · CTAs: [Book a strategy call] + [See the demonstration].
+- **Hero strapline:** "Owned Autonomy · Agentic Squads · Capable Organisations." · **H1:** "Deploy agentic talent now. Own the autonomy that follows." · **sub:** build the squads, organisational capability and operating model to adopt agentic ways of working, then turn that capability into better propositions and new business models. · CTAs: [Book a strategy call] + [See the demonstration].
 - **Mission:** "Agents are crossing from advice to action. The real question is whether you can answer for it." → accountable banking.
-- **Offer ladder (3):** 1 Agentic Talent & Squads · 2 Build & Run Propositions · 3 Owned Autonomy Transformation. (each: blurb + 3 bullets + engagement note + CTA)
-- **How we work:** Discover · Pilot · Scale.
-- **Operating-model teaser:** "Built by squads, not committees" + squad roster (PO · FPE · 2 Engineers · Data Engineer) + SFIA/SFIA-10 line. CTAs: full approach · Capability Intelligence.
-- **Showcase band:** "Our Clean-Room Demonstration" + 3-live/1-blueprint wording + proposition list (links to /composable-bank/*).
+- **Offer ladder (3):** 1 Agentic Talent & Squads (standalone, simple to consume) · 2 Build & Run Propositions · 3 Owned Autonomy Transformation. Each stands alone.
+- **How we work:** Standalone squad can start immediately. Wider change follows Discover (founder-led senior advisory) · Pilot / Glass Tube (light PO+FPE sandbox proof with selected enterprise services, or full-depth organisational slice) · Scale (multiple DBB squads + coaches + Finance/HR/Procurement/Risk/Audit).
+- **Operating-model teaser:** "Grow the delivery model with the work" + core scale squad roster (PO · FPE · 2 Engineers · Data Engineer). CTAs: full approach · Capability Intelligence.
+- **Showcase band:** "Our Clean-Room Demonstration" + 4-live/1-blueprint wording + proposition list (links to /composable-bank/*).
 - **Insights teaser** (auto from posts) · **Leadership** (bio — sign-off-governed) · closing CTA (`_includes/cta.html`).
 
 ## Approach — `approach.html` [web]
 - **Hero H1:** "Build the organisation of the future — on purpose." + Owned Autonomy / accountability-sovereignty intro.
-- Sections: Architecture-first (5 lenses) · Frameworks (BIAN/SAFe/TOGAF/SFIA/DBB) · **Operating-model diagram** (Mermaid) · Squad (roster + named SFIA skills, no levels; FPE; forward-deployed unit; fixed-capacity) · Whole-business reorg ("what's really important"; From→To) · Two journeys (incumbent + founder) · Where DTA helps · **Delivery lifecycle** (Proposition → Capability Blueprint → Squad formation → Glass Tube proof → Evidence-led growth) · **Glass Tube** (proving method) · Proposition→spike (Clean-Room; CTAs).
+- Sections: Architecture-first (5 lenses) · Frameworks (BIAN/SAFe/TOGAF/SFIA/DBB) · **Operating-model diagram** (Discover → Glass Tube pilot, light or full-depth → DBB squads + enablers) · Squad (standalone buying motion; old delivery factory vs small AI-amplified squad; roster + named SFIA skills; fixed-capacity) · Whole-business reorg ("what's really important"; From→To) · Two journeys (incumbent + founder) · Where DTA helps (squad / Glass Tube / transformation) · **Delivery lifecycle** · **Glass Tube** · Proposition→spike.
 
 ## Operating Model — `operating-model.html` [web]
-- **Hero H1:** "What it really takes to run Owned Autonomy." · Sections: thin-slice + SM&CR · readiness ("bring your own road") · transformation backbone (not-a-PMO) · coaching (lean/agentic) · leadership (From→To).
+- **Hero H1:** "What it really takes to run Owned Autonomy." · Sections: delivery sequence (Discover → Pilot → Scale) · Glass Tube thin slice + SM&CR · PO/FPE readiness ("bring your own road") · transformation backbone (not-a-PMO) · coaching (lean/agentic) · leadership (From→To).
 
 ## Capability Intelligence — `capability-intelligence.html` [web]
 - **Hero H1:** "Capability intelligence for high-performance squads." · CTA [Discuss a Capability Blueprint] + [See how it works].
