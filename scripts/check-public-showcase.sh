@@ -20,8 +20,12 @@ fi
 # Forbidden strings: internal codenames + specific protected phrases.
 # Note: "Architecture Room" is intentionally NOT here — the public site
 # legitimately invites approved visitors to request access to it.
+#
+# Note: "Ultim8" was removed from this list deliberately — it is a publicly known
+# name, not a secret, and guarding it silently failed deploys. Protected
+# architecture is still gated at the product level (architecture links use an
+# email access-request flow, not a deep link to the internal host).
 forbidden=(
-  "Ultim8"
   "Heimdall"
   "Nettle"
   "Approved technical access"
