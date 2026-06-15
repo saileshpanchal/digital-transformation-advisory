@@ -117,13 +117,15 @@ agentic capability — accountable and sovereign — rather than rent it.
 
 | # | Plane | Paper | Status |
 |---|---|---|---|
-| 0 | — | **Overview — C3: the spine of Owned Autonomy** | **Drafted** (`_posts/2026-06-14-c3-…`) |
+| — | Thesis | **Owned Autonomy: agentic banking a bank owns, not rents** | **Drafted** (`_posts/2026-06-15-owned-autonomy-…`) |
+| 0 | — | **Overview — C3: the spine of Owned Autonomy** | **Drafted** (`_posts/2026-06-14-c3-the-spine-of-owned-autonomy`) |
 | 1 | Capability | **Domain Building Blocks: the unit BIAN doesn't give you** | **Exists** (`_posts/2026-06-13-…`) |
-| 2 | Context | The shared semantic layer & measurement | To write (builds on `docs/lexicon.md`) |
-| 3 | Consent | Authority, policy, evidence & the agentic gateway | To write |
+| 2 | Context | **The shared meaning agents can't act without** | **Drafted** (`_posts/2026-06-15-context-…`) |
+| 3 | Consent | **How to let agents act without handing them authority** | **Drafted** (`_posts/2026-06-15-consent-…`) |
 
-Each pillar paper: definition → why it matters → boundaries → how it shows up in
-a proposition → what DTA helps with. Suitable to drip for LinkedIn/Medium.
+The series is complete: the **Owned Autonomy** thesis paper (the *why*) sits above
+the **C3 overview** (the *how*), with one paper per plane — Capability, Context,
+Consent. Suitable to drip for LinkedIn/Medium.
 
 ---
 
