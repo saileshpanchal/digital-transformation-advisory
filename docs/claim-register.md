@@ -17,7 +17,7 @@ Each material claim is tracked by: **source** (repo + commit/file, or external U
 | Claim | Source (repo + commit / file) | Owner | Approval | Expiry | Pages using | Status |
 |---|---|---|---|---|---|---|
 | 3 propositions on the live engine (Family Wealth, Int'l Student, Premium Yacht); Franchise = blueprint | prototype `marketing-claim-audit.md` (feat/live-marketing-demos) | demo/marketing stream | Approved | on audit change | index, approach, /composable-bank/ | Substantiated (live engine) |
-| Cross-Border Real-Time Payments — live showcase proposition (EUR→GBP inbound; B2B SME lead, multinational variation; **public-safe copy only** — no FXC/$27tn/proposed-stablecoin/"few banks" claims) | prototype `dbb-crossborder-payment` + `runtime-crossborder` (tests green); `marketing-claim-audit.md` #7/#8/#10 | demo stream | Approved | on audit change | composable-bank/cross-border-payments, index, approach | Substantiated — Live engine (simulated FX/settlement feeds) |
+| Cross-Border Real-Time Payments — live showcase proposition (EUR→GBP inbound; B2B SME lead, multinational variation; **public-safe copy only** — no FXC/$27tn/proposed-stablecoin/"few banks" claims). **Claim softened (fact-check 2026-06-15):** promise is a "real-time cross-border payment *experience*" (pre-funded local accounts + domestic instant rails + API initiation), not universal end-to-end instant settlement — OCT Inst governs the euro leg only; FPS is a pre-funded settlement model. | prototype `dbb-crossborder-payment` + `runtime-crossborder` (tests green); `marketing-claim-audit.md` #7/#8/#10; EPC/BoE/FCA per the proposition doc | demo stream | Approved | on audit change | composable-bank/cross-border-payments, index, approach | Substantiated — Live engine (simulated FX/settlement feeds) |
 | "Clean-Room Demonstration" — technical capability; production-quality in design; platform not yet product-ready | this repo `index.html`, `approach.html` | DTA | Approved | 2026-09-14 | index, approach | Substantiated (wording) |
 | Agents prepare; humans approve material actions; evidence per step | prototype `agentic-gateway` tests | demo stream | Approved | on audit change | index, approach | Substantiated |
 | Owned Autonomy / C3 / Accountability–Sovereignty / Clean-Room Standard / Glass Tube / DBB | `docs/lexicon.md` | DTA | Approved (DTA-original) | 2026-09-14 | index, approach, operating-model, posts | Coin & own |
@@ -127,3 +127,12 @@ Rule: external feeds are **simulated** (FX, settlement, valuation, card) — say
 3. No future date is written as past (re-check the 3 July 2026 line).
 4. Market facts attributed; FXC figures not reproduced without licence.
 5. Run `scripts/check-public-showcase.sh` — zero forbidden-codename hits in the repo and built site; no "for sale" / "production platform" overclaim.
+
+---
+
+## Internal positioning notes (NOT public) — cross-border (fact-check 2026-06-15)
+
+- **PMF (corridor-based, not universal):** High fit = cross-border SMEs with repeat payables/receivables · mid-market multi-entity corporates · **banks/PSPs embedding it** (they monetise the deposits). Medium = large global corporates (incumbents already have local clearing). **Low = retail remittance** (over-built; price/simplicity matter more). Believable promise = "predictable execution on key corridors, with auditability, API control and liquidity I control," not "send money anywhere instantly."
+- **Revenue spine (durability order):** NII/float on pre-funded balances → FX spread → platform/SaaS fees (API, treasury controls, reconciliation) → liquidity services (sweeps) → per-txn/corridor fees → compliance value-adds. **Deposit economics is the core, not payment fees.**
+- **Differentiator:** the pre-funded-local-rails model is **commoditised** (Banking Circle, Nium, Thunes, Airwallex, Currencycloud). DTA's edge is the **owned, accountable, agentic, deposit-economics** integration — not being first or fastest. The **agentic layer is an enhancer/differentiator, not the primary revenue engine.**
+- **Claim discipline:** "real-time cross-border" → "real-time cross-border *experience*"; OCT Inst = euro-leg only; FPS = pre-funded settlement model; FCA CP25/14 = consultation (proposed, not law). (Sources: EPC, BoE, Pay.UK, FCA — per the proposition doc's research.)
