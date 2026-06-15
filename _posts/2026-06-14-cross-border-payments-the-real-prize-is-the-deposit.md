@@ -33,7 +33,7 @@ Here's the part most of the "faster, cheaper" framing skips. **The pre-funding i
 
 Stack up the revenue:
 
-1. **The service and the FX.** A chargeable real-time cross-border service, plus the FX margin earned loading and converting the pre-fund.
+1. **The service and the FX.** A chargeable cross-border service with real-time settlement on the local leg, plus the FX margin earned loading and converting the pre-fund.
 2. **Net interest on the balance.** Pre-funded balances are deposits the bank funds assets against — earning a spread *even on money held overnight*. Stable deposits are the funding banks value most; liquidity rules like the Net Stable Funding Ratio reward them far more than wholesale money. At today's rates, the spread on instant-access balances is meaningful, not rounding-error.
 3. **Liquidity that works for you.** Idle pre-funding has always been a cost — trapped nostro liquidity is a recognised drag on correspondent banking. Automated, policy-bounded treasury actions — sweeps, money-market allocation, increasingly tokenised settlement — can turn that idle balance into managed yield, within human-approved limits.
 
