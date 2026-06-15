@@ -19,3 +19,5 @@ tools/rebrand/assets/*.pptx
 tools/rebrand/assets/*.png
 tools/rebrand/brand-mapping.json
 __pycache__/
+.gstack/
+.superpowers/
