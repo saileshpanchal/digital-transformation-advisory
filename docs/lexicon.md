@@ -13,9 +13,9 @@ The single vocabulary the website, posts and book all draw from. Authority comes
 | Thesis | **Owned Autonomy** | Why — accountable + sovereign |
 | Commercial offer | **Proposition Blueprint → Proof** | Six-week Proposition Blueprint → optional 90-day Proof (the engagement) |
 | People work-product | **Capability Blueprint** | The human + AI capability a proposition/brief needs — a squad work-product *within* the Proposition Blueprint, also available standalone |
-| Proving method | **Glass Tube** | The single-domain vertical slice that proves the model and its economics before scaling |
+| Pilot and proving method | **Glass Tube** | A transparent vertical slice, light or full-depth, that proves the solution and as much of the operating model as the decision requires |
 | Architecture | **C3 (Capability · Context · Consent)** | How it fits; DBB = the Capability plane |
-| Delivery mechanism | **Capability-Intelligence-informed, SFIA-grounded, FPE-led squads** | Who builds it — a forward-deployed unit; humans at the edges, agents in the middle |
+| Delivery mechanism | **Capability-Intelligence-informed, SFIA-grounded, FPE-led squads** | A standalone buying motion or the delivery unit for wider change: small, senior and AI-amplified |
 
 **Two Blueprints, never blurred:** *Proposition Blueprint* = the commercial offer/engagement. *Capability Blueprint* = the people/capability work-product inside it (or standalone). Copy must distinguish them.
 
@@ -27,7 +27,7 @@ The single vocabulary the website, posts and book all draw from. Authority comes
 | **Capability · Context · Consent (C3)** | the reference architecture | The three planes of an agentic-ready bank: **Capability** (governed banking capabilities — the DBB), **Context** (a shared semantic layer of meaning), **Consent** (the authority layer — every agent action authorised, evidenced, revocable). |
 | **The Accountability–Sovereignty Principle** | the governing law | *You cannot be accountable for what you do not control.* A named principle others cite back to you. |
 | **Clean-Room Demonstration Standard** | the proof method | A demonstration that is isolated, runs on synthetic data, is engineered to production-grade controls, and is explicitly non-production. The honesty discipline, named and ownable. |
-| **Glass Tube** | the proving method | The single-domain vertical slice run end-to-end so a bank can watch and measure the real organisational change (and economics) before scaling. Its one job: tangible method. |
+| **Glass Tube** | the pilot and proving method | A transparent vertical slice sized to the decision: from a PO/FPE-led sandbox prototype to a full domain run end-to-end with the required organisational functions. |
 | **Domain Building Block (DBB)** | existing IP | Composable capability unit = the **Capability plane of C3**. Keep; now positioned inside the architecture. |
 | **Forward Platform Engineer (FPE)** | the squad's technical lead | The forward-deployed role that leads technical delivery and integrates into the client estate. Not an in-house tech lead. |
 
@@ -48,7 +48,7 @@ A coherent internal naming system covers the capability substrate / payments eng
 
 Each rung is buyable alone; together they're land-and-expand. **Lead with talent (fast revenue); the strategic frame premium-prices it.** Caution: lead too hard on "talent" and premium buyers file you as staff-aug — the blended H1 and "control-grade, not body-shop" language hold the premium.
 
-1. **Agentic Talent & Squads** *(lead; the underpinning)* — senior agentic engineers, embedded or as a managed pod, productive week one, control-grade. Engagements: embedded engineer (day rate) · managed pod (managed service) · fractional lead/architect (retainer).
+1. **Agentic Talent & Squads** *(lead; standalone or underpinning)* — the simplest buying motion: senior agentic engineers, embedded or as a managed squad, productive week one and accountable for a bounded outcome. Engagements: embedded engineer (day rate) · managed squad (managed service) · fractional lead/architect (retainer).
 2. **Build & Run Propositions** *(the project)* — a fixed, shippable agentic product/journey to the same control standards as the demonstration; on-device models where data must not leave. Engagement: fixed-scope build (SOW). The **six-week Proposition Blueprint → optional 90-day Proof** lives here / at the rung 2→3 boundary.
 3. **Owned Autonomy Transformation** *(the expand; strategic)* — making the bank agentic-ready on C3, with the agent wired to regulated settlement (ISO 20022, tokenised deposits, agentic payments), led from inside the bank. Engagement: transformation programme.
 

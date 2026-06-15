@@ -58,11 +58,13 @@ description: >-
     <div class="text-center">
       <p class="section-label">At a glance</p>
       <h2>How it all fits together</h2>
-      <p class="section-subtitle">One spine. The squad lives Owned Autonomy on a Capability·Context·Consent architecture, draws on a shared foundation, and pulls the wider bank in a thin slice at a time.</p>
+      <p class="section-subtitle">One sequence. Senior discovery defines the value and target organisation. A Glass Tube pilot proves what matters as a light sandbox proof or a full organisational slice. Squads then scale the DBBs on a Capability·Context·Consent architecture.</p>
     </div>
     <pre class="mermaid">
 flowchart TB
   OA["OWNED AUTONOMY — accountable and sovereign by construction"]
+  DISC["Discover: DTA leadership, senior architects and domain specialists"]
+  PILOT["Pilot — the Glass Tube: light sandbox proof or full organisational slice"]
   subgraph C3["C3 architecture spine"]
     CAP["Capability: Domain Building Blocks"]
     CTX["Context: shared semantic layer and measurement"]
@@ -71,14 +73,17 @@ flowchart TB
   subgraph VS["Value stream — proposition and P and L"]
     SQ["The squad: Product Owner, Forward Platform Engineer, 2 Engineers, Data Engineer"]
   end
-  BANK["The bank — engaged by thin slice via the Product Owner: Risk, Finance, Operations, Compliance"]
+  BANK["Selected Glass Tube and scale enablers: Agile and agentic coaches, Risk, Audit, Finance, HR, Procurement, Operations"]
   FND["Foundation (shared): substrate, agentic harness, paved-road controls"]
-  BACK["Backbone and leadership: accountable sponsor (SMCR), enterprise architect, coaches"]
+  BACK["Backbone and leadership: accountable sponsor (SMCR), enterprise architect, sequencing lead"]
+  DISC --> PILOT
+  PILOT --> SQ
+  BANK --> PILOT
   CON --> CAP
   C3 --> OA
   SQ --> CAP
   VS --> C3
-  BANK --> VS
+  BANK --> SQ
   FND --> SQ
   BACK --> VS
 </pre>
@@ -92,7 +97,7 @@ flowchart TB
     <div class="text-center">
       <p class="section-label">How delivery is organised</p>
       <h2>Squads, Domain Building Blocks and value streams</h2>
-      <p class="section-subtitle">A composable organisation is built by small, senior, cross-functional squads — each owning the capabilities it delivers, grouped into value streams aligned to propositions.</p>
+      <p class="section-subtitle">A squad is useful before it becomes an operating model. Clients can consume one senior agentic squad for a bounded outcome, or group durable squads into value streams as their ambition grows.</p>
     </div>
     <div class="offerings-grid">
       <div class="offering-card">
@@ -123,7 +128,27 @@ flowchart TB
       <div class="squad-role"><span class="role-count">1</span><span class="role-name">Data Engineer</span></div>
     </div>
     <p style="max-width:820px;margin:1.75rem auto 0;color:#555;text-align:center;">Every role is defined against <strong>SFIA</strong>, the global skills standard — so capability is explicit and assessable, not personality-dependent. The <strong>Product Owner</strong> owns product management, requirements and stakeholder relationships and is the single engagement point to the business. The <strong>Forward Platform Engineer (FPE)</strong> owns solution architecture, systems integration and consultancy — a forward-deployed role that integrates into your estate, not an in-house tech lead. <strong>Engineers</strong> own programming, testing and deployment; the <strong>Data Engineer</strong> owns data, evidence and measurement. (Skill names shown; the full SFIA profiles with levels of responsibility are part of our IP. Built by a SFIA 10 contributor.)</p>
-    <p style="max-width:820px;margin:1rem auto 0;color:#555;text-align:center;">It's a <strong>default, not a mandate</strong> — AI is blurring role boundaries fast, and SFIA lets us name <em>which</em> skill AI has absorbed rather than argue about job titles. The squad lands as a <strong>forward-deployed unit</strong> — humans at the edges, agents in the middle, under human direction — bringing its own paved-road controls and integrating outward through the FPE. It runs on <strong>fixed-capacity funding</strong>: cost is the constant, scope flexes, and the squad owns its cloud and AI run-rate — the brake a CRO asks for.</p>
+    <p style="max-width:820px;margin:1rem auto 0;color:#555;text-align:center;">It's a <strong>default, not a mandate</strong> — AI is blurring role boundaries fast, and SFIA lets us name <em>which</em> skill AI has absorbed rather than argue about job titles. A light Glass Tube begins with the Product Owner and FPE as a <strong>forward-deployed pair</strong>; a fuller Glass Tube adds the roles needed to run the domain end to end. At scale, squads bring paved-road controls, integrate through the FPE and run on <strong>fixed-capacity funding</strong>: cost is the constant, scope flexes, and each squad owns its cloud and AI run-rate.</p>
+    <div class="beforeafter" style="margin-top:3rem;">
+      <div class="ba-col ba-before">
+        <h4>The old squad model</h4>
+        <ul>
+          <li>The two-pizza idea expanded into large delivery groups</li>
+          <li>Work split across layers, hand-offs and offshore rate cards</li>
+          <li>Capacity measured in people and hours</li>
+          <li>Knowledge dispersed across suppliers</li>
+        </ul>
+      </div>
+      <div class="ba-col ba-after">
+        <h4>The agentic squad</h4>
+        <ul>
+          <li>Small, senior and AI-amplified</li>
+          <li>Owns a bounded outcome or Domain Building Block</li>
+          <li>Capacity measured by evidence and shipped value</li>
+          <li>Knowledge and capability stay with the client</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -173,9 +198,9 @@ flowchart TB
     </div>
     <div style="max-width:820px;margin:0 auto;color:#555;">
       <h3>If you already run a bank or FinTech</h3>
-      <p>The hard part is sequencing change while keeping the lights on. We start with architecture and strategy, pick a beachhead proposition, and stand up the first value stream and squads around its Domain Building Blocks. <strong>Shadow integration</strong> lets you prove value alongside the existing estate without re-platforming — then you expand block by block, migrate the business functions in step, and decommission the old path only once the new one is proven.</p>
+      <p>The hard part is sequencing change while keeping the lights on. We start with senior-led architecture and strategy, pick a beachhead proposition, then run a Glass Tube pilot at the depth the decision requires. It may begin with a Product Owner and FPE building a sandbox prototype, or extend through the first domain with a squad and the relevant business functions. <strong>Shadow integration</strong> proves value alongside the existing estate without re-platforming — then you expand block by block, migrate the business functions in step, and decommission the old path only once the new one is proven.</p>
       <h3 style="margin-top:2rem;">If you're building something new — a sub-division or a startup</h3>
-      <p>The hard part is building <em>enough</em> bank without a cost base you can't carry. We start from the proposition, the P&amp;L and the licence perimeter, stand up the first squad around the smallest set of DBBs that makes it real, and build the <strong>minimum credible bank</strong> underneath — the accountable functions a regulator and a customer actually require, designed on purpose — then compose the next proposition from the same building blocks.</p>
+      <p>The hard part is building <em>enough</em> bank without a cost base you can't carry. We start from the proposition, the P&amp;L and the licence perimeter, then use the Glass Tube to prove the solution and as much of the operating model as the decision requires. From there, the first durable squad forms around the smallest set of DBBs that makes the proposition real, alongside the <strong>minimum credible bank</strong> a regulator and customer require.</p>
     </div>
   </div>
 </section>
@@ -185,24 +210,24 @@ flowchart TB
   <div class="container">
     <div class="text-center">
       <p class="section-label">Where DTA helps</p>
-      <h2>Whole-organisation, single-squad, or the move in between</h2>
-      <p class="section-subtitle">We're an advisory. You build your own blueprint; we bring the model, the method and the proof. Our opinionated model and reference architecture stay our IP — what you keep is the capability.</p>
+      <h2>Deploy a squad. Prove a domain. Transform the bank.</h2>
+      <p class="section-subtitle">Three buying motions, each useful on its own. Start with the outcome and choose only the depth of change it needs.</p>
     </div>
     <div class="offerings-grid">
       <div class="offering-card">
-        <img src="/assets/images/corporate/business-strategy.png" alt="Whole-organisation transformation">
-        <h3>Whole-organisation transformation</h3>
-        <p>From the CEO down — proposition, P&amp;L, operating model, people and culture, risk and controls, and the production architecture that ties it together.</p>
+        <img src="/assets/images/corporate/synergy.png" alt="Deploy an agentic squad">
+        <h3>Deploy an agentic squad</h3>
+        <p>The simplest route: a senior engineer, a managed squad or a fractional lead focused on a bounded outcome. No transformation programme required.</p>
       </div>
       <div class="offering-card">
-        <img src="/assets/images/corporate/synergy.png" alt="Stand up specific squads">
-        <h3>Stand up specific squads</h3>
-        <p>Build and embed individual squads around their Domain Building Blocks, with the tooling, skills and evals that let them ship safely from day one.</p>
+        <img src="/assets/images/corporate/planning.png" alt="Run a Glass Tube">
+        <h3>Run a Glass Tube</h3>
+        <p>Choose the depth of proof, from a PO/FPE-led sandbox prototype with selected enterprise services to a full domain and organisational slice.</p>
       </div>
       <div class="offering-card">
-        <img src="/assets/images/corporate/planning.png" alt="Plan the migration">
-        <h3>Plan the migration</h3>
-        <p>The hard work of moving an existing bank or FinTech onto the new model — sequencing, shadow integration, and the path that keeps the lights on while you change.</p>
+        <img src="/assets/images/corporate/business-strategy.png" alt="Transform and scale">
+        <h3>Transform and scale</h3>
+        <p>Expand into durable DBB squads, value streams and whole-organisation change across funding, people, sourcing, controls and production architecture.</p>
       </div>
     </div>
   </div>
@@ -212,16 +237,16 @@ flowchart TB
 <section class="section section--light">
   <div class="container text-center">
     <p class="section-label">The delivery lifecycle</p>
-    <h2>Proposition to growing squad</h2>
-    <p class="section-subtitle">The people-and-growth layer runs through the method end to end.</p>
+    <h2>From senior discovery to organisational scale</h2>
+    <p class="section-subtitle">The Glass Tube grows to match the decision it must support.</p>
     <div class="pill-row">
-      <span class="pill">Proposition</span>
-      <span class="pill">Capability Blueprint</span>
-      <span class="pill">Squad formation</span>
-      <span class="pill">Glass Tube proof</span>
+      <span class="pill">Founder-led discovery</span>
+      <span class="pill">Glass Tube pilot</span>
+      <span class="pill">Light or full-depth proof</span>
+      <span class="pill">Durable DBB squads</span>
       <span class="pill">Evidence-led growth</span>
     </div>
-    <p style="max-width:800px;margin:1.75rem auto 0;color:#555;">Two distinct things, deliberately: the <strong>Proposition Blueprint</strong> is the six-week commercial engagement; the <strong>Capability Blueprint</strong> is the people/capability work-product produced inside it (and available standalone) — the human and AI-assisted capability a proposition needs, the evidence that proves it, and the gaps to close. See <a href="{{ '/capability-intelligence/' | relative_url }}">Capability Intelligence</a>.</p>
+    <p style="max-width:800px;margin:1.75rem auto 0;color:#555;">Discovery produces the proposition and <strong>Capability Blueprint</strong>: the value, domains, human and AI-assisted capability, evidence and gaps. The Glass Tube then proves the proposition at the required depth. Its lightest form is a PO/FPE-led sandbox prototype; its fullest form runs a domain end to end with the first squad, coaches, controls and functional specialists. Scale follows the evidence. See <a href="{{ '/capability-intelligence/' | relative_url }}">Capability Intelligence</a>.</p>
   </div>
 </section>
 
@@ -230,8 +255,8 @@ flowchart TB
   <div class="container text-center">
     <p class="section-label">Our proving method</p>
     <h2>The Glass Tube</h2>
-    <p class="section-subtitle">Rather than a big-bang programme, we run a single <strong>domain</strong> end-to-end as a transparent vertical slice — so you can watch, and measure, the real levels of organisational change it demands (and the true cost and revenue delta) before you scale.</p>
-    <p style="max-width:780px;margin:1.5rem auto 0;color:#555;">The glass tube de-risks the economics: it proves reuse, controls and value on one beachhead so the rest of the estate is priced from <strong>evidence, not optimism</strong>. It's where the offer lives — the six-week Proposition Blueprint scopes the tube; the optional 90-day Proof runs it.</p>
+    <p class="section-subtitle">The Glass Tube is the pilot: a transparent vertical slice sized to the uncertainty and investment decision.</p>
+    <p style="max-width:780px;margin:1.5rem auto 0;color:#555;">A <strong>light Glass Tube</strong> proves the solution shape, controls and integration path through a working prototype in a sandbox. It can draw on a small number of enterprise-service specialists — for example platform, security, data, integration or service management — where the proof crosses their boundaries. A <strong>full-depth Glass Tube</strong> runs one domain end to end, adding the first squad, coaches, funding, roles, sourcing, risk and audit.</p>
   </div>
 </section>
 
