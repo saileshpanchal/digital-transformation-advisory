@@ -246,7 +246,7 @@ flowchart TB
         <p>Our <a href="{{ '/composable-bank/' | relative_url }}">Clean-Room Demonstration</a> shows the technology is genuinely possible, and that it connects directly to business value in an agentic way — agents that observe, prepare, check and execute within explicit authority and human approval. Three propositions run on the live engine today; Franchise Network is honestly a blueprint. It demonstrates the technical capability on synthetic data: the model is production-quality in design, though the platform is not yet product-ready.</p>
         <div class="hero-actions" style="justify-content:flex-start;">
           <a href="{{ '/composable-bank/' | relative_url }}" class="btn btn--primary" data-cta="demo" data-loc="approach-spike">Explore the demonstration</a>
-          <a href="https://calendly.com/sailesh-panchal/30min?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=strategy-call&amp;utm_content=approach" class="btn btn--ghost btn--ghost-dark" data-cta="strategy-call" data-loc="approach" target="_blank" rel="noopener">Book a strategy call</a>
+          {% include cta-calendly.html kind="strategy_call" loc="approach" class="btn--ghost btn--ghost-dark" %}
         </div>
       </div>
       <ul class="showcase-list">
