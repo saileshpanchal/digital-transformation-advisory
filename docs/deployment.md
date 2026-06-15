@@ -10,12 +10,11 @@ curl -sI https://digital-transformation-advisory.com/ | grep -i 'server:\|x-nf-'
 # → server: Netlify   /   x-nf-request-id: …
 ```
 
-> ⚠️ **`gh-pages` and `deploy.sh` are NOT the production path.** The repo still has a
-> `gh-pages` branch and a `deploy.sh` that builds `_site` and pushes it there. Pushing
-> `gh-pages` does **nothing** for the live domain — Netlify never reads it. A `gh-pages`
-> push (and even a forced GitHub Pages build) will appear to "succeed" while the live
-> site never changes. Do not use it to ship. (Treat `deploy.sh` as dead/legacy; remove
-> or repurpose it.)
+> ⚠️ **GitHub Pages / `gh-pages` is NOT the production path.** The repo has a stale
+> `gh-pages` branch; pushing to it does **nothing** for the live domain — Netlify never
+> reads it. A `gh-pages` push (or even a forced GitHub Pages build) will appear to
+> "succeed" while the live site never changes. A `deploy.sh` that published to
+> `gh-pages` was **removed** for exactly this reason — don't reintroduce that pattern.
 
 ## How a deploy happens
 
