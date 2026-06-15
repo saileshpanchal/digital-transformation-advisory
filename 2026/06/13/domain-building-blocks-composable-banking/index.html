@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Domain Building Blocks: The Unit BIAN Doesn't Give You | Digital Transformation Advisory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/corporate.css">
+  <link type="application/atom+xml" rel="alternate" href="https://digital-transformation-advisory.com/feed.xml" title="Digital Transformation Advisory" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Domain Building Blocks: The Unit BIAN Doesn’t Give You | Digital Transformation Advisory</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Domain Building Blocks: The Unit BIAN Doesn’t Give You" />
+<meta name="author" content="Sailesh Panchal" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Most banks already have a capability map. BIAN tells you what the capabilities are. It does not tell you how to package and run one so it can be reused, governed, and proven. That missing unit is the Domain Building Block." />
+<meta property="og:description" content="Most banks already have a capability map. BIAN tells you what the capabilities are. It does not tell you how to package and run one so it can be reused, governed, and proven. That missing unit is the Domain Building Block." />
+<link rel="canonical" href="https://digital-transformation-advisory.com/2026/06/13/domain-building-blocks-composable-banking/" />
+<meta property="og:url" content="https://digital-transformation-advisory.com/2026/06/13/domain-building-blocks-composable-banking/" />
+<meta property="og:site_name" content="Digital Transformation Advisory" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-06-13T00:00:00+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Domain Building Blocks: The Unit BIAN Doesn’t Give You" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Sailesh Panchal"},"dateModified":"2026-06-13T00:00:00+01:00","datePublished":"2026-06-13T00:00:00+01:00","description":"Most banks already have a capability map. BIAN tells you what the capabilities are. It does not tell you how to package and run one so it can be reused, governed, and proven. That missing unit is the Domain Building Block.","headline":"Domain Building Blocks: The Unit BIAN Doesn’t Give You","mainEntityOfPage":{"@type":"WebPage","@id":"https://digital-transformation-advisory.com/2026/06/13/domain-building-blocks-composable-banking/"},"url":"https://digital-transformation-advisory.com/2026/06/13/domain-building-blocks-composable-banking/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <script>
+  // Forward CTA clicks to whichever analytics tool is loaded (inert otherwise).
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-cta]');
+    if (!el) return;
+    var props = { cta: el.getAttribute('data-cta'), location: el.getAttribute('data-loc') || '' };
+    if (window.plausible) window.plausible('cta_click', { props: props });
+    if (window.posthog) window.posthog.capture('cta_click', props);
+    if (window.gtag) window.gtag('event', 'cta_click', props);
+  });
+</script>
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="/">
+        <img src="/assets/images/corporate/dta-icon.png" alt="Digital Transformation Advisory" class="navbar-logo">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <a href="/">Home</a>
+          <div class="nav-dropdown-content">
+            <a href="/#mission">Why we exist</a>
+            <a href="/#services">What we do</a>
+            <a href="/#how">How we work</a>
+            <a href="/#about">Leadership</a>
+          </div>
+        </div>
+        <a href="/approach/">Approach</a>
+        <a href="/composable-bank/">Propositions</a>
+        <a href="/capability-intelligence/">Capability Intelligence</a>
+        <a href="/insights/">Insights</a>
+        <a href="https://calendly.com/sailesh-panchal/30min?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=strategy-call&amp;utm_content=nav" class="btn btn--primary btn--nav" data-cta="strategy-call" data-loc="nav" target="_blank" rel="noopener">Book a strategy call</a>
+
+      </div>
+    </div>
+  </nav>
+
+  <article class="post-article">
+  <div class="container">
+    <header class="post-article-header">
+      <h1>Domain Building Blocks: The Unit BIAN Doesn't Give You</h1>
+      <p class="post-article-meta">
+        <time datetime="2026-06-13T00:00:00+01:00">June 13, 2026</time>
+         &middot; Banking, Architecture
+      </p>
+      
+      <div class="post-article-tags">
+        
+        <span class="post-card-tag">composable-banking</span>
+        
+        <span class="post-card-tag">bian</span>
+        
+        <span class="post-card-tag">domain-driven-design</span>
+        
+        <span class="post-card-tag">togaf</span>
+        
+        <span class="post-card-tag">enterprise-architecture</span>
+        
+        <span class="post-card-tag">banking-transformation</span>
+        
+      </div>
+      
+    </header>
+
+    <div class="post-article-content">
+      <p>Ask a bank’s chief architect for their capability model and you will usually get something good: a service-domain map, often BIAN-aligned, that names every meaningful banking capability and how they relate. It is a genuine asset. It is also, on its own, the reason so many “composable bank” programmes stall.</p>
+
+<p>The map tells you <em>what</em> the capabilities are. It does not tell you how to <strong>package one capability so it can be reused across propositions, governed under Consumer Duty, executed safely by software, and proven to a regulator</strong> — without copying the whole technology stack underneath it each time.</p>
+
+<p>That packaging unit is what we call a <strong>Domain Building Block (DBB)</strong>. This note explains what it is, why a capability map alone leaves a gap, and how the DBB sits at the intersection of three things your architects already trust: BIAN service domains, domain-driven design, and TOGAF building blocks.</p>
+
+<h2 id="what-bian-gives-you--and-where-it-stops">What BIAN gives you — and where it stops</h2>
+
+<p>The Banking Industry Architecture Network gives the industry a shared vocabulary of <strong>service domains</strong>: discrete, non-overlapping banking capabilities (Customer Relationship Management, Payment Order, Collateral Administration, and so on), each with a defined role and service operations. Its great contribution is <em>carving the elephant at the joints</em> — agreeing where one capability ends and the next begins, so two banks (and their vendors) can talk about the same thing.</p>
+
+<p>But BIAN is deliberately <strong>implementation-agnostic</strong>. By design, a service domain does not tell you:</p>
+
+<ul>
+  <li>the <strong>journey</strong> a customer or colleague actually moves through;</li>
+  <li>the <strong>policy and authority</strong> that decides whether an action is permitted;</li>
+  <li>the <strong>controls</strong> that must hold for it to be compliant;</li>
+  <li>the <strong>evidence</strong> the capability must emit to be auditable; or</li>
+  <li>the <strong>execution</strong> — how the thing actually runs, deterministically and repeatably.</li>
+</ul>
+
+<p>BIAN is the map. It is not the vehicle. A bank can be perfectly BIAN-aligned on paper and still have each “capability” implemented five different ways across five products, with controls bolted on afterwards and evidence reconstructed from logs. The map said <em>what</em>; nobody owned the <em>runnable, governed how</em>.</p>
+
+<h2 id="the-missing-unit-the-domain-building-block">The missing unit: the Domain Building Block</h2>
+
+<p>A <strong>Domain Building Block packages a meaningful banking capability across journey, policy, controls, evidence, and execution</strong> as one reusable, bounded thing. It is the unit you compose a proposition from — and the unit you can pick up and reuse in the next proposition without dragging the whole stack with it.</p>
+
+<p>Underneath it sits its counterpart:</p>
+
+<blockquote>
+  <p><strong>Domain Building Block</strong> — a reusable banking capability combining journey, policy, controls, evidence, and execution.</p>
+
+  <p><strong>Architecture Building Block (ABB)</strong> — shared technical and control infrastructure used by several Domain Building Blocks and propositions (party graph and identity; consent, entitlements and mandates; the event spine and canonical contracts; the double-entry ledger; evidence and reconciliation; replaceable adapters behind ports).</p>
+</blockquote>
+
+<p>The distinction is the whole point. A DBB is <em>business-meaningful and proposition-facing</em> (“Governed Contribution”, “Cross-border Funding”). An ABB is <em>technical and shared</em> (“party graph”, “event spine”). One DBB stands up on many ABBs; one ABB serves many DBBs. Business variation lives in the DBB composition, not in a duplicated technology stack.</p>
+
+<pre class="mermaid">
+flowchart TB
+  subgraph EX["Experiences (channels, brand, locale)"]
+  end
+  subgraph DBB["Domain Building Blocks — the business capabilities"]
+    D1["Family Circle"]
+    D2["Governed Contribution"]
+    D3["Opportunity Request"]
+    D4["Human Approval"]
+  end
+  subgraph ORCH["Agentic orchestration — plan, gate, execute, evidence"]
+  end
+  subgraph ABB["Architecture Building Blocks — shared infrastructure"]
+    A1["Party graph &amp; identity"]
+    A2["Entitlements &amp; mandates"]
+    A3["Event &amp; evidence spine"]
+    A4["Double-entry ledger"]
+  end
+  EX --&gt; DBB --&gt; ORCH --&gt; ABB
+</pre>
+
+<h2 id="why-this-isnt-a-new-invention--its-a-disciplined-synthesis">Why this isn’t a new invention — it’s a disciplined synthesis</h2>
+
+<p>Architects are right to be sceptical of vendors coining new acronyms. The DBB is not a fourth framework competing with the ones you have. It is the <strong>runnable composition unit that sits exactly where three established disciplines meet</strong>:</p>
+
+<p><strong>Domain-driven design gives it its boundary.</strong> Eric Evans’ and Vaughn Vernon’s <em>bounded context</em> is the foundational idea that a model is only valid, and a capability only coherent, <em>inside a defined boundary</em> with its own language and rules. A DBB is a bounded context with a banking job: its boundary is what makes it safely reusable, because everything it needs to mean and to enforce travels inside it.</p>
+
+<p><strong>BIAN gives it its place on the map.</strong> A DBB realises one (or a tight cluster) of BIAN service domains. BIAN answers “which capability is this, and where does it stop?”; the DBB answers “and here is the journey, policy, controls, evidence and execution that make it real.”</p>
+
+<p><strong>TOGAF gives it its vocabulary — and a caveat worth stating plainly.</strong> TOGAF already uses the term <em>Architecture Building Block</em> (a reusable, defined-function architecture component) alongside <em>Solution Building Blocks</em>. We use ABB in the same spirit and deliberately keep the word, because the lineage is real and useful. The DBB is closest to a domain-specialised, business-facing TOGAF building block — but with two TOGAF-silent properties promoted to first-class status: <strong>controls and evidence</strong>.</p>
+
+<pre class="mermaid">
+flowchart LR
+  BIAN["BIAN service domain<br />(what the capability is)"] --&gt; DBB
+  DDD["Bounded context / DDD<br />(the boundary &amp; model)"] --&gt; DBB
+  TOGAF["TOGAF building block<br />(reusable component vocabulary)"] --&gt; DBB
+  DBB["Domain Building Block<br />journey + policy + controls + evidence + execution"]
+</pre>
+
+<h2 id="the-part-the-older-frameworks-leave-outside-the-block">The part the older frameworks leave outside the block</h2>
+
+<p>Here is the difference that matters most to a bank in 2026.</p>
+
+<p>In a classic architecture, <strong>controls</strong> and <strong>evidence</strong> are cross-cutting afterthoughts — a compliance overlay, a logging strategy, a reconciliation job. That was tolerable when capabilities were operated by people at human speed. It is not tolerable when an <strong>agent</strong> can observe, prepare, recommend, and execute within defined authority. The moment software can act, the governance has to be <em>inside the capability</em>, not stapled to the outside of it.</p>
+
+<p>So a DBB carries, as part of its definition:</p>
+
+<ul>
+  <li><strong>Policy and authority</strong> — who or what is permitted to do this, and under what mandate. Identity is not authority; membership of a family or a network grants no access by itself.</li>
+  <li><strong>Controls</strong> — the invariants that must hold (balanced postings; a 1:1 backing check; a required approval) before an action completes.</li>
+  <li><strong>Evidence</strong> — every material step emits a record: the recommendation, the policy result, the approval, the command result, the audit trail.</li>
+  <li><strong>Execution</strong> — a deterministic <em>gather → execute → acknowledge</em> path, where a <strong>material action cannot execute until an authorised human records approval.</strong></li>
+</ul>
+
+<p>That last property is not aspirational. In our working reference prototype it is enforced and tested: an agent may prepare and propose, but a material proposal throws rather than executing until approval is recorded. Agents prepare; humans decide; the evidence is produced as a by-product, not reconstructed after the fact. <em>That</em> is what makes a capability defensible under Consumer Duty — and it only works if it lives inside the building block.</p>
+
+<h2 id="what-this-means-for-a-bank">What this means for a bank</h2>
+
+<p>If your capabilities are DBBs, three things become true that are not true of a capability map alone:</p>
+
+<ol>
+  <li><strong>You can add a capability without re-platforming.</strong> A new proposition composes existing DBBs and adds the few it needs. A new money form or rail enters as a branch inside the relevant DBB, not as a parallel stack. Composition, not duplication.</li>
+  <li><strong>You can prove governance, not assert it.</strong> Because controls and evidence are part of each block, “show me how this decision was authorised and recorded” has an answer by construction.</li>
+  <li><strong>You can let agents operate safely.</strong> Authority, gates, and evidence are where the work happens, so automation extends reach without surrendering control.</li>
+</ol>
+
+<p>This is why the DBB is the <strong>Capability plane</strong> of our reference architecture, <strong>C3 — Capability · Context · Consent</strong>: governed capabilities (the DBBs), a shared Context plane of meaning, and a Consent plane where every agent action is authorised, evidenced and revocable. Together they are what let a bank <em>own</em> its agentic capability — accountable and sovereign — rather than rent it. That is what we mean by <strong>Owned Autonomy</strong>, and it is the foundation of <strong>accountable banking</strong>.</p>
+
+<p>A short honesty note, because it is the point of how we work: several of these propositions now run end-to-end on our live engine, with tests behind them, while others are explicitly labelled <strong>blueprints</strong>. Our Clean-Room Demonstration shows exactly which is which — built to production-grade controls on synthetic data, a demonstration rather than production. We would rather be precise about that than imply a finished platform.</p>
+
+<h2 id="where-to-start">Where to start</h2>
+
+<p>You almost certainly do not need a new capability map — you need to turn the one you have into <em>runnable, governed building blocks</em>, and to learn the real organisational cost of doing so before you commit to the whole estate. That is precisely what our <strong>six-week Proposition Blueprint</strong> is for: take one proposition, define its DBBs and the ABBs beneath them, and produce a board-ready recommendation to go, reshape, or stop — with an optional 90-day proof of a single bounded journey.</p>
+
+<p>If your capability model is excellent and your propositions still take eighteen months each, the gap is almost certainly the missing unit. BIAN told you <em>what</em>. The Domain Building Block is <em>how</em>.</p>
+
+<hr />
+
+<p><em>A companion technical note on tokenised-deposit conformance (ERC-7943 alignment) is maintained separately; this paper deliberately stays at the architecture-decision level rather than the instrument level.</em></p>
+
+    </div>
+
+    <!-- Author bio + social proof + conversion CTA for inbound (LinkedIn / Medium / book) traffic -->
+<div class="post-footer">
+  <div class="author-bio">
+    <img src="/assets/images/corporate/sp-icon.png" alt="Sailesh Panchal" class="author-bio-photo">
+    <div class="author-bio-body">
+      <p class="author-bio-name">Sailesh Panchal</p>
+      <p class="author-bio-text">Founder &amp; CEO of Digital Transformation Advisory. 30+ years in banking and FinTech — now building agentic product squads and production AI platforms for regulated organisations. Writing a book on digital transformation in UK banking.</p>
+      <div class="author-bio-links">
+        
+        
+        <a href="/insights/">More insights</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-cta">
+    <div class="post-cta-text">
+      <h3>Working on something like this?</h3>
+      <p>If this resonates, we should talk. We help organisations turn ideas like these into shipped outcomes.</p>
+    </div>
+    <a href="/connect/" class="btn btn--primary">Book a call</a>
+  </div>
+
+  <div class="post-subscribe">
+    <p>Get new insights by email &mdash; agentic engineering, on-device AI and transformation.</p>
+    <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form">
+      <input type="hidden" name="form-name" value="newsletter">
+      <p class="hidden-field"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div class="newsletter-input">
+        <label class="visually-hidden" for="post-newsletter-email">Email address</label>
+        <input type="email" id="post-newsletter-email" name="email" placeholder="you@company.com" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+      </div>
+    </form>
+  </div>
+
+  <p class="post-back"><a href="/insights/">&larr; Back to all insights</a></p>
+</div>
+
+  </div>
+</article>
+
+<!-- Mermaid.js for interactive diagrams -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'neutral',
+    flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' },
+    sequence: { useMaxWidth: true },
+    securityLevel: 'loose'
+  });
+</script>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/">
+          <img src="/assets/images/corporate/dta-logo.png" alt="Digital Transformation Advisory" class="footer-logo">
+        </a>
+        <div class="footer-links">
+          <a href="/approach/">Approach</a>
+          <a href="/composable-bank/">Propositions</a>
+          <a href="/capability-intelligence/">Capability Intelligence</a>
+          <a href="/insights/">Insights</a>
+          <a href="/connect/">Contact</a>
+          <a href="/policy-documentation/">Policies</a>
+          
+          
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-bottom">&copy; 2026 Digital Transformation Advisory Ltd</p>
+    </div>
+  </footer>
+
+</body>
+</html>

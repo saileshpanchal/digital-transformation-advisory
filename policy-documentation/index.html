@@ -15,8 +15,8 @@
 <meta property="og:title" content="Policy Documentation" />
 <meta name="author" content="Sailesh Panchal" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Transforming Organisations to work for you. Specialising in Agile/SaFE, Strategic Architecture and ISO 20022 Payments." />
-<meta property="og:description" content="Transforming Organisations to work for you. Specialising in Agile/SaFE, Strategic Architecture and ISO 20022 Payments." />
+<meta name="description" content="Owned Autonomy — agentic capability a bank owns rather than rents. DTA helps regulated organisations build agentic squads, accountable AI and the organisational capability to create new propositions and business models." />
+<meta property="og:description" content="Owned Autonomy — agentic capability a bank owns rather than rents. DTA helps regulated organisations build agentic squads, accountable AI and the organisational capability to create new propositions and business models." />
 <link rel="canonical" href="https://digital-transformation-advisory.com/policy-documentation/" />
 <meta property="og:url" content="https://digital-transformation-advisory.com/policy-documentation/" />
 <meta property="og:site_name" content="Digital Transformation Advisory" />
@@ -24,8 +24,20 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Policy Documentation" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sailesh Panchal"},"description":"Transforming Organisations to work for you. Specialising in Agile/SaFE, Strategic Architecture and ISO 20022 Payments.","headline":"Policy Documentation","url":"https://digital-transformation-advisory.com/policy-documentation/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sailesh Panchal"},"description":"Owned Autonomy — agentic capability a bank owns rather than rents. DTA helps regulated organisations build agentic squads, accountable AI and the organisational capability to create new propositions and business models.","headline":"Policy Documentation","url":"https://digital-transformation-advisory.com/policy-documentation/"}</script>
 <!-- End Jekyll SEO tag -->
+
+  <script>
+  // Forward CTA clicks to whichever analytics tool is loaded (inert otherwise).
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-cta]');
+    if (!el) return;
+    var props = { cta: el.getAttribute('data-cta'), location: el.getAttribute('data-loc') || '' };
+    if (window.plausible) window.plausible('cta_click', { props: props });
+    if (window.posthog) window.posthog.capture('cta_click', props);
+    if (window.gtag) window.gtag('event', 'cta_click', props);
+  });
+</script>
 
 </head>
 <body>
@@ -43,22 +55,18 @@
         <div class="nav-dropdown">
           <a href="/">Home</a>
           <div class="nav-dropdown-content">
-            <a href="/#mission">Our Mission</a>
-            <a href="/#method">Our Method</a>
-            <a href="/#phases">Phases</a>
-            <a href="/#services">Services</a>
-            <a href="/#about">About Us</a>
+            <a href="/#mission">Why we exist</a>
+            <a href="/#services">What we do</a>
+            <a href="/#how">How we work</a>
+            <a href="/#about">Leadership</a>
           </div>
         </div>
-        <div class="nav-dropdown">
-          <a href="/policy-documentation/">Policy Documentation</a>
-          <div class="nav-dropdown-content">
-            <a href="/policy-documentation/#modern-slavery">Modern Slavery Policy</a>
-            <a href="/policy-documentation/#privacy">Privacy Policy</a>
-          </div>
-        </div>
+        <a href="/approach/">Approach</a>
+        <a href="/composable-bank/">Propositions</a>
+        <a href="/capability-intelligence/">Capability Intelligence</a>
         <a href="/insights/">Insights</a>
-        <a href="/connect/">Connect</a>
+        <a href="https://calendly.com/sailesh-panchal/30min?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=strategy-call&amp;utm_content=nav" class="btn btn--primary btn--nav" data-cta="strategy-call" data-loc="nav" target="_blank" rel="noopener">Book a strategy call</a>
+
       </div>
     </div>
   </nav>
@@ -142,9 +150,14 @@
           <img src="/assets/images/corporate/dta-logo.png" alt="Digital Transformation Advisory" class="footer-logo">
         </a>
         <div class="footer-links">
-          <a href="/policy-documentation/">Policy Documents</a>
+          <a href="/approach/">Approach</a>
+          <a href="/composable-bank/">Propositions</a>
+          <a href="/capability-intelligence/">Capability Intelligence</a>
           <a href="/insights/">Insights</a>
-          <a href="/connect/">Connect</a>
+          <a href="/connect/">Contact</a>
+          <a href="/policy-documentation/">Policies</a>
+          
+          
         </div>
       </div>
       <hr class="footer-divider">

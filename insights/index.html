@@ -15,8 +15,8 @@
 <meta property="og:title" content="Insights" />
 <meta name="author" content="Sailesh Panchal" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Transforming Organisations to work for you. Specialising in Agile/SaFE, Strategic Architecture and ISO 20022 Payments." />
-<meta property="og:description" content="Transforming Organisations to work for you. Specialising in Agile/SaFE, Strategic Architecture and ISO 20022 Payments." />
+<meta name="description" content="Field notes on agentic engineering, on-device AI and digital transformation — written from the work, by Sailesh Panchal." />
+<meta property="og:description" content="Field notes on agentic engineering, on-device AI and digital transformation — written from the work, by Sailesh Panchal." />
 <link rel="canonical" href="https://digital-transformation-advisory.com/insights/" />
 <meta property="og:url" content="https://digital-transformation-advisory.com/insights/" />
 <meta property="og:site_name" content="Digital Transformation Advisory" />
@@ -24,8 +24,20 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Insights" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sailesh Panchal"},"description":"Transforming Organisations to work for you. Specialising in Agile/SaFE, Strategic Architecture and ISO 20022 Payments.","headline":"Insights","url":"https://digital-transformation-advisory.com/insights/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sailesh Panchal"},"description":"Field notes on agentic engineering, on-device AI and digital transformation — written from the work, by Sailesh Panchal.","headline":"Insights","url":"https://digital-transformation-advisory.com/insights/"}</script>
 <!-- End Jekyll SEO tag -->
+
+  <script>
+  // Forward CTA clicks to whichever analytics tool is loaded (inert otherwise).
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-cta]');
+    if (!el) return;
+    var props = { cta: el.getAttribute('data-cta'), location: el.getAttribute('data-loc') || '' };
+    if (window.plausible) window.plausible('cta_click', { props: props });
+    if (window.posthog) window.posthog.capture('cta_click', props);
+    if (window.gtag) window.gtag('event', 'cta_click', props);
+  });
+</script>
 
 </head>
 <body>
@@ -43,37 +55,164 @@
         <div class="nav-dropdown">
           <a href="/">Home</a>
           <div class="nav-dropdown-content">
-            <a href="/#mission">Our Mission</a>
-            <a href="/#method">Our Method</a>
-            <a href="/#phases">Phases</a>
-            <a href="/#services">Services</a>
-            <a href="/#about">About Us</a>
+            <a href="/#mission">Why we exist</a>
+            <a href="/#services">What we do</a>
+            <a href="/#how">How we work</a>
+            <a href="/#about">Leadership</a>
           </div>
         </div>
-        <div class="nav-dropdown">
-          <a href="/policy-documentation/">Policy Documentation</a>
-          <div class="nav-dropdown-content">
-            <a href="/policy-documentation/#modern-slavery">Modern Slavery Policy</a>
-            <a href="/policy-documentation/#privacy">Privacy Policy</a>
-          </div>
-        </div>
+        <a href="/approach/">Approach</a>
+        <a href="/composable-bank/">Propositions</a>
+        <a href="/capability-intelligence/">Capability Intelligence</a>
         <a href="/insights/">Insights</a>
-        <a href="/connect/">Connect</a>
+        <a href="https://calendly.com/sailesh-panchal/30min?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=strategy-call&amp;utm_content=nav" class="btn btn--primary btn--nav" data-cta="strategy-call" data-loc="nav" target="_blank" rel="noopener">Book a strategy call</a>
+
       </div>
     </div>
   </nav>
 
   <div class="insights-header">
   <div class="container">
-    <h1>Insights</h1>
-    <p>Technology strategy, digital transformation, and the people shaping our digital future.</p>
+    <p class="section-label">Insights</p>
+    <h1>Notes from the work.</h1>
+    <p>Agentic engineering, on-device AI, and transformation in regulated organisations — practical, opinionated, and written from real projects rather than the brochure.</p>
   </div>
 </div>
+
+
+
+
+<!-- Featured post -->
+<section class="section" style="padding-bottom: 0;">
+  <div class="container">
+    <a href="/2026/06/15/owned-autonomy-agentic-banking-a-bank-owns/" class="featured-post">
+      <p class="featured-flag">Latest</p>
+      <h2 class="featured-title">Owned Autonomy: Agentic Banking a Bank Owns, Not Rents</h2>
+      <p class="featured-meta">June 15, 2026 &middot; Strategy, Architecture</p>
+      <p class="featured-excerpt">Agents are crossing from advice to action. A bank can only allow that if it stays accountable for every action and sovereign over the agents, data and models involved. We call that condition Owned Autonomy — and the C3 architecture spine is how you build it.</p>
+      <span class="featured-readmore">Read the article &rarr;</span>
+    </a>
+  </div>
+</section>
 
 <section class="section">
   <div class="container">
     <div class="posts-grid">
       
+      <article class="post-card">
+        <div class="post-card-body">
+          <p class="post-card-date">June 15, 2026 &middot; Strategy, Architecture</p>
+          <h3 class="post-card-title">
+            <a href="/2026/06/15/consent-let-agents-act-without-authority/">Consent: How to Let Agents Act Without Handing Them Authority</a>
+          </h3>
+          <p class="post-card-excerpt">Consent is the control plane of the C3 spine: authority, policy, evidence and an agentic gateway. It's how a regulated bank lets an agent do more than advise while keeping explicit, inspectable control of what it's allowed to do —...</p>
+          
+          <div class="post-card-tags">
+            
+            <span class="post-card-tag">owned-autonomy</span>
+            
+            <span class="post-card-tag">architecture</span>
+            
+            <span class="post-card-tag">agentic</span>
+            
+            <span class="post-card-tag">consent</span>
+            
+          </div>
+          
+        </div>
+      </article>
+      
+      <article class="post-card">
+        <div class="post-card-body">
+          <p class="post-card-date">June 15, 2026 &middot; Strategy, Architecture</p>
+          <h3 class="post-card-title">
+            <a href="/2026/06/15/context-shared-meaning-agents-need/">Context: The Shared Meaning Agents Can't Act Without</a>
+          </h3>
+          <p class="post-card-excerpt">Context is the quiet plane of the C3 spine — a shared semantic layer plus measurement. Skip it and your capabilities won't compose, your agents can't be trusted across domains, and you can't prove the economics. Meaning is architecture, not...</p>
+          
+          <div class="post-card-tags">
+            
+            <span class="post-card-tag">owned-autonomy</span>
+            
+            <span class="post-card-tag">architecture</span>
+            
+            <span class="post-card-tag">agentic</span>
+            
+            <span class="post-card-tag">semantic-layer</span>
+            
+          </div>
+          
+        </div>
+      </article>
+      
+      <article class="post-card">
+        <div class="post-card-body">
+          <p class="post-card-date">June 14, 2026 &middot; Strategy, Architecture</p>
+          <h3 class="post-card-title">
+            <a href="/2026/06/14/c3-the-spine-of-owned-autonomy/">C3: Capability, Context, Consent — the Spine of Owned Autonomy</a>
+          </h3>
+          <p class="post-card-excerpt">Owned Autonomy needs an architecture. A bank can only be accountable for what its agents do, and sovereign over what they run on, if three things are shared across every proposition: governed capability, shared meaning, and the authority to act....</p>
+          
+          <div class="post-card-tags">
+            
+            <span class="post-card-tag">owned-autonomy</span>
+            
+            <span class="post-card-tag">architecture</span>
+            
+            <span class="post-card-tag">agentic</span>
+            
+            <span class="post-card-tag">consent</span>
+            
+          </div>
+          
+        </div>
+      </article>
+      
+      <article class="post-card">
+        <div class="post-card-body">
+          <p class="post-card-date">June 14, 2026 &middot; Strategy, Payments</p>
+          <h3 class="post-card-title">
+            <a href="/2026/06/14/cross-border-payments-the-real-prize-is-the-deposit/">Cross-Border Payments: The Real Prize Is the Deposit, Not the Fee</a>
+          </h3>
+          <p class="post-card-excerpt">Cross-border payments are being rebuilt on real-time rails and pre-funded local accounts. Most of the conversation is about cheaper, faster payments. The bigger prize is the deposit — and the net interest, FX and liquidity revenue that sits on top...</p>
+          
+          <div class="post-card-tags">
+            
+            <span class="post-card-tag">cross-border-payments</span>
+            
+            <span class="post-card-tag">real-time-payments</span>
+            
+            <span class="post-card-tag">stablecoins</span>
+            
+            <span class="post-card-tag">tokenised-deposits</span>
+            
+          </div>
+          
+        </div>
+      </article>
+      
+      <article class="post-card">
+        <div class="post-card-body">
+          <p class="post-card-date">June 13, 2026 &middot; Banking, Architecture</p>
+          <h3 class="post-card-title">
+            <a href="/2026/06/13/domain-building-blocks-composable-banking/">Domain Building Blocks: The Unit BIAN Doesn't Give You</a>
+          </h3>
+          <p class="post-card-excerpt">Most banks already have a capability map. BIAN tells you what the capabilities are. It does not tell you how to package and run one so it can be reused, governed, and proven. That missing unit is the Domain Building...</p>
+          
+          <div class="post-card-tags">
+            
+            <span class="post-card-tag">composable-banking</span>
+            
+            <span class="post-card-tag">bian</span>
+            
+            <span class="post-card-tag">domain-driven-design</span>
+            
+            <span class="post-card-tag">togaf</span>
+            
+          </div>
+          
+        </div>
+      </article>
       
       <article class="post-card">
         <div class="post-card-body">
@@ -92,29 +231,6 @@
             <span class="post-card-tag">llm-tools</span>
             
             <span class="post-card-tag">kuzuctl</span>
-            
-          </div>
-          
-        </div>
-      </article>
-      
-      <article class="post-card">
-        <div class="post-card-body">
-          <p class="post-card-date">April 8, 2026 &middot; Engineering, AI</p>
-          <h3 class="post-card-title">
-            <a href="/2026/04/08/turning-your-knowledge-base-into-a-graph-you-can-argue-with/">Turning Your Knowledge Base Into a Graph You Can Argue With</a>
-          </h3>
-          <p class="post-card-excerpt">How to build a derived graph layer on top of markdown files so you can ask 'what contradicts this?' instead of just 'does this exist?'</p>
-          
-          <div class="post-card-tags">
-            
-            <span class="post-card-tag">knowledge-graphs</span>
-            
-            <span class="post-card-tag">llm-tools</span>
-            
-            <span class="post-card-tag">architecture</span>
-            
-            <span class="post-card-tag">obsidian</span>
             
           </div>
           
@@ -146,21 +262,21 @@
       
       <article class="post-card">
         <div class="post-card-body">
-          <p class="post-card-date">March 26, 2026 &middot; Engineering, AI</p>
+          <p class="post-card-date">April 8, 2026 &middot; Engineering, AI</p>
           <h3 class="post-card-title">
-            <a href="/2026/03/26/how-we-test-claude-skills-the-eval-and-tune-loop/">How We Test Claude Skills: The Eval-and-Tune Loop</a>
+            <a href="/2026/04/08/turning-your-knowledge-base-into-a-graph-you-can-argue-with/">Turning Your Knowledge Base Into a Graph You Can Argue With</a>
           </h3>
-          <p class="post-card-excerpt">Writing a Claude Code skill is easy. Knowing whether it actually works is harder. We built an eval-and-tune loop that benchmarks skills against a no-skill baseline, and the first thing we learned is that your initial assertions will be wrong....</p>
+          <p class="post-card-excerpt">How to build a derived graph layer on top of markdown files so you can ask 'what contradicts this?' instead of just 'does this exist?'</p>
           
           <div class="post-card-tags">
             
-            <span class="post-card-tag">claude</span>
+            <span class="post-card-tag">knowledge-graphs</span>
             
-            <span class="post-card-tag">skills</span>
+            <span class="post-card-tag">llm-tools</span>
             
-            <span class="post-card-tag">testing</span>
+            <span class="post-card-tag">architecture</span>
             
-            <span class="post-card-tag">evaluation</span>
+            <span class="post-card-tag">obsidian</span>
             
           </div>
           
@@ -184,6 +300,29 @@
             <span class="post-card-tag">developer-tools</span>
             
             <span class="post-card-tag">claude</span>
+            
+          </div>
+          
+        </div>
+      </article>
+      
+      <article class="post-card">
+        <div class="post-card-body">
+          <p class="post-card-date">March 26, 2026 &middot; Engineering, AI</p>
+          <h3 class="post-card-title">
+            <a href="/2026/03/26/how-we-test-claude-skills-the-eval-and-tune-loop/">How We Test Claude Skills: The Eval-and-Tune Loop</a>
+          </h3>
+          <p class="post-card-excerpt">Writing a Claude Code skill is easy. Knowing whether it actually works is harder. We built an eval-and-tune loop that benchmarks skills against a no-skill baseline, and the first thing we learned is that your initial assertions will be wrong....</p>
+          
+          <div class="post-card-tags">
+            
+            <span class="post-card-tag">claude</span>
+            
+            <span class="post-card-tag">skills</span>
+            
+            <span class="post-card-tag">testing</span>
+            
+            <span class="post-card-tag">evaluation</span>
             
           </div>
           
@@ -286,6 +425,33 @@
   </div>
 </section>
 
+<!-- Closing call-to-action band: book a call + newsletter capture -->
+<section class="cta-band section--dark">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="cta-book">
+        <h2>Let's build something that ships.</h2>
+        <p>Tell us what you're trying to do with AI. We'll tell you, honestly, whether and how we can help.</p>
+        <a href="/connect/" class="btn btn--primary">Book a call</a>
+      </div>
+      <div class="cta-subscribe">
+        <h3>Get the insights by email</h3>
+        <p>Field notes on agentic engineering, on-device AI and transformation. No spam, unsubscribe anytime.</p>
+        <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form">
+          <input type="hidden" name="form-name" value="newsletter">
+          <p class="hidden-field"><label>Don't fill this out: <input name="bot-field"></label></p>
+          <div class="newsletter-input">
+            <label class="visually-hidden" for="newsletter-email">Email address</label>
+            <input type="email" id="newsletter-email" name="email" placeholder="you@company.com" required>
+            <button type="submit" class="btn btn--primary">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -295,9 +461,14 @@
           <img src="/assets/images/corporate/dta-logo.png" alt="Digital Transformation Advisory" class="footer-logo">
         </a>
         <div class="footer-links">
-          <a href="/policy-documentation/">Policy Documents</a>
+          <a href="/approach/">Approach</a>
+          <a href="/composable-bank/">Propositions</a>
+          <a href="/capability-intelligence/">Capability Intelligence</a>
           <a href="/insights/">Insights</a>
-          <a href="/connect/">Connect</a>
+          <a href="/connect/">Contact</a>
+          <a href="/policy-documentation/">Policies</a>
+          
+          
         </div>
       </div>
       <hr class="footer-divider">

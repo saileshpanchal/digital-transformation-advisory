@@ -4,7 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Turning Your Knowledge Base Into a Graph You Can Argue With | Digital Transformation Advisory</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/corporate.css">
   <link type="application/atom+xml" rel="alternate" href="https://digital-transformation-advisory.com/feed.xml" title="Digital Transformation Advisory" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Turning Your Knowledge Base Into a Graph You Can Argue With | Digital Transformation Advisory</title>
@@ -25,50 +28,81 @@
 {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Sailesh Panchal"},"dateModified":"2026-04-08T00:00:00+01:00","datePublished":"2026-04-08T00:00:00+01:00","description":"How to build a derived graph layer on top of markdown files so you can ask ‘what contradicts this?’ instead of just ‘does this exist?’","headline":"Turning Your Knowledge Base Into a Graph You Can Argue With","mainEntityOfPage":{"@type":"WebPage","@id":"https://digital-transformation-advisory.com/2026/04/08/turning-your-knowledge-base-into-a-graph-you-can-argue-with/"},"url":"https://digital-transformation-advisory.com/2026/04/08/turning-your-knowledge-base-into-a-graph-you-can-argue-with/"}</script>
 <!-- End Jekyll SEO tag -->
 
+  <script>
+  // Forward CTA clicks to whichever analytics tool is loaded (inert otherwise).
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-cta]');
+    if (!el) return;
+    var props = { cta: el.getAttribute('data-cta'), location: el.getAttribute('data-loc') || '' };
+    if (window.plausible) window.plausible('cta_click', { props: props });
+    if (window.posthog) window.posthog.capture('cta_click', props);
+    if (window.gtag) window.gtag('event', 'cta_click', props);
+  });
+</script>
+
 </head>
 <body>
-  <header class="site-header">
-  <nav class="container">
-    <a href="/" class="site-title">Digital Transformation Advisory</a>
-    <ul class="nav-links">
-      <li><a href="/">Posts</a></li>
-      <li><a href="/categories/">Categories</a></li>
-      <li><a href="/tags/">Tags</a></li>
-      <li><a href="/about/">About</a></li>
-      <li><a href="/search/">Search</a></li>
-    </ul>
-  </nav>
-</header>
 
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="/">
+        <img src="/assets/images/corporate/dta-icon.png" alt="Digital Transformation Advisory" class="navbar-logo">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <a href="/">Home</a>
+          <div class="nav-dropdown-content">
+            <a href="/#mission">Why we exist</a>
+            <a href="/#services">What we do</a>
+            <a href="/#how">How we work</a>
+            <a href="/#about">Leadership</a>
+          </div>
+        </div>
+        <a href="/approach/">Approach</a>
+        <a href="/composable-bank/">Propositions</a>
+        <a href="/capability-intelligence/">Capability Intelligence</a>
+        <a href="/insights/">Insights</a>
+        <a href="https://calendly.com/sailesh-panchal/30min?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=strategy-call&amp;utm_content=nav" class="btn btn--primary btn--nav" data-cta="strategy-call" data-loc="nav" target="_blank" rel="noopener">Book a strategy call</a>
 
-  <main class="container">
-    <article class="post">
-  <header class="post-header">
-    <h1>Turning Your Knowledge Base Into a Graph You Can Argue With</h1>
-    <time datetime="2026-04-08T00:00:00+01:00">April 8, 2026</time>
-    
-    <div class="post-tags">
-      
-      <span class="tag">knowledge-graphs</span>
-      
-      <span class="tag">llm-tools</span>
-      
-      <span class="tag">architecture</span>
-      
-      <span class="tag">obsidian</span>
-      
-      <span class="tag">kuzu</span>
-      
-      <span class="tag">sqlite</span>
-      
-      <span class="tag">kuzuctl</span>
-      
+      </div>
     </div>
-    
-  </header>
+  </nav>
 
-  <div class="post-content">
-    <p>You’ve been consulting for five years. Your Obsidian vault has 847 insights. You can search by keyword. You can search by tag. But you cannot ask your own knowledge base “what contradicts this claim?” and you cannot ask “what’s the gap in my thinking here?”</p>
+  <article class="post-article">
+  <div class="container">
+    <header class="post-article-header">
+      <h1>Turning Your Knowledge Base Into a Graph You Can Argue With</h1>
+      <p class="post-article-meta">
+        <time datetime="2026-04-08T00:00:00+01:00">April 8, 2026</time>
+         &middot; Engineering, AI
+      </p>
+      
+      <div class="post-article-tags">
+        
+        <span class="post-card-tag">knowledge-graphs</span>
+        
+        <span class="post-card-tag">llm-tools</span>
+        
+        <span class="post-card-tag">architecture</span>
+        
+        <span class="post-card-tag">obsidian</span>
+        
+        <span class="post-card-tag">kuzu</span>
+        
+        <span class="post-card-tag">sqlite</span>
+        
+        <span class="post-card-tag">kuzuctl</span>
+        
+      </div>
+      
+    </header>
+
+    <div class="post-article-content">
+      <p>You’ve been consulting for five years. Your Obsidian vault has 847 insights. You can search by keyword. You can search by tag. But you cannot ask your own knowledge base “what contradicts this claim?” and you cannot ask “what’s the gap in my thinking here?”</p>
 
 <p>That’s the problem that led to kuzuctl.</p>
 
@@ -396,28 +430,85 @@ EDGES:
 
 <p><strong>Sailesh Panchal</strong> is a CTO and founder of Digital Transformation Advisory. He consults with UK banking and fintech on AI strategy, platform architecture, and the boring operational decisions that make transformation stick.</p>
 
+    </div>
+
+    <!-- Author bio + social proof + conversion CTA for inbound (LinkedIn / Medium / book) traffic -->
+<div class="post-footer">
+  <div class="author-bio">
+    <img src="/assets/images/corporate/sp-icon.png" alt="Sailesh Panchal" class="author-bio-photo">
+    <div class="author-bio-body">
+      <p class="author-bio-name">Sailesh Panchal</p>
+      <p class="author-bio-text">Founder &amp; CEO of Digital Transformation Advisory. 30+ years in banking and FinTech — now building agentic product squads and production AI platforms for regulated organisations. Writing a book on digital transformation in UK banking.</p>
+      <div class="author-bio-links">
+        
+        
+        <a href="/insights/">More insights</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-cta">
+    <div class="post-cta-text">
+      <h3>Working on something like this?</h3>
+      <p>If this resonates, we should talk. We help organisations turn ideas like these into shipped outcomes.</p>
+    </div>
+    <a href="/connect/" class="btn btn--primary">Book a call</a>
+  </div>
+
+  <div class="post-subscribe">
+    <p>Get new insights by email &mdash; agentic engineering, on-device AI and transformation.</p>
+    <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form">
+      <input type="hidden" name="form-name" value="newsletter">
+      <p class="hidden-field"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div class="newsletter-input">
+        <label class="visually-hidden" for="post-newsletter-email">Email address</label>
+        <input type="email" id="post-newsletter-email" name="email" placeholder="you@company.com" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+      </div>
+    </form>
+  </div>
+
+  <p class="post-back"><a href="/insights/">&larr; Back to all insights</a></p>
+</div>
+
   </div>
 </article>
 
-  </main>
+<!-- Mermaid.js for interactive diagrams -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'neutral',
+    flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' },
+    sequence: { useMaxWidth: true },
+    securityLevel: 'loose'
+  });
+</script>
 
+
+  <!-- Footer -->
   <footer class="site-footer">
-  <div class="container">
-    <p>&copy; 2026 Sailesh Panchal. Built with Jekyll.</p>
-  </div>
-</footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/">
+          <img src="/assets/images/corporate/dta-logo.png" alt="Digital Transformation Advisory" class="footer-logo">
+        </a>
+        <div class="footer-links">
+          <a href="/approach/">Approach</a>
+          <a href="/composable-bank/">Propositions</a>
+          <a href="/capability-intelligence/">Capability Intelligence</a>
+          <a href="/insights/">Insights</a>
+          <a href="/connect/">Contact</a>
+          <a href="/policy-documentation/">Policies</a>
+          
+          
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-bottom">&copy; 2026 Digital Transformation Advisory Ltd</p>
+    </div>
+  </footer>
 
-
-  <!-- Mermaid.js for interactive diagrams -->
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: 'neutral',
-      flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' },
-      sequence: { useMaxWidth: true },
-      securityLevel: 'loose'
-    });
-  </script>
 </body>
 </html>

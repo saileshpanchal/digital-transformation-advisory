@@ -28,6 +28,18 @@
 {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Sailesh Panchal"},"dateModified":"2026-03-20T00:00:00+00:00","datePublished":"2026-03-20T00:00:00+00:00","description":"A client needed 50 PowerPoint decks converted to a new brand identity. Our first instinct was to train a model. We were wrong. Here’s the pipeline we built instead, and the decision framework that stopped us from over-engineering.","headline":"Fifty PowerPoints and a Rebrand: Why We Didn’t Train a Model","mainEntityOfPage":{"@type":"WebPage","@id":"https://digital-transformation-advisory.com/2026/03/20/fifty-powerpoints-and-a-rebrand-why-we-didnt-train-a-model/"},"url":"https://digital-transformation-advisory.com/2026/03/20/fifty-powerpoints-and-a-rebrand-why-we-didnt-train-a-model/"}</script>
 <!-- End Jekyll SEO tag -->
 
+  <script>
+  // Forward CTA clicks to whichever analytics tool is loaded (inert otherwise).
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-cta]');
+    if (!el) return;
+    var props = { cta: el.getAttribute('data-cta'), location: el.getAttribute('data-loc') || '' };
+    if (window.plausible) window.plausible('cta_click', { props: props });
+    if (window.posthog) window.posthog.capture('cta_click', props);
+    if (window.gtag) window.gtag('event', 'cta_click', props);
+  });
+</script>
+
 </head>
 <body>
 
@@ -44,22 +56,18 @@
         <div class="nav-dropdown">
           <a href="/">Home</a>
           <div class="nav-dropdown-content">
-            <a href="/#mission">Our Mission</a>
-            <a href="/#method">Our Method</a>
-            <a href="/#phases">Phases</a>
-            <a href="/#services">Services</a>
-            <a href="/#about">About Us</a>
+            <a href="/#mission">Why we exist</a>
+            <a href="/#services">What we do</a>
+            <a href="/#how">How we work</a>
+            <a href="/#about">Leadership</a>
           </div>
         </div>
-        <div class="nav-dropdown">
-          <a href="/policy-documentation/">Policy Documentation</a>
-          <div class="nav-dropdown-content">
-            <a href="/policy-documentation/#modern-slavery">Modern Slavery Policy</a>
-            <a href="/policy-documentation/#privacy">Privacy Policy</a>
-          </div>
-        </div>
+        <a href="/approach/">Approach</a>
+        <a href="/composable-bank/">Propositions</a>
+        <a href="/capability-intelligence/">Capability Intelligence</a>
         <a href="/insights/">Insights</a>
-        <a href="/connect/">Connect</a>
+        <a href="https://calendly.com/sailesh-panchal/30min?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=strategy-call&amp;utm_content=nav" class="btn btn--primary btn--nav" data-cta="strategy-call" data-loc="nav" target="_blank" rel="noopener">Book a strategy call</a>
+
       </div>
     </div>
   </nav>
@@ -317,6 +325,46 @@ After:  "Our people bring hands-on expertise in cloud,
 <p><em>Sailesh Panchal is Director at Digital Transformation Advisory (DTA), specialising in technology strategy and AI-native architecture for enterprise clients.</em></p>
 
     </div>
+
+    <!-- Author bio + social proof + conversion CTA for inbound (LinkedIn / Medium / book) traffic -->
+<div class="post-footer">
+  <div class="author-bio">
+    <img src="/assets/images/corporate/sp-icon.png" alt="Sailesh Panchal" class="author-bio-photo">
+    <div class="author-bio-body">
+      <p class="author-bio-name">Sailesh Panchal</p>
+      <p class="author-bio-text">Founder &amp; CEO of Digital Transformation Advisory. 30+ years in banking and FinTech — now building agentic product squads and production AI platforms for regulated organisations. Writing a book on digital transformation in UK banking.</p>
+      <div class="author-bio-links">
+        
+        
+        <a href="/insights/">More insights</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-cta">
+    <div class="post-cta-text">
+      <h3>Working on something like this?</h3>
+      <p>If this resonates, we should talk. We help organisations turn ideas like these into shipped outcomes.</p>
+    </div>
+    <a href="/connect/" class="btn btn--primary">Book a call</a>
+  </div>
+
+  <div class="post-subscribe">
+    <p>Get new insights by email &mdash; agentic engineering, on-device AI and transformation.</p>
+    <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form">
+      <input type="hidden" name="form-name" value="newsletter">
+      <p class="hidden-field"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div class="newsletter-input">
+        <label class="visually-hidden" for="post-newsletter-email">Email address</label>
+        <input type="email" id="post-newsletter-email" name="email" placeholder="you@company.com" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+      </div>
+    </form>
+  </div>
+
+  <p class="post-back"><a href="/insights/">&larr; Back to all insights</a></p>
+</div>
+
   </div>
 </article>
 
@@ -341,9 +389,14 @@ After:  "Our people bring hands-on expertise in cloud,
           <img src="/assets/images/corporate/dta-logo.png" alt="Digital Transformation Advisory" class="footer-logo">
         </a>
         <div class="footer-links">
-          <a href="/policy-documentation/">Policy Documents</a>
+          <a href="/approach/">Approach</a>
+          <a href="/composable-bank/">Propositions</a>
+          <a href="/capability-intelligence/">Capability Intelligence</a>
           <a href="/insights/">Insights</a>
-          <a href="/connect/">Connect</a>
+          <a href="/connect/">Contact</a>
+          <a href="/policy-documentation/">Policies</a>
+          
+          
         </div>
       </div>
       <hr class="footer-divider">

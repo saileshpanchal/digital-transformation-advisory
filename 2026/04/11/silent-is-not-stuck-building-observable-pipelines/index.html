@@ -4,7 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Silent Is Not Stuck: What Two Hangs Taught Me About Observable Pipelines | Digital Transformation Advisory</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/corporate.css">
   <link type="application/atom+xml" rel="alternate" href="https://digital-transformation-advisory.com/feed.xml" title="Digital Transformation Advisory" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Silent Is Not Stuck: What Two Hangs Taught Me About Observable Pipelines | Digital Transformation Advisory</title>
@@ -25,48 +28,79 @@
 {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Sailesh Panchal"},"dateModified":"2026-04-11T00:00:00+01:00","datePublished":"2026-04-11T00:00:00+01:00","description":"A six-hour hang and a fake embed bug, both caused by the same thing: a loop that had no way to prove it was still working. Two fixes, one rule.","headline":"Silent Is Not Stuck: What Two Hangs Taught Me About Observable Pipelines","mainEntityOfPage":{"@type":"WebPage","@id":"https://digital-transformation-advisory.com/2026/04/11/silent-is-not-stuck-building-observable-pipelines/"},"url":"https://digital-transformation-advisory.com/2026/04/11/silent-is-not-stuck-building-observable-pipelines/"}</script>
 <!-- End Jekyll SEO tag -->
 
+  <script>
+  // Forward CTA clicks to whichever analytics tool is loaded (inert otherwise).
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-cta]');
+    if (!el) return;
+    var props = { cta: el.getAttribute('data-cta'), location: el.getAttribute('data-loc') || '' };
+    if (window.plausible) window.plausible('cta_click', { props: props });
+    if (window.posthog) window.posthog.capture('cta_click', props);
+    if (window.gtag) window.gtag('event', 'cta_click', props);
+  });
+</script>
+
 </head>
 <body>
-  <header class="site-header">
-  <nav class="container">
-    <a href="/" class="site-title">Digital Transformation Advisory</a>
-    <ul class="nav-links">
-      <li><a href="/">Posts</a></li>
-      <li><a href="/categories/">Categories</a></li>
-      <li><a href="/tags/">Tags</a></li>
-      <li><a href="/about/">About</a></li>
-      <li><a href="/search/">Search</a></li>
-    </ul>
-  </nav>
-</header>
 
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="/">
+        <img src="/assets/images/corporate/dta-icon.png" alt="Digital Transformation Advisory" class="navbar-logo">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <div class="nav-dropdown">
+          <a href="/">Home</a>
+          <div class="nav-dropdown-content">
+            <a href="/#mission">Why we exist</a>
+            <a href="/#services">What we do</a>
+            <a href="/#how">How we work</a>
+            <a href="/#about">Leadership</a>
+          </div>
+        </div>
+        <a href="/approach/">Approach</a>
+        <a href="/composable-bank/">Propositions</a>
+        <a href="/capability-intelligence/">Capability Intelligence</a>
+        <a href="/insights/">Insights</a>
+        <a href="https://calendly.com/sailesh-panchal/30min?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=strategy-call&amp;utm_content=nav" class="btn btn--primary btn--nav" data-cta="strategy-call" data-loc="nav" target="_blank" rel="noopener">Book a strategy call</a>
 
-  <main class="container">
-    <article class="post">
-  <header class="post-header">
-    <h1>Silent Is Not Stuck: What Two Hangs Taught Me About Observable Pipelines</h1>
-    <time datetime="2026-04-11T00:00:00+01:00">April 11, 2026</time>
-    
-    <div class="post-tags">
-      
-      <span class="tag">observability</span>
-      
-      <span class="tag">pipelines</span>
-      
-      <span class="tag">llm-tools</span>
-      
-      <span class="tag">kuzuctl</span>
-      
-      <span class="tag">ollama</span>
-      
-      <span class="tag">debugging</span>
-      
+      </div>
     </div>
-    
-  </header>
+  </nav>
 
-  <div class="post-content">
-    <table>
+  <article class="post-article">
+  <div class="container">
+    <header class="post-article-header">
+      <h1>Silent Is Not Stuck: What Two Hangs Taught Me About Observable Pipelines</h1>
+      <p class="post-article-meta">
+        <time datetime="2026-04-11T00:00:00+01:00">April 11, 2026</time>
+         &middot; Engineering, Operations
+      </p>
+      
+      <div class="post-article-tags">
+        
+        <span class="post-card-tag">observability</span>
+        
+        <span class="post-card-tag">pipelines</span>
+        
+        <span class="post-card-tag">llm-tools</span>
+        
+        <span class="post-card-tag">kuzuctl</span>
+        
+        <span class="post-card-tag">ollama</span>
+        
+        <span class="post-card-tag">debugging</span>
+        
+      </div>
+      
+    </header>
+
+    <div class="post-article-content">
+      <table>
   <tbody>
     <tr>
       <td>Two days ago, my nightly knowledge pipeline hung silently for six and a half hours on a single [[M4 Pro MacBook Pro</td>
@@ -175,28 +209,85 @@
 
 <p>The knowledge pipeline is running as I write this. The enrich pass is at 405 of 754, ten minutes from embed, and I can see every step of it in my terminal. Which is the entire point.</p>
 
+    </div>
+
+    <!-- Author bio + social proof + conversion CTA for inbound (LinkedIn / Medium / book) traffic -->
+<div class="post-footer">
+  <div class="author-bio">
+    <img src="/assets/images/corporate/sp-icon.png" alt="Sailesh Panchal" class="author-bio-photo">
+    <div class="author-bio-body">
+      <p class="author-bio-name">Sailesh Panchal</p>
+      <p class="author-bio-text">Founder &amp; CEO of Digital Transformation Advisory. 30+ years in banking and FinTech — now building agentic product squads and production AI platforms for regulated organisations. Writing a book on digital transformation in UK banking.</p>
+      <div class="author-bio-links">
+        
+        
+        <a href="/insights/">More insights</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-cta">
+    <div class="post-cta-text">
+      <h3>Working on something like this?</h3>
+      <p>If this resonates, we should talk. We help organisations turn ideas like these into shipped outcomes.</p>
+    </div>
+    <a href="/connect/" class="btn btn--primary">Book a call</a>
+  </div>
+
+  <div class="post-subscribe">
+    <p>Get new insights by email &mdash; agentic engineering, on-device AI and transformation.</p>
+    <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form">
+      <input type="hidden" name="form-name" value="newsletter">
+      <p class="hidden-field"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div class="newsletter-input">
+        <label class="visually-hidden" for="post-newsletter-email">Email address</label>
+        <input type="email" id="post-newsletter-email" name="email" placeholder="you@company.com" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+      </div>
+    </form>
+  </div>
+
+  <p class="post-back"><a href="/insights/">&larr; Back to all insights</a></p>
+</div>
+
   </div>
 </article>
 
-  </main>
+<!-- Mermaid.js for interactive diagrams -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'neutral',
+    flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' },
+    sequence: { useMaxWidth: true },
+    securityLevel: 'loose'
+  });
+</script>
 
+
+  <!-- Footer -->
   <footer class="site-footer">
-  <div class="container">
-    <p>&copy; 2026 Sailesh Panchal. Built with Jekyll.</p>
-  </div>
-</footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/">
+          <img src="/assets/images/corporate/dta-logo.png" alt="Digital Transformation Advisory" class="footer-logo">
+        </a>
+        <div class="footer-links">
+          <a href="/approach/">Approach</a>
+          <a href="/composable-bank/">Propositions</a>
+          <a href="/capability-intelligence/">Capability Intelligence</a>
+          <a href="/insights/">Insights</a>
+          <a href="/connect/">Contact</a>
+          <a href="/policy-documentation/">Policies</a>
+          
+          
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-bottom">&copy; 2026 Digital Transformation Advisory Ltd</p>
+    </div>
+  </footer>
 
-
-  <!-- Mermaid.js for interactive diagrams -->
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: 'neutral',
-      flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' },
-      sequence: { useMaxWidth: true },
-      securityLevel: 'loose'
-    });
-  </script>
 </body>
 </html>
