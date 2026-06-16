@@ -35,6 +35,8 @@ The single vocabulary the website, posts and book all draw from. Authority comes
 | **Evidence-grade Data Products** | the quality bar | Data products traceable from customer action to control outcome — usable in a regulated decision, not just available. |
 | **Consent-bearing Data** | the authority property | Data that carries its mandates, permissions and approval states as first-class fields, not a separate lookup bolted on later. |
 | **Proposition-native Intelligence** | the reuse property | One governed product serving many engines and propositions, so each team stops rebuilding its own private view of the bank. |
+| **Governed Decision Trace** | the labelled-data half | The record a governed agentic process emits as it runs — stated intent, authority, the agent's proposal, the policy gate, the human approval, the evidence. The already-labelled supervision a transaction model would otherwise have to infer. Pairs with **Interaction Microdata**. |
+| **Interaction Microdata** | the behavioural-signal half | The fine-grained behavioural signal of a customer interaction (screen sequence, timing, device, hesitation) — how intent formed. The high-volume raw material a transaction model feeds on. The two together = two data products from one interaction. |
 | **Forward Platform Engineer (FPE)** | the squad's technical lead | The forward-deployed role that leads technical delivery and integrates into the client estate. Not an in-house tech lead. |
 
 ## B. Descriptors only — already owned, never claim as ours
