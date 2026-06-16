@@ -29,6 +29,12 @@ The single vocabulary the website, posts and book all draw from. Authority comes
 | **Clean-Room Demonstration Standard** | the proof method | A demonstration that is isolated, runs on synthetic data, is engineered to production-grade controls, and is explicitly non-production. The honesty discipline, named and ownable. |
 | **Glass Tube** | the pilot and proving method | A transparent vertical slice sized to the decision: from a PO/FPE-led sandbox prototype to a full domain run end-to-end with the required organisational functions. |
 | **Domain Building Block (DBB)** | existing IP | Composable capability unit = the **Capability plane of C3**. Keep; now positioned inside the architecture. |
+| **Governed data product** | the data-layer unit | A governed, reusable view of a banking concept, packaged with meaning, authority/consent, lineage/evidence and sensitivity boundaries. The **data-layer twin of the DBB**: DBB governs a capability; the data product governs the data it runs on. Structured around DBB/ABB/BIAN. |
+| **Governed Event Spine** | the substrate | The event log as source of truth (ledger as projection) from which every reusable data product is a governed projection. Why a transaction-based platform produces evidence-grade data cheaply. |
+| **Transaction Ontology** | the meaning layer | Governed meaning for business events, tied to accountable owners — "not a folder of tables." The Context-plane counterpart for transaction data. |
+| **Evidence-grade Data Products** | the quality bar | Data products traceable from customer action to control outcome — usable in a regulated decision, not just available. |
+| **Consent-bearing Data** | the authority property | Data that carries its mandates, permissions and approval states as first-class fields, not a separate lookup bolted on later. |
+| **Proposition-native Intelligence** | the reuse property | One governed product serving many engines and propositions, so each team stops rebuilding its own private view of the bank. |
 | **Forward Platform Engineer (FPE)** | the squad's technical lead | The forward-deployed role that leads technical delivery and integrates into the client estate. Not an in-house tech lead. |
 
 ## B. Descriptors only — already owned, never claim as ours
