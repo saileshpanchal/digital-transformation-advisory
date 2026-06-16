@@ -152,6 +152,35 @@ Governs `/composable-bank/data-products/` (prototype `ui-showcase`, **[proto]**)
 
 ---
 
+## I. Platform + Resilience pages + paper (2026-06-16)
+
+Governs `/composable-bank/platform/` (reworked) and the new `/composable-bank/resilience/` (both
+**[proto]**, `ui-showcase`), and the post `_posts/2026-06-16-the-self-diagnosing-bank-...md` (**[web]**).
+Audience: CTO / Chief Architect / CISO / COO. All architecture on these pages is **shape, never schema**.
+
+| Claim | Status | Permitted wording / rule | Review |
+|---|---|---|---|
+| **Product-first inversion** — "engines are built on the products, not the other way round"; engines as thin reasoning layers over governed products | **DTA argument / Design** | The inversion is our architecture. Gateway + one-engine-many-propositions = Substantiated; the full engine set = Blueprint. | 2026-09-16 |
+| **"Governed operational data mesh for agentic banking"** (category framing) | **DTA framing extending Dehghani** ([data mesh](https://martinfowler.com/articles/data-mesh-principles.html)) | Attribute the data-mesh concept to Dehghani; frame DTA's extension to operational+governed as ours. **No "first"/"only" superlatives.** | 2026-09-16 |
+| Feature-store duplication eliminated (one Party product, all engines query it) | **Design argument** | Present as the architectural consequence; not a measured benchmark | 2026-09-16 |
+| **BDAT** views (Business/Data/Application/Technology) + BIAN as the **product boundary contract** | **DTA framing** (TOGAF/BIAN external, standard) | Shape only; engines' "consumes X → focuses on Y" is illustrative | 2026-09-16 |
+| **Core-bank sync** — event spine alongside the authoritative core, ISO 20022, shadow-ledger projection, incremental displacement (strangler-fig) | **Blueprint** (ISO 20022 itself Substantiated) | "we do not rip out your core"; pattern name "strangler-fig" only in the diagram caption with a gloss | 2026-09-16 |
+| Money concepts — **Programmable payment · Programmable money · Tokenised bank deposit · Shadow ledger** | **Definitions** (tokenised deposit = Blueprint) | Boundaries at conceptual/regulatory level only (e.g. "a regulated liability of the issuing bank, not a bearer instrument") — **never implementation** (no settlement-model leak) | 2026-09-16 |
+| **Self-monitoring / self-diagnosing platform** — components/agents self-register to CMDB/ServiceNow (discovery, service mapping, event management, AIOps, self-healing); **service-impact / blast-radius** report (which transactions failed, which customers missed a notification) | **BLUEPRINT** | Phrase as design intent ("designed to…"), never present-tense. Blast-radius figures **illustrative**, label **baked into the Mermaid source**. | 2026-09-16 |
+| **Zero-trust** — NIST SP 800-207 (PDP/PEP, least privilege, assume breach); agents as non-human identities; **authority per-action and per-context, not per-role** | **External (NIST) — attribute** + DTA gateway framing | [NIST SP 800-207](https://csrc.nist.gov/pubs/sp/800/207/final); gateway pattern Substantiated, at-scale Blueprint | 2026-09-16 |
+| **Mandate / authority registry as a governed product** — lifecycle: issuance · revocation · expiry · delegation | **Design** | "authority on the event is only as trustworthy as the registry behind it"; cross-link Data Products Authority & Consent | 2026-09-16 |
+| **Operational resilience** — FCA PS21/3 + PRA SS1/21 (important business services, impact tolerances, mapping, scenario testing; **in force since 31 Mar 2025**); EU **DORA** (**applies since 17 Jan 2025**, incl. critical third-party ICT) | **External — attribute only** ([FCA PS21/3](https://www.fca.org.uk/publications/policy-statements/ps21-3-building-operational-resilience); [DORA](https://www.eba.europa.eu/legal-framework/digital-operational-resilience-act-dora)) | Dates "in force since" (past); **do not imply DTA certifies compliance** | 2026-09-16 |
+| **Sovereignty** — residency ≠ data sovereignty ≠ operational sovereignty; key/custody; exit/portability; model sovereignty | **External concepts + DTA framing** | Ties to Accountability–Sovereignty Principle; no specific vendor/jurisdiction legal advice | 2026-09-16 |
+
+**Hold back (post-MOU / Architecture Room only — NOT public, via `ARCHITECTURE_URL` email flow):** the
+named stream/storage stack (e.g. Kafka/Flink/Iceberg), partition/state/compaction strategy,
+schema-registry governance, the **engine build-pattern code**, the **latency/throughput SLA numbers**,
+deploy topology, control internals, PII mechanics, canonical schemas, internal codenames. The pages
+state the validation **dimensions** (latency budgets, contract versioning, throughput headroom, mandate
+write-path, sensitivity inheritance) — **never the values or the stack**.
+
+---
+
 ## Pre-publish checklist (gates every copy PR)
 
 1. Every claim maps to a row here (or, for demo capability, to the prototype's `marketing-claim-audit.md`) with a resolved status.
