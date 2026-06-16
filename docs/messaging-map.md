@@ -36,10 +36,12 @@
 
 ## Propositions — `/composable-bank/*` [proto]
 > Copy lives in `propositions.ts` (prototype). Edits → rebuild showcase → republish. Each: title · audience · trigger · commercialOutcome · 4 outcomes · 5 proof steps · bankChanges · platformCapabilities · buildingBlocks · blueprintStart.
+- **Showcase nav** (`ui-showcase/src/App.tsx › SiteHeader`): Propositions · Platform · **Data Products** · Engagement · [Discuss a blueprint]. Content pages (Platform, Data Products) are React components in `App.tsx`, routed via `site.ts` + `scripts/build-routes.mjs`.
 - Family Wealth Hub (live) · Premium Yacht Portfolio (live) · International Student Banking (live) · **Cross-Border Real-Time Payments** (live; claim = "real-time cross-border payment *experience*") · Franchise Network Operations (**blueprint**) · Platform ("One platform, many propositions").
+- **Data Products** (`/composable-bank/data-products/`) — "Data Products for Agentic Banking." CDO/CISO audience. Hero · audience strip · the shift · CDO/CISO · operational test (6) · **illustrative catalogue (6, labelled)** · DBB/ABB/BIAN · engines (6) · see-it-in-motion → Family Wealth · closing CTA. Claims governed in `claim-register.md` §H.
 
 ## Insights — `insights.html` + `_posts/*.md` [web]
-- Listing page intro + per-post (title/excerpt/body). Flagship: DBB paper; Cross-border ("the real prize is the deposit").
+- Listing page intro + per-post (title/excerpt/body). Flagship: DBB paper; Cross-border ("the real prize is the deposit"); **Data Products for Agentic Banking** (2026-06-16 — TFM as external anchor; the governed data product is the missing unit; links to `/composable-bank/data-products/`).
 
 ## Policy — `policy-documentation.html` [web]
 - Modern Slavery · Privacy.

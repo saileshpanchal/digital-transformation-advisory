@@ -120,6 +120,26 @@ Rule: external feeds are **simulated** (FX, settlement, valuation, card) — say
 
 ---
 
+## H. Data Products page + insights paper (2026-06-16)
+
+Governs `/composable-bank/data-products/` (prototype `ui-showcase`, **[proto]**) and the post `_posts/2026-06-16-data-products-for-agentic-banking.md` (**[web]**).
+
+| Claim | Status | Permitted wording / rule | Review |
+|---|---|---|---|
+| Ultim8 is a **transaction-based platform** (events/states/permissions/relationships/evidence native) | **Substantiated (narrowed)** — tie to what the live engine visibly does (event-driven flow, evidence per step) | "a transaction-based platform" / "our reference engine"; do not over-state beyond the demonstrated event-driven behaviour | 2026-09-16 |
+| The **governed data product** is the missing unit for agentic banking (ontology + governance of banking data); a transaction-based platform is structurally advantaged at producing it | **DTA original — coin & own** (the argument of the paper) | DTA's own thesis; present as our argument, not industry consensus | 2026-09-16 |
+| We have **already built the engine** as proof — Family Wealth runs end-to-end | **Substantiated — Live engine** (see §A; defer to `marketing-claim-audit.md`) | "one proposition runs on it end to end"; Family Wealth = live, Premium Yacht = live demo, others = blueprint | on audit change |
+| The six-item **data-product catalogue** (Party & Relationship, Authority & Consent, Transaction Context, Case & Evidence, Intent & Proposition, Exposure & Eligibility) | **Illustrative operating model — LABELLED** | Must carry the on-page disclaimer: "illustrative operating model, not a claim that every product is already live." Show product **shape**, never schema. | 2026-09-16 |
+| **Transaction Foundation Models** — a bank's event history becomes one reusable intelligence layer | **External — attribute only** ([NVIDIA](https://blogs.nvidia.com/blog/financial-institutions-transaction-foundation-models/); [Thoughtworks](https://www.thoughtworks.com/en-gb/insights/articles/power-of-transaction-foundation-models-building-the-unified-intelligence-layer-for-payments)) | Always attributed; paraphrase-with-link; **no proprietary figures** (no PRAGMA/Mastercard/Stripe/JPMorgan numbers); never imply NVIDIA/Thoughtworks endorse DTA's approach | 2026-09-16 |
+| Data products **structured around DBB / ABB / BIAN** | **DTA original (softened)** | "structured around / designed to align with" — not a finished formal mapping | 2026-09-16 |
+| **Event log as source of truth, ledger as projection** (UK payments platform we architected) | **Substantiated — own build (from CV/ipagoo, public-safe)** | Public-safe wording; no company name, no wind-down/funding history; "years ago we architected a UK payments platform…" | 2026-12-16 |
+| **Yacht multi-currency vault** (owner sees funds; captain/crew spend under policy) — provenance for proposition-native, policy-bounded actor authority | **Substantiated — own build, ANONYMISED** | Do **not** name the client. "a multi-currency vault we built for a yacht." Maps to the live Premium Yacht demo. | 2026-12-16 |
+| New coinages: **Governed Event Spine · Transaction Ontology · Evidence-grade Data Products · Consent-bearing Data · Proposition-native Intelligence** | **DTA original — coin & own** (see `docs/lexicon.md`) | Use sparingly; defined inline on first use | 2026-09-16 |
+
+**Hold back (post-MOU, never in the page or paper):** ontology internals/diagrams, schemas and canonical objects, control maps, PII-handling mechanics, platform/deploy/engine-composition detail.
+
+---
+
 ## Pre-publish checklist (gates every copy PR)
 
 1. Every claim maps to a row here (or, for demo capability, to the prototype's `marketing-claim-audit.md`) with a resolved status.
