@@ -21,3 +21,6 @@ tools/rebrand/brand-mapping.json
 __pycache__/
 .gstack/
 .superpowers/
+
+# Session research scratch (not for publish)
+docs/post-seeds/ciso-ai-data-exposure-research.md
