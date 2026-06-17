@@ -638,6 +638,11 @@ p { margin-bottom: 1rem; }
   margin-bottom: 2rem;
 }
 
+.connect-content h2 { color: #fff; }
+.connect-content .connect-intro,
+.connect-content p { color: rgba(255, 255, 255, 0.85); }
+.connect-content hr { border-top-color: rgba(255, 255, 255, 0.18) !important; }
+
 .form-group {
   margin-bottom: 1.5rem;
 }
