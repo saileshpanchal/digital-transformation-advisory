@@ -53,6 +53,6 @@ Crucially, the squad doesn't build from zero. It draws on a **shared foundation*
 
 Most "AI transformation" starts one level too low: which copilots, which workflows to automate first. Owned Autonomy starts above that, with proposition, P&L, architecture and operating model together, and treats agentic capability as something that must be accountable and sovereign *by construction*.
 
-And because how we work is the point: some of these propositions already run end-to-end on our live engine, with tests behind them; others are explicitly **blueprints**. Our [Clean-Room Demonstration](/composable-bank/) shows exactly which is which — built to production-grade controls on synthetic data, a demonstration rather than a product. We'd rather be precise about that than imply a finished platform.
+And because how we work is the point: some of these propositions already run end to end as interactive demonstrations, with tests behind them; others are explicitly **blueprints**. Our [Clean-Room Demonstration](/composable-bank/) shows exactly which is which — built to production-grade controls on synthetic data, a demonstration rather than a product. We'd rather be precise about that than imply a finished platform.
 
 In an agentic enterprise, autonomy is only valuable if it's owned. The C3 spine is the architecture that makes that ownership operational. If you're deciding how to let agents act in production without losing control of value, risk or accountability, [book a strategy call](/connect/).
