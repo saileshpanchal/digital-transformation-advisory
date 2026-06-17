@@ -2,11 +2,13 @@
 
 **Purpose.** Every material claim the public website makes must be honest. This register is the single source of permitted wording for **website copy** (Home, Approach, Showcase links, Insights). No copy ships a claim that is not listed here with an approved status and wording.
 
-**Authority split.** The authoritative audit of *what the demonstrator actually does* is the prototype's own **`docs/marketing-claim-audit.md`** (maintained alongside the live demo). This register does **not** duplicate it — for any demo-capability claim, defer to that audit and the live **"Live engine" / "Blueprint" badges** in the showcase. This register governs the **website-specific** claims the audit doesn't cover: the spine vocabulary, market/macro facts, industry-context citations, track record, and boundary rules.
+**Authority split.** The authoritative audit of *what the demonstrator actually does* is the prototype's own **`docs/marketing-claim-audit.md`** (maintained alongside the demonstration). This register does **not** duplicate it — for any demo-capability claim, defer to that audit and the **"Interactive demo" / "Blueprint" badges** in the showcase. This register governs the **website-specific** claims the audit doesn't cover: the spine vocabulary, market/macro facts, industry-context citations, track record, and boundary rules.
 
 **Metadata.** Verification date: **2026-06-14** · Register owner: DTA (Sailesh) · Demo-audit owner: the demonstrator/marketing stream.
 
-**Status taxonomy.** *Substantiated* (backed by code that runs in tests/the live demo) · *Partial* (mechanism narrower than the words) · *Aspirational/Blueprint* (described, not implemented — must be labelled) · *External* (third-party fact — attribute, never imply as DTA's) · *Needs-source* / *Needs-sign-off* / *Needs-trademark-check* (cannot ship until resolved here).
+**Status taxonomy.** *Substantiated* (backed by code that runs in tests or the demonstration) · *Partial* (mechanism narrower than the words) · *Aspirational/Blueprint* (described, not implemented — must be labelled) · *External* (third-party fact — attribute, never imply as DTA's) · *Needs-source* / *Needs-sign-off* / *Needs-trademark-check* (cannot ship until resolved here).
+
+**Framing principle (avoid "live").** DTA produces consulting and architecture prototypes, not production solutions. Public copy says we **demonstrate** four propositions (interactive demonstrations) and present one **blueprint** (Franchise Network). Never "live engine", "runs live", or wording that implies production. Use "interactive demonstration", "demonstrated", "prototype", and the "Interactive demo" badge.
 
 ---
 
@@ -16,8 +18,8 @@ Each material claim is tracked by: **source** (repo + commit/file, or external U
 
 | Claim | Source (repo + commit / file) | Owner | Approval | Expiry | Pages using | Status |
 |---|---|---|---|---|---|---|
-| 3 propositions on the live engine (Family Wealth, Int'l Student, Premium Yacht); Franchise = blueprint | prototype `marketing-claim-audit.md` (feat/live-marketing-demos) | demo/marketing stream | Approved | on audit change | index, approach, /composable-bank/ | Substantiated (live engine) |
-| Cross-Border Real-Time Payments — live showcase proposition (EUR→GBP inbound; B2B SME lead, multinational variation; **public-safe copy only** — no FXC/$27tn/proposed-stablecoin/"few banks" claims). **Claim softened (fact-check 2026-06-15):** promise is a "real-time cross-border payment *experience*" (pre-funded local accounts + domestic instant rails + API initiation), not universal end-to-end instant settlement — OCT Inst governs the euro leg only; FPS is a pre-funded settlement model. | prototype `dbb-crossborder-payment` + `runtime-crossborder` (tests green); `marketing-claim-audit.md` #7/#8/#10; EPC/BoE/FCA per the proposition doc | demo stream | Approved | on audit change | composable-bank/cross-border-payments, index, approach | Substantiated — Live engine (simulated FX/settlement feeds) |
+| 4 propositions as interactive demonstrations (Family Wealth, Int. Student, Premium Yacht, Cross-Border); Franchise = blueprint | prototype `marketing-claim-audit.md` (feat/live-marketing-demos) | demo/marketing stream | Approved | on audit change | index, approach, /composable-bank/ | Substantiated (interactive demonstration) |
+| Cross-Border Real-Time Payments — interactive demonstration proposition (EUR→GBP inbound; B2B SME lead, multinational variation; **public-safe copy only** — no FXC/$27tn/proposed-stablecoin/"few banks" claims). **Claim softened (fact-check 2026-06-15):** promise is a "real-time cross-border payment *experience*" (pre-funded local accounts + domestic instant rails + API initiation), not universal end-to-end instant settlement — OCT Inst governs the euro leg only; FPS is a pre-funded settlement model. | prototype `dbb-crossborder-payment` + `runtime-crossborder` (tests green); `marketing-claim-audit.md` #7/#8/#10; EPC/BoE/FCA per the proposition doc | demo stream | Approved | on audit change | composable-bank/cross-border-payments, index, approach | Substantiated — interactive demonstration (prototype) (simulated FX/settlement feeds) |
 | "Clean-Room Demonstration" — technical capability; production-quality in design; platform not yet product-ready | this repo `index.html`, `approach.html` | DTA | Approved | 2026-09-14 | index, approach | Substantiated (wording) |
 | Agents prepare; humans approve material actions; evidence per step | prototype `agentic-gateway` tests | demo stream | Approved | on audit change | index, approach | Substantiated |
 | Owned Autonomy / C3 / Accountability–Sovereignty / Clean-Room Standard / Glass Tube / DBB | `docs/lexicon.md` | DTA | Approved (DTA-original) | 2026-09-14 | index, approach, operating-model, posts | Coin & own |
@@ -39,13 +41,13 @@ Each material claim is tracked by: **source** (repo + commit/file, or external U
 
 ## A. Demonstrator capability — DEFER to `marketing-claim-audit.md`
 
-As of 2026-06-14 the live demo backs more than it used to. **Do not restate demo capability from memory** — pull current status from the prototype audit and the on-page badges. Summary the website may rely on:
+As of 2026-06-14 the demonstration backs more than it used to. **Do not restate demo capability from memory** — pull current status from the prototype audit and the on-page badges. Summary the website may rely on:
 
 | Proposition | Status | Website may say | Review |
 |---|---|---|---|
-| Family Wealth Hub | **Substantiated — Live engine** (mock external feeds) | "runs on the live engine" | 2026-06-14 |
-| International Student Banking | **Substantiated — Live engine** (mock external feeds) | "runs on the live engine" | 2026-06-14 |
-| Premium Yacht Portfolio | **Substantiated — Live engine** (mock external feeds) | "runs on the live engine" | 2026-06-14 |
+| Family Wealth Hub | **Substantiated — interactive demonstration (prototype)** (mock external feeds) | "an interactive demonstration" | 2026-06-14 |
+| International Student Banking | **Substantiated — interactive demonstration (prototype)** (mock external feeds) | "an interactive demonstration" | 2026-06-14 |
+| Premium Yacht Portfolio | **Substantiated — interactive demonstration (prototype)** (mock external feeds) | "an interactive demonstration" | 2026-06-14 |
 | Cross-Border Real-Time Payments | **Substantiated — demonstrated with labelled mocks** (EUR→GBP inbound; claims #7/#8/#10 in the prototype audit revised) | "demonstrated, with simulated external feeds" | 2026-06-14 |
 | Franchise Network Operations | **Blueprint** (honestly labelled) | "a design blueprint" | 2026-06-14 |
 
@@ -57,8 +59,8 @@ Rule: external feeds are **simulated** (FX, settlement, valuation, card) — say
 
 | Claim | Status | Permitted website wording | Review |
 |---|---|---|---|
-| Agents prepare; humans approve material actions; everything leaves evidence | **Substantiated** (agentic-gateway HITL gate, tested) | "Agents prepare; a human approves every material action; each step leaves evidence — demonstrated in our live engine." | 2026-06-14 |
-| Common-platform architecture (one engine, many propositions) | **Substantiated (narrowed)** — several propositions now run on one engine | "One governed engine carrying multiple propositions — three run live today, with more as blueprints." | 2026-06-14 |
+| Agents prepare; humans approve material actions; everything leaves evidence | **Substantiated** (agentic-gateway HITL gate, tested) | "Agents prepare; a human approves every material action; each step leaves evidence — demonstrated in our prototype." | 2026-06-14 |
+| Common-platform architecture (one engine, many propositions) | **Substantiated (narrowed)** — several propositions now run on one engine | "One governed engine carrying multiple propositions — four are interactive demonstrations, with one as a blueprint." | 2026-06-14 |
 | Tokenised deposit with 1:1 backing | **Substantiated** | State plainly. | 2026-06-14 |
 | ISO 20022 / Faster Payments on the same engine | **Substantiated** (standalone + cross-border inbound) | "ISO 20022 messaging on the same engine." | 2026-06-14 |
 | Demonstrations use simulated services, no live customer money | **Substantiated** | Keep this disclaimer visible (the Clean-Room Demonstration Standard). | 2026-06-14 |
@@ -126,9 +128,9 @@ Governs `/composable-bank/data-products/` (prototype `ui-showcase`, **[proto]**)
 
 | Claim | Status | Permitted wording / rule | Review |
 |---|---|---|---|
-| Ultim8 is a **transaction-based platform** (events/states/permissions/relationships/evidence native) | **Substantiated (narrowed)** — tie to what the live engine visibly does (event-driven flow, evidence per step) | "a transaction-based platform" / "our reference engine"; do not over-state beyond the demonstrated event-driven behaviour | 2026-09-16 |
+| Ultim8 is a **transaction-based platform** (events/states/permissions/relationships/evidence native) | **Substantiated (narrowed)** — tie to what the demonstration visibly does (event-driven flow, evidence per step) | "a transaction-based platform" / "our reference engine"; do not over-state beyond the demonstrated event-driven behaviour | 2026-09-16 |
 | The **governed data product** is the missing unit for agentic banking (ontology + governance of banking data); a transaction-based platform is structurally advantaged at producing it | **DTA original — coin & own** (the argument of the paper) | DTA's own thesis; present as our argument, not industry consensus | 2026-09-16 |
-| We have **already built the engine** as proof — Family Wealth runs end-to-end | **Substantiated — Live engine** (see §A; defer to `marketing-claim-audit.md`) | "one proposition runs on it end to end"; Family Wealth = live, Premium Yacht = live demo, others = blueprint | on audit change |
+| We have **already built the engine** as proof — Family Wealth runs end-to-end | **Substantiated — interactive demonstration (prototype)** (see §A; defer to `marketing-claim-audit.md`) | "one proposition runs on it end to end"; Family Wealth and three more are interactive demonstrations; Franchise = blueprint | on audit change |
 | The six-item **data-product catalogue** (Party & Relationship, Authority & Consent, Transaction Context, Case & Evidence, Intent & Proposition, Exposure & Eligibility) | **Illustrative operating model — LABELLED** | Must carry the on-page disclaimer: "illustrative operating model, not a claim that every product is already live." Show product **shape**, never schema. | 2026-09-16 |
 | **Transaction Foundation Models** — a bank's event history becomes one reusable intelligence layer | **External — attribute only** ([NVIDIA](https://blogs.nvidia.com/blog/financial-institutions-transaction-foundation-models/); [Thoughtworks](https://www.thoughtworks.com/en-gb/insights/articles/power-of-transaction-foundation-models-building-the-unified-intelligence-layer-for-payments)) | Always attributed; paraphrase-with-link; **no proprietary figures** (no PRAGMA/Mastercard/Stripe/JPMorgan numbers); never imply NVIDIA/Thoughtworks endorse DTA's approach | 2026-09-16 |
 | Data products **structured around DBB / ABB / BIAN** | **DTA original (softened)** | "structured around / designed to align with" — not a finished formal mapping | 2026-09-16 |
@@ -184,7 +186,7 @@ write-path, sensitivity inheritance) — **never the values or the stack**.
 ## Pre-publish checklist (gates every copy PR)
 
 1. Every claim maps to a row here (or, for demo capability, to the prototype's `marketing-claim-audit.md`) with a resolved status.
-2. Live-engine propositions carry a "Live engine" badge; Franchise carries "Blueprint." (Owned by the showcase build.)
+2. Demonstrated propositions carry an "Interactive demo" badge; Franchise carries "Blueprint." (Owned by the showcase build.)
 3. No future date is written as past (re-check the 3 July 2026 line).
 4. Market facts attributed; FXC figures not reproduced without licence.
 5. Run `scripts/check-public-showcase.sh` — zero forbidden-codename hits in the repo and built site; no "for sale" / "production platform" overclaim.

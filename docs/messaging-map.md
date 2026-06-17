@@ -17,7 +17,7 @@
 - **Offer ladder (3):** 1 Agentic Talent & Squads (standalone, simple to consume) · 2 Build & Run Propositions · 3 Owned Autonomy Transformation. Each stands alone.
 - **How we work:** Standalone squad can start immediately. Wider change follows Discover (founder-led senior advisory) · Pilot / Glass Tube (light PO+FPE sandbox proof with selected enterprise services, or full-depth organisational slice) · Scale (multiple DBB squads + coaches + Finance/HR/Procurement/Risk/Audit).
 - **Operating-model teaser:** "Grow the delivery model with the work" + core scale squad roster (PO · FPE · 2 Engineers · Data Engineer). CTAs: full approach · Capability Intelligence.
-- **Showcase band:** "Our Clean-Room Demonstration" + 4-live/1-blueprint wording + proposition list (links to /composable-bank/*).
+- **Showcase band:** "Our Clean-Room Demonstration" + 4-demonstrated/1-blueprint wording + proposition list (links to /composable-bank/*).
 - **Insights teaser** (auto from posts) · **Leadership** (bio — sign-off-governed) · closing CTA (`_includes/cta.html`).
 
 ## Approach — `approach.html` [web]

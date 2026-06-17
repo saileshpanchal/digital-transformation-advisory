@@ -104,7 +104,7 @@ If your capabilities are DBBs, three things become true that are not true of a c
 
 This is why the DBB is the **Capability plane** of our reference architecture, **C3 — Capability · Context · Consent**: governed capabilities (the DBBs), a shared Context plane of meaning, and a Consent plane where every agent action is authorised, evidenced and revocable. Together they are what let a bank *own* its agentic capability — accountable and sovereign — rather than rent it. That is what we mean by **Owned Autonomy**, and it is the foundation of **accountable banking**.
 
-A short honesty note, because it is the point of how we work: several of these propositions now run end-to-end on our live engine, with tests behind them, while others are explicitly labelled **blueprints**. Our Clean-Room Demonstration shows exactly which is which — built to production-grade controls on synthetic data, a demonstration rather than production. We would rather be precise about that than imply a finished platform.
+A short honesty note, because it is the point of how we work: several of these propositions now run end to end as interactive demonstrations, with tests behind them, while others are explicitly labelled **blueprints**. Our Clean-Room Demonstration shows exactly which is which — built to production-grade controls on synthetic data, a demonstration rather than production. We would rather be precise about that than imply a finished platform.
 
 ## Where to start
 
