@@ -625,7 +625,11 @@ p { margin-bottom: 1rem; }
   z-index: 1;
   width: 100%;
   max-width: 600px;
+  margin: 2.5rem auto;
   padding: 3rem;
+  background: rgba(12, 18, 24, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
 }
 
 .connect-content h1 {
@@ -651,7 +655,7 @@ p { margin-bottom: 1rem; }
 .form-group select {
   width: 100%;
   padding: 0.8rem 1rem;
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.14);
   border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 4px;
   color: #fff;
