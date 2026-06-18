@@ -12,7 +12,7 @@ export const config = {
   budgets: {
     lcpMs: 4000,          // largest-contentful-paint
     tbtMs: 600,           // total blocking time (sum of longtask overage)
-    interactMs: 8000,     // wall time to drive the journey interactions
+    interactMs: 12000,    // wall time to drive the journey; includes deliberate maxSteps*~120ms pacing (~5-8s mechanical floor at maxSteps=40). Real jank signal is TBT/longtasks, not this.
     heapGrowthMBPer10Min: 25, // soak: sustained growth above this looks like a leak
   },
   // Soak duration in minutes (env SOAK_MIN). 0 = skip the soak phase.

@@ -116,7 +116,14 @@ function verdict(rows, soaks) {
 }
 
 async function main() {
-  const browser = await chromium.launch({ args: ['--enable-precise-memory-info'] });
+  const launchArgs = ['--enable-precise-memory-info'];
+  // Chrome refuses to run as root without this; common in containers/CI.
+  if (typeof process.getuid === 'function' && process.getuid() === 0) launchArgs.push('--no-sandbox');
+  const browser = await chromium.launch({
+    args: launchArgs,
+    // Use a system/pre-installed Chromium when the managed download is unavailable.
+    executablePath: process.env.PW_EXECUTABLE_PATH || undefined,
+  });
   const rows = [];
   const soaks = [];
   for (const j of journeys) {
