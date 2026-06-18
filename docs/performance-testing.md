@@ -21,6 +21,8 @@ Two reasons, both tied to the positioning:
 1. **It is a working specification.** A specification a vendor builds from is only complete if it carries a performance envelope: throughput, latency, concurrency and the point where the design degrades. Testing turns "it works" into "it works to *here*, and breaks *there*", which is exactly the non-functional requirement a vendor needs.
 2. **It is used in moderated test-consumer sessions.** We need to know how far the demonstration itself can be pushed (event volume, session length, device class) before the experience degrades in a session.
 
+**Scope now: a few concurrent users.** We are not chasing high-concurrency scale today. The near-term goal is **robustness and a stable, useful baseline** — no leaks over a session, no jank, correct and steady for a handful of users — and a measure → improve → re-measure loop. The high-load options exist for when scale matters later.
+
 So there are two distinct layers to test. Keep them separate.
 
 ## Layer A — the demonstration artefact (client-side, testable today)
@@ -65,3 +67,12 @@ What to define and then find by test:
 ## Note on honesty
 
 Layer A characterises the demonstration. Layer B characterises a build of the specification, not the demonstration and not the marketing site. Report both as what they are. Numbers from Layer B are achievable-shape evidence for the spec, not claims about a live platform; keep the Clean-Room Standard ("a demonstration, not production") intact.
+
+## Harnesses in this repo
+
+Both layers are tooled under [`perf/`](../perf/) (excluded from the Jekyll build):
+
+- **Layer A** — `perf/layer-a/run.mjs` (Playwright). Sweeps CPU throttles, soaks a journey for memory/leak, emits a pass/fail report against budgets in `perf/layer-a/journeys.mjs`. Run: `cd perf && npm install && npx playwright install chromium && BASE_URL=http://localhost:4000 node layer-a/run.mjs`.
+- **Layer B** — `perf/layer-b/governed-action.js` (k6 template). Models propose → gate → approve → evidence; scenarios `baseline` / `soak` / `spike` / `ramp` sized for a few users by default. Edit `perf/layer-b/flow.js` to the engine's real API. Run on a desktop with the k6 binary against a running engine.
+
+See `perf/README.md` for full usage.

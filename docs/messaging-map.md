@@ -5,6 +5,8 @@
 > **Tags:** **[web]** = edit the Jekyll file directly · **[proto]** = copy lives in the prototype `packages/ui-showcase/src/propositions.ts` → edit there, rebuild, republish `/composable-bank/` · **[data]** = centralised in `_data/copy.yml` (edit once, propagates).
 >
 > **Consistency backstops:** vocabulary → `docs/lexicon.md`; claims → `docs/claim-register.md`; repeated strings → `_data/copy.yml`. Cross-cutting edits: change `_data`/lexicon once, then I grep-verify before deploy.
+>
+> **Prototype positioning (canonical):** `docs/prototype.md` — working proving ground, non-production by design (test consumers only), standards-based working specification (portable/reusable, vendor-neutral). Performance/robustness: `docs/performance-testing.md` + harness in `perf/`. Competitive position: `docs/competitive-landscape.md`.
 
 ## Shared / cross-cutting [data]
 - **Calendly CTAs** — `_data/copy.yml › calendly` + `_includes/cta-calendly.html`. Strategy-call slug `…/30min`; capability slug `…/capability-blueprint`. Labels in `cta_labels`.

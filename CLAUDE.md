@@ -15,6 +15,15 @@ bundle exec jekyll serve
 
 Posts in `_posts/YYYY-MM-DD-title.md` with YAML frontmatter.
 
+## Prototype positioning & performance
+
+The composable-bank prototype is a **working proving-ground platform**: non-production
+by design (test consumers, never real customers), and a **standards-based working
+specification** (ISO 20022 / BIAN / recognised control frameworks) that is portable
+and vendor-neutral. Canonical brief: `docs/prototype.md`. Never call it "not yet
+product-ready". Performance + robustness harness (Layer A Playwright, Layer B k6) in
+`perf/`, rationale in `docs/performance-testing.md`. Claims discipline: `docs/claim-register.md`.
+
 ## Tools
 
 ### /rebrand — PowerPoint Brand Conversion

@@ -1,0 +1,13 @@
+{
+  "name": "dta-perf",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Performance + robustness harness for the DTA prototype (Layer A client-side; Layer B k6 template).",
+  "scripts": {
+    "layer-a": "node layer-a/run.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.0"
+  }
+}

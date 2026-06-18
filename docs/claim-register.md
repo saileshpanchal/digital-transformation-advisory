@@ -66,6 +66,7 @@ Rule: external feeds are **simulated** (FX, settlement, valuation, card) — say
 | ISO 20022 / Faster Payments on the same engine | **Substantiated** (standalone + cross-border inbound) | "ISO 20022 messaging on the same engine." | 2026-06-14 |
 | Prototype as a **standards-based working specification** (portable / reusable) | **DTA framing on a standards base** — ISO 20022 Substantiated; BIAN "structured around"; control frameworks (NIST 800-207, OWASP LLM, BCBS 239, DCAM) **External, attribute only** | "expressed in open standards… portable and reusable, vendor-neutral". Reuse argument = standards are the shared vendor language. **Never claim certification/conformance** to any framework; "expressed in / structured around / aligned to" only. | 2026-09-18 |
 | Demonstrations use simulated services, no live customer money | **Substantiated** | Keep this disclaimer visible (the Clean-Room Demonstration Standard). | 2026-06-14 |
+| **Performance envelope / robustness** — where the prototype breaks; "useful level for a few concurrent users" | **Measured evidence (when run), not a live-platform claim** — harness in `perf/` | Layer A = the demonstration (render/memory/jank); Layer B = a build of the spec (latency/concurrency), NOT the demo or marketing site. Report numbers as session limits / achievable-shape NFRs for the working spec. **No production-SLA or scale claims.** Scope today = a few concurrent users (robustness, not scale). | 2026-09-18 |
 
 ---
 

@@ -47,6 +47,7 @@ exclude:
   - .superpowers
   - .gstack
   - scripts
+  - perf
   - podcast
   - about.md
   - categories.md
