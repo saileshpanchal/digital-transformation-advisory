@@ -32,9 +32,11 @@
 - Sections: Why now (WEF 2025, attributed) · Unsolved problem (4) · Two better conversations (demand/evidence) · Lifecycle (Capability Blueprint → Best-fit Squad → Managed Capability Cycle) · Two applications · **Worked example** (synthetic; provenance labels Generated/Derived/Future) · Trusted structure (SFIA; SFIA-10) · AI-assisted (privacy line) · Expansion · CTA ("what to bring").
 
 ## Customer Outcomes — `customer-outcomes.html` [web]
-- **Hero H1:** "Know your customers. Prove the change worked." · Consumer-Duty-anchored, outcome-led framing (works for incumbents + founders).
-- Sections: Understand the customer (behaviour signal + governed decision trace) · Monitor impact (define good before shipping; From→To) · Evidence by construction (C3 evidence trail; spine line) · **the FCA's four outcomes** (products & services · price & value · consumer understanding · consumer support) + non-certification line · CTA.
-- **Governance:** Consumer Duty = FCA external, attribute only, **never imply DTA certifies compliance** — `claim-register.md` §D + material-claims table. Reuses lexicon: Interaction Microdata, Evidence-grade Data Products, Context = measurement.
+- **Hero H1:** "Test agentic journeys before you build them." · Repositioned from a principles page to a **pre-delivery proving ground**: use the prototype to test whether a proposition is likely to deliver good outcomes before the bank commits to build.
+- **The differentiator (lead):** the prototype already runs **agents under C3 controls with evidence recorded**, so it tests the part no focus group can reach — what agentic action does to consumer outcomes (agent-action comprehension, consent and control, intervention and override). Generic consumer testing only sees screens; this sees the agent.
+- Sections: problem (outcomes evidenced too late) · **the new question agents create** · proving ground (not a principles page) · what a run would look like (5 stages) · what a run measures (6 general lenses + 3 agentic lenses + misunderstanding heatmap) · outputs (focus-group evidence, risk log, design changes, board pack) · CTA "Bring a proposition you are about to build".
+- **Honesty (critical):** the prototype, the Family Wealth journey, the agent actions + approval gates + recorded evidence are **demonstrated** (synthetic data). The outcomes-testing layer (structured capture, heatmap, evidence pack) is a **proposed extension / blueprint**, configured per engagement — NOT a shipped "Design Lab". Do not claim the Lab exists or that we have run it. Demo script: `docs/demo-script-customer-outcomes-lab.md`.
+- **Governance:** Consumer Duty = FCA external, attribute only, **never imply DTA certifies compliance** — `claim-register.md` §D + material-claims table.
 
 ## Connect — `connect.html` [web]
 - H1 "Book a strategy call" + Calendly + secondary contact form (→ `/success/`).
