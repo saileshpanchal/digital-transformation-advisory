@@ -9,7 +9,7 @@
 ## Shared / cross-cutting [data]
 - **Calendly CTAs** — `_data/copy.yml › calendly` + `_includes/cta-calendly.html`. Strategy-call slug `…/30min`; capability slug `…/capability-blueprint`. Labels in `cta_labels`.
 - **Canonical lines** — `_data/copy.yml › canonical`: offer (`Six-week Proposition Blueprint → optional 90-day Proof`), spine (`You cannot be accountable for what you do not control.`), Owned Autonomy, Clean-Room.
-- **Nav / footer** [web] `_layouts/corporate.html` — items: Home · Approach · Propositions · Capability Intelligence · Insights · [Book a strategy call]. Footer adds Policies + (LinkedIn/Medium when configured).
+- **Nav / footer** [web] `_layouts/corporate.html` — items: Home · Approach · Propositions · Capability Intelligence · Customer Outcomes · Insights · [Book a strategy call]. Footer adds Contact + Policies + (LinkedIn/Medium when configured).
 
 ## Home — `index.html` [web]
 - **Hero strapline:** "Owned Autonomy · Agentic Squads · Capable Organisations." · **H1:** "Deploy agentic talent now. Own the autonomy that follows." · **sub:** build the squads, organisational capability and operating model to adopt agentic ways of working, then turn that capability into better propositions and new business models. · CTAs: [Book a strategy call] + [See the demonstration].
@@ -30,6 +30,11 @@
 ## Capability Intelligence — `capability-intelligence.html` [web]
 - **Hero H1:** "Capability intelligence for high-performance squads." · CTA [Discuss a Capability Blueprint] + [See how it works].
 - Sections: Why now (WEF 2025, attributed) · Unsolved problem (4) · Two better conversations (demand/evidence) · Lifecycle (Capability Blueprint → Best-fit Squad → Managed Capability Cycle) · Two applications · **Worked example** (synthetic; provenance labels Generated/Derived/Future) · Trusted structure (SFIA; SFIA-10) · AI-assisted (privacy line) · Expansion · CTA ("what to bring").
+
+## Customer Outcomes — `customer-outcomes.html` [web]
+- **Hero H1:** "Know your customers. Prove the change worked." · Consumer-Duty-anchored, outcome-led framing (works for incumbents + founders).
+- Sections: Understand the customer (behaviour signal + governed decision trace) · Monitor impact (define good before shipping; From→To) · Evidence by construction (C3 evidence trail; spine line) · **the FCA's four outcomes** (products & services · price & value · consumer understanding · consumer support) + non-certification line · CTA.
+- **Governance:** Consumer Duty = FCA external, attribute only, **never imply DTA certifies compliance** — `claim-register.md` §D + material-claims table. Reuses lexicon: Interaction Microdata, Evidence-grade Data Products, Context = measurement.
 
 ## Connect — `connect.html` [web]
 - H1 "Book a strategy call" + Calendly + secondary contact form (→ `/success/`).

@@ -36,6 +36,7 @@ Each material claim is tracked by: **source** (repo + commit/file, or external U
 | ipagoo (Orwell) — first cloud-first FCA/ACPR-regulated EMI on AWS/Azure; 2018 FIA Award | CV (2026-06-15) | Sailesh | **Approved (from CV)** — public-safe wording; no failure history | 2026-12-31 | index | Approved |
 | "The Accountable Bank" as a brand | — | Sailesh | **Needs-trademark-check** | — | (none; use "Clean-Room Demonstration") | Needs-TM |
 | Market/macro facts (2028 repricing, FXC sizing, FCA/BoE) | external + prototype thesis (marked external) | Sailesh | Attribute only; FXC needs licence | 2026-09-14 | (posts, attributed) | External |
+| Customer Outcomes page — FCA Consumer Duty (deliver/monitor/evidence good outcomes; the four outcomes; vulnerable customers) + DTA framing (behaviour signal + decision trace, evidence by construction) | FCA (external) + `docs/lexicon.md` (Interaction Microdata, Evidence-grade Data Products) | DTA | Approved — external attributed; **no compliance certification** | 2026-09-18 | customer-outcomes | External + DTA framing |
 
 ---
 
@@ -85,6 +86,7 @@ Rule: external feeds are **simulated** (FX, settlement, valuation, card) — say
 | Cross-border market sizing (FXC: $208tn flows / $625bn revenue) | **External — licence required** | Do not reproduce FXC figures/chart without an FXC licence; paraphrase-with-attribution only. See the cross-border proposition's claims table. | 2026-06-14 |
 | "feedback window closed 3 July 2026" | **DATE DEFECT** | ❌ Future date written as past. Use "closes 3 July 2026" or omit. | 2026-06-14 |
 | FCA/BoE tokenisation vision (20 May 2026); UK stablecoin limits (£20k/£10m, 40/60 backing) | **Needs-source / proposed-not-law** | Cite primary FCA/BoE source; never state proposed numbers as settled. | 2026-06-14 |
+| **FCA Consumer Duty** — deliver good outcomes for retail customers; monitor and evidence outcomes; the four outcomes (products & services, price & value, consumer understanding, consumer support); vulnerable customers | **External — attribute only** (FCA) | "an FCA framework"; the four outcomes are the FCA's. **Never imply DTA certifies/guarantees compliance** — DTA helps deliver and evidence outcomes. Avoid precise rule numbers / in-force dates in copy unless primary-sourced. | 2026-09-18 |
 
 ---
 
