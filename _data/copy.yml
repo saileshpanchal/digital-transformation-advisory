@@ -20,3 +20,4 @@ canonical:
   owned_autonomy: "Owned Autonomy: agentic capability a bank owns rather than rents, accountable and sovereign."
   clean_room: "A working demonstration built to production-grade controls on synthetic data: a proving ground for testing propositions, deliberately not a production system that runs with real customers."
   prototype_purpose: "The prototype is a working proving ground. We test propositions on it with test consumers, never real customers, and produce a vendor-neutral working specification a client takes to whatever vendor and build they choose to go live with."
+  working_spec: "The prototype is a working specification, expressed in open standards (ISO 20022 messaging, BIAN domain boundaries, recognised control frameworks). Because the standards are the shared language vendors already use, the specification is portable and reusable, vendor-neutral rather than locked to one supplier."

@@ -19,6 +19,8 @@ The single vocabulary the website, posts and book all draw from. Authority comes
 
 **Two Blueprints, never blurred:** *Proposition Blueprint* = the commercial offer/engagement. *Capability Blueprint* = the people/capability work-product inside it (or standalone). Copy must distinguish them.
 
+**Working specification** = what the prototype *is and produces*: a standards-based, executable specification of a proposition (expressed in ISO 20022, BIAN, recognised control frameworks) that a client takes to whatever vendor and build they choose. Distinct from the two Blueprints; it is the artefact, not the engagement. Its value is **portability/reuse** (standards are the shared vendor language) and **vendor-neutrality** (no lock-in). Never claim framework *certification* — "expressed in / structured around / aligned to" only.
+
 ## A. Coin and own (DTA-original)
 
 | Term | Names | Published definition |

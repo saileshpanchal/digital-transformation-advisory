@@ -64,6 +64,7 @@ Rule: external feeds are **simulated** (FX, settlement, valuation, card) — say
 | Common-platform architecture (one engine, many propositions) | **Substantiated (narrowed)** — several propositions now run on one engine | "One governed engine carrying multiple propositions — four are interactive demonstrations, with one as a blueprint." | 2026-06-14 |
 | Tokenised deposit with 1:1 backing | **Substantiated** | State plainly. | 2026-06-14 |
 | ISO 20022 / Faster Payments on the same engine | **Substantiated** (standalone + cross-border inbound) | "ISO 20022 messaging on the same engine." | 2026-06-14 |
+| Prototype as a **standards-based working specification** (portable / reusable) | **DTA framing on a standards base** — ISO 20022 Substantiated; BIAN "structured around"; control frameworks (NIST 800-207, OWASP LLM, BCBS 239, DCAM) **External, attribute only** | "expressed in open standards… portable and reusable, vendor-neutral". Reuse argument = standards are the shared vendor language. **Never claim certification/conformance** to any framework; "expressed in / structured around / aligned to" only. | 2026-09-18 |
 | Demonstrations use simulated services, no live customer money | **Substantiated** | Keep this disclaimer visible (the Clean-Room Demonstration Standard). | 2026-06-14 |
 
 ---
