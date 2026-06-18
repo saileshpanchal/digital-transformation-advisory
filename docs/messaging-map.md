@@ -38,6 +38,10 @@
 - **Honesty (critical):** the prototype, the Family Wealth journey, the agent actions + approval gates + recorded evidence are **demonstrated** (synthetic data). The outcomes-testing layer (structured capture, heatmap, evidence pack) is a **proposed extension / blueprint**, configured per engagement — NOT a shipped "Design Lab". Do not claim the Lab exists or that we have run it. Demo script: `docs/demo-script-customer-outcomes-lab.md`.
 - **Governance:** Consumer Duty = FCA external, attribute only, **never imply DTA certifies compliance** — `claim-register.md` §D + material-claims table.
 
+## Post — "Test, Learn, Evidence: Consumer Duty When Agents Act and Money Moves in Tokens" [blog]
+- `_posts/2026-06-18-consumer-duty-test-learn-evidence-agents-tokens.md`. Thesis: the Duty is a test→learn→evidence **loop**; banks run it as 3 disconnected, late activities; **agents** change *what* you test (the agent's action, not the screen) and **tokens** change *what's at stake* (speed, finality, programmability). FCA now supervises for outcomes → needs now.
+- Drives to `/customer-outcomes/` proving ground. Honesty: agentic journey + approval gates + evidence = demonstrated (synthetic); outcome-capture + tokenised rail = blueprint. Tokenisation = FCA/BoE proposed regime, attributed, **not settled law, no limit numbers**. No compliance certification. Governance: `claim-register.md`.
+
 ## Connect — `connect.html` [web]
 - H1 "Book a strategy call" + Calendly + secondary contact form (→ `/success/`).
 
