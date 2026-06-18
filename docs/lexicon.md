@@ -46,6 +46,15 @@ The single vocabulary the website, posts and book all draw from. Authority comes
 
 "agentic banking" (universal); "agent-ready / agentic-ready banking" (Zafin); "autonomous finance" (Forrester); "AI-native Banking OS / Unified Frontline / Sentinel / Nexus" (Backbase); "agentOS" (Fiserv); "composable / coreless banking" (Mambu / BIAN); "control plane" (Ping et al.); "Trust Score / runtime trust" (Trustwise). Use to be understood; never present as DTA coinage.
 
+### On "control plane" specifically — borrow the term, own the *operator* claim
+
+"Control plane" is a 30-year term of art (telecom/SDN → Kubernetes → service mesh → identity: Ping, Strata). It is generic and **not coinable** — never trademark or claim the bare noun. What DTA owns is the question the market is now circling: *who operates it?*
+
+- **Protocol sovereignty** (e.g. Canon's verifiable-credential / proof model) — the protocol *is* the control plane; there is no operator.
+- **Organisational sovereignty** (DTA) — the **bank operates its own control plane**: authorise, evidence and revoke every agent action in real time, examinable by a regulator.
+
+DTA's **sovereign / operational control plane** *(framing, not a coinage)* is simply the **bank-operated Consent plane of C3** — the agentic decision gateway, the Mandate & Authority Registry and the evidence store — expressed in language the audience already uses. The differentiator to make explicit everywhere is **pluggability you control**: settlement rails (FPS, SEPA Instant, RTGS, ISO 20022, future CBDC), identity / credential schemes (e.g. ARC) and liquidity proofs **plug into it as versioned, testable ABBs**, and engines (fraud/AML/KYC/risk) are thin layers over governed products. Because the bank operates the plane, it decides what plugs in and can swap or revoke it — *you cannot plug into, or revoke on, a control plane you do not operate.* That is the Accountability–Sovereignty Principle made operational. Rule: borrow the term, attribute the lineage, frame the bank-operated + pluggable extension as ours; **no "first/only"; demonstrator, not production**. Governed in [claim register](claim-register.md) §F and §I.
+
 ## C. Internal architecture mythos — ownable, keep OFF the public site
 
 A coherent internal naming system covers the capability substrate / payments engine, the governed bridge that carries an agent's intent to settlement, and the zero-trust authority plane. **The codenames themselves are deliberately kept off this public repo and the public site** — they live in the book and private architecture notes only; plain-English on the board-facing layer. (Enforced by `scripts/check-public-showcase.sh`.)
