@@ -78,4 +78,4 @@ Public framing: **proven frameworks — BIAN, SAFe, TOGAF, SFIA — assembled in
 
 ## Through-line in every artefact
 
-**Owned Autonomy** (accountable + sovereign) · the **C3** architecture · the **Accountability–Sovereignty Principle** · the **Glass Tube** proving method · the **SFIA-defined, FPE-led** squad · a **clean-room demonstration** whose platform is not yet product-ready.
+**Owned Autonomy** (accountable + sovereign) · the **C3** architecture · the **Accountability–Sovereignty Principle** · the **Glass Tube** proving method · the **SFIA-defined, FPE-led** squad · a **clean-room demonstration** that is a working proving ground, deliberately non-production (test consumers, never real customers).

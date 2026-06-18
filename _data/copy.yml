@@ -18,4 +18,5 @@ canonical:
   offer: "Six-week Proposition Blueprint → optional 90-day Proof"
   spine: "You cannot be accountable for what you do not control."
   owned_autonomy: "Owned Autonomy: agentic capability a bank owns rather than rents, accountable and sovereign."
-  clean_room: "A demonstration of technical capability; the model behind it is production-quality in design, though the platform is not yet product-ready."
+  clean_room: "A working demonstration built to production-grade controls on synthetic data: a proving ground for testing propositions, deliberately not a production system that runs with real customers."
+  prototype_purpose: "The prototype is a working proving ground. We test propositions on it with test consumers, never real customers, and produce a vendor-neutral working specification a client takes to whatever vendor and build they choose to go live with."
