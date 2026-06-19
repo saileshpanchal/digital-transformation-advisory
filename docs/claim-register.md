@@ -206,3 +206,31 @@ write-path, sensitivity inheritance) — **never the values or the stack**.
 - **Revenue spine (durability order):** NII/float on pre-funded balances → FX spread → platform/SaaS fees (API, treasury controls, reconciliation) → liquidity services (sweeps) → per-txn/corridor fees → compliance value-adds. **Deposit economics is the core, not payment fees.**
 - **Differentiator:** the pre-funded-local-rails model is **commoditised** (Banking Circle, Nium, Thunes, Airwallex, Currencycloud). DTA's edge is the **owned, accountable, agentic, deposit-economics** integration — not being first or fastest. The **agentic layer is an enhancer/differentiator, not the primary revenue engine.**
 - **Claim discipline:** "real-time cross-border" → "real-time cross-border *experience*"; OCT Inst = euro-leg only; FPS = pre-funded settlement model; FCA CP25/14 = consultation (proposed, not law). (Sources: EPC, BoE, Pay.UK, FCA — per the proposition doc's research.)
+
+---
+
+## Positioning (DTA internal) — what the artifacts substantiate
+
+The demonstrations and this claim register substantiate one positioning: DTA produces an
+**independent, vendor-agnostic, executable target architecture** for UK banking, proven on the
+hard primitives before any platform commitment. The category claim is sequenced, not adversarial:
+*the platform decision comes second*. The aim is at the **bank's pain** (vendor-led architecture,
+committing before the hard parts are proven, regulators wanting evidence over assertions), never at
+any advisor's deliverable.
+
+The three-legs synthesis is DTA's transferable capability and runs as a quiet connecting thread,
+one line per page (Platform / Approach / Capability Intelligence), each cross-linking the others:
+
+> Three parts of one capability: the target architecture (what good looks like, proven), the
+> operating model to build it, and the capability intelligence to staff it.
+
+**Claim status:** *substantiated* by the four interactive demonstrations + one blueprint, the claim
+register, decision records and the demonstrated-vs-blueprint discipline. It is positioning, not a
+product-availability claim; nothing here implies a production platform for sale.
+
+**Discipline (gates public copy):** no superlatives, no pricing, no "top 1%" or "best/leading";
+internal codenames never appear in public copy or the built site; "demonstrated, not production"
+holds for DTA's own work; the rigour is shown in the artifacts, not asserted. Public surfaces for
+the positioning: the Platform page category line + evidence band, and the essay
+*Independent Architecture, Proven Primitives: the Platform Decision Comes Second*
+(`_posts/2026-06-17-independent-architecture-proven-primitives.md`).
