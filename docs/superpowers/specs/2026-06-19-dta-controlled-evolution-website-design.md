@@ -25,7 +25,8 @@ The update must:
 3. Keep staffing, specialist talent, and managed squads easy to find and buy.
 4. Make the Clean-Room Demonstration a source of credibility, not the corporate category.
 5. Use *A Place to Start* as the flagship example of human outcomes, operating economics, and reusable architecture.
-6. Preserve the website's claim discipline: demonstrated, illustrative, and blueprint capabilities remain visibly distinct.
+6. Make Consumer Outcomes a strong, public DTA advocacy position rather than a narrow testing service.
+7. Preserve the website's claim discipline: demonstrated, illustrative, and blueprint capabilities remain visibly distinct.
 
 ## Positioning
 
@@ -57,7 +58,7 @@ The update must:
 - CTOs and CIOs choosing architecture, platforms, and migration paths.
 - COOs and transformation leaders reducing operating friction and exception cost.
 - CDOs and CISOs governing data, authority, evidence, and agent action.
-- Product, Consumer Duty, and financial-inclusion leaders designing new propositions.
+- Product, Consumer Duty, consumer-outcomes, and financial-inclusion leaders designing new propositions.
 
 Their buying moments include a new proposition, an agentic strategy, a platform decision, a failing transformation, a regulatory concern, or a need to reduce the cost of manual exceptions.
 
@@ -84,11 +85,11 @@ Example engagements:
 - Independent target architecture and platform decisions.
 - Payments, economic-crime, and data strategy.
 - Operating-model and transformation advisory.
-- Consumer outcomes and financial inclusion.
+- Consumer Outcomes advocacy, advisory, and financial inclusion.
 
 ### 2. Proposition proof
 
-DTA turns the strategy into an inspectable decision artefact through a Proposition Blueprint, Clean-Room Demonstration, customer-outcome testing, or Glass Tube pilot.
+DTA turns the strategy into an inspectable decision artefact through a Proposition Blueprint, Clean-Room Demonstration, consumer-outcome testing, or Glass Tube pilot.
 
 The client receives evidence, design decisions, and a vendor-neutral working specification. Public wording must distinguish a demonstrated capability from a blueprint.
 
@@ -105,6 +106,7 @@ The primary navigation should become:
 - **Home**
 - **Advisory**
 - **Propositions**
+- **Consumer Outcomes**
 - **Talent & Squads**
 - **Insights**
 - **Book a strategy call**
@@ -113,7 +115,7 @@ The Advisory page or menu will route visitors to:
 
 - Strategic and transformation advisory.
 - Approach and operating model.
-- Customer outcomes.
+- Consumer Outcomes advisory.
 - Capability Intelligence.
 
 The Propositions route will retain `/composable-bank/` and its existing subpages. Platform, Data Products, and Resilience remain supporting proof inside the demonstration rather than top-level corporate offers.
@@ -155,7 +157,7 @@ Close with the Accountability-Sovereignty Principle: **You cannot be accountable
 Present three cards in the commercial order:
 
 1. **Advise**: define the proposition, target architecture, operating model, and transformation path.
-2. **Prove**: test the journey, controls, economics, and customer outcomes before implementation hardens.
+2. **Prove**: test the journey, controls, economics, and consumer outcomes before implementation hardens.
 3. **Deliver**: provide the leaders, specialists, and managed squads that turn the decision into working capability.
 
 Each card should stand alone. Cross-links should show how the routes combine.
@@ -176,7 +178,7 @@ The section will link to the proposition page. Until the complete journey works,
 
 Reframe the current showcase band around the advisory advantage:
 
-> We do not ask a bank to accept an architecture on a slide. We use a working proving ground to test the propositions, authority boundaries, data products, customer outcomes, and migration decisions before commitment.
+> We do not ask a bank to accept an architecture on a slide. We use a working proving ground to test the propositions, authority boundaries, data products, consumer outcomes, and migration decisions before commitment.
 
 Retain the Clean-Room boundary: synthetic data, test consumers, production-grade control design, and no production banking service.
 
@@ -192,6 +194,58 @@ Show how a client can continue after proof:
 ### 7. Leadership and insight
 
 Retain the founder track record and current insight feed. Connect the biography to the market promise: DTA combines bank leadership, payments, economic crime, architecture, technology, and transformation experience.
+
+## Consumer Outcomes advocacy
+
+### Role on the site
+
+Rename **Customer Outcomes** to **Consumer Outcomes** throughout the corporate website. Consumer Outcomes will become a primary navigation item and a visible DTA position, not merely a description of a testing engagement.
+
+The public stance is:
+
+> Good consumer outcomes are designed into a proposition, not evidenced after the damage is done.
+
+DTA will advocate for banks to begin with the people most likely to be excluded, test propositions before code and process harden, preserve human agency when agents act, and generate evidence while decisions are made.
+
+### Principles DTA advocates
+
+1. **Outcomes before implementation.** A bank should define the intended consumer outcome, risks, support model, and measures before choosing the platform or building the journey.
+2. **Design from the excluded edge.** A proposition that works for someone without a fixed address, conventional documents, or a smartphone exposes assumptions that ordinary happy-path design conceals.
+3. **Human agency when agents act.** Consumers should understand when an agent acts, what authority it has, how to intervene, and where to find human support.
+4. **Evidence as responsibility.** Evidence by construction should help a bank learn and remain accountable. It is not a shortcut to compliance or a claim of regulatory approval.
+5. **Lived experience over synthetic confidence.** DTA should test important propositions with relevant consumers and specialist organisations before recommending implementation.
+6. **Inclusion with economic discipline.** Better access should reduce avoidable exceptions, repeated contacts, and manual rework rather than transfer hidden cost to charities or consumers.
+
+### Page message
+
+**Proposed headline**
+
+> Banking should work for the people it is easiest to exclude.
+
+**Proposed introduction**
+
+> Consumer Duty should change what a bank designs, not merely how it reports. DTA helps banks and fintechs design, test, and evidence propositions around real consumer needs before delivery choices harden into code, process, and cost.
+
+The page should lead with advocacy, then show how DTA helps. It must not read as a generic Consumer Duty compliance service.
+
+### Page structure
+
+1. **The position:** consumer outcomes begin at proposition design.
+2. **The people hidden by the happy path:** exclusion, vulnerability, low digital confidence, and lack of safe access.
+3. **A Place to Start:** one person, one outcome, and one concrete challenge to current banking assumptions.
+4. **What changes when agents act:** comprehension, authority, intervention, and human support.
+5. **What DTA asks banks to do:** define, test, evidence, learn, and change before launch.
+6. **How DTA helps:** Consumer Outcomes advisory, proposition testing, a Clean-Room Proof, and a vendor-neutral working specification.
+7. **The evidence boundary:** demonstrated, illustrative, and blueprint claims remain explicit.
+8. **Call to action:** **Bring us a proposition that could exclude someone.**
+
+### Naming and migration
+
+- Rename navigation, headings, metadata, and repeated copy from **Customer Outcomes** to **Consumer Outcomes**.
+- Move the canonical page from `/customer-outcomes/` to `/consumer-outcomes/`.
+- Preserve existing links and search equity with a permanent redirect from `/customer-outcomes/`.
+- Update the messaging map, central copy, claim register, internal links, analytics labels, and sitemap.
+- Use *consumer* when discussing Consumer Duty, market-wide outcomes, or advocacy. Use *customer* only for a specific bank-customer relationship or quoted source language.
 
 ## Propositions experience
 
@@ -281,7 +335,7 @@ This change does not require a visual rebrand. Retain the DTA palette, typograph
 
 Change the visual hierarchy:
 
-- Put board and customer outcomes before mechanisms.
+- Put board and consumer outcomes before mechanisms.
 - Use one human story to create emotional weight.
 - Use diagrams only after the proposition is clear.
 - Separate Advisory and Talent & Squads with distinct cards and calls to action.
@@ -297,7 +351,8 @@ Track the two commercial routes separately:
 - Strategic-challenge CTA clicks and completed bookings.
 - Talent-and-squad CTA clicks and completed enquiries.
 - Homepage-to-proposition visits.
-- Visits from A Place to Start into Advisory or Customer Outcomes.
+- Visits from A Place to Start into Advisory or Consumer Outcomes.
+- Consumer Outcomes advocacy-page visits that continue into a proposition or advisory enquiry.
 - Proposition engagement and evidence-section interaction.
 - Qualified enquiries that name a proposition, architecture decision, or transformation problem.
 
@@ -308,7 +363,8 @@ The design should pass a ten-second comprehension test: a bank executive should 
 ### Release 1: Corporate hierarchy
 
 - Update homepage positioning and section order.
-- Reorganise navigation around Advisory, Propositions, and Talent & Squads.
+- Reorganise navigation around Advisory, Propositions, Consumer Outcomes, and Talent & Squads.
+- Rename Customer Outcomes to Consumer Outcomes and preserve the old URL with a permanent redirect.
 - Create the Talent & Squads page.
 - Update repeated copy and the messaging map.
 - Preserve current demonstration claims.
@@ -332,6 +388,8 @@ The design is complete when:
 
 - Strategic advisory leads the hero, navigation, and offer order.
 - Staffing remains visible from the homepage and primary navigation.
+- Consumer Outcomes appears in primary navigation and leads with a clear advocacy position.
+- The Consumer Outcomes page distinguishes public advocacy from the advisory services that support it.
 - Visitors can understand and buy either route independently.
 - The demonstration supports the advisory claim without making DTA look like a platform vendor.
 - A Place to Start leads with one person's outcome and carries an honest status label.
