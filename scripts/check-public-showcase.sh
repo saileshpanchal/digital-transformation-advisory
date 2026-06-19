@@ -52,12 +52,13 @@ if ! scan "the generated public site" _site/composable-bank; then
   fail=1
 fi
 
-# 3. Scan tracked repo files, excluding only build tooling and this script
-#    itself (which necessarily lists the forbidden terms). docs/ IS scanned —
-#    this is a public repo, so internal codenames must not live there either.
+# 3. Scan tracked repo files, excluding only build tooling and the guard
+#    scripts themselves (check-public-showcase.sh and voice-lint.sh both
+#    necessarily list the forbidden terms in order to detect them). docs/ IS
+#    scanned — this is a public repo, so internal codenames must not live there.
 echo "Checking tracked repo files…"
 tracked=$(git ls-files \
-  | grep -vE '^(\.superpowers/|\.gstack/|scripts/check-public-showcase\.sh)' || true)
+  | grep -vE '^(\.superpowers/|\.gstack/|scripts/check-public-showcase\.sh|scripts/voice-lint\.sh)' || true)
 if [ -n "$tracked" ]; then
   # shellcheck disable=SC2086
   if ! scan "tracked repo files" $tracked; then
