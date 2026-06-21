@@ -1,0 +1,977 @@
+schema_version: 1
+register:
+  id: DTA-AR-001
+  title: DTA Architecture Conflict Register
+  status: proposed
+  owner: Sailesh Panchal
+  created: 2026-06-21
+  canonical_source: docs/superpowers/specs/2026-06-21-dta-architecture-review-design.md
+  change_plan: docs/architecture/change-plan.md
+
+enums:
+  disposition:
+    - define
+    - preserve
+    - adopt
+    - merge
+    - deprecate
+    - redirect
+    - quarantine
+    - open
+  provenance:
+    - public
+    - gated
+    - internal
+    - clean-room
+  stability:
+    - locked
+    - stable
+    - developing
+    - provisional
+  status:
+    - proposed
+    - approved
+    - implemented
+    - verified
+    - blocked
+
+priority_rules:
+  P0: Blocks launch, risks protected IP, or risks a false or misleading claim.
+  P1: Needed for a coherent launch but safe to resolve during the build.
+  P2: Canon depth or post-launch refinement.
+
+publication_rules:
+  enforcement: manual-first-launch
+  automation_trigger: Add automated enforcement when a second contributor makes it valuable.
+  public:
+    permitted_stability:
+      - locked
+      - stable
+    forbidden_provenance:
+      - gated
+      - internal
+      - clean-room
+  clean-room:
+    permitted_stability:
+      - locked
+      - stable
+    required_labels:
+      - synthetic
+      - non-production
+      - claim-status
+  split_rule: Split a concept into separate rows when its public and protected treatments differ.
+  dependency_rule: A row cannot move to implemented until every depends_on row is approved or verified.
+
+conflicts:
+  - id: PUR-001
+    area: purpose
+    object: DTA mission
+    current: The current website design says DTA helps banks and fintechs build the future of banking without leaving any consumer behind. The new programme broadens the mission to institutions, customers, colleagues, technology, multiple forms of intelligence, and trustworthy, inclusive, resilient financial systems.
+    evidence:
+      - docs/superpowers/specs/2026-06-19-dta-controlled-evolution-website-design.md
+      - index.html
+      - user-supplied architecture programme, 2026-06-21
+    recommendation: Define one canonical mission that retains the consumer commitment while expressing the broader institutional, colleague, technology, and intelligence scope. Use a shorter public expression derived from the internal statement.
+    disposition: define
+    provenance: public
+    stability: stable
+    priority: P0
+    depends_on: []
+    status: proposed
+
+  - id: PUR-002
+    area: purpose
+    object: DTA principles
+    current: Principles exist across the claim register, lexicon, prototype positioning, Consumer Outcomes material, and the new architecture programme, but no single canonical set governs the ecosystem.
+    evidence:
+      - docs/lexicon.md
+      - docs/claim-register.md
+      - docs/prototype.md
+      - docs/superpowers/specs/2026-06-19-dta-controlled-evolution-website-design.md
+    recommendation: Define the eight proposed principles in the North Star, distinguish principles from claims and methods, and publish concise versions only after conflict review.
+    disposition: define
+    provenance: public
+    stability: developing
+    priority: P1
+    depends_on:
+      - PUR-001
+    status: proposed
+
+  - id: PUR-003
+    area: purpose
+    object: Preservation, Evolution, and Augmentation
+    current: The three themes explain much of DTA's work but do not appear as a canonical framework. Accountability and sovereignty currently carry more of the site's organising burden.
+    evidence:
+      - docs/lexicon.md
+      - index.html
+      - user-supplied architecture programme, 2026-06-21
+    recommendation: Define Preservation, Evolution, and Augmentation as cross-cutting transformation themes. Do not position them as replacements for Owned Autonomy, accountability, or sovereignty.
+    disposition: define
+    provenance: public
+    stability: developing
+    priority: P1
+    depends_on:
+      - PUR-001
+    status: proposed
+
+  - id: HIER-001
+    area: hierarchy
+    object: Seven Intelligences
+    current: No repository document defines the Seven Intelligences or their boundaries. Existing content is organised around Owned Autonomy, C3, commercial offers, propositions, and prototype capabilities.
+    evidence:
+      - docs/lexicon.md
+      - docs/messaging-map.md
+      - user-supplied architecture programme, 2026-06-21
+    recommendation: Adopt the Seven Intelligences as lenses across DTA's work after each has a concise purpose and boundary. Use soft tags; allow several Intelligences to be equally material to one artefact.
+    disposition: define
+    provenance: public
+    stability: developing
+    priority: P0
+    depends_on:
+      - PUR-001
+      - PUR-002
+      - PUR-003
+    status: proposed
+
+  - id: HIER-002
+    area: hierarchy
+    object: Relationship between C3 and the Seven Intelligences
+    current: C3 is described as the reference architecture or architecture spine for the whole DTA proposition. The Seven Intelligences create a broader domain model.
+    evidence:
+      - docs/c3-architecture.md
+      - docs/lexicon.md
+      - approach.html
+    recommendation: Preserve C3 as a reusable reference architecture for governed human-machine action. Place it beneath the Intelligence taxonomy rather than making it a competing top-level hierarchy.
+    disposition: merge
+    provenance: public
+    stability: developing
+    priority: P1
+    depends_on:
+      - HIER-001
+      - TERM-002
+    status: proposed
+
+  - id: HIER-003
+    area: hierarchy
+    object: Relationship between Owned Autonomy and the Seven Intelligences
+    current: Owned Autonomy is the current thesis, homepage category, doctrine, and site title. The new hierarchy begins with mission and principles.
+    evidence:
+      - _config.yml
+      - index.html
+      - docs/lexicon.md
+    recommendation: Preserve Owned Autonomy as a DTA doctrine and design outcome. Stop using it as the sole corporate information architecture.
+    disposition: adopt
+    provenance: public
+    stability: stable
+    priority: P1
+    depends_on:
+      - PUR-001
+      - HIER-001
+      - TERM-001
+    status: proposed
+
+  - id: HIER-004
+    area: hierarchy
+    object: Proposition spine
+    current: Propositions, proving methods, specifications, the clean-room platform, and future executable systems are described in several overlapping sequences.
+    evidence:
+      - docs/prototype.md
+      - docs/lexicon.md
+      - docs/messaging-map.md
+      - docs/superpowers/specs/2026-06-19-dta-controlled-evolution-website-design.md
+    recommendation: Lock the sequence Experience Journey -> Reference Architecture -> Prototype Specification -> Ultim8 runtime -> Executable System, while preserving commercial Blueprint and Glass Tube terms as engagement artefacts.
+    disposition: define
+    provenance: internal
+    stability: developing
+    priority: P1
+    depends_on:
+      - HIER-001
+      - TERM-008
+      - TERM-009
+      - TERM-011
+      - TERM-012
+    status: proposed
+
+  - id: INT-001
+    area: intelligence
+    object: Experience Intelligence
+    current: Customer and consumer outcomes, journey testing, propositions, and experience evidence exist, but no Experience Intelligence definition joins them.
+    evidence:
+      - customer-outcomes.html
+      - docs/demo-script-customer-outcomes-lab.md
+      - composable-bank/
+    recommendation: Define Experience Intelligence around desired outcomes, lived journeys, inclusion, vulnerability, understanding, intervention, and evidence. Treat Experience Journeys as applications that cross several Intelligences.
+    disposition: define
+    provenance: public
+    stability: developing
+    priority: P1
+    depends_on:
+      - HIER-001
+    status: proposed
+
+  - id: INT-002
+    area: intelligence
+    object: Capability Intelligence
+    current: The public page focuses on high-performance squads, SFIA, evidence, and staffing. The proposed Intelligence is broader and includes skills, knowledge, and judgment.
+    evidence:
+      - capability-intelligence.html
+      - docs/squad-operating-model.md
+      - docs/claim-register.md
+    recommendation: Expand the canonical definition to cover how human and organisational capabilities evolve. Keep the current squad and SFIA material as one application, not the whole Intelligence.
+    disposition: merge
+    provenance: public
+    stability: developing
+    priority: P1
+    depends_on:
+      - HIER-001
+    status: proposed
+
+  - id: INT-003
+    area: intelligence
+    object: Skills, Knowledge, and Judgment Intelligence
+    current: Skills are strongly represented through SFIA. Knowledge appears in insight and graph work. Judgment has no canonical definition or page.
+    evidence:
+      - capability-intelligence.html
+      - docs/squad-operating-model.md
+      - _posts/2026-04-08-turning-your-knowledge-base-into-a-graph-you-can-argue-with.md
+    recommendation: Define the three as subdomains of Capability Intelligence. Fence detailed role models, assessment methods, levels, and knowledge structures as gated or internal IP.
+    disposition: define
+    provenance: public
+    stability: developing
+    priority: P1
+    depends_on:
+      - INT-002
+      - PROV-003
+    status: proposed
+
+  - id: INT-004
+    area: intelligence
+    object: Cognitive Intelligence
+    current: Human-in-the-loop action, agents, local models, evidence, and decision gateways appear throughout the site, but no domain definition explains how humans and machines think together.
+    evidence:
+      - approach.html
+      - docs/c3-architecture.md
+      - _posts/2026-06-15-owned-autonomy-agentic-banking-a-bank-owns.md
+    recommendation: Define Cognitive Intelligence around allocation of reasoning, human judgment, agent authority, explainability, intervention, and learning. Map C3 where it governs action, without equating C3 with the whole domain.
+    disposition: define
+    provenance: public
+    stability: developing
+    priority: P1
+    depends_on:
+      - HIER-001
+      - HIER-002
+    status: proposed
+
+  - id: INT-005
+    area: intelligence
+    object: Value Intelligence
+    current: Payments, deposits, tokenisation, contracts, economics, and value exchange appear in separate propositions and papers.
+    evidence:
+      - docs/proposition-cross-border-realtime-payments.md
+      - _posts/2026-06-14-cross-border-payments-the-real-prize-is-the-deposit.md
+      - composable-bank/cross-border-payments/index.html
+    recommendation: Define Value Intelligence around how value is represented, exchanged, governed, settled, and measured. Place Future Value Exchange within this Intelligence and preserve careful claim boundaries around tokenised value.
+    disposition: define
+    provenance: public
+    stability: developing
+    priority: P1
+    depends_on:
+      - HIER-001
+      - CLAIM-001
+    status: proposed
+
+  - id: INT-006
+    area: intelligence
+    object: Trust Intelligence
+    current: Consumer outcomes, vulnerability, inclusion, consent, evidence, privacy, and resilience are distributed across several pages and frameworks.
+    evidence:
+      - customer-outcomes.html
+      - docs/claim-register.md
+      - composable-bank/resilience/index.html
+    recommendation: Define Trust Intelligence around justified trust among consumers, institutions, regulators, and systems. Keep control mechanisms in Control Intelligence and treat trust as the outcome those mechanisms must earn.
+    disposition: define
+    provenance: public
+    stability: developing
+    priority: P1
+    depends_on:
+      - HIER-001
+    status: proposed
+
+  - id: INT-007
+    area: intelligence
+    object: Platform Intelligence
+    current: Platform content mixes target architecture, governed data products, runtime, core coexistence, and a public demonstration.
+    evidence:
+      - composable-bank/platform/index.html
+      - composable-bank/data-products/index.html
+      - docs/messaging-map.md
+    recommendation: Define Platform Intelligence around system evolution, composability, interoperability, coexistence, governed data, and runtime architecture. Separate domain knowledge from the Ultim8 implementation.
+    disposition: define
+    provenance: public
+    stability: developing
+    priority: P1
+    depends_on:
+      - HIER-001
+      - TERM-010
+    status: proposed
+
+  - id: INT-008
+    area: intelligence
+    object: Control Intelligence
+    current: Accountability, sovereignty, controls, evidence, SM&CR leadership, authority, and continuous control are distributed across C3, resilience, approach, and operating-model material.
+    evidence:
+      - docs/c3-architecture.md
+      - operating-model.html
+      - composable-bank/resilience/index.html
+      - docs/claim-register.md
+    recommendation: Define Control Intelligence around how accountable leaders set authority, observe outcomes, intervene, and evidence control continuously. Distinguish governance outcomes from the technical control plane.
+    disposition: define
+    provenance: public
+    stability: developing
+    priority: P1
+    depends_on:
+      - HIER-001
+      - INT-006
+      - TERM-002
+    status: proposed
+
+  - id: TERM-001
+    area: terminology
+    object: Owned Autonomy
+    current: The lexicon and central copy define it consistently, but the term currently carries thesis, corporate category, mission, and architecture responsibilities.
+    evidence:
+      - docs/lexicon.md
+      - _data/copy.yml
+      - index.html
+    recommendation: Lock the existing one-line definition. Limit its architectural job to doctrine and intended outcome, then map it to the mission, principles, and relevant Intelligences.
+    disposition: adopt
+    provenance: public
+    stability: locked
+    priority: P1
+    depends_on: []
+    status: proposed
+
+  - id: TERM-002
+    area: terminology
+    object: C3
+    current: C3 is consistently defined as Capability, Context, and Consent, but is also called the whole architecture spine.
+    evidence:
+      - docs/c3-architecture.md
+      - docs/lexicon.md
+      - approach.html
+    recommendation: Lock the plane definitions. Reframe C3 as a named reference architecture for governed action within the wider Seven Intelligences model.
+    disposition: adopt
+    provenance: public
+    stability: stable
+    priority: P1
+    depends_on: []
+    status: proposed
+
+  - id: TERM-003
+    area: terminology
+    object: Domain Building Block
+    current: DBB is well-defined as DTA IP and the Capability plane of C3. Public and protected detail are not always visibly separated.
+    evidence:
+      - docs/lexicon.md
+      - docs/squad-operating-model.md
+      - _posts/2026-06-13-domain-building-blocks-composable-banking.md
+    recommendation: Preserve the public definition. Treat the catalogue, detailed model, and implementation method as separate protected artefacts governed by PROV-003.
+    disposition: preserve
+    provenance: public
+    stability: locked
+    priority: P1
+    depends_on:
+      - PROV-003
+    status: proposed
+
+  - id: TERM-004
+    area: terminology
+    object: Capability Intelligence definition
+    current: The public term is defined through squad composition and SFIA evidence rather than the proposed broader capability domain.
+    evidence:
+      - capability-intelligence.html
+      - docs/claim-register.md
+    recommendation: Coin and lock a broader one-line definition before changing the page. Retain the current content as a named application such as Workforce or Delivery Capability Intelligence.
+    disposition: define
+    provenance: public
+    stability: developing
+    priority: P1
+    depends_on:
+      - INT-002
+    status: proposed
+
+  - id: TERM-005
+    area: terminology
+    object: Judgment Intelligence spelling and scope
+    current: The term is proposed but absent from the repository.
+    evidence:
+      - user-supplied architecture programme, 2026-06-21
+    recommendation: Use British spelling, Judgment Intelligence. Define its scope before publication and avoid treating judgment as a score that can be inferred without evidence.
+    disposition: define
+    provenance: public
+    stability: provisional
+    priority: P1
+    depends_on:
+      - INT-003
+    status: proposed
+
+  - id: TERM-006
+    area: terminology
+    object: Composable Bank
+    current: The public URL, HTML titles, post links, and generated demonstration use Composable Bank. The lexicon says composable banking is a generic descriptor, while an internal operating-model document says the name is retired.
+    evidence:
+      - composable-bank/index.html
+      - docs/lexicon.md
+      - docs/squad-operating-model.md
+      - _posts/2026-06-13-domain-building-blocks-composable-banking.md
+    recommendation: Deprecate Composable Bank as a DTA product name. Preserve it as a generic architectural descriptor and retain the URL until a redirect plan and replacement public name are approved.
+    disposition: deprecate
+    provenance: public
+    stability: stable
+    priority: P1
+    depends_on:
+      - TERM-007
+      - TERM-008
+      - BUILD-002
+    status: proposed
+
+  - id: TERM-007
+    area: terminology
+    object: The Accountable Bank
+    current: Internal documents propose it as the demonstration name, but the lexicon requires a trademark check before public use.
+    evidence:
+      - docs/lexicon.md
+      - docs/squad-operating-model.md
+    recommendation: Quarantine the name from public navigation and metadata until trademark and category checks pass. Do not make the architecture programme depend on this name.
+    disposition: quarantine
+    provenance: internal
+    stability: provisional
+    priority: P1
+    depends_on: []
+    status: proposed
+
+  - id: TERM-008
+    area: terminology
+    object: Clean-Room Demonstration and Clean-Room Demonstration Standard
+    current: The site alternates among demonstration, standard, prototype, proving ground, platform, and working specification.
+    evidence:
+      - docs/prototype.md
+      - docs/lexicon.md
+      - _data/copy.yml
+      - customer-outcomes.html
+    recommendation: Define the Clean-Room Demonstration as the fenced environment and running proof. Define the Clean-Room Demonstration Standard as the rules governing isolation, synthetic data, production-grade control design, claim labels, and non-production use.
+    disposition: define
+    provenance: public
+    stability: stable
+    priority: P0
+    depends_on:
+      - PROV-002
+    status: proposed
+
+  - id: TERM-009
+    area: terminology
+    object: Prototype, working specification, and Prototype Specification
+    current: Prototype describes both a working proving ground and an output. Working specification describes both what runs and what the client receives. Prototype Specification is proposed as a new architecture layer.
+    evidence:
+      - docs/prototype.md
+      - docs/lexicon.md
+      - docs/superpowers/specs/2026-06-19-dta-controlled-evolution-website-design.md
+    recommendation: Define Prototype Specification as the executable blueprint produced from a reference architecture and journey. Use working prototype for a running proof and working specification for the portable client artefact.
+    disposition: define
+    provenance: public
+    stability: developing
+    priority: P2
+    depends_on:
+      - TERM-008
+    status: proposed
+
+  - id: TERM-010
+    area: terminology
+    object: Ultim8
+    current: Ultim8 appears in the proposed hierarchy and exists as a related repository, but this repository has no canonical definition of its role, ownership, or public boundary.
+    evidence:
+      - AGENTS.md
+      - user-supplied architecture programme, 2026-06-21
+    recommendation: Define Ultim8 internally as a runtime only after its relationship to the Clean-Room Demonstration, Prototype Specifications, DTA IP, and client executable systems is explicit. Hold the public page until the definition is stable.
+    disposition: define
+    provenance: internal
+    stability: provisional
+    priority: P2
+    depends_on:
+      - HIER-004
+      - PROV-002
+    status: proposed
+
+  - id: TERM-011
+    area: terminology
+    object: Glass Tube
+    current: Glass Tube describes a transparent pilot and proving method, while the Clean-Room Demonstration also describes a proving method and environment.
+    evidence:
+      - docs/lexicon.md
+      - approach.html
+      - operating-model.html
+    recommendation: Define Glass Tube as an engagement and pilot pattern. Define the clean room as an environment and standard. A Glass Tube may use the clean room but is not synonymous with it.
+    disposition: define
+    provenance: public
+    stability: stable
+    priority: P1
+    depends_on:
+      - TERM-008
+    status: proposed
+
+  - id: TERM-012
+    area: terminology
+    object: Proposition Blueprint and Capability Blueprint
+    current: The lexicon distinguishes the commercial engagement from the people-capability work product, but site copy can still make the two appear interchangeable.
+    evidence:
+      - docs/lexicon.md
+      - capability-intelligence.html
+      - approach.html
+    recommendation: Preserve both definitions and add explicit type labels wherever they appear. Map Prototype Specification as a separate technical artefact.
+    disposition: preserve
+    provenance: public
+    stability: locked
+    priority: P1
+    depends_on:
+      - TERM-009
+    status: proposed
+
+  - id: TERM-013
+    area: terminology
+    object: Customer Outcomes and Consumer Outcomes
+    current: The live route, navigation, and page title use Customer Outcomes. The newer website design adopts Consumer Outcomes and broadens the page into a DTA advocacy position.
+    evidence:
+      - customer-outcomes.html
+      - _layouts/corporate.html
+      - docs/superpowers/specs/2026-06-19-dta-controlled-evolution-website-design.md
+    recommendation: Adopt Consumer Outcomes as the public term and Intelligence-aligned trust and experience domain. Create a permanent redirect from /customer-outcomes/ to /consumer-outcomes/.
+    disposition: redirect
+    provenance: public
+    stability: stable
+    priority: P1
+    depends_on:
+      - INT-001
+      - INT-006
+      - BUILD-002
+    status: proposed
+
+  - id: TERM-014
+    area: terminology
+    object: Propositions and Experience Journeys
+    current: Propositions are both commercial offers and demonstration scenarios. The proposed architecture uses Experience Journeys for applications.
+    evidence:
+      - composable-bank/
+      - docs/messaging-map.md
+      - docs/lexicon.md
+    recommendation: Use Experience Journey for the end-to-end human and institutional application. Use proposition for the commercial or product concept. One proposition may contain several journeys.
+    disposition: define
+    provenance: public
+    stability: developing
+    priority: P1
+    depends_on:
+      - INT-001
+    status: proposed
+
+  - id: NAV-001
+    area: navigation
+    object: Competing navigation models
+    current: The live site uses Home, Approach, Propositions, Capability Intelligence, Customer Outcomes, and Insights. The June website design proposes Advisory, Propositions, Consumer Outcomes, Talent and Squads, and Insights. The new architecture adds Mission, Principles, Intelligences, Experience Journeys, Architecture Library, Prototype Specifications, and Ultim8.
+    evidence:
+      - _layouts/corporate.html
+      - docs/superpowers/specs/2026-06-19-dta-controlled-evolution-website-design.md
+      - user-supplied architecture programme, 2026-06-21
+    recommendation: Replace the live navigation only after the hierarchy, terminology, and persona routes are stable. Test a grouped architecture-first model before implementation.
+    disposition: merge
+    provenance: public
+    stability: developing
+    priority: P1
+    depends_on:
+      - HIER-001
+      - HIER-004
+      - NAV-002
+      - NAV-003
+      - NAV-004
+      - NAV-005
+      - NAV-006
+    status: proposed
+
+  - id: NAV-002
+    area: navigation
+    object: Mission and Principles routing
+    current: Mission appears as a homepage section. Principles are distributed and have no route.
+    evidence:
+      - index.html
+      - docs/superpowers/specs/2026-06-19-dta-controlled-evolution-website-design.md
+    recommendation: Put Mission and Principles first on the homepage and in the North Star. Keep them directly linkable, but avoid two extra top-level navigation items unless persona testing shows they improve discovery.
+    disposition: merge
+    provenance: public
+    stability: developing
+    priority: P1
+    depends_on:
+      - PUR-001
+      - PUR-002
+    status: proposed
+
+  - id: NAV-003
+    area: navigation
+    object: Intelligences route
+    current: Capability Intelligence is a top-level page. The other six Intelligences have no hub or route.
+    evidence:
+      - _layouts/corporate.html
+      - capability-intelligence.html
+    recommendation: Create one Intelligences hub with seven clearly bounded children. Keep Capability Intelligence as a child route and preserve its existing URL through the first migration.
+    disposition: merge
+    provenance: public
+    stability: developing
+    priority: P1
+    depends_on:
+      - HIER-001
+      - INT-001
+      - INT-002
+      - INT-004
+      - INT-005
+      - INT-006
+      - INT-007
+      - INT-008
+    status: proposed
+
+  - id: NAV-004
+    area: navigation
+    object: Architecture Library and Prototype Specifications
+    current: Architecture content is split among Approach, C3, Platform, Data Products, Resilience, posts, and internal documents. Specifications are described but have no public library.
+    evidence:
+      - approach.html
+      - docs/c3-architecture.md
+      - composable-bank/platform/index.html
+      - docs/prototype.md
+    recommendation: Group Architecture Library and Prototype Specifications under one Architecture navigation family while preserving distinct content types and provenance.
+    disposition: merge
+    provenance: public
+    stability: developing
+    priority: P1
+    depends_on:
+      - HIER-004
+      - TERM-009
+      - PROV-001
+    status: proposed
+
+  - id: NAV-005
+    area: navigation
+    object: Ultim8 route
+    current: No site route exists and the term is undefined in this repository.
+    evidence:
+      - AGENTS.md
+    recommendation: Reserve no public top-level route until TERM-010 reaches stable. Draft the page behind a publication hold if needed.
+    disposition: open
+    provenance: public
+    stability: provisional
+    priority: P1
+    depends_on:
+      - TERM-010
+      - BUILD-004
+    status: proposed
+
+  - id: NAV-006
+    area: navigation
+    object: Advisory, Talent, and Squads
+    current: The homepage leads with talent and squads. The June design makes strategic advisory primary and Talent and Squads a dedicated route. The architecture-first model does not yet place these commercial routes.
+    evidence:
+      - index.html
+      - docs/lexicon.md
+      - docs/superpowers/specs/2026-06-19-dta-controlled-evolution-website-design.md
+    recommendation: Keep advisory and talent commercially accessible without making them architecture layers. Route them from Experience Journeys, engagement calls to action, and a concise How DTA Helps page.
+    disposition: merge
+    provenance: public
+    stability: developing
+    priority: P1
+    depends_on:
+      - COM-001
+      - TERM-014
+    status: proposed
+
+  - id: NAV-007
+    area: navigation
+    object: Legacy blog navigation and layouts
+    current: Default layouts still expose Posts, Categories, Tags, About, and Search, while the corporate layout uses a different navigation. Several legacy pages are excluded from the build.
+    evidence:
+      - _includes/header.html
+      - _layouts/default.html
+      - _config.yml
+      - about.md
+    recommendation: Quarantine legacy blog navigation during the architecture migration. Preserve the files until the page inventory confirms whether each route is retired, redirected, or restyled.
+    disposition: quarantine
+    provenance: internal
+    stability: stable
+    priority: P2
+    depends_on:
+      - BUILD-002
+    status: proposed
+
+  - id: COM-001
+    area: commercial
+    object: Strategic advisory versus talent-first positioning
+    current: The live homepage leads with deploying agentic talent. The June design decides that strategic advisory leads and staffing supports it. The lexicon still says to lead with talent for fast revenue.
+    evidence:
+      - index.html
+      - docs/lexicon.md
+      - docs/superpowers/specs/2026-06-19-dta-controlled-evolution-website-design.md
+    recommendation: Adopt strategic advisory as the corporate position. Preserve Talent and Squads as an independently purchasable offer and clear route, but do not use it as the organising architecture.
+    disposition: adopt
+    provenance: public
+    stability: stable
+    priority: P0
+    depends_on:
+      - PUR-001
+    status: proposed
+
+  - id: COM-002
+    area: commercial
+    object: Clean-room demonstration as proof rather than category
+    current: The demonstration carries substantial platform and proposition messaging and can read as DTA's product category.
+    evidence:
+      - composable-bank/index.html
+      - index.html
+      - docs/prototype.md
+    recommendation: Adopt the clean room as evidence and proof infrastructure behind advisory, journeys, architectures, and specifications. Do not position DTA as a software or core-platform vendor.
+    disposition: adopt
+    provenance: public
+    stability: locked
+    priority: P1
+    depends_on:
+      - TERM-008
+    status: proposed
+
+  - id: COM-003
+    area: commercial
+    object: Demonstrated, blueprint, illustrative, and specified status labels
+    current: Claim labels exist and are strong, but the new hierarchy introduces additional artefact types that could blur status with provenance or stability.
+    evidence:
+      - docs/claim-register.md
+      - docs/prototype.md
+    recommendation: Preserve claim-status labels as a separate axis. Never use provenance or stability as substitutes for evidence status.
+    disposition: preserve
+    provenance: public
+    stability: locked
+    priority: P0
+    depends_on:
+      - CLAIM-001
+    status: proposed
+
+  - id: PROV-001
+    area: provenance
+    object: Public, gated, and internal architecture boundary
+    current: The claim register and lexicon identify some internal material, but the site architecture has no universal provenance field or publication rule.
+    evidence:
+      - docs/lexicon.md
+      - docs/claim-register.md
+      - docs/squad-operating-model.md
+    recommendation: Apply one primary provenance to every registered artefact. Split public summaries from protected definitions and evidence rather than allowing a mixed row.
+    disposition: define
+    provenance: internal
+    stability: locked
+    priority: P0
+    depends_on: []
+    status: proposed
+
+  - id: PROV-002
+    area: provenance
+    object: Clean-room boundary
+    current: Built demonstration files live in this repository, while source copy and runtime code are generated in a separate prototype repository. The boundary is documented but not part of the architecture register.
+    evidence:
+      - composable-bank/
+      - docs/messaging-map.md
+      - docs/prototype.md
+    recommendation: Assign clean-room provenance to generated demonstration assets, runtime behaviour, synthetic data, and executable specifications. Record the source repository and build dependency without copying protected implementation detail into the public site.
+    disposition: define
+    provenance: clean-room
+    stability: locked
+    priority: P0
+    depends_on: []
+    status: proposed
+
+  - id: PROV-003
+    area: provenance
+    object: Detailed DTA IP
+    current: SFIA levels, role libraries, DBB catalogues, methods, and architecture details are partly described in internal documents and partly summarised publicly.
+    evidence:
+      - docs/squad-operating-model.md
+      - docs/lexicon.md
+      - docs/claim-register.md
+    recommendation: Keep detailed methods, levels, catalogues, and implementation mechanics gated or internal. Publish concepts, outcomes, named roles, and evidence boundaries only.
+    disposition: preserve
+    provenance: internal
+    stability: locked
+    priority: P0
+    depends_on:
+      - PROV-001
+    status: proposed
+
+  - id: CLAIM-001
+    area: governance
+    object: Claim status versus architecture stability
+    current: The claim register governs evidence status. The architecture programme adds stability and provenance, which answer different questions.
+    evidence:
+      - docs/claim-register.md
+      - docs/architecture/conflict-register.yml
+    recommendation: "Keep three independent gates: provenance controls where content may appear; stability controls whether it may ship; claim status controls what DTA may assert."
+    disposition: define
+    provenance: internal
+    stability: locked
+    priority: P0
+    depends_on:
+      - PROV-001
+    status: proposed
+
+  - id: CONTENT-001
+    area: content
+    object: Historical insights using earlier terminology
+    current: Posts use Composable Bank, C3 as the spine, and other terms that may move in the new hierarchy.
+    evidence:
+      - _posts/
+    recommendation: Preserve historical posts. Add short canonical-context notes or updated links where needed; do not rewrite the intellectual history unless a claim is wrong.
+    disposition: preserve
+    provenance: public
+    stability: stable
+    priority: P2
+    depends_on:
+      - TERM-006
+      - BUILD-002
+    status: proposed
+
+  - id: CONTENT-002
+    area: content
+    object: Untracked insight drafts
+    current: Two untracked posts exist in the working tree and are not part of the current commit.
+    evidence:
+      - _posts/2026-06-17-the-branch-kiosk-that-proves-its-own-integrity.md
+      - _posts/2026-06-17-why-your-ai-agent-needs-a-ledger-not-a-vector-database.md
+    recommendation: Preserve the files unchanged during architecture work. Inventory and map them only after their ownership and publication state are explicit.
+    disposition: preserve
+    provenance: public
+    stability: developing
+    priority: P2
+    depends_on: []
+    status: proposed
+
+  - id: CONTENT-003
+    area: content
+    object: Controlled-Evolution Website Design
+    current: The 20 June design contains important decisions but its mission, navigation, and content hierarchy predate the Seven Intelligences architecture.
+    evidence:
+      - docs/superpowers/specs/2026-06-19-dta-controlled-evolution-website-design.md
+    recommendation: Preserve it as an origin document. Merge approved commercial, claim, consumer, migration-twin, and page decisions into the North Star; do not treat its information architecture as final.
+    disposition: merge
+    provenance: internal
+    stability: stable
+    priority: P2
+    depends_on:
+      - HIER-001
+      - NAV-001
+    status: proposed
+
+  - id: CONTENT-004
+    area: content
+    object: About content
+    current: The legacy About page describes a personal blog and is excluded from the public build, while leadership copy lives on the homepage.
+    evidence:
+      - about.md
+      - _config.yml
+      - index.html
+    recommendation: Preserve the file, then replace or redirect it only after the Mission and public corporate story are stable.
+    disposition: quarantine
+    provenance: internal
+    stability: stable
+    priority: P2
+    depends_on:
+      - PUR-001
+      - BUILD-002
+    status: proposed
+
+  - id: CONTENT-005
+    area: content
+    object: Policy page
+    current: The policy page contains dated statements and staffing language that may conflict with current positioning, but it is a legal and governance artefact rather than architecture copy.
+    evidence:
+      - policy-documentation.html
+    recommendation: Preserve it during architecture migration. Give it a separate legal-content review before launch and update only approved facts and wording.
+    disposition: preserve
+    provenance: public
+    stability: developing
+    priority: P2
+    depends_on:
+      - COM-001
+    status: proposed
+
+  - id: BUILD-001
+    area: build
+    object: Canonical copy source
+    current: Repeated lines live in _data/copy.yml, definitions in the lexicon, claims in the claim register, and page copy in HTML. No canonical source covers the Seven Intelligences or provenance.
+    evidence:
+      - _data/copy.yml
+      - docs/lexicon.md
+      - docs/claim-register.md
+    recommendation: Keep the North Star and conflict register authoritative for architecture decisions. Expand central copy data only after definitions are approved, then derive shared public strings from it.
+    disposition: merge
+    provenance: internal
+    stability: developing
+    priority: P1
+    depends_on:
+      - HIER-001
+      - TERM-001
+      - TERM-002
+      - TERM-004
+    status: proposed
+
+  - id: BUILD-002
+    area: build
+    object: URL and redirect governance
+    current: The site has planned renames and legacy paths but no single redirect map or automated redirect test.
+    evidence:
+      - _config.yml
+      - netlify.toml
+      - docs/superpowers/specs/2026-06-19-dta-controlled-evolution-website-design.md
+    recommendation: Create a versioned URL map before moving files. Preserve incoming links with permanent redirects and test every old route against its canonical replacement.
+    disposition: define
+    provenance: public
+    stability: stable
+    priority: P1
+    depends_on:
+      - NAV-001
+    status: proposed
+
+  - id: BUILD-003
+    area: build
+    object: Persona check
+    current: Pages target executives, CIOs, architects, regulators, capability buyers, and the public, but shared components are not tested against a common persona matrix.
+    evidence:
+      - docs/superpowers/specs/2026-06-19-dta-controlled-evolution-website-design.md
+      - docs/messaging-map.md
+    recommendation: Run one editorial pass across board, CIO or CTO, architect, regulator or control leader, capability or talent buyer, and public or partner perspectives. Do not create separate approval panels for the first launch.
+    disposition: define
+    provenance: internal
+    stability: stable
+    priority: P2
+    depends_on:
+      - PUR-001
+      - HIER-001
+      - NAV-001
+    status: proposed
+
+  - id: BUILD-004
+    area: build
+    object: Manual launch and locked Phase 9 design check
+    current: Publication relies on human review, claim checks, and page-specific wording. The site also needs a final reconciliation against the locked Phase 9 platform plan and design.
+    evidence:
+      - docs/claim-register.md
+      - scripts/check-public-showcase.sh
+      - docs/superpowers/specs/2026-06-19-dta-controlled-evolution-website-design.md
+    recommendation: Block launch until the full site has passed a manual provenance, stability, and claim review against the locked Phase 9 plan and design. Keep Phase 9 behaviour labelled Blueprint or Specified until implementation evidence supports promotion. Add build-time enforcement only when a second contributor creates a real enforcement need.
+    disposition: define
+    provenance: internal
+    stability: stable
+    priority: P0
+    depends_on:
+      - PROV-001
+      - PROV-002
+      - CLAIM-001
+    status: proposed
