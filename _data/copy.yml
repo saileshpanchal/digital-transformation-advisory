@@ -21,3 +21,30 @@ canonical:
   clean_room: "A working demonstration built to production-grade controls on synthetic data: a proving ground for testing propositions, deliberately not a production system that runs with real customers."
   prototype_purpose: "The prototype is a working proving ground. We test propositions on it with test consumers, never real customers, and produce a vendor-neutral working specification a client takes to whatever vendor and build they choose to go live with."
   working_spec: "The prototype is a working specification, expressed in open standards (ISO 20022 messaging, BIAN domain boundaries, recognised control frameworks). Because the standards are the shared language vendors already use, the specification is portable and reusable, vendor-neutral rather than locked to one supplier."
+
+# North Star canon (approved 2026-06-21). Public expressions derived from docs/architecture/north-star.md.
+# Keep page-specific prose in the page; these are the shared strings pages reuse.
+north_star:
+  mission: "Help banks and fintechs build the future of banking without leaving any consumer behind."
+  mission_statement: "DTA helps financial institutions evolve their customers, their colleagues, and their technology together, applying multiple forms of intelligence to build banking that is trustworthy, inclusive, and resilient, and that leaves no consumer behind."
+  themes:
+    preservation: "Preservation: retain knowledge, evidence, capability, and institutional memory through change."
+    evolution: "Evolution: operate old and new worlds together and migrate safely."
+    augmentation: "Augmentation: enable humans and machines to think and act together."
+  principles:
+    - "Human-centred: design for the people a system serves and the colleagues who run it, starting from the person most easily excluded."
+    - "Evolution over replacement: operate the old and new worlds together and migrate safely, rather than betting the institution on a single cutover."
+    - "Capability before technology: decide the capability a bank needs before choosing the platform that delivers it."
+    - "Human-in-the-loop: when agents act, a person can understand the action, hold the authority, and intervene."
+    - "Consumer outcomes: good outcomes are designed into a proposition, not evidenced after the harm is done."
+    - "Preservation before optimisation: keep institutional knowledge, evidence, and accountability intact before tuning for efficiency."
+    - "Continuous control: accountable leaders set authority, observe outcomes, intervene, and evidence control as the system runs."
+    - "Standards and interoperability: express decisions in open standards so the result is portable and vendor-neutral."
+  intelligences:
+    experience: "Experience Intelligence: the outcomes people need and the journeys they actually live, including those most easily excluded."
+    capability: "Capability Intelligence: how human and organisational capability is built and evolved, across skills, knowledge, and judgment."
+    cognitive: "Cognitive Intelligence: how humans and machines reason and act together, with clear authority, explanation, and intervention."
+    value: "Value Intelligence: how value is represented, exchanged, governed, settled, and measured."
+    trust: "Trust Intelligence: how justified trust is earned through inclusion, consent, privacy, evidence, and resilience."
+    platform: "Platform Intelligence: how systems evolve and compose, with interoperability, coexistence, governed data, and runtime architecture."
+    control: "Control Intelligence: how accountable leaders set authority, observe outcomes, intervene, and evidence control continuously."
