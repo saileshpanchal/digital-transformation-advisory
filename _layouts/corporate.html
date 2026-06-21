@@ -27,18 +27,23 @@
         <div class="nav-dropdown">
           <a href="{{ '/' | relative_url }}">Home</a>
           <div class="nav-dropdown-content">
-            <a href="{{ '/' | relative_url }}#mission">Why we exist</a>
-            <a href="{{ '/' | relative_url }}#services">What we do</a>
-            <a href="{{ '/' | relative_url }}#how">How we work</a>
-            <a href="{{ '/' | relative_url }}#about">Leadership</a>
+            <a href="{{ '/' | relative_url }}#mission">Mission</a>
+            <a href="{{ '/' | relative_url }}#principles">Principles</a>
+            <a href="{{ '/' | relative_url }}#intelligences">Intelligences</a>
+            <a href="{{ '/' | relative_url }}#leadership">Leadership</a>
           </div>
         </div>
-        <a href="{{ '/approach/' | relative_url }}">Approach</a>
-        <a href="{{ '/composable-bank/' | relative_url }}">Propositions</a>
-        <a href="{{ '/capability-intelligence/' | relative_url }}">Capability Intelligence</a>
-        <a href="{{ '/customer-outcomes/' | relative_url }}">Customer Outcomes</a>
+        <a href="{{ '/intelligences/' | relative_url }}">Intelligences</a>
+        <a href="{{ '/experience-journeys/' | relative_url }}">Experience Journeys</a>
+        <div class="nav-dropdown">
+          <a href="{{ '/architecture-library/' | relative_url }}">Architecture</a>
+          <div class="nav-dropdown-content">
+            <a href="{{ '/architecture-library/' | relative_url }}">Architecture Library</a>
+            <a href="{{ '/prototype-specifications/' | relative_url }}">Prototype Specifications</a>
+          </div>
+        </div>
         <a href="{{ '/insights/' | relative_url }}">Insights</a>
-        {% include cta-calendly.html kind="strategy_call" loc="nav" class="btn--primary btn--nav" %}
+        {% include cta-calendly.html kind="strategy_call" loc="nav" label="Discuss a challenge" class="btn--primary btn--nav" %}
       </div>
     </div>
   </nav>
@@ -53,10 +58,12 @@
           <img src="{{ '/assets/images/corporate/dta-logo.png' | relative_url }}" alt="{{ site.title }}" class="footer-logo">
         </a>
         <div class="footer-links">
+          <a href="{{ '/intelligences/' | relative_url }}">Intelligences</a>
+          <a href="{{ '/experience-journeys/' | relative_url }}">Experience Journeys</a>
+          <a href="{{ '/architecture-library/' | relative_url }}">Architecture Library</a>
+          <a href="{{ '/prototype-specifications/' | relative_url }}">Prototype Specifications</a>
+          <a href="{{ '/consumer-outcomes/' | relative_url }}">Consumer Outcomes</a>
           <a href="{{ '/approach/' | relative_url }}">Approach</a>
-          <a href="{{ '/composable-bank/' | relative_url }}">Propositions</a>
-          <a href="{{ '/capability-intelligence/' | relative_url }}">Capability Intelligence</a>
-          <a href="{{ '/customer-outcomes/' | relative_url }}">Customer Outcomes</a>
           <a href="{{ '/insights/' | relative_url }}">Insights</a>
           <a href="{{ '/connect/' | relative_url }}">Contact</a>
           <a href="{{ '/policy-documentation/' | relative_url }}">Policies</a>
@@ -64,6 +71,7 @@
           {% if site.medium and site.medium != "" %}<a href="{{ site.medium }}" target="_blank" rel="noopener">Medium</a>{% endif %}
         </div>
       </div>
+      <p class="footer-mission">{{ site.data.copy.north_star.mission }}</p>
       <hr class="footer-divider">
       <p class="footer-bottom">&copy; {{ 'now' | date: "%Y" }} Digital Transformation Advisory Ltd</p>
     </div>

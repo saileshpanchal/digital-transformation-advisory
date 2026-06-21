@@ -1609,3 +1609,126 @@ p { margin-bottom: 1rem; }
   color: #667;
   font-style: italic;
 }
+
+/* ==========================================================================
+   North Star architecture — principles, themes, intelligence lenses,
+   claim-status labels, footer mission
+   ========================================================================== */
+
+.mission-spine {
+  margin-top: 1.5rem;
+  font-size: 1.15rem;
+  color: #161616;
+}
+
+/* Principles (two-column list, rendered from _data/copy.yml) */
+.principle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem 2.5rem;
+  max-width: 940px;
+  margin: 2rem auto 0;
+  text-align: left;
+}
+
+.principle-grid li {
+  position: relative;
+  padding: 0.45rem 0 0.45rem 1.4rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.principle-grid li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.95rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #29ABE2;
+}
+
+.principle-grid strong { color: #161616; }
+
+/* Three-up cards (themes, journeys, architecture) without imagery */
+.trio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.trio-card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 2rem;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.section--light .trio-card { background: #fff; }
+
+.trio-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.trio-card h3 { color: #29ABE2; margin-bottom: 0.75rem; }
+.trio-card p { font-size: 0.95rem; color: #555; margin-bottom: 0; }
+
+/* Intelligence lenses (seven cards, auto-fitting) */
+.lens-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.lens-card {
+  display: block;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1.75rem;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.lens-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.lens-card h3 { color: #29ABE2; font-size: 1.1rem; margin-bottom: 0.5rem; }
+.lens-card p { font-size: 0.9rem; color: #555; margin-bottom: 0; }
+
+/* Claim-status labels — a separate axis from provenance (.prov) badges.
+   Demonstrated / Simulated / Specified / Illustrative / Blueprint. */
+.status {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+.status--demonstrated { background: #e6f6ec; color: #1a7f43; border: 1px solid #b6e2c6; }
+.status--simulated    { background: #fff5e6; color: #a66a00; border: 1px solid #f0d9b0; }
+.status--specified    { background: #e9f2fc; color: #1857a6; border: 1px solid #bcd6f5; }
+.status--illustrative { background: #f3f0fa; color: #6b4fb0; border: 1px solid #d9cef0; }
+.status--blueprint    { background: #f0f0f3; color: #444;    border: 1px solid #d5d5dd; }
+
+/* Footer mission line */
+.footer-mission {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 640px;
+}
+
+@media (max-width: 768px) {
+  .trio-grid { grid-template-columns: 1fr; }
+  .principle-grid { grid-template-columns: 1fr; max-width: 520px; }
+}

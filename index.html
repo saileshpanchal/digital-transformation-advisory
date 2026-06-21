@@ -1,146 +1,167 @@
 ---
 layout: corporate
-title: "Owned Autonomy: Agentic Banking a Bank Owns, Not Rents"
+title: "Strategic advisory for the future of banking"
 description: >-
-  Build agentic squads, accountable AI and the organisational capability to
-  create new propositions and business models while retaining control of the
-  technology beneath them.
+  DTA is strategic advisory for the future of banking, proven in a working
+  model. We help banks and fintechs design, test, and deliver the architecture,
+  propositions, and operating model for agentic and tokenised banking, without
+  leaving any consumer behind.
 ---
 
-<!-- Hero -->
+<!-- 1. Hero: mission-led strategic advisory -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Deploy agentic talent now.<br>Own the autonomy that follows.</h1>
-    <p><strong>Owned Autonomy</strong> means you stay accountable for every action an agent takes, and sovereign over the stack it runs on. We build the squads, the operating model and the propositions with you. The people who built the demonstration build with you.</p>
+    <h1>Design the bank the future requires.<br>Prove it before you buy it.</h1>
+    <p>DTA is strategic advisory for the future of banking. We help banks and fintechs define, test, and deliver the architecture, propositions, and operating model for agentic and tokenised banking, without locking the future into another generation of core technology and without leaving consumers behind.</p>
     <div class="hero-actions">
-      {% include cta-calendly.html kind="strategy_call" loc="home-hero" %}
-      <a href="{{ '/composable-bank/' | relative_url }}" class="btn btn--ghost" data-cta="demo" data-loc="home-hero">See the demonstration</a>
+      {% include cta-calendly.html kind="strategy_call" loc="home-hero" label="Discuss a challenge" %}
+      <a href="{{ '/composable-bank/' | relative_url }}" class="btn btn--ghost" data-cta="demo" data-loc="home-hero">See the working proof</a>
     </div>
   </div>
 </section>
 
-<!-- Mission -->
+<!-- 2. Mission and principles -->
 <section id="mission" class="section text-center">
   <div class="container mission">
-    <h2>Agents are crossing from advice to action.<br>You have to be able to answer for it.</h2>
-    <p>A regulated bank can only let an agent move money or run a journey if it is <strong>accountable</strong> for every action that agent takes and <strong>sovereign</strong> over the agents, data and models behind it. You cannot be accountable for what you do not control.</p>
-    <p>That is <strong>accountable banking</strong>. We build it with you: agentic squads, real AI propositions, the platforms they run on. You keep the working capability.</p>
-    <p>And we work in the right order. We define an independent target architecture and prove the hard parts first, so the platform conforms to the architecture rather than the other way round. <a href="{{ '/composable-bank/' | relative_url }}">See the demonstration</a>.</p>
-    <div class="mission-model">
-      <img src="/assets/images/corporate/dta-triangle.png" alt="DTA Model: Teams and Capability">
-    </div>
+    <h2>{{ site.data.copy.north_star.mission }}</h2>
+    <p>{{ site.data.copy.north_star.mission_statement }}</p>
+    <p>Banking is moving towards programmable money and agents that can act. Architecture, controls, operating model, and consumer safeguards have to move together. We define the destination independently, prove the difficult parts in a working model, and help clients build the capability to deliver it.</p>
+    <p class="mission-spine"><strong>{{ site.data.copy.canonical.spine }}</strong></p>
+  </div>
+  <div id="principles" class="container">
+    <h3 class="text-center" style="margin-top:3rem;">The principles we work to</h3>
+    <ul class="principle-grid">
+      {% for p in site.data.copy.north_star.principles %}
+        {% assign head = p | split: ": " | first %}
+        {% assign rest = p | remove_first: head | remove_first: ": " %}
+        <li><strong>{{ head }}:</strong> {{ rest }}</li>
+      {% endfor %}
+    </ul>
   </div>
 </section>
 
-<!-- Offerings -->
-<section id="services" class="section section--light">
+<!-- 3. Preservation, Evolution, Augmentation -->
+<section id="themes" class="section section--light">
   <div class="container">
     <div class="text-center">
-      <h2>One ladder. Start anywhere.</h2>
-      <p class="section-subtitle">Deploy a squad, prove a proposition, or transform the bank. Each stands on its own. Not every client needs a full programme.</p>
+      <h2>Three themes run through every engagement</h2>
+      <p class="section-subtitle">They describe how transformation actually happens: keep what matters, run the old and new worlds together, and let people and machines work as one.</p>
     </div>
-    <div class="offerings-grid">
-      <!-- Rung 1: Agentic Talent and Squads -->
-      <div class="offering-card">
-        <img src="/assets/images/corporate/synergy.png" alt="Agentic Talent and Squads">
-        <h3>1 &middot; Agentic Talent &amp; Squads</h3>
-        <p>Buy delivery without buying a transformation. Put senior agentic engineers in your teams, or take a complete managed squad. Productive from week one, accountable for a defined outcome. A small senior team now carries work that used to need large, layered delivery groups.</p>
-        <ul>
-          <li>Senior agentic engineers, embedded or a managed <a href="/approach/">squad</a></li>
-          <li>Productive from week one, inside your codebase and guardrails</li>
-          <li>An outcome and bounded capacity, not layers of body-shop hours</li>
-        </ul>
-        <p class="engagement-note">Embedded engineer, managed squad or fractional lead. Day rate, SOW or managed service.</p>
-        {% include cta-calendly.html kind="strategy_call" loc="home-rung1" class="btn--outline" %}
+    <div class="trio-grid">
+      <div class="trio-card">
+        <h3>Preservation</h3>
+        <p>Retain knowledge, evidence, capability, and institutional memory through change.</p>
       </div>
-      <!-- Rung 2: Build and Run Propositions -->
-      <div class="offering-card">
-        <img src="/assets/images/corporate/enterprise-architecture.png" alt="Build and Run Propositions">
-        <h3>2 &middot; Build &amp; Run Propositions</h3>
-        <p>Hand us an outcome and we build the agentic product or journey end to end, to the same control standards as our <a href="/composable-bank/">Clean-Room Demonstration</a>. Every agent action authorised, evidenced and revocable. On-device models where data must not leave the building. A fixed, shippable scope.</p>
-        <ul>
-          <li>Customer outcomes built from the journey backwards</li>
-          <li>Agents that act under explicit authority, evidenced end to end</li>
-          <li>On-device models; data that stays in the building</li>
-        </ul>
-        <p class="engagement-note">Fixed-scope build (SOW). Home of the six-week Proposition Blueprint and optional 90-day Proof.</p>
-        {% include cta-calendly.html kind="strategy_call" loc="home-rung2" class="btn--outline" %}
+      <div class="trio-card">
+        <h3>Evolution</h3>
+        <p>Operate old and new worlds together and migrate safely, rather than betting the institution on a single cutover.</p>
       </div>
-      <!-- Rung 3: Owned Autonomy Transformation -->
-      <div class="offering-card">
-        <img src="/assets/images/corporate/business-strategy.png" alt="Owned Autonomy Transformation">
-        <h3>3 &middot; Owned Autonomy Transformation</h3>
-        <p>The whole shift. We reshape the bank around agentic ways of working: its operating model, decision rights, capabilities and the business models they enable. Underneath sits an accountable, sovereign Capability·Context·Consent (C3) architecture, connected to regulated settlement and led from inside the bank.</p>
-        <ul>
-          <li>Enterprise &amp; strategic architecture (BIAN, TOGAF, SAFe), composable by design</li>
-          <li>Operating model and transformation run from inside the bank</li>
-          <li>Programmable and agentic payments, with the agent connected to real money</li>
-        </ul>
-        <p class="engagement-note">Transformation programme. You keep the capability; our opinionated model stays our IP.</p>
-        <a href="/approach/" class="btn btn--outline">See our approach</a>
+      <div class="trio-card">
+        <h3>Augmentation</h3>
+        <p>Enable humans and machines to think and act together, with authority and evidence that hold under scrutiny.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- How we work -->
-<section id="how" class="section">
-  <div class="container phases">
-    <div class="text-center">
-      <h2>For wider change, start senior and scale deliberately.</h2>
-      <p class="section-subtitle">A standalone squad can start immediately. Proposition and transformation work follows a deliberate path from discovery to proof to scale.</p>
-    </div>
-    <div class="phase-list">
-      <div class="phase-item">
-        <img src="/assets/images/corporate/discovery.png" alt="Discover">
-        <h3>Discover</h3>
-        <p>Founder-led discovery, drawing on senior enterprise, business and domain architecture. We find the value drivers, proposition, domains and organisational changes that justify using AI. This is senior advisory work, not squad delivery.</p>
-      </div>
-      <div class="phase-item">
-        <img src="/assets/images/corporate/planning.png" alt="Pilot">
-        <h3>Pilot: the Glass Tube</h3>
-        <p>The pilot is a Glass Tube, sized to the question. A light version lands a Product Owner and Forward Platform Engineer, with selected enterprise specialists, to build a working prototype in a controlled sandbox. A fuller version runs the first domain end to end, adding the squad, coaches, controls and business functions that prove the operating model.</p>
-      </div>
-      <div class="phase-item">
-        <img src="/assets/images/corporate/execution.png" alt="Scale">
-        <h3>Scale</h3>
-        <p>Scale what the Glass Tube has proved. Multiple squads take ownership of the Domain Building Blocks, while coaches and specialists across finance, HR, procurement, risk and audit extend the model through the organisation.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Operating model teaser -->
-<section id="operating-model" class="section section--light">
+<!-- 4. Seven Intelligences overview -->
+<section id="intelligences" class="section">
   <div class="container">
     <div class="text-center">
-      <h2>Grow the delivery model with the work</h2>
-      <p class="section-subtitle">A squad can be consumed on its own or join a wider change. DTA's senior leadership and architects lead discovery. The Glass Tube pilot runs light or full-depth. At scale, durable squads own the Domain Building Blocks.</p>
-      <h3 style="margin-top:2.5rem;">The core agentic squad</h3>
+      <h2>Seven Intelligences</h2>
+      <p class="section-subtitle">We read a bank through seven lenses. They overlap rather than file the work into boxes, and most propositions draw on several at once. <a href="{{ '/intelligences/' | relative_url }}">See how the lenses work together</a>.</p>
     </div>
-    <div class="squad-roster">
-      <div class="squad-role"><span class="role-count">1</span><span class="role-name">Product Owner</span></div>
-      <div class="squad-role"><span class="role-count">1</span><span class="role-name">Forward Platform Engineer</span></div>
-      <div class="squad-role"><span class="role-count">2</span><span class="role-name">Engineers</span></div>
-      <div class="squad-role"><span class="role-count">1</span><span class="role-name">Data Engineer</span></div>
-    </div>
-    <div class="text-center" style="margin-top:2.5rem;">
-      <a href="{{ '/approach/' | relative_url }}" class="btn btn--outline">See our full approach</a>
-      <a href="{{ '/capability-intelligence/' | relative_url }}" class="btn btn--ghost">Capability Intelligence</a>
+    <div class="lens-grid">
+      <a class="lens-card" href="{{ '/experience-intelligence/' | relative_url }}">
+        <h3>Experience</h3>
+        <p>The outcomes people need and the journeys they actually live, including those most easily excluded.</p>
+      </a>
+      <a class="lens-card" href="{{ '/capability-intelligence/' | relative_url }}">
+        <h3>Capability</h3>
+        <p>How human and organisational capability is built and evolved, across skills, knowledge, and judgment.</p>
+      </a>
+      <a class="lens-card" href="{{ '/cognitive-intelligence/' | relative_url }}">
+        <h3>Cognitive</h3>
+        <p>How humans and machines reason and act together, with clear authority, explanation, and intervention.</p>
+      </a>
+      <a class="lens-card" href="{{ '/value-intelligence/' | relative_url }}">
+        <h3>Value</h3>
+        <p>How value is represented, exchanged, governed, settled, and measured.</p>
+      </a>
+      <a class="lens-card" href="{{ '/trust-intelligence/' | relative_url }}">
+        <h3>Trust</h3>
+        <p>How justified trust is earned through inclusion, consent, privacy, evidence, and resilience.</p>
+      </a>
+      <a class="lens-card" href="{{ '/platform-intelligence/' | relative_url }}">
+        <h3>Platform</h3>
+        <p>How systems evolve and compose, with interoperability, coexistence, governed data, and runtime architecture.</p>
+      </a>
+      <a class="lens-card" href="{{ '/control-intelligence/' | relative_url }}">
+        <h3>Control</h3>
+        <p>How accountable leaders set authority, observe outcomes, intervene, and evidence control continuously.</p>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- Showcase / proof -->
-<section id="showcase" class="section section--dark">
+<!-- 5. Experience Journeys -->
+<section id="journeys" class="section section--light">
+  <div class="container">
+    <div class="text-center">
+      <h2>Experience Journeys</h2>
+      <p class="section-subtitle">A journey is the end-to-end experience a person or institution actually lives, distinct from the commercial proposition that contains it. We use journeys to test propositions, authority boundaries, data products, and consumer outcomes before a bank commits to build.</p>
+    </div>
+    <div class="trio-grid">
+      <div class="trio-card">
+        <h3>A Place to Start <span class="status status--blueprint">Blueprint</span></h3>
+        <p>Help one person without a fixed address, conventional documents, or a smartphone gain an ordinary basic bank account, while the bank keeps accountability and the applicant keeps control.</p>
+      </div>
+      <div class="trio-card">
+        <h3>Synthetic Bank Migration Twin <span class="status status--blueprint">Blueprint</span></h3>
+        <p>Model a plausible legacy bank with synthetic data, prove the target architecture and migration touchpoints, and produce a vendor-neutral specification before a bank buys or migrates a core.</p>
+      </div>
+      <div class="trio-card">
+        <h3>And more</h3>
+        <p>Family Wealth, Premium Yacht, International Student, Cross-Border Real-Time Payments, and Franchise Network each test a different outcome. <a href="{{ '/experience-journeys/' | relative_url }}">See all journeys</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Architecture and Prototype Specifications -->
+<section id="architecture" class="section">
+  <div class="container">
+    <div class="text-center">
+      <h2>Architecture you can inspect</h2>
+      <p class="section-subtitle">We do not ask a bank to accept an architecture on a slide. Our reference architectures and prototype specifications are designed to be read, questioned, and reused.</p>
+    </div>
+    <div class="trio-grid">
+      <div class="trio-card">
+        <h3>Architecture Library</h3>
+        <p>Stable public views of the patterns we work with, including the Capability, Context, and Consent (C3) reference architecture, governed data products, value exchange, resilience, and continuous control. <a href="{{ '/architecture-library/' | relative_url }}">Browse the library</a>.</p>
+      </div>
+      <div class="trio-card">
+        <h3>Prototype Specifications</h3>
+        <p>The executable blueprint produced from a reference architecture and a journey, expressed in open standards so it stays portable and vendor-neutral. <a href="{{ '/prototype-specifications/' | relative_url }}">See how specifications work</a>.</p>
+      </div>
+      <div class="trio-card">
+        <h3>Owned Autonomy</h3>
+        <p>Our doctrine: agentic capability a bank owns rather than rents, accountable and sovereign by construction. It is how we judge whether a design keeps the bank in control.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Clean-room proof -->
+<section id="proof" class="section section--dark">
   <div class="container">
     <div class="showcase">
       <div class="showcase-text">
-        <h2>Our Clean-Room Demonstration</h2>
-        <p>An interactive demonstration of banking propositions on one governed, agent-native platform, built to production-grade controls on synthetic data. It is a working proving ground: production-grade in design and built for testing propositions, deliberately not a production system that runs with real customers.</p>
-        <p>Because it is expressed in open standards, ISO 20022 messaging, BIAN domain boundaries and recognised control frameworks, the demonstration doubles as a working specification: portable, reusable, and ready for whatever vendor a bank chooses to build with.</p>
-        <p>Four propositions are <strong>interactive demonstrations</strong>: Family Wealth, International Student, Premium Yacht and Cross-Border Real-Time Payments. Franchise Network is a <strong>blueprint</strong>. Click through each one to watch a governed agent prepare and execute a journey, with authority, consent and evidence explicit at every step.</p>
-        <a href="{{ '/composable-bank/' | relative_url }}" class="btn btn--primary" data-cta="demo" data-loc="home-showcase">Explore the demonstration</a>
+        <h2>Proof, not slides</h2>
+        <p>{{ site.data.copy.canonical.clean_room }}</p>
+        <p>Because it is expressed in open standards, ISO 20022 messaging, BIAN domain boundaries, and recognised control frameworks, the demonstration doubles as a working specification: portable, reusable, and ready for whatever vendor a bank chooses to build with.</p>
+        <p><strong>The boundary is explicit.</strong> The data is synthetic, the consumers are test consumers and never real customers, the controls are designed to production grade, and nothing here runs a production banking service. Planned behaviour is labelled Blueprint or Specified, never Demonstrated.</p>
+        <a href="{{ '/composable-bank/' | relative_url }}" class="btn btn--primary" data-cta="demo" data-loc="home-proof">Explore the demonstration</a>
       </div>
       <ul class="showcase-list">
         <li><a href="/composable-bank/family-wealth/">Family Wealth Hub</a></li>
@@ -154,35 +175,56 @@ description: >-
   </div>
 </section>
 
-<!-- Insights teaser -->
-<section id="insights-teaser" class="section section--light">
+<!-- 8. Advisory, Talent, and Squads routes -->
+<section id="routes" class="section section--light">
   <div class="container">
     <div class="text-center">
-      <h2>What we're learning</h2>
-      <p class="section-subtitle">Field notes on agentic engineering, on-device AI and transformation.</p>
+      <h2>Three ways to work with us</h2>
+      <p class="section-subtitle">Strategic advisory leads. Proof turns advice into an inspectable decision. Talent and squads turn the decision into working capability. Each stands on its own, and you can buy any one of them.</p>
     </div>
-    <div class="posts-grid">
-      {% assign featured_posts = site.posts | sort: 'date' | reverse %}
-      {% for post in featured_posts limit:3 %}
-      <article class="post-card">
-        <div class="post-card-body">
-          <p class="post-card-date">{{ post.date | date: "%B %-d, %Y" }}{% if post.categories.size > 0 %} &middot; {{ post.categories | join: ", " }}{% endif %}</p>
-          <h3 class="post-card-title">
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          </h3>
-          <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-        </div>
-      </article>
-      {% endfor %}
-    </div>
-    <div class="text-center" style="margin-top: 2.5rem;">
-      <a href="/insights/" class="btn btn--outline">Browse all insights</a>
+    <div class="offerings-grid">
+      <div class="offering-card">
+        <img src="/assets/images/corporate/business-strategy.png" alt="Strategic advisory">
+        <h3>Advise</h3>
+        <p>Define the proposition, economics, target architecture, operating model, decision rights, controls, and transformation sequence, independent of any implementation vendor.</p>
+        <ul>
+          <li>Agentic and tokenised banking strategy</li>
+          <li>Independent target architecture and platform decisions</li>
+          <li>Core modernisation, coexistence, and migration strategy</li>
+        </ul>
+        <p class="engagement-note">Strategic and transformation advisory.</p>
+        {% include cta-calendly.html kind="strategy_call" loc="home-advise" label="Discuss a challenge" class="btn--outline" %}
+      </div>
+      <div class="offering-card">
+        <img src="/assets/images/corporate/enterprise-architecture.png" alt="Proposition proof">
+        <h3>Prove</h3>
+        <p>Test the journey, controls, economics, and consumer outcomes before implementation hardens, through a Proposition Blueprint, Clean-Room Demonstration, or Glass Tube pilot. You receive evidence, design decisions, and a vendor-neutral working specification.</p>
+        <ul>
+          <li>Proposition Blueprint and optional Proof</li>
+          <li>Clean-Room Demonstration on synthetic data</li>
+          <li>Vendor-neutral working specification</li>
+        </ul>
+        <p class="engagement-note">Home of the six-week Proposition Blueprint and optional 90-day Proof.</p>
+        <a href="{{ '/prototype-specifications/' | relative_url }}" class="btn btn--outline">See how proof works</a>
+      </div>
+      <div class="offering-card">
+        <img src="/assets/images/corporate/synergy.png" alt="Talent and squads">
+        <h3>Deliver</h3>
+        <p>Put senior agentic engineers in your teams, take a managed squad, or bring in a fractional leader. Productive from week one and accountable for a bounded outcome. You keep the working capability.</p>
+        <ul>
+          <li>Embedded specialists and forward platform engineers</li>
+          <li>Managed agentic squads for a bounded outcome</li>
+          <li>Fractional technology, architecture, or transformation leadership</li>
+        </ul>
+        <p class="engagement-note">Independently purchasable, and a route from advice into delivery.</p>
+        <a href="{{ '/operating-model/' | relative_url }}" class="btn btn--outline">See the operating model</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- About -->
-<section id="about" class="section">
+<!-- 9. Leadership and Insights -->
+<section id="leadership" class="section">
   <div class="container">
     <div class="text-center">
       <h2>Leadership</h2>
@@ -226,6 +268,33 @@ description: >-
       <div class="partners-grid">
         <img src="/assets/images/corporate/fsqs-logo.png" alt="FSQS Accreditation">
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Insights teaser -->
+<section id="insights-teaser" class="section section--light">
+  <div class="container">
+    <div class="text-center">
+      <h2>What we're learning</h2>
+      <p class="section-subtitle">Field notes on the future of banking, agentic engineering, and transformation.</p>
+    </div>
+    <div class="posts-grid">
+      {% assign featured_posts = site.posts | sort: 'date' | reverse %}
+      {% for post in featured_posts limit:3 %}
+      <article class="post-card">
+        <div class="post-card-body">
+          <p class="post-card-date">{{ post.date | date: "%B %-d, %Y" }}{% if post.categories.size > 0 %} &middot; {{ post.categories | join: ", " }}{% endif %}</p>
+          <h3 class="post-card-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="text-center" style="margin-top: 2.5rem;">
+      <a href="/insights/" class="btn btn--outline">Browse all insights</a>
     </div>
   </div>
 </section>

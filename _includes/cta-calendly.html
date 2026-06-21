@@ -1,10 +1,10 @@
 {%- comment -%}
 Reusable Calendly CTA button. One place for the URL + UTM + data-cta wiring.
 Params:
-  kind  — "strategy_call" | "capability_blueprint" (required; selects slug + campaign + data-cta)
-  loc   — utm_content + data-loc (required; e.g. "home-hero")
-  label — link text (optional; defaults to the kind's standard label)
-  class — extra button class (optional; default "btn--primary"), e.g. "btn--outline", "btn--ghost", "btn--ghost btn--ghost-dark"
+  kind  : "strategy_call" | "capability_blueprint" (required; selects slug + campaign + data-cta)
+  loc   : utm_content + data-loc (required; e.g. "home-hero")
+  label : link text (optional; defaults to the kind's standard label)
+  class : extra button class (optional; default "btn--primary"), e.g. "btn--outline", "btn--ghost", "btn--ghost btn--ghost-dark"
 {%- endcomment -%}
 {%- assign c = site.data.copy.calendly[include.kind] -%}
 {%- assign label = include.label | default: site.data.copy.cta_labels[include.kind] -%}
