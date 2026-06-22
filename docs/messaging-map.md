@@ -2,7 +2,7 @@
 
 > One screen of the site's words — the review/comment surface for messaging tweaks. **Not the build source** (pages stay as HTML). Comment inline here or in chat referencing `page · section`.
 >
-> **Tags:** **[web]** = edit the Jekyll file directly · **[proto]** = copy lives in the prototype `packages/ui-showcase/src/propositions.ts` → edit there, rebuild, republish `/composable-bank/` · **[data]** = centralised in `_data/copy.yml` (edit once, propagates).
+> **Tags:** **[web]** = edit the Jekyll file directly · **[proto]** = copy lives in the prototype's UI-showcase package source → edit there, rebuild, republish `/composable-bank/` · **[data]** = centralised in `_data/copy.yml` (edit once, propagates).
 >
 > **Consistency backstops:** vocabulary → `docs/lexicon.md`; claims → `docs/claim-register.md`; repeated strings → `_data/copy.yml`. Cross-cutting edits: change `_data`/lexicon once, then I grep-verify before deploy.
 >

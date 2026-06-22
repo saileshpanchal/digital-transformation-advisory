@@ -67,7 +67,7 @@ Rule: external feeds are **simulated** (FX, settlement, valuation, card) — say
 | Prototype as a **standards-based working specification** (portable / reusable) | **DTA framing on a standards base** — ISO 20022 Substantiated; BIAN "structured around"; control frameworks (NIST 800-207, OWASP LLM, BCBS 239, DCAM) **External, attribute only** | "expressed in open standards… portable and reusable, vendor-neutral". Reuse argument = standards are the shared vendor language. **Never claim certification/conformance** to any framework; "expressed in / structured around / aligned to" only. | 2026-09-18 |
 | Demonstrations use simulated services, no live customer money | **Substantiated** | Keep this disclaimer visible (the Clean-Room Demonstration Standard). | 2026-06-14 |
 | **Performance envelope / robustness** — where the prototype breaks; "useful level for a few concurrent users" | **Measured evidence (when run), not a live-platform claim** — harness in `perf/` | Layer A = the demonstration (render/memory/jank); Layer B = a build of the spec (latency/concurrency), NOT the demo or marketing site. Report numbers as session limits / achievable-shape NFRs for the working spec. **No production-SLA or scale claims.** Scope today = a few concurrent users (robustness, not scale). | 2026-09-18 |
-| **Ledger reconciliation loop** — authoritative commit journal + drift detection (clean/drift/incomplete) + maker-checker repair | **Substantiated / Demonstrated** — prototype `packages/reconciliation`, tested, merged to main (Phase 9: 9P/9A/9B) | "demonstrated in the prototype"; reconciliation never mutates the authoritative ledger. **Do not conflate** with the migration twin's legacy→target reconciliation (Blueprint) or the **self-diagnosing estate / blast-radius** (Blueprint, §I). See §J. | 2026-06-22 |
+| **Ledger reconciliation loop** — authoritative commit journal + drift detection (clean/drift/incomplete) + maker-checker repair | **Substantiated / Demonstrated** — built, tested, and merged to the prototype's main branch (Phase 9) | "demonstrated in the prototype"; reconciliation never mutates the authoritative ledger. **Do not conflate** with the migration twin's legacy→target reconciliation (Blueprint) or the **self-diagnosing estate / blast-radius** (Blueprint, §I). See §J. | 2026-06-22 |
 
 ---
 
@@ -194,29 +194,19 @@ write-path, sensitivity inheritance) — **never the values or the stack**.
 
 ## J. Phase 9 reconciliation status (verified 2026-06-22)
 
-Task-7 reconciliation of the Synthetic Bank Migration Twin / resilience claims against the now-locked Phase 9 design. **Design source:** `ultim8-prototype` plans `plan-9p` / `plan-9a` / `plan-9b` on branch `plans/phase-8-program`, conforming to ADR-007.
+Reconciliation of the Synthetic Bank Migration Twin / resilience claims against the prototype's Phase 9 design and implementation. Detailed implementation evidence (commit ids, package paths, plan identifiers, branch names) lives in the **private prototype repository**, not here.
 
-| Phase 9 element | Implementation evidence | Claim status | Public expression |
-|---|---|---|---|
-| **9P** — ledger transaction journal + monotonic commit feed (the reconciliation substrate) | **Merged to `ultim8-prototype` origin/main** (`558ed2d`, `174717d`); `JournalTransaction` / `commit()` API in `packages/ledger/src/index.ts` | **Substantiated / Demonstrated** | May say the reconciliation substrate (an authoritative append-only journal + commit feed) is real. |
-| **9A** — reconciliation drift **detection** (idempotent shadow, fault relay, clean/drift/incomplete classification, balance-free evidence); **detect-only** | Built in **PR #24**, `packages/reconciliation`; **not yet on main** | **Implemented, pre-merge** | **Public stays conservative — Specified at most, or unstated — until 9A lands on main.** A PR-branch claim can regress; do not badge Demonstrated publicly. |
-| **9B** — maker-checker repair, partition rebuild, durable outbox (closes the detect→repair loop) | **Plan doc only** (`plan-9b`); not built | **Blueprint** | Blueprint / Specified only. |
-| **Self-diagnosing estate, CMDB self-registration, blast-radius / service-impact** | Not built by 9P/9A/9B (a broader capability) | **Blueprint** (unchanged) | Stays Blueprint verbatim — see §I row. The DTA Trust / Control / Architecture-Library resilience cards correctly remain Blueprint. |
-| **Synthetic Bank Migration Twin (end-to-end)** | Needs the full detect→repair loop (9A merged + 9B) | **Blueprint** | Stays Blueprint across the site; the migration-twin diagram is not promoted. |
+| Capability | Status | Public expression |
+|---|---|---|
+| **Ledger reconciliation loop** — authoritative commit journal, drift detection (clean/drift/incomplete), maker-checker repair (apply / partition-rebuild / escalate) | **Demonstrated** — built, tested, and merged to the prototype's main branch | "demonstrated in the prototype"; reconciliation never mutates the authoritative ledger. The reference architecture behind "evidence by construction". |
+| **Self-diagnosing estate, CMDB self-registration, blast-radius / service-impact** | **Blueprint** (broader than the reconciliation loop; not built) | Stays Blueprint verbatim (§I). The DTA Trust / Control / Architecture-Library resilience cards stay Blueprint. |
+| **Synthetic Bank Migration Twin (end-to-end)** | **Blueprint** | Stays Blueprint across the site. Do not conflate the Twin's legacy→target reconciliation with the ledger-journal-vs-shadow reconciliation above. |
 
-**BUILD-004 stays blocked.** The design is locked and 9P landed, but the reconciliation loop is not closed (9A unmerged, 9B plan-only) and the prototype resilience page (`10-resilience.md`) has not yet been reconciled. Resolve BUILD-004 only when 9A is on main, the loop is demonstrable, the prototype page is updated through its own build + sync + `check-public-showcase` flow, and the full site agrees.
+**Prototype resilience page (`10-resilience.md`):** the reconciliation / drift-detection / repair lines may move to "real"; the blast-radius / CMDB / self-diagnosing-estate lines stay Blueprint. The prototype stream applies this through its own build + sync + showcase-check flow; never hand-edit the compiled `composable-bank/` bundle.
 
-**Prototype `10-resilience.md`:** the reconciliation-feed / commit-stream / drift-detection / repair lines may move to "real"; the blast-radius / CMDB / self-diagnosing-estate lines stay blueprint verbatim. Apply on a clean branch, never by hand-editing the compiled `composable-bank/` bundle.
+**Codename / internals guard:** the prototype's private-repo internals (the reconciliation package's internal codename namespace, package paths, commit ids, plan identifiers, branch names) must never reach this public repo. `check-public-showcase.sh` plus a manual review enforce this.
 
-### Update 2026-06-22 — Phase 9 complete (verified on `ultim8-prototype` origin/main)
-
-9P merged (`558ed2d`); **9A merged via PR #24** (`6b0db91`); **9B merged via PR #25** (`fcaa87c`) with planRepair (set-difference selection), applyRepair (atomic apply + off-side rebuild/swap), authenticated maker-checker lifecycle + durable store + outbox, and core-inconsistency escalation; `packages/reconciliation/src/repair.ts` and `shadow.ts` present on main.
-
-- **Now Demonstrated:** the **ledger reconciliation loop** — authoritative commit journal, drift detection (clean/drift/incomplete), and maker-checker repair (apply / partition-rebuild / escalate). This is the capability DTA's "evidence by construction" and reconciliation reference architecture point at.
-- **Still Blueprint (unchanged):** the self-diagnosing estate, CMDB self-registration, and blast-radius / service-impact reporting (broader than 9P/9A/9B). The DTA Trust / Control / Architecture-Library resilience cards stay Blueprint.
-- **Still Blueprint (do not conflate):** the Synthetic Bank Migration Twin's legacy→target reconciliation is a different problem from ledger-journal-vs-shadow; the Twin stays Blueprint end-to-end.
-- **Codename guard:** the reconciliation package is published under an internal codename namespace; that codename must never reach the public repo or any reconciled copy. `check-public-showcase.sh` enforces this on every reconcile.
-- **BUILD-004:** the implementation precondition is now met. Resolve only after (1) the DTA public claims are reconciled (promote the ledger-reconciliation capability where copy references it; keep self-diagnosing-estate Blueprint), (2) the prototype resilience page is updated through its own build + sync + showcase-check flow, and (3) Task 8 is re-run. Shipping (merge to master / deploy) remains a separate decision requiring explicit go-ahead.
+**BUILD-004:** the implementation precondition is met (the reconciliation loop is demonstrable). Resolve only after (1) the DTA public claims are reconciled (promote the ledger-reconciliation capability where copy references it; keep the self-diagnosing estate Blueprint), (2) the prototype resilience page is updated through its own flow, and (3) Task 8 is re-run. Shipping (merge to master / deploy) is a separate decision requiring explicit go-ahead.
 
 ---
 
