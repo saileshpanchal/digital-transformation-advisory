@@ -68,6 +68,7 @@ Rule: external feeds are **simulated** (FX, settlement, valuation, card) — say
 | Demonstrations use simulated services, no live customer money | **Substantiated** | Keep this disclaimer visible (the Clean-Room Demonstration Standard). | 2026-06-14 |
 | **Performance envelope / robustness** — where the prototype breaks; "useful level for a few concurrent users" | **Measured evidence (when run), not a live-platform claim** — harness in `perf/` | Layer A = the demonstration (render/memory/jank); Layer B = a build of the spec (latency/concurrency), NOT the demo or marketing site. Report numbers as session limits / achievable-shape NFRs for the working spec. **No production-SLA or scale claims.** Scope today = a few concurrent users (robustness, not scale). | 2026-09-18 |
 | **Ledger reconciliation loop** — authoritative commit journal + drift detection (clean/drift/incomplete) + maker-checker repair | **Substantiated / Demonstrated** — built, tested, and merged to the prototype's main branch (Phase 9) | "demonstrated in the prototype"; reconciliation never mutates the authoritative ledger. **Do not conflate** with the migration twin's legacy→target reconciliation (Blueprint) or the **self-diagnosing estate / blast-radius** (Blueprint, §I). See §J. | 2026-06-22 |
+| **Transfer control on a tokenised unit** — freeze and forced-transfer / clawback under policy | **Substantiated** — built and tested in the prototype (non-production) | "a demonstrated control capability in the prototype"; do not imply a live or production control, or compliance with any specific transfer-control standard. Pairs with the 1:1 tokenised-deposit row. | 2026-06-22 |
 
 ---
 
@@ -207,6 +208,29 @@ Reconciliation of the Synthetic Bank Migration Twin / resilience claims against 
 **Codename / internals guard:** the prototype's private-repo internals (the reconciliation package's internal codename namespace, package paths, commit ids, plan identifiers, branch names) must never reach this public repo. `check-public-showcase.sh` plus a manual review enforce this.
 
 **BUILD-004:** the implementation precondition is met (the reconciliation loop is demonstrable). Resolve only after (1) the DTA public claims are reconciled (promote the ledger-reconciliation capability where copy references it; keep the self-diagnosing estate Blueprint), (2) the prototype resilience page is updated through its own flow, and (3) Task 8 is re-run. Shipping (merge to master / deploy) is a separate decision requiring explicit go-ahead.
+
+---
+
+## K. Sterling Stablecoin page — claims map (`/sterling-stablecoin/`, 2026-06-22)
+
+Every assertion on the page maps to an approved row before copy ships. The regime is the BoE's **draft** Code (house phrasing below, §D); the prototype is a **non-production proving ground**.
+
+**House phrasing (regime status, verbatim):** *"the Bank of England's draft Code of Practice (Appendix 4 of its Policy Statement), which the Bank intends to finalise by end-2026, after which it will apply to recognised systemic issuers."*
+
+**Regime facts** (all → §D, BoE-attributed, draft): backing ≥30% central bank money / short-term gilts ≤186 days; two statutory trusts (legislation pending); daily safeguarding reconciliation; 24h redemption of a valid request; £40bn temporary issuance guardrail. Detail lives in the linked Insight, not on the page.
+
+**Prototype — Demonstrated / Substantiated** (built+tested, non-production):
+- 1:1-backed tokenised unit → §B "Tokenised deposit with 1:1 backing".
+- Ledger reconciliation loop (journal / drift detection / maker-checker repair) → §B + §J.
+- Transfer control (freeze, forced-transfer) → §B (new row).
+- Payments + ISO 20022 / settlement → §B.
+- Evidence by construction → §B.
+
+**Prototype — Blueprint** (label as such; no positive claim): backing-asset pool (central bank money + gilts), redemption / burn, capital / reserves, the two statutory trusts. These are the intended prototype gap-fill; promote only when built+tested.
+
+**Advisory position** (→ §C + positioning notes + §D): define independently, prove the difficult parts in a working model, build the capability to deliver; independent; partner for treasury-quant and trust-law; **no pricing**; not a builder.
+
+**Boundary** (→ Clean-Room Standard §B/§F + §D): non-production proving ground, synthetic data, test consumers; draft regime; **no implied compliance certification**; no internal repo nouns.
 
 ---
 
