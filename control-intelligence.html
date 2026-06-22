@@ -45,6 +45,8 @@ description: >-
     <div class="text-center">
       <h2>Where you see it at DTA</h2>
     </div>
+    {% include diagrams/c3-planes.html %}
+    <p class="diagram-caption">C3: the Consent plane sets and evidences the authority every agent action runs under.</p>
     <div class="offerings-grid">
       <div class="offering-card">
         <h3>Operating model</h3>
@@ -55,8 +57,8 @@ description: >-
         <p>Every agent action authorised, evidenced, and revocable. <a href="{{ '/architecture-library/' | relative_url }}">See it in the Architecture Library</a>.</p>
       </div>
       <div class="offering-card">
-        <h3>A self-diagnosing estate</h3>
-        <p>Resilience as architecture, with the platform reporting its own service impact. <a href="{{ '/composable-bank/resilience/' | relative_url }}">See the demonstration</a>.</p>
+        <h3>A self-diagnosing estate <span class="status status--blueprint">Blueprint</span></h3>
+        <p>Resilience as architecture: a platform designed to report its own service impact. <a href="{{ '/composable-bank/resilience/' | relative_url }}">See the resilience architecture</a>.</p>
       </div>
     </div>
   </div>
@@ -68,6 +70,7 @@ description: >-
       <h2>Related Intelligences</h2>
       <p class="section-subtitle">A lens, not a box. Control serves trust, bounds cognition, and rests on accountable people.</p>
     </div>
+    {% include diagrams/seven-lenses.html highlight="control" %}
     <div class="trio-grid">
       <a class="trio-card" href="{{ '/trust-intelligence/' | relative_url }}"><h3>Trust</h3><p>Control is the means; justified trust is the outcome it has to earn.</p></a>
       <a class="trio-card" href="{{ '/cognitive-intelligence/' | relative_url }}"><h3>Cognitive</h3><p>The authority an agent holds is set and bounded here.</p></a>

@@ -44,6 +44,8 @@ description: >-
     <div class="text-center">
       <h2>Where you see it at DTA</h2>
     </div>
+    {% include diagrams/c3-planes.html %}
+    <p class="diagram-caption">C3: Capability, Context, and Consent. The reference architecture for governed agent action.</p>
     <div class="offerings-grid">
       <div class="offering-card">
         <h3>The C3 reference architecture</h3>
@@ -67,6 +69,7 @@ description: >-
       <h2>Related Intelligences</h2>
       <p class="section-subtitle">A lens, not a box. C3 governs action here, but the domain is wider than any one architecture.</p>
     </div>
+    {% include diagrams/seven-lenses.html highlight="cognitive" %}
     <div class="trio-grid">
       <a class="trio-card" href="{{ '/control-intelligence/' | relative_url }}"><h3>Control</h3><p>The authority an agent holds is set and evidenced through Control Intelligence.</p></a>
       <a class="trio-card" href="{{ '/platform-intelligence/' | relative_url }}"><h3>Platform</h3><p>Reasoning and action run on the runtime that Platform Intelligence governs.</p></a>
