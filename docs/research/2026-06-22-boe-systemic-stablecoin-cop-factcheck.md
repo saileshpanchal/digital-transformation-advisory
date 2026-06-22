@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-22 · **Status:** internal research, not public copy · **Owner:** DTA
 
-**Source (primary):** *The Bank of England Systemic Stablecoin Issuer Code of Practice* — **DRAFT**, 38 pages, read in full from the issuer's PDF. Accompanies a BoE Policy Statement and a **consultation on the draft Code of Practice**.
+**Source (primary):** *The Bank of England Systemic Stablecoin Issuer Code of Practice* — **DRAFT**, 38 pages, read in full. It is **Appendix 4 of the BoE Policy Statement**. Per the BoE, they **intend to finalise the Code of Practice by end-2026, after which it will apply to recognised systemic stablecoin issuers**.
 
 ## Headline correction (read this first)
 
@@ -13,6 +13,10 @@ The document is a **DRAFT Code of Practice out for consultation**, not a finalis
 - Open placeholders remain: the FCA Handbook rule reference for a redemption request; `4.3 [in an insolvency/failure [TBD]]`; the monetisation-risk haircut is *"[the haircut applicable under the Bank's liquidity facility for systemic issuers]"* with **footnote 2: "Subject to the Bank confirming the availability of a liquidity facility … and setting the applicable haircuts in due course."**
 
 **Claim implication:** for DTA public copy the regime stays **proposed / consultation stage**. Cite specific provisions as *"the BoE's draft Code of Practice"*, attributed, with a "draft, not yet in force" caveat. **Do not** say "finalised", "the rulebook is written", or "settled law". This keeps the existing claim-register stance (`§D`: proposed / developing) correct.
+
+**Citable public-safe line (BoE-attributed):** *"In its draft Code of Practice for systemic stablecoin issuers (Appendix 4 of its Policy Statement), the Bank of England sets out [provision]. The Bank intends to finalise the Code by end-2026, after which it will apply to recognised systemic issuers."* Use this framing; never present a draft provision as a current legal requirement.
+
+**Re-verify trigger:** when the BoE finalises the Code (target end-2026), the claim-register stance can move from *proposed* to *final/in-force* — re-read the finalised Code, then update `§D` and `§J`.
 
 ## Verified provisions (usable, BoE-attributed, draft-caveated)
 
