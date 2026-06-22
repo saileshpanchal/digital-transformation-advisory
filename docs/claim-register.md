@@ -190,6 +190,24 @@ write-path, sensitivity inheritance) — **never the values or the stack**.
 
 ---
 
+## J. Phase 9 reconciliation status (verified 2026-06-22)
+
+Task-7 reconciliation of the Synthetic Bank Migration Twin / resilience claims against the now-locked Phase 9 design. **Design source:** `ultim8-prototype` plans `plan-9p` / `plan-9a` / `plan-9b` on branch `plans/phase-8-program`, conforming to ADR-007.
+
+| Phase 9 element | Implementation evidence | Claim status | Public expression |
+|---|---|---|---|
+| **9P** — ledger transaction journal + monotonic commit feed (the reconciliation substrate) | **Merged to `ultim8-prototype` origin/main** (`558ed2d`, `174717d`); `JournalTransaction` / `commit()` API in `packages/ledger/src/index.ts` | **Substantiated / Demonstrated** | May say the reconciliation substrate (an authoritative append-only journal + commit feed) is real. |
+| **9A** — reconciliation drift **detection** (idempotent shadow, fault relay, clean/drift/incomplete classification, balance-free evidence); **detect-only** | Built in **PR #24**, `packages/reconciliation`; **not yet on main** | **Implemented, pre-merge** | **Public stays conservative — Specified at most, or unstated — until 9A lands on main.** A PR-branch claim can regress; do not badge Demonstrated publicly. |
+| **9B** — maker-checker repair, partition rebuild, durable outbox (closes the detect→repair loop) | **Plan doc only** (`plan-9b`); not built | **Blueprint** | Blueprint / Specified only. |
+| **Self-diagnosing estate, CMDB self-registration, blast-radius / service-impact** | Not built by 9P/9A/9B (a broader capability) | **Blueprint** (unchanged) | Stays Blueprint verbatim — see §I row. The DTA Trust / Control / Architecture-Library resilience cards correctly remain Blueprint. |
+| **Synthetic Bank Migration Twin (end-to-end)** | Needs the full detect→repair loop (9A merged + 9B) | **Blueprint** | Stays Blueprint across the site; the migration-twin diagram is not promoted. |
+
+**BUILD-004 stays blocked.** The design is locked and 9P landed, but the reconciliation loop is not closed (9A unmerged, 9B plan-only) and the prototype resilience page (`10-resilience.md`) has not yet been reconciled. Resolve BUILD-004 only when 9A is on main, the loop is demonstrable, the prototype page is updated through its own build + sync + `check-public-showcase` flow, and the full site agrees.
+
+**Prototype `10-resilience.md` (proposed, not yet applied):** only the reconciliation-feed / commit-stream / drift-detection lines may move to "real (detect-only; repair pending)"; the blast-radius / CMDB / self-diagnosing-estate lines stay blueprint verbatim. Apply on a clean branch, never by hand-editing the compiled `composable-bank/` bundle.
+
+---
+
 ## Pre-publish checklist (gates every copy PR)
 
 1. Every claim maps to a row here (or, for demo capability, to the prototype's `marketing-claim-audit.md`) with a resolved status.
