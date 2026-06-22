@@ -11,6 +11,15 @@
 > Bank** (the name "Composable Bank" is retired); the deeper operating-model page
 > is `/operating-model/`.
 
+> **Aligned to the North Star (2026-06-21).** Within the architecture canon
+> (`docs/architecture/north-star.md`), C3 is a **reference architecture** that
+> sits beneath the Seven Intelligences, not a competing top-level hierarchy. It
+> chiefly serves Cognitive and Control Intelligence (governed action) and the
+> Platform lens (runtime). The public demonstration keeps the `/composable-bank/`
+> URL; "Composable Bank" is a generic descriptor rather than a DTA product name,
+> and "The Accountable Bank" stays off public surfaces pending a trademark check.
+> The public view of C3 lives in `/architecture-library/`.
+
 ---
 
 ## Why a spine

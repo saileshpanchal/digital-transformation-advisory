@@ -14,6 +14,12 @@ related:
 The single reference for how we describe the prototype. Keep `_data/copy.yml`,
 the pages, the posts and the claim register aligned to this.
 
+> **Aligned to the North Star (2026-06-21).** The public page that defines this
+> vocabulary is `/prototype-specifications/`: reference architecture, prototype
+> specification, working prototype, working specification, and executable system.
+> The clean room is proof infrastructure (the Clean-Room Demonstration and its
+> Standard), not a product category. Canon: `docs/architecture/north-star.md`.
+
 ## What it is
 
 A **working proving-ground platform**. One governed, agent-native platform that

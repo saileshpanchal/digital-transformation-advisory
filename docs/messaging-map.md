@@ -34,6 +34,17 @@
 - **Hero H1:** "Capability intelligence for high-performance squads." · CTA [Discuss a Capability Blueprint] + [See how it works].
 - Sections: Why now (WEF 2025, attributed) · Unsolved problem (4) · Two better conversations (demand/evidence) · Lifecycle (Capability Blueprint → Best-fit Squad → Managed Capability Cycle) · Two applications · **Worked example** (synthetic; provenance labels Generated/Derived/Future) · Trusted structure (SFIA; SFIA-10) · AI-assisted (privacy line) · Expansion · CTA ("what to bring").
 
+## Architecture Library — `architecture-library.html` [web]
+- **Hero H1:** "Architecture Library." Stable public views of reference architectures (read, question, reuse); concepts/outcomes/boundaries public, schemas/methods protected via the Architecture Room.
+- Anchor: **C3 planes diagram**. Stable-views grid (8): C3 · DBBs · governed data products · value exchange · platform evolution · trust & inclusion · resilience (**Blueprint**) · continuous control, each linking a paper or demonstration. Public-vs-protected note. CTA.
+
+## Prototype Specifications — `prototype-specifications.html` [web]
+- **Hero H1:** "Prototype Specifications." A prototype specification = the executable blueprint from a reference architecture + a journey; open standards, portable, vendor-neutral.
+- Anchor: **architecture-hierarchy diagram**. Five terms (reference architecture · prototype specification · working prototype · working specification · executable system). Published examples with status: C3 (reference architecture) · Clean-Room Demonstration (**Demonstrated**) · vendor-neutral working specification (**Specified**) · Synthetic Bank Migration Twin (**Blueprint**). Clean-room-boundary diagram. CTA.
+
+## Ultim8 — `ultim8.html` [web] — HELD (`published: false`)
+- Held until TERM-010 reaches stable; omitted from nav (NAV-005). Draft positions Ultim8 as the runtime between Prototype Specifications and Executable Systems. Do not publish until the conflict register permits.
+
 ## Consumer Outcomes — `consumer-outcomes.html` [web]  (was Customer Outcomes; `/customer-outcomes/` 301s here)
 - **Hero H1:** "Banking should work for the people it is easiest to exclude." Advocacy-led: good consumer outcomes are designed into a proposition, not evidenced after the harm is done. Sits under Experience and Trust Intelligence.
 - **Structure:** the position (Consumer Duty as a design input, attributed) · six principles we advocate · A Place to Start (**Blueprint**) · what changes when agents act (comprehension, consent and control, intervention) · how we help (advisory then the proving ground, 5 stages + misunderstanding heatmap) · the evidence boundary (clean-room labels) · CTA "Bring us a proposition that could exclude someone".
