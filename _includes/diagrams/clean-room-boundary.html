@@ -1,0 +1,29 @@
+{%- comment -%}
+Clean-room claim boundary: Demonstrated / Simulated / Specified, plus the
+synthetic, non-production boundary statement.
+{%- endcomment -%}
+<div class="diagram">
+  <svg viewBox="0 0 760 320" role="img" aria-label="Claim labels Demonstrated, Simulated, and Specified, over the synthetic non-production boundary">
+    <rect x="30" y="20" width="220" height="160" rx="8" fill="#e6f6ec" stroke="#b6e2c6" stroke-width="1.5"></rect>
+    <text x="54" y="58" style="font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;fill:#1a7f43;">Demonstrated</text>
+    <text class="dg-sub" x="54" y="86">The mechanism</text>
+    <text class="dg-sub" x="54" y="104">genuinely runs in</text>
+    <text class="dg-sub" x="54" y="122">the prototype.</text>
+
+    <rect x="270" y="20" width="220" height="160" rx="8" fill="#fff5e6" stroke="#f0d9b0" stroke-width="1.5"></rect>
+    <text x="294" y="58" style="font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;fill:#a66a00;">Simulated</text>
+    <text class="dg-sub" x="294" y="86">Inputs are</text>
+    <text class="dg-sub" x="294" y="104">generated test</text>
+    <text class="dg-sub" x="294" y="122">fixtures.</text>
+
+    <rect x="510" y="20" width="220" height="160" rx="8" fill="#e9f2fc" stroke="#bcd6f5" stroke-width="1.5"></rect>
+    <text x="534" y="58" style="font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;fill:#1857a6;">Specified</text>
+    <text class="dg-sub" x="534" y="86">Production scale</text>
+    <text class="dg-sub" x="534" y="104">and cutover described,</text>
+    <text class="dg-sub" x="534" y="122">not executed here.</text>
+
+    <rect class="dg-node-soft" x="30" y="210" width="700" height="80" rx="8"></rect>
+    <text class="dg-label" x="380" y="244" text-anchor="middle">The boundary</text>
+    <text class="dg-sub" x="380" y="268" text-anchor="middle">Synthetic data. Test consumers, never real customers. Production-grade controls. Not a production banking system.</text>
+  </svg>
+</div>

@@ -133,8 +133,9 @@ description: >-
   <div class="container">
     <div class="text-center">
       <h2>Architecture you can inspect</h2>
-      <p class="section-subtitle">We do not ask a bank to accept an architecture on a slide. Our reference architectures and prototype specifications are designed to be read, questioned, and reused.</p>
+      <p class="section-subtitle">We do not ask a bank to accept an architecture on a slide. Everything flows from the mission down to a system a client can run.</p>
     </div>
+    {% include diagrams/architecture-hierarchy.html %}
     <div class="trio-grid">
       <div class="trio-card">
         <h3>Architecture Library</h3>
@@ -159,8 +160,7 @@ description: >-
       <div class="showcase-text">
         <h2>Proof, not slides</h2>
         <p>{{ site.data.copy.canonical.clean_room }}</p>
-        <p>Because it is expressed in open standards, ISO 20022 messaging, BIAN domain boundaries, and recognised control frameworks, the demonstration doubles as a working specification: portable, reusable, and ready for whatever vendor a bank chooses to build with.</p>
-        <p><strong>The boundary is explicit.</strong> The data is synthetic, the consumers are test consumers and never real customers, the controls are designed to production grade, and nothing here runs a production banking service. Planned behaviour is labelled Blueprint or Specified, never Demonstrated.</p>
+        <p>Expressed in open standards, ISO 20022 messaging, BIAN domain boundaries, and recognised control frameworks, the demonstration doubles as a portable, vendor-neutral working specification. Planned behaviour is labelled Blueprint or Specified, never Demonstrated.</p>
         <a href="{{ '/composable-bank/' | relative_url }}" class="btn btn--primary" data-cta="demo" data-loc="home-proof">Explore the demonstration</a>
       </div>
       <ul class="showcase-list">
@@ -172,6 +172,7 @@ description: >-
         <li><a href="/composable-bank/platform/">One platform, many propositions</a></li>
       </ul>
     </div>
+    {% include diagrams/clean-room-boundary.html %}
   </div>
 </section>
 

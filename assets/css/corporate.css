@@ -1728,6 +1728,48 @@ p { margin-bottom: 1rem; }
   max-width: 640px;
 }
 
+/* ==========================================================================
+   Diagrams — inline SVG anchors (brand palette, no build dependency)
+   ========================================================================== */
+.diagram {
+  max-width: 820px;
+  margin: 2.5rem auto 0;
+}
+
+.diagram svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.diagram-caption {
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* Shared SVG primitives */
+.dg-node { fill: #fff; stroke: #29ABE2; stroke-width: 1.5; }
+.dg-node-accent { fill: #29ABE2; stroke: #29ABE2; stroke-width: 1.5; }
+.dg-node-soft { fill: #F5F7FA; stroke: #d5dde6; stroke-width: 1.5; }
+.dg-link { stroke: #cfe7f5; stroke-width: 2; fill: none; }
+.dg-ring { fill: none; stroke: #e3f1fb; stroke-width: 2; stroke-dasharray: 4 6; }
+.dg-label { fill: #161616; font-family: 'Montserrat', Arial, sans-serif; font-size: 14px; font-weight: 600; }
+.dg-label-light { fill: #fff; font-family: 'Montserrat', Arial, sans-serif; font-size: 14px; font-weight: 600; }
+.dg-sub { fill: #667; font-family: 'Montserrat', Arial, sans-serif; font-size: 11px; font-weight: 500; }
+.diagram a { cursor: pointer; }
+.diagram a:hover .dg-node { fill: #eaf6fd; }
+.diagram a:hover .dg-label { fill: #1e8fc0; }
+
+/* On dark sections */
+.section--dark .dg-node { fill: #1f1f1f; stroke: #29ABE2; }
+.section--dark .dg-node-soft { fill: #2a2a2a; stroke: #444; }
+.section--dark .dg-label { fill: #fff; }
+.section--dark .dg-link { stroke: rgba(41,171,226,0.4); }
+.section--dark .dg-ring { stroke: rgba(255,255,255,0.12); }
+.section--dark .diagram-caption { color: rgba(255,255,255,0.6); }
+
 @media (max-width: 768px) {
   .trio-grid { grid-template-columns: 1fr; }
   .principle-grid { grid-template-columns: 1fr; max-width: 520px; }
