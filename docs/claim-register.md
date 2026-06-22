@@ -204,7 +204,17 @@ Task-7 reconciliation of the Synthetic Bank Migration Twin / resilience claims a
 
 **BUILD-004 stays blocked.** The design is locked and 9P landed, but the reconciliation loop is not closed (9A unmerged, 9B plan-only) and the prototype resilience page (`10-resilience.md`) has not yet been reconciled. Resolve BUILD-004 only when 9A is on main, the loop is demonstrable, the prototype page is updated through its own build + sync + `check-public-showcase` flow, and the full site agrees.
 
-**Prototype `10-resilience.md` (proposed, not yet applied):** only the reconciliation-feed / commit-stream / drift-detection lines may move to "real (detect-only; repair pending)"; the blast-radius / CMDB / self-diagnosing-estate lines stay blueprint verbatim. Apply on a clean branch, never by hand-editing the compiled `composable-bank/` bundle.
+**Prototype `10-resilience.md`:** the reconciliation-feed / commit-stream / drift-detection / repair lines may move to "real"; the blast-radius / CMDB / self-diagnosing-estate lines stay blueprint verbatim. Apply on a clean branch, never by hand-editing the compiled `composable-bank/` bundle.
+
+### Update 2026-06-22 — Phase 9 complete (verified on `ultim8-prototype` origin/main)
+
+9P merged (`558ed2d`); **9A merged via PR #24** (`6b0db91`); **9B merged via PR #25** (`fcaa87c`) with planRepair (set-difference selection), applyRepair (atomic apply + off-side rebuild/swap), authenticated maker-checker lifecycle + durable store + outbox, and core-inconsistency escalation; `packages/reconciliation/src/repair.ts` and `shadow.ts` present on main.
+
+- **Now Demonstrated:** the **ledger reconciliation loop** — authoritative commit journal, drift detection (clean/drift/incomplete), and maker-checker repair (apply / partition-rebuild / escalate). This is the capability DTA's "evidence by construction" and reconciliation reference architecture point at.
+- **Still Blueprint (unchanged):** the self-diagnosing estate, CMDB self-registration, and blast-radius / service-impact reporting (broader than 9P/9A/9B). The DTA Trust / Control / Architecture-Library resilience cards stay Blueprint.
+- **Still Blueprint (do not conflate):** the Synthetic Bank Migration Twin's legacy→target reconciliation is a different problem from ledger-journal-vs-shadow; the Twin stays Blueprint end-to-end.
+- **Codename guard:** the reconciliation package is published under an internal codename namespace; that codename must never reach the public repo or any reconciled copy. `check-public-showcase.sh` enforces this on every reconcile.
+- **BUILD-004:** the implementation precondition is now met. Resolve only after (1) the DTA public claims are reconciled (promote the ledger-reconciliation capability where copy references it; keep self-diagnosing-estate Blueprint), (2) the prototype resilience page is updated through its own build + sync + showcase-check flow, and (3) Task 8 is re-run. Shipping (merge to master / deploy) remains a separate decision requiring explicit go-ahead.
 
 ---
 
