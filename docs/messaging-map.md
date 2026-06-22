@@ -45,6 +45,11 @@
 ## Ultim8 — `ultim8.html` [web] — HELD (`published: false`)
 - Held until TERM-010 reaches stable; omitted from nav (NAV-005). Draft positions Ultim8 as the runtime between Prototype Specifications and Executable Systems. Do not publish until the conflict register permits.
 
+## Sterling Stablecoin — `sterling-stablecoin.html` [web]
+- **Hero H1:** "Sterling Stablecoin." Balanced (issuer + bank/PSP readiness); thesis line (define independently, prove the difficult parts in a working model, build the capability to deliver). Links the BoE draft-Code Insight.
+- Sections: regime-in-brief (4 anchors + house phrasing, BoE-attributed, draft, finalise end-2026) · **Through the Seven Intelligences** (seven-lenses diagram highlight=value + 7 lens cards, each → its Intelligence page, with demonstrated/blueprint status) · **What we can evidence today** (Demonstrated: 1:1 unit, transfer control, payments/ISO 20022, reconciliation + evidence; Blueprint: backing pool, redemption, capital, two trusts; clean-room-boundary diagram) · How we help (define/prove/build; partner for treasury-quant + trust-law; no pricing) · CTA.
+- **Governance:** claims map = `claim-register.md` §K; regime = §D (draft, BoE-attributed, house phrasing); reconciliation/transfer/1:1 = §B; non-production proving ground; no repo internals; no pricing.
+
 ## Consumer Outcomes — `consumer-outcomes.html` [web]  (was Customer Outcomes; `/customer-outcomes/` 301s here)
 - **Hero H1:** "Banking should work for the people it is easiest to exclude." Advocacy-led: good consumer outcomes are designed into a proposition, not evidenced after the harm is done. Sits under Experience and Trust Intelligence.
 - **Structure:** the position (Consumer Duty as a design input, attributed) · six principles we advocate · A Place to Start (**Blueprint**) · what changes when agents act (comprehension, consent and control, intervention) · how we help (advisory then the proving ground, 5 stages + misunderstanding heatmap) · the evidence boundary (clean-room labels) · CTA "Bring us a proposition that could exclude someone".
