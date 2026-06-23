@@ -2,8 +2,9 @@ schema_version: 1
 register:
   id: DTA-AR-001
   title: DTA Architecture Conflict Register
-  status: p0-decisions-approved
+  status: p0-approved; tasks-2-6-built; task7-no-phase9-claims-on-site; task8-review-passed
   p0_decisions_recorded: 2026-06-22
+  task8_review: 2026-06-23
   owner: Sailesh Panchal
   created: 2026-06-21
   canonical_source: docs/superpowers/specs/2026-06-21-dta-architecture-review-design.md
@@ -133,7 +134,7 @@ conflicts:
     stability: stable
     priority: P0
     depends_on: []
-    status: proposed
+    status: approved
 
   - id: PUR-002
     area: purpose
@@ -187,7 +188,7 @@ conflicts:
       - PUR-001
       - PUR-002
       - PUR-003
-    status: proposed
+    status: approved
 
   - id: HIER-002
     area: hierarchy
@@ -522,7 +523,7 @@ conflicts:
     priority: P0
     depends_on:
       - PROV-002
-    status: proposed
+    status: approved
 
   - id: TERM-009
     area: terminology
@@ -778,7 +779,7 @@ conflicts:
     priority: P0
     depends_on:
       - PUR-001
-    status: proposed
+    status: approved
 
   - id: COM-002
     area: commercial
@@ -811,7 +812,7 @@ conflicts:
     priority: P0
     depends_on:
       - CLAIM-001
-    status: proposed
+    status: approved
 
   - id: PROV-001
     area: provenance
@@ -827,7 +828,7 @@ conflicts:
     stability: locked
     priority: P0
     depends_on: []
-    status: proposed
+    status: approved
 
   - id: PROV-002
     area: provenance
@@ -843,7 +844,7 @@ conflicts:
     stability: locked
     priority: P0
     depends_on: []
-    status: proposed
+    status: approved
 
   - id: PROV-003
     area: provenance
@@ -860,7 +861,7 @@ conflicts:
     priority: P0
     depends_on:
       - PROV-001
-    status: proposed
+    status: approved
 
   - id: CLAIM-001
     area: governance
@@ -876,7 +877,7 @@ conflicts:
     priority: P0
     depends_on:
       - PROV-001
-    status: proposed
+    status: approved
 
   - id: CONTENT-001
     area: content
@@ -1030,4 +1031,35 @@ conflicts:
       - PROV-001
       - PROV-002
       - CLAIM-001
+    status: approved
+  - id: INT-009
+    area: intelligence
+    object: Financial Intelligence (proposed eighth Intelligence)
+    current: The published set has seven Intelligences. Transformations need an explicit financial lens - the as-is position across people, process, technology, infrastructure and property, the target, the financial transition, CFO buy-in, and the cost modelling of squads and supporting roles.
+    evidence:
+      - user-supplied note, 2026-06-23
+      - operating-model.html
+      - capability-intelligence.html
+    recommendation: Define Financial Intelligence as a candidate eighth Intelligence covering as-is/target/transition economics, CFO decision support, and squad and role cost modelling. Decide before launch whether to publish as the eighth lens or fold into Capability and Control. Not in the published seven until decided.
+    disposition: define
+    provenance: public
+    stability: developing
+    priority: P1
+    depends_on:
+      - HIER-001
+    status: proposed
+  - id: BIZ-001
+    area: hierarchy
+    object: Business Architecture as the tie between Intelligences, capabilities and propositions
+    current: Business architecture is implied across the approach and the Intelligences but is not named as the connective layer that ties Intelligences and capabilities to propositions and their economics.
+    evidence:
+      - approach.html
+      - user-supplied note, 2026-06-23
+    recommendation: Name business architecture as the connective discipline that maps Intelligences and capabilities to propositions, P&L and the operating model. Relate it to Financial Intelligence (INT-009) and Capability Intelligence.
+    disposition: define
+    provenance: public
+    stability: developing
+    priority: P2
+    depends_on:
+      - INT-009
     status: proposed
