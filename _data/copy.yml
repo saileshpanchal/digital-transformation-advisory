@@ -47,18 +47,25 @@ principles:
 # Seven Intelligences (North Star). Soft lenses, not folders.
 intelligences:
   - name: Experience Intelligence
+    path: /experience-intelligence/
     line: How customers and institutions experience a journey, and whether it delivers good, inclusive outcomes they understand and can act on.
   - name: Capability Intelligence
+    path: /capability-intelligence/
     line: How human and organisational capability (Skills, Knowledge, Judgment) is understood, composed and grown to deliver outcomes.
   - name: Cognitive Intelligence
+    path: /cognitive-intelligence/
     line: "How humans and machines reason and act together: where reasoning sits, what agents may do, and how decisions are explained and intervened in."
   - name: Value Intelligence
+    path: /value-intelligence/
     line: How value is represented, exchanged, governed, settled and measured, from payments and deposits to tokenised value.
   - name: Trust Intelligence
+    path: /trust-intelligence/
     line: How justified trust is earned among customers, institutions, regulators and systems through consent, privacy, inclusion and evidence.
   - name: Platform Intelligence
+    path: /platform-intelligence/
     line: "How systems evolve: composability, interoperability, coexistence with the core, governed data and runtime architecture."
   - name: Control Intelligence
+    path: /control-intelligence/
     line: How accountable leaders set authority, observe outcomes, intervene and evidence control continuously.
 
 # Cross-cutting themes (North Star).

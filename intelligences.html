@@ -19,7 +19,7 @@ description: >-
   <div class="container">
     <div class="offerings-grid">
       {% for i in site.data.copy.intelligences %}
-      <div class="offering-card"><h3>{{ i.name }}</h3><p>{{ i.line }}</p></div>
+      <div class="offering-card"><h3>{{ i.name }}</h3><p>{{ i.line }}</p><a href="{{ i.path | relative_url }}">Explore &rarr;</a></div>
       {% endfor %}
     </div>
   </div>
@@ -37,11 +37,10 @@ description: >-
       {% endfor %}
     </div>
     <div style="max-width:760px;margin:2rem auto 0;color:#555;text-align:center;">
-      <p>Deeper pages for each Intelligence are in development. Capability Intelligence is published today; the others follow as their definitions settle.</p>
+      <p>Each Intelligence has its own page; follow a card to go deeper. Capability Intelligence carries the most detail today, with the others growing as the canon settles.</p>
     </div>
     <div class="text-center" style="margin-top:1.5rem;">
-      <a href="{{ '/capability-intelligence/' | relative_url }}" class="btn btn--outline">Capability Intelligence</a>
-      <a href="{{ '/experience-journeys/' | relative_url }}" class="btn btn--ghost">Experience Journeys</a>
+      <a href="{{ '/experience-journeys/' | relative_url }}" class="btn btn--outline">Experience Journeys</a>
     </div>
   </div>
 </section>
