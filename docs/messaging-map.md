@@ -48,7 +48,7 @@
 - `/architecture/` is the Architecture landing/library (curated stable views: C3, DBBs, governed data products, Platform, Resilience, advisory method) linking public papers and demonstration pages. `/prototype-specifications/` defines the layer chain Reference Architecture → Prototype Specification → Working Prototype → Working Specification → Executable System. No public Ultim8 page (retired as a public term; the layer is **Reference Runtime**). Honesty: working prototype = demonstrated (synthetic); Prototype Specifications = Specified/Blueprint until evidence.
 
 ## Intelligences — `intelligences.html` hub + 7 domain pages [web]
-- Hub links all seven via `path` in `_data/copy.yml › intelligences`. Pages: experience/capability/cognitive/value/trust/platform/control-intelligence. Capability page carries a domain band (Skills/Knowledge/Judgment) above the SFIA/squad application. Value keeps tokenisation attributed/proposed.
+- Hub links all **eight** via `path` in `_data/copy.yml › intelligences`. Pages: experience/capability/cognitive/value/trust/platform/control/**financial**-intelligence. Capability page carries a domain band (Skills/Knowledge/Judgment) above the SFIA/squad application. Value keeps tokenisation attributed/proposed. **Financial Intelligence** (8th, adopted 2026-06-23): website page is specific + shows the interlock (other lenses as P&L contributors); citations live in `docs/financial-intelligence-brief.md`. Business Architecture deferred. Addressable-vs-committed funding and the AI-shifted cost shape are core to the model.
 
 ## Connect — `connect.html` [web]
 - H1 "Book a strategy call" + Calendly + secondary contact form (→ `/success/`).

@@ -67,6 +67,9 @@ intelligences:
   - name: Control Intelligence
     path: /control-intelligence/
     line: How accountable leaders set authority, observe outcomes, intervene and evidence control continuously.
+  - name: Financial Intelligence
+    path: /financial-intelligence/
+    line: "Understanding the P&L of change early: the as-is cost base, the target operating-model cost, and the transition between them. The CFO lens, interlocked with the others."
 
 # Cross-cutting themes (North Star).
 themes:

@@ -71,3 +71,33 @@ Financial Intelligence is not a silo, and that is the point you made. It reads f
 2. **Fold the financial lens into Capability, Platform and Value**, with Business Architecture named as the connective layer, and no separate eighth lens.
 
 Recommendation: **(1)**. The financial blind spot is distinct enough, and commercially central enough, to deserve its own lens, with Business Architecture introduced alongside it as the tie. Note it is a canon change: "Seven" becomes "Eight" across the site.
+
+## Expanded cost model (owner direction, 2026-06-23)
+
+Adopted as the eighth Intelligence. The model must carry, at minimum:
+
+**Cost base and funding**
+- As-is cost base: people, process, technology, infrastructure, property.
+- Suppliers and committed contracts: third parties, licences, outsourced deals, with terms and break points.
+- Addressable versus committed funding: change is funded only from the addressable slice; committed/locked spend cannot be redirected. Cost the change against the addressable part, not the whole base.
+
+**The shifted cost shape**
+- When delivery was people, the doers (a two-pizza squad) were roughly 80% of cost, supporting staff the rest.
+- AI-amplified engineering breaks that ratio. AI is its own cost line, to build and to run.
+- Add setup (cloud, DevOps pipelines, data environments) and the governance the model now needs (AI governance, data governance, risk governance, security).
+
+**One-off and transition**
+- Setup / one-off: cloud, pipelines, data environments, tooling.
+- Transition and dual-running: old and new worlds in parallel until proven.
+- Decommissioning and contract exit, including break fees.
+- Change, training and adoption.
+
+**The value side (offsets)**
+- Revenue uplift, cost-to-serve reduction, loss and fraud reduction, capital efficiency, retention. Hard and soft benefits, tracked projected versus actual.
+
+**Run-rate versus one-off:** separate one-offs from the ongoing run-rate; the target run-rate is what the CFO ultimately commits to.
+
+## Page versus paper
+
+- **Website page** (`/financial-intelligence/`): specific, and shows the interlock - the other lenses as P&L contributors (Capability gives squad cost; Platform gives infra and dual-running; Cognitive gives AI build/run and AI governance; Control gives data/risk governance; Value, Experience and Trust give the benefit side). No citation dump.
+- **This paper:** keeps the background citations and the failure evidence for internal reference and deeper engagement material.

@@ -1034,20 +1034,20 @@ conflicts:
     status: approved
   - id: INT-009
     area: intelligence
-    object: Financial Intelligence (proposed eighth Intelligence)
+    object: Financial Intelligence (eighth Intelligence, adopted 2026-06-23)
     current: The published set has seven Intelligences. Transformations need an explicit financial lens - the as-is position across people, process, technology, infrastructure and property, the target, the financial transition, CFO buy-in, and the cost modelling of squads and supporting roles.
     evidence:
       - user-supplied note, 2026-06-23
       - operating-model.html
       - capability-intelligence.html
-    recommendation: Define Financial Intelligence as a candidate eighth Intelligence covering as-is/target/transition economics, CFO decision support, and squad and role cost modelling. Decide before launch whether to publish as the eighth lens or fold into Capability and Control. Not in the published seven until decided.
+    recommendation: ADOPTED 2026-06-23 as the eighth Intelligence; page /financial-intelligence/ live. Cost model covers the as-is base (people/process/technology/infrastructure/property), suppliers and committed contracts, addressable vs committed funding, the AI-amplified squad and supporting staff, AI build and run, setup (cloud/DevOps/data environments), AI/data/risk governance, transition and dual-running, decommissioning and exit, and the value side. Interlocked with the other lenses as P&L contributors. DTA frames the when and scope; the client owns the numbers. Citations live in docs/financial-intelligence-brief.md (paper), not on the page.
     disposition: define
     provenance: public
-    stability: developing
+    stability: stable
     priority: P1
     depends_on:
       - HIER-001
-    status: proposed
+    status: implemented
   - id: BIZ-001
     area: hierarchy
     object: Business Architecture as the tie between Intelligences, capabilities and propositions
@@ -1055,7 +1055,7 @@ conflicts:
     evidence:
       - approach.html
       - user-supplied note, 2026-06-23
-    recommendation: Name business architecture as the connective discipline that maps Intelligences and capabilities to propositions, P&L and the operating model. Relate it to Financial Intelligence (INT-009) and Capability Intelligence.
+    recommendation: Name business architecture as the connective discipline that maps Intelligences and capabilities to propositions, P&L and the operating model. Relate it to Financial Intelligence (INT-009) and Capability Intelligence. Deferred 2026-06-23 by the owner as a bigger idea; revisit after Financial Intelligence has settled.
     disposition: define
     provenance: public
     stability: developing

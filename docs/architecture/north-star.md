@@ -13,7 +13,7 @@ decisions: docs/architecture/conflict-register.yml#p0_decisions (2026-06-22)
 
 The internal canonical source for DTA. Public pages derive from the `public`,
 `locked`-or-`stable` statements here. This document is **draft for approval**;
-nothing downstream changes until the Mission and the Seven Intelligences are
+nothing downstream changes until the Mission and the Eight Intelligences are
 locked.
 
 ## Mission
@@ -53,7 +53,7 @@ accountability, sovereignty, or Owned Autonomy.
 - **Evolution** — operate old and new worlds together and migrate safely.
 - **Augmentation** — enable humans and machines to think and act together.
 
-## Seven Intelligences
+## Eight Intelligences
 
 Lenses across DTA's work, not filing folders. An artefact may carry several
 Intelligences with no single primary parent. They do not replace Owned Autonomy
@@ -66,6 +66,7 @@ Intelligences with no single primary parent. They do not replace Owned Autonomy
 5. **Trust Intelligence** — how justified trust is earned among customers, institutions, regulators, and systems (consent, privacy, inclusion, vulnerability, evidence).
 6. **Platform Intelligence** — how systems evolve: composability, interoperability, coexistence with the core, governed data, and runtime architecture.
 7. **Control Intelligence** — how accountable leaders set authority, observe outcomes, intervene, and evidence control continuously.
+8. **Financial Intelligence** — the P&L of change, understood early: the as-is cost base (people, process, technology, infrastructure, property, suppliers and committed contracts), the target operating-model cost, the transition between them, and value realisation. The CFO lens, interlocked with the others. DTA frames the when and the scope; the client owns the numbers.
 
 **Capability vs Cognitive (the boundary to hold).** Capability Intelligence is
 the *latent* capability of people and organisations, including Judgment as a
@@ -78,7 +79,7 @@ never a score inferred without evidence.
 ```text
 Mission
   -> Principles
-  -> Seven Intelligences
+  -> Eight Intelligences
   -> Experience Journeys
   -> Reference Architectures
   -> Prototype Specifications
