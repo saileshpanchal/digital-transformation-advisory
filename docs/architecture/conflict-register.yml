@@ -2,7 +2,8 @@ schema_version: 1
 register:
   id: DTA-AR-001
   title: DTA Architecture Conflict Register
-  status: proposed
+  status: p0-decisions-approved
+  p0_decisions_recorded: 2026-06-22
   owner: Sailesh Panchal
   created: 2026-06-21
   canonical_source: docs/superpowers/specs/2026-06-21-dta-architecture-review-design.md
@@ -20,9 +21,9 @@ enums:
     - open
   provenance:
     - public
-    - gated
     - internal
-    - clean-room
+  # Simplified 2026-06-22 (decision D6): "gated" and "clean-room" retired as
+  # provenance values. This is a marketing site, not a legal contract.
   stability:
     - locked
     - stable
@@ -43,24 +44,70 @@ priority_rules:
 publication_rules:
   enforcement: manual-first-launch
   automation_trigger: Add automated enforcement when a second contributor makes it valuable.
+  provenance_model: public/internal only (D6).
+  honesty_model: >-
+    Link, do not litter (D5/D9). Public pages sell the vision and proposition;
+    claim and evidence detail lives in a single linked Claims & evidence
+    reference, not in repeated inline caveats. Keep only compact status badges
+    (Demonstrated / Specified / Blueprint) and one synthetic-demonstration
+    marker on clean-room content. Full detail belongs in contract negotiation.
   public:
     permitted_stability:
       - locked
       - stable
     forbidden_provenance:
-      - gated
       - internal
-      - clean-room
-  clean-room:
+  clean_room_content:
+    note: >-
+      Generated demonstration content is published (provenance public) but
+      edited only via the prototype source repository (D7 / PROV-002). It
+      carries one compact label, "Demonstration on synthetic data", plus a
+      status badge. Clean-room is a content type with an edit boundary, not a
+      provenance value.
     permitted_stability:
       - locked
       - stable
-    required_labels:
-      - synthetic
-      - non-production
-      - claim-status
   split_rule: Split a concept into separate rows when its public and protected treatments differ.
   dependency_rule: A row cannot move to implemented until every depends_on row is approved or verified.
+
+p0_decisions:
+  approved: 2026-06-22
+  approver: Sailesh Panchal
+  note: >-
+    Authoritative record of the ten P0 decisions. Row-level status flips to
+    approved happen in Stage A (launch plan Task 1) as the North Star wording
+    is accepted; these resolutions govern that work.
+  rows:
+    PUR-001:
+      choice: A
+      resolution: Broadened internal mission; the public one-liner still leads on the consumer commitment.
+    HIER-001:
+      choice: A
+      resolution: Adopt all seven Intelligences as soft public lenses plus an Intelligences hub; deep pages may launch as concise stubs. Resolve the Cognitive-vs-Judgment boundary.
+    TERM-008:
+      choice: A
+      resolution: Clean-Room Demonstration = the fenced environment and running proof; the Standard = the rules. "working specification" is the canonical client output; "proving ground" is descriptive prose only.
+    COM-001:
+      choice: A
+      resolution: Strategic advisory leads; Talent & Squads is a clear, independently-purchasable route with a strong CTA. Update the lexicon "lead with talent" line.
+    COM-003:
+      choice: B
+      resolution: Link, do not litter. Keep claim status tracked internally and add "Specified"; replace verbose inline caveats with a single linked Claims & evidence page. Marketing, not a legal contract.
+    PROV-001:
+      choice: simplified
+      resolution: Provenance reduced to public/internal only (D6). "gated" folds into internal; "clean-room" handled as content type, not provenance.
+    PROV-002:
+      choice: A
+      resolution: Keep the clean-room boundary as an operational rule (edit generated content only via the prototype repo; one synthetic-demonstration marker). Not a provenance value.
+    PROV-003:
+      choice: A
+      resolution: Publish concepts, outcomes, named roles and evidence shape; keep catalogues, SFIA levels, methods, schemas and control internals internal. Concrete public/internal line to be redlined.
+    CLAIM-001:
+      choice: A
+      resolution: Keep three gates internally (provenance public/internal, stability, claim status) but apply them with a light public touch per D5 (linked register, not littered caveats).
+    BUILD-004:
+      choice: A
+      resolution: Manual launch gate plus Phase 9 reconciliation. Phase 9 reported DONE by the owner on 2026-06-22; the locked design artifact/location is still needed for the Task 7 reconciliation pass.
 
 conflicts:
   - id: PUR-001
