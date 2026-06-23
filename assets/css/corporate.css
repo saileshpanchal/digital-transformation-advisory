@@ -1672,3 +1672,18 @@ p { margin-bottom: 1rem; }
   .feature-row.reverse .feature-text { order: 1; }
   .feature-row.reverse .feature-aside { order: 2; }
 }
+
+/* ---------- Intelligence page visual kit (charts/figures) ---------- */
+.figure { max-width: 860px; margin: 2.5rem auto; }
+.figure svg { width: 100%; height: auto; display: block; }
+.figure .caption { font-size: 0.85rem; color: #777; text-align: center; margin-top: 0.75rem; }
+.figure .caption em { font-style: italic; }
+.stat-row { display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: center; margin: 2.5rem 0 0.5rem; }
+.stat-row .stat { text-align: center; max-width: 220px; }
+.stat-row .stat .num { font-size: 2.6rem; font-weight: 800; color: #29ABE2; line-height: 1; }
+.stat-row .stat .lbl { font-size: 0.9rem; color: #555; margin-top: 0.5rem; }
+.svg-ink { fill: #161616; }
+.svg-muted { fill: #5d6871; }
+.svg-accent { fill: #29ABE2; }
+.svg-line { stroke: #29ABE2; }
+.svg-grid { stroke: #e5e5e5; }

@@ -12,19 +12,27 @@ description: >-
   <div class="container">
     <h1>Financial Intelligence</h1>
     <p><strong>The question:</strong> do you understand the P&amp;L of this change early enough to commit to it?</p>
-    <p>Transformations fail when the financial impact lands too late. By the time the numbers are clear the money is committed, the business case has eroded, and the CFO was never really bought in. Financial Intelligence puts the P&amp;L of change on the table at the start, not as an audit at the end.</p>
+    <p>Transformations fail when the financial impact lands too late. By then the money is committed, the business case has eroded, and the CFO was never really bought in. This lens puts the P&amp;L of change on the table at the start.</p>
   </div>
 </div>
 
-<!-- 1. The cost base as it really is -->
+<!-- 1. The cost base / addressable vs committed -->
 <section class="section">
   <div class="container">
     <div class="text-center">
-      <h2>The cost base, as it really is</h2>
-      <p class="section-subtitle">Most of the spend is already committed. You can only fund change from the part you can actually move.</p>
+      <h2>You fund change from the part you can move</h2>
+      <p class="section-subtitle">Most of the cost base is already committed. Cost the change against the addressable slice, not the whole base.</p>
     </div>
-    <div style="max-width:820px;margin:0 auto;color:#555;">
-      <p>The as-is position spans people, process, technology, infrastructure and property, and the suppliers and committed contracts behind them. The distinction that decides what is possible is <strong>addressable funding versus committed funding</strong>: multi-year licences, outsourced contracts and run-the-bank obligations are locked, and change can only be funded from the addressable slice. A transformation costed against the whole base, rather than the part you can move, is a business case that breaks on contact with the finance function.</p>
+    <div class="figure">
+      <svg viewBox="0 0 600 110" role="img" aria-label="Addressable versus committed funding">
+        <rect x="20" y="28" width="406" height="42" fill="#cfd8e0"/>
+        <rect x="426" y="28" width="154" height="42" fill="#29ABE2"/>
+        <text x="223" y="54" fill="#161616" font-size="14" font-weight="700" text-anchor="middle">Committed / locked</text>
+        <text x="503" y="54" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">Addressable</text>
+        <text x="20" y="92" fill="#5d6871" font-size="11">Multi-year licences, outsourced contracts, run-the-bank</text>
+        <text x="580" y="92" fill="#0877a6" font-size="11" font-weight="600" text-anchor="end">Where change is funded</text>
+      </svg>
+      <p class="caption"><em>Illustrative.</em> The as-is base spans people, process, technology, infrastructure and property, plus suppliers and committed contracts. Only the addressable part can pay for change.</p>
     </div>
   </div>
 </section>
@@ -34,32 +42,57 @@ description: >-
   <div class="container">
     <div class="text-center">
       <h2>The cost shape has changed</h2>
-      <p class="section-subtitle">The old labour-heavy model no longer holds.</p>
+      <p class="section-subtitle">When delivery was people, the doers were the cost. AI-amplified delivery breaks that ratio.</p>
     </div>
-    <div style="max-width:820px;margin:0 auto;color:#555;">
-      <p>When delivery was people, the doers were the cost: a two-pizza squad was roughly 80% of it, with supporting staff the rest. AI-amplified engineering changes the shape. AI is now a cost line in its own right, both to <strong>build</strong> and to <strong>run</strong>. Around it sit setup costs, cloud, DevOps pipelines and data environments, and the governance the model now demands: AI governance, data governance and risk governance. A credible model carries all of them, not just headcount.</p>
+    <div class="figure">
+      <svg viewBox="0 0 600 205" role="img" aria-label="Cost shape, old people-led versus new AI-amplified">
+        <text x="0" y="42" fill="#5d6871" font-size="13" font-weight="700">Old</text>
+        <text x="0" y="58" fill="#5d6871" font-size="11">people-led</text>
+        <rect x="120" y="26" width="368" height="36" fill="#29ABE2"/>
+        <rect x="488" y="26" width="92" height="36" fill="#cfd8e0"/>
+        <text x="304" y="49" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">Doers 80%</text>
+        <text x="534" y="49" fill="#161616" font-size="11" text-anchor="middle">20%</text>
+        <text x="0" y="126" fill="#5d6871" font-size="13" font-weight="700">New</text>
+        <text x="0" y="142" fill="#5d6871" font-size="11">AI-amplified</text>
+        <rect x="120" y="110" width="207" height="36" fill="#29ABE2"/>
+        <rect x="327" y="110" width="92" height="36" fill="#0877a6"/>
+        <rect x="419" y="110" width="69" height="36" fill="#cfd8e0"/>
+        <rect x="488" y="110" width="92" height="36" fill="#8a6317"/>
+        <text x="223" y="133" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">Doers</text>
+        <text x="373" y="133" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">AI</text>
+        <g font-size="11" fill="#5d6871">
+          <rect x="120" y="178" width="12" height="12" fill="#29ABE2"/><text x="137" y="188">Doers / squad</text>
+          <rect x="245" y="178" width="12" height="12" fill="#0877a6"/><text x="262" y="188">AI build + run</text>
+          <rect x="372" y="178" width="12" height="12" fill="#cfd8e0"/><text x="389" y="188">Setup + support</text>
+          <rect x="500" y="178" width="12" height="12" fill="#8a6317"/><text x="517" y="188">Governance</text>
+        </g>
+      </svg>
+      <p class="caption"><em>Illustrative.</em> AI is now a cost line, to build and to run, alongside setup (cloud, pipelines, data environments) and the governance the model demands.</p>
     </div>
   </div>
 </section>
 
-<!-- 3. What goes in the model -->
+<!-- 3. The transition -->
 <section class="section">
   <div class="container">
     <div class="text-center">
-      <h2>What goes in the model</h2>
-      <p class="section-subtitle">As-is, target and transition, across cost and value.</p>
+      <h2>The transition is where it is won or lost</h2>
+      <p class="section-subtitle">Investment and dual-running come first; payback comes later. Knowing where the trough sits is the point.</p>
     </div>
-    <div class="offerings-grid">
-      <div class="offering-card"><h3>As-is cost base</h3><p>People, process, technology, infrastructure and property: what the bank spends to run today.</p></div>
-      <div class="offering-card"><h3>Suppliers and committed contracts</h3><p>Third parties, licences and outsourced deals, with their terms and break points.</p></div>
-      <div class="offering-card"><h3>Addressable vs committed funding</h3><p>What is actually changeable versus locked in, because change is funded only from the addressable part.</p></div>
-      <div class="offering-card"><h3>Squad and supporting staff</h3><p>The AI-amplified squad and the roles around it, on fixed-capacity funding.</p></div>
-      <div class="offering-card"><h3>AI build and run</h3><p>Model development and ongoing inference, a real and growing line, not a rounding error.</p></div>
-      <div class="offering-card"><h3>Setup</h3><p>Cloud, DevOps pipelines and data environments stood up before value flows.</p></div>
-      <div class="offering-card"><h3>Governance and control</h3><p>AI, data and risk governance, security and the cost of control.</p></div>
-      <div class="offering-card"><h3>Transition and dual-running</h3><p>Running the old and new worlds together until the new one is proven.</p></div>
-      <div class="offering-card"><h3>Decommissioning and exit</h3><p>Retiring legacy and exiting contracts, including break fees.</p></div>
-      <div class="offering-card"><h3>The value side</h3><p>Revenue, cost-to-serve reduction, loss and fraud reduction, capital efficiency and retention.</p></div>
+    <div class="figure">
+      <svg viewBox="0 0 600 250" role="img" aria-label="The transition: investment before return">
+        <line x1="60" y1="20" x2="60" y2="205" stroke="#e5e5e5" stroke-width="1"/>
+        <line x1="60" y1="120" x2="585" y2="120" stroke="#e5e5e5" stroke-width="1"/>
+        <text x="52" y="30" fill="#5d6871" font-size="11" text-anchor="end">net +</text>
+        <text x="52" y="205" fill="#5d6871" font-size="11" text-anchor="end">net -</text>
+        <text x="575" y="138" fill="#5d6871" font-size="11" text-anchor="end">time</text>
+        <path d="M60,120 C150,178 210,200 285,197 C370,193 450,150 540,64" fill="none" stroke="#29ABE2" stroke-width="3"/>
+        <circle cx="285" cy="197" r="4" fill="#8a6317"/>
+        <text x="285" y="221" fill="#8a6317" font-size="11" text-anchor="middle">peak investment + dual-running</text>
+        <circle cx="470" cy="120" r="4" fill="#127154"/>
+        <text x="486" y="112" fill="#127154" font-size="11">payback</text>
+      </svg>
+      <p class="caption"><em>Illustrative.</em> The investment-before-return curve. Transition costs include dual-running, decommissioning and contract exit; value realisation is tracked projected against actual.</p>
     </div>
   </div>
 </section>
@@ -69,7 +102,7 @@ description: >-
   <div class="container">
     <div class="text-center">
       <h2>Interlocked with the other lenses</h2>
-      <p class="section-subtitle">Financial Intelligence is not a silo. The other Intelligences are its P&amp;L contributors, and Financial Intelligence is where cost and value meet.</p>
+      <p class="section-subtitle">Financial Intelligence is not a silo. The other Intelligences are its P&amp;L contributors; this is where cost and value meet.</p>
     </div>
     <div class="offerings-grid">
       <div class="offering-card"><h3>From Capability</h3><p>Squad and supporting-staff cost, and the AI-amplified role mix.</p></div>
@@ -77,7 +110,7 @@ description: >-
       <div class="offering-card"><h3>From Cognitive</h3><p>AI build and run, and the cost of AI governance.</p></div>
       <div class="offering-card"><h3>From Control</h3><p>Data and risk governance, and the cost of control.</p></div>
       <div class="offering-card"><h3>From Value</h3><p>The benefit side: deposits, margin and cost-to-serve.</p></div>
-      <div class="offering-card"><h3>From Experience and Trust</h3><p>Retention, good outcomes and harm avoided, the value good design earns.</p></div>
+      <div class="offering-card"><h3>From Experience and Trust</h3><p>Retention, good outcomes and harm avoided.</p></div>
     </div>
   </div>
 </section>
@@ -88,7 +121,7 @@ description: >-
     <div class="feature-row">
       <div class="feature-text">
         <h2>DTA frames it. You own the numbers.</h2>
-        <p style="color:#555;">DTA does not do your full financial impact analysis; that stays with the CFO and the finance function. We frame it early: the shape of the as-is, target and transition, the cost model of the operating model we design, a value hypothesis per proposition, and the sequencing, so you know when to invest, where the investment-before-return curve sits, and what to protect. Enough to get the CFO bought in and to scope and time the change.</p>
+        <p style="color:#555;">DTA does not do your full financial impact analysis; that stays with the CFO and finance. We frame it early: the shape of the as-is, target and transition, the cost model of the operating model we design, a value hypothesis per proposition, and the sequencing, so you know when to invest, where the curve troughs, and what to protect. Enough to get the CFO bought in and to scope and time the change.</p>
         <div style="margin-top:1.25rem;">
           <a href="{{ '/operating-model/' | relative_url }}" class="btn btn--outline">The operating model</a>
           <a href="{{ '/consumer-outcomes/' | relative_url }}" class="btn btn--ghost">How we prove a proposition</a>
@@ -103,7 +136,7 @@ description: >-
         </ul>
       </div>
     </div>
-    <p style="max-width:760px;margin:2.5rem auto 0;color:#777;text-align:center;font-size:0.95rem;">A frame and a direction, not a forecast. The proving ground feeds it real inputs, cost-to-serve and the performance envelope that drives infrastructure cost; the audited numbers stay with you.</p>
+    <p style="max-width:760px;margin:2.5rem auto 0;color:#777;text-align:center;font-size:0.95rem;">A frame and a direction, not a forecast. The audited numbers stay with you.</p>
   </div>
 </section>
 
