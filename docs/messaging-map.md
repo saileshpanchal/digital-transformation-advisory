@@ -44,6 +44,12 @@
 - `_posts/2026-06-18-consumer-duty-test-learn-evidence-agents-tokens.md`. Thesis: the Duty is a test→learn→evidence **loop**; banks run it as 3 disconnected, late activities; **agents** change *what* you test (the agent's action, not the screen) and **tokens** change *what's at stake* (speed, finality, programmability). FCA now supervises for outcomes → needs now.
 - Drives to `/consumer-outcomes/` proving ground. Honesty: platform **working/in-use** (synthetic, **test consumers, non-production by design**); outcome-capture configured/extended per engagement; tokenised rail added per engagement; **output = vendor-neutral working spec** for client's chosen vendor. Tokenisation = FCA/BoE proposed regime, attributed, **not settled law, no limit numbers**. No compliance certification. Governance: `claim-register.md`.
 
+## Architecture — `architecture.html` [web] + `prototype-specifications.html`
+- `/architecture/` is the Architecture landing/library (curated stable views: C3, DBBs, governed data products, Platform, Resilience, advisory method) linking public papers and demonstration pages. `/prototype-specifications/` defines the layer chain Reference Architecture → Prototype Specification → Working Prototype → Working Specification → Executable System. No public Ultim8 page (retired as a public term; the layer is **Reference Runtime**). Honesty: working prototype = demonstrated (synthetic); Prototype Specifications = Specified/Blueprint until evidence.
+
+## Intelligences — `intelligences.html` hub + 7 domain pages [web]
+- Hub links all seven via `path` in `_data/copy.yml › intelligences`. Pages: experience/capability/cognitive/value/trust/platform/control-intelligence. Capability page carries a domain band (Skills/Knowledge/Judgment) above the SFIA/squad application. Value keeps tokenisation attributed/proposed.
+
 ## Connect — `connect.html` [web]
 - H1 "Book a strategy call" + Calendly + secondary contact form (→ `/success/`).
 
