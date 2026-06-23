@@ -109,6 +109,14 @@ p0_decisions:
       choice: A
       resolution: Manual launch gate plus Phase 9 reconciliation. Phase 9 reported DONE by the owner on 2026-06-22; the locked design artifact/location is still needed for the Task 7 reconciliation pass.
 
+naming_decisions:
+  approved: 2026-06-22
+  TERM-006_composable_bank: Deprecated as the product name; generic descriptor only; the /composable-bank/ URL is retained pending a redirect plan.
+  TERM-007_accountable_bank: Adopted as the demonstration name (control and ledger framing fit the brand). Public use pending a trademark check; canon and branch use permitted now, not the live site.
+  TERM-010_ultim8: Internal repository name only; never a public or brand term. The public hierarchy layer is "Reference Runtime".
+  NAV-005_ultim8_route: No public Ultim8 route. The runtime layer is presented as Reference Runtime if and when published.
+  HIER-004_spine: The proposition spine uses "Reference Runtime" in place of "Ultim8 runtime".
+
 conflicts:
   - id: PUR-001
     area: purpose

@@ -1,7 +1,7 @@
 ---
 title: DTA North Star
 type: canonical-source
-status: draft-for-approval
+status: approved
 date: 2026-06-22
 governs: public site, lexicon, claim register, propositions, architecture pages
 origin: docs/superpowers/specs/2026-06-21-dta-architecture-review-design.md
@@ -23,13 +23,11 @@ DTA helps institutions evolve their customers, colleagues, and technology
 together, through multiple forms of intelligence, to create trustworthy,
 inclusive, and resilient financial systems.
 
-**Public expression (pick one — leads on the consumer commitment, D1).**
+**Public expression (locked, D1).**
 
-1. *"We help banks build the future of finance without leaving a single customer behind."*
-2. *"Better outcomes for every customer, built on banking that evolves instead of rips and replaces."*
-3. *"The future of banking, proven before it is built, and good for every customer."*
+> We help banks build the future of finance without leaving a single customer behind.
 
-The chosen line leads the homepage; the full internal mission stays internal and
+This line leads the homepage; the full internal mission stays internal and
 informs the Principles and Intelligences.
 
 ## Principles
@@ -84,7 +82,7 @@ Mission
   -> Experience Journeys
   -> Reference Architectures
   -> Prototype Specifications
-  -> Ultim8
+  -> Reference Runtime
   -> Executable Systems
 ```
 
@@ -96,6 +94,7 @@ Preservation, Evolution, and Augmentation cut across every layer.
 - **C3 (Capability, Context, Consent)** — a reusable reference architecture for governed human-machine action; sits beneath the Intelligences (mainly Cognitive and Control), not as a competing top level.
 - **Domain Building Blocks** — capability units; an application of Capability Intelligence and the Capability plane of C3.
 - **The clean room** — proof infrastructure behind advisory, journeys, architectures, and specifications. DTA is not a software or core-platform vendor (COM-002).
+- **Reference Runtime** — the runtime that runs Prototype Specifications as the clean-room demonstration. *Ultim8* is only the internal repository name for it; it is never a public or brand term.
 
 ## Terminology to lock for launch
 
@@ -105,8 +104,8 @@ Preservation, Evolution, and Augmentation cut across every layer.
 - **Proposition Blueprint** (commercial engagement) and **Capability Blueprint** (people/capability work-product) stay distinct, with explicit type labels. (TERM-012)
 - **Experience Journey** (end-to-end human or institutional application) vs **proposition** (commercial or product concept); one proposition may hold several journeys. (TERM-014)
 - **Consumer Outcomes** is the public term; redirect `/customer-outcomes/` to `/consumer-outcomes/`. Use *customer* only for a specific bank-customer relationship. (TERM-013)
-- **Composable Bank** is deprecated as a DTA product name; it remains a generic descriptor, and the URL is retained pending a redirect plan. (TERM-006)
-- **Held terms:** *The Accountable Bank* (trademark check, quarantined from public use); *Ultim8* (internal runtime, provisional, public page held until stable); detailed *Judgment Intelligence* methods (internal).
+- **The Accountable Bank** is the name of the demonstration (the control and ledger framing fits DTA's brand values). It replaces **Composable Bank** as the product name; Composable Bank remains only a generic descriptor, and the `/composable-bank/` URL is retained pending a redirect plan. (TERM-006/007) **Public use is pending a trademark check** (claim register): usable in canon and on this branch now, but it must not ship to the live site until the check clears.
+- **Held / internal terms:** *Ultim8* is the internal repository name only and is never public (the public layer is the **Reference Runtime**); detailed *Judgment* methods stay internal.
 
 ## Provenance and stability
 
@@ -153,10 +152,17 @@ and in contract negotiation, tailored to each client.
 
 ## Status and next
 
-- **Draft for approval.** On approval: lock the Mission line and the seven
-  Intelligence definitions, flip the ten P0 register rows to `approved`, add the
-  canonical strings to `docs/lexicon.md` and `_data/copy.yml`, then begin the
-  site build (launch plan Tasks 2 onward).
+- **Approved 2026-06-22.** Mission public line locked to option 1; the seven
+  Intelligence definitions and the Capability-vs-Cognitive boundary are locked;
+  the eight principles are approved. Naming: **Accountable Bank** adopted
+  (replaces Composable Bank as the product name); **Reference Runtime** replaces
+  Ultim8 in the public hierarchy (Ultim8 is the internal repo name only).
+- **Next:** record the naming decisions and the P0 approvals in the register,
+  add canonical strings to `docs/lexicon.md` and `_data/copy.yml`, then begin the
+  site build (launch plan Tasks 2 onward), all on this branch.
+- **Open item:** *The Accountable Bank* public use is pending a trademark check
+  (claim register). Usable in canon and on this branch now; must not ship to the
+  live site until the check clears.
 - **Launch gate unchanged:** full site updated, all P0 rows resolved, and the
   site reconciled against the locked Phase 9 design (in `ultim8-prototype`)
   before launch. Phase 9 stays Blueprint/Specified until implementation evidence.
