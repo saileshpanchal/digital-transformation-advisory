@@ -25,7 +25,7 @@ inclusive, and resilient financial systems.
 
 **Public expression (locked, D1).**
 
-> We help banks build the future of finance without leaving a single customer behind.
+> We help banks build the future of finance without leaving the customer behind.
 
 This line leads the homepage; the full internal mission stays internal and
 informs the Principles and Intelligences.
@@ -104,7 +104,7 @@ Preservation, Evolution, and Augmentation cut across every layer.
 - **Proposition Blueprint** (commercial engagement) and **Capability Blueprint** (people/capability work-product) stay distinct, with explicit type labels. (TERM-012)
 - **Experience Journey** (end-to-end human or institutional application) vs **proposition** (commercial or product concept); one proposition may hold several journeys. (TERM-014)
 - **Consumer Outcomes** is the public term; redirect `/customer-outcomes/` to `/consumer-outcomes/`. Use *customer* only for a specific bank-customer relationship. (TERM-013)
-- **The Accountable Bank** is the name of the demonstration (the control and ledger framing fits DTA's brand values). It replaces **Composable Bank** as the product name; Composable Bank remains only a generic descriptor, and the `/composable-bank/` URL is retained pending a redirect plan. (TERM-006/007) **Public use is pending a trademark check** (claim register): usable in canon and on this branch now, but it must not ship to the live site until the check clears.
+- **Accountable Bank** is the name of the demonstration (the control and ledger framing fits DTA's brand values) and replaces **Composable Bank** as the product name; Composable Bank remains only a generic descriptor, and the `/composable-bank/` URL is retained pending a redirect plan. (TERM-006/007) It is a **marketing name for the demonstration**, not a claim that it is, or will be, a regulated bank. Trademark check **cleared** (owner decision, 2026-06-22: no conflicting UK bank, demonstration-only use). Cleared for public use.
 - **Held / internal terms:** *Ultim8* is the internal repository name only and is never public (the public layer is the **Reference Runtime**); detailed *Judgment* methods stay internal.
 
 ## Provenance and stability
@@ -160,9 +160,9 @@ and in contract negotiation, tailored to each client.
 - **Next:** record the naming decisions and the P0 approvals in the register,
   add canonical strings to `docs/lexicon.md` and `_data/copy.yml`, then begin the
   site build (launch plan Tasks 2 onward), all on this branch.
-- **Open item:** *The Accountable Bank* public use is pending a trademark check
-  (claim register). Usable in canon and on this branch now; must not ship to the
-  live site until the check clears.
+- **Naming cleared:** the *Accountable Bank* trademark check is cleared (owner
+  decision, 2026-06-22): a marketing name for the demonstration, not a
+  regulated-bank claim. Cleared for public use.
 - **Launch gate unchanged:** full site updated, all P0 rows resolved, and the
   site reconciled against the locked Phase 9 design (in `ultim8-prototype`)
   before launch. Phase 9 stays Blueprint/Specified until implementation evidence.

@@ -112,7 +112,7 @@ p0_decisions:
 naming_decisions:
   approved: 2026-06-22
   TERM-006_composable_bank: Deprecated as the product name; generic descriptor only; the /composable-bank/ URL is retained pending a redirect plan.
-  TERM-007_accountable_bank: Adopted as the demonstration name (control and ledger framing fit the brand). Public use pending a trademark check; canon and branch use permitted now, not the live site.
+  TERM-007_accountable_bank: Adopted as the demonstration name (control and ledger framing fit the brand). Trademark check CLEARED (owner decision 2026-06-22 - no conflicting UK bank; a marketing name for the demonstration only, not a regulated-bank claim). Cleared for public use.
   TERM-010_ultim8: Internal repository name only; never a public or brand term. The public hierarchy layer is "Reference Runtime".
   NAV-005_ultim8_route: No public Ultim8 route. The runtime layer is presented as Reference Runtime if and when published.
   HIER-004_spine: The proposition spine uses "Reference Runtime" in place of "Ultim8 runtime".
