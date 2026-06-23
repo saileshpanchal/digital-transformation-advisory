@@ -21,3 +21,51 @@ canonical:
   clean_room: "A working demonstration built to production-grade controls on synthetic data: a proving ground for testing propositions, deliberately not a production system that runs with real customers."
   prototype_purpose: "The prototype is a working proving ground. We test propositions on it with test consumers, never real customers, and produce a vendor-neutral working specification a client takes to whatever vendor and build they choose to go live with."
   working_spec: "The prototype is a working specification, expressed in open standards (ISO 20022 messaging, BIAN domain boundaries, recognised control frameworks). Because the standards are the shared language vendors already use, the specification is portable and reusable, vendor-neutral rather than locked to one supplier."
+  mission_public: "We help banks build the future of finance without leaving the customer behind."
+  mission_internal: "DTA helps institutions evolve their customers, colleagues and technology together, through multiple forms of intelligence, to create trustworthy, inclusive and resilient financial systems."
+  accountable_bank: "Accountable Bank is the name of our demonstration: a clean-room demonstration on synthetic data, not a regulated bank."
+
+# Eight principles (North Star). One line each on the homepage.
+principles:
+  - name: Human-centred
+    line: Every change is judged by the outcome it creates for a real person.
+  - name: Evolution over replacement
+    line: Run the old and new worlds together and migrate safely. Do not rip and replace.
+  - name: Capability before technology
+    line: Build human and organisational capability first. Technology serves it.
+  - name: Human-in-the-loop
+    line: Agents prepare and propose. An accountable human authorises material action.
+  - name: Consumer outcomes
+    line: Design and evidence good outcomes for customers from the start, not as a post-launch audit.
+  - name: Preservation before optimisation
+    line: Retain knowledge, evidence and institutional memory before optimising.
+  - name: Continuous control
+    line: Accountability and control are properties of the system, evidenced continuously.
+  - name: Standards and interoperability
+    line: Build on open standards so the work is portable and vendor-neutral.
+
+# Seven Intelligences (North Star). Soft lenses, not folders.
+intelligences:
+  - name: Experience Intelligence
+    line: How customers and institutions experience a journey, and whether it delivers good, inclusive outcomes they understand and can act on.
+  - name: Capability Intelligence
+    line: How human and organisational capability (Skills, Knowledge, Judgment) is understood, composed and grown to deliver outcomes.
+  - name: Cognitive Intelligence
+    line: "How humans and machines reason and act together: where reasoning sits, what agents may do, and how decisions are explained and intervened in."
+  - name: Value Intelligence
+    line: How value is represented, exchanged, governed, settled and measured, from payments and deposits to tokenised value.
+  - name: Trust Intelligence
+    line: How justified trust is earned among customers, institutions, regulators and systems through consent, privacy, inclusion and evidence.
+  - name: Platform Intelligence
+    line: "How systems evolve: composability, interoperability, coexistence with the core, governed data and runtime architecture."
+  - name: Control Intelligence
+    line: How accountable leaders set authority, observe outcomes, intervene and evidence control continuously.
+
+# Cross-cutting themes (North Star).
+themes:
+  - name: Preservation
+    line: Retain knowledge, evidence, capability and institutional memory.
+  - name: Evolution
+    line: Operate old and new worlds together and migrate safely.
+  - name: Augmentation
+    line: Enable humans and machines to think and act together.
