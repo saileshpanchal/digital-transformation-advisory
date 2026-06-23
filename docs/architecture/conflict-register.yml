@@ -116,6 +116,7 @@ naming_decisions:
   TERM-010_ultim8: Internal repository name only; never a public or brand term. The public hierarchy layer is "Reference Runtime".
   NAV-005_ultim8_route: No public Ultim8 route. The runtime layer is presented as Reference Runtime if and when published.
   HIER-004_spine: The proposition spine uses "Reference Runtime" in place of "Ultim8 runtime".
+  TERM-013_consumer_outcomes: Implemented 2026-06-22 - consumer-outcomes.html live at /consumer-outcomes/ (advocacy-led), /customer-outcomes/ kept as a 301 redirect (Netlify + meta-refresh stub). "customer" retained only for the specific bank-customer relationship.
 
 conflicts:
   - id: PUR-001

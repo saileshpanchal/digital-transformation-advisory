@@ -17,6 +17,16 @@
   status = 301
 
 [[redirects]]
+  from = "/customer-outcomes"
+  to = "/consumer-outcomes/"
+  status = 301
+
+[[redirects]]
+  from = "/customer-outcomes/"
+  to = "/consumer-outcomes/"
+  status = 301
+
+[[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404

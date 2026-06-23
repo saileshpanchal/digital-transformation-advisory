@@ -11,7 +11,7 @@
 ## Shared / cross-cutting [data]
 - **Calendly CTAs** — `_data/copy.yml › calendly` + `_includes/cta-calendly.html`. Strategy-call slug `…/30min`; capability slug `…/capability-blueprint`. Labels in `cta_labels`.
 - **Canonical lines** — `_data/copy.yml › canonical`: offer (`Six-week Proposition Blueprint → optional 90-day Proof`), spine (`You cannot be accountable for what you do not control.`), Owned Autonomy, Clean-Room.
-- **Nav / footer** [web] `_layouts/corporate.html` — items: Home · Approach · Propositions · Capability Intelligence · Customer Outcomes · Insights · [Book a strategy call]. Footer adds Contact + Policies + (LinkedIn/Medium when configured).
+- **Nav / footer** [web] `_layouts/corporate.html` — items: Home · Intelligences · Experience Journeys · Architecture · Insights · [Discuss a challenge]. Footer adds Demonstration + Contact + Policies + (LinkedIn/Medium when configured).
 
 ## Home — `index.html` [web]
 - **Hero strapline:** "Owned Autonomy · Agentic Squads · Capable Organisations." · **H1:** "Deploy agentic talent now. Own the autonomy that follows." · **sub:** build the squads, organisational capability and operating model to adopt agentic ways of working, then turn that capability into better propositions and new business models. · CTAs: [Book a strategy call] + [See the demonstration].
@@ -33,7 +33,7 @@
 - **Hero H1:** "Capability intelligence for high-performance squads." · CTA [Discuss a Capability Blueprint] + [See how it works].
 - Sections: Why now (WEF 2025, attributed) · Unsolved problem (4) · Two better conversations (demand/evidence) · Lifecycle (Capability Blueprint → Best-fit Squad → Managed Capability Cycle) · Two applications · **Worked example** (synthetic; provenance labels Generated/Derived/Future) · Trusted structure (SFIA; SFIA-10) · AI-assisted (privacy line) · Expansion · CTA ("what to bring").
 
-## Customer Outcomes — `customer-outcomes.html` [web]
+## Consumer Outcomes — `consumer-outcomes.html` [web] (was `/customer-outcomes/`, now 301 → `/consumer-outcomes/`)
 - **Hero H1:** "Test agentic journeys before you build them." · Repositioned from a principles page to a **pre-delivery proving ground**: use the prototype to test whether a proposition is likely to deliver good outcomes before the bank commits to build.
 - **The differentiator (lead):** the prototype already runs **agents under C3 controls with evidence recorded**, so it tests the part no focus group can reach — what agentic action does to consumer outcomes (agent-action comprehension, consent and control, intervention and override). Generic consumer testing only sees screens; this sees the agent.
 - Sections: problem (outcomes evidenced too late) · **the new question agents create** · proving ground (not a principles page) · what a run would look like (5 stages) · what a run measures (6 general lenses + 3 agentic lenses + misunderstanding heatmap) · outputs (focus-group evidence, risk log, design changes, board pack) · CTA "Bring a proposition you are about to build".
@@ -42,7 +42,7 @@
 
 ## Post — "Test, Learn, Evidence: Consumer Duty When Agents Act and Money Moves in Tokens" [blog]
 - `_posts/2026-06-18-consumer-duty-test-learn-evidence-agents-tokens.md`. Thesis: the Duty is a test→learn→evidence **loop**; banks run it as 3 disconnected, late activities; **agents** change *what* you test (the agent's action, not the screen) and **tokens** change *what's at stake* (speed, finality, programmability). FCA now supervises for outcomes → needs now.
-- Drives to `/customer-outcomes/` proving ground. Honesty: platform **working/in-use** (synthetic, **test consumers, non-production by design**); outcome-capture configured/extended per engagement; tokenised rail added per engagement; **output = vendor-neutral working spec** for client's chosen vendor. Tokenisation = FCA/BoE proposed regime, attributed, **not settled law, no limit numbers**. No compliance certification. Governance: `claim-register.md`.
+- Drives to `/consumer-outcomes/` proving ground. Honesty: platform **working/in-use** (synthetic, **test consumers, non-production by design**); outcome-capture configured/extended per engagement; tokenised rail added per engagement; **output = vendor-neutral working spec** for client's chosen vendor. Tokenisation = FCA/BoE proposed regime, attributed, **not settled law, no limit numbers**. No compliance certification. Governance: `claim-register.md`.
 
 ## Connect — `connect.html` [web]
 - H1 "Book a strategy call" + Calendly + secondary contact form (→ `/success/`).
