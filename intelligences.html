@@ -1,90 +1,48 @@
 ---
 layout: corporate
-title: "The Seven Intelligences"
+title: "The Eight Intelligences"
 permalink: /intelligences/
 description: >-
-  DTA reads a bank through seven overlapping lenses: Experience, Capability,
-  Cognitive, Value, Trust, Platform, and Control. They are lenses, not filing
-  categories, and most work draws on several at once.
+  The Eight Intelligences are the lenses DTA uses across its work: Experience,
+  Capability, Cognitive, Value, Trust, Platform and Control. They are
+  overlapping lenses, not filing categories.
 ---
 
 <div class="insights-header">
   <div class="container">
-    <h1>The Seven Intelligences</h1>
-    <p>Seven lenses on one bank. They overlap rather than file the work into boxes, and no lens owns a concept outright.</p>
-    <div class="hero-actions" style="justify-content:flex-start;">
-      {% include cta-calendly.html kind="strategy_call" loc="int-hub-hero" label="Discuss a challenge" %}
-      <a href="{{ '/experience-journeys/' | relative_url }}" class="btn btn--outline">See the journeys</a>
-    </div>
+    <h1>The Eight Intelligences</h1>
+    <p>The Intelligences are how we see the work: overlapping lenses, not filing folders. A single journey, proposition or piece of architecture can sit under several at once. They do not replace our doctrine (Owned Autonomy), our reference architecture (C3), or our capability units (Domain Building Blocks); they connect them.</p>
   </div>
 </div>
 
-<!-- Diagram anchor: seven lenses on one subject -->
 <section class="section">
   <div class="container">
-    {% include diagrams/seven-lenses.html %}
-    <p class="diagram-caption">A filing system forces each idea into one drawer. A set of lenses lets you read the same proposition several ways at once. A payment engages Value, Platform, and Control together; a journey engages Experience, Trust, and Control. Owned Autonomy stays our doctrine, and C3 sits beneath these lenses rather than competing with them.</p>
+    <div class="offerings-grid">
+      {% for i in site.data.copy.intelligences %}
+      <div class="offering-card"><h3>{{ i.name }}</h3><p>{{ i.line }}</p><a href="{{ i.path | relative_url }}">Explore &rarr;</a></div>
+      {% endfor %}
+    </div>
   </div>
 </section>
 
-<!-- The seven -->
 <section class="section section--light">
   <div class="container">
     <div class="text-center">
-      <h2>The seven lenses</h2>
+      <h2>Three themes across all eight</h2>
+      <p class="section-subtitle">Preservation, Evolution and Augmentation cut across every Intelligence.</p>
     </div>
-    <div class="lens-grid">
-      <a class="lens-card" href="{{ '/experience-intelligence/' | relative_url }}">
-        <h3>Experience</h3>
-        <p>The outcomes people need and the journeys they actually live, including those most easily excluded.</p>
-      </a>
-      <a class="lens-card" href="{{ '/capability-intelligence/' | relative_url }}">
-        <h3>Capability</h3>
-        <p>How human and organisational capability is built and evolved, across skills, knowledge, and judgment.</p>
-      </a>
-      <a class="lens-card" href="{{ '/cognitive-intelligence/' | relative_url }}">
-        <h3>Cognitive</h3>
-        <p>How humans and machines reason and act together, with clear authority, explanation, and intervention.</p>
-      </a>
-      <a class="lens-card" href="{{ '/value-intelligence/' | relative_url }}">
-        <h3>Value</h3>
-        <p>How value is represented, exchanged, governed, settled, and measured.</p>
-      </a>
-      <a class="lens-card" href="{{ '/trust-intelligence/' | relative_url }}">
-        <h3>Trust</h3>
-        <p>How justified trust is earned through inclusion, consent, privacy, evidence, and resilience.</p>
-      </a>
-      <a class="lens-card" href="{{ '/platform-intelligence/' | relative_url }}">
-        <h3>Platform</h3>
-        <p>How systems evolve and compose, with interoperability, coexistence, governed data, and runtime architecture.</p>
-      </a>
-      <a class="lens-card" href="{{ '/control-intelligence/' | relative_url }}">
-        <h3>Control</h3>
-        <p>How accountable leaders set authority, observe outcomes, intervene, and evidence control continuously.</p>
-      </a>
+    <div class="offerings-grid">
+      {% for t in site.data.copy.themes %}
+      <div class="offering-card"><h3>{{ t.name }}</h3><p>{{ t.line }}</p></div>
+      {% endfor %}
+    </div>
+    <div style="max-width:760px;margin:2rem auto 0;color:#555;text-align:center;">
+      <p>Each Intelligence has its own page; follow a card to go deeper. Capability Intelligence carries the most detail today, with the others growing as the canon settles.</p>
+    </div>
+    <div class="text-center" style="margin-top:1.5rem;">
+      <a href="{{ '/experience-journeys/' | relative_url }}" class="btn btn--outline">Experience Journeys</a>
     </div>
   </div>
 </section>
 
-<!-- Themes across the set -->
-<section class="section">
-  <div class="container">
-    <div class="text-center">
-      <h2>Three themes run across every lens</h2>
-    </div>
-    <div class="trio-grid">
-      <div class="trio-card"><h3>Preservation</h3><p>Retain knowledge, evidence, capability, and institutional memory through change.</p></div>
-      <div class="trio-card"><h3>Evolution</h3><p>Operate old and new worlds together and migrate safely, rather than betting the institution on a single cutover.</p></div>
-      <div class="trio-card"><h3>Augmentation</h3><p>Enable humans and machines to think and act together, with authority and evidence that hold under scrutiny.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- Next action -->
-<section class="section section--dark">
-  <div class="container text-center">
-    <h2>Not sure which lens your problem needs?</h2>
-    <p class="section-subtitle" style="color:rgba(255,255,255,0.85);">Most real problems cross several. Tell us the outcome you are after and we will help you see it through the lenses that matter.</p>
-    {% include cta-calendly.html kind="strategy_call" loc="int-hub-cta" label="Discuss a challenge" %}
-  </div>
-</section>
+{% include cta.html %}

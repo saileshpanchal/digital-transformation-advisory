@@ -1,5 +1,32 @@
 # Site review — pre-publication sweep
 
+> **2026-06-24 — BRANCH RECONCILIATION (read first).** This branch had diverged into two
+> streams since 2026-06-21: a **remote** stream (8th *Financial Intelligence* lens, chart-led
+> redesign of the Intelligence pages, new `/architecture/` landing, task-2–8 build) and a
+> **local** stream (Sterling Stablecoin, BoE draft-Code, Phase-9 reconciliation proof, this
+> review). They were **merged** (per user request). Resolution principle: the **intelligences
+> subsystem + shared chrome = remote, wholesale** (so grid/hub/nav/pages agree on 8 lenses);
+> **local's net-new content preserved** (Sterling page, richer experience-journeys with all 8
+> journeys + Migration Twin, richer prototype-specifications). Local's **status-badge CSS and
+> diagram-kit CSS were ported** into remote's stylesheet (local pages depend on them; remote
+> replaced diagrams with charts). Acceptance test passed: build clean, 0 broken links (57
+> pages), all pages console-clean, 8 lenses coherent, badges + diagrams render. Backup of
+> pre-merge local tip: branch `backup/pre-merge-local-385f23e`.
+>
+> **Decisions that need your eyes:**
+> 1. **consumer-outcomes is conceptually different per stream** — shipped **remote's** version
+>    ("Test agentic journeys before you build them", proving-ground). Local's **advocacy-led**
+>    version ("Banking should work for the people it is easiest to exclude") was set aside;
+>    recover from `git show backup/pre-merge-local-385f23e:consumer-outcomes.html` if preferred.
+> 2. **About page dropped** — remote's `_config.yml` excludes `about.md` and nothing links to
+>    it (founder/leadership content lives in the homepage Leadership section). Local had
+>    un-excluded it. Un-exclude + add a nav link if you want a standalone About.
+> 3. **Copy/design findings below predate the merge** for the Intelligence pages, Platform
+>    Intelligence, and the new Financial Intelligence page — those now ship **remote's**
+>    versions and are **UNREVIEWED**. Re-review needed (see §5).
+>
+
+
 Working document for the page-by-page review of the DTA website before final publication.
 Scope chosen by the user: **copy & messaging**, **design & layout**, **links & build**.
 Claims discipline is tracked only as a background flag (it is a repo rule, so a violation still blocks publication).
@@ -130,3 +157,19 @@ Both posts share a near-identical closing-CTA paragraph that drifts ("proven …
 **Polish (L):** SMCR→SM&CR, "fuller"→"full-depth" Glass Tube, gilts vs "short-term UK government debt", define jargon (paved road / golden path / evals / harness), stale `CLAUDE.md` dev URL.
 
 ---
+
+---
+
+## 5. Post-merge re-review obligation (NEW — 2026-06-24)
+
+The copy/design sweep in §2–§4 was run against the **local** stream. After the merge, these now
+ship **remote's** versions and have **NOT** been reviewed against the merged result:
+
+- All 8 Intelligence lens pages (chart-led redesign) — incl. the brand-new **financial-intelligence** page.
+- **platform-intelligence** (reworked on remote).
+- **intelligences** hub, **index** (8-lens), **architecture** (new landing), **connect**, **operating-model**, **consumer-outcomes** — all remote versions.
+
+Still valid (local versions shipped): experience-journeys, prototype-specifications, sterling-stablecoin, policy-documentation, the two posts.
+
+**Next:** re-run the copy + design sweep over the remote-origin pages above before publish.
+Verified at merge time: build clean, 0 broken links, all pages console-clean, badges + diagrams render.

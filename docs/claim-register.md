@@ -20,7 +20,7 @@ Each material claim is tracked by: **source** (repo + commit/file, or external U
 |---|---|---|---|---|---|---|
 | 4 propositions as interactive demonstrations (Family Wealth, Int. Student, Premium Yacht, Cross-Border); Franchise = blueprint | prototype `marketing-claim-audit.md` (feat/live-marketing-demos) | demo/marketing stream | Approved | on audit change | index, approach, /composable-bank/ | Substantiated (interactive demonstration) |
 | Cross-Border Real-Time Payments — interactive demonstration proposition (EUR→GBP inbound; B2B SME lead, multinational variation; **public-safe copy only** — no FXC/$27tn/proposed-stablecoin/"few banks" claims). **Claim softened (fact-check 2026-06-15):** promise is a "real-time cross-border payment *experience*" (pre-funded local accounts + domestic instant rails + API initiation), not universal end-to-end instant settlement — OCT Inst governs the euro leg only; FPS is a pre-funded settlement model. | prototype `dbb-crossborder-payment` + `runtime-crossborder` (tests green); `marketing-claim-audit.md` #7/#8/#10; EPC/BoE/FCA per the proposition doc | demo stream | Approved | on audit change | composable-bank/cross-border-payments, index, approach | Substantiated — interactive demonstration (prototype) (simulated FX/settlement feeds) |
-| "Clean-Room Demonstration" — a **working proving-ground platform**: production-grade in design, on synthetic data, **deliberately non-production / never real customers** (test consumers only); purpose = prove propositions → **vendor-neutral working specification**. **Retire "not yet product-ready"** (mis-frames a working tool for a non-production purpose as an unfinished product chasing production). | this repo `index.html`, `approach.html`, `consumer-outcomes.html`, `_data/copy.yml` | DTA | Approved | 2026-09-18 | index, approach, consumer-outcomes | Substantiated (wording) |
+| "Clean-Room Demonstration" — a **working proving-ground platform**: production-grade in design, on synthetic data, **deliberately non-production / never real customers** (test consumers only); purpose = prove propositions → **vendor-neutral working specification**. **Retire "not yet product-ready"** (mis-frames a working tool for a non-production purpose as an unfinished product chasing production). | this repo `index.html`, `approach.html`, `customer-outcomes.html`, `_data/copy.yml` | DTA | Approved | 2026-09-18 | index, approach, customer-outcomes | Substantiated (wording) |
 | Agents prepare; humans approve material actions; evidence per step | prototype `agentic-gateway` tests | demo stream | Approved | on audit change | index, approach | Substantiated |
 | Owned Autonomy / C3 / Accountability–Sovereignty / Clean-Room Standard / Glass Tube / DBB | `docs/lexicon.md` | DTA | Approved (DTA-original) | 2026-09-14 | index, approach, operating-model, posts | Coin & own |
 | SFIA-defined, FPE-led squad (skill *names*, no levels) | `docs/squad-operating-model.md` (sanitised) | DTA | Approved | 2026-09-14 | index, approach | Substantiated (sanitised) |
@@ -34,9 +34,9 @@ Each material claim is tracked by: **source** (repo + commit/file, or external U
 | ~~"none are built on SFIA" market claim~~ | — | — | **Removed** (unsubstantiable) | — | (none) | Deleted v6 |
 | Track record + **TSB role** (CTO & Payments/Economic Crime Director; MRT 5 IBS; Evolve: £20m+ savings, ~25% IT-change-cost cut, quarterly→monthly, £6.8m fraud reduction, +30% intl-payments revenue) + Metro/Lloyds/JPM/Travelex/Orwell | **CV + NED cover letter (2026-06-15)** | Sailesh | **Approved (from CV/cover letter)** | 2026-12-31 | index | Approved |
 | ipagoo (Orwell) — first cloud-first FCA/ACPR-regulated EMI on AWS/Azure; 2018 FIA Award | CV (2026-06-15) | Sailesh | **Approved (from CV)** — public-safe wording; no failure history | 2026-12-31 | index | Approved |
-| "The Accountable Bank" as a brand | — | Sailesh | **Needs-trademark-check** | — | (none; use "Clean-Room Demonstration") | Needs-TM |
+| "Accountable Bank" as the demonstration name | owner decision 2026-06-22 | Sailesh | **Approved — TM check cleared** (no conflicting UK bank; marketing name for the demonstration, not a regulated-bank claim) | 2026-12-31 | composable-bank (demonstration), index, approach | Approved |
 | Market/macro facts (2028 repricing, FXC sizing, FCA/BoE) | external + prototype thesis (marked external) | Sailesh | Attribute only; FXC needs licence | 2026-09-14 | (posts, attributed) | External |
-| Consumer Outcomes page (was Customer Outcomes; `/customer-outcomes/` 301s to `/consumer-outcomes/`) — **advocacy-led** (banking should work for the people it is easiest to exclude; outcomes designed in, not evidenced after harm), then advisory + the **proving ground**; differentiator = testing **agentic** impact on consumer outcomes (agent under C3 controls + evidence). **Platform is WORKING and in use on this site** (Family Wealth, agent-propose/human-approve, recorded evidence on synthetic data). **Proving ground by design: test consumers only, never real customers, not a production system** (so "non-production" is the design, not a gap — do not under-sell as vapour). Outcome-capture/heatmap **configured & extended per engagement**. **Output = vendor-neutral working specification** the client takes to their chosen vendor/build (DTA sits upstream of implementation, not competing with it). A Place to Start = **Blueprint**. *consumer* for advocacy/market-wide, *customer* only for a specific bank-customer relationship or quoted FCA source. FCA Consumer Duty = external/attribute. | FCA (external) + working demonstration platform (substantiated) | DTA | Approved — platform live-for-purpose (non-production, test consumers); capture configured/extended per engagement; agentic claims anchored on FW demo; **no compliance certification** | 2026-09-18 | consumer-outcomes; `docs/demo-script-customer-outcomes-lab.md` | Substantiated platform + external Duty |
+| Customer Outcomes page — pre-launch **proving ground**; differentiator = testing **agentic** impact on consumer outcomes (agent under C3 controls + evidence). **Platform is WORKING and in use on this site** (Family Wealth, agent-propose/human-approve, recorded evidence on synthetic data). **Proving ground by design: test consumers only, never real customers, not a production system** (so "non-production" is the design, not a gap — do not under-sell as vapour). Outcome-capture/heatmap **configured & extended per engagement**. **Output = vendor-neutral working specification** the client takes to their chosen vendor/build (DTA sits upstream of implementation, not competing with it). FCA Consumer Duty = external/attribute. | FCA (external) + working demonstration platform (substantiated) | DTA | Approved — platform live-for-purpose (non-production, test consumers); capture configured/extended per engagement; agentic claims anchored on FW demo; **no compliance certification** | 2026-09-18 | consumer-outcomes (was customer-outcomes, 301); `docs/demo-script-customer-outcomes-lab.md` | Substantiated platform + external Duty |
 
 ---
 
@@ -67,8 +67,6 @@ Rule: external feeds are **simulated** (FX, settlement, valuation, card) — say
 | Prototype as a **standards-based working specification** (portable / reusable) | **DTA framing on a standards base** — ISO 20022 Substantiated; BIAN "structured around"; control frameworks (NIST 800-207, OWASP LLM, BCBS 239, DCAM) **External, attribute only** | "expressed in open standards… portable and reusable, vendor-neutral". Reuse argument = standards are the shared vendor language. **Never claim certification/conformance** to any framework; "expressed in / structured around / aligned to" only. | 2026-09-18 |
 | Demonstrations use simulated services, no live customer money | **Substantiated** | Keep this disclaimer visible (the Clean-Room Demonstration Standard). | 2026-06-14 |
 | **Performance envelope / robustness** — where the prototype breaks; "useful level for a few concurrent users" | **Measured evidence (when run), not a live-platform claim** — harness in `perf/` | Layer A = the demonstration (render/memory/jank); Layer B = a build of the spec (latency/concurrency), NOT the demo or marketing site. Report numbers as session limits / achievable-shape NFRs for the working spec. **No production-SLA or scale claims.** Scope today = a few concurrent users (robustness, not scale). | 2026-09-18 |
-| **Ledger reconciliation loop** — authoritative commit journal + drift detection (clean/drift/incomplete) + maker-checker repair | **Substantiated / Demonstrated** — built, tested, and merged to the prototype's main branch (Phase 9) | "demonstrated in the prototype"; reconciliation never mutates the authoritative ledger. **Do not conflate** with the migration twin's legacy→target reconciliation (Blueprint) or the **self-diagnosing estate / blast-radius** (Blueprint, §I). See §J. | 2026-06-22 |
-| **Transfer control on a tokenised unit** — freeze and forced-transfer / clawback under policy | **Substantiated** — built and tested in the prototype (non-production) | "a demonstrated control capability in the prototype"; do not imply a live or production control, or compliance with any specific transfer-control standard. Pairs with the 1:1 tokenised-deposit row. | 2026-06-22 |
 
 ---
 
@@ -92,7 +90,6 @@ Rule: external feeds are **simulated** (FX, settlement, valuation, card) — say
 | FCA/BoE tokenisation vision (20 May 2026); UK stablecoin limits (£20k/£10m, 40/60 backing) | **Needs-source / proposed-not-law** | Cite primary FCA/BoE source; never state proposed numbers as settled. | 2026-06-14 |
 | Post "Test, Learn, Evidence" — FCA 2026 supervision-led posture; consumer-understanding + board-report findings; FCA/BoE tokenisation vision (May 2026); FCA stablecoin sandbox (4 firms); tokenised-deposit pilots; finality/programmability | **External — attribute + proposed-not-law** (FCA/BoE) | Primary FCA/BoE links only. Stablecoin/tokenisation regime = **proposed/developing, not settled retail law**; **no backing-ratio or limit numbers** in copy. Agentic claims anchored on Family Wealth demo (synthetic); outcome-capture + tokenised rail = blueprint. **No compliance certification.** | 2026-09-18 |
 | **FCA Consumer Duty** — deliver good outcomes for retail customers; monitor and evidence outcomes; the four outcomes (products & services, price & value, consumer understanding, consumer support); vulnerable customers | **External — attribute only** (FCA) | "an FCA framework"; the four outcomes are the FCA's. **Never imply DTA certifies/guarantees compliance** — DTA helps deliver and evidence outcomes. Avoid precise rule numbers / in-force dates in copy unless primary-sourced. | 2026-09-18 |
-| **BoE systemic stablecoin draft Code of Practice** (Appendix 4 of the PS) — ≥30% central bank money + short-term gilts ≤186 days; 1-day repo + reverse repo; two statutory trusts (legislation pending); 5% safeguarding excess; **daily safeguarding reconciliation**; GBR = higher of 6m opex or recovery+wind-down; 24h redemption of a valid request; no interest on holding; £40bn temporary issuance guardrail | **External — attribute only; DRAFT, not in force** (BoE intends to finalise end-2026) | Cite as *"the Bank of England's draft Code of Practice"*, BoE-attributed, "draft/consultation, not yet in force". **No "settled law", "finalised", or "rulebook is written". No pricing.** DTA = advisory + reference architecture + proof, **not** a builder of GBR calculators or trust deeds. Verified facts: `docs/research/2026-06-22-boe-systemic-stablecoin-cop-factcheck.md`. Used on: experience-journeys, value-intelligence, post 2026-06-22. | 2026-12-31 |
 
 ---
 
@@ -117,7 +114,7 @@ Rule: external feeds are **simulated** (FX, settlement, valuation, card) — say
 | **"accountable banking"** | **Catch-phrase — pre-trademark** | Use freely (lowercase) across posts and site to build mindshare; trademark later. | 2026-06-14 |
 | "agentic banking" / "agent-ready banking" (Zafin) / "autonomous finance" etc. | **Descriptor-only** | Use to be understood; never claim as DTA coinage. | 2026-06-14 |
 | **"control plane"** (Ping/SDN/K8s/identity lineage) | **Descriptor — borrow, do not coin** | Never trademark or claim the bare noun. Own the *operator* claim only: "the bank operates its own control plane." DTA's **sovereign / operational control plane** = the bank-operated Consent plane of C3. Pluggability is the wedge (see §I). No "first/only". | 2026-06-18 |
-| **"The Accountable Bank"** (proper-noun product name) | **Needs-trademark-check** | ❌ Do not launch as a brand until cleared. The visible demo label is "**our Clean-Room Demonstration**"; keep the `/composable-bank/` slug. | 2026-06-14 |
+| **"Accountable Bank"** (demonstration name) | **Approved — TM check cleared (owner, 2026-06-22)** | Marketing name for the demonstration (lowercase-bank sense); not a claim it is or will be a regulated bank. Replaces Composable Bank as the product name; keep the `/composable-bank/` slug pending a redirect plan. | 2026-06-22 |
 | Internal architecture codenames | **Off public site** | Kept in private notes / the book only. Banned in this public repo by `scripts/check-public-showcase.sh`. | 2026-06-14 |
 
 ---
@@ -190,47 +187,6 @@ schema-registry governance, the **engine build-pattern code**, the **latency/thr
 deploy topology, control internals, PII mechanics, canonical schemas, internal codenames. The pages
 state the validation **dimensions** (latency budgets, contract versioning, throughput headroom, mandate
 write-path, sensitivity inheritance) — **never the values or the stack**.
-
----
-
-## J. Phase 9 reconciliation status (verified 2026-06-22)
-
-Reconciliation of the Synthetic Bank Migration Twin / resilience claims against the prototype's Phase 9 design and implementation. Detailed implementation evidence (commit ids, package paths, plan identifiers, branch names) lives in the **private prototype repository**, not here.
-
-| Capability | Status | Public expression |
-|---|---|---|
-| **Ledger reconciliation loop** — authoritative commit journal, drift detection (clean/drift/incomplete), maker-checker repair (apply / partition-rebuild / escalate) | **Demonstrated** — built, tested, and merged to the prototype's main branch | "demonstrated in the prototype"; reconciliation never mutates the authoritative ledger. The reference architecture behind "evidence by construction". |
-| **Self-diagnosing estate, CMDB self-registration, blast-radius / service-impact** | **Blueprint** (broader than the reconciliation loop; not built) | Stays Blueprint verbatim (§I). The DTA Trust / Control / Architecture-Library resilience cards stay Blueprint. |
-| **Synthetic Bank Migration Twin (end-to-end)** | **Blueprint** | Stays Blueprint across the site. Do not conflate the Twin's legacy→target reconciliation with the ledger-journal-vs-shadow reconciliation above. |
-
-**Prototype resilience page (`10-resilience.md`):** the reconciliation / drift-detection / repair lines may move to "real"; the blast-radius / CMDB / self-diagnosing-estate lines stay Blueprint. The prototype stream applies this through its own build + sync + showcase-check flow; never hand-edit the compiled `composable-bank/` bundle.
-
-**Codename / internals guard:** the prototype's private-repo internals (the reconciliation package's internal codename namespace, package paths, commit ids, plan identifiers, branch names) must never reach this public repo. `check-public-showcase.sh` plus a manual review enforce this.
-
-**BUILD-004:** the implementation precondition is met (the reconciliation loop is demonstrable). Resolve only after (1) the DTA public claims are reconciled (promote the ledger-reconciliation capability where copy references it; keep the self-diagnosing estate Blueprint), (2) the prototype resilience page is updated through its own flow, and (3) Task 8 is re-run. Shipping (merge to master / deploy) is a separate decision requiring explicit go-ahead.
-
----
-
-## K. Sterling Stablecoin page — claims map (`/sterling-stablecoin/`, 2026-06-22)
-
-Every assertion on the page maps to an approved row before copy ships. The regime is the BoE's **draft** Code (house phrasing below, §D); the prototype is a **non-production proving ground**.
-
-**House phrasing (regime status, verbatim):** *"the Bank of England's draft Code of Practice (Appendix 4 of its Policy Statement), which the Bank intends to finalise by end-2026, after which it will apply to recognised systemic issuers."*
-
-**Regime facts** (all → §D, BoE-attributed, draft): backing ≥30% central bank money / short-term gilts ≤186 days; two statutory trusts (legislation pending); daily safeguarding reconciliation; 24h redemption of a valid request; £40bn temporary issuance guardrail. Detail lives in the linked Insight, not on the page.
-
-**Prototype — Demonstrated / Substantiated** (built+tested, non-production):
-- 1:1-backed tokenised unit → §B "Tokenised deposit with 1:1 backing".
-- Ledger reconciliation loop (journal / drift detection / maker-checker repair) → §B + §J.
-- Transfer control (freeze, forced-transfer) → §B (new row).
-- Payments + ISO 20022 / settlement → §B.
-- Evidence by construction → §B.
-
-**Prototype — Blueprint** (label as such; no positive claim): backing-asset pool (central bank money + gilts), redemption / burn, capital / reserves, the two statutory trusts. These are the intended prototype gap-fill; promote only when built+tested.
-
-**Advisory position** (→ §C + positioning notes + §D): define independently, prove the difficult parts in a working model, build the capability to deliver; independent; partner for treasury-quant and trust-law; **no pricing**; not a builder.
-
-**Boundary** (→ Clean-Room Standard §B/§F + §D): non-production proving ground, synthetic data, test consumers; draft regime; **no implied compliance certification**; no internal repo nouns.
 
 ---
 

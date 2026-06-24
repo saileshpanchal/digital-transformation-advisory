@@ -2,7 +2,9 @@ schema_version: 1
 register:
   id: DTA-AR-001
   title: DTA Architecture Conflict Register
-  status: proposed
+  status: p0-approved; tasks-2-6-built; task7-no-phase9-claims-on-site; task8-review-passed
+  p0_decisions_recorded: 2026-06-22
+  task8_review: 2026-06-23
   owner: Sailesh Panchal
   created: 2026-06-21
   canonical_source: docs/superpowers/specs/2026-06-21-dta-architecture-review-design.md
@@ -20,9 +22,9 @@ enums:
     - open
   provenance:
     - public
-    - gated
     - internal
-    - clean-room
+  # Simplified 2026-06-22 (decision D6): "gated" and "clean-room" retired as
+  # provenance values. This is a marketing site, not a legal contract.
   stability:
     - locked
     - stable
@@ -43,24 +45,79 @@ priority_rules:
 publication_rules:
   enforcement: manual-first-launch
   automation_trigger: Add automated enforcement when a second contributor makes it valuable.
+  provenance_model: public/internal only (D6).
+  honesty_model: >-
+    Link, do not litter (D5/D9). Public pages sell the vision and proposition;
+    claim and evidence detail lives in a single linked Claims & evidence
+    reference, not in repeated inline caveats. Keep only compact status badges
+    (Demonstrated / Specified / Blueprint) and one synthetic-demonstration
+    marker on clean-room content. Full detail belongs in contract negotiation.
   public:
     permitted_stability:
       - locked
       - stable
     forbidden_provenance:
-      - gated
       - internal
-      - clean-room
-  clean-room:
+  clean_room_content:
+    note: >-
+      Generated demonstration content is published (provenance public) but
+      edited only via the prototype source repository (D7 / PROV-002). It
+      carries one compact label, "Demonstration on synthetic data", plus a
+      status badge. Clean-room is a content type with an edit boundary, not a
+      provenance value.
     permitted_stability:
       - locked
       - stable
-    required_labels:
-      - synthetic
-      - non-production
-      - claim-status
   split_rule: Split a concept into separate rows when its public and protected treatments differ.
   dependency_rule: A row cannot move to implemented until every depends_on row is approved or verified.
+
+p0_decisions:
+  approved: 2026-06-22
+  approver: Sailesh Panchal
+  note: >-
+    Authoritative record of the ten P0 decisions. Row-level status flips to
+    approved happen in Stage A (launch plan Task 1) as the North Star wording
+    is accepted; these resolutions govern that work.
+  rows:
+    PUR-001:
+      choice: A
+      resolution: Broadened internal mission; the public one-liner still leads on the consumer commitment.
+    HIER-001:
+      choice: A
+      resolution: Adopt all seven Intelligences as soft public lenses plus an Intelligences hub; deep pages may launch as concise stubs. Resolve the Cognitive-vs-Judgment boundary.
+    TERM-008:
+      choice: A
+      resolution: Clean-Room Demonstration = the fenced environment and running proof; the Standard = the rules. "working specification" is the canonical client output; "proving ground" is descriptive prose only.
+    COM-001:
+      choice: A
+      resolution: Strategic advisory leads; Talent & Squads is a clear, independently-purchasable route with a strong CTA. Update the lexicon "lead with talent" line.
+    COM-003:
+      choice: B
+      resolution: Link, do not litter. Keep claim status tracked internally and add "Specified"; replace verbose inline caveats with a single linked Claims & evidence page. Marketing, not a legal contract.
+    PROV-001:
+      choice: simplified
+      resolution: Provenance reduced to public/internal only (D6). "gated" folds into internal; "clean-room" handled as content type, not provenance.
+    PROV-002:
+      choice: A
+      resolution: Keep the clean-room boundary as an operational rule (edit generated content only via the prototype repo; one synthetic-demonstration marker). Not a provenance value.
+    PROV-003:
+      choice: A
+      resolution: Publish concepts, outcomes, named roles and evidence shape; keep catalogues, SFIA levels, methods, schemas and control internals internal. Concrete public/internal line to be redlined.
+    CLAIM-001:
+      choice: A
+      resolution: Keep three gates internally (provenance public/internal, stability, claim status) but apply them with a light public touch per D5 (linked register, not littered caveats).
+    BUILD-004:
+      choice: A
+      resolution: Manual launch gate plus Phase 9 reconciliation. Phase 9 reported DONE by the owner on 2026-06-22; the locked design artifact/location is still needed for the Task 7 reconciliation pass.
+
+naming_decisions:
+  approved: 2026-06-22
+  TERM-006_composable_bank: Deprecated as the product name; generic descriptor only; the /composable-bank/ URL is retained pending a redirect plan.
+  TERM-007_accountable_bank: Adopted as the demonstration name (control and ledger framing fit the brand). Trademark check CLEARED (owner decision 2026-06-22 - no conflicting UK bank; a marketing name for the demonstration only, not a regulated-bank claim). Cleared for public use.
+  TERM-010_ultim8: Internal repository name only; never a public or brand term. The public hierarchy layer is "Reference Runtime".
+  NAV-005_ultim8_route: No public Ultim8 route. The runtime layer is presented as Reference Runtime if and when published.
+  HIER-004_spine: The proposition spine uses "Reference Runtime" in place of "Ultim8 runtime".
+  TERM-013_consumer_outcomes: Implemented 2026-06-22 - consumer-outcomes.html live at /consumer-outcomes/ (advocacy-led), /customer-outcomes/ kept as a 301 redirect (Netlify + meta-refresh stub). "customer" retained only for the specific bank-customer relationship.
 
 conflicts:
   - id: PUR-001
@@ -975,3 +1032,34 @@ conflicts:
       - PROV-002
       - CLAIM-001
     status: blocked
+  - id: INT-009
+    area: intelligence
+    object: Financial Intelligence (eighth Intelligence, adopted 2026-06-23)
+    current: The published set has seven Intelligences. Transformations need an explicit financial lens - the as-is position across people, process, technology, infrastructure and property, the target, the financial transition, CFO buy-in, and the cost modelling of squads and supporting roles.
+    evidence:
+      - user-supplied note, 2026-06-23
+      - operating-model.html
+      - capability-intelligence.html
+    recommendation: ADOPTED 2026-06-23 as the eighth Intelligence; page /financial-intelligence/ live. Cost model covers the as-is base (people/process/technology/infrastructure/property), suppliers and committed contracts, addressable vs committed funding, the AI-amplified squad and supporting staff, AI build and run, setup (cloud/DevOps/data environments), AI/data/risk governance, transition and dual-running, decommissioning and exit, and the value side. Interlocked with the other lenses as P&L contributors. DTA frames the when and scope; the client owns the numbers. Citations live in docs/financial-intelligence-brief.md (paper), not on the page.
+    disposition: define
+    provenance: public
+    stability: stable
+    priority: P1
+    depends_on:
+      - HIER-001
+    status: implemented
+  - id: BIZ-001
+    area: hierarchy
+    object: Business Architecture as the tie between Intelligences, capabilities and propositions
+    current: Business architecture is implied across the approach and the Intelligences but is not named as the connective layer that ties Intelligences and capabilities to propositions and their economics.
+    evidence:
+      - approach.html
+      - user-supplied note, 2026-06-23
+    recommendation: Name business architecture as the connective discipline that maps Intelligences and capabilities to propositions, P&L and the operating model. Relate it to Financial Intelligence (INT-009) and Capability Intelligence. Deferred 2026-06-23 by the owner as a bigger idea; revisit after Financial Intelligence has settled.
+    disposition: define
+    provenance: public
+    stability: developing
+    priority: P2
+    depends_on:
+      - INT-009
+    status: proposed

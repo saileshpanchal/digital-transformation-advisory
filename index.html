@@ -1,21 +1,21 @@
 ---
 layout: corporate
-title: "Strategic advisory for the future of banking"
+title: "Digital Transformation Advisory: the future of finance, no customer left behind"
 description: >-
-  DTA is strategic advisory for the future of banking, proven in a working
-  model. We help banks and fintechs design, test, and deliver the architecture,
-  propositions, and operating model for agentic and tokenised banking, without
-  leaving any consumer behind.
+  DTA is a strategic advisory helping banks build the future of finance without
+  leaving the customer behind: evolving customers, colleagues and technology
+  together through multiple forms of intelligence into trustworthy, inclusive
+  and resilient financial systems.
 ---
 
 <!-- 1. Hero: mission-led strategic advisory -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Design the bank the future requires.<br>Prove it before you buy it.</h1>
-    <p>DTA is strategic advisory for the future of banking. We help banks and fintechs define, test, and deliver the architecture, propositions, and operating model for agentic and tokenised banking, without locking the future into another generation of core technology and without leaving consumers behind.</p>
+    <h1>Build the future of finance.<br>Leave no customer behind.</h1>
+    <p>We are a strategic advisory. We help banks evolve their customers, colleagues and technology together, through multiple forms of intelligence, into financial systems that are trustworthy, inclusive and resilient. We define the architecture, prove the hard parts on a working demonstration, and help you build.</p>
     <div class="hero-actions">
       {% include cta-calendly.html kind="strategy_call" loc="home-hero" label="Discuss a challenge" %}
-      <a href="{{ '/composable-bank/' | relative_url }}" class="btn btn--ghost" data-cta="demo" data-loc="home-hero">See the working proof</a>
+      <a href="{{ '/composable-bank/' | relative_url }}" class="btn btn--ghost" data-cta="demo" data-loc="home-hero">See the demonstration</a>
     </div>
   </div>
 </section>
@@ -23,145 +23,114 @@ description: >-
 <!-- 2. Mission and principles -->
 <section id="mission" class="section text-center">
   <div class="container mission">
-    <h2>{{ site.data.copy.north_star.mission }}</h2>
-    <p>{{ site.data.copy.north_star.mission_statement }}</p>
-    <p>Banking is moving towards programmable money and agents that can act. Architecture, controls, operating model, and consumer safeguards have to move together. We define the destination independently, prove the difficult parts in a working model, and help clients build the capability to deliver it.</p>
-    <p class="mission-spine"><strong>{{ site.data.copy.canonical.spine }}</strong></p>
-  </div>
-  <div id="principles" class="container">
-    <h3 class="text-center" style="margin-top:3rem;">The principles we work to</h3>
-    <ul class="principle-grid">
-      {% for p in site.data.copy.north_star.principles %}
-        {% assign head = p | split: ": " | first %}
-        {% assign rest = p | remove_first: head | remove_first: ": " %}
-        <li><strong>{{ head }}:</strong> {{ rest }}</li>
+    <h2>Why we exist</h2>
+    <p style="max-width:760px;margin:0 auto;font-size:1.15rem;">{{ site.data.copy.canonical.mission_public }}</p>
+    <p style="max-width:760px;margin:1.25rem auto 0;color:#555;">Agents are crossing from advice to action, and money is starting to move in new ways. A bank can only embrace that if it stays accountable for every action and sovereign over what it runs on. You cannot be accountable for what you do not control. We call that destination <strong>Owned Autonomy</strong>, and it is a doctrine we build toward, not the whole story.</p>
+    <div id="principles" class="text-center" style="margin-top:3rem;">
+      <h3>The principles we work to</h3>
+    </div>
+    <ol class="principles-list">
+      {% for p in site.data.copy.principles %}
+      <li><h3>{{ p.name }}</h3><p>{{ p.line }}</p></li>
       {% endfor %}
-    </ul>
+    </ol>
   </div>
 </section>
 
 <!-- 3. Preservation, Evolution, Augmentation -->
-<section id="themes" class="section section--light">
+<section class="section section--light">
   <div class="container">
     <div class="text-center">
-      <h2>Three themes run through every engagement</h2>
-      <p class="section-subtitle">They describe how transformation actually happens: keep what matters, run the old and new worlds together, and let people and machines work as one.</p>
+      <h2>Preservation, Evolution, Augmentation</h2>
+      <p class="section-subtitle">Three themes run across everything we do.</p>
     </div>
-    <div class="trio-grid">
-      <div class="trio-card">
-        <h3>Preservation</h3>
-        <p>Retain knowledge, evidence, capability, and institutional memory through change.</p>
-      </div>
-      <div class="trio-card">
-        <h3>Evolution</h3>
-        <p>Operate old and new worlds together and migrate safely, rather than betting the institution on a single cutover.</p>
-      </div>
-      <div class="trio-card">
-        <h3>Augmentation</h3>
-        <p>Enable humans and machines to think and act together, with authority and evidence that hold under scrutiny.</p>
-      </div>
+    <div class="themes-row">
+      {% for t in site.data.copy.themes %}
+      <div class="theme"><h3>{{ t.name }}</h3><p>{{ t.line }}</p></div>
+      {% endfor %}
     </div>
   </div>
 </section>
 
-<!-- 4. Seven Intelligences overview -->
-<section id="intelligences" class="section">
+<!-- 4. Eight Intelligences -->
+<section class="section">
   <div class="container">
     <div class="text-center">
-      <h2>Seven Intelligences</h2>
-      <p class="section-subtitle">We read a bank through seven lenses. They overlap rather than file the work into boxes, and most propositions draw on several at once. <a href="{{ '/intelligences/' | relative_url }}">See how the lenses work together</a>.</p>
+      <h2>Eight Intelligences</h2>
+      <p class="section-subtitle">Lenses across the work, not folders. A piece of work can sit under several at once.</p>
     </div>
-    <div class="lens-grid">
-      <a class="lens-card" href="{{ '/experience-intelligence/' | relative_url }}">
-        <h3>Experience</h3>
-        <p>The outcomes people need and the journeys they actually live, including those most easily excluded.</p>
-      </a>
-      <a class="lens-card" href="{{ '/capability-intelligence/' | relative_url }}">
-        <h3>Capability</h3>
-        <p>How human and organisational capability is built and evolved, across skills, knowledge, and judgment.</p>
-      </a>
-      <a class="lens-card" href="{{ '/cognitive-intelligence/' | relative_url }}">
-        <h3>Cognitive</h3>
-        <p>How humans and machines reason and act together, with clear authority, explanation, and intervention.</p>
-      </a>
-      <a class="lens-card" href="{{ '/value-intelligence/' | relative_url }}">
-        <h3>Value</h3>
-        <p>How value is represented, exchanged, governed, settled, and measured.</p>
-      </a>
-      <a class="lens-card" href="{{ '/trust-intelligence/' | relative_url }}">
-        <h3>Trust</h3>
-        <p>How justified trust is earned through inclusion, consent, privacy, evidence, and resilience.</p>
-      </a>
-      <a class="lens-card" href="{{ '/platform-intelligence/' | relative_url }}">
-        <h3>Platform</h3>
-        <p>How systems evolve and compose, with interoperability, coexistence, governed data, and runtime architecture.</p>
-      </a>
-      <a class="lens-card" href="{{ '/control-intelligence/' | relative_url }}">
-        <h3>Control</h3>
-        <p>How accountable leaders set authority, observe outcomes, intervene, and evidence control continuously.</p>
-      </a>
+    <div class="intel-grid">
+      {% for i in site.data.copy.intelligences %}
+      <div class="intel"><h3>{{ i.name }}</h3><p>{{ i.line }}</p></div>
+      {% endfor %}
+    </div>
+    <div class="text-center" style="margin-top:2.5rem;">
+      <a href="{{ '/intelligences/' | relative_url }}" class="btn btn--outline">Explore the Intelligences</a>
     </div>
   </div>
 </section>
 
 <!-- 5. Experience Journeys -->
-<section id="journeys" class="section section--light">
+<section class="section section--light">
   <div class="container">
-    <div class="text-center">
-      <h2>Experience Journeys</h2>
-      <p class="section-subtitle">A journey is the end-to-end experience a person or institution actually lives, distinct from the commercial proposition that contains it. We use journeys to test propositions, authority boundaries, data products, and consumer outcomes before a bank commits to build.</p>
-    </div>
-    <div class="trio-grid">
-      <div class="trio-card">
-        <h3>A Place to Start <span class="status status--blueprint">Blueprint</span></h3>
-        <p>Help one person without a fixed address, conventional documents, or a smartphone gain an ordinary basic bank account, while the bank keeps accountability and the applicant keeps control.</p>
+    <div class="feature-row">
+      <div class="feature-text">
+        <h2>Experience Journeys</h2>
+        <p style="color:#555;">An Experience Journey is the end-to-end human application that cuts across the Intelligences. We design them, prove them on the demonstration with test consumers, and evidence the outcomes before a bank commits to build. Each one shows an agent preparing and proposing, a human authorising material action, and the evidence recorded at every step.</p>
+        <div style="margin-top:1.5rem;">
+          <a href="{{ '/experience-journeys/' | relative_url }}" class="btn btn--outline">See the journeys</a>
+          <a href="{{ '/composable-bank/' | relative_url }}" class="btn btn--ghost">Open the demonstration</a>
+        </div>
       </div>
-      <div class="trio-card">
-        <h3>Synthetic Bank Migration Twin <span class="status status--blueprint">Blueprint</span></h3>
-        <p>Model a plausible legacy bank with synthetic data, prove the target architecture and migration touchpoints, and produce a vendor-neutral specification before a bank buys or migrates a core.</p>
-      </div>
-      <div class="trio-card">
-        <h3>And more</h3>
-        <p>Family Wealth, Premium Yacht, International Student, Cross-Border Real-Time Payments, and Franchise Network each test a different outcome. <a href="{{ '/experience-journeys/' | relative_url }}">See all journeys</a>.</p>
+      <div class="feature-aside">
+        <ul>
+          <li><a href="/composable-bank/family-wealth/">Family Wealth</a></li>
+          <li><a href="/composable-bank/international-student/">International Student</a></li>
+          <li><a href="/composable-bank/premium-yacht/">Premium Yacht</a></li>
+          <li><a href="/composable-bank/cross-border-payments/">Cross-Border Real-Time Payments</a></li>
+          <li><a href="/composable-bank/franchise-network/">Franchise Network (blueprint)</a></li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 6. Architecture and Prototype Specifications -->
-<section id="architecture" class="section">
+<!-- 6. Architecture, proven before it is built -->
+<section class="section">
   <div class="container">
-    <div class="text-center">
-      <h2>Architecture you can inspect</h2>
-      <p class="section-subtitle">We do not ask a bank to accept an architecture on a slide. Everything flows from the mission down to a system a client can run.</p>
-    </div>
-    {% include diagrams/architecture-hierarchy.html %}
-    <div class="trio-grid">
-      <div class="trio-card">
-        <h3>Architecture Library</h3>
-        <p>Stable public views of the patterns we work with, including the Capability, Context, and Consent (C3) reference architecture, governed data products, value exchange, resilience, and continuous control. <a href="{{ '/architecture-library/' | relative_url }}">Browse the library</a>.</p>
+    <div class="feature-row reverse">
+      <div class="feature-text">
+        <h2>Architecture, proven before it is built</h2>
+        <p style="color:#555;">We define an independent target architecture and prove the hard parts first, so the platform conforms to the architecture rather than the other way round. Our reference architecture for governed human-machine action is <strong>Capability, Context and Consent (C3)</strong>, with Domain Building Blocks beneath it. Because the work is expressed in open standards, ISO 20022, BIAN and recognised control frameworks, what we prove becomes a portable, vendor-neutral <strong>working specification</strong> you can build with any vendor.</p>
+        <div style="margin-top:1.5rem;">
+          <a href="{{ '/architecture/' | relative_url }}" class="btn btn--outline">Browse the architecture</a>
+        </div>
       </div>
-      <div class="trio-card">
-        <h3>Prototype Specifications</h3>
-        <p>The executable blueprint produced from a reference architecture and a journey, expressed in open standards so it stays portable and vendor-neutral. <a href="{{ '/prototype-specifications/' | relative_url }}">See how specifications work</a>.</p>
-      </div>
-      <div class="trio-card">
-        <h3>Owned Autonomy</h3>
-        <p>Our doctrine: agentic capability a bank owns rather than rents, accountable and sovereign by construction. It is how we judge whether a design keeps the bank in control.</p>
+      <div class="feature-aside">
+        <div class="flow-chain">
+          <span class="step">Mission</span><span class="arrow">&rarr;</span>
+          <span class="step">Principles</span><span class="arrow">&rarr;</span>
+          <span class="step">Eight Intelligences</span><span class="arrow">&rarr;</span>
+          <span class="step">Experience Journeys</span><span class="arrow">&rarr;</span>
+          <span class="step">Reference Architectures</span><span class="arrow">&rarr;</span>
+          <span class="step">Prototype Specifications</span><span class="arrow">&rarr;</span>
+          <span class="step">Reference Runtime</span><span class="arrow">&rarr;</span>
+          <span class="step">Executable Systems</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 7. Clean-room proof -->
-<section id="proof" class="section section--dark">
+<!-- 7. The demonstration (clean-room proof) -->
+<section id="demonstration" class="section section--dark">
   <div class="container">
     <div class="showcase">
       <div class="showcase-text">
-        <h2>Proof, not slides</h2>
-        <p>{{ site.data.copy.canonical.clean_room }}</p>
-        <p>Expressed in open standards, ISO 20022 messaging, BIAN domain boundaries, and recognised control frameworks, the demonstration doubles as a portable, vendor-neutral working specification. Planned behaviour is labelled Blueprint or Specified, never Demonstrated.</p>
-        <a href="{{ '/composable-bank/' | relative_url }}" class="btn btn--primary" data-cta="demo" data-loc="home-proof">Explore the demonstration</a>
+        <h2>Accountable Bank: our demonstration</h2>
+        <p>Accountable Bank is our working proving ground: one governed, agent-native platform that runs several banking propositions, built to production-grade controls. We use it to test whether a proposition is likely to deliver good outcomes before a bank commits to build, and to produce the working specification that comes out the other side.</p>
+        <p style="font-size:0.95rem;color:#cfd8e0;">A demonstration on synthetic data, with test consumers, not a regulated bank. <a href="{{ '/composable-bank/' | relative_url }}" style="color:#fff;text-decoration:underline;">See how it works</a>.</p>
+        <a href="{{ '/composable-bank/' | relative_url }}" class="btn btn--primary" data-cta="demo" data-loc="home-showcase">Explore the demonstration</a>
       </div>
       <ul class="showcase-list">
         <li><a href="/composable-bank/family-wealth/">Family Wealth Hub</a></li>
@@ -172,113 +141,48 @@ description: >-
         <li><a href="/composable-bank/platform/">One platform, many propositions</a></li>
       </ul>
     </div>
-    {% include diagrams/clean-room-boundary.html %}
   </div>
 </section>
 
-<!-- 8. Advisory, Talent, and Squads routes -->
-<section id="routes" class="section section--light">
+<!-- 8. How we help (advisory leads) -->
+<section id="services" class="section section--light">
   <div class="container">
     <div class="text-center">
-      <h2>Three ways to work with us</h2>
-      <p class="section-subtitle">Strategic advisory leads. Proof turns advice into an inspectable decision. Talent and squads turn the decision into working capability. Each stands on its own, and you can buy any one of them.</p>
+      <h2>How we help</h2>
+      <p class="section-subtitle">Strategic advisory leads. Each route stands on its own, and not every client needs a full programme.</p>
     </div>
     <div class="offerings-grid">
       <div class="offering-card">
-        <img src="/assets/images/corporate/business-strategy.png" alt="Strategic advisory">
-        <h3>Advise</h3>
-        <p>Define the proposition, economics, target architecture, operating model, decision rights, controls, and transformation sequence, independent of any implementation vendor.</p>
-        <ul>
-          <li>Agentic and tokenised banking strategy</li>
-          <li>Independent target architecture and platform decisions</li>
-          <li>Core modernisation, coexistence, and migration strategy</li>
-        </ul>
-        <p class="engagement-note">Strategic and transformation advisory.</p>
-        {% include cta-calendly.html kind="strategy_call" loc="home-advise" label="Discuss a challenge" class="btn--outline" %}
-      </div>
-      <div class="offering-card">
-        <img src="/assets/images/corporate/enterprise-architecture.png" alt="Proposition proof">
-        <h3>Prove</h3>
-        <p>Test the journey, controls, economics, and consumer outcomes before implementation hardens, through a Proposition Blueprint, Clean-Room Demonstration, or Glass Tube pilot. You receive evidence, design decisions, and a vendor-neutral working specification.</p>
-        <ul>
-          <li>Proposition Blueprint and optional Proof</li>
-          <li>Clean-Room Demonstration on synthetic data</li>
-          <li>Vendor-neutral working specification</li>
-        </ul>
+        <img src="/assets/images/corporate/business-strategy.png" alt="Strategic advisory and architecture">
+        <h3>1 &middot; Strategic advisory &amp; architecture</h3>
+        <p>Founder-led discovery and an independent target architecture: the proposition, the operating model, the Intelligences it draws on, and the hard parts proven on the demonstration. This is senior advisory work that sets the direction before anyone builds.</p>
         <p class="engagement-note">Home of the six-week Proposition Blueprint and optional 90-day Proof.</p>
-        <a href="{{ '/prototype-specifications/' | relative_url }}" class="btn btn--outline">See how proof works</a>
+        {% include cta-calendly.html kind="strategy_call" loc="home-advisory" class="btn--outline" %}
       </div>
       <div class="offering-card">
-        <img src="/assets/images/corporate/synergy.png" alt="Talent and squads">
-        <h3>Deliver</h3>
-        <p>Put senior agentic engineers in your teams, take a managed squad, or bring in a fractional leader. Productive from week one and accountable for a bounded outcome. You keep the working capability.</p>
-        <ul>
-          <li>Embedded specialists and forward platform engineers</li>
-          <li>Managed agentic squads for a bounded outcome</li>
-          <li>Fractional technology, architecture, or transformation leadership</li>
-        </ul>
-        <p class="engagement-note">Independently purchasable, and a route from advice into delivery.</p>
-        <a href="{{ '/operating-model/' | relative_url }}" class="btn btn--outline">See the operating model</a>
+        <img src="/assets/images/corporate/enterprise-architecture.png" alt="Build and run propositions">
+        <h3>2 &middot; Build &amp; run propositions</h3>
+        <p>Hand us an outcome and we build the agentic product or journey end to end, to the same control standards as the demonstration. Every agent action authorised, evidenced and revocable, with on-device models where data must not leave the building.</p>
+        <p class="engagement-note">Fixed-scope build (SOW), to the working specification.</p>
+        {% include cta-calendly.html kind="strategy_call" loc="home-build" class="btn--outline" %}
+      </div>
+      <div class="offering-card">
+        <img src="/assets/images/corporate/synergy.png" alt="Agentic talent and squads">
+        <h3>3 &middot; Agentic talent &amp; squads</h3>
+        <p>Buy delivery without buying a transformation. Senior agentic engineers embedded in your teams, or a complete managed squad, productive from week one and accountable for a defined outcome.</p>
+        <p class="engagement-note">Embedded engineer, managed squad or fractional lead.</p>
+        {% include cta-calendly.html kind="strategy_call" loc="home-talent" class="btn--outline" %}
       </div>
     </div>
   </div>
 </section>
 
-<!-- 9. Leadership and Insights -->
-<section id="leadership" class="section">
+<!-- 9. Insights teaser -->
+<section id="insights-teaser" class="section">
   <div class="container">
     <div class="text-center">
-      <h2>Leadership</h2>
-    </div>
-    <div class="about-leader">
-      <img src="/assets/images/corporate/sp-icon.png" alt="Sailesh Panchal" class="leader-photo">
-      <div>
-        <h3 class="leader-name">Sailesh Panchal, Founder &amp; CEO</h3>
-        <p class="leader-bio">Sailesh is a technology, payments and transformation leader in UK financial services and FinTech. As <strong>CTO and Payments &amp; Economic Crime Director at TSB Bank</strong>, he led a bank-wide transformation that brought technology and business leadership closer together. It simplified the cost base, accelerated delivery, reduced fraud, supported growth in payments, unified architecture and established the bank's AI Centre of Excellence.</p>
-        <p class="leader-bio">He has built regulated banks from the ground up and shaped national infrastructure. As Group CTO at Orwell Group he conceived the ipagoo platform, the first cloud-first regulated EMI certified by the FCA and ACPR on AWS and Azure, live on the UK payment schemes in months and winner of the <strong>2018 FIA Award</strong>. As Chief Architect for the Payment Systems Regulator he led the New Payments Architecture, and he has contributed to Bank of England, ISO 20022 and Open Banking committees.</p>
-        <p class="leader-bio">Earlier roles include Director of Engineering at Metro Bank (Agile/SAFe at scale), Head of Regulatory Architecture at Lloyds Banking Group (a £250m+ portfolio spanning FSCS, CASS, payM and PSD2/Open Banking), CTO at Travelex and Chief Architect at JPMorgan. He founded <strong>Digital Transformation Advisory</strong> in 2019 and is writing a book on digital transformation in UK banking.</p>
-      </div>
-    </div>
-
-    <!-- Partners -->
-    <div class="text-center" style="margin-top: 4rem;">
-      <h3>Our Partners</h3>
-      <div class="partners-grid">
-        <img src="/assets/images/corporate/gft-partner.png" alt="GFT">
-        <img src="/assets/images/corporate/jcurve-partner.png" alt="JCurve">
-        <img src="/assets/images/corporate/bizzdesign-partner.png" alt="BizzDesign">
-      </div>
-    </div>
-
-    <!-- Sister Companies -->
-    <div class="text-center" style="margin-top: 3rem;">
-      <h3>Our Sister Companies</h3>
-      <div class="sisters-grid">
-        <a href="https://www.outcomeforeducation.com" target="_blank" rel="noopener">
-          <img src="/assets/images/corporate/outcome-for-education.png" alt="Outcome For Education">
-        </a>
-        <a href="https://www.xcceler8.com" target="_blank" rel="noopener">
-          <img src="/assets/images/corporate/xcceler8.png" alt="Xcceler8">
-        </a>
-      </div>
-    </div>
-
-    <!-- Accreditations -->
-    <div class="accreditations">
-      <h3>Our Accreditations</h3>
-      <div class="partners-grid">
-        <img src="/assets/images/corporate/fsqs-logo.png" alt="FSQS Accreditation">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Insights teaser -->
-<section id="insights-teaser" class="section section--light">
-  <div class="container">
-    <div class="text-center">
-      <h2>What we're learning</h2>
-      <p class="section-subtitle">Field notes on the future of banking, agentic engineering, and transformation.</p>
+      <h2>What we are learning</h2>
+      <p class="section-subtitle">Field notes on agentic banking, consumer outcomes and transformation.</p>
     </div>
     <div class="posts-grid">
       {% assign featured_posts = site.posts | sort: 'date' | reverse %}
@@ -296,6 +200,52 @@ description: >-
     </div>
     <div class="text-center" style="margin-top: 2.5rem;">
       <a href="/insights/" class="btn btn--outline">Browse all insights</a>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Leadership -->
+<section id="about" class="section section--light">
+  <div class="container">
+    <div class="text-center">
+      <h2>Leadership</h2>
+    </div>
+    <div class="about-leader">
+      <img src="/assets/images/corporate/sp-icon.png" alt="Sailesh Panchal" class="leader-photo">
+      <div>
+        <h3 class="leader-name">Sailesh Panchal, Founder &amp; CEO</h3>
+        <p class="leader-bio">Sailesh is a technology, payments and transformation leader in UK financial services and FinTech. As <strong>CTO and Payments &amp; Economic Crime Director at TSB Bank</strong>, he led a bank-wide transformation that brought technology and business leadership closer together. It simplified the cost base, accelerated delivery, reduced fraud, supported growth in payments, unified architecture and established the bank's AI Centre of Excellence.</p>
+        <p class="leader-bio">He has built regulated banks from the ground up and shaped national infrastructure. As Group CTO at Orwell Group he conceived the ipagoo platform, the first cloud-first regulated EMI certified by the FCA and ACPR on AWS and Azure, live on the UK payment schemes in months and winner of the <strong>2018 FIA Award</strong>. As Chief Architect for the Payment Systems Regulator he led the New Payments Architecture, and he has contributed to Bank of England, ISO 20022 and Open Banking committees.</p>
+        <p class="leader-bio">Earlier roles include Director of Engineering at Metro Bank (Agile/SAFe at scale), Head of Regulatory Architecture at Lloyds Banking Group (a £250m+ portfolio spanning FSCS, CASS, payM and PSD2/Open Banking), CTO at Travelex and Chief Architect at JPMorgan. He founded <strong>Digital Transformation Advisory</strong> in 2019 and is writing a book on digital transformation in UK banking.</p>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top: 4rem;">
+      <h3>Our Partners</h3>
+      <div class="partners-grid">
+        <img src="/assets/images/corporate/gft-partner.png" alt="GFT">
+        <img src="/assets/images/corporate/jcurve-partner.png" alt="JCurve">
+        <img src="/assets/images/corporate/bizzdesign-partner.png" alt="BizzDesign">
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top: 3rem;">
+      <h3>Our Sister Companies</h3>
+      <div class="sisters-grid">
+        <a href="https://www.outcomeforeducation.com" target="_blank" rel="noopener">
+          <img src="/assets/images/corporate/outcome-for-education.png" alt="Outcome For Education">
+        </a>
+        <a href="https://www.xcceler8.com" target="_blank" rel="noopener">
+          <img src="/assets/images/corporate/xcceler8.png" alt="Xcceler8">
+        </a>
+      </div>
+    </div>
+
+    <div class="accreditations">
+      <h3>Our Accreditations</h3>
+      <div class="partners-grid">
+        <img src="/assets/images/corporate/fsqs-logo.png" alt="FSQS Accreditation">
+      </div>
     </div>
   </div>
 </section>

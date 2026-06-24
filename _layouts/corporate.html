@@ -24,24 +24,10 @@
         <span></span><span></span><span></span>
       </button>
       <div class="nav-links">
-        <div class="nav-dropdown">
-          <a href="{{ '/' | relative_url }}">Home</a>
-          <div class="nav-dropdown-content">
-            <a href="{{ '/' | relative_url }}#mission">Mission</a>
-            <a href="{{ '/' | relative_url }}#principles">Principles</a>
-            <a href="{{ '/' | relative_url }}#intelligences">Intelligences</a>
-            <a href="{{ '/' | relative_url }}#leadership">Leadership</a>
-          </div>
-        </div>
+        <a href="{{ '/' | relative_url }}">Home</a>
         <a href="{{ '/intelligences/' | relative_url }}">Intelligences</a>
         <a href="{{ '/experience-journeys/' | relative_url }}">Experience Journeys</a>
-        <div class="nav-dropdown">
-          <a href="{{ '/architecture-library/' | relative_url }}">Architecture</a>
-          <div class="nav-dropdown-content">
-            <a href="{{ '/architecture-library/' | relative_url }}">Architecture Library</a>
-            <a href="{{ '/prototype-specifications/' | relative_url }}">Prototype Specifications</a>
-          </div>
-        </div>
+        <a href="{{ '/architecture/' | relative_url }}">Architecture</a>
         <a href="{{ '/insights/' | relative_url }}">Insights</a>
         {% include cta-calendly.html kind="strategy_call" loc="nav" label="Discuss a challenge" class="btn--primary btn--nav" %}
       </div>
@@ -60,10 +46,8 @@
         <div class="footer-links">
           <a href="{{ '/intelligences/' | relative_url }}">Intelligences</a>
           <a href="{{ '/experience-journeys/' | relative_url }}">Experience Journeys</a>
-          <a href="{{ '/architecture-library/' | relative_url }}">Architecture Library</a>
-          <a href="{{ '/prototype-specifications/' | relative_url }}">Prototype Specifications</a>
-          <a href="{{ '/consumer-outcomes/' | relative_url }}">Consumer Outcomes</a>
-          <a href="{{ '/approach/' | relative_url }}">Approach</a>
+          <a href="{{ '/architecture/' | relative_url }}">Architecture</a>
+          <a href="{{ '/composable-bank/' | relative_url }}">Demonstration</a>
           <a href="{{ '/insights/' | relative_url }}">Insights</a>
           <a href="{{ '/connect/' | relative_url }}">Contact</a>
           <a href="{{ '/policy-documentation/' | relative_url }}">Policies</a>
@@ -71,7 +55,6 @@
           {% if site.medium and site.medium != "" %}<a href="{{ site.medium }}" target="_blank" rel="noopener">Medium</a>{% endif %}
         </div>
       </div>
-      <p class="footer-mission">{{ site.data.copy.north_star.mission }}</p>
       <hr class="footer-divider">
       <p class="footer-bottom">&copy; {{ 'now' | date: "%Y" }} Digital Transformation Advisory Ltd</p>
     </div>

@@ -1,128 +1,169 @@
+---
+title: DTA North Star
+type: canonical-source
+status: approved
+date: 2026-06-22
+governs: public site, lexicon, claim register, propositions, architecture pages
+origin: docs/superpowers/specs/2026-06-21-dta-architecture-review-design.md
+register: docs/architecture/conflict-register.yml
+decisions: docs/architecture/conflict-register.yml#p0_decisions (2026-06-22)
+---
+
 # DTA North Star
 
-**Status:** Draft for approval
-
-**Date:** 21 June 2026
-
-**Role:** Internal canonical source. The public website, posts, propositions, and architecture views derive their wording from approved sections here. This document does not ship as a public page; it governs the pages that do.
-
-**Origins:**
-
-- `docs/superpowers/specs/2026-06-21-dta-architecture-review-design.md` (architecture model)
-- `docs/superpowers/specs/2026-06-19-dta-controlled-evolution-website-design.md` (mission, commercial position, claim discipline)
-- `docs/lexicon.md` and `docs/claim-register.md` (existing definitions and claim governance)
-
-This North Star reconciles existing DTA ideas with one architecture model. It does not replace established terms. Owned Autonomy remains the doctrine, C3 remains a reference architecture, and Domain Building Blocks remain capability units. The Seven Intelligences are added as lenses across the work, not as a new owner of every concept.
+The internal canonical source for DTA. Public pages derive from the `public`,
+`locked`-or-`stable` statements here. This document is **draft for approval**;
+nothing downstream changes until the Mission and the Eight Intelligences are
+locked.
 
 ## Mission
 
-**Canonical mission (internal, fuller form):**
+**Internal mission (the full scope).**
+DTA helps institutions evolve their customers, colleagues, and technology
+together, through multiple forms of intelligence, to create trustworthy,
+inclusive, and resilient financial systems.
 
-> DTA helps financial institutions evolve their customers, their colleagues, and their technology together, applying multiple forms of intelligence to build banking that is trustworthy, inclusive, and resilient, and that leaves no consumer behind.
+**Public expression (locked, D1).**
 
-**Public expression (shorter, derived form):**
+> We help banks build the future of finance without leaving the customer behind.
 
-> Help banks and fintechs build the future of banking without leaving any consumer behind.
-
-The mission joins two commitments that must always travel together: helping institutions prepare for agentic and tokenised banking, and advocating for consumer outcomes and digital inclusion throughout that change. The mission explains why DTA exists. Owned Autonomy explains the governing design principle. The two are not interchangeable.
+This line leads the homepage; the full internal mission stays internal and
+informs the Principles and Intelligences.
 
 ## Principles
 
-The principles guide design decisions. They are not claims, and they are not methods. Each is published in a concise form once the wording here is accepted.
+Eight principles. They are how DTA decides, distinct from claims (what we assert)
+and methods (how we deliver).
 
-1. **Human-centred.** Design for the people a system serves and the colleagues who run it, starting from the person most easily excluded.
-2. **Evolution over replacement.** Operate the old and new worlds together and migrate safely, rather than betting the institution on a single cutover.
-3. **Capability before technology.** Decide the capability a bank needs before choosing the platform that delivers it.
-4. **Human-in-the-loop.** When agents act, a person can understand the action, hold the authority, and intervene.
-5. **Consumer outcomes.** Good outcomes are designed into a proposition, not evidenced after the harm is done.
-6. **Preservation before optimisation.** Keep institutional knowledge, evidence, and accountability intact before tuning for efficiency.
-7. **Continuous control.** Accountable leaders set authority, observe outcomes, intervene, and evidence control as the system runs, not only at audit.
-8. **Standards and interoperability.** Express decisions in open standards, including ISO 20022 messaging, BIAN domain boundaries, and recognised control frameworks, so the result is portable and vendor-neutral.
+1. **Human-centred** — every change is judged by the outcome it creates for a real person.
+2. **Evolution over replacement** — run the old and new worlds together and migrate safely; do not rip and replace.
+3. **Capability before technology** — build human and organisational capability first; technology serves it.
+4. **Human-in-the-loop** — agents prepare and propose; an accountable human authorises material action.
+5. **Consumer outcomes** — design and evidence good outcomes for customers from the start, not as a post-launch audit.
+6. **Preservation before optimisation** — retain knowledge, evidence, and institutional memory before optimising.
+7. **Continuous control** — accountability and control are properties of the system, evidenced continuously, not asserted quarterly.
+8. **Standards and interoperability** — build on open standards (ISO 20022, BIAN, recognised control frameworks) so work is portable and vendor-neutral.
 
 ## Cross-cutting themes
 
-Three themes run across every Intelligence and every layer of the hierarchy. They describe how transformation happens; they do not replace Owned Autonomy, accountability, or sovereignty.
+Three themes run across everything DTA does and are not replacements for
+accountability, sovereignty, or Owned Autonomy.
 
-- **Preservation.** Retain knowledge, evidence, capability, and institutional memory through change.
-- **Evolution.** Operate old and new worlds together and migrate safely.
-- **Augmentation.** Enable humans and machines to think and act together.
+- **Preservation** — retain knowledge, evidence, capability, and institutional memory.
+- **Evolution** — operate old and new worlds together and migrate safely.
+- **Augmentation** — enable humans and machines to think and act together.
 
-## Seven Intelligences
+## Eight Intelligences
 
-The Seven Intelligences are lenses across DTA's work, not filing categories. An artefact may sit under several Intelligences at once and need not have a single primary parent. They reveal relationships; they do not force ownership. Each has one concise public definition below. Detailed inclusion and exclusion rules are canon work that continues after launch.
+Lenses across DTA's work, not filing folders. An artefact may carry several
+Intelligences with no single primary parent. They do not replace Owned Autonomy
+(a doctrine), C3 (a reference architecture), or DBBs (capability units).
 
-1. **Experience Intelligence.** Understanding the outcomes people need and the journeys they actually live, so propositions include those most easily excluded and earn understanding, agency, and trust.
-2. **Capability Intelligence.** How human and organisational capability is understood, built, and evolved, across skills, knowledge, and judgment, so an institution can deliver and sustain change.
-3. **Cognitive Intelligence.** How humans and machines reason and act together: where reasoning sits, what authority an agent holds, how decisions are explained, and how people intervene and learn.
-4. **Value Intelligence.** How value is represented, exchanged, governed, settled, and measured, including deposits, payments, programmable money, and the economics of a proposition.
-5. **Trust Intelligence.** How justified trust is earned among consumers, institutions, and regulators, through inclusion, consent, privacy, evidence, and resilience.
-6. **Platform Intelligence.** How systems evolve and compose: interoperability, coexistence, governed data, and the runtime architecture that lets old and new operate together.
-7. **Control Intelligence.** How accountable leaders set authority, observe outcomes, intervene, and evidence control continuously, kept distinct from the technical control plane that enforces it.
+1. **Experience Intelligence** — how customers and institutions experience a journey, and whether it delivers good, inclusive outcomes they understand and can act on.
+2. **Capability Intelligence** — how human and organisational capability is understood, composed, and grown to deliver outcomes. Subdomains: **Skills, Knowledge, Judgment**.
+3. **Cognitive Intelligence** — how humans and machines reason and act together: where reasoning sits, what agents may do, and how decisions are explained and intervened in.
+4. **Value Intelligence** — how value is represented, exchanged, governed, settled, and measured (payments, deposits, tokenised value, contracts, economics).
+5. **Trust Intelligence** — how justified trust is earned among customers, institutions, regulators, and systems (consent, privacy, inclusion, vulnerability, evidence).
+6. **Platform Intelligence** — how systems evolve: composability, interoperability, coexistence with the core, governed data, and runtime architecture.
+7. **Control Intelligence** — how accountable leaders set authority, observe outcomes, intervene, and evidence control continuously.
+8. **Financial Intelligence** — the P&L of change, understood early: the as-is cost base (people, process, technology, infrastructure, property, suppliers and committed contracts), the target operating-model cost, the transition between them, and value realisation. The CFO lens, interlocked with the others. DTA frames the when and the scope; the client owns the numbers.
 
-## Capability subdomains: Skills, Knowledge, Judgment
-
-Capability Intelligence has three subdomains. They sit above the current squad and SFIA application rather than being replaced by it.
-
-- **Skills.** What people and teams can do. Public copy uses SFIA concepts, role names, and skill names. Detailed levels of responsibility and role libraries are protected DTA IP.
-- **Knowledge.** What an institution knows and can reason over, including governed knowledge structures and the graph work behind them.
-- **Judgment.** How experienced people decide under uncertainty. Judgment is defined carefully and is never presented as a score that can be inferred without evidence. British spelling, Judgment, is canonical. Detailed Judgment methods remain canon work and stay protected until ready.
+**Capability vs Cognitive (the boundary to hold).** Capability Intelligence is
+the *latent* capability of people and organisations, including Judgment as a
+skill. Cognitive Intelligence is reasoning *in operation* — how a live journey
+allocates reasoning between human and agent. Judgment is British spelling and is
+never a score inferred without evidence.
 
 ## Architecture hierarchy
-
-The hierarchy is the order in which work moves from intent to running system. The Intelligences are lenses across it, and the three themes cut across all of it.
 
 ```text
 Mission
   -> Principles
-  -> Seven Intelligences
+  -> Eight Intelligences
   -> Experience Journeys
   -> Reference Architectures
   -> Prototype Specifications
-  -> Ultim8
+  -> Reference Runtime
   -> Executable Systems
 ```
 
-- **Experience Journey.** An end-to-end human or institutional application, distinct from a commercial proposition. One proposition may contain several journeys.
-- **Reference Architecture.** A reusable architecture pattern, such as C3, for a recurring problem.
-- **Prototype Specification.** The executable blueprint produced from a reference architecture and a journey.
-- **Ultim8.** A runtime, held from public navigation until its public definition is stable.
-- **Executable System.** What a client builds and runs from the specification.
+Preservation, Evolution, and Augmentation cut across every layer.
 
-## Existing concepts and how they fit
+**Where existing concepts sit.**
 
-These terms keep their established definitions from `docs/lexicon.md`. The North Star states only how each relates to the hierarchy and the Intelligences.
+- **Owned Autonomy** — a doctrine and intended outcome (accountable and sovereign), no longer the site's information architecture.
+- **C3 (Capability, Context, Consent)** — a reusable reference architecture for governed human-machine action; sits beneath the Intelligences (mainly Cognitive and Control), not as a competing top level.
+- **Domain Building Blocks** — capability units; an application of Capability Intelligence and the Capability plane of C3.
+- **The clean room** — proof infrastructure behind advisory, journeys, architectures, and specifications. DTA is not a software or core-platform vendor (COM-002).
+- **Reference Runtime** — the runtime that runs Prototype Specifications as the clean-room demonstration. *Ultim8* is only the internal repository name for it; it is never a public or brand term.
 
-- **Owned Autonomy.** DTA's doctrine: agentic capability a bank owns rather than rents, accountable and sovereign by construction. It expresses intended outcome, and it maps across Cognitive, Control, and Platform Intelligence. It is not the site's information architecture.
-- **The Accountability-Sovereignty Principle.** The governing law: you cannot be accountable for what you do not control. Accountability is the obligation; sovereignty is the precondition.
-- **C3 (Capability, Context, Consent).** A reference architecture for governed human-machine action. It sits beneath the Intelligence taxonomy rather than competing with it as a top-level hierarchy.
-- **Domain Building Block (DBB).** A composable capability unit, and the Capability plane of C3. The public concept is published; the catalogue and detailed model are protected.
-- **Governed data products.** The data-layer twin of the DBB. Public as a concept; detailed schemas are protected.
-- **Clean-Room Demonstration and its Standard.** Proof infrastructure behind advisory, journeys, architectures, and specifications. The Demonstration is the fenced, running proof; the Standard is the rule set governing isolation, synthetic data, production-grade control design, claim labels, and non-production use. It is evidence, not DTA's product category.
-- **Glass Tube.** An engagement and pilot pattern, a transparent vertical slice sized to the decision. A Glass Tube may use the clean room but is not the same as it.
-- **Proposition Blueprint and Capability Blueprint.** The commercial engagement and the people-capability work-product, respectively. They are never blurred, and they carry explicit type labels wherever they appear.
-- **Working specification and Prototype Specification.** The portable, vendor-neutral artefact a client takes to any vendor, and the executable blueprint layer in the hierarchy. Value comes from portability and vendor-neutrality, never from claimed framework certification.
+## Terminology to lock for launch
+
+- **Clean-Room Demonstration** — the fenced environment and the running proof. **Clean-Room Demonstration Standard** — the rules: isolation, synthetic data, production-grade control design, claim labels, and non-production use. (TERM-008, P0)
+- **working prototype** — a running proof. **working specification** — the portable, standards-based artefact a client takes to any vendor (the output). **Prototype Specification** — the executable blueprint produced from a reference architecture and a journey. "proving ground" is descriptive prose, not a noun. (TERM-009)
+- **Glass Tube** — an engagement and pilot pattern; it may use the clean room but is not the clean room. (TERM-011)
+- **Proposition Blueprint** (commercial engagement) and **Capability Blueprint** (people/capability work-product) stay distinct, with explicit type labels. (TERM-012)
+- **Experience Journey** (end-to-end human or institutional application) vs **proposition** (commercial or product concept); one proposition may hold several journeys. (TERM-014)
+- **Consumer Outcomes** is the public term; redirect `/customer-outcomes/` to `/consumer-outcomes/`. Use *customer* only for a specific bank-customer relationship. (TERM-013)
+- **Accountable Bank** is the name of the demonstration (the control and ledger framing fits DTA's brand values) and replaces **Composable Bank** as the product name; Composable Bank remains only a generic descriptor, and the `/composable-bank/` URL is retained pending a redirect plan. (TERM-006/007) It is a **marketing name for the demonstration**, not a claim that it is, or will be, a regulated bank. Trademark check **cleared** (owner decision, 2026-06-22: no conflicting UK bank, demonstration-only use). Cleared for public use.
+- **Held / internal terms:** *Ultim8* is the internal repository name only and is never public (the public layer is the **Reference Runtime**); detailed *Judgment* methods stay internal.
 
 ## Provenance and stability
 
-Three gates stay independent. Each answers a different question, and none substitutes for another.
+**Provenance (D6): two values only.**
 
-- **Provenance** controls where content may appear: `public`, `gated`, `internal`, or `clean-room`. Each artefact carries one primary provenance. When public and protected treatments differ, the concept splits into separate register rows.
-- **Stability** controls whether content may ship: `locked`, `stable`, `developing`, or `provisional`.
-- **Claim status** controls what DTA may assert, governed by `docs/claim-register.md`: Demonstrated, Simulated, Specified, Illustrative, or Blueprint.
+- `public` — intended for unrestricted publication.
+- `internal` — DTA method, working material, or protected IP; never published raw.
 
-Publication rules:
+**Stability.**
 
-- Public pages use only `public` content that is `locked` or `stable`.
-- Clean-room pages use only `clean-room` content that is `locked` or `stable`, and keep synthetic, non-production, and claim labels visible.
-- Gated and internal content is never copied into public output.
-- A planned behaviour is labelled Specified or Blueprint, never Demonstrated.
+- `locked` — approved canon; change needs an explicit decision.
+- `stable` — publishable and evidence-backed.
+- `developing` — draftable, publication held.
+- `provisional` — exploratory; dependent content must not ship.
 
-## Public and protected content boundary
+Public pages may use only `public` content that is `locked` or `stable`.
+Generated demonstration content is `public` but is edited only via the prototype
+source repository and carries one "Demonstration on synthetic data" marker (D7).
 
-**Public.** Mission and principles; the three themes; the seven concise Intelligence definitions; the C3 plane names and the DBB concept; named roles, outcomes, and evidence boundaries; the clean-room boundary statement.
+## Public versus protected boundary
 
-**Gated or internal.** SFIA levels of responsibility, role libraries, the DBB catalogue, detailed methods, schemas, policy logic, and implementation mechanics; internal architecture codenames; detailed Judgment methods; the Ultim8 runtime boundary until it is stable; the name The Accountable Bank until a trademark and category check passes.
+**Publish (public):** the mission, principles, Intelligences, the architecture
+story, concepts, outcomes, named roles, and the *shape* of evidence and governed
+objects.
 
-**Clean-room.** Generated demonstration assets, runtime behaviour, synthetic data, and executable specifications, recorded with their source repository and build dependency rather than by copying protected implementation detail into the public site.
+**Keep internal:** DBB catalogues, SFIA levels and role libraries, delivery
+methods, ontology internals, schemas and canonical objects, control internals,
+and platform, deployment, and engine-composition detail. (PROV-003) Publish a
+public summary and link to controlled detail; never mix protected detail into
+ordinary public copy.
 
-The two untracked insight drafts in the working tree stay unchanged during this work. Historical posts are preserved rather than rewritten to match new terminology.
+## Honesty model
+
+**Link, do not litter (D5/D9).** The site sells the vision and the proposition.
+Claim and evidence detail lives in a single linked **Claims & evidence**
+reference, not in repeated inline caveats. On public pages keep only:
+
+- compact status badges where relevant: **Demonstrated · Specified · Blueprint · Illustrative**;
+- one **"Demonstration on synthetic data"** marker on clean-room content (stated as a strength, not a disclaimer).
+
+Three gates stay independent internally (provenance · stability · claim status),
+but their public expression is light. Full detail belongs in the claim register
+and in contract negotiation, tailored to each client.
+
+## Status and next
+
+- **Approved 2026-06-22.** Mission public line locked to option 1; the seven
+  Intelligence definitions and the Capability-vs-Cognitive boundary are locked;
+  the eight principles are approved. Naming: **Accountable Bank** adopted
+  (replaces Composable Bank as the product name); **Reference Runtime** replaces
+  Ultim8 in the public hierarchy (Ultim8 is the internal repo name only).
+- **Next:** record the naming decisions and the P0 approvals in the register,
+  add canonical strings to `docs/lexicon.md` and `_data/copy.yml`, then begin the
+  site build (launch plan Tasks 2 onward), all on this branch.
+- **Naming cleared:** the *Accountable Bank* trademark check is cleared (owner
+  decision, 2026-06-22): a marketing name for the demonstration, not a
+  regulated-bank claim. Cleared for public use.
+- **Launch gate unchanged:** full site updated, all P0 rows resolved, and the
+  site reconciled against the locked Phase 9 design (in `ultim8-prototype`)
+  before launch. Phase 9 stays Blueprint/Specified until implementation evidence.

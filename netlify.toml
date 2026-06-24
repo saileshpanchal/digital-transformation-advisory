@@ -20,13 +20,11 @@
   from = "/customer-outcomes"
   to = "/consumer-outcomes/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/customer-outcomes/"
   to = "/consumer-outcomes/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/*"

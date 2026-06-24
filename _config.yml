@@ -1,9 +1,9 @@
 title: Digital Transformation Advisory
 description: >-
-  Strategic advisory for the future of banking, proven in a working model.
-  DTA helps banks and fintechs design, test, and deliver the architecture,
-  propositions, and operating model for agentic and tokenised banking,
-  without leaving any consumer behind.
+  DTA is a strategic advisory helping banks build the future of finance without
+  leaving the customer behind: evolving customers, colleagues and technology
+  together through multiple forms of intelligence into trustworthy, inclusive
+  and resilient financial systems.
 url: "https://digital-transformation-advisory.com"
 baseurl: ""
 author: Sailesh Panchal
@@ -50,6 +50,7 @@ exclude:
   - scripts
   - perf
   - podcast
+  - about.md
   - categories.md
   - tags.md
   - search.md
