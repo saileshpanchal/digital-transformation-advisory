@@ -23,13 +23,5 @@ __pycache__/
 .superpowers/
 .worktrees/
 
-# Session research scratch (not for publish)
-docs/post-seeds/ciso-ai-data-exposure-research.md
-
-# Internal working docs — keep out of the public repo
-docs/architecture/
-docs/superpowers/
-docs/financial-intelligence-brief.md
-docs/next-release-recommendations.md
-docs/research/2026-06-22-boe-systemic-stablecoin-cop-factcheck.md
-docs/site-review.md
+# Internal working notes — never in the public repo (none of docs/ is built/served)
+docs/

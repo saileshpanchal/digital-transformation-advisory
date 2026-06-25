@@ -44,31 +44,40 @@ principles:
   - name: Standards and interoperability
     line: Build on open standards so the work is portable and vendor-neutral.
 
-# Seven Intelligences (North Star). Soft lenses, not folders.
+# The Eight Intelligences (North Star). Soft lenses, not folders.
+# `blurb` is the short label used on the homepage decision-map chips.
 intelligences:
   - name: Experience Intelligence
     path: /experience-intelligence/
+    blurb: Inclusive outcomes
     line: How customers and institutions experience a journey, and whether it delivers good, inclusive outcomes they understand and can act on.
   - name: Capability Intelligence
     path: /capability-intelligence/
+    blurb: Skills · knowledge · judgment
     line: How human and organisational capability (Skills, Knowledge, Judgment) is understood, composed and grown to deliver outcomes.
   - name: Cognitive Intelligence
     path: /cognitive-intelligence/
+    blurb: Human + agent reasoning
     line: "How humans and machines reason and act together: where reasoning sits, what agents may do, and how decisions are explained and intervened in."
   - name: Value Intelligence
     path: /value-intelligence/
+    blurb: Tokenised value & settlement
     line: How value is represented, exchanged, governed, settled and measured, from payments and deposits to tokenised value.
   - name: Trust Intelligence
     path: /trust-intelligence/
+    blurb: Consent & vulnerability
     line: How justified trust is earned among customers, institutions, regulators and systems through consent, privacy, inclusion and evidence.
   - name: Platform Intelligence
     path: /platform-intelligence/
+    blurb: Composability & coexistence
     line: "How systems evolve: composability, interoperability, coexistence with the core, governed data and runtime architecture."
   - name: Control Intelligence
     path: /control-intelligence/
+    blurb: Accountability, evidenced
     line: How accountable leaders set authority, observe outcomes, intervene and evidence control continuously.
   - name: Financial Intelligence
     path: /financial-intelligence/
+    blurb: The P&L of change
     line: "Understanding the P&L of change early: the as-is cost base, the target operating-model cost, and the transition between them. The CFO lens, interlocked with the others."
 
 # Cross-cutting themes (North Star).

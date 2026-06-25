@@ -13,7 +13,7 @@ description: >-
   <div class="container">
     <h1>Build the organisation of the future, on purpose.</h1>
     <p>The bank of the future has to be constructed. We bring a strategy-led approach to that construction: a whole-organisation transformation, set out as a high-level vision and a two-year roadmap, that changes people, process and technology together.</p>
-    <p>It matters now because agents are crossing from advice to action. A regulated bank can only allow that if it is <strong>accountable</strong> for every action an agent takes and <strong>sovereign</strong> over the agents, data and models it runs on. You cannot be accountable for what you do not control. We call the result <strong>Owned Autonomy</strong>: agentic capability a bank owns rather than rents. That is the destination this approach builds. This advisory and evolution method is how we apply the <a href="{{ '/intelligences/' | relative_url }}">Seven Intelligences</a> and our <a href="{{ '/architecture/' | relative_url }}">reference architectures</a>: we prove the hard parts before you build.</p>
+    <p>It matters now because agents are crossing from advice to action. A regulated bank can only allow that if it is <strong>accountable</strong> for every action an agent takes and <strong>sovereign</strong> over the agents, data and models it runs on. You cannot be accountable for what you do not control. We call the result <strong>Owned Autonomy</strong>: agentic capability a bank owns rather than rents. That is the destination this approach builds. This advisory and evolution method is how we apply the <a href="{{ '/intelligences/' | relative_url }}">Eight Intelligences</a> and our <a href="{{ '/architecture/' | relative_url }}">reference architectures</a>: we prove the hard parts before you build.</p>
   </div>
 </div>
 
@@ -26,6 +26,22 @@ description: >-
     </div>
     {% include diagrams/pilots-to-pl.html %}
     <p style="max-width:780px;margin:2rem auto 0;color:#555;text-align:center;">The deciding variable isn't budget &mdash; it's a board that will answer for what an agent does. The headline AI commitments are already public; the mid-tier question is whether you can move with that conviction on a fraction of it. We give you the architecture, the controls and the proof to do exactly that &mdash; with a way in that doesn't require betting the bank.</p>
+  </div>
+</section>
+
+<!-- 0b. The principles we work to (moved from the homepage) -->
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <h2>The principles we work to</h2>
+      <p class="section-subtitle">Transform the bank without losing the bank. Done right, the people become a lever for growth, pointed at the propositions and markets they never had capacity to chase. And we will tell you when <em>not</em> to automate: a customer making a claim, or asking about their care, needs a person. Leaving no customer behind is a design rule, not a slogan.</p>
+    </div>
+    {% include diagrams/automate-line.html %}
+    <ol class="principles-list" style="margin-top:3rem;">
+      {% for p in site.data.copy.principles %}
+      <li><h3>{{ p.name }}</h3><p>{{ p.line }}</p></li>
+      {% endfor %}
+    </ol>
   </div>
 </section>
 
@@ -43,7 +59,7 @@ description: >-
     </div>
     <p style="max-width:760px;margin:2rem auto 0;color:#555;">Proposition, operating model and architecture are one decision. From it we set a high-level vision and a roadmap, pitched roughly two years out, that moves people, process and technology in step. Get the order wrong and architecture choices arrive too late to matter.</p>
     <p style="max-width:760px;margin:1.25rem auto 0;color:#555;">This page is the operating-model leg of one capability: <a href="{{ '/composable-bank/' | relative_url }}">the target architecture (what good looks like, proven)</a>, the operating model to build it, and the capability intelligence to staff it. Most banks bolt an operating model onto a platform they chose before the hard parts were proven. We define the architecture first and build the model that delivers it.</p>
-    <p style="max-width:760px;margin:1.25rem auto 0;color:#555;">This is the evolution method in practice. We read the work through the <a href="{{ '/intelligences/' | relative_url }}">Seven Intelligences</a>, design against reusable <a href="{{ '/architecture-library/' | relative_url }}">reference architectures</a>, prove the hard parts in a <a href="{{ '/composable-bank/' | relative_url }}">working model</a>, and run the old and new worlds together rather than betting the bank on a single cutover.</p>
+    <p style="max-width:760px;margin:1.25rem auto 0;color:#555;">This is the evolution method in practice. We read the work through the <a href="{{ '/intelligences/' | relative_url }}">Eight Intelligences</a>, design against reusable <a href="{{ '/architecture-library/' | relative_url }}">reference architectures</a>, prove the hard parts in a <a href="{{ '/composable-bank/' | relative_url }}">working model</a>, and run the old and new worlds together rather than betting the bank on a single cutover.</p>
   </div>
 </section>
 
