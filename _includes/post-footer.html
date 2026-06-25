@@ -4,10 +4,13 @@
     <img src="{{ '/assets/images/corporate/sp-icon.png' | relative_url }}" alt="Sailesh Panchal" class="author-bio-photo">
     <div class="author-bio-body">
       <p class="author-bio-name">{{ site.author }}</p>
-      <p class="author-bio-text">Founder &amp; CEO of Digital Transformation Advisory. 30+ years in banking and FinTech — now building agentic product squads and production AI platforms for regulated organisations. Writing a book on digital transformation in UK banking.</p>
+      <p class="author-bio-text">Founder and CEO of Digital Transformation Advisory, strategic advisory for the future of banking. 30+ years in banking and FinTech. Writing a book on digital transformation in UK banking.</p>
       <div class="author-bio-links">
         {% if site.linkedin and site.linkedin != "" %}<a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
         {% if site.medium and site.medium != "" %}<a href="{{ site.medium }}" target="_blank" rel="noopener">Medium</a>{% endif %}
+        <a href="{{ '/intelligences/' | relative_url }}">Intelligences</a>
+        <a href="{{ '/experience-journeys/' | relative_url }}">Journeys</a>
+        <a href="{{ '/architecture-library/' | relative_url }}">Architecture</a>
         <a href="{{ '/insights/' | relative_url }}">More insights</a>
       </div>
     </div>
@@ -16,13 +19,13 @@
   <div class="post-cta">
     <div class="post-cta-text">
       <h3>Working on something like this?</h3>
-      <p>If this resonates, we should talk. We help organisations turn ideas like these into shipped outcomes.</p>
+      <p>If this resonates, we should talk. Bring a strategy, architecture, proposition, or capability challenge and we will be honest about whether and how we can help.</p>
     </div>
-    <a href="{{ '/connect/' | relative_url }}" class="btn btn--primary">Book a call</a>
+    <a href="{{ '/connect/' | relative_url }}" class="btn btn--primary">Discuss a challenge</a>
   </div>
 
   <div class="post-subscribe">
-    <p>Get new insights by email &mdash; agentic engineering, on-device AI and transformation.</p>
+    <p>Get new insights by email: the future of banking, agentic engineering, and transformation.</p>
     <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form">
       <input type="hidden" name="form-name" value="newsletter">
       <p class="hidden-field"><label>Don't fill this out: <input name="bot-field"></label></p>

@@ -1,0 +1,33 @@
+{%- comment -%}
+What the regulator asks for: the agent prepares and proposes, an accountable
+human authorises material action, every step evidenced and revocable, audited
+end to end.
+{%- endcomment -%}
+<div class="diagram">
+  <svg viewBox="0 0 760 240" role="img" aria-label="The agent prepares and proposes, an accountable human authorises material action, every step is evidenced and revocable, and the whole flow is audited end to end">
+    <defs>
+      <marker id="dg-arrow-loop" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 1 L 9 5 L 0 9 z" fill="#9bc9e6"></path>
+      </marker>
+    </defs>
+
+    <rect class="dg-node" x="20" y="50" width="200" height="90" rx="8"></rect>
+    <text class="dg-label" x="120" y="88" text-anchor="middle">Agent</text>
+    <text class="dg-sub" x="120" y="110" text-anchor="middle">prepares &amp; proposes</text>
+
+    <line class="dg-link" x1="220" y1="95" x2="280" y2="95" marker-end="url(#dg-arrow-loop)"></line>
+
+    <rect class="dg-node" x="280" y="50" width="200" height="90" rx="8"></rect>
+    <text class="dg-label" x="380" y="88" text-anchor="middle">Human</text>
+    <text class="dg-sub" x="380" y="110" text-anchor="middle">authorises material action</text>
+
+    <line class="dg-link" x1="480" y1="95" x2="540" y2="95" marker-end="url(#dg-arrow-loop)"></line>
+
+    <rect class="dg-node-accent" x="540" y="50" width="200" height="90" rx="8"></rect>
+    <text class="dg-label-light" x="640" y="88" text-anchor="middle">Evidence</text>
+    <text class="dg-label-light" x="640" y="110" text-anchor="middle" style="font-size:12px;font-weight:500;opacity:0.92;">recorded &amp; revocable</text>
+
+    <path d="M 640 140 L 640 195 L 120 195 L 120 140" fill="none" stroke="#cfe7f5" stroke-width="2" marker-end="url(#dg-arrow-loop)"></path>
+    <text class="dg-sub" x="380" y="189" text-anchor="middle" style="font-weight:700;">audited end to end &mdash; what the regulator asks for</text>
+  </svg>
+</div>

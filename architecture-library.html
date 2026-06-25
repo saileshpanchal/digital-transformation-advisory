@@ -1,0 +1,98 @@
+---
+layout: corporate
+title: "Architecture Library"
+permalink: /architecture-library/
+description: >-
+  Stable public views of the reference architectures DTA works with: C3,
+  Domain Building Blocks, governed data products, value exchange, trust,
+  platform evolution, resilience, and continuous control. Designed to be read,
+  questioned, and reused.
+---
+
+<div class="insights-header">
+  <div class="container">
+    <h1>Architecture Library</h1>
+    <p>Stable public views of the reference architectures we work with. A reference architecture is a reusable pattern for a recurring problem, designed to be read, questioned, and reused. We publish the concepts, outcomes, and boundaries here; detailed schemas and methods stay protected.</p>
+    <div class="hero-actions" style="justify-content:flex-start;">
+      {% include cta-calendly.html kind="strategy_call" loc="archlib-hero" label="Discuss a challenge" %}
+      <a href="{{ '/prototype-specifications/' | relative_url }}" class="btn btn--outline">Prototype Specifications</a>
+    </div>
+  </div>
+</div>
+
+<!-- Anchor: C3, the flagship reference architecture -->
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <h2>C3, the reference architecture for governed action</h2>
+      <p class="section-subtitle">Capability, Context, and Consent. Our most-used reference architecture, and how a bank lets an agent act while staying accountable. It sits beneath the Seven Intelligences, not above them.</p>
+    </div>
+    {% include diagrams/c3-planes.html %}
+    <p class="diagram-caption">Read the argument in <a href="{{ '/2026/06/14/c3-the-spine-of-owned-autonomy/' | relative_url }}">C3: the spine of Owned Autonomy</a>.</p>
+  </div>
+</section>
+
+<!-- Stable views -->
+<section class="section section--light">
+  <div class="container">
+    <div class="text-center">
+      <h2>Stable views</h2>
+      <p class="section-subtitle">Each links to a public paper or a demonstration. The deeper detail is worked through under an engagement, not published.</p>
+    </div>
+    <div class="offerings-grid">
+      <div class="offering-card">
+        <h3>C3 reference architecture</h3>
+        <p>Capability, Context, and Consent: governed human and machine action. <a href="{{ '/2026/06/14/c3-the-spine-of-owned-autonomy/' | relative_url }}">Read the paper</a>.</p>
+      </div>
+      <div class="offering-card">
+        <h3>Domain Building Blocks</h3>
+        <p>Reusable banking capability units, the Capability plane of C3. <a href="{{ '/2026/06/13/domain-building-blocks-composable-banking/' | relative_url }}">Read the paper</a>.</p>
+      </div>
+      <div class="offering-card">
+        <h3>Governed data products</h3>
+        <p>Engines built on the products, not the other way round. <a href="{{ '/composable-bank/data-products/' | relative_url }}">See the data products</a>.</p>
+      </div>
+      <div class="offering-card">
+        <h3>Value exchange</h3>
+        <p>Payments, deposits, and programmable value on open standards. <a href="{{ '/composable-bank/cross-border-payments/' | relative_url }}">See the demonstration</a>.</p>
+      </div>
+      <div class="offering-card">
+        <h3>Platform evolution</h3>
+        <p>Define the target architecture first, then choose the platform that conforms to it. <a href="{{ '/composable-bank/platform/' | relative_url }}">See the platform</a>.</p>
+      </div>
+      <div class="offering-card">
+        <h3>Trust and inclusion</h3>
+        <p>Justified trust through consent, evidence, and design from the excluded edge. <a href="{{ '/trust-intelligence/' | relative_url }}">See Trust Intelligence</a>.</p>
+      </div>
+      <div class="offering-card">
+        <h3>Reconciliation by construction <span class="status status--demonstrated">Demonstrated</span></h3>
+        <p>An authoritative ledger commit journal, drift detection that classifies divergence as clean, drift, or incomplete, and maker-checker repair, demonstrated in the prototype. Reconciliation never mutates the authoritative ledger.</p>
+      </div>
+      <div class="offering-card">
+        <h3>Resilience <span class="status status--blueprint">Blueprint</span></h3>
+        <p>A self-diagnosing estate that watches itself and reports who was harmed. Distinct from reconciliation above and not yet built. <a href="{{ '/composable-bank/resilience/' | relative_url }}">See the resilience architecture</a>.</p>
+      </div>
+      <div class="offering-card">
+        <h3>Continuous control</h3>
+        <p>Authority set, outcomes observed, intervention, and evidence as the bank runs. <a href="{{ '/control-intelligence/' | relative_url }}">See Control Intelligence</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Public vs protected -->
+<section class="section">
+  <div class="container text-center">
+    <h2>What is public, and what is protected</h2>
+    <p class="section-subtitle">We publish concepts, outcomes, named roles, and evidence boundaries. Detailed schemas, control internals, catalogues, and implementation mechanics are worked through under an engagement, through the Architecture Room. This keeps the public views honest and the methods protected.</p>
+  </div>
+</section>
+
+<!-- Next action -->
+<section class="section section--dark">
+  <div class="container text-center">
+    <h2>Want to go deeper on one of these?</h2>
+    <p class="section-subtitle" style="color:rgba(255,255,255,0.85);">Tell us the decision in front of you and we will walk the relevant reference architecture, and the evidence behind it, with you.</p>
+    {% include cta-calendly.html kind="strategy_call" loc="archlib-cta" label="Discuss a challenge" %}
+  </div>
+</section>

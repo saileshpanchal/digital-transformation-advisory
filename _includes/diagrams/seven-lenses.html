@@ -1,0 +1,29 @@
+{%- comment -%}
+Seven Intelligences as lenses on one subject.
+Params:
+  highlight : lens key to accent (experience|capability|cognitive|value|trust|platform|control). Optional.
+  subject   : centre label. Optional, default "A proposition".
+{%- endcomment -%}
+{%- assign hl = include.highlight -%}
+{%- assign subject = include.subject | default: "A proposition" -%}
+<div class="diagram">
+  <svg viewBox="0 0 760 430" role="img" aria-label="The seven Intelligences arranged as lenses around {{ subject }}">
+    <circle class="dg-ring" cx="380" cy="210" r="150"></circle>
+    <line class="dg-link" x1="380" y1="210" x2="380" y2="60"></line>
+    <line class="dg-link" x1="380" y1="210" x2="497" y2="117"></line>
+    <line class="dg-link" x1="380" y1="210" x2="526" y2="243"></line>
+    <line class="dg-link" x1="380" y1="210" x2="445" y2="345"></line>
+    <line class="dg-link" x1="380" y1="210" x2="315" y2="345"></line>
+    <line class="dg-link" x1="380" y1="210" x2="234" y2="243"></line>
+    <line class="dg-link" x1="380" y1="210" x2="263" y2="117"></line>
+    <rect class="dg-node-accent" x="305" y="186" width="150" height="48" rx="8"></rect>
+    <text class="dg-label-light" x="380" y="215" text-anchor="middle">{{ subject }}</text>
+    <a href="{{ '/experience-intelligence/' | relative_url }}"><title>Experience Intelligence</title><rect class="{% if hl == 'experience' %}dg-node-accent{% else %}dg-node{% endif %}" x="320" y="41" width="120" height="38" rx="8"></rect><text class="{% if hl == 'experience' %}dg-label-light{% else %}dg-label{% endif %}" x="380" y="65" text-anchor="middle">Experience</text></a>
+    <a href="{{ '/capability-intelligence/' | relative_url }}"><title>Capability Intelligence</title><rect class="{% if hl == 'capability' %}dg-node-accent{% else %}dg-node{% endif %}" x="437" y="98" width="120" height="38" rx="8"></rect><text class="{% if hl == 'capability' %}dg-label-light{% else %}dg-label{% endif %}" x="497" y="122" text-anchor="middle">Capability</text></a>
+    <a href="{{ '/cognitive-intelligence/' | relative_url }}"><title>Cognitive Intelligence</title><rect class="{% if hl == 'cognitive' %}dg-node-accent{% else %}dg-node{% endif %}" x="466" y="224" width="120" height="38" rx="8"></rect><text class="{% if hl == 'cognitive' %}dg-label-light{% else %}dg-label{% endif %}" x="526" y="248" text-anchor="middle">Cognitive</text></a>
+    <a href="{{ '/value-intelligence/' | relative_url }}"><title>Value Intelligence</title><rect class="{% if hl == 'value' %}dg-node-accent{% else %}dg-node{% endif %}" x="385" y="326" width="120" height="38" rx="8"></rect><text class="{% if hl == 'value' %}dg-label-light{% else %}dg-label{% endif %}" x="445" y="350" text-anchor="middle">Value</text></a>
+    <a href="{{ '/trust-intelligence/' | relative_url }}"><title>Trust Intelligence</title><rect class="{% if hl == 'trust' %}dg-node-accent{% else %}dg-node{% endif %}" x="255" y="326" width="120" height="38" rx="8"></rect><text class="{% if hl == 'trust' %}dg-label-light{% else %}dg-label{% endif %}" x="315" y="350" text-anchor="middle">Trust</text></a>
+    <a href="{{ '/platform-intelligence/' | relative_url }}"><title>Platform Intelligence</title><rect class="{% if hl == 'platform' %}dg-node-accent{% else %}dg-node{% endif %}" x="174" y="224" width="120" height="38" rx="8"></rect><text class="{% if hl == 'platform' %}dg-label-light{% else %}dg-label{% endif %}" x="234" y="248" text-anchor="middle">Platform</text></a>
+    <a href="{{ '/control-intelligence/' | relative_url }}"><title>Control Intelligence</title><rect class="{% if hl == 'control' %}dg-node-accent{% else %}dg-node{% endif %}" x="203" y="98" width="120" height="38" rx="8"></rect><text class="{% if hl == 'control' %}dg-label-light{% else %}dg-label{% endif %}" x="263" y="122" text-anchor="middle">Control</text></a>
+  </svg>
+</div>

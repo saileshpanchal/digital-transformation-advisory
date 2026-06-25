@@ -1,0 +1,22 @@
+{%- comment -%}
+Clean-room claim boundary: Demonstrated / Simulated / Specified, plus the
+synthetic, non-production boundary statement. HTML cards so it reflows
+(three-up on desktop, stacked on mobile) and stays legible at any width.
+{%- endcomment -%}
+<div class="diagram">
+  <div class="trio-grid">
+    <div class="trio-card">
+      <span class="status status--demonstrated">Demonstrated</span>
+      <p style="margin-top:0.6rem;">The mechanism genuinely runs in the prototype.</p>
+    </div>
+    <div class="trio-card">
+      <span class="status status--simulated">Simulated</span>
+      <p style="margin-top:0.6rem;">Inputs are generated test fixtures.</p>
+    </div>
+    <div class="trio-card">
+      <span class="status status--specified">Specified</span>
+      <p style="margin-top:0.6rem;">Production scale and cutover are described, not executed here.</p>
+    </div>
+  </div>
+  <p class="diagram-caption" style="margin-top:1.5rem;"><strong>The boundary.</strong> Synthetic data. Test consumers, never real customers. Production-grade controls. Not a production banking system.</p>
+</div>

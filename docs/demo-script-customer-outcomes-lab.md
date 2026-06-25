@@ -5,7 +5,7 @@ status: blueprint
 date: 2026-06-18
 related:
   page: /customer-outcomes/
-  prototype: ultim8-prototype (Family Wealth journey)
+  prototype: the clean-room prototype (Family Wealth journey)
   public_demo: /composable-bank/family-wealth/
 honesty: >-
   This describes a PROPOSED extension of the existing prototype, not a shipped

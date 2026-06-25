@@ -1,0 +1,34 @@
+{%- comment -%}
+From pilots to P&L: horizontal copilot rollout (feels faster, flat numbers)
+versus one vertical journey, governed end to end, that reaches the P&L.
+{%- endcomment -%}
+<div class="diagram">
+  <svg viewBox="0 0 760 300" role="img" aria-label="On the left, three greyed copilot tiles that feel faster but move no numbers; on the right, one vertical journey governed end to end that reaches the P and L">
+    <defs>
+      <marker id="dg-arrow-pl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 1 L 9 5 L 0 9 z" fill="#9bc9e6"></path>
+      </marker>
+    </defs>
+
+    <text class="dg-sub" x="180" y="28" text-anchor="middle" style="font-weight:700;">Horizontal: pilots</text>
+    <rect class="dg-node-soft" x="30" y="48" width="300" height="40" rx="6"></rect>
+    <text class="dg-sub" x="180" y="73" text-anchor="middle">Copilot</text>
+    <rect class="dg-node-soft" x="30" y="98" width="300" height="40" rx="6"></rect>
+    <text class="dg-sub" x="180" y="123" text-anchor="middle">Copilot</text>
+    <rect class="dg-node-soft" x="30" y="148" width="300" height="40" rx="6"></rect>
+    <text class="dg-sub" x="180" y="173" text-anchor="middle">Copilot</text>
+    <text class="dg-sub" x="180" y="214" text-anchor="middle">feels faster &middot; numbers flat</text>
+
+    <text class="dg-label" x="400" y="125" text-anchor="middle" style="font-size:22px;">vs</text>
+
+    <text class="dg-sub" x="600" y="28" text-anchor="middle" style="font-weight:700;">Vertical: one journey</text>
+    <rect class="dg-node" x="470" y="48" width="260" height="40" rx="6"></rect>
+    <text class="dg-sub" x="600" y="73" text-anchor="middle">One journey, end to end</text>
+    <line class="dg-link" x1="600" y1="88" x2="600" y2="108" marker-end="url(#dg-arrow-pl)"></line>
+    <rect class="dg-node" x="470" y="113" width="260" height="40" rx="6"></rect>
+    <text class="dg-sub" x="600" y="138" text-anchor="middle">Governed work: cost &amp; risk</text>
+    <line class="dg-link" x1="600" y1="153" x2="600" y2="173" marker-end="url(#dg-arrow-pl)"></line>
+    <rect class="dg-node-accent" x="470" y="178" width="260" height="40" rx="6"></rect>
+    <text class="dg-label-light" x="600" y="203" text-anchor="middle">P&amp;L</text>
+  </svg>
+</div>

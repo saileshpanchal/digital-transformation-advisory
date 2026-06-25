@@ -2,7 +2,7 @@
 
 > One screen of the site's words — the review/comment surface for messaging tweaks. **Not the build source** (pages stay as HTML). Comment inline here or in chat referencing `page · section`.
 >
-> **Tags:** **[web]** = edit the Jekyll file directly · **[proto]** = copy lives in the prototype `packages/ui-showcase/src/propositions.ts` → edit there, rebuild, republish `/composable-bank/` · **[data]** = centralised in `_data/copy.yml` (edit once, propagates).
+> **Tags:** **[web]** = edit the Jekyll file directly · **[proto]** = copy lives in the prototype's UI-showcase package source → edit there, rebuild, republish `/composable-bank/` · **[data]** = centralised in `_data/copy.yml` (edit once, propagates).
 >
 > **Consistency backstops:** vocabulary → `docs/lexicon.md`; claims → `docs/claim-register.md`; repeated strings → `_data/copy.yml`. Cross-cutting edits: change `_data`/lexicon once, then I grep-verify before deploy.
 >
@@ -11,7 +11,9 @@
 ## Shared / cross-cutting [data]
 - **Calendly CTAs** — `_data/copy.yml › calendly` + `_includes/cta-calendly.html`. Strategy-call slug `…/30min`; capability slug `…/capability-blueprint`. Labels in `cta_labels`.
 - **Canonical lines** — `_data/copy.yml › canonical`: offer (`Six-week Proposition Blueprint → optional 90-day Proof`), spine (`You cannot be accountable for what you do not control.`), Owned Autonomy, Clean-Room.
-- **Nav / footer** [web] `_layouts/corporate.html` — items: Home · Approach · Propositions · Capability Intelligence · Customer Outcomes · Insights · [Book a strategy call]. Footer adds Contact + Policies + (LinkedIn/Medium when configured).
+- **Nav / footer** [web] `_layouts/corporate.html` — items: Home (Mission · Principles · Intelligences · Leadership) · Intelligences · Experience Journeys · Architecture (Architecture Library · Prototype Specifications) · Insights · [Discuss a challenge]. Footer: Intelligences · Experience Journeys · Architecture Library · Prototype Specifications · Consumer Outcomes · Approach · Insights · Contact · Policies, plus the shortened mission and (LinkedIn/Medium when configured). Ultim8 held from nav until its definition is stable.
+- **Note:** the site is migrating to the architecture IA (North Star → Seven Intelligences). Some page sections below predate the migration and are being synced; the canon is `docs/architecture/north-star.md`.
+- **Nav / footer** [web] `_layouts/corporate.html` — items: Home · Intelligences · Experience Journeys · Architecture · Insights · [Discuss a challenge]. Footer adds Demonstration + Contact + Policies + (LinkedIn/Medium when configured).
 
 ## Home — `index.html` [web]
 - **Hero strapline:** "Owned Autonomy · Agentic Squads · Capable Organisations." · **H1:** "Deploy agentic talent now. Own the autonomy that follows." · **sub:** build the squads, organisational capability and operating model to adopt agentic ways of working, then turn that capability into better propositions and new business models. · CTAs: [Book a strategy call] + [See the demonstration].
@@ -33,16 +35,43 @@
 - **Hero H1:** "Capability intelligence for high-performance squads." · CTA [Discuss a Capability Blueprint] + [See how it works].
 - Sections: Why now (WEF 2025, attributed) · Unsolved problem (4) · Two better conversations (demand/evidence) · Lifecycle (Capability Blueprint → Best-fit Squad → Managed Capability Cycle) · Two applications · **Worked example** (synthetic; provenance labels Generated/Derived/Future) · Trusted structure (SFIA; SFIA-10) · AI-assisted (privacy line) · Expansion · CTA ("what to bring").
 
-## Customer Outcomes — `customer-outcomes.html` [web]
+## Architecture Library — `architecture-library.html` [web]
+- **Hero H1:** "Architecture Library." Stable public views of reference architectures (read, question, reuse); concepts/outcomes/boundaries public, schemas/methods protected via the Architecture Room.
+- Anchor: **C3 planes diagram**. Stable-views grid (8): C3 · DBBs · governed data products · value exchange · platform evolution · trust & inclusion · resilience (**Blueprint**) · continuous control, each linking a paper or demonstration. Public-vs-protected note. CTA.
+
+## Prototype Specifications — `prototype-specifications.html` [web]
+- **Hero H1:** "Prototype Specifications." A prototype specification = the executable blueprint from a reference architecture + a journey; open standards, portable, vendor-neutral.
+- Anchor: **architecture-hierarchy diagram**. Five terms (reference architecture · prototype specification · working prototype · working specification · executable system). Published examples with status: C3 (reference architecture) · Clean-Room Demonstration (**Demonstrated**) · vendor-neutral working specification (**Specified**) · Synthetic Bank Migration Twin (**Blueprint**). Clean-room-boundary diagram. CTA.
+
+## Ultim8 — `ultim8.html` [web] — HELD (`published: false`)
+- Held until TERM-010 reaches stable; omitted from nav (NAV-005). Draft positions Ultim8 as the runtime between Prototype Specifications and Executable Systems. Do not publish until the conflict register permits.
+
+## Sterling Stablecoin — `sterling-stablecoin.html` [web]
+- **Hero H1:** "Sterling Stablecoin." Balanced (issuer + bank/PSP readiness); thesis line (define independently, prove the difficult parts in a working model, build the capability to deliver). Links the BoE draft-Code Insight.
+- Sections: regime-in-brief (4 anchors + house phrasing, BoE-attributed, draft, finalise end-2026) · **Through the Seven Intelligences** (seven-lenses diagram highlight=value + 7 lens cards, each → its Intelligence page, with demonstrated/blueprint status) · **What we can evidence today** (Demonstrated: 1:1 unit, transfer control, payments/ISO 20022, reconciliation + evidence; Blueprint: backing pool, redemption, capital, two trusts; clean-room-boundary diagram) · How we help (define/prove/build; partner for treasury-quant + trust-law; no pricing) · CTA.
+- **Governance:** claims map = `claim-register.md` §K; regime = §D (draft, BoE-attributed, house phrasing); reconciliation/transfer/1:1 = §B; non-production proving ground; no repo internals; no pricing.
+
+## Consumer Outcomes — `consumer-outcomes.html` [web]  (was Customer Outcomes; `/customer-outcomes/` 301s here)
+- **Hero H1:** "Banking should work for the people it is easiest to exclude." Advocacy-led: good consumer outcomes are designed into a proposition, not evidenced after the harm is done. Sits under Experience and Trust Intelligence.
+- **Structure:** the position (Consumer Duty as a design input, attributed) · six principles we advocate · A Place to Start (**Blueprint**) · what changes when agents act (comprehension, consent and control, intervention) · how we help (advisory then the proving ground, 5 stages + misunderstanding heatmap) · the evidence boundary (clean-room labels) · CTA "Bring us a proposition that could exclude someone".
+- **The differentiator:** the prototype already runs **agents under C3 controls with evidence recorded**, so it tests the part no focus group can reach: what agentic action does to consumer outcomes. Generic consumer testing only sees screens; this sees the agent.
+## Consumer Outcomes — `consumer-outcomes.html` [web] (was `/customer-outcomes/`, now 301 → `/consumer-outcomes/`)
 - **Hero H1:** "Test agentic journeys before you build them." · Repositioned from a principles page to a **pre-delivery proving ground**: use the prototype to test whether a proposition is likely to deliver good outcomes before the bank commits to build.
 - **The differentiator (lead):** the prototype already runs **agents under C3 controls with evidence recorded**, so it tests the part no focus group can reach — what agentic action does to consumer outcomes (agent-action comprehension, consent and control, intervention and override). Generic consumer testing only sees screens; this sees the agent.
 - Sections: problem (outcomes evidenced too late) · **the new question agents create** · proving ground (not a principles page) · what a run would look like (5 stages) · what a run measures (6 general lenses + 3 agentic lenses + misunderstanding heatmap) · outputs (focus-group evidence, risk log, design changes, board pack) · CTA "Bring a proposition you are about to build".
 - **Honesty (critical):** the prototype is a **working platform, in use on this site** (Family Wealth, agent actions + approval gates + recorded evidence, synthetic data). It is a **proving ground by design: test consumers only, never real customers, not production** — "non-production" is the intent, so do NOT under-sell it as vapour/blueprint either. Outcome-capture/heatmap is **configured & extended per engagement** (no off-the-shelf "Lab"). **Output = vendor-neutral working specification** for the client's chosen vendor/build (DTA upstream of implementation). Demo script: `docs/demo-script-customer-outcomes-lab.md`.
+- **Word use:** *consumer* for advocacy and market-wide outcomes; *customer* only for a specific bank-customer relationship or quoted FCA source.
 - **Governance:** Consumer Duty = FCA external, attribute only, **never imply DTA certifies compliance** — `claim-register.md` §D + material-claims table.
 
 ## Post — "Test, Learn, Evidence: Consumer Duty When Agents Act and Money Moves in Tokens" [blog]
 - `_posts/2026-06-18-consumer-duty-test-learn-evidence-agents-tokens.md`. Thesis: the Duty is a test→learn→evidence **loop**; banks run it as 3 disconnected, late activities; **agents** change *what* you test (the agent's action, not the screen) and **tokens** change *what's at stake* (speed, finality, programmability). FCA now supervises for outcomes → needs now.
-- Drives to `/customer-outcomes/` proving ground. Honesty: platform **working/in-use** (synthetic, **test consumers, non-production by design**); outcome-capture configured/extended per engagement; tokenised rail added per engagement; **output = vendor-neutral working spec** for client's chosen vendor. Tokenisation = FCA/BoE proposed regime, attributed, **not settled law, no limit numbers**. No compliance certification. Governance: `claim-register.md`.
+- Drives to `/consumer-outcomes/` proving ground. Honesty: platform **working/in-use** (synthetic, **test consumers, non-production by design**); outcome-capture configured/extended per engagement; tokenised rail added per engagement; **output = vendor-neutral working spec** for client's chosen vendor. Tokenisation = FCA/BoE proposed regime, attributed, **not settled law, no limit numbers**. No compliance certification. Governance: `claim-register.md`.
+
+## Architecture — `architecture.html` [web] + `prototype-specifications.html`
+- `/architecture/` is the Architecture landing/library (curated stable views: C3, DBBs, governed data products, Platform, Resilience, advisory method) linking public papers and demonstration pages. `/prototype-specifications/` defines the layer chain Reference Architecture → Prototype Specification → Working Prototype → Working Specification → Executable System. No public Ultim8 page (retired as a public term; the layer is **Reference Runtime**). Honesty: working prototype = demonstrated (synthetic); Prototype Specifications = Specified/Blueprint until evidence.
+
+## Intelligences — `intelligences.html` hub + 7 domain pages [web]
+- Hub links all **eight** via `path` in `_data/copy.yml › intelligences`. Pages: experience/capability/cognitive/value/trust/platform/control/**financial**-intelligence. Capability page carries a domain band (Skills/Knowledge/Judgment) above the SFIA/squad application. Value keeps tokenisation attributed/proposed. **Financial Intelligence** (8th, adopted 2026-06-23): website page is specific + shows the interlock (other lenses as P&L contributors); citations live in `docs/financial-intelligence-brief.md`. Business Architecture deferred. Addressable-vs-committed funding and the AI-shifted cost shape are core to the model.
 
 ## Connect — `connect.html` [web]
 - H1 "Book a strategy call" + Calendly + secondary contact form (→ `/success/`).
