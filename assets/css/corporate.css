@@ -1797,6 +1797,9 @@ a.node:hover .go{transform:translate(3px,-3px);}
 .chip{background:var(--map-paper);border:1px solid var(--map-line);border-radius:10px;padding:18px;text-align:center;}
 .chip .ck{font-size:clamp(16px,1.8vw,20px);font-weight:800;letter-spacing:-.02em;}
 .chip .cd{font-size:12.5px;color:var(--map-muted);margin-top:5px;}
+a.chip{display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .16s,border-color .16s,box-shadow .16s;}
+a.chip:hover{transform:translateY(-3px);border-color:var(--map-cyan);box-shadow:0 12px 34px rgba(22,22,22,.10);}
+.chip .chip-lens{margin-top:auto;padding-top:12px;font-size:11px;font-weight:800;color:var(--map-cyan-dark);letter-spacing:.02em;}
 
 /* intelligences hub */
 .hub{background:var(--map-paper);border:1px solid var(--map-line);border-top:3px solid var(--map-ink);border-radius:10px;padding:22px 24px;}
