@@ -123,7 +123,7 @@ Both posts share a near-identical closing-CTA paragraph that drifts ("proven …
 - **Console:** 0 errors / 0 warnings across all 20 built pages.
 - **Diagrams all render:**
   - `approach` mermaid flowchart → renders to SVG (desktop + mobile). ✓
-  - The HTML/CSS card diagrams (`architecture-hierarchy`, `clean-room-boundary`, `c3-planes`, `seven-lenses`, `migration-twin`) reflow correctly — intentional design (not mermaid/SVG), so they stay legible at any width. ✓
+  - The HTML/CSS card diagrams (`architecture-hierarchy`, `clean-room-boundary`, `c3-planes`, `eight-lenses`, `migration-twin`) reflow correctly — intentional design (not mermaid/SVG), so they stay legible at any width. ✓
   - `operating-model` has no diagram (correct — it points to `approach` for the flowchart).
 - **Responsive:** no horizontal overflow at 375px (`scrollWidth == innerWidth`). Two-column before/after blocks and multi-card grids stack to a single column correctly on home and approach. ✓
 - **Status chips** render with colour coding on `experience-journeys`, `sterling-stablecoin`, `architecture-library`. ✓

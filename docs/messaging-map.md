@@ -12,7 +12,7 @@
 - **Calendly CTAs** — `_data/copy.yml › calendly` + `_includes/cta-calendly.html`. Strategy-call slug `…/30min`; capability slug `…/capability-blueprint`. Labels in `cta_labels`.
 - **Canonical lines** — `_data/copy.yml › canonical`: offer (`Six-week Proposition Blueprint → optional 90-day Proof`), spine (`You cannot be accountable for what you do not control.`), Owned Autonomy, Clean-Room.
 - **Nav / footer** [web] `_layouts/corporate.html` — items: Home (Mission · Principles · Intelligences · Leadership) · Intelligences · Experience Journeys · Architecture (Architecture Library · Prototype Specifications) · Insights · [Discuss a challenge]. Footer: Intelligences · Experience Journeys · Architecture Library · Prototype Specifications · Consumer Outcomes · Approach · Insights · Contact · Policies, plus the shortened mission and (LinkedIn/Medium when configured). Ultim8 held from nav until its definition is stable.
-- **Note:** the site is migrating to the architecture IA (North Star → Seven Intelligences). Some page sections below predate the migration and are being synced; the canon is `docs/architecture/north-star.md`.
+- **Note:** the site is migrating to the architecture IA (North Star → Eight Intelligences). Some page sections below predate the migration and are being synced; the canon is `docs/architecture/north-star.md`.
 - **Nav / footer** [web] `_layouts/corporate.html` — items: Home · Intelligences · Experience Journeys · Architecture · Insights · [Discuss a challenge]. Footer adds Demonstration + Contact + Policies + (LinkedIn/Medium when configured).
 
 ## Home — `index.html` [web]
@@ -48,7 +48,7 @@
 
 ## Sterling Stablecoin — `sterling-stablecoin.html` [web]
 - **Hero H1:** "Sterling Stablecoin." Balanced (issuer + bank/PSP readiness); thesis line (define independently, prove the difficult parts in a working model, build the capability to deliver). Links the BoE draft-Code Insight.
-- Sections: regime-in-brief (4 anchors + house phrasing, BoE-attributed, draft, finalise end-2026) · **Through the Seven Intelligences** (seven-lenses diagram highlight=value + 7 lens cards, each → its Intelligence page, with demonstrated/blueprint status) · **What we can evidence today** (Demonstrated: 1:1 unit, transfer control, payments/ISO 20022, reconciliation + evidence; Blueprint: backing pool, redemption, capital, two trusts; clean-room-boundary diagram) · How we help (define/prove/build; partner for treasury-quant + trust-law; no pricing) · CTA.
+- Sections: regime-in-brief (4 anchors + house phrasing, BoE-attributed, draft, finalise end-2026) · **Through the Eight Intelligences** (eight-lenses diagram highlight=value + 8 lens cards, each → its Intelligence page, with demonstrated/blueprint status) · **What we can evidence today** (Demonstrated: 1:1 unit, transfer control, payments/ISO 20022, reconciliation + evidence; Blueprint: backing pool, redemption, capital, two trusts; clean-room-boundary diagram) · How we help (define/prove/build; partner for treasury-quant + trust-law; no pricing) · CTA.
 - **Governance:** claims map = `claim-register.md` §K; regime = §D (draft, BoE-attributed, house phrasing); reconciliation/transfer/1:1 = §B; non-production proving ground; no repo internals; no pricing.
 
 ## Consumer Outcomes — `consumer-outcomes.html` [web]  (was Customer Outcomes; `/customer-outcomes/` 301s here)

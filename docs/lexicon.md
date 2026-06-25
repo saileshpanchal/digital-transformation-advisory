@@ -11,10 +11,10 @@ The single vocabulary the website, posts and book all draw from. Authority comes
 `docs/architecture/north-star.md` is the canonical architecture source. This lexicon is the vocabulary that source and the public site draw from; the two do not compete. Within the North Star model these terms keep their jobs and sit as follows:
 
 - **Owned Autonomy** is the doctrine (the why), not the site's information architecture.
-- **C3** is a reference architecture for governed action, placed beneath the Seven Intelligences rather than as a competing top-level hierarchy.
+- **C3** is a reference architecture for governed action, placed beneath the Eight Intelligences rather than as a competing top-level hierarchy.
 - **DBB** is a capability unit and the Capability plane of C3.
 - The **Clean-Room Demonstration** and its **Standard** are proof infrastructure, not a product category.
-- The **Seven Intelligences** (Experience, Capability, Cognitive, Value, Trust, Platform, Control) are soft lenses across the work; a term may sit under several without a single parent.
+- The **Eight Intelligences** (Experience, Capability, Cognitive, Value, Trust, Platform, Control, Financial) are soft lenses across the work; a term may sit under several without a single parent.
 
 Protected details stay off the public site: SFIA levels of responsibility, the DBB catalogue, detailed methods and schemas, internal codenames, detailed Judgment methods, the Ultim8 runtime boundary, and the name "The Accountable Bank" until trademark and category checks pass (see §C, §D, §F and the [claim register](claim-register.md)).
 
