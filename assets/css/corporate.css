@@ -1786,10 +1786,12 @@ a.offering-card h3::after { content: " \2192"; color: #29ABE2; font-weight: 700;
 .thesis .thesis-h{margin:14px auto 0;font-weight:800;letter-spacing:-.04em;line-height:1.02;font-size:clamp(28px,4.4vw,52px);max-width:18ch;}
 .thesis .sub{margin:18px auto 0;color:var(--map-muted);font-weight:600;font-size:clamp(14px,1.5vw,17px);max-width:52ch;}
 .thesis .sub b{color:var(--map-ink);}
+.thesis .buyer-line{margin:16px auto 0;color:var(--map-cyan-dark);font-weight:700;font-size:13px;letter-spacing:.01em;max-width:58ch;}
 
 /* the map */
 .map{max-width:var(--map-w);margin:0 auto;padding:10px var(--map-pad-x) clamp(50px,7vw,90px);}
 .layer-label{text-align:center;margin:0 0 14px;}
+.layer-line{text-align:center;margin:-4px auto 18px;font-size:clamp(18px,2.2vw,24px);font-weight:800;letter-spacing:-.02em;color:var(--map-ink);max-width:28ch;}
 .node{position:relative;background:var(--map-paper);border:1px solid var(--map-line);border-top:3px solid var(--map-ink);border-radius:10px;padding:20px 24px;}
 .node .nt{font-size:clamp(17px,1.9vw,21px);font-weight:800;letter-spacing:-.02em;line-height:1.1;}
 .node .nd{font-size:13.5px;color:var(--map-muted);margin-top:6px;font-weight:500;}
