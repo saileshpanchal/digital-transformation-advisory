@@ -1148,6 +1148,11 @@ p { margin-bottom: 1rem; }
   margin-top: 3rem;
 }
 
+/* four-up card row (e.g. Measure · Preserve · Build · Deploy) */
+.quad-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 3rem; }
+@media (max-width: 880px) { .quad-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .quad-grid { grid-template-columns: 1fr; } }
+
 .offering-card {
   display: flex;
   flex-direction: column;
