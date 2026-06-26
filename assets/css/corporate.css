@@ -1163,9 +1163,13 @@ p { margin-bottom: 1rem; }
   transform: translateY(-2px);
 }
 
+/* Canonical clickable-card standard (site-wide): full-card link, hover lift +
+   cyan border, cyan heading with a trailing arrow. Reuse a.offering-card for any
+   card that has a single destination. */
 a.offering-card { text-decoration: none; color: inherit; }
 a.offering-card:hover { border-color: #29ABE2; }
 a.offering-card h3 { color: #0877a6; }
+a.offering-card h3::after { content: " \2192"; color: #29ABE2; font-weight: 700; }
 
 .offering-card img {
   width: 56px;
