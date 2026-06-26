@@ -1163,6 +1163,10 @@ p { margin-bottom: 1rem; }
   transform: translateY(-2px);
 }
 
+a.offering-card { text-decoration: none; color: inherit; }
+a.offering-card:hover { border-color: #29ABE2; }
+a.offering-card h3 { color: #0877a6; }
+
 .offering-card img {
   width: 56px;
   height: 56px;
