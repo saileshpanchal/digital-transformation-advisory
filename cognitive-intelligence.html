@@ -3,25 +3,37 @@ layout: corporate
 title: "Cognitive Intelligence"
 permalink: /cognitive-intelligence/
 description: >-
-  How humans and machines reason and act together: where reasoning sits, what
-  agents may do, and how decisions are explained and intervened in. One of DTA's
-  Eight Intelligences.
+  How humans and machines think together. The operating model of reasoning:
+  where reasoning should happen, what stays human, what can be delegated to an
+  agent, and how both work together safely. The goal is to place human judgment
+  where it creates the greatest value, not to replace it. One of DTA's Eight
+  Intelligences.
 ---
 
 <div class="insights-header">
   <div class="container">
+    <p class="eyebrow" style="color:#0877a6;font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:12px;">Augment human reasoning</p>
     <h1>Cognitive Intelligence</h1>
-    <p><strong>The question:</strong> where does reasoning sit between human and machine, and who may act?</p>
-    <p>Cognitive Intelligence is how humans and machines reason and act together: where reasoning sits, what an agent may do, and how a decision is explained and intervened in. It is reasoning in operation, distinct from the latent capability a team holds.</p>
+    <p><strong>The question:</strong> where should humans and AI think together?</p>
+    <p>AI changes who thinks. Cognitive Intelligence determines how people and machines think together. The question is no longer whether AI will take part in decisions; it is where reasoning should happen, what stays human, what can be delegated to an agent, and how both work together safely. The goal is not to replace human judgment, but to place it where it creates the greatest value.</p>
   </div>
 </div>
 
+<!-- Reasoning allocation -->
 <section class="section section--light">
   <div class="container">
     <div class="text-center">
-      <h2>Where reasoning sits</h2>
-      <p class="section-subtitle">The agent observes, prepares and proposes. A human authorises anything material, with evidence recorded.</p>
+      <h2>Reasoning allocation</h2>
+      <p class="section-subtitle">The question isn't what AI can automate. It's where reasoning should happen, and how much of the decision a person keeps.</p>
     </div>
+    <div class="flow-chain" style="justify-content:center;">
+      <span class="step">Human only</span><span class="arrow">&rarr;</span>
+      <span class="step">Human + AI support</span><span class="arrow">&rarr;</span>
+      <span class="step">AI, human approves</span><span class="arrow">&rarr;</span>
+      <span class="step">AI, human oversees</span><span class="arrow">&rarr;</span>
+      <span class="step">Autonomous</span>
+    </div>
+    <p style="max-width:820px;margin:1.75rem auto 0;color:#555;text-align:center;">Different decisions sit at different points on this scale. Copilots, agents and multi-agent systems each have a place, chosen deliberately for the decision, not applied by default. Here is one allocation: the agent does the preparation, a human authorises anything material, and the evidence is a by-product.</p>
     <div class="figure">
       <svg viewBox="0 0 600 200" role="img" aria-label="Reasoning allocation between agent and human, with approval gate">
         <rect x="20" y="40" width="360" height="46" rx="4" fill="#29ABE2"/>
@@ -44,42 +56,61 @@ description: >-
   </div>
 </section>
 
+<!-- The cognitive architecture -->
 <section class="section">
   <div class="container">
-    <div class="text-center"><h2>Outcomes it governs</h2></div>
-    <div class="offerings-grid">
-      <div class="offering-card"><h3>Allocation of reasoning</h3><p>What the agent prepares and proposes, and what stays a human judgement.</p></div>
-      <div class="offering-card"><h3>Authority to act</h3><p>A human authorises any material action; authority is explicit, per action and per context.</p></div>
-      <div class="offering-card"><h3>Explainability</h3><p>Why a decision was made, recorded as evidence rather than reconstructed later.</p></div>
-      <div class="offering-card"><h3>Intervention and learning</h3><p>How a person steps in, overrides, and how the system improves from it.</p></div>
+    <div class="text-center">
+      <h2>The cognitive architecture</h2>
+      <p class="section-subtitle">Above the tooling. Five stages, each allocated between people and machines, and it starts with memory, not a prompt.</p>
     </div>
+    <div class="flow-chain" style="justify-content:center;">
+      <span class="step">Knowledge</span><span class="arrow">&rarr;</span>
+      <span class="step">Memory</span><span class="arrow">&rarr;</span>
+      <span class="step">Context</span><span class="arrow">&rarr;</span>
+      <span class="step">Reasoning</span><span class="arrow">&rarr;</span>
+      <span class="step">Decision</span><span class="arrow">&rarr;</span>
+      <span class="step">Action</span>
+    </div>
+    <div class="quad-grid" style="margin-top:2.5rem;">
+      <div class="offering-card"><h3>Understand</h3><p>Knowledge, context and memory: the institutional understanding an answer rests on.</p></div>
+      <div class="offering-card"><h3>Reason</h3><p>Retrieval, planning and decision support: working from authoritative context, not guesswork.</p></div>
+      <div class="offering-card"><h3>Collaborate</h3><p>People, copilots and agents, each doing the part of the thinking they are best placed to do.</p></div>
+      <div class="offering-card"><h3>Learn</h3><p>Feedback, evaluation and continuous improvement, so the system gets better and stays inspectable.</p></div>
+    </div>
+    <p style="max-width:820px;margin:2rem auto 0;color:#555;text-align:center;">An organisation's reasoning starts with institutional memory, not a prompt. <a href="{{ '/composable-bank/data-products/' | relative_url }}">Governed knowledge</a> decides what an agent is allowed to <em>know</em> before <a href="{{ '/control-intelligence/' | relative_url }}">Control</a> decides whether it may <em>act</em>: the ontology is sovereign, similarity is only advisory. That is also where this lens meets <a href="{{ '/capability-intelligence/' | relative_url }}">Capability</a> &mdash; the judgment a person brings to the decision.</p>
   </div>
 </section>
 
+<!-- Cognitive and Control: two halves of one operating model -->
 <section class="section section--light">
   <div class="container">
-    <div class="feature-row reverse">
-      <div class="feature-text">
-        <h2>Where we show it</h2>
-        <p style="color:#555;">Our reference architecture for governed human-machine action is Capability, Context and Consent (C3). In the demonstration an agent prepares and proposes, a human approves before anything material happens, and the evidence is recorded at each step. The architecture we are building toward externalises an agent's reasoning, what it believes, intends and is authorised to do, into governed objects rather than leaving it inside the model, so a decision can be inspected rather than just trusted.</p>
-        <div style="margin-top:1.25rem;"><a href="{{ '/architecture/' | relative_url }}" class="btn btn--outline">The architecture</a></div>
-      </div>
-      <div class="feature-aside">
-        <ul>
-          <li><a href="/2026/06/14/c3-the-spine-of-owned-autonomy/">C3: the spine of Owned Autonomy</a></li>
-          <li><a href="/2026/06/15/owned-autonomy-agentic-banking-a-bank-owns/">Owned Autonomy</a></li>
-          <li><a href="/composable-bank/family-wealth/">Agent and approval in the demonstration</a></li>
-        </ul>
-      </div>
+    <div class="text-center">
+      <h2>Cognitive and Control: two halves of one operating model</h2>
+      <p class="section-subtitle">One defines how decisions are made. The other defines how they remain accountable. Together they are the operating model for reasoning in a regulated institution.</p>
     </div>
+    <div class="applied" style="max-width:880px;margin:0 auto;">
+      <div class="offering-card">
+        <h3>Cognitive Intelligence</h3>
+        <p><strong>How decisions are made.</strong> Where humans and AI reason together: allocation, knowledge, memory, planning and collaboration.</p>
+      </div>
+      <a class="offering-card" href="{{ '/control-intelligence/' | relative_url }}">
+        <h3>Control Intelligence</h3>
+        <p><strong>How decisions remain accountable.</strong> Authority, policy, evidence, intervention and assurance, carried on every action.</p>
+      </a>
+    </div>
+    <p style="max-width:820px;margin:2rem auto 0;color:#555;text-align:center;"><strong>Judgment, allocated across three lenses.</strong> <a href="{{ '/capability-intelligence/' | relative_url }}">Capability</a> asks <em>do we have the judgment?</em> Cognitive asks <em>where should that judgment execute?</em> <a href="{{ '/control-intelligence/' | relative_url }}">Control</a> asks <em>how do we govern it?</em></p>
   </div>
 </section>
 
+<!-- Close -->
 <section class="section">
   <div class="container text-center">
-    <h2>Related Intelligences</h2>
-    <p class="section-subtitle">No lens stands alone. Cognitive decides how much of the work an agent may run, and where the human stays.</p>
-    <p style="max-width:760px;margin:0 auto;color:#555;">It relies on <a href="{{ '/control-intelligence/' | relative_url }}">Control</a> for the authority a material action needs and the evidence it leaves. It draws on <a href="{{ '/capability-intelligence/' | relative_url }}">Capability</a> for the judgement a person brings to the gate. It serves <a href="{{ '/experience-intelligence/' | relative_url }}">Experience</a>, because the agent acts inside a customer journey. And the whole arrangement has to earn <a href="{{ '/trust-intelligence/' | relative_url }}">Trust</a>. Autonomy the bank owns is how it moves faster without leaving the customer behind.</p>
+    <h2>Augment human reasoning</h2>
+    <p class="section-subtitle" style="max-width:760px;margin:0 auto;">Cognitive Intelligence is the operating model of reasoning: how humans and machines think together, deliberately, with the human kept where judgment matters most.</p>
+    <div style="margin-top:1.5rem;">
+      <a href="{{ '/architecture/' | relative_url }}" class="btn btn--outline">The architecture</a>
+      <a href="/2026/06/14/c3-the-spine-of-owned-autonomy/" class="btn btn--ghost">C3: the spine</a>
+    </div>
   </div>
 </section>
 
