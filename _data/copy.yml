@@ -61,16 +61,16 @@ intelligences:
     line: "How humans and machines reason and act together: where reasoning sits, what agents may do, and how decisions are explained and intervened in."
   - name: Value Intelligence
     path: /value-intelligence/
-    blurb: Tokenised value & settlement
-    line: How value is represented, exchanged, governed, settled and measured, from payments and deposits to tokenised value.
+    blurb: New value, proven
+    line: "DTA's innovation discipline: what new value becomes possible because we are transforming — new propositions, customer segments, better outcomes and economics. Tokenisation, payments and programmable value are enablers, not the headline."
   - name: Trust Intelligence
     path: /trust-intelligence/
-    blurb: Consent & vulnerability
-    line: How justified trust is earned among customers, institutions, regulators and systems through consent, privacy, inclusion and evidence.
+    blurb: Evidence into confidence
+    line: "The discipline of converting evidence into confidence — across customers, colleagues, boards, regulators and ecosystems. The other seven produce trust; Trust Intelligence makes it visible, measurable and continuously evidenced."
   - name: Platform Intelligence
     path: /platform-intelligence/
-    blurb: Composability & coexistence
-    line: "How systems evolve: composability, interoperability, coexistence with the core, governed data and runtime architecture."
+    blurb: Evolution over replacement
+    line: "The discipline of evolving an institution safely. Banks are ecosystems, not applications — coexist with the platforms you have while introducing the capabilities the future needs. Evolution over replacement, not rip-and-replace."
   - name: Control Intelligence
     path: /control-intelligence/
     blurb: Accountability, evidenced
