@@ -1797,6 +1797,7 @@ a.offering-card h3::after { content: " \2192"; color: #29ABE2; font-weight: 700;
 .map{max-width:var(--map-w);margin:0 auto;padding:10px var(--map-pad-x) clamp(50px,7vw,90px);}
 .layer-label{text-align:center;margin:0 0 14px;}
 .layer-line{text-align:center;margin:-4px auto 18px;font-size:clamp(18px,2.2vw,24px);font-weight:800;letter-spacing:-.02em;color:var(--map-ink);max-width:28ch;}
+.layer-sub{text-align:center;margin:-8px auto 20px;font-size:15px;line-height:1.55;color:var(--map-muted);max-width:62ch;}
 .node{position:relative;background:var(--map-paper);border:1px solid var(--map-line);border-top:3px solid var(--map-ink);border-radius:10px;padding:20px 24px;}
 .node .nt{font-size:clamp(17px,1.9vw,21px);font-weight:800;letter-spacing:-.02em;line-height:1.1;}
 .node .nd{font-size:13.5px;color:var(--map-muted);margin-top:6px;font-weight:500;}
