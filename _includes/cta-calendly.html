@@ -1,12 +1,15 @@
 {%- comment -%}
-Reusable Calendly CTA button. One place for the URL + UTM + data-cta wiring.
+Reusable booking CTA button. One place for the booking URL + data-cta wiring.
+Now points at Microsoft Bookings (moved off Calendly 2026-06-28). The booking URL is
+self-contained (carries its own ?query), so it is used as-is — no UTM appended — and
+escaped for valid HTML. Tracking is via data-cta / data-loc.
 Params:
   kind  : "strategy_call" | "capability_blueprint" (required; selects slug + campaign + data-cta)
-  loc   : utm_content + data-loc (required; e.g. "home-hero")
+  loc   : data-loc (required; e.g. "home-hero")
   label : link text (optional; defaults to the kind's standard label)
   class : extra button class (optional; default "btn--primary"), e.g. "btn--outline", "btn--ghost", "btn--ghost btn--ghost-dark"
 {%- endcomment -%}
 {%- assign c = site.data.copy.calendly[include.kind] -%}
 {%- assign label = include.label | default: site.data.copy.cta_labels[include.kind] -%}
 {%- assign cls = include.class | default: "btn--primary" -%}
-<a href="{{ c.slug }}?utm_source=site&amp;utm_medium=cta&amp;utm_campaign={{ c.campaign }}&amp;utm_content={{ include.loc }}" class="btn {{ cls }}" data-cta="{{ c.campaign }}" data-loc="{{ include.loc }}" target="_blank" rel="noopener">{{ label }}</a>
+<a href="{{ c.slug | escape }}" class="btn {{ cls }}" data-cta="{{ c.campaign }}" data-loc="{{ include.loc }}" target="_blank" rel="noopener">{{ label }}</a>
