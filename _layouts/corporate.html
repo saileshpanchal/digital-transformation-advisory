@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="{{ '/assets/images/corporate/dta-icon.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/corporate.css' | relative_url }}">
   {% feed_meta %}
   {% seo %}
@@ -28,7 +29,7 @@
         <a href="{{ '/intelligences/' | relative_url }}">Intelligences</a>
         <a href="{{ '/experience-journeys/' | relative_url }}">Experience Journeys</a>
         <a href="{{ '/architecture/' | relative_url }}">Architecture</a>
-        <a href="{{ '/insights/' | relative_url }}">Insights</a>
+        <a href="{{ '/observatory/' | relative_url }}">Observatory</a>
         {% include cta-calendly.html kind="strategy_call" loc="nav" label="Discuss a challenge" class="btn--primary btn--nav" %}
       </div>
     </div>
@@ -48,7 +49,8 @@
           <a href="{{ '/experience-journeys/' | relative_url }}">Experience Journeys</a>
           <a href="{{ '/architecture/' | relative_url }}">Architecture</a>
           <a href="{{ '/composable-bank/' | relative_url }}">Demonstration</a>
-          <a href="{{ '/insights/' | relative_url }}">Insights</a>
+          <a href="{{ '/observatory/' | relative_url }}">Observatory</a>
+          <a href="{{ '/field-notes/' | relative_url }}">Field Notes</a>
           <a href="{{ '/connect/' | relative_url }}">Contact</a>
           <a href="{{ '/policy-documentation/' | relative_url }}">Policies</a>
           {% if site.linkedin and site.linkedin != "" %}<a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
