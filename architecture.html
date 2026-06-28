@@ -3,32 +3,198 @@ layout: corporate
 title: "Architecture"
 permalink: /architecture/
 description: >-
-  DTA's architecture: an independent target architecture proven before it is
-  built, expressed in open standards so the result is a portable, vendor-neutral
-  working specification.
+  Architecture you can run. Most enterprise architecture describes a future
+  state; ours is built to prove it — every architectural decision connected to an
+  executable specification, a working prototype and the evidence it can succeed.
+  Independent of vendors, expressed in open standards. The Executable Architecture
+  Repository behind everything else on the site.
 ---
 
 <div class="insights-header">
   <div class="container">
-    <h1>Architecture</h1>
-    <p>We define an independent target architecture and prove the hard parts first, so the platform conforms to the architecture rather than the other way round. The work is expressed in open standards (ISO 20022, BIAN, recognised control frameworks), so what we prove becomes a portable, vendor-neutral working specification you can build with any vendor.</p>
+    <p class="eyebrow" style="color:#0877a6;font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:12px;">Executable architecture</p>
+    <h1>Architecture you can run</h1>
+    <p><strong>Most enterprise architecture describes a future state. Ours is built to prove it.</strong> Every architectural decision connects to an executable specification, a working prototype and the evidence that it can succeed &mdash; independent of any vendor, and expressed in open standards (ISO&nbsp;20022, BIAN) so you can change technology without rewriting the operating model. We don&rsquo;t stop at PowerPoint; we build the evidence. This is the engineering discipline behind everything else on the site.</p>
+    <div class="hero-actions" style="justify-content:flex-start;">
+      {% include cta-calendly.html kind="strategy_call" loc="architecture-hero" label="Discuss a challenge" %}
+      <a href="{{ '/experience-journeys/' | relative_url }}" class="btn btn--outline">See the journeys it proves</a>
+    </div>
   </div>
 </div>
 
+<!-- Where architecture sits: the stack -->
+<section class="section section--light">
+  <div class="container">
+    <div class="text-center">
+      <h2>Where architecture sits</h2>
+      <p class="section-subtitle">Architecture is the bridge from a proven <em>decision</em> to an executable <em>system</em> &mdash; with the cross-cutting disciplines holding at every layer.</p>
+    </div>
+    {% include diagrams/architecture-hierarchy.html %}
+    <p class="text-center" style="max-width:780px;margin:1.25rem auto 0;color:#555;">The <a href="{{ '/intelligences/' | relative_url }}">eight Intelligences</a> produce the decision; architecture proves it can be built and governed; the reference runtime turns the specification into something that runs.</p>
+  </div>
+</section>
+
+<!-- The Executable Architecture Repository -->
 <section class="section">
   <div class="container">
     <div class="text-center">
-      <h2>The architecture library</h2>
-      <p class="section-subtitle">Stable, public views of how the pieces fit. Deeper detail and specifications follow.</p>
+      <h2>The Executable Architecture Repository</h2>
+      <p class="section-subtitle">Behind every reference architecture is a repository where the architecture is <strong>designed, challenged, evolved and evidenced</strong> &mdash; before delivery begins. Not a document store; a connected model in which nothing exists in isolation.</p>
     </div>
+    <div style="max-width:860px;margin:0 auto 1.5rem;color:#555;text-align:center;">
+      <p>It captures the relationships between business capabilities, journeys, the eight Intelligences, agents, data products, standards, regulations and decisions &mdash; so a change in one is traced to everything it touches.</p>
+    </div>
+    <h3 style="text-align:center;">Inside the repository</h3>
+    <div class="flow-chain" style="justify-content:center;margin-top:1rem;">
+      <span class="step">Business capabilities</span>
+      <span class="step">BIAN service domains</span>
+      <span class="step">Experience journeys</span>
+      <span class="step">The eight Intelligences</span>
+      <span class="step">Architecture principles</span>
+      <span class="step">Agents</span>
+      <span class="step">Skills (SFIA)</span>
+      <span class="step">Knowledge assets</span>
+      <span class="step">Decision records</span>
+      <span class="step">Platform services</span>
+      <span class="step">Data products</span>
+      <span class="step">ISO 20022</span>
+      <span class="step">Regulatory obligations</span>
+      <span class="step">Consumer Duty outcomes</span>
+      <span class="step">Operational resilience</span>
+      <span class="step">Delivery artefacts</span>
+      <span class="step">Patterns</span>
+    </div>
+    <p style="max-width:820px;margin:1.75rem auto 0;color:#161616;text-align:center;font-weight:600;">300+ linked architectural concepts &middot; hundreds of relationships &middot; executable agent definitions &middot; reusable patterns &middot; architecture decision records.</p>
+    <div class="text-center" style="margin-top:2.5rem;">
+      <h3>&ldquo;Show me everything connected to Consumer Duty&rdquo;</h3>
+      <p class="section-subtitle">An architect doesn&rsquo;t ask &ldquo;where&rsquo;s the document?&rdquo; They ask what a change touches. The repository answers in links, not folders:</p>
+    </div>
+    <div class="flow-chain" style="justify-content:center;">
+      <span class="step">Consumer Duty</span><span class="arrow">&rarr;</span>
+      <span class="step">Journeys</span><span class="arrow">&rarr;</span>
+      <span class="step">Capabilities</span><span class="arrow">&rarr;</span>
+      <span class="step">BIAN domains</span><span class="arrow">&rarr;</span>
+      <span class="step">Agents</span><span class="arrow">&rarr;</span>
+      <span class="step">Data products</span><span class="arrow">&rarr;</span>
+      <span class="step">Controls</span><span class="arrow">&rarr;</span>
+      <span class="step">Decisions</span><span class="arrow">&rarr;</span>
+      <span class="step">Specifications</span><span class="arrow">&rarr;</span>
+      <span class="step">Evidence</span>
+    </div>
+    <p style="max-width:820px;margin:1.75rem auto 0;color:#777;text-align:center;font-size:0.95rem;">The <em>what</em> is above. The <em>how</em> &mdash; the schemas, the mechanics, the model internals &mdash; is worked through under engagement.</p>
+  </div>
+</section>
+
+<!-- Open knowledge, not lock-in -->
+<section class="section section--light">
+  <div class="container">
+    <div class="text-center">
+      <h2>Open knowledge, not lock-in</h2>
+      <p class="section-subtitle">Your knowledge should never be trapped inside a proprietary tool.</p>
+    </div>
+    <div style="max-width:840px;margin:0 auto;color:#555;text-align:center;">
+      <p>The repository captures decisions, capabilities, agents, skills, evidence and transformation patterns in a structured, <strong>governed</strong> model &mdash; then exports them to open formats such as <strong>OKF (Open Knowledge Format)</strong> so they can be moved, inspected, versioned and reused across platforms, with provenance, ownership and governance intact. We keep a richer internal model; you keep an open, portable asset. Owned, not rented.</p>
+    </div>
+  </div>
+</section>
+
+<!-- The agent is not the architecture -->
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <h2>The agent is not the architecture</h2>
+      <p class="section-subtitle">Agentic processing only works when the journey, the decision model, the data products, the controls and the escalation paths are designed together. On their own, agents automate fragments of work that cannot safely be delegated. Design the agent last.</p>
+    </div>
+    <div class="flow-chain" style="justify-content:center;">
+      <span class="step">Advisory</span>
+      <span class="step">Orchestration</span>
+      <span class="step">Evidence</span>
+      <span class="step">Control</span>
+      <span class="step">Exception</span>
+      <span class="step">Decision-support</span>
+      <span class="step">Human-approval</span>
+      <span class="step">Ecosystem</span>
+    </div>
+    <p style="max-width:820px;margin:1.75rem auto 0;color:#555;text-align:center;">Eight agent <em>roles</em>, governed together &mdash; what each may do, on whose authority, with what evidence. See how reasoning is allocated in <a href="{{ '/cognitive-intelligence/' | relative_url }}">Cognitive</a> and governed in <a href="{{ '/control-intelligence/' | relative_url }}">Control</a>.</p>
+  </div>
+</section>
+
+<!-- We connect standards, we don't replace them -->
+<section class="section section--light">
+  <div class="container">
+    <div class="text-center">
+      <h2>We connect standards, we don&rsquo;t replace them</h2>
+      <p class="section-subtitle">Everyone claims BIAN, ISO&nbsp;20022 and C4. The difference is that we link them into one model, end to end.</p>
+    </div>
+    <div class="flow-chain" style="justify-content:center;">
+      <span class="step">Enterprise principles</span><span class="arrow">&rarr;</span>
+      <span class="step">BIAN</span><span class="arrow">&rarr;</span>
+      <span class="step">ISO 20022</span><span class="arrow">&rarr;</span>
+      <span class="step">C4</span><span class="arrow">&rarr;</span>
+      <span class="step">OpenAPI</span><span class="arrow">&rarr;</span>
+      <span class="step">Event models</span><span class="arrow">&rarr;</span>
+      <span class="step">Governed knowledge</span><span class="arrow">&rarr;</span>
+      <span class="step">Executable prototype</span><span class="arrow">&rarr;</span>
+      <span class="step">Implementation</span>
+    </div>
+  </div>
+</section>
+
+<!-- From repository to roadmap -->
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <h2>From repository to executable journeys</h2>
+      <p class="section-subtitle">The repository doesn&rsquo;t stop at reference architecture. For a future banking journey, it generates the roadmap to make it <strong>executable</strong>: the capabilities, data products, agent roles, controls, standards, evidence and delivery artefacts required to move from today&rsquo;s operating model to tomorrow&rsquo;s customer outcome.</p>
+    </div>
+    <div style="max-width:860px;margin:0 auto;">
+      <h3 style="text-align:center;">The journey feasibility test</h3>
+      <p class="section-subtitle" style="margin-bottom:1.25rem;">Before a journey is funded, the architecture answers eight questions. Some agentic journeys are impossible until the architecture is fixed first.</p>
+      <div class="quad-grid">
+        <div class="offering-card"><p>Is the customer outcome measurable?</p></div>
+        <div class="offering-card"><p>Are the required data products real?</p></div>
+        <div class="offering-card"><p>Which decisions can be delegated?</p></div>
+        <div class="offering-card"><p>Which decisions need human judgement?</p></div>
+        <div class="offering-card"><p>What controls are embedded?</p></div>
+        <div class="offering-card"><p>What evidence is produced?</p></div>
+        <div class="offering-card"><p>What standards are touched?</p></div>
+        <div class="offering-card"><p>What architecture must change first?</p></div>
+      </div>
+    </div>
+    <p class="text-center" style="margin-top:2rem;"><a class="textlink" href="{{ '/experience-journeys/' | relative_url }}">See the journeys this proves <span aria-hidden="true">&rarr;</span></a></p>
+  </div>
+</section>
+
+<!-- The catalogue (folded from the library) -->
+<section class="section section--light">
+  <div class="container">
+    <div class="text-center">
+      <h2>The reference architectures</h2>
+      <p class="section-subtitle">Stable, public views of the patterns we work with &mdash; each linked to a paper or a working demonstration. The deeper detail is worked through under engagement.</p>
+    </div>
+    {% include diagrams/c3-planes.html %}
+    <p class="diagram-caption" style="text-align:center;color:#777;margin:0.5rem auto 2.5rem;">C3 &mdash; Capability, Context, Consent: our most-used reference architecture, beneath the eight Intelligences. <a href="/2026/06/14/c3-the-spine-of-owned-autonomy/">Read the paper &rarr;</a></p>
     <div class="offerings-grid">
-      <div class="offering-card"><h3>C3: Capability, Context, Consent</h3><p>Our reference architecture for governed human-machine action.</p><a href="/2026/06/14/c3-the-spine-of-owned-autonomy/">Read the paper</a></div>
-      <div class="offering-card"><h3>Domain Building Blocks</h3><p>Reusable banking capabilities, the unit a squad owns.</p><a href="/2026/06/13/domain-building-blocks-composable-banking/">Read the paper</a></div>
-      <div class="offering-card"><h3>Governed data products</h3><p>Evidence-grade data products beneath the engines.</p><a href="/composable-bank/data-products/">Open</a></div>
-      <div class="offering-card"><h3>Platform</h3><p>One governed, agent-native platform carrying many propositions.</p><a href="/composable-bank/platform/">Open</a></div>
-      <div class="offering-card"><h3>Resilience</h3><p>Operational resilience as a property of the architecture.</p><a href="/composable-bank/resilience/">Open</a></div>
-      <div class="offering-card"><h3>The advisory method</h3><p>How we apply the architecture in an engagement.</p><a href="/approach/">See our approach</a></div>
-      <div class="offering-card"><h3>Prototype Specifications</h3><p>The executable blueprint between a reference architecture and a build, proven before you commit.</p><a href="/prototype-specifications/">Open</a></div>
+      <a class="offering-card" href="/2026/06/14/c3-the-spine-of-owned-autonomy/"><h3>C3: Capability, Context, Consent</h3><p>The reference architecture for governed human-machine action.</p></a>
+      <a class="offering-card" href="/2026/06/13/domain-building-blocks-composable-banking/"><h3>Domain Building Blocks</h3><p>Reusable banking capability units &mdash; the unit a squad owns.</p></a>
+      <a class="offering-card" href="{{ '/composable-bank/data-products/' | relative_url }}"><h3>Governed data products</h3><p>Evidence-grade data products beneath the engines.</p></a>
+      <a class="offering-card" href="{{ '/composable-bank/platform/' | relative_url }}"><h3>Platform</h3><p>One governed, agent-native platform carrying many propositions.</p></a>
+      <a class="offering-card" href="{{ '/composable-bank/resilience/' | relative_url }}"><h3>Operational resilience</h3><p>Resilience as a property of the architecture, not a bolt-on.</p></a>
+      <a class="offering-card" href="{{ '/prototype-specifications/' | relative_url }}"><h3>Prototype Specifications</h3><p>The executable blueprint between a reference architecture and a build.</p></a>
+      <a class="offering-card" href="{{ '/approach/' | relative_url }}"><h3>The advisory method</h3><p>How we apply the architecture in an engagement.</p></a>
+    </div>
+    <p style="max-width:820px;margin:2.25rem auto 0;color:#555;text-align:center;">We publish concepts, outcomes, named roles and the <em>shape</em> of evidence. The detailed schemas, control internals and model mechanics are worked through under engagement &mdash; which keeps the public views honest and the methods protected.</p>
+  </div>
+</section>
+
+<!-- From architecture to decisions + close -->
+<section class="section section--dark">
+  <div class="container text-center">
+    <h2>From architecture to decisions</h2>
+    <p class="section-subtitle" style="color:rgba(255,255,255,0.85);max-width:840px;margin:0 auto;">Traditional enterprise architecture asks <em>what should we build?</em> We ask <em>what evidence do we need before we decide to build it?</em> Every transformation begins with a decision &mdash; and the architecture is the evidence that the decision is sound.</p>
+    <p style="max-width:760px;margin:1.5rem auto 0;color:rgba(255,255,255,0.72);">Bring us your most difficult transformation problem and we will show you how to prove it before delivery begins. The full model is walked through under engagement.</p>
+    <div style="margin-top:1.5rem;">
+      {% include cta-calendly.html kind="strategy_call" loc="architecture-cta" label="Discuss a challenge" %}
     </div>
   </div>
 </section>

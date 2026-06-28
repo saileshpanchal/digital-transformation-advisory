@@ -27,6 +27,18 @@
   status = 301
 
 [[redirects]]
+  from = "/architecture-library"
+  to = "/architecture/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/architecture-library/"
+  to = "/architecture/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404
