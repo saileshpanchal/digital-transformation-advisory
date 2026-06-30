@@ -153,14 +153,19 @@ and in contract negotiation, tailored to each client.
 
 ## Status and next
 
-- **Approved 2026-06-22.** Mission public line locked to option 1; the seven
+- **Approved 2026-06-22.** Mission public line locked to option 1; the
   Intelligence definitions and the Capability-vs-Cognitive boundary are locked;
   the eight principles are approved. Naming: **Accountable Bank** adopted
   (replaces Composable Bank as the product name); **Reference Runtime** replaces
   Ultim8 in the public hierarchy (Ultim8 is the internal repo name only).
-- **Next:** record the naming decisions and the P0 approvals in the register,
-  add canonical strings to `docs/lexicon.md` and `_data/copy.yml`, then begin the
-  site build (launch plan Tasks 2 onward), all on this branch.
+- **Eighth Intelligence added (2026-06-25).** **Financial Intelligence**, the
+  CFO and P&L lens, locked as the eighth (INT-009). The model is now the **Eight
+  Intelligences** across canon, `_data/copy.yml`, and every public page.
+- **Build delivered (2026-06-30), launch-gated.** Launch plan Tasks 0 to 8 are
+  complete on `plans/dta-architecture-2026-06-21`: naming and P0 approvals
+  recorded in the register, canonical strings in `docs/lexicon.md` and
+  `_data/copy.yml`, the full public site built, plus a chart-led redesign of the
+  Intelligence pages and explicit cross-lens connections. Preview on PR #46.
 - **Naming cleared:** the *Accountable Bank* trademark check is cleared (owner
   decision, 2026-06-22): a marketing name for the demonstration, not a
   regulated-bank claim. Cleared for public use.
