@@ -23,5 +23,6 @@ __pycache__/
 .superpowers/
 .worktrees/
 
-# Internal working notes — never in the public repo (none of docs/ is built/served)
-docs/
+# Internal docs moved to the private ~/Code/dta-internal repo (2026-06-30).
+# docs/ is a local symlink to that repo (for tooling/CLAUDE refs); never tracked or published.
+/docs
