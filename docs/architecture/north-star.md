@@ -16,6 +16,16 @@ The internal canonical source for DTA. Public pages derive from the `public`,
 nothing downstream changes until the Mission and the Eight Intelligences are
 locked.
 
+> **Strategic frame superseded by [North Star Version 4](north-star-v4.md)
+> (2026-06-28).** V4 repositions DTA as a **Transformation Intelligence** firm
+> running the **Observatory Analysis Model**, with the Eight Intelligences as the
+> executive decision lenses inside it. The Eight Intelligences are unchanged, so
+> the public site built against this document still holds. The operational
+> governance below (provenance, honesty model, terminology locks, public versus
+> protected boundary, claim register links) is **not** in V4 and remains in
+> force. The two need folding into one canon; reconciliation is pending a rollout
+> decision.
+
 ## Mission
 
 **Internal mission (the full scope).**
