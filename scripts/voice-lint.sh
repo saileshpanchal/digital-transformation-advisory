@@ -11,7 +11,7 @@ set -uo pipefail
 fail=0
 banned='delve|crucial|robust|comprehensive|leverage|seamless|unlock|landscape|showcase|realm|tapestry|testament|furthermore|moreover'
 # Internal codenames that must never reach public copy.
-codenames='Heimdall|Nettle|Urd'
+codenames='Heimdall|Nettle|Urd|Mimir|Muninn|Yggdrasil|Bifrost|Hermod'
 # Self-promoting superlatives — the positioning is shown in artifacts, not asserted.
 superlatives='top 1%|world.class|best.in.class|best.in.breed|leading'
 

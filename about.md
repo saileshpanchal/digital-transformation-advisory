@@ -11,10 +11,10 @@ description: >-
 <div class="insights-header">
   <div class="container">
     <h1>About DTA</h1>
-    <p>{{ site.data.copy.north_star.mission_statement }}</p>
+    <p>{{ site.data.copy.canonical.mission_public }}</p>
     <div class="hero-actions" style="justify-content:flex-start;">
       {% include cta-calendly.html kind="strategy_call" loc="about-hero" label="Discuss a challenge" %}
-      <a href="{{ '/intelligences/' | relative_url }}" class="btn btn--outline">How we think</a>
+      <a href="{{ '/transformation-intelligence/' | relative_url }}" class="btn btn--outline">How we think</a>
     </div>
   </div>
 </div>

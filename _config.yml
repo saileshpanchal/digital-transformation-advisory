@@ -50,7 +50,6 @@ exclude:
   - scripts
   - perf
   - podcast
-  - about.md
   - categories.md
   - tags.md
   - search.md

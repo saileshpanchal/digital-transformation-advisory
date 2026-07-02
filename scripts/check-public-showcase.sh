@@ -28,6 +28,11 @@ fi
 forbidden=(
   "Heimdall"
   "Nettle"
+  "Mimir"
+  "Muninn"
+  "Yggdrasil"
+  "Bifrost"
+  "Hermod"
   "Approved technical access"
   "architecture-showcase"
 )

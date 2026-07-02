@@ -50,6 +50,108 @@
   status = 301
   force = true
 
+# v5: the Eight Intelligence lens pages are removed; each redirects to its door.
+[[redirects]]
+  from = "/experience-intelligence"
+  to = "/solutions/experience/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/experience-intelligence/"
+  to = "/solutions/experience/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/capability-intelligence"
+  to = "/solutions/capability/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/capability-intelligence/"
+  to = "/solutions/capability/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/cognitive-intelligence"
+  to = "/solutions/cognitive/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/cognitive-intelligence/"
+  to = "/solutions/cognitive/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/value-intelligence"
+  to = "/solutions/value/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/value-intelligence/"
+  to = "/solutions/value/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/trust-intelligence"
+  to = "/solutions/accountability/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/trust-intelligence/"
+  to = "/solutions/accountability/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/platform-intelligence"
+  to = "/solutions/architecture/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/platform-intelligence/"
+  to = "/solutions/architecture/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/control-intelligence"
+  to = "/solutions/accountability/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/control-intelligence/"
+  to = "/solutions/accountability/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/financial-intelligence"
+  to = "/solutions/value/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/financial-intelligence/"
+  to = "/solutions/value/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/intelligences"
+  to = "/solutions/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/intelligences/"
+  to = "/solutions/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/ultim8"
+  to = "/prototype/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/ultim8/"
+  to = "/prototype/"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/404.html"
