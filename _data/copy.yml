@@ -85,6 +85,50 @@ intelligences:
     blurb: The P&L of change
     line: "Understanding the P&L of change early: the as-is cost base, the target operating-model cost, and the transition between them. The CFO lens, interlocked with the others."
 
+# The Converged Eight (North Star v5). Lenses inside, doors outside.
+# Each Intelligence is a solution: a named buyer, a problem question, and the incumbents it works alongside.
+solutions:
+  - name: Accountability
+    path: /solutions/accountability/
+    buyer: CRO · General Counsel
+    question: Can I defend my reasonable steps?
+    works_alongside: Archer · ServiceNow GRC · MetricStream
+  - name: Knowledge
+    path: /solutions/knowledge/
+    buyer: CDO
+    question: Where does our knowledge go when people leave?
+    works_alongside: SharePoint · Confluence · M365
+  - name: Architecture
+    path: /solutions/architecture/
+    buyer: CIO · Chief Architect
+    question: Why do architecture decisions take months and expire in weeks?
+    works_alongside: LeanIX · MEGA · Bizzdesign · Sparx EA
+  - name: Capability
+    path: /solutions/capability/
+    buyer: CHRO
+    question: Do we actually know what skills we have?
+    works_alongside: HRIS · skills databases
+  - name: Cognitive
+    path: /solutions/cognitive/
+    buyer: CTO · CAIO
+    question: Why can't we trust AI at scale?
+    works_alongside: Copilots · agent pilots
+  - name: Experience
+    path: /solutions/experience/
+    buyer: COO · CCO
+    question: Why are journeys designed in isolation?
+    works_alongside: Journey-mapping · CX platforms
+  - name: Value
+    path: /solutions/value/
+    buyer: CFO
+    question: Why can't we see the return on transformation?
+    works_alongside: Business cases · benefits tracking
+  - name: Decision
+    path: /solutions/decision/
+    buyer: CEO · CSO
+    question: Why does strategy disappear into programmes?
+    works_alongside: PMO tooling · OKR platforms
+
 # Cross-cutting themes (North Star).
 themes:
   - name: Preservation
