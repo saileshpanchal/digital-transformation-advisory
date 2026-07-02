@@ -1,0 +1,30 @@
+---
+layout: corporate
+title: "Problems we solve"
+permalink: /problems/
+description: >-
+  Start with the problem, not the category. Eight executive problems, each with
+  a door, a named buyer and a 90-Day Assessment.
+---
+
+<div class="insights-header">
+  <div class="container">
+    <h1>Which problem is in front of you?</h1>
+    <p>We lead with the problem, never the category. Find yours; it opens onto the solution, the executive it belongs to, and the tools it works alongside.</p>
+  </div>
+</div>
+
+<section class="section section--light">
+  <div class="container">
+    <div class="offerings-grid">
+      {% for s in site.data.copy.solutions %}
+      <a class="offering-card" href="{{ s.path | relative_url }}">
+        <h3>{{ s.question }}</h3>
+        <p style="color:#5d6871;">{{ s.name }} &middot; for the {{ s.buyer }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include cta.html %}

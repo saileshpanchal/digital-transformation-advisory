@@ -1,0 +1,39 @@
+---
+layout: corporate
+title: "Solutions: eight doors into transformation"
+permalink: /solutions/
+description: >-
+  Eight solutions, one shape. Each is a named problem for a named executive,
+  works alongside the tools you already run, and starts with a 90-Day Assessment.
+---
+
+<div class="insights-header">
+  <div class="container">
+    <h1>Start with the problem in front of you</h1>
+    <p>Eight doors into transformation. Each answers one executive's problem, works alongside the tools you already run, and starts with a single 90-Day Assessment. You enter through one door. You are never asked to buy the building.</p>
+  </div>
+</div>
+
+<section class="section section--light">
+  <div class="container">
+    <div class="offerings-grid">
+      {% for s in site.data.copy.solutions %}
+      <a class="offering-card" href="{{ s.path | relative_url }}">
+        <p class="eyebrow" style="color:#0877a6;font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:11px;">{{ s.name }} &middot; {{ s.buyer }}</p>
+        <h3>{{ s.question }}</h3>
+        <p style="color:#5d6871;font-size:.92rem;">Works alongside {{ s.works_alongside }}.</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container text-center">
+    <h2>One shape. Eight flavours.</h2>
+    <p class="section-subtitle" style="max-width:800px;margin:.5rem auto 0;">Every door starts the same way: one executive, one problem, one intelligence, ninety days. The five Decision Gates, run through that lens, with board-ready evidence out. Two doors are built deep today: <a href="{{ '/solutions/accountability/' | relative_url }}">Accountability</a> and <a href="{{ '/solutions/architecture/' | relative_url }}">Architecture</a>.</p>
+    <p class="strapline" style="margin-top:1.75rem;font-weight:800;font-size:1.15rem;color:var(--map-cyan-dark);">Start anywhere. Connect everything.</p>
+  </div>
+</section>
+
+{% include cta.html %}

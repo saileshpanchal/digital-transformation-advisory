@@ -1,0 +1,36 @@
+{%- comment -%}
+v5 catalogue stub. Params:
+  key  : the door name as in _data/copy.yml `solutions` (required)
+  pain : one-sentence statement of the problem (required)
+{%- endcomment -%}
+{%- assign d = site.data.copy.solutions | where: "name", include.key | first -%}
+<div class="insights-header">
+  <div class="container">
+    <p class="eyebrow" style="color:#0877a6;font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:12px;">For the {{ d.buyer }}</p>
+    <h1>{{ d.question }}</h1>
+    <p><span class="status status--roadmap">Forthcoming</span></p>
+    <p>{{ include.pain }}</p>
+    <div class="hero-actions" style="justify-content:flex-start;margin-top:1.25rem;">
+      {% include cta-calendly.html kind="strategy_call" loc="stub-register" label="Register interest" %}
+      <a href="{{ '/prototype/' | relative_url }}" class="btn btn--outline">See it proven</a>
+    </div>
+  </div>
+</div>
+
+<section class="section section--light">
+  <div class="container text-center">
+    <p style="max-width:760px;margin:0 auto;color:#555;">Powered by the Transformation Intelligence Platform. This door works alongside {{ d.works_alongside }}. We make them intelligent by connecting them.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container text-center">
+    <h2>This door is on the roadmap</h2>
+    <p class="section-subtitle">Two doors are built deep today. Start with one of those, or register interest and we will open this one with you.</p>
+    <div class="offerings-grid" style="max-width:760px;margin:1.5rem auto 0;">
+      <a class="offering-card" href="{{ '/solutions/accountability/' | relative_url }}"><h3>Accountability</h3><p>Can you defend your reasonable steps?</p></a>
+      <a class="offering-card" href="{{ '/solutions/architecture/' | relative_url }}"><h3>Architecture</h3><p>Why do decisions take months and expire in weeks?</p></a>
+    </div>
+    <p style="margin-top:1.5rem;"><a class="textlink" href="{{ '/solutions/' | relative_url }}">See all eight doors <span aria-hidden="true">&rarr;</span></a></p>
+  </div>
+</section>
