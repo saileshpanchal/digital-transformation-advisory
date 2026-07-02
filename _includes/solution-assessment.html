@@ -1,0 +1,18 @@
+{%- comment -%}
+v5 90-Day Assessment block. Params:
+  body  : what the assessment takes and delivers for this door (required)
+  close : the adjacent-door line surfaced at the end (required)
+{%- endcomment -%}
+<section class="section section--dark">
+  <div class="container">
+    <div class="text-center">
+      <p class="eyebrow" style="color:var(--map-cyan-bright);text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:12px;">The 90-Day Assessment</p>
+      <h2 style="color:#fff;">One executive. One problem. Ninety days.</h2>
+    </div>
+    <p style="max-width:800px;margin:1rem auto 0;color:rgba(255,255,255,.85);text-align:center;">{{ include.body }}</p>
+    <p style="max-width:800px;margin:1rem auto 0;color:rgba(255,255,255,.85);text-align:center;"><strong style="color:#fff;">Fixed price. Fixed duration. Defined deliverable.</strong> {{ include.close }}</p>
+    <div class="text-center" style="margin-top:1.5rem;">
+      {% include cta-calendly.html kind="strategy_call" loc="solution-assessment" label="Discuss a challenge" class="btn--primary" %}
+    </div>
+  </div>
+</section>

@@ -2691,5 +2691,10 @@ a.ichip span{font-size:12px;color:var(--map-muted);font-weight:600;}
   .dta-stack-layers .dts-n { left: -46px; width: 32px; height: 32px; font-size: 0.82rem; }
 }
 
+/* ── v5 solution pages ─────────────────────────────────────── */
+.sol-alongside { display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; max-width:840px; margin:1.75rem auto 0; }
+.sol-alongside span { border:1px solid var(--map-line); border-radius:999px; padding:.55rem 1.15rem; font-weight:700; color:var(--map-ink); background:#fff; }
+.sol-stat { font-size:3.25rem; line-height:1; font-weight:800; color:var(--map-cyan-dark); margin:0; }
+
 /* respect reduced motion across the site */
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important;}}
