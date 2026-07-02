@@ -2696,5 +2696,18 @@ a.ichip span{font-size:12px;color:var(--map-muted);font-weight:600;}
 .sol-alongside span { border:1px solid var(--map-line); border-radius:999px; padding:.55rem 1.15rem; font-weight:700; color:var(--map-ink); background:#fff; }
 .sol-stat { font-size:3.25rem; line-height:1; font-weight:800; color:var(--map-cyan-dark); margin:0; }
 
+/* ── v5 outside-in: Them / DTA contrast ───────────────────── */
+.vs-list { max-width: 860px; margin: 1.75rem auto 0; display: grid; gap: 0.75rem; }
+.vs-row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1.25rem; align-items: center;
+  background: #fff; border: 1px solid var(--map-line-soft); border-radius: 12px; padding: 1rem 1.4rem; }
+.vs-row .vs-them { color: var(--map-muted); text-align: right; }
+.vs-row .vs-mid { color: var(--map-cyan); font-weight: 800; font-size: 1.15rem; }
+.vs-row .vs-dta { color: var(--map-ink); font-weight: 700; }
+@media (max-width: 640px) {
+  .vs-row { grid-template-columns: 1fr; gap: 0.2rem; text-align: left; }
+  .vs-row .vs-them { text-align: left; }
+  .vs-row .vs-mid { display: none; }
+}
+
 /* respect reduced motion across the site */
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important;}}
