@@ -1,0 +1,15 @@
+# Evidence objects (shared graph nodes). Referenced by decisions via `evidence:`.
+- { id: identity-evidence,     label: Identity and relationship records }
+- { id: consent-evidence,      label: Consent records }
+- { id: aml-evidence,          label: AML and sanctions clearance }
+- { id: tax-guidance-evidence, label: Tax guidance shown }
+- { id: contribution-evidence, label: Contribution records }
+- { id: gift-letter,           label: Gift letter }
+- { id: evidence-pack,         label: Complete evidence pack }
+- { id: immutable-audit,       label: Immutable audit trail }
+# DTA's own change evidence (the dogfood).
+- { id: dta-homepage-commit,      label: Outside-in homepage live }
+- { id: dta-why-it-works-commit,  label: Why-it-works band live }
+- { id: dta-family-wealth-model,  label: Family Wealth worked example }
+- { id: dta-workbench-page,       label: Transformation Intelligence Workbench }
+- { id: dta-journey-pack,         label: Journey-pack renderer }

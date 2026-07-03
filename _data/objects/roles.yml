@@ -1,0 +1,8 @@
+# Roles (shared graph nodes). Referenced by decisions via `roles:` and as owners.
+- { id: customer,               label: Customer }
+- { id: relationship-manager,   label: Relationship manager }
+- { id: solicitor,              label: Solicitor }
+- { id: mortgage-adviser,       label: Mortgage adviser }
+- { id: compliance-officer,     label: Compliance officer }
+- { id: financial-crime-analyst, label: Financial crime analyst }
+- { id: proposition-owner,      label: Proposition owner }

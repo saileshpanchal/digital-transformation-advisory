@@ -1,0 +1,19 @@
+# Applications, and the architecture layer each sits in (shared graph nodes).
+# Referenced by decisions via `systems:`.
+- { id: crm,             label: CRM,                 layer: Application }
+- { id: party-graph,     label: Party graph,         layer: Application }
+- { id: payments-engine, label: Payments engine,     layer: Application }
+- { id: identity-service, label: Identity service,   layer: Application }
+- { id: knowledge-graph, label: Knowledge graph,     layer: Application }
+- { id: document-store,  label: Document store,      layer: Application }
+# APIs
+- { id: family-api,       label: Family API,         layer: API }
+- { id: identity-api,     label: Identity API,       layer: API }
+- { id: payment-api,      label: Payment API,        layer: API }
+- { id: tax-api,          label: Tax API,            layer: API }
+- { id: notification-api, label: Notification API,   layer: API }
+# Events
+- { id: contribution-received, label: ContributionReceived, layer: Event }
+- { id: gift-completed,        label: GiftCompleted,        layer: Event }
+- { id: evidence-created,      label: EvidenceCreated,      layer: Event }
+- { id: tax-assessed,          label: TaxAssessmentCompleted, layer: Event }

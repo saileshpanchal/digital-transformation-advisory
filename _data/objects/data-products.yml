@@ -1,0 +1,6 @@
+# Data products (shared graph nodes). Referenced by decisions via `data:`.
+- { id: family-graph-data,  label: Family relationship data }
+- { id: consent-records,    label: Consent records }
+- { id: contribution-ledger, label: Contribution ledger }
+- { id: evidence-pack-data, label: Evidence pack data }
+- { id: tax-position-data,  label: Tax position data }

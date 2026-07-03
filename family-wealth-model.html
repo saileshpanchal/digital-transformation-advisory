@@ -1,0 +1,39 @@
+---
+layout: corporate
+title: "Family Wealth, modelled with Transformation Intelligence"
+permalink: /composable-bank/family-wealth-model/
+description: >-
+  How Transformation Intelligence models a family wealth proposition: one
+  decision model, projected as customer journey, process, capability, knowledge,
+  AI, architecture and governance, with the impact of change shown before build.
+---
+
+{% include journey-pack.html journey=site.data.journeys.family-wealth %}
+
+{% include cta.html %}
+
+<script>
+  (function () {
+    var btn = document.getElementById('ti-ripple-btn');
+    if (!btn) return;
+    var ripple = document.querySelector('.ti-ripple');
+    var ids = (btn.getAttribute('data-decisions') || '').split(/\s+/).filter(Boolean);
+    var on = false;
+    btn.addEventListener('click', function () {
+      on = !on;
+      if (ripple) ripple.classList.toggle('is-rippled', on);
+      ids.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) {
+          el.classList.toggle('ti-rippled', on);
+          if (on) el.setAttribute('open', '');
+        }
+      });
+      btn.textContent = on ? 'Reset the ripple' : 'Show the ripple';
+      if (on && ids.length) {
+        var first = document.getElementById(ids[0]);
+        if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  })();
+</script>

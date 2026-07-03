@@ -1,0 +1,10 @@
+# Capabilities (shared graph nodes). Reused across journeys, not owned by one.
+# Referenced by decisions via `capabilities:`.
+- { id: family-management,       label: Family management,       owner: Wealth proposition, maturity: emerging }
+- { id: identity-verification,   label: Identity verification,   owner: Financial crime,    maturity: established, note: "Shared. Payments, Mortgage and Onboarding reuse this." }
+- { id: gift-management,         label: Gift management,         owner: Wealth proposition, maturity: emerging }
+- { id: contribution-management, label: Contribution management, owner: Payments,           maturity: established }
+- { id: tax-guidance,            label: Tax guidance,            owner: Wealth advice,      maturity: emerging }
+- { id: evidence-management,     label: Evidence management,     owner: Risk and governance, maturity: established }
+- { id: payments,                label: Payments,                owner: Payments,           maturity: established }
+- { id: notifications,           label: Notifications,           owner: Engagement,         maturity: established }

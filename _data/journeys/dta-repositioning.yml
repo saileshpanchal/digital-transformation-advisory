@@ -1,0 +1,46 @@
+# DTA's own repositioning as a journey (the dogfood). Same schema as any client
+# journey: every decision about DTA itself is recorded in the same model.
+slug: dta-repositioning
+title: Repositioning DTA
+kicker: DTA's own repositioning, modelled the way we model a client
+audience: DTA itself. A living record of the decisions that produced this website.
+
+problem: >-
+  DTA had substance but the proposition risked feeling too broad and too
+  conceptual for buyers under near-term accountability pressure.
+vision: >-
+  A decision-first discipline, demonstrated rather than described, where every
+  page is a projection of one model.
+outcome: >-
+  Create a new market category, Transformation Intelligence, that competitors
+  cannot easily copy because it is a connected model, not a set of services.
+
+scenario: >-
+  Every decision about how to reposition DTA, from the homepage to the
+  navigation to where Transformation Intelligence sits, recorded with the
+  alternatives considered and the expected outcome.
+
+executive_objective: new-market-category
+executive_decision:
+  question: How do we reposition DTA to create a new market category?
+  owner: Founder
+  purpose: Move from a broad methodology to a decision-first discipline that is demonstrated, not described.
+  confidence: medium
+  review: monthly
+
+decisions:
+  - dta-lead-with-problems
+  - dta-homepage-sell-ti
+  - dta-family-wealth-primary
+  - dta-prototype-becomes-website
+  - dta-journeys-replace-services
+
+evidence_of_change:
+  - { label: Homepage reframed outside-in, done: true }
+  - { label: Transformation Intelligence given presence, done: true }
+  - { label: Accountability wedge folded in, done: true }
+  - { label: Decision-first model defined, done: true }
+  - { label: Family Wealth projection built, done: true }
+  - { label: Workbench introduced, done: true }
+  - { label: Remaining journeys modelled, done: false }
+  - { label: DTA knowledge graph grown, done: false }

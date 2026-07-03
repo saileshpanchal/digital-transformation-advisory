@@ -2709,5 +2709,85 @@ a.ichip span{font-size:12px;color:var(--map-muted);font-weight:600;}
   .vs-row .vs-mid { display: none; }
 }
 
+/* ============================================================
+   Journey pack: projections of one Decision Graph (family-wealth-model, workbench)
+   ============================================================ */
+.ti-summary { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:1.5rem; }
+.ti-summary h3 { font-size:.8rem; text-transform:uppercase; letter-spacing:.12em; color:var(--map-cyan-dark); margin-bottom:.4rem; }
+.ti-summary p { color:var(--map-muted); }
+.ti-scenario { margin-top:1.5rem; padding:1rem 1.25rem; background:var(--map-cyan-pale); border-radius:10px; color:var(--map-ink); max-width:820px; }
+.ti-tag { font-size:.72rem; text-transform:uppercase; letter-spacing:.14em; font-weight:800; color:var(--map-cyan-dark); }
+.ti-meta { display:flex; flex-wrap:wrap; gap:1.25rem; margin-top:.75rem; font-size:.82rem; color:var(--map-muted); }
+.ti-muted { color:var(--map-muted); font-style:italic; }
+
+/* view navigation */
+.ti-viewnav { position:sticky; top:0; z-index:5; background:var(--map-ink); }
+.ti-viewnav .container { display:flex; flex-wrap:wrap; gap:.4rem 1rem; align-items:center; padding-top:.6rem; padding-bottom:.6rem; }
+.ti-viewnav span { color:rgba(255,255,255,.6); font-size:.72rem; text-transform:uppercase; letter-spacing:.12em; font-weight:800; }
+.ti-viewnav a { color:#fff; font-size:.82rem; font-weight:600; text-decoration:none; opacity:.85; }
+.ti-viewnav a:hover { opacity:1; color:var(--map-cyan); }
+
+/* executive decision card */
+.ti-execdec { margin-top:1.5rem; border:1px solid var(--map-cyan); border-top:3px solid var(--map-cyan); border-radius:12px; padding:1.25rem 1.5rem; background:#fff; }
+.ti-execdec h3 { margin:.35rem 0 .5rem; }
+
+/* decision records (accordion) */
+.ti-decisions { margin-top:1rem; display:grid; gap:.6rem; }
+.ti-decision, .ti-view { border:1px solid var(--map-line); border-radius:10px; background:#fff; overflow:hidden; }
+.ti-decision > summary, .ti-view > summary { list-style:none; cursor:pointer; padding:1rem 1.25rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; font-weight:700; }
+.ti-decision > summary::-webkit-details-marker, .ti-view > summary::-webkit-details-marker { display:none; }
+.ti-decision > summary::after, .ti-view > summary::after { content:"+"; color:var(--map-cyan-dark); font-weight:800; font-size:1.2rem; line-height:1; flex:0 0 auto; }
+.ti-decision[open] > summary::after, .ti-view[open] > summary::after { content:"\2013"; }
+.ti-decision > summary:hover, .ti-view > summary:hover { background:var(--map-cyan-pale); }
+.ti-decision .ti-q { flex:1; }
+.ti-decision .ti-owner { font-weight:600; font-size:.8rem; color:var(--map-muted); text-align:right; }
+.ti-decision-body, .ti-view-body { padding:0 1.25rem 1.25rem; }
+.ti-record { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem 1.5rem; margin:.75rem 0; }
+.ti-record h4 { font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--map-cyan-dark); margin-bottom:.3rem; }
+.ti-record ul { margin:0; padding-left:1.1rem; }
+.ti-record li, .ti-record p { font-size:.9rem; color:var(--map-ink); }
+.ti-crossref { margin-top:.5rem; font-size:.82rem; color:var(--map-muted); }
+.ti-crossref a { color:var(--map-cyan-dark); font-weight:600; }
+
+/* view summaries carry a label + descriptor */
+.ti-view { margin-top:.6rem; }
+.ti-view > summary b { font-size:1.05rem; }
+.ti-view > summary span { flex:1; color:var(--map-muted); font-weight:500; font-size:.85rem; margin-left:1rem; }
+
+/* accountability spine */
+.ti-spine { list-style:none; margin:1rem 0 0; padding:0; display:grid; gap:.5rem; }
+.ti-spine li { display:grid; grid-template-columns:auto 1fr; gap:.9rem; align-items:start; }
+.ti-spine-n { width:26px; height:26px; border-radius:50%; background:var(--map-cyan); color:#fff; font-weight:800; font-size:.8rem; display:flex; align-items:center; justify-content:center; }
+.ti-spine-t { font-weight:700; }
+.ti-spine-d { font-size:.85rem; color:var(--map-muted); }
+
+/* by-construction table */
+.ti-construct td a { color:var(--map-cyan-dark); font-weight:600; }
+
+/* evidence of change */
+.ti-evidence { list-style:none; margin:1.5rem auto 0; padding:0; max-width:640px; display:grid; gap:.5rem; }
+.ti-evidence li { display:flex; align-items:center; gap:.75rem; padding:.6rem .9rem; border:1px solid var(--map-line); border-radius:8px; }
+.ti-evidence .ti-check { font-weight:800; }
+.ti-evidence .is-done, .ti-evidence li.is-done { }
+.ti-evidence li.is-done .ti-check { color:#1a9e57; }
+.ti-evidence li.is-todo { color:var(--map-muted); }
+
+/* change-impact ripple */
+.ti-ripple { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; max-width:820px; margin:1rem auto 0; }
+.ti-ripple-node { border:1px solid rgba(255,255,255,.2); border-radius:10px; padding:1rem; text-align:center; color:#fff; transition:background .25s, border-color .25s; }
+.ti-ripple-node .ti-ripple-n { display:block; font-size:1.8rem; font-weight:800; color:var(--map-cyan); }
+.ti-ripple-node span:last-child { font-size:.8rem; color:rgba(255,255,255,.8); }
+.ti-ripple.is-rippled .ti-ripple-node { background:rgba(41,171,226,.18); border-color:var(--map-cyan); }
+.ti-decision.ti-rippled { border-color:var(--map-cyan); box-shadow:0 0 0 2px rgba(41,171,226,.3); }
+
+@media (max-width:720px) {
+  .ti-summary { grid-template-columns:1fr; }
+  .ti-record { grid-template-columns:1fr; }
+  .ti-ripple { grid-template-columns:1fr 1fr; }
+  .ti-decision > summary, .ti-view > summary { flex-wrap:wrap; }
+  .ti-decision .ti-owner { text-align:left; }
+  .ti-view > summary span { margin-left:0; flex-basis:100%; }
+}
+
 /* respect reduced motion across the site */
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important;}}

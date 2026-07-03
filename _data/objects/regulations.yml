@@ -1,0 +1,5 @@
+# Regulations (shared graph nodes). Referenced by decisions via `regulations:`.
+- { id: mlr-2017,           label: Money Laundering Regulations 2017 }
+- { id: consumer-duty,      label: Consumer Duty }
+- { id: iht-rules,          label: Inheritance Tax rules }
+- { id: digital-gifting-reg, label: Digital Gifting Regulation, note: "Proposed. Used in the change-impact scenario; not yet in force." }

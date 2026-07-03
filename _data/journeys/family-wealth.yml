@@ -1,0 +1,80 @@
+# Family Wealth journey: a selection over the Decision Graph plus narrative.
+# Decisions, capabilities, policies and every other object are defined once in
+# _data/objects/* and referenced here by id.
+slug: family-wealth
+title: Family Wealth Hub
+kicker: Reimagining family wealth management using Transformation Intelligence
+audience: Retail, wealth and proposition leaders protecting multi-generational relationships.
+live_demo: /composable-bank/family-wealth/
+
+# Executive summary
+problem: >-
+  Deposits sit with one generation while the next forms its primary banking
+  relationship elsewhere. Family money moves through bank transfers, messages
+  and email, with lost evidence and tax uncertainty.
+vision: >-
+  One governed experience where a family can move from separate customers to a
+  shared goal and an approved housing outcome, with authority and evidence
+  explicit at every step.
+outcome: >-
+  Retain family deposits, originate the next relationship and reduce the cost of
+  governed family servicing.
+
+# The fixed scenario
+scenario: >-
+  A grandmother wants to gift 25,000 pounds toward her granddaughter's first
+  house. Four family members each contribute different amounts. The family want
+  transparency, tax awareness, fraud protection and complete evidence.
+
+# The root of the model
+executive_objective: retain-family-deposits
+executive_decision:
+  question: Should we launch a governed Family Wealth proposition?
+  owner: Proposition owner
+  purpose: Decide whether to offer a governed family gifting and shared-goal proposition.
+  confidence: medium
+  review: quarterly
+
+# The business decision catalogue, in order (ids resolve to _data/objects/decisions.yml)
+decisions:
+  - fw-join-family
+  - fw-contribute
+  - fw-gift-permitted
+  - fw-aml
+  - fw-tax-guidance
+  - fw-release-funds
+  - fw-archive-evidence
+
+# Experience projection: personas and the current then target journey
+personas: [grandmother, parents, uncle, granddaughter, family-solicitor]
+journey_current:
+  - Grandmother decides to help
+  - Ad hoc bank transfers
+  - Messages and email
+  - Lost evidence
+  - Tax uncertainty
+journey_target:
+  - Create the family gift
+  - Invite and verify contributors
+  - Governed contributions
+  - Tax guidance shown
+  - Funds released to solicitor
+  - Complete evidence, one record
+
+# Change-impact scenario: a regulation change, and which decisions reference it
+change:
+  trigger: A new UK Digital Gifting Regulation is introduced.
+  regulation: digital-gifting-reg
+  # decisions that would need to be re-evidenced (those touching gifting or tax)
+  decisions: [fw-gift-permitted, fw-tax-guidance, fw-archive-evidence]
+
+# Evidence-of-change checklist (proof as a growing body of connected evidence)
+evidence_of_change:
+  - { label: Customer journey modelled, done: true }
+  - { label: Business decisions identified, done: true }
+  - { label: Capabilities mapped, done: true }
+  - { label: Policies linked, done: true }
+  - { label: Architecture traced, done: true }
+  - { label: AI opportunities assessed, done: true }
+  - { label: Governance controls defined, done: true }
+  - { label: Executive value measures identified, done: true }

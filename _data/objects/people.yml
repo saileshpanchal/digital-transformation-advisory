@@ -1,0 +1,6 @@
+# People / personas (shared graph nodes) for the Family Wealth scenario.
+- { id: grandmother,     label: Grandmother,   note: "Wants to gift 25,000 pounds toward her granddaughter's first house." }
+- { id: parents,         label: Parents,       note: "Contribute and want transparency." }
+- { id: uncle,           label: Uncle,         note: "Contributes a different amount." }
+- { id: granddaughter,   label: Granddaughter, note: "The first-time buyer." }
+- { id: family-solicitor, label: Solicitor,    note: "Receives the funds for the house purchase." }

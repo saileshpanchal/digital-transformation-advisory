@@ -1,0 +1,346 @@
+{%- comment -%}
+  Journey pack: renders one journey as projections of the same Decision Graph.
+  Param: include.journey (an object from _data/journeys/*). Resolves object refs
+  from _data/objects/*. Decision-first order. Every section is a different view
+  of the same decisions.
+{%- endcomment -%}
+{%- assign j = include.journey -%}
+{%- assign objs = site.data.objects -%}
+
+{%- comment -%} Collect unique object ids across the journey's decisions {%- endcomment -%}
+{%- assign capIds = "" | split: "," -%}
+{%- assign sysIds = "" | split: "," -%}
+{%- assign aiIds = "" | split: "," -%}
+{%- assign kpiIds = "" | split: "," -%}
+{%- assign knowIds = "" | split: "," -%}
+{%- assign polIds = "" | split: "," -%}
+{%- assign regIds = "" | split: "," -%}
+{%- assign objvIds = "" | split: "," -%}
+{%- if j.executive_objective %}{% assign eo = j.executive_objective | split: "|" %}{% assign objvIds = objvIds | concat: eo %}{% endif -%}
+{%- for id in j.decisions -%}
+  {%- assign d = objs.decisions | where: "id", id | first -%}
+  {%- if d.capabilities %}{% assign capIds = capIds | concat: d.capabilities %}{% endif -%}
+  {%- if d.systems %}{% assign sysIds = sysIds | concat: d.systems %}{% endif -%}
+  {%- if d.ai %}{% assign aiIds = aiIds | concat: d.ai %}{% endif -%}
+  {%- if d.kpis %}{% assign kpiIds = kpiIds | concat: d.kpis %}{% endif -%}
+  {%- if d.knowledge %}{% assign knowIds = knowIds | concat: d.knowledge %}{% endif -%}
+  {%- if d.policies %}{% assign polIds = polIds | concat: d.policies %}{% endif -%}
+  {%- if d.regulations %}{% assign regIds = regIds | concat: d.regulations %}{% endif -%}
+  {%- if d.objectives %}{% assign objvIds = objvIds | concat: d.objectives %}{% endif -%}
+{%- endfor -%}
+{%- assign capIds = capIds | uniq -%}
+{%- assign sysIds = sysIds | uniq -%}
+{%- assign aiIds = aiIds | uniq -%}
+{%- assign kpiIds = kpiIds | uniq -%}
+{%- assign knowIds = knowIds | uniq -%}
+{%- assign polIds = polIds | uniq -%}
+{%- assign regIds = regIds | uniq -%}
+{%- assign objvIds = objvIds | uniq -%}
+
+<!-- 1. EXECUTIVE SUMMARY -->
+<section class="section ti-journey" data-journey="{{ j.slug }}">
+  <div class="container">
+    <p class="eyebrow" style="color:var(--map-cyan-dark);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:12px;">{{ j.kicker }}</p>
+    <h1>{{ j.title }}</h1>
+    {% if j.audience %}<p class="buyer-line">{{ j.audience }}</p>{% endif %}
+    <div class="ti-summary">
+      {% if j.problem %}<div><h3>Problem</h3><p>{{ j.problem }}</p></div>{% endif %}
+      {% if j.vision %}<div><h3>Vision</h3><p>{{ j.vision }}</p></div>{% endif %}
+      {% if j.outcome %}<div><h3>Business outcome</h3><p>{{ j.outcome }}</p></div>{% endif %}
+    </div>
+    {% if j.scenario %}<p class="ti-scenario"><strong>Scenario.</strong> {{ j.scenario }}</p>{% endif %}
+    {% if j.live_demo %}<p style="margin-top:1.25rem;"><a class="btn btn--primary" href="{{ j.live_demo | relative_url }}">Run the live demonstration &rarr;</a></p>{% endif %}
+  </div>
+</section>
+
+<!-- View navigation -->
+<nav class="ti-viewnav" aria-label="Projections of the model">
+  <div class="container">
+    <span>Views of one model:</span>
+    <a href="#decisions">Decisions</a>
+    <a href="#value">Value</a>
+    <a href="#experience">Experience</a>
+    <a href="#process">Process</a>
+    <a href="#capability">Capability</a>
+    <a href="#knowledge">Knowledge</a>
+    <a href="#cognitive">Cognitive</a>
+    <a href="#architecture">Architecture</a>
+    <a href="#accountability">Accountability</a>
+  </div>
+</nav>
+
+<!-- 2. DECISION MODEL FIRST -->
+<section class="section section--light" id="decisions">
+  <div class="container">
+    <div class="text-center">
+      <h2>The decisions</h2>
+      <p class="section-subtitle" style="max-width:760px;margin:.5rem auto 0;">Transformation Intelligence starts with decisions. Everything else exists to enable, constrain or evidence them.</p>
+    </div>
+    {% if j.executive_decision %}
+    <div class="ti-execdec">
+      <p class="ti-tag">Executive decision</p>
+      <h3>{{ j.executive_decision.question }}</h3>
+      <p>{{ j.executive_decision.purpose }}</p>
+      <p class="ti-meta"><span>Owner: {{ j.executive_decision.owner }}</span><span>Confidence: {{ j.executive_decision.confidence }}</span><span>Review: {{ j.executive_decision.review }}</span></p>
+    </div>
+    {% endif %}
+    <p class="ti-tag" style="margin-top:2rem;">Decision catalogue</p>
+    <div class="ti-decisions">
+      {% for id in j.decisions %}
+        {% assign d = objs.decisions | where: "id", id | first %}
+        {% assign ownerRole = objs.roles | where: "id", d.owner | first %}
+        <details class="ti-decision" id="{{ d.id }}" data-decision="{{ d.id }}">
+          <summary><span class="ti-q">{{ d.question }}</span><span class="ti-owner">{% if ownerRole %}{{ ownerRole.label }}{% else %}{{ d.owner }}{% endif %}</span></summary>
+          <div class="ti-decision-body">
+            <p>{{ d.purpose }}</p>
+            <div class="ti-record">
+              {% if d.inputs %}<div><h4>Inputs</h4><ul>{% for x in d.inputs %}<li>{{ x }}</li>{% endfor %}</ul></div>{% endif %}
+              {% if d.outputs %}<div><h4>Outputs</h4><ul>{% for x in d.outputs %}<li>{{ x }}</li>{% endfor %}</ul></div>{% endif %}
+              {% if d.policies %}<div><h4>Policies</h4><ul>{% for x in d.policies %}{% assign o = objs.policies | where: "id", x | first %}<li>{{ o.label | default: x }}</li>{% endfor %}</ul></div>{% endif %}
+              {% if d.regulations %}<div><h4>Regulations</h4><ul>{% for x in d.regulations %}{% assign o = objs.regulations | where: "id", x | first %}<li>{{ o.label | default: x }}</li>{% endfor %}</ul></div>{% endif %}
+              {% if d.evidence %}<div><h4>Evidence produced</h4><ul>{% for x in d.evidence %}{% assign o = objs.evidence | where: "id", x | first %}<li>{{ o.label | default: x }}</li>{% endfor %}</ul></div>{% endif %}
+              {% if d.alternatives %}<div><h4>Alternatives considered</h4><ul>{% for x in d.alternatives %}<li>{{ x }}</li>{% endfor %}</ul></div>{% endif %}
+              {% if d.expected %}<div><h4>Expected outcome</h4><p>{{ d.expected }}</p></div>{% endif %}
+              {% if d.risks %}<div><h4>Risks</h4><p>{{ d.risks }}</p></div>{% endif %}
+            </div>
+            <p class="ti-meta"><span>Owner: {% if ownerRole %}{{ ownerRole.label }}{% else %}{{ d.owner }}{% endif %}</span><span>Confidence: {{ d.confidence }}</span><span>Review: {{ d.review }}</span></p>
+            {% if d.capabilities or d.systems or d.ai %}
+            <p class="ti-crossref">Connected to:
+              {% if d.capabilities %}<a href="#capability">capabilities</a>{% endif %}
+              {% if d.knowledge %}<a href="#knowledge">knowledge</a>{% endif %}
+              {% if d.systems %}<a href="#architecture">architecture</a>{% endif %}
+              {% if d.ai %}<a href="#cognitive">AI</a>{% endif %}
+              <a href="#accountability">evidence</a>
+            </p>
+            {% endif %}
+          </div>
+        </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- 3. THE EIGHT PROJECTIONS -->
+<section class="section" id="projections">
+  <div class="container">
+    <div class="text-center">
+      <h2>Eight ways of observing the same decisions</h2>
+      <p class="section-subtitle" style="max-width:760px;margin:.5rem auto 0;">Click any artefact your organisation already produces. Because they are all generated from one model, they are connected rather than isolated.</p>
+    </div>
+
+    <!-- VALUE -->
+    <details class="ti-view" id="value" open>
+      <summary><b>Value</b><span>The objectives and measures the decisions pursue</span></summary>
+      <div class="ti-view-body">
+        {% if objvIds.size > 0 %}
+        <div class="wall">
+          {% for x in objvIds %}{% assign o = objs.objectives | where: "id", x | first %}<div class="chip"><div class="ck">{{ o.label | default: x }}</div></div>{% endfor %}
+        </div>
+        {% endif %}
+        {% if kpiIds.size > 0 %}
+        <p class="ti-tag" style="margin-top:1.25rem;">Measures</p>
+        <div class="pressure-list">{% for x in kpiIds %}{% assign o = objs.measures | where: "id", x | first %}<span>{{ o.label | default: x }}</span>{% endfor %}</div>
+        {% endif %}
+        {% if objvIds.size == 0 and kpiIds.size == 0 %}<p class="ti-muted">Derived view in modelling.</p>{% endif %}
+      </div>
+    </details>
+
+    <!-- EXPERIENCE -->
+    <details class="ti-view" id="experience">
+      <summary><b>Experience</b><span>The customer journey and personas the decisions serve</span></summary>
+      <div class="ti-view-body">
+        {% if j.personas %}
+        <div class="pressure-list">{% for x in j.personas %}{% assign o = objs.people | where: "id", x | first %}<span>{{ o.label | default: x }}</span>{% endfor %}</div>
+        {% endif %}
+        {% if j.journey_current %}
+        <p class="ti-tag" style="margin-top:1.25rem;">Today</p>
+        <div class="flow-chain">{% for s in j.journey_current %}<span class="step">{{ s }}</span>{% unless forloop.last %}<span class="arrow">&rsaquo;</span>{% endunless %}{% endfor %}</div>
+        {% endif %}
+        {% if j.journey_target %}
+        <p class="ti-tag" style="margin-top:1rem;">Target</p>
+        <div class="flow-chain">{% for s in j.journey_target %}<span class="step">{{ s }}</span>{% unless forloop.last %}<span class="arrow">&rsaquo;</span>{% endunless %}{% endfor %}</div>
+        {% endif %}
+        {% unless j.personas or j.journey_current %}<p class="ti-muted">Derived view in modelling.</p>{% endunless %}
+      </div>
+    </details>
+
+    <!-- PROCESS -->
+    <details class="ti-view" id="process">
+      <summary><b>Process</b><span>The sequence of decisions</span></summary>
+      <div class="ti-view-body">
+        <div class="flow-chain">
+          {% for id in j.decisions %}{% assign d = objs.decisions | where: "id", id | first %}<span class="step">{{ d.outputs[0] | default: d.question }}</span>{% unless forloop.last %}<span class="arrow">&rsaquo;</span>{% endunless %}{% endfor %}
+        </div>
+      </div>
+    </details>
+
+    <!-- CAPABILITY -->
+    <details class="ti-view" id="capability">
+      <summary><b>Capability</b><span>The capabilities the decisions need</span></summary>
+      <div class="ti-view-body">
+        {% if capIds.size > 0 %}
+        <div class="offerings-grid">
+          {% for x in capIds %}{% assign o = objs.capabilities | where: "id", x | first %}
+          <div class="offering-card"><h3>{{ o.label | default: x }}</h3><p>Owner: {{ o.owner }}. Maturity: {{ o.maturity }}.{% if o.note %} {{ o.note }}{% endif %}</p></div>
+          {% endfor %}
+        </div>
+        {% else %}<p class="ti-muted">Derived view in modelling.</p>{% endif %}
+      </div>
+    </details>
+
+    <!-- KNOWLEDGE -->
+    <details class="ti-view" id="knowledge">
+      <summary><b>Knowledge</b><span>The knowledge, policy and regulation the decisions rely on</span></summary>
+      <div class="ti-view-body">
+        {% include diagrams/decision-graph.html %}
+        {% if knowIds.size > 0 %}
+        <p class="ti-tag" style="margin-top:1rem;">Knowledge objects</p>
+        <div class="pressure-list">{% for x in knowIds %}{% assign o = objs.knowledge | where: "id", x | first %}<span>{{ o.label | default: x }}</span>{% endfor %}</div>
+        {% endif %}
+        {% if polIds.size > 0 %}
+        <p class="ti-tag" style="margin-top:1rem;">Policies</p>
+        <div class="pressure-list">{% for x in polIds %}{% assign o = objs.policies | where: "id", x | first %}<span>{{ o.label | default: x }}</span>{% endfor %}</div>
+        {% endif %}
+        {% if regIds.size > 0 %}
+        <p class="ti-tag" style="margin-top:1rem;">Regulations</p>
+        <div class="pressure-list">{% for x in regIds %}{% assign o = objs.regulations | where: "id", x | first %}<span>{{ o.label | default: x }}</span>{% endfor %}</div>
+        {% endif %}
+      </div>
+    </details>
+
+    <!-- COGNITIVE -->
+    <details class="ti-view" id="cognitive">
+      <summary><b>Cognitive</b><span>Which decisions AI supports or automates</span></summary>
+      <div class="ti-view-body">
+        {% assign aiRows = 0 %}
+        {% for id in j.decisions %}{% assign d = objs.decisions | where: "id", id | first %}{% if d.ai %}{% assign aiRows = aiRows | plus: 1 %}{% endif %}{% endfor %}
+        {% if aiRows > 0 %}
+        <div class="interaction-table-wrap">
+          <table class="interaction-table">
+            <thead><tr><th>Decision</th><th>Human</th><th>AI</th><th>Evidence</th></tr></thead>
+            <tbody>
+              {% for id in j.decisions %}{% assign d = objs.decisions | where: "id", id | first %}{% if d.ai %}
+              {% assign ownerRole = objs.roles | where: "id", d.owner | first %}
+              {% assign firstAi = objs.agents | where: "id", d.ai[0] | first %}
+              {% assign firstEv = objs.evidence | where: "id", d.evidence[0] | first %}
+              <tr><td>{{ d.question }}</td><td>{% if ownerRole %}{{ ownerRole.label }}{% else %}{{ d.owner }}{% endif %}</td><td>{{ firstAi.label | default: d.ai[0] }}</td><td>{{ firstEv.label | default: "Generated" }}</td></tr>
+              {% endif %}{% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <p class="ti-muted" style="margin-top:.75rem;">Every AI interaction references the knowledge graph and produces evidence. A human remains accountable for each decision.</p>
+        {% else %}<p class="ti-muted">Derived view in modelling.</p>{% endif %}
+      </div>
+    </details>
+
+    <!-- ARCHITECTURE -->
+    <details class="ti-view" id="architecture">
+      <summary><b>Architecture</b><span>The systems, APIs and events supporting the decisions</span></summary>
+      <div class="ti-view-body">
+        {% if sysIds.size > 0 %}
+        {% assign layers = "Application,API,Event" | split: "," %}
+        <div class="layer-ladder">
+          {% for layer in layers %}
+            {% assign layerItems = "" | split: "," %}
+            {% for x in sysIds %}{% assign o = objs.applications | where: "id", x | first %}{% if o.layer == layer %}{% assign one = o.label | split: "|" %}{% assign layerItems = layerItems | concat: one %}{% endif %}{% endfor %}
+            {% if layerItems.size > 0 %}<div><strong>{{ layer }}</strong>: {{ layerItems | join: ", " }}</div>{% endif %}
+          {% endfor %}
+        </div>
+        {% else %}<p class="ti-muted">Derived view in modelling.</p>{% endif %}
+      </div>
+    </details>
+
+    <!-- ACCOUNTABILITY -->
+    <details class="ti-view" id="accountability">
+      <summary><b>Accountability</b><span>Who is accountable, and the evidence each decision produces</span></summary>
+      <div class="ti-view-body">
+        <ol class="ti-spine">
+          {% for id in j.decisions %}{% assign d = objs.decisions | where: "id", id | first %}{% assign ownerRole = objs.roles | where: "id", d.owner | first %}
+          <li><span class="ti-spine-n">{{ forloop.index }}</span><div><div class="ti-spine-t">{{ d.question }}</div><div class="ti-spine-d">Accountable: {% if ownerRole %}{{ ownerRole.label }}{% else %}{{ d.owner }}{% endif %}.{% if d.evidence %} Evidence: {% for x in d.evidence %}{% assign o = objs.evidence | where: "id", x | first %}{{ o.label | default: x }}{% unless forloop.last %}, {% endunless %}{% endfor %}.{% endif %}</div></div></li>
+          {% endfor %}
+        </ol>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- 5. BY CONSTRUCTION -->
+<section class="section section--light" id="by-construction">
+  <div class="container">
+    <div class="text-center">
+      <h2>This journey, by construction</h2>
+      <p class="section-subtitle" style="max-width:760px;margin:.5rem auto 0;">Every artefact on this page exists because it is generated from the same underlying model.</p>
+    </div>
+    <div class="interaction-table-wrap">
+      <table class="interaction-table ti-construct">
+        <thead><tr><th>Intelligence</th><th>Artefact on this page</th></tr></thead>
+        <tbody>
+          <tr><td>Decision</td><td><a href="#decisions">The decision catalogue</a></td></tr>
+          <tr><td>Value</td><td><a href="#value">Objectives and measures</a></td></tr>
+          <tr><td>Experience</td><td><a href="#experience">Personas and journey</a></td></tr>
+          <tr><td>Process</td><td><a href="#process">The sequence of decisions</a></td></tr>
+          <tr><td>Capability</td><td><a href="#capability">Capability map</a></td></tr>
+          <tr><td>Knowledge</td><td><a href="#knowledge">Decision-centred knowledge graph</a></td></tr>
+          <tr><td>Cognitive</td><td><a href="#cognitive">AI opportunity table</a></td></tr>
+          <tr><td>Architecture</td><td><a href="#architecture">Application, API and event layers</a></td></tr>
+          <tr><td>Accountability</td><td><a href="#accountability">Accountable owner and evidence</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 6. EVIDENCE OF CHANGE -->
+{% if j.evidence_of_change %}
+<section class="section" id="evidence">
+  <div class="container">
+    <div class="text-center">
+      <h2>Evidence of change</h2>
+      <p class="section-subtitle" style="max-width:760px;margin:.5rem auto 0;">Proof is not a slide deck. It is a growing body of connected evidence.</p>
+    </div>
+    <ul class="ti-evidence">
+      {% for e in j.evidence_of_change %}
+      <li class="{% if e.done %}is-done{% else %}is-todo{% endif %}"><span class="ti-check" aria-hidden="true">{% if e.done %}&#10003;{% else %}&#9675;{% endif %}</span>{{ e.label }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+
+<!-- 7. CHANGE IMPACT -->
+{% if j.change %}
+{%- assign chCap = "" | split: "," -%}
+{%- assign chSys = "" | split: "," -%}
+{%- assign chAi = "" | split: "," -%}
+{%- assign chPol = "" | split: "," -%}
+{%- assign chEv = "" | split: "," -%}
+{%- for id in j.change.decisions -%}
+  {%- assign d = objs.decisions | where: "id", id | first -%}
+  {%- if d.capabilities %}{% assign chCap = chCap | concat: d.capabilities %}{% endif -%}
+  {%- if d.systems %}{% assign chSys = chSys | concat: d.systems %}{% endif -%}
+  {%- if d.ai %}{% assign chAi = chAi | concat: d.ai %}{% endif -%}
+  {%- if d.policies %}{% assign chPol = chPol | concat: d.policies %}{% endif -%}
+  {%- if d.evidence %}{% assign chEv = chEv | concat: d.evidence %}{% endif -%}
+{%- endfor -%}
+{%- assign chCap = chCap | uniq -%}{%- assign chSys = chSys | uniq -%}{%- assign chAi = chAi | uniq -%}{%- assign chPol = chPol | uniq -%}{%- assign chEv = chEv | uniq -%}
+<section class="section section--dark" id="change">
+  <div class="container">
+    <div class="text-center">
+      <h2>If we change this, what else changes?</h2>
+      <p class="section-subtitle" style="max-width:760px;margin:.5rem auto 0;color:rgba(255,255,255,.85);">{{ j.change.trigger }} Because every artefact is derived from the decisions, the model shows the impact before anyone starts building.</p>
+    </div>
+    <div class="text-center" style="margin:1.25rem 0;">
+      <button type="button" class="btn btn--primary" id="ti-ripple-btn" data-decisions="{{ j.change.decisions | join: ' ' }}">Show the ripple</button>
+    </div>
+    <div class="ti-ripple">
+      <div class="ti-ripple-node"><span class="ti-ripple-n">{{ j.change.decisions.size }}</span><span>decisions to re-evidence</span></div>
+      <div class="ti-ripple-node"><span class="ti-ripple-n">{{ chPol.size }}</span><span>policies to review</span></div>
+      <div class="ti-ripple-node"><span class="ti-ripple-n">{{ chCap.size }}</span><span>capabilities affected</span></div>
+      <div class="ti-ripple-node"><span class="ti-ripple-n">{{ chSys.size }}</span><span>systems to change</span></div>
+      <div class="ti-ripple-node"><span class="ti-ripple-n">{{ chAi.size }}</span><span>AI assistants to update</span></div>
+      <div class="ti-ripple-node"><span class="ti-ripple-n">{{ chEv.size }}</span><span>evidence records to regenerate</span></div>
+    </div>
+    <p class="ti-muted" style="text-align:center;color:rgba(255,255,255,.7);margin-top:1rem;">Affected decisions: {% for id in j.change.decisions %}{% assign d = objs.decisions | where: "id", id | first %}{{ d.question }}{% unless forloop.last %} &middot; {% endunless %}{% endfor %}</p>
+  </div>
+</section>
+{% endif %}

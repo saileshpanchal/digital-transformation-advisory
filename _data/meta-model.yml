@@ -1,0 +1,53 @@
+# The Transformation Intelligence meta-model.
+# Every journey instantiates these object types; nothing invents its own schema.
+# Decisions are the first-class object. Everything else informs, executes or
+# evidences a decision. The eight intelligences are eight projections of the
+# same underlying Decision Graph.
+name: Transformation Intelligence meta-model
+version: 1
+
+types:
+  - { id: organisation, label: Organisation }
+  - { id: journey,      label: Journey }
+  - { id: decision,     label: Decision }
+  - { id: objective,    label: Objective }
+  - { id: measure,      label: Measure }
+  - { id: policy,       label: Policy }
+  - { id: rule,         label: Rule }
+  - { id: regulation,   label: Regulation }
+  - { id: capability,   label: Capability }
+  - { id: knowledge,    label: Knowledge object }
+  - { id: application,  label: Application }
+  - { id: api,          label: API }
+  - { id: data-product, label: Data product }
+  - { id: agent,        label: AI agent }
+  - { id: role,         label: Role }
+  - { id: person,       label: Person }
+  - { id: evidence,     label: Evidence }
+  - { id: risk,         label: Risk }
+
+# Allowed relationships (edge types) from a decision to everything else.
+relationships:
+  - { verb: pursues,        to: objective }
+  - { verb: measured by,    to: measure }
+  - { verb: governed by,    to: policy }
+  - { verb: constrained by, to: regulation }
+  - { verb: needs,          to: capability }
+  - { verb: uses,           to: knowledge }
+  - { verb: supported by,   to: application }
+  - { verb: consumes,       to: data-product }
+  - { verb: assisted by,    to: agent }
+  - { verb: owned by,       to: role }
+  - { verb: produces,       to: evidence }
+  - { verb: carries,        to: risk }
+
+# The eight intelligences: eight ways of observing one Decision Graph.
+intelligences:
+  - { id: decision,       label: Decision,       plain: The decisions themselves and their records. }
+  - { id: value,          label: Value,          plain: The objectives and measures the decisions pursue. }
+  - { id: experience,     label: Experience,     plain: The customer journey and personas the decisions serve. }
+  - { id: capability,     label: Capability,     plain: The capabilities the decisions need. }
+  - { id: knowledge,      label: Knowledge,      plain: The knowledge, policy and regulation the decisions rely on. }
+  - { id: cognitive,      label: Cognitive,      plain: Where AI supports or automates the decisions. }
+  - { id: architecture,   label: Architecture,   plain: The systems, events and data supporting the decisions. }
+  - { id: accountability, label: Accountability, plain: Who is accountable, and the evidence each decision produces. }

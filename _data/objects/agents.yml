@@ -1,0 +1,7 @@
+# AI agents / assistants (shared graph nodes). Referenced by decisions via `ai:`.
+# Every AI interaction references the knowledge graph and produces evidence.
+- { id: gifting-explainer,       label: Gifting rules assistant,      supports: "Explains gifting and tax rules to the family." }
+- { id: contribution-summariser, label: Contribution summary assistant, supports: "Summarises who has contributed what." }
+- { id: evidence-pack-generator, label: Evidence pack assistant,      supports: "Assembles the evidence pack for the solicitor." }
+- { id: deposit-source-validator, label: Deposit source assistant,    supports: "Validates the source of the deposit for the mortgage adviser." }
+- { id: unusual-behaviour-monitor, label: Behaviour monitoring assistant, supports: "Highlights unusual behaviour for compliance." }

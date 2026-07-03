@@ -1,0 +1,7 @@
+# Policies (shared graph nodes). Referenced by decisions via `policies:`.
+- { id: family-authority,    label: Family authority policy,    note: "Membership of a family group grants no account access or authority on its own." }
+- { id: contribution-limits, label: Contribution limits policy, note: "Transfer and contribution limits within AML thresholds." }
+- { id: gifting-policy,      label: Gifting policy,             note: "Which gifts are permitted, from whom, and to what purpose." }
+- { id: aml-policy,          label: AML and sanctions policy,   note: "Source of funds, sanctions screening and escalation." }
+- { id: tax-guidance-policy, label: Tax guidance policy,        note: "When Inheritance Tax guidance must be presented." }
+- { id: evidence-retention,  label: Evidence retention policy,  note: "What is retained, for how long, and how it is proven." }

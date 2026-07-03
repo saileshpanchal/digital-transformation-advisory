@@ -1,0 +1,6 @@
+# Measures / KPIs (shared graph nodes). Referenced by decisions via `kpis:`.
+- { id: family-groups-created, label: Family groups created }
+- { id: funds-managed,         label: Family funds managed }
+- { id: lifetime-value,        label: Lifetime customer value }
+- { id: fraud-reduction,       label: Fraud reduction }
+- { id: nps,                   label: Net promoter score }

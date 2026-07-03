@@ -1,0 +1,219 @@
+# Decisions: the first-class object. Everything else informs, executes or
+# evidences a decision. Journeys reference these by id, in order.
+# Each decision records owner, purpose, inputs, outputs, policies, regulations,
+# evidence, risks, confidence and review, plus the objects it connects to.
+
+- id: fw-join-family
+  question: Can this person join the family group?
+  owner: relationship-manager
+  purpose: Recognise connected but independently governed customers without merging legal ownership.
+  inputs: [Declared relationship, Identity evidence, Consent]
+  outputs: [Family membership, No account access granted]
+  policies: [family-authority]
+  regulations: [mlr-2017]
+  evidence: [identity-evidence, consent-evidence]
+  risks: Impersonation or coercion of a family member.
+  confidence: high
+  review: quarterly
+  capabilities: [family-management, identity-verification]
+  knowledge: [family-tree]
+  systems: [party-graph, identity-service, family-api]
+  data: [family-graph-data, consent-records]
+  ai: [gifting-explainer]
+  roles: [customer, relationship-manager]
+  objectives: [retain-family-deposits]
+  kpis: [family-groups-created]
+
+- id: fw-contribute
+  question: Can this person contribute to the gift?
+  owner: relationship-manager
+  purpose: Let four family members contribute different amounts under declared authority.
+  inputs: [Family membership, Contribution amount, Source of funds]
+  outputs: [Accepted contribution, Contribution record]
+  policies: [contribution-limits, family-authority]
+  regulations: [mlr-2017]
+  evidence: [contribution-evidence]
+  risks: Contribution beyond authority or unclear source of funds.
+  confidence: high
+  review: quarterly
+  capabilities: [contribution-management, payments]
+  knowledge: [gift, risk-appetite]
+  systems: [payments-engine, payment-api, contribution-received]
+  data: [contribution-ledger]
+  ai: [contribution-summariser]
+  roles: [customer]
+  objectives: [retain-family-deposits, create-family-record]
+  kpis: [funds-managed]
+
+- id: fw-gift-permitted
+  question: Is the gift permitted?
+  owner: proposition-owner
+  purpose: Confirm the gift is allowed, from whom, and for the declared purpose.
+  inputs: [Gift purpose, Contributors, Family authority]
+  outputs: [Permitted gift, Gift letter]
+  policies: [gifting-policy]
+  regulations: [consumer-duty]
+  evidence: [gift-letter]
+  risks: Gift used for an undeclared or prohibited purpose.
+  confidence: medium
+  review: quarterly
+  capabilities: [gift-management]
+  knowledge: [gift, gift-purpose, property]
+  systems: [knowledge-graph, family-api]
+  data: [family-graph-data]
+  ai: [gifting-explainer]
+  roles: [proposition-owner, relationship-manager]
+  objectives: [create-family-record]
+  kpis: [family-groups-created]
+
+- id: fw-aml
+  question: Should AML checks be performed, and do they pass?
+  owner: financial-crime-analyst
+  purpose: Screen contributors and source of funds before money moves.
+  inputs: [Contributor identity, Source of funds, Sanctions lists]
+  outputs: [AML clearance or escalation]
+  policies: [aml-policy]
+  regulations: [mlr-2017]
+  evidence: [aml-evidence]
+  risks: Money laundering or sanctions breach.
+  confidence: high
+  review: monthly
+  capabilities: [identity-verification, evidence-management]
+  knowledge: [risk-appetite]
+  systems: [identity-service, identity-api]
+  data: [consent-records]
+  ai: [unusual-behaviour-monitor]
+  roles: [financial-crime-analyst, compliance-officer]
+  objectives: [reduce-app-fraud]
+  kpis: [fraud-reduction]
+
+- id: fw-tax-guidance
+  question: Is tax guidance required, and has it been shown?
+  owner: compliance-officer
+  purpose: Present Inheritance Tax guidance where the gift may create a liability.
+  inputs: [Gift value, Contributor relationships, Tax position]
+  outputs: [Tax guidance presented and recorded]
+  policies: [tax-guidance-policy]
+  regulations: [iht-rules, consumer-duty]
+  evidence: [tax-guidance-evidence]
+  risks: A family acts without understanding a tax consequence.
+  confidence: medium
+  review: quarterly
+  capabilities: [tax-guidance]
+  knowledge: [gift, family-tree]
+  systems: [tax-api, tax-assessed]
+  data: [tax-position-data]
+  ai: [gifting-explainer]
+  roles: [compliance-officer]
+  objectives: [create-family-record]
+  kpis: [nps]
+
+- id: fw-release-funds
+  question: Can funds be released to the solicitor?
+  owner: relationship-manager
+  purpose: Release pooled funds to the solicitor once every prior decision holds.
+  inputs: [AML clearance, Permitted gift, Tax guidance shown]
+  outputs: [Funds released, Payment record]
+  policies: [contribution-limits, evidence-retention]
+  regulations: [mlr-2017]
+  evidence: [contribution-evidence, immutable-audit]
+  risks: Premature or misdirected release of funds.
+  confidence: high
+  review: monthly
+  capabilities: [payments, evidence-management]
+  knowledge: [mortgage, property]
+  systems: [payments-engine, payment-api, gift-completed]
+  data: [contribution-ledger]
+  ai: [deposit-source-validator]
+  roles: [relationship-manager, solicitor, mortgage-adviser]
+  objectives: [retain-family-deposits, originate-next-relationship]
+  kpis: [lifetime-value]
+
+- id: fw-archive-evidence
+  question: Can the evidence be archived as one immutable record?
+  owner: compliance-officer
+  purpose: Assemble every prior decision and its evidence into one defensible pack.
+  inputs: [All decision evidence]
+  outputs: [Evidence pack, Immutable audit trail]
+  policies: [evidence-retention]
+  regulations: [consumer-duty, mlr-2017]
+  evidence: [evidence-pack, immutable-audit]
+  risks: Evidence incomplete when the board or regulator asks.
+  confidence: high
+  review: quarterly
+  capabilities: [evidence-management]
+  knowledge: [family-tree, gift]
+  systems: [document-store, knowledge-graph, evidence-created]
+  data: [evidence-pack-data]
+  ai: [evidence-pack-generator]
+  roles: [compliance-officer]
+  objectives: [create-family-record, reduce-family-servicing-cost]
+  kpis: [nps]
+
+# DTA's own repositioning decisions (the dogfood). Same schema, with the
+# alternatives considered and the expected outcome recorded, so the website is
+# a living record of the decisions that produced it.
+- id: dta-lead-with-problems
+  question: Should the site lead with the buyer's problem or with the framework?
+  owner: Founder
+  purpose: Create urgency before introducing the discipline.
+  inputs: [ExCo positioning note, Buyer research]
+  outputs: [Outside-in homepage]
+  alternatives: [Lead with the eight intelligences, Lead with the discipline]
+  expected: Higher engagement from executives under near-term accountability pressure.
+  evidence: [dta-homepage-commit]
+  risks: Losing the intellectual depth that differentiates DTA.
+  confidence: high
+  review: monthly
+
+- id: dta-homepage-sell-ti
+  question: Should the homepage sell Transformation Intelligence directly?
+  owner: Founder
+  purpose: Keep the Accountable Bank as the hero product; let Transformation Intelligence explain why it works.
+  inputs: [Positioning note, Homepage review]
+  outputs: [Why it works band, TI kept off the hero]
+  alternatives: [Make TI the hero, Remove TI from the homepage]
+  expected: TI reads as a real pillar without over-claiming a new discipline at the front door.
+  evidence: [dta-why-it-works-commit]
+  risks: TI feels like theory before the buyer sees value.
+  confidence: high
+  review: monthly
+
+- id: dta-family-wealth-primary
+  question: Should Family Wealth be the primary demonstration?
+  owner: Founder
+  purpose: Choose one rich proposition that naturally exercises all eight intelligences.
+  inputs: [Scenario options, Composable Bank propositions]
+  outputs: [Family Wealth worked example]
+  alternatives: [Payments, Mortgage, Cross-border payments]
+  expected: A family gift is richer than a payment and shows connectedness clearly.
+  evidence: [dta-family-wealth-model]
+  risks: One example may look narrow to some buyers.
+  confidence: medium
+  review: quarterly
+
+- id: dta-prototype-becomes-website
+  question: Should the prototype become the website?
+  owner: Founder
+  purpose: Make every page a projection of one model rather than a separate software demo.
+  inputs: [Decision-first thesis, Workbench concept]
+  outputs: [Transformation Intelligence Workbench]
+  alternatives: [Keep a separate prototype, Retire the prototype]
+  expected: The site itself demonstrates the discipline it describes.
+  evidence: [dta-workbench-page]
+  risks: Blurring the line between marketing and working software.
+  confidence: medium
+  review: quarterly
+
+- id: dta-journeys-replace-services
+  question: Should journeys replace service pages?
+  owner: Founder
+  purpose: Show connected models instead of disconnected service descriptions.
+  inputs: [Journey pack, Service page audit]
+  outputs: [Journey-pack renderer]
+  alternatives: [Keep service pages, Add journeys alongside services]
+  expected: Buyers see how a change ripples across the whole model.
+  evidence: [dta-journey-pack]
+  risks: Journeys take longer to produce than service pages.
+  confidence: medium
+  review: quarterly

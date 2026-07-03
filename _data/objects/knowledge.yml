@@ -1,0 +1,7 @@
+# Knowledge objects (shared graph nodes). Referenced by decisions via `knowledge:`.
+- { id: family-tree,   label: Family tree }
+- { id: gift,          label: Gift }
+- { id: property,      label: Property }
+- { id: mortgage,      label: Mortgage }
+- { id: risk-appetite, label: Risk appetite }
+- { id: gift-purpose,  label: Gift purpose }

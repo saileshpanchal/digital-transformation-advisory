@@ -1,0 +1,8 @@
+# Business objectives (shared graph nodes). Referenced by decisions via `objectives:`.
+- { id: retain-family-deposits,     label: Retain family deposits across generations }
+- { id: originate-next-relationship, label: Originate the next-generation relationship }
+- { id: reduce-family-servicing-cost, label: Reduce the cost of governed family servicing }
+- { id: reduce-app-fraud,           label: Reduce authorised push payment fraud }
+- { id: create-family-record,       label: Create a digital record of family gifting }
+- { id: new-market-category,        label: Create a new market category }
+- { id: demonstrate-discipline,     label: Demonstrate the discipline rather than describe it }
