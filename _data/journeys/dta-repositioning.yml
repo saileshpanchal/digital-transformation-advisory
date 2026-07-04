@@ -34,6 +34,7 @@ decisions:
   - dta-family-wealth-primary
   - dta-prototype-becomes-website
   - dta-journeys-replace-services
+  - dta-decision-loop
 
 evidence_of_change:
   - { label: Homepage reframed outside-in, done: true }
@@ -42,5 +43,6 @@ evidence_of_change:
   - { label: Decision-first model defined, done: true }
   - { label: Family Wealth projection built, done: true }
   - { label: Workbench introduced, done: true }
+  - { label: Decision lifecycle and drift tracking added, done: true }
   - { label: Remaining journeys modelled, done: false }
   - { label: DTA knowledge graph grown, done: false }

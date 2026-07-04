@@ -2803,5 +2803,23 @@ a.ichip span{font-size:12px;color:var(--map-muted);font-weight:600;}
 .ti-model-intro h2 { color:#fff; }
 @media (max-width:640px) { .ti-benefits { grid-template-columns:1fr; } }
 
+/* decision lifecycle: status, verification and drift (dogfood governance loop) */
+.ti-catalogue-head { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:.4rem 1rem; }
+.ti-verify-summary { font-size:.85rem; color:var(--map-muted); margin:0; }
+.ti-verify-summary strong { color:var(--map-ink); }
+.ti-verify-summary .ti-drift-count, .ti-drift-count { color:#b26a00; }
+.ti-status { font-size:.64rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; padding:.2rem .5rem; border-radius:999px; flex:0 0 auto; }
+.ti-status--verified { background:#e4f6ec; color:#1a7d47; }
+.ti-status--executed { background:var(--map-cyan-pale); color:var(--map-cyan-dark); }
+.ti-status--agreed { background:#eef1f4; color:var(--map-muted); }
+.ti-status--proposed { background:#f4eee4; color:#8a6d2f; }
+.ti-status--drift { background:#fbeecf; color:#b26a00; }
+.ti-verify { margin-top:.75rem; padding:.6rem .9rem; border-left:3px solid #1a9e57; background:#f4fbf6; border-radius:0 6px 6px 0; }
+.ti-driftbox { margin-top:.5rem; padding:.6rem .9rem; border-left:3px solid #d99a1c; background:#fdf7ea; border-radius:0 6px 6px 0; }
+.ti-verify h4, .ti-driftbox h4 { font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; margin-bottom:.2rem; }
+.ti-verify h4 { color:#1a7d47; }
+.ti-driftbox h4 { color:#b26a00; }
+.ti-verify p, .ti-driftbox p { font-size:.88rem; color:var(--map-ink); }
+
 /* respect reduced motion across the site */
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important;}}

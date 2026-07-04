@@ -126,13 +126,18 @@
       <p class="ti-meta"><span>Owner: {{ j.executive_decision.owner }}</span><span>Confidence: {{ j.executive_decision.confidence }}</span><span>Review: {{ j.executive_decision.review }}</span></p>
     </div>
     {% endif %}
-    <p class="ti-tag" style="margin-top:2rem;">Decision catalogue</p>
+    {% assign nStatus = 0 %}{% assign nVerified = 0 %}{% assign nDrift = 0 %}
+    {% for id in j.decisions %}{% assign d = objs.decisions | where: "id", id | first %}{% if d.status %}{% assign nStatus = nStatus | plus: 1 %}{% if d.status == "Verified" %}{% assign nVerified = nVerified | plus: 1 %}{% endif %}{% if d.drift %}{% assign nDrift = nDrift | plus: 1 %}{% endif %}{% endif %}{% endfor %}
+    <div class="ti-catalogue-head" style="margin-top:2rem;">
+      <p class="ti-tag">Decision catalogue</p>
+      {% if nStatus > 0 %}<p class="ti-verify-summary"><strong>{{ nVerified }}</strong> of {{ nStatus }} verified{% if nDrift > 0 %}, <strong class="ti-drift-count">{{ nDrift }}</strong> showing drift{% endif %}. Each decision is agreed at planning and checked after execution.</p>{% endif %}
+    </div>
     <div class="ti-decisions">
       {% for id in j.decisions %}
         {% assign d = objs.decisions | where: "id", id | first %}
         {% assign ownerRole = objs.roles | where: "id", d.owner | first %}
         <details class="ti-decision" id="{{ d.id }}" data-decision="{{ d.id }}">
-          <summary><span class="ti-q">{{ d.question }}</span><span class="ti-owner">{% if ownerRole %}{{ ownerRole.label }}{% else %}{{ d.owner }}{% endif %}</span></summary>
+          <summary><span class="ti-q">{{ d.question }}</span>{% if d.status %}<span class="ti-status ti-status--{{ d.status | downcase }}">{{ d.status }}</span>{% endif %}{% if d.drift %}<span class="ti-status ti-status--drift">Drift</span>{% endif %}<span class="ti-owner">{% if ownerRole %}{{ ownerRole.label }}{% else %}{{ d.owner }}{% endif %}</span></summary>
           <div class="ti-decision-body">
             <p>{{ d.purpose }}</p>
             <div class="ti-record">
@@ -145,7 +150,9 @@
               {% if d.expected %}<div><h4>Expected outcome</h4><p>{{ d.expected }}</p></div>{% endif %}
               {% if d.risks %}<div><h4>Risks</h4><p>{{ d.risks }}</p></div>{% endif %}
             </div>
-            <p class="ti-meta"><span>Owner: {% if ownerRole %}{{ ownerRole.label }}{% else %}{{ d.owner }}{% endif %}</span><span>Confidence: {{ d.confidence }}</span><span>Review: {{ d.review }}</span></p>
+            <p class="ti-meta"><span>Owner: {% if ownerRole %}{{ ownerRole.label }}{% else %}{{ d.owner }}{% endif %}</span><span>Confidence: {{ d.confidence }}</span><span>Review: {{ d.review }}</span>{% if d.status %}<span>Status: {{ d.status }}</span>{% endif %}</p>
+            {% if d.verification %}<div class="ti-verify"><h4>Verification</h4><p>{{ d.verification }}</p></div>{% endif %}
+            {% if d.drift %}<div class="ti-driftbox"><h4>Drift</h4><p>{{ d.drift }}</p></div>{% endif %}
             {% if d.capabilities or d.systems or d.ai %}
             <p class="ti-crossref">Connected to:
               {% if d.capabilities %}<a href="#capability">capabilities</a>{% endif %}

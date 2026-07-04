@@ -13,3 +13,4 @@
 - { id: dta-family-wealth-model,  label: Family Wealth worked example }
 - { id: dta-workbench-page,       label: Transformation Intelligence Workbench }
 - { id: dta-journey-pack,         label: Journey-pack renderer }
+- { id: dta-decision-loop-commit, label: Decision lifecycle in the model }

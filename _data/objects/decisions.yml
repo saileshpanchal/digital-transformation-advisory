@@ -165,6 +165,8 @@
   risks: Losing the intellectual depth that differentiates DTA.
   confidence: high
   review: monthly
+  status: Verified
+  verification: Homepage leads outside-in with the accountability wedge. Live, and holds against the decision.
 
 - id: dta-homepage-sell-ti
   question: Should the homepage sell Transformation Intelligence directly?
@@ -178,6 +180,8 @@
   risks: TI feels like theory before the buyer sees value.
   confidence: high
   review: monthly
+  status: Verified
+  verification: The Why-it-works band is live and Transformation Intelligence is kept off the hero. Holds.
 
 - id: dta-family-wealth-primary
   question: Should Family Wealth be the primary demonstration?
@@ -191,6 +195,8 @@
   risks: One example may look narrow to some buyers.
   confidence: medium
   review: quarterly
+  status: Verified
+  verification: Family Wealth is built and live as the primary demonstration, and leads with the consumer value. Holds.
 
 - id: dta-prototype-becomes-website
   question: Should the prototype become the website?
@@ -204,6 +210,9 @@
   risks: Blurring the line between marketing and working software.
   confidence: medium
   review: quarterly
+  status: Executed
+  verification: The Workbench is live at /prototype/ and frames every page as a view of one model.
+  drift: The website and the prototype are not yet one. The live React demos remain separate, so the full merge is still roadmap.
 
 - id: dta-journeys-replace-services
   question: Should journeys replace service pages?
@@ -217,3 +226,21 @@
   risks: Journeys take longer to produce than service pages.
   confidence: medium
   review: quarterly
+  status: Executed
+  verification: The journey pack is built and two journeys are shipped (Family Wealth and DTA's own).
+  drift: Service pages are not yet replaced by journeys. They still stand alongside.
+
+- id: dta-decision-loop
+  question: How do we govern our own decisions?
+  owner: Founder
+  purpose: Record decisions at planning before execution, verify against every decision after execution to catch drift, and reuse prior decisions in future planning.
+  inputs: [Dogfooding principle, Decision-first discipline]
+  outputs: [Decision lifecycle in the model, Verification and drift on the DTA journey]
+  alternatives: [Record decisions after the fact, Verify informally, Do not track drift]
+  expected: Drift is caught early and future planning builds on recorded decisions.
+  evidence: [dta-decision-loop-commit]
+  risks: The loop adds overhead if decisions are recorded without discipline.
+  confidence: high
+  review: monthly
+  status: Executed
+  verification: Lifecycle status, verification and drift are recorded in the model and rendered on the DTA journey.
