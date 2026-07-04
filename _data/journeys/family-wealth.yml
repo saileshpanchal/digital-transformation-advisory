@@ -7,6 +7,20 @@ kicker: Reimagining family wealth management using Transformation Intelligence
 audience: Retail, wealth and proposition leaders protecting multi-generational relationships.
 live_demo: /composable-bank/family-wealth/
 
+# The value to the family (what the customer actually gets). Lands first.
+consumer:
+  headline: Help your family buy their first home, together.
+  outcome: >-
+    A grandmother helps her granddaughter onto the housing ladder. Four family
+    members give what they can, in one place, and the deposit reaches the
+    solicitor in time for completion. Everyone can see what happened, and the
+    family keeps a complete record.
+  benefits:
+    - Everyone can see every contribution
+    - Tax guidance shown as you go
+    - Protected from fraud and scams
+    - A complete record for the solicitor and the family
+
 # Executive summary
 problem: >-
   Deposits sit with one generation while the next forms its primary banking
@@ -16,9 +30,9 @@ vision: >-
   One governed experience where a family can move from separate customers to a
   shared goal and an approved housing outcome, with authority and evidence
   explicit at every step.
-outcome: >-
-  Retain family deposits, originate the next relationship and reduce the cost of
-  governed family servicing.
+commercial_outcome: >-
+  For the bank: retain family deposits, originate the next relationship and
+  reduce the cost of governed family servicing.
 
 # The fixed scenario
 scenario: >-

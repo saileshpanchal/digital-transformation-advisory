@@ -43,15 +43,57 @@
     <p class="eyebrow" style="color:var(--map-cyan-dark);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:12px;">{{ j.kicker }}</p>
     <h1>{{ j.title }}</h1>
     {% if j.audience %}<p class="buyer-line">{{ j.audience }}</p>{% endif %}
+    {% if j.consumer %}
+    <p class="ti-lead">{{ j.consumer.headline }}</p>
+    {% else %}
     <div class="ti-summary">
       {% if j.problem %}<div><h3>Problem</h3><p>{{ j.problem }}</p></div>{% endif %}
       {% if j.vision %}<div><h3>Vision</h3><p>{{ j.vision }}</p></div>{% endif %}
       {% if j.outcome %}<div><h3>Business outcome</h3><p>{{ j.outcome }}</p></div>{% endif %}
     </div>
-    {% if j.scenario %}<p class="ti-scenario"><strong>Scenario.</strong> {{ j.scenario }}</p>{% endif %}
+    {% endif %}
     {% if j.live_demo %}<p style="margin-top:1.25rem;"><a class="btn btn--primary" href="{{ j.live_demo | relative_url }}">Run the live demonstration &rarr;</a></p>{% endif %}
   </div>
 </section>
+
+{% if j.consumer %}
+<!-- THE VALUE TO THE FAMILY: lands the consumer value first (also the Experience projection) -->
+<section class="section ti-value-lead" id="experience">
+  <div class="container">
+    <div class="text-center"><h2>The value to the family</h2></div>
+    <p class="ti-value-outcome">{{ j.consumer.outcome }}</p>
+    {% if j.consumer.benefits %}
+    <div class="ti-benefits">
+      {% for b in j.consumer.benefits %}<div class="ti-benefit"><span class="ti-check" aria-hidden="true">&#10003;</span>{{ b }}</div>{% endfor %}
+    </div>
+    {% endif %}
+    {% if j.journey_current %}
+    <p class="ti-tag" style="margin-top:1.75rem;">Today</p>
+    <div class="flow-chain">{% for s in j.journey_current %}<span class="step">{{ s }}</span>{% unless forloop.last %}<span class="arrow">&rsaquo;</span>{% endunless %}{% endfor %}</div>
+    {% endif %}
+    {% if j.journey_target %}
+    <p class="ti-tag" style="margin-top:1rem;">With {{ j.title }}</p>
+    <div class="flow-chain">{% for s in j.journey_target %}<span class="step">{{ s }}</span>{% unless forloop.last %}<span class="arrow">&rsaquo;</span>{% endunless %}{% endfor %}</div>
+    {% endif %}
+    {% if j.personas %}
+    <p class="ti-tag" style="margin-top:1.5rem;">Who is involved</p>
+    <div class="pressure-list">{% for x in j.personas %}{% assign o = objs.people | where: "id", x | first %}<span>{{ o.label | default: x }}</span>{% endfor %}</div>
+    {% endif %}
+    {% if j.scenario %}<p class="ti-scenario" style="margin-top:1.5rem;"><strong>The scenario.</strong> {{ j.scenario }}</p>{% endif %}
+    {% if j.commercial_outcome %}<p class="ti-commercial">{{ j.commercial_outcome }}</p>{% endif %}
+  </div>
+</section>
+
+<!-- Drill-down region intro -->
+<section class="section section--dark ti-model-intro">
+  <div class="container text-center">
+    <h2>How Transformation Intelligence models this</h2>
+    <p class="section-subtitle" style="max-width:760px;margin:.5rem auto 0;color:rgba(255,255,255,.85);">Underneath, every part of this is one connected model. It starts with the decisions, and everything else is a view of them.</p>
+  </div>
+</section>
+{% else %}
+{% if j.scenario %}<section class="section"><div class="container"><p class="ti-scenario"><strong>Scenario.</strong> {{ j.scenario }}</p></div></section>{% endif %}
+{% endif %}
 
 <!-- View navigation -->
 <nav class="ti-viewnav" aria-label="Projections of the model">
@@ -59,7 +101,7 @@
     <span>Views of one model:</span>
     <a href="#decisions">Decisions</a>
     <a href="#value">Value</a>
-    <a href="#experience">Experience</a>
+    {% unless j.consumer %}<a href="#experience">Experience</a>{% endunless %}
     <a href="#process">Process</a>
     <a href="#capability">Capability</a>
     <a href="#knowledge">Knowledge</a>
@@ -129,7 +171,7 @@
     </div>
 
     <!-- VALUE -->
-    <details class="ti-view" id="value" open>
+    <details class="ti-view" id="value"{% unless j.consumer %} open{% endunless %}>
       <summary><b>Value</b><span>The objectives and measures the decisions pursue</span></summary>
       <div class="ti-view-body">
         {% if objvIds.size > 0 %}
@@ -145,7 +187,8 @@
       </div>
     </details>
 
-    <!-- EXPERIENCE -->
+    {% unless j.consumer %}
+    <!-- EXPERIENCE (for consumer journeys this lives in the value-to-family section above) -->
     <details class="ti-view" id="experience">
       <summary><b>Experience</b><span>The customer journey and personas the decisions serve</span></summary>
       <div class="ti-view-body">
@@ -163,6 +206,7 @@
         {% unless j.personas or j.journey_current %}<p class="ti-muted">Derived view in modelling.</p>{% endunless %}
       </div>
     </details>
+    {% endunless %}
 
     <!-- PROCESS -->
     <details class="ti-view" id="process">
