@@ -137,7 +137,7 @@
         {% assign d = objs.decisions | where: "id", id | first %}
         {% assign ownerRole = objs.roles | where: "id", d.owner | first %}
         <details class="ti-decision" id="{{ d.id }}" data-decision="{{ d.id }}">
-          <summary><span class="ti-q">{{ d.question }}</span>{% if d.status %}<span class="ti-status ti-status--{{ d.status | downcase }}">{{ d.status }}</span>{% endif %}{% if d.drift %}<span class="ti-status ti-status--drift">Drift</span>{% endif %}<span class="ti-owner">{% if ownerRole %}{{ ownerRole.label }}{% else %}{{ d.owner }}{% endif %}</span></summary>
+          <summary><span class="ti-q">{% if d.ref %}<span class="ti-ref">{{ d.ref }}</span> {% endif %}{{ d.question }}</span>{% if d.status %}<span class="ti-status ti-status--{{ d.status | downcase }}">{{ d.status }}</span>{% endif %}{% if d.drift %}<span class="ti-status ti-status--drift">Drift</span>{% endif %}<span class="ti-owner">{% if ownerRole %}{{ ownerRole.label }}{% else %}{{ d.owner }}{% endif %}</span></summary>
           <div class="ti-decision-body">
             <p>{{ d.purpose }}</p>
             <div class="ti-record">

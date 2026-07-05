@@ -35,6 +35,9 @@ decisions:
   - dta-prototype-becomes-website
   - dta-journeys-replace-services
   - dta-decision-loop
+  - dta-consumer-value-first
+  - dta-render-guard
+  - dta-category-claim
 
 evidence_of_change:
   - { label: Homepage reframed outside-in, done: true }

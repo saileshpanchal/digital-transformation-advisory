@@ -154,6 +154,7 @@
 # alternatives considered and the expected outcome recorded, so the website is
 # a living record of the decisions that produced it.
 - id: dta-lead-with-problems
+  ref: DTA-DR-0031
   question: Should the site lead with the buyer's problem or with the framework?
   owner: Founder
   purpose: Create urgency before introducing the discipline.
@@ -169,6 +170,7 @@
   verification: Homepage leads outside-in with the accountability wedge. Live, and holds against the decision.
 
 - id: dta-homepage-sell-ti
+  ref: DTA-DR-0032
   question: Should the homepage sell Transformation Intelligence directly?
   owner: Founder
   purpose: Keep the Accountable Bank as the hero product; let Transformation Intelligence explain why it works.
@@ -184,6 +186,7 @@
   verification: The Why-it-works band is live and Transformation Intelligence is kept off the hero. Holds.
 
 - id: dta-family-wealth-primary
+  ref: DTA-DR-0033
   question: Should Family Wealth be the primary demonstration?
   owner: Founder
   purpose: Choose one rich proposition that naturally exercises all eight intelligences.
@@ -199,6 +202,7 @@
   verification: Family Wealth is built and live as the primary demonstration, and leads with the consumer value. Holds.
 
 - id: dta-prototype-becomes-website
+  ref: DTA-DR-0034
   question: Should the prototype become the website?
   owner: Founder
   purpose: Make every page a projection of one model rather than a separate software demo.
@@ -215,6 +219,7 @@
   drift: The website and the prototype are not yet one. The live React demos remain separate, so the full merge is still roadmap.
 
 - id: dta-journeys-replace-services
+  ref: DTA-DR-0035
   question: Should journeys replace service pages?
   owner: Founder
   purpose: Show connected models instead of disconnected service descriptions.
@@ -231,6 +236,7 @@
   drift: Service pages are not yet replaced by journeys. They still stand alongside.
 
 - id: dta-decision-loop
+  ref: DTA-DR-0040
   question: How do we govern our own decisions?
   owner: Founder
   purpose: Record decisions at planning before execution, verify against every decision after execution to catch drift, and reuse prior decisions in future planning.
@@ -244,3 +250,53 @@
   review: monthly
   status: Executed
   verification: Lifecycle status, verification and drift are recorded in the model and rendered on the DTA journey.
+
+# Pass-4 consumer-first reorder decisions, backfilled (shipped in 092a48e before
+# they were recorded; the loop catching its own gap), plus the category-claim decision.
+- id: dta-consumer-value-first
+  ref: DTA-DR-0041
+  question: Should the Family Wealth page lead with consumer value or the decision catalogue?
+  owner: Founder
+  purpose: Land the family outcome first, then reveal the decision model beneath it.
+  inputs: [Owner review of the Family Wealth model page]
+  outputs: [Consumer-value lead section, Decision model as drill-down]
+  alternatives: [Keep decision-first page order, Lead with the bank commercial value]
+  expected: The page is emotionally clearer while still decision-first underneath.
+  evidence: [dta-family-wealth-model]
+  risks: Burying the model too far reduces the proof of the method.
+  confidence: high
+  review: quarterly
+  status: Verified
+  verification: Family Wealth leads with the value to the family; the decision model sits below a drill-down divider. Live. Implementation folded in here (not separate records, per material-only), consumer block as data, outcome renamed to commercial_outcome, and the decision graph moved to drill-down.
+
+- id: dta-render-guard
+  ref: DTA-DR-0044
+  question: Where does the consumer-first ordering apply?
+  owner: Founder
+  purpose: Keep consumer-first for propositions and decision-first for the governance dogfood.
+  inputs: [Journey-pack renderer, DTA repositioning journey]
+  outputs: [Conditional rendering guarded on j.consumer]
+  alternatives: [Consumer-first everywhere, Decision-first everywhere]
+  expected: Family Wealth is consumer-first; the DTA dogfood stays decision-first.
+  evidence: [dta-journey-pack]
+  risks: A future journey without a consumer block silently loses the value lead.
+  confidence: high
+  review: quarterly
+  status: Verified
+  verification: journey-pack renders the value lead only when j.consumer exists. The DTA journey has no consumer block and opens decision-first, confirmed on the live page.
+
+- id: dta-category-claim
+  ref: DTA-DR-0046
+  question: Do we publicly claim we are creating a new market category?
+  owner: Founder
+  purpose: Own the category by naming and demonstrating it, without over-claiming to conservative buyers.
+  inputs: [ExCo positioning note, Inevitability framing]
+  outputs: [No category-creation boast in marketing copy]
+  alternatives: [State the new category plainly in the hero and TI copy]
+  expected: Readers conclude the category exists, without DTA boasting it.
+  evidence: [dta-homepage-commit]
+  risks: Being too subtle means the category does not stick.
+  confidence: medium
+  review: quarterly
+  status: Verified
+  verification: Marketing pages (home, Transformation Intelligence, Workbench) make no "new market category" claim. The internal objective still appears on the DTA dogfood page as a recorded decision, which is a transparent record, not a customer claim.
