@@ -3,28 +3,44 @@
 # Decisions are the first-class object. Everything else informs, executes or
 # evidences a decision. The eight intelligences are eight projections of the
 # same underlying Decision Graph.
+#
+# v2 (2026-07-06): the operational join-up. The decision graph extends to the
+# operational graph: obligations, controls, services, authority (actors and
+# mandates), guardrails, customer outcomes, foreseeable harms, trust signals
+# and events, so blast radius, regulatory exposure and decision verification
+# are traversals of one graph. Matches the graph the prototype actually runs.
 name: Transformation Intelligence meta-model
-version: 1
+version: 2
 
 types:
-  - { id: organisation, label: Organisation }
-  - { id: journey,      label: Journey }
-  - { id: decision,     label: Decision }
-  - { id: objective,    label: Objective }
-  - { id: measure,      label: Measure }
-  - { id: policy,       label: Policy }
-  - { id: rule,         label: Rule }
-  - { id: regulation,   label: Regulation }
-  - { id: capability,   label: Capability }
-  - { id: knowledge,    label: Knowledge object }
-  - { id: application,  label: Application }
-  - { id: api,          label: API }
-  - { id: data-product, label: Data product }
-  - { id: agent,        label: AI agent }
-  - { id: role,         label: Role }
-  - { id: person,       label: Person }
-  - { id: evidence,     label: Evidence }
-  - { id: risk,         label: Risk }
+  - { id: organisation,     label: Organisation }
+  - { id: journey,          label: Journey }
+  - { id: decision,         label: Decision }
+  - { id: objective,        label: Objective }
+  - { id: measure,          label: Measure }
+  - { id: policy,           label: Policy }
+  - { id: rule,             label: Rule }
+  - { id: regulation,       label: Regulation }
+  - { id: obligation,       label: Regulatory obligation }
+  - { id: control,          label: Control }
+  - { id: capability,       label: Capability }
+  - { id: knowledge,        label: Knowledge object }
+  - { id: application,      label: Application }
+  - { id: api,              label: API }
+  - { id: service,          label: Service }
+  - { id: data-product,     label: Data product }
+  - { id: agent,            label: AI agent }
+  - { id: actor,            label: Actor }
+  - { id: mandate,          label: Mandate }
+  - { id: guardrail,        label: Guardrail }
+  - { id: role,             label: Role }
+  - { id: person,           label: Person }
+  - { id: evidence,         label: Evidence }
+  - { id: risk,             label: Risk }
+  - { id: customer-outcome, label: Customer outcome }
+  - { id: harm,             label: Foreseeable harm }
+  - { id: trust-signal,     label: Trust signal }
+  - { id: event,            label: Operational event }
 
 # Allowed relationships (edge types) from a decision to everything else.
 relationships:
@@ -40,6 +56,33 @@ relationships:
   - { verb: owned by,       to: role }
   - { verb: produces,       to: evidence }
   - { verb: carries,        to: risk }
+  - { verb: affects,        to: customer-outcome }
+
+# The operational graph (v2): typed edges beyond the decision node, so the
+# traceability chains read end to end: operation back to obligation, and
+# obligation forward to operational exposure.
+graph-relationships:
+  - { from: policy,       verb: satisfies,     to: obligation }
+  - { from: control,      verb: implements,    to: policy }
+  - { from: evidence,     verb: evidences,     to: control }
+  - { from: service,      verb: depends on,    to: service }
+  - { from: service,      verb: governed by,   to: decision }
+  - { from: service,      verb: supports,      to: journey }
+  - { from: risk,         verb: mitigated by,  to: control }
+  - { from: risk,         verb: may cause,     to: harm }
+  - { from: harm,         verb: impairs,       to: customer-outcome }
+  - { from: actor,        verb: grants,        to: mandate }
+  - { from: actor,        verb: acts under,    to: mandate }
+  - { from: mandate,      verb: authorised by, to: decision }
+  - { from: guardrail,    verb: enforces,      to: policy }
+  - { from: guardrail,    verb: protects,      to: service }
+  - { from: control,      verb: protects,      to: customer-outcome }
+  - { from: evidence,     verb: supports,      to: trust-signal }
+  - { from: trust-signal, verb: indicates,     to: customer-outcome }
+  - { from: event,        verb: affects,       to: service }
+  - { from: event,        verb: executed under, to: mandate }
+  - { from: event,        verb: produces,      to: evidence }
+  - { from: event,        verb: breaches,      to: decision }
 
 # The eight intelligences: eight ways of observing one Decision Graph.
 intelligences:
