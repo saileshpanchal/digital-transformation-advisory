@@ -2,23 +2,56 @@
 layout: corporate
 title: "Digital Transformation Advisory - move the bank forward without betting it"
 description: >-
-  A transformation operating model for the AI era. Move faster and reduce risk:
-  prove the value before you commit financial or political capital. For banks,
-  building societies and regulated institutions.
+  Operating models and methodology for AI adoption and transformation. Bite-sized
+  advisory for go-to-market and strategic planning. Dedicated squads for short and
+  mid-term AI projects. For banks, building societies and regulated institutions.
 ---
 
-<!-- HERO: the promise -->
+<!-- HERO: what we do, in three lines -->
 <div class="thesis">
-  <p class="eyebrow">A transformation operating model for the AI era</p>
+  <p class="eyebrow">Digital Transformation Advisory</p>
   <h1 class="thesis-h">Move the bank forward without betting it.</h1>
-  <p class="sub">Move faster and reduce risk. <b>Prove the value before you commit</b> financial or political capital.</p>
-  <p class="buyer-line">For banks, building societies and regulated institutions.</p>
-  <p class="strapline" style="margin-top:1rem;font-weight:800;letter-spacing:.005em;color:var(--map-cyan-dark);">Start anywhere. Connect everything.</p>
+  <ul style="list-style:none;padding:0;margin:1.25rem auto 0;max-width:640px;text-align:left;display:grid;gap:.5rem;">
+    <li><b>Operating models &amp; methodology</b> for AI adoption and transformation</li>
+    <li><b>Bite-sized advisory</b> for go-to-market and strategic planning</li>
+    <li><b>Dedicated squads</b> for short and mid-term AI projects</li>
+  </ul>
+  <p class="buyer-line" style="margin-top:1rem;">For banks, building societies and regulated institutions.</p>
   <div class="hero-actions" style="justify-content:center;margin-top:1.25rem;">
-    <a href="{{ '/problems/' | relative_url }}" class="btn btn--primary">Start with your problem</a>
-    <a href="{{ '/prototype/' | relative_url }}" class="btn btn--outline">See it proven</a>
+    {% include cta-calendly.html kind="strategy_call" loc="home-hero" label="Book a strategy call" %}
+    <a href="{{ '/prototype/' | relative_url }}" class="btn btn--outline">See it running</a>
   </div>
 </div>
+
+<!-- HOW WE HELP: the three offers -->
+<section class="section section--light" id="how-we-help">
+  <div class="container">
+    <div class="text-center">
+      <h2>How we help</h2>
+      <p class="section-subtitle">Three offers. Each stands on its own; each takes you only as deep as the outcome needs.</p>
+    </div>
+    <div class="help-path">
+      <div class="help-step">
+        <div class="help-stepnum">01</div>
+        <h3>Operating models &amp; methodology</h3>
+        <p>An operating model and method for AI adoption and transformation: decisions recorded, risk bounded, value proven before financial or political capital commits.</p>
+        <a class="btn help-cta" href="{{ '/transformation-intelligence/' | relative_url }}">See the method &rarr;</a>
+      </div>
+      <div class="help-step">
+        <div class="help-stepnum">02</div>
+        <h3>Bite-sized advisory</h3>
+        <p>Advisory for go-to-market and strategic planning, sold as the 90-Day Assessment: one executive, one problem, fixed price, board-ready evidence out.</p>
+        <a class="btn help-cta" href="{{ '/solutions/' | relative_url }}">Choose your door &rarr;</a>
+      </div>
+      <div class="help-step">
+        <div class="help-stepnum">03</div>
+        <h3>Dedicated squads</h3>
+        <p>Squads for short and mid-term AI projects, delivered with established delivery partners and run inside DTA's operating model: every squad works under the same decision and evidence discipline our demonstration runs, with an accountable DTA lead.</p>
+        {% include cta-calendly.html kind="strategy_call" loc="home-help-squads" label="Book a strategy call →" class="help-cta" %}
+      </div>
+    </div>
+  </div>
+</section>
 
 <main class="map">
 
@@ -105,36 +138,6 @@ description: >-
 </section>
 
 <p class="credibility">Founded by Sailesh Panchal, former CTO &amp; Payments Director at TSB and architect of UK national payments infrastructure. <a href="{{ '/about/' | relative_url }}">About us &rarr;</a></p>
-
-<!-- HOW WE HELP -->
-<section class="section section--light" id="how-we-help">
-  <div class="container">
-    <div class="text-center">
-      <h2>How we help</h2>
-      <p class="section-subtitle">Three routes in. Each stands on its own. Start with the outcome and take only the depth of change it needs.</p>
-    </div>
-    <div class="help-path">
-      <div class="help-step">
-        <div class="help-stepnum">01</div>
-        <h3>Advise &amp; architect</h3>
-        <p>Founder-led discovery and an independent target architecture. The hard parts proven before anyone builds.</p>
-        {% include cta-calendly.html kind="strategy_call" loc="home-help-advise" label="Book a strategy call →" class="help-cta" %}
-      </div>
-      <div class="help-step">
-        <div class="help-stepnum">02</div>
-        <h3>Build &amp; run</h3>
-        <p>We build the agentic journey end to end. Every action authorised, evidenced and revocable.</p>
-        {% include cta-calendly.html kind="strategy_call" loc="home-help-build" label="Book a strategy call →" class="help-cta" %}
-      </div>
-      <div class="help-step">
-        <div class="help-stepnum">03</div>
-        <h3>Embed talent</h3>
-        <p>Senior agentic engineers or a managed squad, accountable for a defined outcome from week one.</p>
-        {% include cta-calendly.html kind="strategy_call" loc="home-help-talent" label="Book a strategy call →" class="help-cta" %}
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- Closing CTA -->
 {% include cta.html %}
