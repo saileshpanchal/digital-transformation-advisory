@@ -42,6 +42,7 @@ decisions:
   - dta-drop-industries
   - dta-platform-naming-v9
   - dta-one-decisioning-loop
+  - dta-homepage-sells-advisory-not-platform
 
 evidence_of_change:
   - { label: Homepage reframed outside-in, done: true }

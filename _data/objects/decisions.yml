@@ -363,3 +363,35 @@
   review: quarterly
   status: Verified
   verification: The Decisioning Loop (Identify to Reuse) lives once, on the TI page. The platform page references it and shows the operational graph, trust ledger and journeys, without re-teaching the loop or the eight.
+
+- id: dta-homepage-sells-advisory-not-platform
+  ref: DTA-DR-0051
+  question: What does the homepage flow sell, and how should the offers read?
+  owner: Founder
+  purpose: >-
+    DTA sells the ideas and the advisory, not a platform. The platform is proof
+    that it all holds together. Engagements start with the right roles for the
+    problem, not with a squad.
+  inputs: [Homepage flow review, North Star v9 positioning, SFIA project and role definition, capability and knowledge intelligence]
+  outputs: [
+    "Hero CTAs are Book a call and See AI in action",
+    "The bite-sized advisory door is Identify your challenge",
+    "The third offer leads with the right people for the problem, roles defined by SFIA before a squad forms",
+  ]
+  alternatives: [
+    Sell the platform as a product,
+    Lead the third offer with Dedicated squads and a strategy-call CTA,
+  ]
+  expected: >-
+    The homepage reads as advisory led by outcomes, with the platform as proof.
+    Buyers see roles they recognise (business architect, strategist, product
+    owner, forward deployed engineer) before the squad.
+  evidence: [dta-homepage-commit]
+  risks: The third offer heading no longer says squad, so the squad offer is inferred from the body.
+  confidence: high
+  review: quarterly
+  status: Verified
+  verification: >-
+    Hero CTAs read Book a call and See AI in action; the advisory door reads
+    Identify your challenge; the third offer leads with the right people for the
+    problem and names the roles, keeping the Book a call CTA.
