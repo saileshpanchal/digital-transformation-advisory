@@ -38,6 +38,8 @@ decisions:
   - dta-consumer-value-first
   - dta-render-guard
   - dta-category-claim
+  - dta-merge-problems-into-solutions
+  - dta-drop-industries
 
 evidence_of_change:
   - { label: Homepage reframed outside-in, done: true }

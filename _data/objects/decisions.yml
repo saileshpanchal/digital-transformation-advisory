@@ -300,3 +300,35 @@
   review: quarterly
   status: Verified
   verification: Marketing pages (home, Transformation Intelligence, Workbench) make no "new market category" claim. The internal objective still appears on the DTA dogfood page as a recorded decision, which is a transparent record, not a customer claim.
+
+- id: dta-merge-problems-into-solutions
+  ref: DTA-DR-0047
+  question: Do we keep separate Problems and Solutions pages?
+  owner: Founder
+  purpose: Remove a duplicate. Problems and Solutions said the same thing apart from the tagline.
+  inputs: [Live site review]
+  outputs: [Problems page removed, /problems/ redirects to /solutions/]
+  alternatives: [Keep both, Build a decision tree to differentiate them]
+  expected: One clear route into the eight doors, less navigation confusion.
+  evidence: [dta-nav-cleanup]
+  risks: Losing a symptom-first entry point for buyers who think in problems.
+  confidence: high
+  review: quarterly
+  status: Verified
+  verification: problems.html removed; nav and footer no longer list Problems; /problems/ 301s to /solutions/.
+
+- id: dta-drop-industries
+  ref: DTA-DR-0048
+  question: Do we keep the Industries page?
+  owner: Founder
+  purpose: Remove a thin page that did not earn its place in the navigation.
+  inputs: [Live site review]
+  outputs: [Industries page removed, /industries/ redirects to home]
+  alternatives: [Keep it, Fold industry framing into Solutions]
+  expected: A shorter, sharper primary navigation.
+  evidence: [dta-nav-cleanup]
+  risks: Losing an industry-vertical entry point.
+  confidence: medium
+  review: quarterly
+  status: Verified
+  verification: industries.html removed; nav and footer no longer list Industries; /industries/ 301s to home.

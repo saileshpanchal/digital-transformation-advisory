@@ -152,6 +152,30 @@
   status = 301
   force = true
 
+# Problems merged into Solutions (duplicate page removed)
+[[redirects]]
+  from = "/problems"
+  to = "/solutions/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/problems/"
+  to = "/solutions/"
+  status = 301
+  force = true
+
+# Industries page dropped
+[[redirects]]
+  from = "/industries"
+  to = "/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/industries/"
+  to = "/"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/404.html"
