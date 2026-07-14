@@ -206,17 +206,16 @@
   question: Should the prototype become the website?
   owner: Founder
   purpose: Make every page a projection of one model rather than a separate software demo.
-  inputs: [Decision-first thesis, Workbench concept]
-  outputs: [Transformation Intelligence Workbench]
+  inputs: [Decision-first thesis, Platform concept]
+  outputs: [Transformation Intelligence Platform]
   alternatives: [Keep a separate prototype, Retire the prototype]
   expected: The site itself demonstrates the discipline it describes.
   evidence: [dta-workbench-page]
   risks: Blurring the line between marketing and working software.
   confidence: medium
   review: quarterly
-  status: Executed
-  verification: The Workbench is live at /prototype/ and frames every page as a view of one model.
-  drift: The website and the prototype are not yet one. The live React demos remain separate, so the full merge is still roadmap.
+  status: Verified
+  verification: Live at /platform/ as the Transformation Intelligence Platform. Per North Star v9 the platform is the instrument, kept distinct from the Accountable Bank proving ground and from the discipline, so keeping them separate is the intent, not drift.
 
 - id: dta-journeys-replace-services
   ref: DTA-DR-0035
@@ -299,7 +298,7 @@
   confidence: medium
   review: quarterly
   status: Verified
-  verification: Marketing pages (home, Transformation Intelligence, Workbench) make no "new market category" claim. The internal objective still appears on the DTA dogfood page as a recorded decision, which is a transparent record, not a customer claim.
+  verification: Marketing pages (home, Transformation Intelligence, Platform) make no "new market category" claim. The internal objective still appears on the DTA dogfood page as a recorded decision, which is a transparent record, not a customer claim.
 
 - id: dta-merge-problems-into-solutions
   ref: DTA-DR-0047
@@ -332,3 +331,35 @@
   review: quarterly
   status: Verified
   verification: industries.html removed; nav and footer no longer list Industries; /industries/ 301s to home.
+
+- id: dta-platform-naming-v9
+  ref: DTA-DR-0049
+  question: What do we call the demonstration platform page, Workbench or Transformation Intelligence Platform?
+  owner: Founder
+  purpose: Align the public name to North Star v9, which drops "Workbench".
+  inputs: [North Star v9 doctrine, Naming Registry, one-canonical-name rule]
+  outputs: [Page renamed to Transformation Intelligence Platform at /platform/]
+  alternatives: [Keep Workbench, Retitle only and keep the /prototype/ URL]
+  expected: One canonical public name for the instrument, consistent with v9 and the sibling workstream.
+  evidence: [dta-platform-rename]
+  risks: v9 is an approved working draft, not yet formally promoted past v7.
+  confidence: high
+  review: quarterly
+  status: Verified
+  verification: Page, nav and links renamed to Transformation Intelligence Platform at /platform/; /prototype/ and /workbench/ 301-redirect. The internal codename is kept out of public copy.
+
+- id: dta-one-decisioning-loop
+  ref: DTA-DR-0050
+  question: How many decision loops should the site show?
+  owner: Founder
+  purpose: Tell one story. The site had three loops; v9 has one canonical loop.
+  inputs: [North Star v9 doctrine, Platform and TI page review]
+  outputs: [The Decisioning Loop kept on the TI page; the two off-doctrine loops removed from the platform page]
+  alternatives: [Keep the separate methodology and governance loops]
+  expected: The two pages tell the same story; the platform page shows the instrument, the TI page shows the discipline and the loop.
+  evidence: [dta-platform-rename]
+  risks: Less method detail on the platform page.
+  confidence: high
+  review: quarterly
+  status: Verified
+  verification: The Decisioning Loop (Identify to Reuse) lives once, on the TI page. The platform page references it and shows the operational graph, trust ledger and journeys, without re-teaching the loop or the eight.

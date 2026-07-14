@@ -40,6 +40,8 @@ decisions:
   - dta-category-claim
   - dta-merge-problems-into-solutions
   - dta-drop-industries
+  - dta-platform-naming-v9
+  - dta-one-decisioning-loop
 
 evidence_of_change:
   - { label: Homepage reframed outside-in, done: true }
@@ -47,7 +49,7 @@ evidence_of_change:
   - { label: Accountability wedge folded in, done: true }
   - { label: Decision-first model defined, done: true }
   - { label: Family Wealth projection built, done: true }
-  - { label: Workbench introduced, done: true }
+  - { label: Transformation Intelligence Platform introduced, done: true }
   - { label: Decision lifecycle and drift tracking added, done: true }
   - { label: Remaining journeys modelled, done: false }
   - { label: DTA knowledge graph grown, done: false }
