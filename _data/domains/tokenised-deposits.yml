@@ -1,0 +1,5 @@
+id: tokenised-deposits
+name: Tokenised Deposits
+role: pipeline
+status: pipeline
+entities: [money, bank, account]

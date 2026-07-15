@@ -1,0 +1,5 @@
+id: enterprise-architecture
+name: Enterprise Architecture
+role: pipeline
+status: pipeline
+entities: [identity, consent, money, bank, customer, account, agent]

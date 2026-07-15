@@ -1,0 +1,7 @@
+id: identity
+name: Identity
+definition: >-
+  A verified claim about who or what an actor is.
+standards: "DVS trust framework (DUAA), GOV.UK One Login, LEI and vLEI"
+relationships: [consent, customer, bank, agent]
+used_by_domains: [future-payments, agentic-ai, tokenised-deposits, open-finance-digital-identity, enterprise-architecture]

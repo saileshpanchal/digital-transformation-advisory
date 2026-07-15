@@ -1,0 +1,5 @@
+id: agentic-ai
+name: Agentic AI
+role: pipeline
+status: pipeline
+entities: [identity, consent, account, customer, agent]

@@ -395,3 +395,27 @@
     Hero CTAs read Book a call and See AI in action; the advisory door reads
     Identify your challenge; the third offer leads with the right people for the
     problem and names the roles, keeping the Book a call CTA.
+
+- id: dta-north-star-v91-agentic
+  ref: DTA-DR-0052
+  question: How should the model absorb the HM Treasury AI Adoption Plan and its agentic-payments language?
+  owner: Founder
+  purpose: >-
+    Adopt the Government's own vocabulary (trust framework, Know Your Agent) and
+    strengthen the canon: the Agent Contract, Decision Intelligence as the governing
+    layer, TDRs as machine-readable organisational memory, the Immutable Decision Graph,
+    and knowledge as the programme's blind spot.
+  inputs: [HM Treasury Financial Services AI Adoption Plan 2026, FCA Mills Review 2026, Modernising Payment Services consultation, North Star v9]
+  outputs: [
+    "North Star v9.1 addendum",
+    "Agentic payments page names the trust framework and the Agent Contract",
+    "Agent added as the seventh federated-registry entity",
+  ]
+  alternatives: [Coin parallel DTA terms instead of adopting the Government's, Treat the AI plan as separate from payments]
+  expected: One language across website, Observatory and consultation responses; the category is cited, not boasted.
+  evidence: [dta-platform-rename]
+  risks: The programme is fast-moving; the canon is an approved working draft.
+  confidence: high
+  review: monthly
+  status: Agreed
+  verification: Agentic payments page carries the three-pillar trust framework and the Agent Contract; registry seeded with seven entities including Agent.

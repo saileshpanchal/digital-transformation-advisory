@@ -1,0 +1,7 @@
+id: account
+name: Account
+definition: >-
+  A record of a customer's holdings and the entry point for payment.
+standards: "Payment account, deposit account"
+relationships: [customer, bank, money]
+used_by_domains: [future-payments, agentic-ai, tokenised-deposits, open-finance-digital-identity, enterprise-architecture]

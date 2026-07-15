@@ -1,0 +1,7 @@
+id: bank
+name: Bank
+definition: >-
+  A regulated institution that holds accounts and moves value (ASPSP, credit institution).
+standards: "PSRs, EMRs, SM&CR, CMA Order"
+relationships: [account, money, customer]
+used_by_domains: [future-payments, agentic-ai, tokenised-deposits, open-finance-digital-identity, enterprise-architecture]

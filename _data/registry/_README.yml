@@ -1,0 +1,9 @@
+# Federated entity registry (North Star v9.1).
+# Canonical, cross-domain entities defined once and referenced by every Observatory
+# domain, rather than redefined per model. The recurrence of these entities across
+# payments, agentic AI, tokenised deposits, open finance and enterprise architecture is
+# the motivation for the registry. Build/acceptance target: Future of Payments.
+registry_version: "9.1"
+build_target: future-payments
+pipeline: [agentic-ai, tokenised-deposits, open-finance-digital-identity, enterprise-architecture]
+entities: [identity, consent, money, bank, customer, account, agent]
