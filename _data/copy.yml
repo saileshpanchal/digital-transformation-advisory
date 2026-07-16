@@ -49,41 +49,9 @@ principles:
   - name: Standards and interoperability
     line: Build on open standards so the work is portable and vendor-neutral.
 
-# The Eight Intelligences (North Star). Soft lenses, not folders.
-# `blurb` is the short label used on the homepage decision-map chips.
-intelligences:
-  - name: Experience Intelligence
-    path: /experience-intelligence/
-    blurb: Inclusive outcomes
-    line: How customers and institutions experience a journey, and whether it delivers good, inclusive outcomes they understand and can act on.
-  - name: Capability Intelligence
-    path: /capability-intelligence/
-    blurb: Skills · knowledge · judgment
-    line: How human and organisational capability (Skills, Knowledge, Judgment) is understood, composed and grown to deliver outcomes.
-  - name: Cognitive Intelligence
-    path: /cognitive-intelligence/
-    blurb: Human + agent reasoning
-    line: "How humans and machines reason and act together: where reasoning sits, what agents may do, and how decisions are explained and intervened in."
-  - name: Value Intelligence
-    path: /value-intelligence/
-    blurb: New value, proven
-    line: "DTA's innovation discipline: what new value becomes possible because we are transforming, new propositions, customer segments, better outcomes and economics. Tokenisation, payments and programmable value are enablers, not the headline."
-  - name: Trust Intelligence
-    path: /trust-intelligence/
-    blurb: Evidence into confidence
-    line: "The discipline of converting evidence into confidence across customers, colleagues, boards, regulators and ecosystems. The other seven produce trust; Trust Intelligence makes it visible, measurable and continuously evidenced."
-  - name: Platform Intelligence
-    path: /platform-intelligence/
-    blurb: Evolution over replacement
-    line: "The discipline of evolving an institution safely. Banks are ecosystems, not applications. Coexist with the platforms you have while introducing the capabilities the future needs. Evolution over replacement, not rip-and-replace."
-  - name: Control Intelligence
-    path: /control-intelligence/
-    blurb: Accountability, evidenced
-    line: How accountable leaders set authority, observe outcomes, intervene and evidence control continuously.
-  - name: Financial Intelligence
-    path: /financial-intelligence/
-    blurb: The P&L of change
-    line: "Understanding the P&L of change early: the as-is cost base, the target operating-model cost, and the transition between them. The CFO lens, interlocked with the others."
+# Legacy pre-convergence `intelligences:` block removed 2026-07-05 — superseded by `solutions:` below.
+# Folds: Trust+Control→Accountability, Financial→Value, Platform→substrate (removed from the taxonomy).
+# It was unreferenced by any template. See the DTA Naming Registry and DTA-TDR-0005.
 
 # The Converged Eight (North Star v5). Lenses inside, doors outside.
 # Each Intelligence is a solution: a named buyer, a problem question, and the incumbents it works alongside.
