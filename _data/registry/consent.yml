@@ -1,0 +1,7 @@
+id: consent
+name: Consent
+definition: >-
+  A recorded, revocable authority to act, with scope, limits and duration.
+standards: "SCA, PSRs, mandate and delegation"
+relationships: [identity, account, agent, money]
+used_by_domains: [future-payments, agentic-ai, tokenised-deposits, open-finance-digital-identity, enterprise-architecture]

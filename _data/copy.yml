@@ -2,10 +2,10 @@
 # Page-specific prose stays in the page; this holds the strings that repeat across pages.
 
 # Booking links. Moved off Calendly to Microsoft Bookings (2026-06-28). The MS URL is
-# self-contained (carries its own ?query) — the include uses it as-is (no UTM appended).
+# self-contained (carries its own ?query), the include uses it as-is (no UTM appended).
 # NOTE: key + include are still named "calendly" for now (filename used across ~12 pages);
 # rename to "booking" is optional cleanup. capability_blueprint currently points at the same
-# MS Bookings meeting type as strategy_call — swap in a dedicated meeting-type URL when available.
+# MS Bookings meeting type as strategy_call, swap in a dedicated meeting-type URL when available.
 calendly:
   strategy_call:
     slug: "https://outlook.office.com/bookwithme/user/5cc565c059a043bbb3c3d09b33f66862@digital-transformation-advisory.com/meetingtype/HUXIux3CwkKunExXybnW2A2?bookingcode=81c3ce7d-49ad-44ea-b329-ac8b8c580a0f&anonymous&ismsaljsauthenabled&ep=mlink"
@@ -15,7 +15,7 @@ calendly:
     campaign: "capability-blueprint"
 
 cta_labels:
-  strategy_call: "Book a strategy call"
+  strategy_call: "Book a call"
   capability_blueprint: "Discuss a Capability Blueprint"
 
 # Canonical phrasing (source of truth for the most-repeated lines; keep page copy aligned to these).

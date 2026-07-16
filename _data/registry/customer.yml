@@ -1,0 +1,7 @@
+id: customer
+name: Customer
+definition: >-
+  A natural person or legal entity a service acts for.
+standards: "Consumer Duty, KYC and KYB, LEI"
+relationships: [account, identity, consent]
+used_by_domains: [future-payments, agentic-ai, tokenised-deposits, open-finance-digital-identity, enterprise-architecture]

@@ -1,0 +1,7 @@
+id: money
+name: Money / Deposit
+definition: >-
+  A store and means of payment in one of several regulated forms.
+standards: "Deposit, tokenised deposit, qualifying stablecoin, e-money; FSCS"
+relationships: [account, bank, customer]
+used_by_domains: [future-payments, agentic-ai, tokenised-deposits, open-finance-digital-identity, enterprise-architecture]

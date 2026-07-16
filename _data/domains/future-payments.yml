@@ -1,0 +1,6 @@
+id: future-payments
+name: Future of Payments
+role: build-target
+status: live
+note: The first live Observatory model; validates the registry as its first full consumer.
+entities: [identity, consent, money, bank, customer, account, agent]

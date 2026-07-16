@@ -143,12 +143,58 @@
   force = true
 [[redirects]]
   from = "/ultim8"
-  to = "/prototype/"
+  to = "/platform/"
   status = 301
   force = true
 [[redirects]]
   from = "/ultim8/"
-  to = "/prototype/"
+  to = "/platform/"
+  status = 301
+  force = true
+
+# Problems merged into Solutions (duplicate page removed)
+[[redirects]]
+  from = "/problems"
+  to = "/solutions/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/problems/"
+  to = "/solutions/"
+  status = 301
+  force = true
+
+# Industries page dropped
+[[redirects]]
+  from = "/industries"
+  to = "/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/industries/"
+  to = "/"
+  status = 301
+  force = true
+
+# Prototype demonstration renamed to the Transformation Intelligence Platform (North Star v9)
+[[redirects]]
+  from = "/prototype"
+  to = "/platform/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/prototype/"
+  to = "/platform/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/workbench/dta-repositioning/"
+  to = "/platform/dta-repositioning/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/workbench/*"
+  to = "/platform/"
   status = 301
   force = true
 

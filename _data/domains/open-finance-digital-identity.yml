@@ -1,0 +1,5 @@
+id: open-finance-digital-identity
+name: Open Finance & Digital Identity
+role: pipeline
+status: pipeline
+entities: [identity, consent, customer, account]

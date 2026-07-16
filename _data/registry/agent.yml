@@ -1,0 +1,19 @@
+id: agent
+name: Agent
+definition: >-
+  An actor that decides and initiates on a principal's behalf. Not a channel, not a user.
+standards: "Know Your Agent (AI Adoption Plan Rec 10.2); the Agent Contract"
+relationships: [identity, consent, customer, account]
+used_by_domains: [future-payments, agentic-ai, tokenised-deposits, open-finance-digital-identity, enterprise-architecture]
+agent_contract:
+  - identity
+  - owner
+  - mandate
+  - permissions
+  - decision_authority
+  - execution_authority
+  - evidence_requirements
+  - operating_boundary
+  - revocation
+  - accountability
+  - audit_trail

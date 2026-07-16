@@ -11,6 +11,8 @@
 - { id: dta-homepage-commit,      label: Outside-in homepage live }
 - { id: dta-why-it-works-commit,  label: Why-it-works band live }
 - { id: dta-family-wealth-model,  label: Family Wealth worked example }
-- { id: dta-workbench-page,       label: Transformation Intelligence Workbench }
+- { id: dta-workbench-page,       label: Transformation Intelligence Platform }
 - { id: dta-journey-pack,         label: Journey-pack renderer }
 - { id: dta-decision-loop-commit, label: Decision lifecycle in the model }
+- { id: dta-nav-cleanup,           label: Navigation cleanup, Problems and Industries removed }
+- { id: dta-platform-rename,       label: Prototype renamed to Transformation Intelligence Platform, v9 alignment }
