@@ -3,7 +3,7 @@ layout: corporate
 title: "Agentic Delivery Architecture: the 1:1 agentic cell and the system around it"
 permalink: /agentic-delivery/
 description: >-
-  The squad is getting smaller. A domain authority and a Forward Platform Engineer,
+  The squad is getting smaller. A domain authority and a Forward Deployed Engineer,
   amplified by agents, can own a production outcome only if the architecture, controls,
   support and organisational memory around them are engineered. This is Agentic Delivery
   Architecture.
@@ -13,7 +13,7 @@ description: >-
   <div class="container">
     <p class="eyebrow" style="color:#0877a6;font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:12px;">Agentic Delivery Architecture</p>
     <h1>The squad is getting smaller. The system around it cannot remain manual.</h1>
-    <p>Traditional delivery divided work across a stack of specialists. Agile brought those specialists into a two-pizza team. Agentic delivery compresses the team again: a domain authority and a Forward Platform Engineer, supported by agents and a shared enterprise delivery system.</p>
+    <p>Traditional delivery divided work across a stack of specialists. Agile brought those specialists into a two-pizza team. Agentic delivery compresses the team again: a domain authority and a Forward Deployed Engineer, supported by agents and a shared enterprise delivery system.</p>
     <p style="max-width:760px;margin:1rem auto 0;color:#333;"><strong>The challenge is no longer how to staff a squad. It is how to engineer the architecture, controls, support and organisational memory that let a two-person cell own an outcome safely.</strong></p>
     <div class="hero-actions" style="justify-content:center;margin-top:1.25rem;">
       {% include cta-calendly.html kind="strategy_call" loc="agentic-delivery-hero" label="Book a call" %}
@@ -27,17 +27,9 @@ description: >-
   <div class="container">
     <div class="text-center">
       <h2>The squad evolution</h2>
-      <p class="section-subtitle">From a stack of specialists, to a persistent team, to a smaller team using agents, to a domain authority and a Forward Platform Engineer each orchestrating specialist agents. Five people are one point on an evolving spectrum, not the final canonical shape.</p>
+      <p class="section-subtitle">From a stack of specialists, to a persistent team, to a smaller team using agents, to a domain authority and a Forward Deployed Engineer each orchestrating specialist agents. Five people are one point on an evolving spectrum, not the final canonical shape.</p>
     </div>
-    <figure class="diagram" style="margin:1.5rem auto 0;max-width:1100px;">
-      <img src="{{ '/assets/images/squad-evolution.png' | relative_url }}" alt="The squad evolution in four stages. 1, Traditional stack: work passes through specialist layers, business, architecture, engineering, test, release, operations, with many hand-offs and slow feedback. 2, Two-pizza squad: a persistent cross-functional team with broader ownership but still coordination-heavy. 3, Hybrid squad: a smaller human team using AI inside existing delivery. 4, One-to-one agentic cell: a domain authority and a Forward Platform Engineer amplified by agents, outcome-owned and evidence-led. What changes: team size shrinks, capability becomes reusable, controls move into the platform, and the workflow becomes the unit of transformation." style="width:100%;height:auto;border-radius:12px;border:1px solid #e2e6ea;">
-    </figure>
-    <div class="offerings-grid" style="margin-top:2rem;">
-      <div class="offering-card"><h3>Traditional stack</h3><p>Work passes through specialist layers. Many hand-offs, slow feedback.</p></div>
-      <div class="offering-card"><h3>Two-pizza squad</h3><p>A persistent cross-functional team. Broader ownership, but the coordination burden remains.</p></div>
-      <div class="offering-card"><h3>Hybrid agentic squad</h3><p>A smaller human team uses agents inside existing delivery processes.</p></div>
-      <div class="offering-card"><h3>Agentic cell</h3><p>One domain authority and one Forward Platform Engineer, each orchestrating specialist agents, drawing on shared enterprise capabilities when the work requires them.</p></div>
-    </div>
+    <div style="margin-top:1.5rem;">{% include diagrams/squad-evolution.html %}</div>
     <p style="max-width:820px;margin:1.5rem auto 0;color:#555;text-align:center;">The 1:1 model will not suit every production service, but it becomes the default starting shape for bounded workflows and Domain Building Blocks. Extra people are pulled in because the work needs them, not because a seat must be filled.</p>
   </div>
 </section>
@@ -49,9 +41,7 @@ description: >-
       <h2>The system around the 1:1 agentic cell</h2>
       <p class="section-subtitle" style="max-width:820px;margin:.5rem auto 0;"><strong>The squad can shrink only because the organisation around it becomes more engineered.</strong> The cell sits inside a paved road, wrapped by an accountability backbone. This is not AI-amplified delivery. It is a unit of accountable autonomy.</p>
     </div>
-    <figure class="diagram" style="margin:1.5rem auto 0;max-width:1000px;">
-      <img src="{{ '/assets/images/agentic-cell-system.png' | relative_url }}" alt="Three concentric layers around the one-to-one agentic cell. At the centre, a domain authority and a Forward Platform Engineer, with agents amplifying the work. Around them, the agentic paved road: data and context, reusable skills and Domain Building Blocks, cost and run-rate, security and policy, code and deployment, evals and testing, observability, and tools and connectors. Around that, the accountability backbone: agent contracts, named executive ownership, reference architecture, audit trail, mandates and permissions, TDRs, the trust ledger, and human override. Why this matters: safe autonomy, repeatable delivery, supportable production, and knowledge that stays with the client." style="width:100%;height:auto;border-radius:12px;border:1px solid #e2e6ea;">
-    </figure>
+    <div style="max-width:1000px;margin:1.5rem auto 0;">{% include diagrams/agentic-cell-system.html %}</div>
     <div class="offerings-grid" style="margin-top:2rem;">
       <div class="offering-card"><h3>1. Agentic paved road</h3><p>A pre-integrated route from idea to production: approved models, tools and connectors; reusable agent skills and Domain Building Blocks; isolated environments; automated testing, evaluation and policy checks; deployment, observability and cost metering; versioned prompts, models, data, code and agent configurations. Without it, every cell rebuilds a fragile local stack.</p></div>
       <div class="offering-card"><h3>2. Trust and control plane</h3><p>Controls travel with the work, not through meetings: agent identity and <a href="{{ '/agentic-payments/' | relative_url }}">Know Your Agent</a>; machine-readable Agent Contracts; mandates, permissions and operating boundaries; TDRs for material decisions; evidence, outcomes and model versions written to the <a href="{{ '/transformation-intelligence/' | relative_url }}">trust ledger</a>; revocation, rollback and kill switches.</p></div>
@@ -70,14 +60,8 @@ description: >-
       <h2>From discovery to scale</h2>
       <p class="section-subtitle">How an agentic cell becomes a production operating model. The engagement moves from watching the real work to a repeatable portfolio of small, accountable cells.</p>
     </div>
-    <figure class="diagram" style="margin:1.5rem auto 0;max-width:1100px;">
-      <img src="{{ '/assets/images/agentic-discovery-to-scale.png' | relative_url }}" alt="Six stages from discovery to scale, sitting beneath shared enterprise services (architecture, data, risk, security, procurement, HR, operations). 1, Shadow: sit with the people doing the work. 2, Map: understand the workflow, friction and decisions. 3, Build: create the first agentic workflow against real systems. 4, Validate: test with users, controls and edge cases. 5, Ship: deploy with evidence, support and rollback. 6, Scale: turn one working cell into a repeatable model. What must be solved: support, observability, funding, skills, governance and institutional memory. End state: small accountable cells, a reusable paved road, evidence over status, and scaled organisational learning." style="width:100%;height:auto;border-radius:12px;border:1px solid #e2e6ea;">
-    </figure>
-    <div class="offerings-grid" style="margin-top:2rem;">
-      <div class="offering-card"><h3>Shadow, Map</h3><p>Sit with the people doing the work. Understand the workflow, its friction and the decisions inside it.</p></div>
-      <div class="offering-card"><h3>Build, Validate</h3><p>Create the first agentic workflow against real systems. Test it with users, controls and edge cases.</p></div>
-      <div class="offering-card"><h3>Ship, Scale</h3><p>Deploy with evidence, support and rollback. Turn one working cell into a repeatable model. The wider path is the <a href="{{ '/operating-model/' | relative_url }}">operating model</a>.</p></div>
-    </div>
+    <div style="margin-top:1.5rem;">{% include diagrams/agentic-discovery-to-scale.html %}</div>
+    <p style="max-width:820px;margin:1.5rem auto 0;color:#555;text-align:center;">Ship with evidence, support and rollback, then turn one working cell into a repeatable model. The wider change path is the <a href="{{ '/operating-model/' | relative_url }}">operating model</a>.</p>
   </div>
 </section>
 

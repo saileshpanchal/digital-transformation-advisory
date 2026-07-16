@@ -2824,3 +2824,21 @@ a.ichip span{font-size:12px;color:var(--map-muted);font-weight:600;}
 
 /* respect reduced motion across the site */
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important;}}
+
+/* ---- Agentic Delivery Architecture: native diagrams ---- */
+.ads-num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--map-ink);color:#fff;font-weight:800;font-size:14px;margin-bottom:10px;}
+.ads-layer{border:1px solid var(--map-line);border-radius:16px;padding:20px;background:rgba(8,119,166,.03);}
+.ads-layer .ads-layer{margin-top:14px;}
+.ads-road{background:rgba(8,119,166,.06);}
+.ads-cell{background:var(--map-ink);border-color:var(--map-ink);}
+.ads-layer-label{display:block;text-align:center;font-weight:800;letter-spacing:.02em;color:var(--map-cyan-dark);font-size:12px;text-transform:uppercase;margin-bottom:8px;}
+.ads-cell .ads-layer-label{color:var(--map-cyan);}
+.ads-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+.ads-pill{background:var(--map-paper);border:1px solid var(--map-line);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600;color:var(--map-ink);}
+.ads-cell-core{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:4px 0;}
+.ads-cell-core span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;color:#fff;}
+.ads-band{border:1px solid var(--map-line);border-radius:14px;padding:16px 18px;background:var(--map-paper);}
+.ads-band-label{display:block;text-align:center;font-weight:800;letter-spacing:.02em;color:var(--map-cyan-dark);font-size:12px;text-transform:uppercase;margin-bottom:10px;}
+.ads-check{list-style:none;padding:0;margin:0;display:grid;gap:8px;}
+.ads-check li{padding-left:26px;position:relative;color:var(--map-ink);font-weight:600;font-size:14px;}
+.ads-check li::before{content:"\2713";position:absolute;left:0;color:var(--map-cyan-dark);font-weight:800;}
