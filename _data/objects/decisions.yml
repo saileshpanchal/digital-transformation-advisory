@@ -419,3 +419,26 @@
   review: monthly
   status: Agreed
   verification: Agentic payments page carries the three-pillar trust framework and the Agent Contract; registry seeded with seven entities including Agent.
+
+- id: dta-trust-ledger-organising-concept
+  ref: DTA-DR-0053
+  question: Is the Trust Ledger a projection of the governed graph, or the organising concept?
+  owner: Founder
+  purpose: >-
+    Elevate the Shared Trust Ledger to the central organising concept. The governed graph
+    becomes one implementation of it, not the headline. Retire the earlier rule that the
+    Trust Ledger is a projection of the graph.
+  inputs: [Shared Trust Ledger reframe, Transformation Intelligence MTDR page plan, North Star v9, Naming Registry rev 3]
+  outputs: [
+    "Transformation Intelligence page rebuilt around the Shared Trust Ledger",
+    "Platform page reconciled: the graph implements the ledger",
+    "North Star and Naming Registry to be updated in Fabric",
+  ]
+  alternatives: [Keep the Trust Ledger as a projection of the governed graph]
+  expected: The page progression reads Problem to Shared Understanding to Shared Trust Ledger to Transformation Intelligence to MTDR to Graph.
+  evidence: [dta-platform-rename]
+  risks: Inverts an existing North Star rule; the canon must be updated to match.
+  confidence: high
+  review: monthly
+  status: Agreed
+  verification: The Transformation Intelligence page leads with the Shared Trust Ledger and the graph is described as one implementation; the platform page no longer calls the ledger a projection of the graph.
