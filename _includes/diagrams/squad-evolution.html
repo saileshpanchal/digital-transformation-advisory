@@ -1,16 +1,47 @@
-{%- comment -%} The squad evolution: four stages, traditional stack to the 1:1 agentic cell. Native. {%- endcomment -%}
-<div class="offerings-grid" role="list" aria-label="The squad evolution in four stages">
-  <div class="offering-card" role="listitem"><span class="ads-num">1</span><h3>Traditional stack</h3><p>Work passes through specialist layers, business to operations.</p><ul><li>Many hand-offs</li><li>Slow feedback</li></ul></div>
-  <div class="offering-card" role="listitem"><span class="ads-num">2</span><h3>Two-pizza squad</h3><p>A persistent cross-functional team.</p><ul><li>Broader ownership</li><li>Coordination burden remains</li></ul></div>
-  <div class="offering-card" role="listitem"><span class="ads-num">3</span><h3>Hybrid agentic squad</h3><p>A smaller human team uses agents inside existing delivery.</p><ul><li>AI-assisted</li><li>Existing process remains</li></ul></div>
-  <div class="offering-card" role="listitem"><span class="ads-num">4</span><h3>1:1 agentic cell</h3><p>A domain authority and a Forward Deployed Engineer, amplified by agents.</p><ul><li>Outcome-owned</li><li>Evidence-led</li></ul></div>
+{%- comment -%} Emerging delivery shapes: the work resolves into one of several team shapes, not a linear march to a 1:1 cell. Native SVG, dg-* language. {%- endcomment -%}
+<div class="diagram diagram--wide">
+  <svg viewBox="0 0 900 430" role="img" aria-label="The work resolves into one of several team shapes, not a fixed size: a multidisciplinary squad, an AI-amplified squad, a domain expert and engineer pod, one accountable professional orchestrating agents, or a deliberately larger human team where judgement, customer care or operational risk require it.">
+    <!-- hub -->
+    <rect class="dg-node-accent" x="34" y="163" width="212" height="104" rx="14"></rect>
+    <text class="dg-sub-light" x="140" y="196" text-anchor="middle" style="letter-spacing:.06em;">START FROM</text>
+    <text class="dg-label-light" x="140" y="218" text-anchor="middle" style="font-weight:800;">the work</text>
+    <text class="dg-sub-light" x="140" y="242" text-anchor="middle">shape is discovered, not fixed</text>
+
+    <!-- branches (no arrowheads: these are options, not a sequence) -->
+    <path class="dg-link" d="M246,215 C 380,215 410,44  540,44"></path>
+    <path class="dg-link" d="M246,215 C 380,215 410,126 540,126"></path>
+    <path class="dg-link" d="M246,215 C 380,215 410,208 540,208"></path>
+    <path class="dg-link" d="M246,215 C 380,215 410,290 540,290"></path>
+    <path class="dg-link" d="M246,215 C 380,215 410,372 540,372"></path>
+
+    <!-- shape 1 -->
+    <rect class="dg-node" x="540" y="12" width="344" height="64" rx="12"></rect>
+    <text class="dg-label" x="560" y="40" text-anchor="start">Multidisciplinary squad</text>
+    <text class="dg-sub" x="560" y="60" text-anchor="start">a larger human team, many skills together</text>
+    <!-- shape 2 -->
+    <rect class="dg-node" x="540" y="94" width="344" height="64" rx="12"></rect>
+    <text class="dg-label" x="560" y="122" text-anchor="start">AI-amplified squad</text>
+    <text class="dg-sub" x="560" y="142" text-anchor="start">the same team, smaller, agents assisting</text>
+    <!-- shape 3 -->
+    <rect class="dg-node" x="540" y="176" width="344" height="64" rx="12"></rect>
+    <text class="dg-label" x="560" y="204" text-anchor="start">Domain expert and engineer pod</text>
+    <text class="dg-sub" x="560" y="224" text-anchor="start">a Product Owner and a Forward Deployed Engineer</text>
+    <!-- shape 4 -->
+    <rect class="dg-node" x="540" y="258" width="344" height="64" rx="12"></rect>
+    <text class="dg-label" x="560" y="286" text-anchor="start">One professional, many agents</text>
+    <text class="dg-sub" x="560" y="306" text-anchor="start">a single accountable owner orchestrating agents</text>
+    <!-- shape 5 -->
+    <rect class="dg-node" x="540" y="340" width="344" height="64" rx="12"></rect>
+    <text class="dg-label" x="560" y="368" text-anchor="start">Larger team by design</text>
+    <text class="dg-sub" x="560" y="388" text-anchor="start">where judgement, care or operational risk require it</text>
+  </svg>
 </div>
 <div class="ads-band" style="margin-top:1.25rem;">
-  <span class="ads-band-label">What changes</span>
+  <span class="ads-band-label">What holds true whatever the shape</span>
   <div class="ads-chips">
-    <span class="ads-pill">Team size shrinks</span>
-    <span class="ads-pill">Capability becomes reusable</span>
-    <span class="ads-pill">Controls move into the platform</span>
-    <span class="ads-pill">The workflow becomes the unit of transformation</span>
+    <span class="ads-pill">Accountability</span>
+    <span class="ads-pill">A reusable platform</span>
+    <span class="ads-pill">Evidence over status</span>
+    <span class="ads-pill">Institutional learning</span>
   </div>
 </div>
