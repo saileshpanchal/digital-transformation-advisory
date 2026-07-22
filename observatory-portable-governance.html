@@ -1,0 +1,132 @@
+---
+layout: corporate
+title: "Governed Decisions Are Becoming Portable"
+permalink: /observatory/portable-governance/
+description: >-
+  An Observatory paper on the decision layer: why the record of a governed
+  decision is becoming an open standard that runs on any AI runtime, where that
+  standard ends, and why the reasoning built above it is where institutional
+  advantage compounds.
+---
+
+<div class="observatory-hero">
+  <div class="container">
+    <div class="observatory-hero-grid">
+      <div>
+        <p class="eyebrow">The Future Banking Observatory</p>
+        <h1>Governed Decisions Are Becoming Portable</h1>
+        <p class="observatory-subtitle">The record is the standard. The runtime is a choice. The reasoning is where advantage compounds.</p>
+        <p class="observatory-lede">Any AI system can now draft a decision. What makes that decision governable, and portable across the tools an institution has not yet chosen, is a separable layer that is becoming an open standard.</p>
+        <div class="hero-actions" style="justify-content:flex-start;">
+          <a href="https://github.com/saileshpanchal/mtdr" class="btn btn--primary">Read the open standard</a>
+          <a href="{{ '/observatory/' | relative_url }}" class="btn btn--outline">Back to the Observatory</a>
+        </div>
+      </div>
+      <aside class="observatory-status">
+        <h2>Paper Status</h2>
+        <dl>
+          <div><dt>Type</dt><dd>Observatory thesis</dd></div>
+          <div><dt>Standard</dt><dd>Open, MIT, public</dd></div>
+          <div><dt>Reasoning layer</dt><dd>Designed, in build</dd></div>
+          <div><dt>Published</dt><dd>When the model changes</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<section class="section" style="padding-bottom:2rem;">
+  <div class="container">
+    <div class="executive-question">
+      <p class="eyebrow">Executive Question</p>
+      <h2>When any AI tool can draft a decision, what makes it governable, and portable across systems you have not yet chosen?</h2>
+      <p>This is not a tooling question. It is an operating-model question: what does the institution actually own when the software that produced a decision is replaced, and can it prove the judgement behind that decision years later, to a board, an auditor or a supervisor.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--light">
+  <div class="container">
+    <div class="text-center">
+      <h2>1. The pressure</h2>
+      <p class="section-subtitle">AI has made decisions cheap to produce and expensive to account for.</p>
+    </div>
+    <p>Institutions have always recorded the outcomes of decisions and rarely the judgement behind them. When the people who held the context move on, the organisation re-makes settled questions at full cost. AI sharpens this pressure rather than relieving it. A model can now draft a business case, a control change or a delegated authority in seconds, so the rate at which decisions are produced has jumped while the discipline that makes them accountable has not. That gap is decision debt, and it compounds.</p>
+    <p>Government and regulators have been explicit that accountability does not move to the machine. What they have not specified is the mechanism. It has to be a record: what was known at the time, by whom, with what confidence, and with what evidence. Such a record is the smallest durable unit of governance, and it has to outlive the tool that produced it.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <h2>2. The record becomes an open standard</h2>
+      <p class="section-subtitle">The unit of governance is now specified in public, and belongs to whoever finds it useful.</p>
+    </div>
+    <p>The <a href="https://github.com/saileshpanchal/mtdr">Transformation Decision Record</a> is an open standard, published under an MIT licence and neutral to any vendor or regulator. It specifies what a governed decision record contains: a named accountable owner, the context as it stood, stated confidence, evidence assessed across seven dimensions, the options the decision forecloses, and the lineage connecting it to the decisions before and after it. Two sibling records extend it: a Value Record for the value case and its reconciliation, and a Decision Assurance Case for the reasoning that challenges a decision's consequences before it executes.</p>
+    <p>Publishing the format is deliberate. An institution should not have to trust a consultancy's private schema with the memory of its own decisions. The format is given away so that the record is portable, inspectable and permanent. What an institution builds on top of its own records is where the value accrues, and that is a separate question addressed below.</p>
+  </div>
+</section>
+
+<section class="section section--light">
+  <div class="container">
+    <div class="text-center">
+      <h2>3. The skills are a portable execution model</h2>
+      <p class="section-subtitle">Not prompts. Passes. Each one transforms the artefact on its way to a governed record.</p>
+    </div>
+    <p>The standard ships with a set of reasoning skills that read as a sequence of transformations. A raw transcript becomes an identified decision. The identified decision becomes a framed record. The framed record is tested for evidence and governance. Where a value claim exists it becomes a Value Record, and where the decision is material it is carried through an assurance case that projects its consequences, hunts the contradictions between them, and produces a single owned disposition.</p>
+    <p>Because the skills follow an open, published format, the major AI runtimes now load them directly. The same skills have been run, without modification, inside Microsoft Copilot, inside the Claude runtimes they originated in, and in the developer environments that have adopted the format. In a first field test, an agent given nothing but the standard read a live steering-committee pack, separated genuine commitments from requests and plans, drafted complete records from the source wording, and held them open for a named accountable owner because a committee cannot exercise judgement. No bespoke integration was involved. The execution model is portable because the format is open.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <h2>4. Where the standard ends</h2>
+      <p class="section-subtitle">At the register. Everything below the register is an optional consumer of the standard's output.</p>
+    </div>
+    <p>This architecture has a clear boundary, and stating it plainly is what makes the rest portable. A runtime applies the skills. Those skills produce records. Records are held in a register, which is simply a versioned, lineage-connected body of decision records: a repository. That is where a conforming implementation ends, and an institution reaches real value at that point, with organisational memory and accountability evidence, before any graph or platform exists.</p>
+    <p>The lineage fields in every record make the register assemble into a connected history whenever someone chooses to assemble it. Any tool can do that assembling later. No tool is required to. The boundary and the layers are set out in the standard's own <a href="https://github.com/saileshpanchal/mtdr/blob/main/ARCHITECTURE.md">architecture note</a>. The single most important property for an evaluating institution is that it can stop at the register and be complete.</p>
+  </div>
+</section>
+
+<section class="section section--light">
+  <div class="container">
+    <div class="text-center">
+      <h2>5. Above the register, advantage compounds</h2>
+      <p class="section-subtitle">The graph and the reasoning over it are optional, and they are where an institution's own decisions become foresight.</p>
+    </div>
+    <p>A register of records is durable memory. The step beyond it is to assemble those records into a decision graph, so that questions an institution currently answers by investigation become queries: which runtime actions were governed by this decision, what would reversing it invalidate, what is the accumulated risk position across every decision in flight, and is that position inside appetite. This graph is an implementation choice that enhances the standard rather than a part of it. DTA is building one. An institution could build another, or buy one, and the records would be unchanged.</p>
+    <p>Above the graph sits reasoning. This is the layer the Future Banking Observatory occupies: the engine that reads an institution's governed decisions, together with the evolution of the market around them, and turns them into evidence a board can commit capital against. That reasoning layer is designed and in build, not yet complete, and this paper is careful to say so. Its value depends on exactly one thing that is available today: a body of governed decision records, recorded in an open format, that it can reason over.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <h2>6. Why portability is a strength, not a giveaway</h2>
+      <p class="section-subtitle">Nobody owns the browser. Everyone implements the standard.</p>
+    </div>
+    <p>The web did not become valuable because one company owned the format. It became valuable because the format was open, every browser implemented it, and the value moved to what people built on top. Governed decisions are moving the same way. The record format is open. Any runtime can author records. The layer that compounds advantage is the reasoning an institution runs over its own accumulated decisions, and that reasoning is only as good as the memory beneath it.</p>
+    <p>For an institution, the strategic reading is direct. The authoring environment is a commodity and should be treated as one, because the institution has not chosen its future tools yet and should not be locked to today's. The durable asset is the register. The compounding asset is the reasoning above it. Giving the format away is what guarantees the memory is portable, and portable memory is the precondition for everything built on top.</p>
+  </div>
+</section>
+
+<section class="section section--light">
+  <div class="container">
+    <div class="text-center">
+      <h2>7. What this means before capital commits</h2>
+      <p class="section-subtitle">The Observatory's test: prove the future before committing to it.</p>
+    </div>
+    <p>Three moves follow, and none of them requires a platform decision first.</p>
+    <ol class="obs-actions">
+      <li><strong>Adopt the open record.</strong> Start recording material decisions in the open format now, in a repository you control. This is complete and valuable on its own, and it is the low-commitment first step that every later layer depends on.</li>
+      <li><strong>Treat the runtime as replaceable.</strong> Author records with whatever AI environment you already run. The format is portable by construction, so the choice is reversible.</li>
+      <li><strong>Reason over your own memory.</strong> When a body of governed records exists, the graph and the reasoning above it turn that memory into foresight. That is where advantage accumulates, and it accrues to the institution that owns the records, not the tool that wrote them.</li>
+    </ol>
+    <p class="obs-close">Transformation becomes provable when the decisions behind it are recorded in a form a machine can check and a board can trust. The institutions that write their decisions down in that form will out-decide the ones that redraw slides.</p>
+    <div class="hero-actions" style="justify-content:flex-start;margin-top:2rem;">
+      <a href="https://github.com/saileshpanchal/mtdr" class="btn btn--primary">Read the open standard</a>
+      <a href="{{ '/connect/' | relative_url }}" class="btn btn--outline">Discuss adoption with DTA</a>
+    </div>
+  </div>
+</section>
