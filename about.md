@@ -48,7 +48,7 @@ description: >-
       <img src="/assets/images/corporate/sp-icon.png" alt="Sailesh Panchal" class="leader-photo">
       <div>
         <h3 class="leader-name">Sailesh Panchal, Founder &amp; CEO</h3>
-        <p class="leader-bio">A technology, payments, and transformation leader in UK financial services and FinTech. As CTO and Payments &amp; Economic Crime Director at TSB Bank, he led a bank-wide transformation that brought technology and business leadership closer together. As Group CTO at Orwell Group he conceived the ipagoo platform, the first cloud-first regulated EMI certified by the FCA and ACPR on AWS and Azure. As Chief Architect for the Payment Systems Regulator he led the New Payments Architecture, and he has contributed to Bank of England, ISO 20022, and Open Banking committees. He founded Digital Transformation Advisory in 2019.</p>
+        <p class="leader-bio">A technology, payments, and transformation leader in UK financial services and FinTech. He is CTO and Payments Director at TSB Bank, where he leads a bank-wide transformation that brings technology and business leadership closer together. Earlier, as Group CTO at Orwell Group he conceived the ipagoo platform, the first cloud-first regulated EMI certified by the FCA and ACPR on AWS and Azure. As Chief Architect for the Payment Systems Regulator he led the New Payments Architecture, and he has contributed to Bank of England, ISO 20022, and Open Banking committees. He founded Digital Transformation Advisory in 2019.</p>
         <p class="leader-bio"><a href="{{ '/' | relative_url }}#leadership">See the full leadership story</a>.</p>
       </div>
     </div>
