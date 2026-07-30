@@ -26,7 +26,8 @@ canonical:
   clean_room: "A working demonstration built to production-grade controls on synthetic data: a proving ground for testing propositions, deliberately not a production system that runs with real customers."
   prototype_purpose: "The prototype is a working proving ground. We test propositions on it with test consumers, never real customers, and produce a vendor-neutral working specification a client takes to whatever vendor and build they choose to go live with."
   working_spec: "The prototype is a working specification, expressed in open standards (ISO 20022 messaging, BIAN domain boundaries, recognised control frameworks). Because the standards are the shared language vendors already use, the specification is portable and reusable, vendor-neutral rather than locked to one supplier."
-  mission_public: "We help banks build the future of finance without leaving the customer behind."
+  mission_public: "Digital Transformation Advisory helps organisations and firms navigate the transition from the industrial operating model to the AI-first organisation. Through open standards, practical research and software, we make transformation observable, governable and executable."
+  proving_grounds: "Banks and payments are our proving grounds."
   mission_internal: "DTA helps institutions evolve their customers, colleagues and technology together, through multiple forms of intelligence, to create trustworthy, inclusive and resilient financial systems."
   accountable_bank: "Accountable Bank is the name of our demonstration: a clean-room demonstration on synthetic data, not a regulated bank."
 
@@ -49,7 +50,7 @@ principles:
   - name: Standards and interoperability
     line: Build on open standards so the work is portable and vendor-neutral.
 
-# Legacy pre-convergence `intelligences:` block removed 2026-07-05 — superseded by `solutions:` below.
+# Legacy pre-convergence `intelligences:` block removed 2026-07-05, superseded by `solutions:` below.
 # Folds: Trust+Control→Accountability, Financial→Value, Platform→substrate (removed from the taxonomy).
 # It was unreferenced by any template. See the DTA Naming Registry and DTA-TDR-0005.
 

@@ -3,15 +3,17 @@ layout: corporate
 title: About
 permalink: /about/
 description: >-
-  Digital Transformation Advisory is strategic advisory for the future of
-  banking, helping institutions build banking that is trustworthy, inclusive,
-  and resilient, without leaving any consumer behind.
+  Digital Transformation Advisory helps organisations and firms navigate the
+  transition from the industrial operating model to the AI-first organisation,
+  making transformation observable, governable and executable. Banks and
+  payments are our proving grounds.
 ---
 
 <div class="insights-header">
   <div class="container">
     <h1>About DTA</h1>
     <p>{{ site.data.copy.canonical.mission_public }}</p>
+    <p style="font-weight:700;">{{ site.data.copy.canonical.proving_grounds }}</p>
     <div class="hero-actions" style="justify-content:flex-start;">
       {% include cta-calendly.html kind="strategy_call" loc="about-hero" label="Discuss a challenge" %}
       <a href="{{ '/transformation-intelligence/' | relative_url }}" class="btn btn--outline">How we think</a>

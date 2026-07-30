@@ -442,3 +442,30 @@
   review: monthly
   status: Agreed
   verification: The Transformation Intelligence page leads with the Shared Trust Ledger and the graph is described as one implementation; the platform page no longer calls the ledger a projection of the graph.
+
+- id: dta-brand-architecture-umbrella
+  ref: DTA-DR-0054
+  question: How do DTA, Transformation Intelligence, MTDR, the platform and the articles fit together?
+  owner: Founder
+  purpose: >-
+    Make Digital Transformation Advisory the umbrella and everything else a component of one
+    discipline, rather than competing flagships. Its mission: help organisations and firms
+    migrate safely from the industrial operating model to the AI-first organisation.
+    Transformation Intelligence is demoted from the lead category to one capability (research
+    and observability). Transformation Organisation is introduced as the execution discipline.
+  inputs: [Brand Architecture v1 note, North Star v9.1, Enterprise Capability Evolution framework, Naming Registry]
+  outputs: [
+    "Canonical narrative adopted: navigate the transition from the industrial operating model to the AI-first organisation, making transformation observable, governable and executable",
+    "Transformation Intelligence re-levelled to one capability under DTA",
+    "Transformation Observatory is the public platform name; North Star stays the internal doctrine name",
+    "Audience is organisations and firms; banks and payments are proving grounds",
+    "Transformation Organisation introduced as the execution discipline (home of Enterprise Capability Evolution)",
+  ]
+  alternatives: [Keep Transformation Intelligence as the lead category, Position DTA as an AI transformation consultancy]
+  expected: Phase 1 lands the umbrella narrative on the homepage and About; Phase 2 introduces Transformation Organisation and re-levels Transformation Intelligence; Phase 3 reconciles the platform and Observatory naming and the navigation.
+  evidence: [dta-trust-ledger-organising-concept]
+  risks: Re-levels Transformation Intelligence so soon after the rebuild; the internal North Star and Naming Registry must be updated to match.
+  confidence: high
+  review: monthly
+  status: Agreed
+  verification: The homepage and About carry the umbrella narrative with organisations and firms as the audience and banks and payments as proving grounds; the canonical mission line reads as agreed.
