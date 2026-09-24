@@ -40,6 +40,10 @@ else
   home=$(cat _site/index.html)
 fi
 
+if [ "$mode" = "_site" ]; then
+  . "$(dirname "$0")/lib/require-fresh-build.sh" && require_fresh_build
+fi
+
 echo "Checking /platform/ ($mode)…"
 
 has_i()    { printf '%s' "$1" | grep -Fqi -- "$2"; }
