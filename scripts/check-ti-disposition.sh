@@ -10,7 +10,7 @@
 # the title, description and every figure, not only the body copy.
 #
 # Two POSITIVE CONTROLS prove the retired strings still live on surfaces that
-# were deliberately deferred (/observatory/ and the homepage). They are there so
+# were deliberately deferred (/observatory/ and /approach/). They are there so
 # nobody widens this check into a site-wide clean-up by accident: those surfaces
 # get their own disposition, not a grep. The first control was /platform/ until
 # 25 Sep 2026, when /platform/ was migrated on purpose and the control did its
@@ -32,14 +32,14 @@ if [ "${1:-}" = "--live" ]; then
   mode="live"
   page=$(curl -fsSL -H 'Cache-Control: no-cache' "$SITE/transformation-intelligence/") || { echo "cannot fetch $SITE/transformation-intelligence/"; exit 1; }
   observatory=$(curl -fsSL -H 'Cache-Control: no-cache' "$SITE/observatory/") || { echo "cannot fetch $SITE/observatory/"; exit 1; }
-  home=$(curl -fsSL -H 'Cache-Control: no-cache' "$SITE/") || { echo "cannot fetch $SITE/"; exit 1; }
+  approach=$(curl -fsSL -H 'Cache-Control: no-cache' "$SITE/approach/") || { echo "cannot fetch $SITE/approach/"; exit 1; }
 else
-  for f in _site/transformation-intelligence/index.html _site/observatory/index.html _site/index.html; do
+  for f in _site/transformation-intelligence/index.html _site/observatory/index.html _site/approach/index.html; do
     [ -f "$f" ] || { echo "missing $f (run: bundle exec jekyll build)"; exit 1; }
   done
   page=$(cat _site/transformation-intelligence/index.html)
   observatory=$(cat _site/observatory/index.html)
-  home=$(cat _site/index.html)
+  approach=$(cat _site/approach/index.html)
 fi
 
 if [ "$mode" = "_site" ]; then
@@ -127,7 +127,7 @@ fi
 
 # --- 5. Positive controls: the deferred surfaces still carry the old words ----
 has   "$observatory" "Eight Intelligences" || { echo "  POSITIVE CONTROL FAILED: /observatory/ no longer says \"Eight Intelligences\" (that surface has its own disposition)"; fail=1; }
-has   "$home"     "Eight ways in" || { echo "  POSITIVE CONTROL FAILED: / no longer says \"Eight ways in\" (that surface has its own disposition)"; fail=1; }
+has_i "$approach" "institutional memory" || { echo "  POSITIVE CONTROL FAILED: /approach/ no longer says \"institutional memory\" (that surface has its own disposition)"; fail=1; }
 
 # --- 6. Link targets ----------------------------------------------------------
 if [ "$mode" = "live" ]; then
