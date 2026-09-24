@@ -27,6 +27,16 @@
   status = 301
 
 [[redirects]]
+  from = "/platform/dta-repositioning"
+  to = "/platform/"
+  status = 301
+
+[[redirects]]
+  from = "/platform/dta-repositioning/"
+  to = "/platform/"
+  status = 301
+
+[[redirects]]
   from = "/architecture-library"
   to = "/architecture/"
   status = 301
