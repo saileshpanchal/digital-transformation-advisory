@@ -9,10 +9,12 @@
 # are expanded and {% seo %} has emitted the front matter, so the scan covers
 # the title, description and every figure, not only the body copy.
 #
-# Two POSITIVE CONTROLS prove the retired strings still live on the surfaces
-# that were deliberately deferred (/platform/ and the homepage). They are there
-# so nobody widens this check into a site-wide clean-up by accident: those
-# surfaces get their own disposition, not a grep.
+# Two POSITIVE CONTROLS prove the retired strings still live on surfaces that
+# were deliberately deferred (/observatory/ and the homepage). They are there so
+# nobody widens this check into a site-wide clean-up by accident: those surfaces
+# get their own disposition, not a grep. The first control was /platform/ until
+# 25 Sep 2026, when /platform/ was migrated on purpose and the control did its
+# job by forcing the question; it now points at the next deferred surface.
 #
 # Usage:
 #   scripts/check-ti-disposition.sh          against _site/ (run `bundle exec jekyll build` first)
@@ -29,14 +31,14 @@ mode="_site"
 if [ "${1:-}" = "--live" ]; then
   mode="live"
   page=$(curl -fsSL -H 'Cache-Control: no-cache' "$SITE/transformation-intelligence/") || { echo "cannot fetch $SITE/transformation-intelligence/"; exit 1; }
-  platform=$(curl -fsSL -H 'Cache-Control: no-cache' "$SITE/platform/") || { echo "cannot fetch $SITE/platform/"; exit 1; }
+  observatory=$(curl -fsSL -H 'Cache-Control: no-cache' "$SITE/observatory/") || { echo "cannot fetch $SITE/observatory/"; exit 1; }
   home=$(curl -fsSL -H 'Cache-Control: no-cache' "$SITE/") || { echo "cannot fetch $SITE/"; exit 1; }
 else
-  for f in _site/transformation-intelligence/index.html _site/platform/index.html _site/index.html; do
+  for f in _site/transformation-intelligence/index.html _site/observatory/index.html _site/index.html; do
     [ -f "$f" ] || { echo "missing $f (run: bundle exec jekyll build)"; exit 1; }
   done
   page=$(cat _site/transformation-intelligence/index.html)
-  platform=$(cat _site/platform/index.html)
+  observatory=$(cat _site/observatory/index.html)
   home=$(cat _site/index.html)
 fi
 
@@ -120,7 +122,7 @@ else
 fi
 
 # --- 5. Positive controls: the deferred surfaces still carry the old words ----
-has_i "$platform" "trust ledger" || { echo "  POSITIVE CONTROL FAILED: /platform/ no longer says \"trust ledger\" (that surface has its own disposition)"; fail=1; }
+has   "$observatory" "Eight Intelligences" || { echo "  POSITIVE CONTROL FAILED: /observatory/ no longer says \"Eight Intelligences\" (that surface has its own disposition)"; fail=1; }
 has   "$home"     "Eight ways in" || { echo "  POSITIVE CONTROL FAILED: / no longer says \"Eight ways in\" (that surface has its own disposition)"; fail=1; }
 
 # --- 6. Link targets ----------------------------------------------------------
