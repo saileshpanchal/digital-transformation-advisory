@@ -1,0 +1,43 @@
+{%- comment -%}
+The proposition, drawn: a job requires skills; a participant is selected to
+perform it; the participant may be a person, an agent, a service, software or
+a supplier; and value, authority, decision and evidence are established for the
+job whichever participant performs it. Same .dg-* kit as the other figures.
+Marker id is unique to this include.
+{%- endcomment -%}
+<div class="diagram">
+  <svg viewBox="0 0 760 300" role="img" aria-label="A job requires skills and is performed by a selected participant: a person, an agent, a service, software or a supplier. Value, authority, decision and evidence are established for the job whichever participant performs it.">
+    <defs>
+      <marker id="dg-arrow-job" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 1 L 9 5 L 0 9 z" fill="#9bc9e6"></path>
+      </marker>
+    </defs>
+    <!-- the chain -->
+    <rect class="dg-node" x="20" y="22" width="220" height="46" rx="8"></rect>
+    <text class="dg-label" x="130" y="50" text-anchor="middle">Job</text>
+    <line class="dg-link" x1="242" y1="45" x2="266" y2="45" marker-end="url(#dg-arrow-job)"></line>
+    <rect class="dg-node" x="270" y="22" width="220" height="46" rx="8"></rect>
+    <text class="dg-label" x="380" y="50" text-anchor="middle">Skill need</text>
+    <line class="dg-link" x1="492" y1="45" x2="516" y2="45" marker-end="url(#dg-arrow-job)"></line>
+    <rect class="dg-node" x="520" y="22" width="220" height="46" rx="8"></rect>
+    <text class="dg-label" x="630" y="50" text-anchor="middle">Participant</text>
+    <!-- the participant is one of these -->
+    <path class="dg-link" d="M 630 70 L 630 98 L 380 98 L 380 124" marker-end="url(#dg-arrow-job)"></path>
+    <text class="dg-sub" x="380" y="118" text-anchor="middle" style="font-size:11px;">selected from</text>
+    <rect class="dg-node-soft" x="20" y="130" width="132" height="42" rx="8"></rect>
+    <text class="dg-label" x="86" y="156" text-anchor="middle" style="font-size:13px;">Human</text>
+    <rect class="dg-node-soft" x="172" y="130" width="132" height="42" rx="8"></rect>
+    <text class="dg-label" x="238" y="156" text-anchor="middle" style="font-size:13px;">Agent</text>
+    <rect class="dg-node-soft" x="324" y="130" width="132" height="42" rx="8"></rect>
+    <text class="dg-label" x="390" y="156" text-anchor="middle" style="font-size:13px;">Service</text>
+    <rect class="dg-node-soft" x="476" y="130" width="132" height="42" rx="8"></rect>
+    <text class="dg-label" x="542" y="156" text-anchor="middle" style="font-size:13px;">Software</text>
+    <rect class="dg-node-soft" x="628" y="130" width="112" height="42" rx="8"></rect>
+    <text class="dg-label" x="684" y="156" text-anchor="middle" style="font-size:13px;">Supplier</text>
+    <!-- what holds whichever participant performs the job -->
+    <line class="dg-link" x1="380" y1="176" x2="380" y2="212" marker-end="url(#dg-arrow-job)"></line>
+    <rect class="dg-node-accent" x="20" y="218" width="720" height="58" rx="8"></rect>
+    <text class="dg-label-light" x="380" y="243" text-anchor="middle">Value · Authority · Decision · Evidence</text>
+    <text class="dg-label-light" x="380" y="264" text-anchor="middle" style="font-size:12px;font-weight:500;opacity:0.92;">established for the job, whichever participant performs it</text>
+  </svg>
+</div>

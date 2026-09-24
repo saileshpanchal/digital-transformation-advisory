@@ -11,7 +11,7 @@
 # because the site chrome legitimately links elsewhere.
 #
 # Two POSITIVE CONTROLS prove retired vocabulary still lives on surfaces that
-# were deliberately deferred (/observatory/ and the homepage), so nobody widens
+# were deliberately deferred (/observatory/ and /approach/), so nobody widens
 # this check into a site-wide clean-up by accident.
 #
 # Usage:
@@ -30,14 +30,14 @@ if [ "${1:-}" = "--live" ]; then
   mode="live"
   page=$(curl -fsSL -H 'Cache-Control: no-cache' "$SITE/platform/") || { echo "cannot fetch $SITE/platform/"; exit 1; }
   observatory=$(curl -fsSL -H 'Cache-Control: no-cache' "$SITE/observatory/") || { echo "cannot fetch $SITE/observatory/"; exit 1; }
-  home=$(curl -fsSL -H 'Cache-Control: no-cache' "$SITE/") || { echo "cannot fetch $SITE/"; exit 1; }
+  approach=$(curl -fsSL -H 'Cache-Control: no-cache' "$SITE/approach/") || { echo "cannot fetch $SITE/approach/"; exit 1; }
 else
-  for f in _site/platform/index.html _site/observatory/index.html _site/index.html; do
+  for f in _site/platform/index.html _site/observatory/index.html _site/approach/index.html; do
     [ -f "$f" ] || { echo "missing $f (run: bundle exec jekyll build)"; exit 1; }
   done
   page=$(cat _site/platform/index.html)
   observatory=$(cat _site/observatory/index.html)
-  home=$(cat _site/index.html)
+  approach=$(cat _site/approach/index.html)
 fi
 
 if [ "$mode" = "_site" ]; then
@@ -109,7 +109,7 @@ check_anchor "cta-ti"       "/transformation-intelligence/" ""
 
 # --- 4. Positive controls: the deferred surfaces still carry the old words ----
 has "$observatory" "Eight Intelligences" || { echo "  POSITIVE CONTROL FAILED: /observatory/ no longer says \"Eight Intelligences\" (that surface has its own disposition)"; fail=1; }
-has "$home"        "Eight ways in"       || { echo "  POSITIVE CONTROL FAILED: / no longer says \"Eight ways in\" (that surface has its own disposition)"; fail=1; }
+has_i "$approach" "institutional memory" || { echo "  POSITIVE CONTROL FAILED: /approach/ no longer says \"institutional memory\" (that surface has its own disposition)"; fail=1; }
 
 # --- 5. Link targets ----------------------------------------------------------
 targets="/composable-bank/ /composable-bank/change/ /composable-bank/platform/ /transformation-intelligence/ /observatory/ /solutions/architecture/ /solutions/value/ /solutions/capability/ /solutions/accountability/ /connect/"
