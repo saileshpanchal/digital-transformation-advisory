@@ -1,0 +1,42 @@
+{%- comment -%}
+The organisational chain the consolidated North Star describes (section 8):
+purpose and value justify jobs; jobs require skills and authority; participants
+are selected to perform them; every action leaves evidence. Two rows read as one
+chain. Evidence carries the accent because it is what closes the loop.
+Marker id is unique to this include: one id per built page.
+{%- endcomment -%}
+<div class="diagram">
+  <svg viewBox="0 0 760 210" role="img" aria-label="The organisational chain: Purpose, Value, Jobs, Skills, Authority, Participants, Action, Evidence">
+    <defs>
+      <marker id="dg-arrow-chain" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 1 L 9 5 L 0 9 z" fill="#9bc9e6"></path>
+      </marker>
+    </defs>
+    <!-- row one: what justifies the work -->
+    <rect class="dg-node" x="20" y="24" width="150" height="46" rx="8"></rect>
+    <text class="dg-label" x="95" y="52" text-anchor="middle">Purpose</text>
+    <line class="dg-link" x1="172" y1="47" x2="196" y2="47" marker-end="url(#dg-arrow-chain)"></line>
+    <rect class="dg-node" x="200" y="24" width="150" height="46" rx="8"></rect>
+    <text class="dg-label" x="275" y="52" text-anchor="middle">Value</text>
+    <line class="dg-link" x1="352" y1="47" x2="376" y2="47" marker-end="url(#dg-arrow-chain)"></line>
+    <rect class="dg-node" x="380" y="24" width="150" height="46" rx="8"></rect>
+    <text class="dg-label" x="455" y="52" text-anchor="middle">Jobs</text>
+    <line class="dg-link" x1="532" y1="47" x2="556" y2="47" marker-end="url(#dg-arrow-chain)"></line>
+    <rect class="dg-node" x="560" y="24" width="150" height="46" rx="8"></rect>
+    <text class="dg-label" x="635" y="52" text-anchor="middle">Skills</text>
+    <!-- the turn: from what the work needs to who may perform it -->
+    <path class="dg-link" d="M 635 72 L 635 104 L 95 104 L 95 134" marker-end="url(#dg-arrow-chain)"></path>
+    <!-- row two: who may act, and what it leaves behind -->
+    <rect class="dg-node" x="20" y="138" width="150" height="46" rx="8"></rect>
+    <text class="dg-label" x="95" y="166" text-anchor="middle">Authority</text>
+    <line class="dg-link" x1="172" y1="161" x2="196" y2="161" marker-end="url(#dg-arrow-chain)"></line>
+    <rect class="dg-node" x="200" y="138" width="150" height="46" rx="8"></rect>
+    <text class="dg-label" x="275" y="166" text-anchor="middle">Participants</text>
+    <line class="dg-link" x1="352" y1="161" x2="376" y2="161" marker-end="url(#dg-arrow-chain)"></line>
+    <rect class="dg-node" x="380" y="138" width="150" height="46" rx="8"></rect>
+    <text class="dg-label" x="455" y="166" text-anchor="middle">Action</text>
+    <line class="dg-link" x1="532" y1="161" x2="556" y2="161" marker-end="url(#dg-arrow-chain)"></line>
+    <rect class="dg-node-accent" x="560" y="138" width="150" height="46" rx="8"></rect>
+    <text class="dg-label-light" x="635" y="166" text-anchor="middle">Evidence</text>
+  </svg>
+</div>
