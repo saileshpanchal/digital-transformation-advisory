@@ -36,6 +36,23 @@ h4 { font-size: 1.1rem; }
 p { margin-bottom: 1rem; }
 
 /* ---------- Layout ---------- */
+/* ---------- Widths and rhythm (28 Sep 2026, the designer's review) ----------
+   Two widths, not one: --content-w is the argument width (prose, the reveal
+   statement, the credibility line); --composition-w is the composition width
+   (card grids, figures, the hero, the connected homepage map). Its top value
+   equals .container's 1200px so compositions and inner pages share one edge on
+   widescreen. Two kinds of vertical space: --rhythm-chapter where the page
+   changes the question (the bank's section padding); --rhythm-continue inside
+   one causal argument. Tokens, not per-page edits. */
+:root{
+  --content-w:900px;
+  --composition-w:900px;
+  --rhythm-chapter:clamp(82px,10vw,148px);
+  --rhythm-continue:clamp(28px,3.5vw,56px);
+}
+@media (min-width:1400px){:root{--composition-w:1100px;}}
+@media (min-width:1600px){:root{--composition-w:1200px;}}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -43,7 +60,7 @@ p { margin-bottom: 1rem; }
 }
 
 .section {
-  padding: 5rem 0;
+  padding: var(--rhythm-chapter) 0;
 }
 
 .section--light {
@@ -2578,20 +2595,20 @@ a.offering-card h3::after { content: " \2192"; color: #29ABE2; font-weight: 700;
 :root{
   --map-ink:#161616;--map-cyan:#29abe2;--map-cyan-dark:#0877a6;--map-cyan-pale:#dff4fc;--map-cyan-bright:#76d2f5;
   --map-paper:#ffffff;--map-muted:#5d6871;--map-line:rgba(22,22,22,.16);--map-line-soft:rgba(22,22,22,.10);
-  --map-w:900px;--map-pad-x:clamp(20px,5vw,72px);
+  --map-pad-x:clamp(20px,5vw,72px);
 }
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
 .eyebrow{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:var(--map-cyan-dark);}
 
 /* thesis */
-.thesis{max-width:var(--map-w);margin:0 auto;padding:clamp(40px,6vw,72px) var(--map-pad-x) clamp(20px,3vw,30px);text-align:center;}
+.thesis{max-width:var(--composition-w);margin:0 auto;padding:clamp(40px,6vw,72px) var(--map-pad-x) clamp(20px,3vw,30px);text-align:center;}
 .thesis .thesis-h{margin:14px auto 0;font-weight:800;letter-spacing:-.04em;line-height:1.02;font-size:clamp(28px,4.4vw,52px);max-width:18ch;}
 .thesis .sub{margin:18px auto 0;color:var(--map-muted);font-weight:600;font-size:clamp(14px,1.5vw,17px);max-width:52ch;}
 .thesis .sub b{color:var(--map-ink);}
 .thesis .buyer-line{margin:16px auto 0;color:var(--map-cyan-dark);font-weight:700;font-size:13px;letter-spacing:.01em;max-width:58ch;}
 
 /* the map */
-.map{max-width:var(--map-w);margin:0 auto;padding:10px var(--map-pad-x) clamp(50px,7vw,90px);}
+.map{max-width:var(--composition-w);margin:0 auto;padding:10px var(--map-pad-x) var(--rhythm-continue);}
 .layer-label{text-align:center;margin:0 0 14px;}
 .layer-line{text-align:center;margin:-4px auto 18px;font-size:clamp(18px,2.2vw,24px);font-weight:800;letter-spacing:-.02em;color:var(--map-ink);max-width:28ch;}
 .layer-sub{text-align:center;margin:-8px auto 20px;font-size:15px;line-height:1.55;color:var(--map-muted);max-width:62ch;}
@@ -2669,7 +2686,7 @@ a.ichip span{font-size:12px;color:var(--map-muted);font-weight:600;}
 /* planes read as the triad evolved together; applied stays plain detail links */
 .planes .node{border-top-color:var(--map-cyan);}
 /* founder credibility beat */
-.credibility{max-width:var(--map-w);margin:0 auto 6px;padding:0 var(--map-pad-x);text-align:center;color:var(--map-muted);font-size:13.5px;font-weight:600;}
+.credibility{max-width:var(--content-w);margin:0 auto 6px;padding:0 var(--map-pad-x);text-align:center;color:var(--map-muted);font-size:13.5px;font-weight:600;}
 .credibility a{color:var(--map-cyan-dark);border-bottom:2px solid transparent;}
 .credibility a:hover{border-color:var(--map-cyan);}
 /* ── The DTA Stack: the compounding spine ─────────────────── */
