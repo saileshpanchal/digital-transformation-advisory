@@ -1,5 +1,5 @@
 [build]
-  command = "bundle install && bundle exec jekyll build && ./scripts/check-public-showcase.sh"
+  command = "bundle install && bundle exec jekyll build && ./scripts/check-public-showcase.sh && ./scripts/check-bank-artefact.sh"
   publish = "_site"
 
 [build.environment]

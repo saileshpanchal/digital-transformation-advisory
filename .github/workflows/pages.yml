@@ -29,6 +29,8 @@ jobs:
           destination: ./_site
       - name: Verify public showcase boundary
         run: ./scripts/check-public-showcase.sh
+      - name: Verify the bank artefact is whole
+        run: ./scripts/check-bank-artefact.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
