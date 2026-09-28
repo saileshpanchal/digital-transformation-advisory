@@ -49,15 +49,17 @@ p { margin-bottom: 1rem; }
   --composition-w:900px;
   --rhythm-chapter:clamp(82px,10vw,148px);
   --rhythm-continue:clamp(28px,3.5vw,56px);
+  --page-w:1200px;
+  --nav-h:70px;
   --hero-paper:#f0f0f0;
   --hero-fade:clamp(96px,15vh,180px);
 }
 @supports (height:1svh){:root{--hero-fade:clamp(96px,15svh,180px);}}
 @media (min-width:1400px){:root{--composition-w:1100px;}}
-@media (min-width:1600px){:root{--composition-w:1200px;}}
+@media (min-width:1600px){:root{--composition-w:var(--page-w);}}
 
 .container {
-  max-width: 1200px;
+  max-width: var(--page-w);
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -115,7 +117,7 @@ p { margin-bottom: 1rem; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
+  height: var(--nav-h);
 }
 
 .navbar-logo {
@@ -310,6 +312,13 @@ p { margin-bottom: 1rem; }
 .btn--nav {
   padding: 0.55rem 1.4rem;
   font-size: 0.85rem;
+}
+
+.btn--pill {
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  white-space: nowrap;
 }
 
 .hero-actions {
@@ -1140,7 +1149,6 @@ p { margin-bottom: 1rem; }
   .container { padding: 0 1rem; }
   h1 { font-size: 1.8rem; }
   h2 { font-size: 1.4rem; }
-  .section { padding: 3rem 0; }
   .hero h1 { font-size: 1.6rem; }
   .partners-grid { gap: 1.5rem; }
   .partners-grid img { height: 35px; }
@@ -2696,19 +2704,19 @@ a.ichip span{font-size:12px;color:var(--map-muted);font-weight:600;}
    focus rings never enter the faded region at any width or height.
    Montserrat Alternates is the hero's voice only: 800 for the headline, 400
    for the eyebrow and subline; nothing else on the site uses it. */
-.hero-field{position:relative;isolation:isolate;overflow:hidden;display:grid;min-height:max(560px,100vh);min-height:max(560px,100svh);padding-top:70px;}
+.hero-field{position:relative;isolation:isolate;overflow:hidden;display:grid;min-height:max(560px,100vh);min-height:max(560px,100svh);padding-top:var(--nav-h);}
 .hero-field__bg{position:absolute;inset:0;z-index:0;background:var(--hero-paper);pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,#000 calc(100% - var(--hero-fade)),transparent 100%);mask-image:linear-gradient(to bottom,#000 calc(100% - var(--hero-fade)),transparent 100%);}
 .hero-field__bg canvas{position:absolute;inset:0;width:100%;height:100%;color:var(--map-cyan);}
 .hero-field__wash{position:absolute;inset:0;background:radial-gradient(ellipse 34% 30% at 50% 50%,var(--hero-paper) 0%,transparent 100%);}
 .hero-field__copy{position:relative;z-index:1;width:100%;max-width:var(--composition-w);margin:0 auto;padding:clamp(40px,6vh,80px) var(--map-pad-x) calc(var(--hero-fade) + 24px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
-.hero-field__eyebrow{display:inline-flex;align-items:center;gap:8px;margin:0 0 22px;padding:6px 14px;border:1px solid var(--map-line);border-radius:999px;background:rgba(255,255,255,.55);font-family:'Montserrat Alternates',Montserrat,Arial,sans-serif;font-weight:400;font-size:12.5px;letter-spacing:.02em;color:var(--map-muted);}
+.hero-field__eyebrow,.hero-field__h,.hero-field__sub{font-family:'Montserrat Alternates',Montserrat,Arial,sans-serif;}
+.hero-field__eyebrow{display:inline-flex;align-items:center;gap:8px;margin:0 0 22px;padding:6px 14px;border:1px solid var(--map-line);border-radius:999px;background:rgba(255,255,255,.55);font-weight:400;font-size:12.5px;letter-spacing:.02em;color:var(--map-muted);}
 .hero-field__dot{width:6px;height:6px;border-radius:50%;background:var(--map-cyan);}
-.hero-field__h{margin:0 auto;max-width:18ch;font-family:'Montserrat Alternates',Montserrat,Arial,sans-serif;font-weight:800;font-size:clamp(32px,4.8vw,60px);letter-spacing:-.03em;line-height:1.02;color:var(--map-ink);text-wrap:balance;}
-.hero-field__sub{margin:22px auto 0;max-width:52ch;font-family:'Montserrat Alternates',Montserrat,Arial,sans-serif;font-weight:400;font-size:clamp(17px,1.7vw,21px);line-height:1.35;color:var(--map-ink);}
-.hero-field__actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:34px;}
-.hero-field .btn{white-space:nowrap;border-radius:999px;padding:.85rem 1.6rem;font-size:.95rem;}
-.hero-field .btn--ghost{background:rgba(255,255,255,.7);border-color:var(--map-line);color:var(--map-ink);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);}
-.hero-field .btn--ghost:hover{border-color:var(--map-cyan);color:var(--map-cyan-dark);}
+.hero-field__h{margin:0 auto;max-width:18ch;font-weight:800;font-size:clamp(32px,4.8vw,60px);letter-spacing:-.03em;line-height:1.02;color:var(--map-ink);text-wrap:balance;}
+.hero-field__sub{margin:22px auto 0;max-width:52ch;font-weight:400;font-size:clamp(17px,1.7vw,21px);line-height:1.35;color:var(--map-ink);}
+.hero-field__actions{gap:12px;margin-top:34px;}
+.hero-field .btn--ghost{background:rgba(255,255,255,.7);}
+.hero-field .btn--ghost:hover{color:var(--map-cyan-dark);}
 .hero-field .btn .arr{transition:transform .2s;}
 .hero-field .btn:hover .arr{transform:translateX(3px);}
 /* ── The reveal: the hinge from the hero into the consequence ───────────

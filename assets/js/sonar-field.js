@@ -1,7 +1,7 @@
 /*
  * Sonar field: the dot field behind the homepage hero.
  *
- * A vanilla port of the designer's SonarGrid (React + canvas), 28 Sep 2026.
+ * A vanilla port of the designer's dot-field reference, 28 Sep 2026.
  * Decorative infrastructure: the canvas is aria-hidden and takes no pointer
  * events; the ping listener on the host never calls preventDefault, so the
  * hero's links keep working; without this script the hero is a plain panel
@@ -25,7 +25,7 @@
   var host = document.querySelector('[data-sonar-host]');
   if (!host) return;
   var canvas = host.querySelector('canvas');
-  var ctx = canvas && canvas.getContext ? canvas.getContext('2d') : null;
+  var ctx = canvas && canvas.getContext('2d');
   if (!ctx) return;
 
   var O = {
@@ -44,15 +44,14 @@
   };
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-  var color = getComputedStyle(canvas).color || '#29abe2';
+  var color = getComputedStyle(canvas).color;
   var roundRect = typeof ctx.roundRect === 'function';
-  var width = 0, height = 0, rings = [], raf = 0, timer = 0, lastFrame = 0, state = '', onScreen = true;
+  var width = 0, height = 0, dpr = 0, cols = 0, rows = 0, ox = 0, oy = 0, life = 0;
+  var rings = [], hot = null, raf = 0, timer = 0, lastFrame = 0, state = '', onScreen = true;
 
   function setState(s) { if (state !== s) { state = s; host.setAttribute('data-sonar', s); } }
-  // seconds until a ring's wavefront has left the canvas
-  function lifetime() { return (Math.hypot(width, height) + O.ringWidth) / O.speed; }
 
-  // a rounded square with side 2r (the brand override; the demo drew circles)
+  // a rounded square with side 2r (the brand override; the reference drew circles)
   function dot(cx, cy, r) {
     var side = 2 * r;
     if (roundRect) ctx.roundRect(cx - r, cy - r, side, side, side * O.corner);
@@ -60,16 +59,14 @@
   }
 
   function draw() {
-    var life = lifetime(), live = [], i;
-    for (i = 0; i < rings.length; i++) {
-      var radius = rings[i].age * O.speed;
-      live.push({ x: rings[i].x, y: rings[i].y, radius: radius, reach: radius + O.ringWidth, fade: 1 - rings[i].age / life });
-    }
+    if (!hot) return;
+    var live = rings.map(function (g) {
+      var radius = g.age * O.speed, inner = radius - O.ringWidth, outer = radius + O.ringWidth;
+      return { x: g.x, y: g.y, radius: radius, in2: inner > 0 ? inner * inner : 0, out2: outer * outer, fade: 1 - g.age / life };
+    });
     ctx.clearRect(0, 0, width, height);
     ctx.fillStyle = color;
-    var cols = Math.ceil(width / O.spacing) + 1, rows = Math.ceil(height / O.spacing) + 1;
-    var ox = (width - (cols - 1) * O.spacing) / 2, oy = (height - (rows - 1) * O.spacing) / 2;
-    var hot = [];
+    var n = 0;
     // pass 1: every resting dot in one path and one fill
     ctx.globalAlpha = O.baseOpacity;
     ctx.beginPath();
@@ -77,21 +74,20 @@
       var cx = ox + c * O.spacing;
       for (var r = 0; r < rows; r++) {
         var cy = oy + r * O.spacing, energy = 0;
-        for (i = 0; i < live.length; i++) {
-          var g = live[i];
-          if (Math.abs(cx - g.x) > g.reach || Math.abs(cy - g.y) > g.reach) continue;
-          var dist = Math.abs(Math.hypot(cx - g.x, cy - g.y) - g.radius);
-          if (dist >= O.ringWidth) continue;
-          var t = 1 - dist / O.ringWidth;
-          var k = t * t * (3 - 2 * t) * g.fade; // smoothstep, fading with age
+        for (var i = 0; i < live.length; i++) {
+          var g = live[i], dx = cx - g.x, dy = cy - g.y, d2 = dx * dx + dy * dy;
+          if (d2 >= g.out2 || d2 < g.in2) continue; // outside the wavefront's band
+          var t = 1 - Math.abs(Math.sqrt(d2) - g.radius) / O.ringWidth;
+          var k = t * t * (3 - 2 * t) * g.fade;      // smoothstep, fading with age
           if (k > energy) energy = k;
         }
-        if (energy < 0.01) dot(cx, cy, O.dotRadius); else hot.push(cx, cy, energy);
+        if (energy < 0.01) dot(cx, cy, O.dotRadius);
+        else { hot[n++] = cx; hot[n++] = cy; hot[n++] = energy; }
       }
     }
     ctx.fill();
     // pass 2: only the dots on a wavefront get their own alpha and size
-    for (i = 0; i < hot.length; i += 3) {
+    for (i = 0; i < n; i += 3) {
       var e = hot[i + 2];
       ctx.globalAlpha = O.baseOpacity + (1 - O.baseOpacity) * e;
       ctx.beginPath();
@@ -105,15 +101,10 @@
     raf = 0;
     var dt = lastFrame ? Math.min((now - lastFrame) / 1000, O.maxDelta) : 0;
     lastFrame = now;
-    var life = lifetime(), kept = [];
-    for (var i = 0; i < rings.length; i++) {
-      rings[i].age += dt;
-      if (rings[i].age < life) kept.push(rings[i]);
-    }
-    rings = kept;
+    rings = rings.filter(function (g) { g.age += dt; return g.age < life; });
     draw();
     if (rings.length) raf = requestAnimationFrame(frame);
-    else { lastFrame = 0; setState('idle'); }
+    else setState('idle');
   }
 
   function run() {
@@ -127,38 +118,50 @@
     run();
   }
 
-  function arm() { if (!timer && O.pingEvery > 0) timer = window.setTimeout(ambient, O.pingEvery * 1000); }
+  // a ring at fractions (fx, fy) of the ping area
+  function pingAt(fx, fy, age) {
+    var a = O.pingArea;
+    addRing(width * (a[0] + fx * (a[2] - a[0])), height * (a[1] + fy * (a[3] - a[1])), age);
+  }
+
+  function arm() { if (!timer) timer = window.setTimeout(ambient, O.pingEvery * 1000); }
   function ambient() {
     timer = 0;
     if (reduce.matches || state === 'paused') return;
-    var a = O.pingArea;
-    addRing(width * (a[0] + Math.random() * (a[2] - a[0])), height * (a[1] + Math.random() * (a[3] - a[1])));
+    pingAt(Math.random(), Math.random());
     arm();
   }
 
+  function stop() { cancelAnimationFrame(raf); window.clearTimeout(timer); raf = timer = 0; }
+
   function pause() {
-    if (raf) { cancelAnimationFrame(raf); raf = 0; }
-    if (timer) { window.clearTimeout(timer); timer = 0; }
-    rings = []; lastFrame = 0;
+    if (state === 'paused' || state === 'static') return;
+    stop();
+    rings = [];
     draw();
     setState(reduce.matches ? 'static' : 'paused');
   }
   function resume() {
-    if (!onScreen || document.hidden) return;
-    if (reduce.matches) { setState('static'); return; }
-    if (state !== 'paused') return;
+    if (!onScreen || document.hidden || reduce.matches || state !== 'paused') return;
     setState('idle');
     arm();
   }
 
   function resize() {
     var rect = host.getBoundingClientRect();
-    width = Math.max(1, Math.round(rect.width));
-    height = Math.max(1, Math.round(rect.height));
-    var dpr = Math.min(window.devicePixelRatio || 1, O.maxDpr);
+    var w = Math.max(1, Math.round(rect.width)), h = Math.max(1, Math.round(rect.height));
+    var d = Math.min(window.devicePixelRatio || 1, O.maxDpr);
+    if (w === width && h === height && d === dpr) return; // the observer's first callback repeats the explicit call
+    width = w; height = h; dpr = d;
     canvas.width = Math.round(width * dpr);
     canvas.height = Math.round(height * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    cols = Math.ceil(width / O.spacing) + 1;
+    rows = Math.ceil(height / O.spacing) + 1;
+    ox = (width - (cols - 1) * O.spacing) / 2;
+    oy = (height - (rows - 1) * O.spacing) / 2;
+    hot = new Float32Array(cols * rows * 3);
+    life = (Math.hypot(width, height) + O.ringWidth) / O.speed; // seconds until a ring's wavefront has left the canvas
     draw();
   }
 
@@ -168,11 +171,12 @@
     addRing(e.clientX - rect.left, e.clientY - rect.top);
   });
   document.addEventListener('visibilitychange', function () { if (document.hidden) pause(); else resume(); });
+  // The site serves this file to any browser, so the observers keep their fallbacks.
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (entries) {
-      onScreen = entries[0] ? entries[0].isIntersecting : true;
+      onScreen = entries[entries.length - 1].isIntersecting;
       if (onScreen) resume(); else pause();
-    }, { threshold: 0 }).observe(host);
+    }).observe(host);
   }
   if ('ResizeObserver' in window) new ResizeObserver(resize).observe(host);
   else window.addEventListener('resize', resize);
@@ -184,7 +188,5 @@
   if (reduce.matches) { setState('static'); return; }
   setState('idle');
   arm();
-  var a = O.pingArea;
-  // seed: one ring already mid-expansion, so the first paint shows the idea
-  addRing(width * (a[0] + (a[2] - a[0]) * 0.68), height * (a[1] + (a[3] - a[1]) * 0.34), 0.5);
+  pingAt(0.68, 0.34, 0.5); // seed: one ring already mid-expansion, so the first paint shows the idea
 })();

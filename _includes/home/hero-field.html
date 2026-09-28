@@ -1,15 +1,13 @@
 {%- comment -%}
 The homepage hero (28 Sep 2026, the designer's review): the change the site
-leads with, over a dot field that answers taps with rings. Two layers. The
-background layer carries the paper, the canvas, the radial wash and THE MASK,
-so the bottom band dissolves into the page white. The copy layer is unmasked,
-and a shared --hero-fade token pads it above the band, so no viewport width or
-height can put the headline, subline, links or a focus ring into the faded
-region. The field is drawn by assets/js/sonar-field.js; without it the hero is
-a plain panel and the copy is untouched. Frozen strings: see
+leads with, over a dot field that answers taps with rings. Layers and the mask:
+see the .hero-field block in assets/css/corporate.css. The field is drawn by
+assets/js/sonar-field.js, loaded here because this is its only host; without it
+the hero is a plain panel and the copy is untouched. Frozen strings: see
 dta-internal/home-claims-disposition.md; scripts/check-home-disposition.sh
 asserts them.
 {%- endcomment -%}
+{%- capture book_label -%}{{ site.data.copy.cta_labels.strategy_call }} <span class="arr" aria-hidden="true">&rarr;</span>{%- endcapture -%}
 <section class="hero-field" data-sonar-host>
   <div class="hero-field__bg" aria-hidden="true">
     <canvas aria-hidden="true"></canvas>
@@ -20,8 +18,9 @@ asserts them.
     <h1 class="hero-field__h">Execution is getting faster. Organisations aren't.</h1>
     <p class="hero-field__sub">Move the bank forward without betting it.</p>
     <div class="hero-actions hero-field__actions">
-      <a data-check="home-bank-hero" href="{{ '/composable-bank/' | relative_url }}" class="btn btn--primary">Ask the organisation</a>
-      {% include cta-calendly.html kind="strategy_call" loc="home-hero" label='Book a call <span class="arr" aria-hidden="true">&rarr;</span>' class="btn--ghost" %}
+      <a data-check="home-bank-hero" href="{{ '/composable-bank/' | relative_url }}" class="btn btn--primary btn--pill">Ask the organisation</a>
+      {% include cta-calendly.html kind="strategy_call" loc="home-hero" label=book_label class="btn--ghost btn--pill" %}
     </div>
   </div>
+  <script defer src="{{ '/assets/js/sonar-field.js' | relative_url }}"></script>
 </section>

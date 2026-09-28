@@ -1,15 +1,16 @@
 {%- comment -%}
 The hinge from the hero into the consequence (28 Sep 2026): the hero's one
-line, revealed word by word as it travels through the viewport. In the flow at
-its natural height; never pinned. Assistive technology reads the full sentence
-from the visually hidden span; the word spans are aria-hidden and are what the
-eye sees. The stylesheet renders every word at full opacity;
-assets/js/scroll-reveal.js adds reveal--enhanced and drives the opacities from
-scroll position, and does nothing under prefers-reduced-motion.
+line, revealed word by word as it travels through the viewport. Assistive
+technology reads the full sentence from the visually hidden span; the word
+spans are aria-hidden and are what the eye sees. Behaviour and the
+progressive-enhancement contract: see the .reveal block in
+assets/css/corporate.css and assets/js/scroll-reveal.js, loaded here because
+this is its only host.
 {%- endcomment -%}
 {%- assign statement = "AI is compressing work that took teams weeks into days. As execution gets cheaper and faster, the constraint moves elsewhere: deciding what should happen, establishing who may act, coordinating the consequences, and proving what happened." -%}
 {%- assign words = statement | split: " " -%}
 <section class="reveal" data-reveal>
   <div class="reveal__rule" aria-hidden="true"><span></span></div>
   <p class="reveal__statement"><span class="vh">{{ statement }}</span>{% for w in words %}<span class="reveal__word" aria-hidden="true">{{ w }}</span>{% unless forloop.last %}{{ " " }}{% endunless %}{% endfor %}</p>
+  <script defer src="{{ '/assets/js/scroll-reveal.js' | relative_url }}"></script>
 </section>

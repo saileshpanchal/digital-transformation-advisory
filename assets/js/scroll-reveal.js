@@ -34,24 +34,26 @@
     var start = count <= 1 ? 0 : (i / (count - 1)) * SPREAD;
     return [start, Math.min(1, start + WORD_DURATION)];
   });
-  var queued = false;
+  var written = words.map(function () { return ''; });
+  var lastP = -1, queued = false;
+
+  function clamp01(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
 
   function progress() {
     var rect = statement.getBoundingClientRect();
-    var vh = window.innerHeight || document.documentElement.clientHeight;
-    var p = (START_LINE * vh - rect.top) / ((START_LINE - END_LINE) * vh + rect.height);
-    return p < 0 ? 0 : p > 1 ? 1 : p;
+    var vh = window.innerHeight;
+    return clamp01((START_LINE * vh - rect.top) / ((START_LINE - END_LINE) * vh + rect.height));
   }
 
   function paint() {
     queued = false;
     var p = progress();
+    if (p === lastP) return; // outside the reveal's window p sits at 0 or 1 and nothing changes
+    lastP = p;
     for (var i = 0; i < count; i++) {
-      var s = ranges[i][0], e = ranges[i][1], o;
-      if (p <= s) o = START_OPACITY;
-      else if (p >= e) o = 1;
-      else o = START_OPACITY + (1 - START_OPACITY) * ((p - s) / (e - s));
-      words[i].style.opacity = o.toFixed(3);
+      var s = ranges[i][0], e = ranges[i][1];
+      var o = (START_OPACITY + (1 - START_OPACITY) * clamp01((p - s) / (e - s))).toFixed(3);
+      if (o !== written[i]) { written[i] = o; words[i].style.opacity = o; }
     }
     if (rule) rule.style.transform = 'scaleY(' + p.toFixed(4) + ')';
   }
@@ -62,5 +64,5 @@
   paint(); // the same frame as the class: no flash from 1 to 0.15
   window.addEventListener('scroll', schedule, { passive: true });
   window.addEventListener('resize', schedule);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(schedule);
+  document.fonts.ready.then(schedule);
 })();
