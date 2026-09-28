@@ -36,6 +36,26 @@ h4 { font-size: 1.1rem; }
 p { margin-bottom: 1rem; }
 
 /* ---------- Layout ---------- */
+/* ---------- Widths and rhythm (28 Sep 2026, the designer's review) ----------
+   Two widths, not one: --content-w is the argument width (prose, the reveal
+   statement, the credibility line); --composition-w is the composition width
+   (card grids, figures, the hero, the connected homepage map). Its top value
+   equals .container's 1200px so compositions and inner pages share one edge on
+   widescreen. Two kinds of vertical space: --rhythm-chapter where the page
+   changes the question (the bank's section padding); --rhythm-continue inside
+   one causal argument. Tokens, not per-page edits. */
+:root{
+  --content-w:900px;
+  --composition-w:900px;
+  --rhythm-chapter:clamp(82px,10vw,148px);
+  --rhythm-continue:clamp(28px,3.5vw,56px);
+  --hero-paper:#f0f0f0;
+  --hero-fade:clamp(96px,15vh,180px);
+}
+@supports (height:1svh){:root{--hero-fade:clamp(96px,15svh,180px);}}
+@media (min-width:1400px){:root{--composition-w:1100px;}}
+@media (min-width:1600px){:root{--composition-w:1200px;}}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -43,7 +63,7 @@ p { margin-bottom: 1rem; }
 }
 
 .section {
-  padding: 5rem 0;
+  padding: var(--rhythm-chapter) 0;
 }
 
 .section--light {
@@ -221,7 +241,10 @@ p { margin-bottom: 1rem; }
 }
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   padding: 0.8rem 2rem;
   border-radius: 4px;
   font-weight: 600;
@@ -2578,20 +2601,13 @@ a.offering-card h3::after { content: " \2192"; color: #29ABE2; font-weight: 700;
 :root{
   --map-ink:#161616;--map-cyan:#29abe2;--map-cyan-dark:#0877a6;--map-cyan-pale:#dff4fc;--map-cyan-bright:#76d2f5;
   --map-paper:#ffffff;--map-muted:#5d6871;--map-line:rgba(22,22,22,.16);--map-line-soft:rgba(22,22,22,.10);
-  --map-w:900px;--map-pad-x:clamp(20px,5vw,72px);
+  --map-pad-x:clamp(20px,5vw,72px);
 }
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
 .eyebrow{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:var(--map-cyan-dark);}
 
-/* thesis */
-.thesis{max-width:var(--map-w);margin:0 auto;padding:clamp(40px,6vw,72px) var(--map-pad-x) clamp(20px,3vw,30px);text-align:center;}
-.thesis .thesis-h{margin:14px auto 0;font-weight:800;letter-spacing:-.04em;line-height:1.02;font-size:clamp(28px,4.4vw,52px);max-width:18ch;}
-.thesis .sub{margin:18px auto 0;color:var(--map-muted);font-weight:600;font-size:clamp(14px,1.5vw,17px);max-width:52ch;}
-.thesis .sub b{color:var(--map-ink);}
-.thesis .buyer-line{margin:16px auto 0;color:var(--map-cyan-dark);font-weight:700;font-size:13px;letter-spacing:.01em;max-width:58ch;}
-
 /* the map */
-.map{max-width:var(--map-w);margin:0 auto;padding:10px var(--map-pad-x) clamp(50px,7vw,90px);}
+.map{max-width:var(--composition-w);margin:0 auto;padding:10px var(--map-pad-x) var(--rhythm-continue);}
 .layer-label{text-align:center;margin:0 0 14px;}
 .layer-line{text-align:center;margin:-4px auto 18px;font-size:clamp(18px,2.2vw,24px);font-weight:800;letter-spacing:-.02em;color:var(--map-ink);max-width:28ch;}
 .layer-sub{text-align:center;margin:-8px auto 20px;font-size:15px;line-height:1.55;color:var(--map-muted);max-width:62ch;}
@@ -2669,9 +2685,42 @@ a.ichip span{font-size:12px;color:var(--map-muted);font-weight:600;}
 /* planes read as the triad evolved together; applied stays plain detail links */
 .planes .node{border-top-color:var(--map-cyan);}
 /* founder credibility beat */
-.credibility{max-width:var(--map-w);margin:0 auto 6px;padding:0 var(--map-pad-x);text-align:center;color:var(--map-muted);font-size:13.5px;font-weight:600;}
+.credibility{max-width:var(--content-w);margin:var(--rhythm-continue) auto 0;padding:0 var(--map-pad-x);text-align:center;color:var(--map-muted);font-size:13.5px;font-weight:600;}
 .credibility a{color:var(--map-cyan-dark);border-bottom:2px solid transparent;}
 .credibility a:hover{border-color:var(--map-cyan);}
+/* ── The hero field (28 Sep 2026, the designer's review) ────────────────
+   Two layers. The background layer carries the paper, the canvas (drawn by
+   assets/js/sonar-field.js), the radial wash and the mask: the bottom band
+   dissolves into the page white. The copy layer is unmasked and padded above
+   the band by the same --hero-fade token, so headline, subline, links and
+   focus rings never enter the faded region at any width or height.
+   Montserrat Alternates is the hero's voice only: 800 for the headline, 400
+   for the eyebrow and subline; nothing else on the site uses it. */
+.hero-field{position:relative;isolation:isolate;overflow:hidden;display:grid;min-height:max(560px,100vh);min-height:max(560px,100svh);padding-top:70px;}
+.hero-field__bg{position:absolute;inset:0;z-index:0;background:var(--hero-paper);pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,#000 calc(100% - var(--hero-fade)),transparent 100%);mask-image:linear-gradient(to bottom,#000 calc(100% - var(--hero-fade)),transparent 100%);}
+.hero-field__bg canvas{position:absolute;inset:0;width:100%;height:100%;color:var(--map-cyan);}
+.hero-field__wash{position:absolute;inset:0;background:radial-gradient(ellipse 34% 30% at 50% 50%,var(--hero-paper) 0%,transparent 100%);}
+.hero-field__copy{position:relative;z-index:1;width:100%;max-width:var(--composition-w);margin:0 auto;padding:clamp(40px,6vh,80px) var(--map-pad-x) calc(var(--hero-fade) + 24px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+.hero-field__eyebrow{display:inline-flex;align-items:center;gap:8px;margin:0 0 22px;padding:6px 14px;border:1px solid var(--map-line);border-radius:999px;background:rgba(255,255,255,.55);font-family:'Montserrat Alternates',Montserrat,Arial,sans-serif;font-weight:400;font-size:12.5px;letter-spacing:.02em;color:var(--map-muted);}
+.hero-field__dot{width:6px;height:6px;border-radius:50%;background:var(--map-cyan);}
+.hero-field__h{margin:0 auto;max-width:18ch;font-family:'Montserrat Alternates',Montserrat,Arial,sans-serif;font-weight:800;font-size:clamp(32px,4.8vw,60px);letter-spacing:-.03em;line-height:1.02;color:var(--map-ink);text-wrap:balance;}
+.hero-field__sub{margin:22px auto 0;max-width:52ch;font-family:'Montserrat Alternates',Montserrat,Arial,sans-serif;font-weight:400;font-size:clamp(17px,1.7vw,21px);line-height:1.35;color:var(--map-ink);}
+.hero-field__actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:34px;}
+.hero-field .btn{white-space:nowrap;border-radius:999px;padding:.85rem 1.6rem;font-size:.95rem;}
+.hero-field .btn--ghost{background:rgba(255,255,255,.7);border-color:var(--map-line);color:var(--map-ink);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);}
+.hero-field .btn--ghost:hover{border-color:var(--map-cyan);color:var(--map-cyan-dark);}
+.hero-field .btn .arr{transition:transform .2s;}
+.hero-field .btn:hover .arr{transform:translateX(3px);}
+/* ── The reveal: the hinge from the hero into the consequence ───────────
+   In the flow at its natural height; never pinned. The stylesheet renders
+   every word at full opacity and the rule fully drawn; scroll-reveal.js
+   drives both from scroll position when it runs (reveal--enhanced). */
+.reveal{max-width:var(--content-w);margin:0 auto;padding:var(--rhythm-continue) var(--map-pad-x);display:grid;grid-template-columns:1px minmax(0,1fr);gap:40px;align-items:start;}
+.reveal__rule{position:relative;width:1px;height:112px;overflow:hidden;background:var(--map-line);}
+.reveal__rule span{position:absolute;inset:0;display:block;background:var(--map-ink);transform-origin:top;transform:scaleY(1);}
+.reveal__statement{margin:0;max-width:30ch;font-size:clamp(24px,3vw,40px);font-weight:800;letter-spacing:-.035em;line-height:1.1;color:var(--map-ink);text-wrap:balance;}
+.reveal__statement span{opacity:1;}
+@media (max-width:600px){.reveal{grid-template-columns:1fr;gap:0;}.reveal__rule{display:none;}}
 /* ── The DTA Stack: the compounding spine ─────────────────── */
 .dta-stack { max-width: 820px; margin: 3rem auto 0; }
 .dta-stack-layers { list-style: none; margin: 0; padding: 0; position: relative; }
