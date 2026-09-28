@@ -1,7 +1,7 @@
 /*
  * Scroll word reveal: the homepage's hinge from the hero into the consequence.
  *
- * A port of the designer's motion.dev text-scroll-word-reveal, 28 Sep 2026,
+ * A port of the designer's scroll-word-reveal reference, 28 Sep 2026,
  * without the 220vh sticky stage: the statement sits in the flow at its
  * natural height and never pins. Progress is read from the statement's own
  * rectangle: 0 when its top reaches the lower 80% line of the viewport, 1 when
