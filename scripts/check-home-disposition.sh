@@ -2,6 +2,10 @@
 #
 # Homepage disposition check.
 #
+# 13 Nov 2026: moved onto the new homepage. Its disposition was written, and recorded privately, before this change.
+# The 25 Sep disposition's retired strings stay retired; its distinctive strings and anchors are replaced by the new page's.
+# Against the homepage at 70360c8 this check fails, as it must.
+#
 # The homepage was rebuilt on 25 Sep 2026 to lead with the change in the world
 # rather than with what DTA built (dta-internal/home-claims-disposition.md):
 # change -> consequence -> proposition -> proof -> how we help -> Transformation
@@ -71,49 +75,50 @@ for s in "${retired[@]}"; do absent_i "$s"; done
 EMDASH=$'\xe2\x80\x94'
 if has "$page" "$EMDASH"; then echo "  em-dash present (voice-lint hard fail)"; fail=1; fi
 
-# --- 2. The seven moves' distinctive strings: present -------------------------------
+# --- 1b. Further words a public homepage must not carry ---------------------------
+for s in "Partners & Licensing" "Partners &amp; Licensing" "licence" "license" "Transformation Miner" "MTDR" "harness"; do absent_i "$s"; done
+if printf '%s' "$page" | grep -Eq '(^|[^A-Za-z])TIM([^A-Za-z]|$)'; then echo "  internal name present: \"TIM\""; fail=1; fi
+
+# --- 2. The new homepage's words: present, case-sensitive ------------------------------------
 distinctive=(
-  "Execution is getting faster. Organisations aren't."
-  "Move the bank forward without betting it"
-  "fixing AI rather than redesigning the organisation"
-  "designed for human-speed organisations"
-  "Design it around the work"
-  "The job should not depend on"
-  "Ask the organisation"
-  "Start where it hurts"
-  "One organisation. Many questions."
-  "Records · Projections · Reconstructions"
-  "Know your organisation. Question it. Change it with evidence."
-  "executable model of the organisation"
-  "dg-arrow-job"
+  "Understand your organisation."
+  "Design better customer propositions."
+  "Deliver change you can prove."
+  "DTA provides strategic advisory, organisational discovery and design, customer proposition design, and engineering and assurance."
+  "Make better decisions"
+  "Design customer propositions"
+  "Engineer and assure change"
+  "Manage a bill"
+  "Pay someone new"
+  "Explore the bank"
+  "See the approach working"
+  "One connected approach"
+  "How clients engage us"
+  "Evidence, thinking and contact"
 )
 for s in "${distinctive[@]}"; do present "$s"; done
 
-# --- 3. Scoped anchors ------------------------------------------------------------------
-check_anchor() {   # $1 data-check value, $2 required href fragment
-  local tags n
-  tags=$(printf '%s' "$page" | grep -o "<a[^>]*data-check=\"$1\"[^>]*>")
-  n=$(printf '%s' "$tags" | grep -c '<a' | tr -d ' ')
-  if [ "$n" != "1" ]; then echo "  expected exactly one anchor data-check=\"$1\", found $n"; fail=1; return; fi
-  printf '%s' "$tags" | grep -Eq "href=\"[^\"]*$2" || { echo "  anchor $1 does not link $2"; fail=1; }
-}
-check_anchor "home-bank-hero" "/composable-bank/"
-check_anchor "home-bank"      "/composable-bank/"
-check_anchor "home-ti"        "/transformation-intelligence/"
-asks=$(printf '%s' "$page" | grep -o '<a[^>]*data-ask="[^"]*"[^>]*>')
-n=$(printf '%s' "$asks" | grep -c '<a' | tr -d ' ')
-[ "$n" = "7" ] || { echo "  expected seven Ask-the-organisation anchors, found $n"; fail=1; }
-bad=$(printf '%s' "$asks" | grep -v 'href="[^"]*/composable-bank/' | grep -c '<a' | tr -d ' ')
-[ "$bad" = "0" ] || { echo "  $bad Ask-the-organisation anchor(s) do not link into /composable-bank/"; fail=1; }
-chips=$(printf '%s' "$page" | grep -o 'class="ichip"' | wc -l | tr -d ' ')
-[ "$chips" = "8" ] || { echo "  expected the eight entry-point cards, found $chips"; fail=1; }
+# --- 3. Scoped anchors: four buyer choices, three demonstration choices -----------------------
+offers=$(printf '%s' "$page" | grep -o '<a[^>]*data-offer="[^"]*"[^>]*>')
+n=$(printf '%s' "$offers" | grep -c '<a' | tr -d ' ')
+[ "$n" = "4" ] || { echo "  expected four buyer choices, found $n"; fail=1; }
+for o in strategic-advisory organisational-discovery customer-jobs engineering-assurance; do
+  printf '%s' "$offers" | grep -q "data-offer=\"$o\"" && printf '%s' "$offers" | grep "data-offer=\"$o\"" | grep -q "href=\"/$o/\"" \
+    || { echo "  the buyer choice $o does not open /$o/"; fail=1; }
+done
+demos=$(printf '%s' "$page" | grep -o 'data-demo="[^"]*"' | sort -u | wc -l | tr -d ' ')
+[ "$demos" = "3" ] || { echo "  expected three demonstration choices, found $demos"; fail=1; }
+for d in bill pay explore; do
+  block=$(printf '%s' "$page" | tr '\n' ' ' | grep -o "data-demo=\"$d\".*" | sed 's/<\/div>[[:space:]]*<\/div>.*//')
+  printf '%s' "$block" | grep -q 'href="/composable-bank/' || { echo "  the demonstration choice $d opens nothing in the bank"; fail=1; }
+done
 
 # --- 4. Positive controls: the deferred surfaces still carry the old words --------------
 has   "$observatory" "Eight Intelligences"  || { echo "  POSITIVE CONTROL FAILED: /observatory/ no longer says \"Eight Intelligences\" (that surface has its own disposition)"; fail=1; }
 has_i "$approach"    "institutional memory" || { echo "  POSITIVE CONTROL FAILED: /approach/ no longer says \"institutional memory\" (that surface has its own disposition)"; fail=1; }
 
 # --- 5. Link targets --------------------------------------------------------------------
-targets="/composable-bank/ /composable-bank/organisation/ /composable-bank/change/ /composable-bank/family-wealth/ /transformation-intelligence/ /solutions/ /agentic-delivery/"
+targets="/strategic-advisory/ /organisational-discovery/ /customer-jobs/ /engineering-assurance/ /what-we-do/ /enquiry/ /insights/ /composable-bank/ /composable-bank/bills/ /composable-bank/pay-someone-new/ /composable-bank/organisation/ /composable-bank/change/ /about/ /agentic-delivery/"
 if [ "$mode" = "live" ]; then
   for p in $targets; do curl -fsI "$SITE$p" >/dev/null || { echo "  link target unreachable: $p"; fail=1; }; done
 else

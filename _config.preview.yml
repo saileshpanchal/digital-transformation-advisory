@@ -1,0 +1,3 @@
+# A private preview build: built with `--config _config.yml,_config.preview.yml`. No form on the preview
+# can send, and every page asks not to be indexed. The live site is built without this file.
+preview: true

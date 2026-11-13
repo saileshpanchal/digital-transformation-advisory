@@ -9,6 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Montserrat+Alternates:wght@400;800&display=swap" rel="stylesheet">
   <link rel="icon" href="{{ '/assets/images/corporate/dta-icon.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/corporate.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/commercial.css' | relative_url }}">
+  {% if site.preview %}<meta name="robots" content="noindex, nofollow">{% endif %}
   {% feed_meta %}
   {% seo %}
   {% include analytics.html %}
@@ -16,22 +18,23 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar">
+  {% assign u = page.url %}
+  <nav class="navbar" data-header>
     <div class="container">
-      <a href="{{ '/' | relative_url }}">
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="Digital Transformation Advisory: home">
         <img src="{{ '/assets/images/corporate/dta-icon.png' | relative_url }}" alt="{{ site.title }}" class="navbar-logo">
       </a>
-      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav" data-menu>
         <span></span><span></span><span></span>
       </button>
-      <div class="nav-links">
-        <a href="{{ '/solutions/' | relative_url }}">Solutions</a>
-        <a href="{{ '/transformation-intelligence/' | relative_url }}">Transformation Intelligence</a>
-        <a href="{{ '/observatory/' | relative_url }}">Observatory</a>
-        <a href="{{ '/platform/' | relative_url }}">Platform</a>
-        <a href="{{ '/about/' | relative_url }}">About</a>
-        {% include cta-calendly.html kind="strategy_call" loc="nav" label="Discuss a challenge" class="btn--primary btn--nav" %}
+      <div class="nav-links" id="site-nav">
+        <a href="{{ '/what-we-do/' | relative_url }}"{% if u == '/what-we-do/' %} class="active"{% endif %}>What We Do</a>
+        <a href="{{ '/composable-bank/' | relative_url }}">Accountable Bank</a>
+        <a href="{{ '/transformation-intelligence/' | relative_url }}"{% if u == '/transformation-intelligence/' %} class="active"{% endif %}>Transformation Intelligence</a>
+        <a href="{{ '/insights/' | relative_url }}"{% if u == '/insights/' %} class="active"{% endif %}>Insights</a>
+        <a href="{{ '/about/' | relative_url }}"{% if u == '/about/' %} class="active"{% endif %}>About DTA</a>
       </div>
+      <a href="{{ '/enquiry/' | relative_url }}" class="btn btn--primary btn--nav cta">Discuss a Challenge</a>
     </div>
   </nav>
 
@@ -45,12 +48,12 @@
           <img src="{{ '/assets/images/corporate/dta-logo.png' | relative_url }}" alt="{{ site.title }}" class="footer-logo">
         </a>
         <div class="footer-links">
-          <a href="{{ '/solutions/' | relative_url }}">Solutions</a>
+          <a href="{{ '/what-we-do/' | relative_url }}">What We Do</a>
+          <a href="{{ '/composable-bank/' | relative_url }}">Accountable Bank</a>
           <a href="{{ '/transformation-intelligence/' | relative_url }}">Transformation Intelligence</a>
-          <a href="{{ '/observatory/' | relative_url }}">Observatory</a>
-          <a href="{{ '/platform/' | relative_url }}">Platform</a>
-          <a href="{{ '/field-notes/' | relative_url }}">Field Notes</a>
-          <a href="{{ '/connect/' | relative_url }}">Contact</a>
+          <a href="{{ '/insights/' | relative_url }}">Insights</a>
+          <a href="{{ '/about/' | relative_url }}">About DTA</a>
+          <a href="{{ '/enquiry/' | relative_url }}">Contact</a>
           <a href="{{ '/policy-documentation/' | relative_url }}">Policies</a>
           {% if site.linkedin and site.linkedin != "" %}<a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
           {% if site.medium and site.medium != "" %}<a href="{{ site.medium }}" target="_blank" rel="noopener">Medium</a>{% endif %}
@@ -61,5 +64,6 @@
     </div>
   </footer>
 
+  <script src="{{ '/assets/js/site-nav.js' | relative_url }}" defer></script>
 </body>
 </html>

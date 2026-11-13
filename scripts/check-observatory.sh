@@ -57,13 +57,13 @@ require_text briefings.html "Briefings"
 require_text docs/observatory-model-template.md "Required evidence fields"
 require_text docs/observatory-model-template.md "Claim guardrail checklist"
 
-require_text _layouts/corporate.html "/observatory/"
-require_text _layouts/corporate.html "Observatory"
-
-if grep -Fq ">Insights<" _layouts/corporate.html; then
-  echo "stale nav/footer label in _layouts/corporate.html: Insights"
-  fail=1
-fi
+# 13 Nov 2026: the new navigation puts the Observatory, Field Notes and Briefings
+# under Insights, and /insights/ becomes their hub. So the layout links /insights/, the hub links /observatory/, and
+# "Insights" is no longer a stale label. Before this change the check already failed at 70360c8 on the missing
+# docs/observatory-model-template.md, which this change leaves as it was.
+require_text _layouts/corporate.html "/insights/"
+require_text insights.html "/observatory/"
+require_text insights.html "Observatory"
 
 if [ "$fail" -ne 0 ]; then
   echo "observatory check failed"

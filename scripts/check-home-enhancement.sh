@@ -15,6 +15,9 @@ cd "$(git rev-parse --show-toplevel)"
 fail=0
 page=_site/index.html
 js=(sonar-field.js scroll-reveal.js)
+# 13 Nov 2026: the new homepage keeps the dot field and has no word-by-word reveal. The reveal's
+# rules apply only where the page still carries it; every other rule is unchanged.
+grep -Fq 'scroll-reveal.js' "$page" 2>/dev/null || js=(sonar-field.js)
 
 for f in "$page" _site/assets/css/corporate.css; do
   [ -f "$f" ] || { echo "missing $f (run: scripts/build-site.sh)"; exit 1; }
@@ -25,8 +28,10 @@ css=$(tr -d ' \n\t' < _site/assets/css/corporate.css)
 echo "Checking the homepage's progressive enhancement (_site)…"
 
 # 1. Without a script, every word of the reveal is readable.
-printf '%s' "$css" | grep -Fq '.reveal__statementspan{opacity:1' \
-  || { echo "  the stylesheet's default for reveal words is not opacity:1"; fail=1; }
+if [ "${#js[@]}" -eq 2 ]; then
+  printf '%s' "$css" | grep -Fq '.reveal__statementspan{opacity:1' \
+    || { echo "  the stylesheet's default for reveal words is not opacity:1"; fail=1; }
+fi
 
 # 2. The enhancement class is added by the script, never baked into the markup.
 grep -Fq 'reveal--enhanced' "$page" \
