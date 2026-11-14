@@ -6,6 +6,14 @@
   RUBY_VERSION = "3.3.6"
   JEKYLL_ENV = "production"
 
+# The older copy of this site, dta-advisory.netlify.app, builds from this repository too. Every request to that host goes to the
+# same path on the main domain, so there is one site, and one place where forms arrive. First, so no other rule answers first.
+[[redirects]]
+  from = "https://dta-advisory.netlify.app/*"
+  to = "https://digital-transformation-advisory.com/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/sfia"
   to = "/capability-intelligence/"
