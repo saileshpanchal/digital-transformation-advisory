@@ -9,7 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Montserrat+Alternates:wght@400;800&display=swap" rel="stylesheet">
   <link rel="icon" href="{{ '/assets/images/corporate/dta-icon.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/corporate.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/commercial.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/site-nav.css' | relative_url }}">
+  {% if page.commercial %}<link rel="stylesheet" href="{{ '/assets/css/commercial.css' | relative_url }}">{% endif %}
   {% if site.preview %}<meta name="robots" content="noindex, nofollow">{% endif %}
   {% feed_meta %}
   {% seo %}

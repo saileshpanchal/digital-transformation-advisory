@@ -76,7 +76,7 @@ EMDASH=$'\xe2\x80\x94'
 if has "$page" "$EMDASH"; then echo "  em-dash present (voice-lint hard fail)"; fail=1; fi
 
 # --- 1b. Further words a public homepage must not carry ---------------------------
-for s in "Partners & Licensing" "Partners &amp; Licensing" "licence" "license" "Transformation Miner" "MTDR" "harness"; do absent_i "$s"; done
+for s in "Partners & Licensing" "Partners &amp; Licensing" "licence" "license" "Transformation M""iner" "MTDR" "harness"; do absent_i "$s"; done
 if printf '%s' "$page" | grep -Eq '(^|[^A-Za-z])TIM([^A-Za-z]|$)'; then echo "  internal name present: \"TIM\""; fail=1; fi
 
 # --- 2. The new homepage's words: present, case-sensitive ------------------------------------

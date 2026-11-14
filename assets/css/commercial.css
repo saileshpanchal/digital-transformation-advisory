@@ -1,18 +1,4 @@
-/* The commercial pages: components corporate.css does not have, in its own tokens, and the navigation bar's narrow layout. */
-.navbar .container { gap: 1.5rem; }
-.navbar .brand { display: inline-flex; align-items: center; flex: none; }
-.navbar .nav-links { margin-left: auto; }
-.navbar .btn--nav { flex: none; white-space: nowrap; order: 8; color: #333; font-size: 0.9rem; font-weight: 500; }
-.navbar .nav-toggle { order: 9; }
-@media screen and (max-width: 1023px) {
-  .navbar .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; background: #fff; flex-direction: column; align-items: stretch;
-    padding: 1rem 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); gap: 0; margin-left: 0; }
-  .navbar .nav-links.open { display: flex; }
-  .navbar .nav-links a { padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; min-height: 44px; display: flex; align-items: center; }
-  .navbar .nav-toggle { display: flex; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
-  .navbar .btn--nav { margin-left: auto; min-height: 44px; }
-}
-@media screen and (max-width: 400px) { .navbar .container { gap: .6rem; padding: 0 1rem; } .navbar .btn--nav { padding: .55rem 1rem; } }
+/* The commercial pages only (front matter `commercial: true`): components corporate.css does not have, in its own tokens. */
 html { scroll-padding-top: 84px; }
 
 .hero-field--choices { min-height: 0; }
@@ -137,12 +123,8 @@ main ol { text-align: left; max-width: 900px; margin: 0 auto; }
 @page { size: 1280px 1810px; margin: 48px 0 44px; }
 @media print {
   body { -webkit-print-color-adjust: exact; print-color-adjust: exact; padding-bottom: 0; }
-    .navbar { position: static; }
   .hero-field { padding-top: 0; }
   .insights-header { margin-top: 0; padding-top: 2.5rem; }
-    .navbar .nav-links { display: flex !important; position: static; flex-direction: row; padding: 0; box-shadow: none; gap: 2rem; margin-left: auto; }
-  .navbar .nav-links a { padding: 0; border-bottom: 0; }
-  .navbar .nav-toggle { display: none !important; }
   .quad-grid { grid-template-columns: repeat(4, 1fr); }
   .offering-card, .demo, .example, .partners, .q8 li, .engagement { break-inside: avoid; }
   h1, h2, h3, .eyebrow { break-after: avoid; }
