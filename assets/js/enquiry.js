@@ -1,5 +1,5 @@
 // The one enquiry route: ?service= pre-selects the service and shows its prompt, and
-// ?from= fills the hidden field. In a preview build the form cannot send.
+// ?from= fills the hidden field.
 (() => {
   const select = document.querySelector("[data-service-select]");
   if (!select) return;
@@ -17,6 +17,4 @@
   };
   select.addEventListener("change", sync);
   sync();
-  const form = document.querySelector("[data-enquiry][data-preview]");
-  if (form) form.addEventListener("submit", (e) => e.preventDefault());
 })();

@@ -10,7 +10,7 @@ title: "Discuss a challenge"
     <p class="lede" data-service-line="" hidden="">You are enquiring about <b data-service-name=""></b>.</p>
     <p class="lede" data-service-none="">Tell us what you are working on, or choose a service below.</p></div>
   <section class="offering-card card">
-    {% if site.preview %}<form aria-label="Send a message" data-enquiry data-preview>{% else %}<form aria-label="Send a message" data-enquiry name="enquiry" method="POST" action="{{ '/success/' | relative_url }}" data-netlify="true" netlify-honeypot="bot-field"><input type="hidden" name="form-name" value="enquiry"><p hidden><label>Leave this empty <input name="bot-field"></label></p>{% endif %}
+    <form aria-label="Send a message" data-enquiry name="enquiry" method="POST" action="{{ '/success/' | relative_url }}" data-netlify="true" netlify-honeypot="bot-field"><input type="hidden" name="form-name" value="enquiry"><p hidden><label>Leave this empty <input name="bot-field"></label></p>
       <p><label for="service">What would you like to discuss?</label><br>
       <select id="service" name="service" data-service-select="">
         <option value="strategic-advisory">Strategic Advisory</option><option value="organisational-discovery">Organisational Discovery &amp; Design</option><option value="customer-jobs">Customer Jobs &amp; Proposition Design</option><option value="engineering-assurance">Engineering &amp; Assurance</option>
@@ -26,8 +26,7 @@ title: "Discuss a challenge"
       <p><label for="em">Email</label><br><input id="em" name="email"></p>
       <p><label for="o">Organisation</label><br><input id="o" name="organisation"></p>
       <p><label for="m">Message</label><br><textarea id="m" name="message" rows="5"></textarea></p>
-      {% if site.preview %}<p><button class="btn btn--primary cta" type="submit" disabled>Send message</button></p>
-      <p class="preview-notice" data-preview-notice>This is a private preview. Nothing is sent from this form.</p>{% else %}<p><button class="btn btn--primary cta" type="submit">Send message</button></p>{% endif %}
+      <p><button class="btn btn--primary cta" type="submit">Send message</button></p>
       
     </form>
   </section>

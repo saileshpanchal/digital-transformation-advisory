@@ -17,7 +17,7 @@ permalink: /connect/
 
       <h2>Prefer to send a message?</h2>
       <p class="connect-intro">We'll reply within two working days.</p>
-      <form name="contact" method="POST"{% unless site.preview %} data-netlify="true" netlify-honeypot="bot-field"{% endunless %} action="/success/">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success/">
         <input type="hidden" name="form-name" value="contact">
         <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
         <div class="form-group">
@@ -36,8 +36,7 @@ permalink: /connect/
           <label for="message">Message</label>
           <textarea id="message" name="message" placeholder="What are you trying to do?" rows="3"></textarea>
         </div>
-        <button type="submit" class="btn btn--outline" data-cta="contact-form" data-loc="connect"{% if site.preview %} disabled{% endif %}>Send message</button>
-        {% if site.preview %}<p class="preview-notice">This is a private preview. Nothing is sent from this form.</p>{% endif %}
+        <button type="submit" class="btn btn--outline" data-cta="contact-form" data-loc="connect">Send message</button>
       </form>
     </div>
   </div>
