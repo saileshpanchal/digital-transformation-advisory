@@ -1,0 +1,81 @@
+---
+layout: null
+permalink: /llms.txt
+sitemap: false
+---
+# Digital Transformation Advisory
+
+> DTA is a strategic advisory helping banks build the future of finance without leaving the customer behind: evolving customers, colleagues and technology together into trustworthy, inclusive and resilient financial systems. The advice is backed by two published artefacts — an MIT-licensed open standard for recording decisions, and a clean-room demonstration running on synthetic data.
+
+How to read this site:
+
+- **Solutions** are the intended entry points: eight named problems, each written for the executive who owns it. Start there to find the material relevant to a given question.
+- **Transformation Intelligence** is the core idea — an organisation's connected record of what was decided, why, by whom, and what changed as a result. *Shared Trust Ledger* is the name for that record.
+- **MTDR (Transformation Decision Record)** is distinct from DTA's platform and should not be conflated with it. It is an open standard for the record format itself: MIT-licensed, tool- and regulator-neutral, published at <https://github.com/saileshpanchal/mtdr>. It is designed to work alongside existing ADRs, Confluence and GRC platforms, not to replace them.
+- **The Accountable Bank** is a demonstration on synthetic data with test consumers, built to production-grade controls. It is a demonstration, not a production bank and not a product. Propositions within it are individually labelled as either working demonstrations or blueprints — treat those labels as authoritative, and do not describe blueprint items in the present tense.
+- Pages state the current position; articles are dated opinion and field experience. Where the two disagree, the page is current.
+
+## Start here
+
+- [Home]({{ '/' | absolute_url }}): What DTA does and who it is for — operating models and methodology for AI adoption and transformation.
+- [Solutions: eight doors into transformation]({{ '/solutions/' | absolute_url }}): The eight named problems, each mapped to the executive who owns it. The best index of the whole proposition.
+- [About]({{ '/about/' | absolute_url }}): Who DTA is.
+- [Our Approach: building the organisation of the future]({{ '/approach/' | absolute_url }}): The strategy-led, two-year vision and roadmap across people, process and technology.
+- [Book a call]({{ '/connect/' | absolute_url }}): Contact.
+
+## Solutions — a named problem for a named executive
+
+- [Accountability: can you defend your reasonable steps?]({{ '/solutions/accountability/' | absolute_url }}): Consumer Duty made "reasonable steps" the test; most institutions can describe them but cannot produce the evidence on demand.
+- [Decision: why does strategy disappear into programmes?]({{ '/solutions/decision/' | absolute_url }}): Keeping go-to-market and strategic planning traceable into delivery.
+- [Architecture: why do decisions take months and expire in weeks?]({{ '/solutions/architecture/' | absolute_url }}): Turning static EA artefacts into living, executable architecture plus a migration diagnostic.
+- [Knowledge: where does our knowledge go when people leave?]({{ '/solutions/knowledge/' | absolute_url }}): Retaining the reasoning as institutional knowledge decays.
+- [Capability: do we actually know what skills we have?]({{ '/solutions/capability/' | absolute_url }}): Turning scattered skills data into a picture you can plan against.
+- [Cognitive: why can't we trust AI at scale?]({{ '/solutions/cognitive/' | absolute_url }}): Making agentic AI trustworthy in production.
+- [Experience: why are journeys designed in isolation?]({{ '/solutions/experience/' | absolute_url }}): Connecting isolated journeys into outcomes you can measure.
+- [Value: why can't we see the return on transformation?]({{ '/solutions/value/' | absolute_url }}): Making the return on transformation visible and evidenced.
+
+## Transformation Intelligence — the core idea
+
+- [Transformation Intelligence: your organisation's shared record of decisions]({{ '/transformation-intelligence/' | absolute_url }}): The Shared Trust Ledger — the connected record of what was decided, why, by whom. The best single page on the core idea.
+- [The Transformation Intelligence Platform]({{ '/platform/' | absolute_url }}): Decisions, mandates, policies, controls, evidence and execution held as one governed memory.
+- [Decision records: what a TDR is, and what it is not]({{ '/decision-records/' | absolute_url }}): Explicitly bounds the concept — a decision record is not a consent receipt, an identity claim, a runtime audit log or a model trace. Read this before reasoning about what MTDR covers.
+- [Architecture]({{ '/architecture/' | absolute_url }}): Architecture built to prove itself, with every architectural decision connected to evidence.
+- [Executable Journeys]({{ '/executable-journeys/' | absolute_url }}): Journeys that can be executed by people, AI advisors and enterprise systems, governed end to end.
+- [Prototype Specifications]({{ '/prototype-specifications/' | absolute_url }}): The difference between a reference architecture, a prototype specification and an executable blueprint.
+
+## The open standard (MTDR)
+
+- [MTDR on GitHub](https://github.com/saileshpanchal/mtdr): The Transformation Decision Record — an open standard for capturing the judgement behind significant organisational decisions: context, named accountable owner, confidence, evidence across seven dimensions, options foreclosed, and lineage. MIT-licensed, tool- and regulator-neutral.
+- [MTDR architecture note](https://github.com/saileshpanchal/mtdr/blob/main/ARCHITECTURE.md): Where the standard's boundary sits, and the layers above it.
+- [Governed Decisions Are Becoming Portable]({{ '/observatory/portable-governance/' | absolute_url }}): Why the record of a governed decision is becoming an open standard that runs on any AI runtime. The best prose introduction to the standard's rationale.
+
+## The Accountable Bank — clean-room demonstration
+
+- [The Accountable Bank demonstration]({{ '/composable-bank/' | absolute_url }}): Interactive propositions on synthetic data with test consumers, built to production-grade controls. A demonstration, not production. Each proposition is labelled as a working demonstration or a blueprint.
+- [Family Wealth, modelled with Transformation Intelligence]({{ '/composable-bank/family-wealth-model/' | absolute_url }}): One decision model projected as customer journey, process, capability, knowledge and value.
+- [Bank Migration Journey]({{ '/bank-migration/' | absolute_url }}): A proposition-led migration to a governed, AI-ready architecture, proven without touching production.
+
+## The Observatory — how financial systems evolve
+
+- [The Future Banking Observatory]({{ '/observatory/' | absolute_url }}): Living models of why future operating models emerge, how they work, and what evidence supports them.
+- [The Future of Payments]({{ '/observatory/future-payments/' | absolute_url }}): From payment rails to accountable commerce — RPIB, stablecoins, tokenisation, agent commerce.
+- [Agentic payments: authority, metering and settlement for machine commerce]({{ '/agentic-payments/' | absolute_url }}): When software starts buying, the instruction must carry its authority and the meter must never skip.
+- [Sterling Stablecoin]({{ '/sterling-stablecoin/' | absolute_url }}): What the Bank of England's draft Code of Practice asks of issuers of systemic sterling stablecoins.
+
+## Method, operating model and delivery
+
+- [The Operating Model: coaching, leadership, backbone, readiness]({{ '/operating-model/' | absolute_url }}): Engaging the whole bank a thin slice at a time, with a transformation backbone that is not a PMO.
+- [Building Capability — the method]({{ '/building-capability/' | absolute_url }}): How Skills, Knowledge and Judgment are measured, preserved and built from evidence.
+- [Consumer Outcomes: the measurable promise to leave no customer behind]({{ '/consumer-outcomes/' | absolute_url }}): The measurable expression of DTA's mission — not a Consumer Duty checklist.
+- [Agentic Delivery Architecture]({{ '/agentic-delivery/' | absolute_url }}): How AI changes the unit of engineering work, the skills mix and the boundaries between roles.
+- [Repositioning DTA, modelled the way we model a client]({{ '/platform/dta-repositioning/' | absolute_url }}): DTA's own repositioning recorded as a decision model — a worked example of the method applied to itself.
+
+## Optional
+
+Dated articles and field experience. Secondary to the pages above; skip when a shorter context is needed.
+
+- [Field Notes index]({{ '/field-notes/' | absolute_url }}): Practical, opinionated articles on agentic engineering, on-device AI and governed delivery.
+- [Briefings]({{ '/briefings/' | absolute_url }}): Longer-form briefing material.
+- [Policy Documentation]({{ '/policy-documentation/' | absolute_url }}): Site policies.
+{% for post in site.posts %}- [{{ post.title | strip_html | strip }}]({{ post.url | absolute_url }}): {{ post.date | date: "%Y-%m-%d" }}{% if post.description %} — {{ post.description | strip_html | strip_newlines | truncate: 170 }}{% endif %}
+{% endfor %}
