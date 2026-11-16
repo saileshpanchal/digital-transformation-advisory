@@ -6,6 +6,9 @@
 # The 25 Sep disposition's retired strings stay retired; its distinctive strings and anchors are replaced by the new page's.
 # Against the homepage at 70360c8 this check fails, as it must.
 #
+# 16 Nov 2026: a fourth demonstration choice, Give someone you trust access to cash, opening the bank's cash-collection journey.
+# Against the homepage at b70ccb1 this check fails, as it must.
+#
 # The homepage was rebuilt on 25 Sep 2026 to lead with the change in the world
 # rather than with what DTA built (dta-internal/home-claims-disposition.md):
 # change -> consequence -> proposition -> proof -> how we help -> Transformation
@@ -91,6 +94,7 @@ distinctive=(
   "Manage a bill"
   "Pay someone new"
   "Explore the bank"
+  "Give someone you trust access to cash"
   "See the approach working"
   "One connected approach"
   "How clients engage us"
@@ -98,7 +102,7 @@ distinctive=(
 )
 for s in "${distinctive[@]}"; do present "$s"; done
 
-# --- 3. Scoped anchors: four buyer choices, three demonstration choices -----------------------
+# --- 3. Scoped anchors: four buyer choices, four demonstration choices ------------------------
 offers=$(printf '%s' "$page" | grep -o '<a[^>]*data-offer="[^"]*"[^>]*>')
 n=$(printf '%s' "$offers" | grep -c '<a' | tr -d ' ')
 [ "$n" = "4" ] || { echo "  expected four buyer choices, found $n"; fail=1; }
@@ -107,8 +111,8 @@ for o in strategic-advisory organisational-discovery customer-jobs engineering-a
     || { echo "  the buyer choice $o does not open /$o/"; fail=1; }
 done
 demos=$(printf '%s' "$page" | grep -o 'data-demo="[^"]*"' | sort -u | wc -l | tr -d ' ')
-[ "$demos" = "3" ] || { echo "  expected three demonstration choices, found $demos"; fail=1; }
-for d in bill pay explore; do
+[ "$demos" = "4" ] || { echo "  expected four demonstration choices, found $demos"; fail=1; }
+for d in bill pay explore cash; do
   block=$(printf '%s' "$page" | tr '\n' ' ' | grep -o "data-demo=\"$d\".*" | sed 's/<\/div>[[:space:]]*<\/div>.*//')
   printf '%s' "$block" | grep -q 'href="/composable-bank/' || { echo "  the demonstration choice $d opens nothing in the bank"; fail=1; }
 done
@@ -118,7 +122,7 @@ has   "$observatory" "Eight Intelligences"  || { echo "  POSITIVE CONTROL FAILED
 has_i "$approach"    "institutional memory" || { echo "  POSITIVE CONTROL FAILED: /approach/ no longer says \"institutional memory\" (that surface has its own disposition)"; fail=1; }
 
 # --- 5. Link targets --------------------------------------------------------------------
-targets="/strategic-advisory/ /organisational-discovery/ /customer-jobs/ /engineering-assurance/ /what-we-do/ /enquiry/ /insights/ /composable-bank/ /composable-bank/bills/ /composable-bank/pay-someone-new/ /composable-bank/organisation/ /composable-bank/change/ /about/ /agentic-delivery/"
+targets="/strategic-advisory/ /organisational-discovery/ /customer-jobs/ /engineering-assurance/ /what-we-do/ /enquiry/ /insights/ /composable-bank/ /composable-bank/bills/ /composable-bank/pay-someone-new/ /composable-bank/collect-cash/ /composable-bank/organisation/ /composable-bank/change/ /about/ /agentic-delivery/"
 if [ "$mode" = "live" ]; then
   for p in $targets; do curl -fsI "$SITE$p" >/dev/null || { echo "  link target unreachable: $p"; fail=1; }; done
 else

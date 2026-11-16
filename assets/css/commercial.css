@@ -46,7 +46,7 @@ main section > .container > h2, main section > .container > .lede, main section 
 .band .container { text-align: center; }
 .band .eyebrow { color: var(--map-cyan-bright); margin-bottom: 6px; }
 .band .lede { color: rgba(255, 255, 255, .78); }
-.demos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; margin-top: 1.5rem; text-align: left; }
+.demos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 1.5rem; text-align: left; }
 .demo.offering-card { padding: 1.5rem; gap: 6px; color: #333; }
 .demo.offering-card h3 { color: var(--map-ink); font-size: 1.5rem; margin: 0; }
 .demo.offering-card .who { font-weight: 800; color: var(--map-cyan-dark); margin: 0; font-size: .95rem; }
